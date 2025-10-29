@@ -9,34 +9,6 @@
  */
 {
   "sections": {
-    "custom_section_yMxNyy": {
-      "type": "custom-section",
-      "blocks": {
-        "group_mpGcyw": {
-          "type": "group",
-          "name": "Group",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "direction": "row",
-            "justify_content": "flex-start",
-            "width": 100,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "group_mpGcyw"
-      ],
-      "name": "Custom Section",
-      "settings": {
-        "page_width": true
-      }
-    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -84,6 +56,57 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 5
+      }
+    },
+    "custom_section_yMxNyy": {
+      "type": "custom-section",
+      "blocks": {
+        "group_mpGcyw": {
+          "type": "group",
+          "name": "Group",
+          "settings": {
+            "link": "",
+            "open_in_new_tab": false,
+            "direction": "row",
+            "justify_content": "flex-start",
+            "width": 100,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_Xek73E": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "This is test text",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#ba4444",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_Xek73E"
+          ]
+        }
+      },
+      "block_order": [
+        "group_mpGcyw"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "page_width": true
       }
     },
     "featured-collection": {
@@ -714,8 +737,8 @@
     }
   },
   "order": [
-    "custom_section_yMxNyy",
     "slideshow",
+    "custom_section_yMxNyy",
     "featured-collection",
     "countdown",
     "featured-collections",
