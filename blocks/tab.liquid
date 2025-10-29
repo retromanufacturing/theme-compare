@@ -78,15 +78,18 @@
   endcapture
 -%}
 
+    if is_tab
+      render 'element.accordion', title: accordion_title, slot: description
+
 <div
   class="block block-tab block-tab--{{ block.id }} block-tab--{{ tab_type }} {% unless tab_content != blank %} hide{% endunless %}"
   {{ block.shopify_attributes }}
 >
   <div class="block-tab--content">
-    {%- render 'collapsible',
+    {%- render 'element.accordion',
       id: tab_id,
-      slot_button: tab_title,
-      slot_collapsible: tab_content,
+      title: tab_title,
+      slot tab_content,
       borders: true,
       open: block.settings.open
     -%}
