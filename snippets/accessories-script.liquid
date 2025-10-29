@@ -1,0 +1,40 @@
+{%- liquid
+  if current_variant.sku contains '-M1'
+    assign is_laguna = true
+  elsif current_variant.sku contains '-M2' 
+ 	assign is_hermosa = true
+  elsif current_variant.sku contains '-M4' 
+ 	assign is_longbeach = true
+  endif  
+-%}
+
+{{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
+<script type="text/javascript">
+ if (Shopify.designMode != true){
+  accessoriesJS($);
+ }
+</script>
+<script type="text/javascript">
+  function accessoryItemAddedCallback(div, product) { 
+  
+    if (product.id == "4115791872082"){
+      usb = div;
+      usb.addClass("variant__display-no-motor1");
+      usb.attr('data-motor-id', 'Motor 2')
+    }
+    if (product.id == "8572705091"){
+      xm = div;
+      xm.addClass("variant__display-motor4");
+      xm.attr('data-motor-id', 'Motor 4')
+    }
+    
+    
+    {% if is_laguna %}
+    	usb.addClass("hide");
+    	xm.addClass("hide");
+    {% elsif is_hermosa %}
+		xm.addClass("hide");
+    {% endif %}
+  }  
+</script>
+ 

@@ -1,0 +1,43 @@
+{%- liquid
+    assign current_variant = product.selected_or_first_available_variant 
+-%}
+
+<div class="block text-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+  <span class="product-single__sku">
+    {%- render 'variant-sku', variant: current_variant -%}
+  </span>
+</div>
+
+{% schema %}
+{
+  "name": "Variant Sku",
+  "settings": [
+    {
+    "type": "select",
+    "id": "alignment",
+    "label": "Alignment",
+    "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "center",
+        "label": "Center"
+      },
+      {
+        "value": "right",
+        "label": "Right"
+      }
+    ],
+    "default": "left"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Variant Sku",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

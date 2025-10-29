@@ -38,7 +38,7 @@
   data-product-id="{{ product.id }}"
   {{ block.shopify_attributes }}
 >
-  <span class="label variant__label">
+  <span class="label variant__label hide">
     {% render 't_with_fallback', key: 'labels.price', fallback: 'Price' %}
   </span>
   <div

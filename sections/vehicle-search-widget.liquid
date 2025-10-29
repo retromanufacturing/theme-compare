@@ -1,0 +1,419 @@
+{%- style -%}
+  .ymm__widget-bar {
+        bottom: 0;
+        position: fixed;
+        z-index: 2247483647!important;
+        background-color: transparent;
+        width: 100%;
+
+        .collapsible-content--all.is-open{
+          border-bottom: 0px solid;
+        }
+      }
+
+      .ymm__widget-bar:has(.ymm__widget-btn.is-open) {
+        {% unless section.settings.widget_style == 'full_width' %}
+          bottom: 160px! important;
+          margin-bottom: 1rem;
+          animation: modal-open 1s forwards;
+        {% endunless  %}
+      }
+
+      .ymm__widget-bar--full {
+        height: 25rem;
+        background-color: black;
+        bottom: 0;
+        position: fixed;
+        z-index: 2247483647!important;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: .5rem;
+      }
+
+      [data-fitment="set"] {
+        bottom: 130px! important;
+
+         .ymm__widget-title {
+          width: 100% !important;
+        }
+
+        .ymm__widget-fitment {
+            margin: 0rem !important;
+            float: none !important;
+          }
+
+        .ymm__widget-title a{
+          font-size: .85rem;
+        }
+
+        .ymm__widget-btn, .ymm__widget-icon {
+          width: 0% !important;
+        }
+
+        .ymm__widget-btn.is-open, .ymm__widget-icon {
+          display: none;
+        }
+      }
+
+      .ymm__widget-container {
+        display: flex;
+        padding: 1rem .5rem;
+        align-items: center;
+        background-color: {{ section.settings.background_color_top }};
+        {% unless section.settings.widget_style == 'full_width' %}
+         border-radius: 1rem;
+         margin: 1rem;
+        {% endunless  %}
+
+
+        .ymm__widget-icon {
+          padding-right: 1rem;
+          padding-left: .25rem;
+          width: 10%;
+        }
+
+        .ymm__widget-title {
+          width: 65%;
+          color: {{ section.settings.title_color }};
+        }
+
+        .ymm__widget-btn {
+          width: 25%;
+          color: {{ section.settings.btn_text_color }};
+          font-size: .85rem;
+          background-color: {{ section.settings.btn_color }};
+        }
+
+        .collapsible-trigger-btn {
+          text-align: center;
+          padding: 11px 10px !important;
+        }
+      }
+
+      .ymm__widget-container:has(.ymm__widget-btn.is-open) {
+        {% unless section.settings.widget_style == 'full_width' %}
+          margin: 1rem 1rem 0rem 1rem;
+          border-top-right-radius: 1rem;
+          border-top-left-radius: 1rem;
+          border-bottom-right-radius: 0rem;
+          border-bottom-left-radius: 0rem;
+          border-left: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+          border-right: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+          border-top: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+        {% endunless  %}
+      }
+
+      .ymm__widget-container--inner {
+        background-color: {{ section.settings.background_color_inner }};
+        padding: 0rem 1rem;
+        {% unless section.settings.widget_style == 'full_width' %}
+        margin: 0rem 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-left: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+        border-right: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+        border-bottom: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+        {% endunless  %}
+      }
+
+       .ymm__widget-container--fitment {
+          .grid {
+            margin-left: 0px !important;
+          }
+          .ymm-filter {
+            background-color: white;
+          }
+      }
+
+      .ymm__widget-container--btns {
+        display: flex;
+        margin-top: 1rem;
+          .btn {
+            margin: .25rem;
+          }
+          .ymm--search[disabled] {
+             background-color: white;
+          }
+          .ymm--search {
+            width: 75% !important;
+             background-color: {{ section.settings.search_color }};
+          }
+          .ymm--reset {
+            width: 25% !important;
+            background-color: {{ section.settings.reset_color }};
+          }
+      }
+
+      .ymm__widget-container--links {
+        display: flex;
+        margin-top: 1rem;
+        flex-direction: column;
+
+        .ymm-missing {
+          align-self: center;
+          border-radius: 9999px;
+        }
+
+      }
+
+      .ymm__widget-title {
+         .ymm__widget-fitment {
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            float: inline-start;
+            margin: 0.5rem 1rem;
+          }
+      }
+
+        .ymm__widget-title a{
+          color: white;
+          font-size: .7rem;
+          {% if section.settings.underline_width > 0 %}
+          text-decoration: underline;
+          text-underline-offset: {{ section.settings.underline_width }}px;
+          {% endif %}
+        }
+
+
+  .ymm__widget {
+        width: 60px;
+        height: 60px;
+        background: {{ section.settings.background_color_icon }};
+        border-radius: 50%;
+        transition: width 2s, height 4s;
+        z-index: 2247483647!important;
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+      }
+
+      .ymm__widget svg{
+        display: flex;
+        margin-left: .85rem;
+        margin-top: .85rem;
+        float: inline-start;
+      }
+
+    @media only screen and (max-width:768px){
+    .siq_bR {
+      {% if section.settings.widget_style == 'padded' %}
+         bottom: 115px !important;
+      {% elsif section.settings.widget_style == 'icon' or section.settings.widget_style == 'full_width'%}         
+        bottom: 95px !important;
+      {% endif %}
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign grid_layout = 'grid__item-custom'
+  assign id = section.id
+  assign is_icon = false
+  assign widget_style = section.settings.widget_style
+
+  if section.settings.widget_style == 'icon'
+    assign is_icon = true
+  endif
+-%}
+<span class="js-ymm--widget" data-template-name="{{ template.name }}" data-bar-display="{{ section.settings.disable_bar_no_homepage }}">
+  <div
+    class="js-ymm--widget-bar ymm__widget-bar collapsibles-wrapper medium-up--hide{% if is_icon %} hide{% endif %}"
+    data-widget-style="{{ widget_style }}"
+    data-fitment
+  >
+    <div class="ymm__widget-container">
+      <div class="ymm__widget-icon">
+        {% render 'svg-icons' with 'vehicle_search' as icon_type, icon_color: 'white', width: '30px' %}
+      </div>
+      <div class="ymm__widget-title">
+        <span class="js-ymm--title js-ymm-link-placeholder ymm__widget-fitment">{{ section.settings.ymm_title }}</span>
+      </div>
+      <button
+        type="button"
+        class="label btn ymm__widget-btn js-ymm--widget-btn collapsible-trigger collapsible-trigger-btn collapsible--auto-height{% if is_open %} is-open{% endif %}"
+        aria-controls="Product-content-{{ id }}"
+        data-btn-id="{{ id }}"
+        data-btn-status="closed"
+        data-btn-opened="{{ section.settings.ymm_btn_open }}"
+        data-btn-closed="{{ section.settings.ymm_btn_close }}"
+        data-btn-reset="{{ section.settings.ymm_btn_reset }}"
+      >
+        {{ section.settings.ymm_btn_open }}
+      </button>
+    </div>
+  
+    <div
+      id="Product-content-{{ id }}"
+      class="js-ymm--collapsible collapsible-content collapsible-content--all{% if is_open %} is-open{% endif %}"
+    >
+      <div class="ymm__widget-container--inner collapsible-content__inner" style="height: 333px">
+        <div class="ymm__widget-container--fitment">
+          {%- render 'vehicle-search', grid_layout: grid_layout, id: id -%}
+        </div>
+        <div class="ymm__widget-container--btns">
+          <button class="js-ymm--search btn ymm--search" disabled="disabled">Search</button>
+          <button class="js-ymm--reset btn ymm--reset" data-reset-id="{{ id }}">Reset</button>
+        </div>
+        <div class="ymm__widget-container--links">
+          <a href="{{ section.settings.not_listed_link }}" class="ymm-missing">{{ section.settings.not_listed }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div
+    class="js-ymm--widget-icon ymm__widget medium-up--hide{% unless is_icon %} hide{% endunless %}"
+    {% if is_icon %}data-icon-status="closed"{% endif %}
+  >
+    <div class="ymm__widget-icon">
+      {% render 'svg-icons' with 'vehicle_search' as icon_type, icon_color: 'white', width: '30px' %}
+    </div>
+  </div>
+</span>
+{% schema %}
+{
+  "name": "Vehicle Search Widget",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ymm_title",
+      "label": "Title",
+      "default": "FIND YOUR VEHICLE"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_open",
+      "label": "Open fitment button text",
+      "default": "Click Here"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_close",
+      "label": "Close fitment button text",
+      "default": "Close"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_reset",
+      "label": "Reset fitment button text",
+      "default": "Reset"
+    },
+    {
+      "type": "text",
+      "id": "not_listed",
+      "label": "Vehicle not available"
+    },
+    {
+      "type": "url",
+      "id": "not_listed_link",
+      "label": "Vehicle not available link"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "select",
+      "id": "widget_style",
+      "label": "Widget Style",
+      "default": "full_width",
+      "options": [
+        {
+          "value": "full_width",
+          "label": "Full Width"
+        },
+        {
+          "value": "padded",
+          "label": "Padded"
+        },
+        {
+          "value": "icon",
+          "label": "Icon"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bar_no_homepage",
+      "label": "Only show vehicle search bar on homepage"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border Width",
+      "default": 0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "underline_width",
+      "label": "Title Underline Width",
+      "default": 0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "background_color_top",
+      "label": "Background Color Top",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "background_color_inner",
+      "label": "Background Color Inner",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "background_color_icon",
+      "label": "Icon Background Color",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color",
+      "default": "#810F12"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "search_color",
+      "label": "Search Color",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "reset_color",
+      "label": "Reset Color",
+      "default": "#810F12"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#FFF"
+    }
+  ]
+}
+{% endschema %}
+

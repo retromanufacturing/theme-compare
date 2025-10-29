@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "actions": {
     "add_alt_text": "Add alt text for better SEO with 'Edit' button above",
@@ -280,6 +289,8 @@
     "circle_11": "Circle (1:1)",
     "circular_images": "Circular images",
     "classic": "Classic",
+    "clearance_tag_text": "Clearance tag text",
+    "clearanc_tags": "Clearanc tags",
     "cold_blur": "Cold Blur",
     "collection": "Collection",
     "collection_carousel": "Collection carousel",
@@ -453,6 +464,7 @@
     "logo_left_menu_left": "Logo left, menu left",
     "logo_list": "Logo list",
     "low_inventory_threshold": "Low inventory threshold",
+    "manuals": "Manuals",
     "map": "Map",
     "map_address": "Map address",
     "mapbox_api": "Mapbox API access token",
@@ -603,6 +615,7 @@
       "medium": "Medium",
       "small": "Small",
       "large_grid": "Large grid",
+      "medium_grid": "Medium grid",
       "small_grid": "Small grid"
     },
     "slide": "Slide",
@@ -750,5 +763,16 @@
     "year": "Year",
     "youtube": "YouTube",
     "youtube_vimeo": "YouTube/Vimeo"
+  },
+  "settings": {
+    "background_color": "Background Color",
+    "bottom": "Bottom",
+    "left": "Left",
+    "layout": "Layout",
+    "right": "Right",
+    "padding": "Padding",
+    "styling": "Styling",
+    "text_color": "Text Color",
+    "top": "Top",
   }
 }

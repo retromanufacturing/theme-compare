@@ -54,6 +54,12 @@
     assign on_sale = true
   endif
 
+  assign on_clearance = false
+  if product.vendor == "Clearance"
+    assign on_sale = false
+    assign on_clearance = true
+  endif  
+
   if set_image_breathing_room
     if settings.product_grid_image_margin == 0
       assign image_breathing_room = false
@@ -128,7 +134,7 @@
                 Quick add feature:
                   - when a single variant option, product is immediately added
                   - when multiple variants, popup with product form appears
-              {% endcomment %}
+              {% endcomment %} 
               {%- if product.variants.size > 1 -%}
                 {%- capture quickAddButton %}
                   <button type="button" class="text-link quick-add-btn js-quick-add-form js-modal-open-quick-add" title="
@@ -212,6 +218,11 @@
             {%- if on_sale and product.available -%}
               <div class="grid-product__tag grid-product__tag--sale">
                 {% render 't_with_fallback', key: 'labels.sale', fallback: 'Sale' %}
+              </div>
+            {%- endif -%}
+            {%- if on_clearance and product.available -%}
+              <div class="grid-product__tag grid-product__tag--clearance">
+                {% render 't_with_fallback', key: 'labels.clearance', fallback: 'Clearance' %}
               </div>
             {%- endif -%}
           </div>
@@ -398,6 +409,7 @@
                 </div>
               {%- endif -%}
             </div>
+            <div class="wc_product_review_badge" data-handle="{{ product.handle }}" data-product_id="{{ product.id }}"></div> 
           </div>
           {%- if enable_swatches and type == 'horizontal' -%}
             {%- render 'swatches', product: product -%}

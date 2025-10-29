@@ -1,0 +1,45 @@
+<div
+  class="product__thumb-item"
+  data-index="{{ forloop.index0 }}"
+  {% if image_set %}
+    data-set-name="{{ image_set_group }}"
+    data-group="{{ image_set_full }}"
+  {% endif %}
+>
+  <a
+    href="{{ media.preview_image | image_url: width: product_zoom_size }}"
+    data-product-thumb
+    class="product__thumb js-no-transition {% if conditional_image %} hide{% endif %}"
+    data-index="{{ forloop.index0 }}"
+    data-id="{{ media.id }}"
+    {% if motor_images %}
+      data-motor-id="{{ motor_id }}"
+    {% endif %}
+  >
+    <div
+      class="image-wrap image-wrap__thumbnail"
+      style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
+    >
+      {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+        <span class="product__thumb-icon">
+          {% render 'icon', name: 'play' %}
+        </span>
+      {%- endif -%}
+      {%- if media.media_type == 'model' -%}
+        <span class="product__thumb-icon">
+          {% render 'icon', name: '3d' %}
+        </span>
+      {%- endif -%}
+
+      {%- assign loading = 'eager' -%}
+      {%-
+        render 'image-element',
+        img: media.preview_image,
+        alt: media.alt | escape | split: '#' | first,
+        widths: '120, 360, 540, 720',
+        sizeVariable: '80px',
+        loading: loading,
+      -%}
+    </div>
+  </a>
+</div>

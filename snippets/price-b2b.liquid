@@ -1,0 +1,35 @@
+<div>
+  <span class="variant-b2b-text">MSRP:</span>
+  {% for variant in product.variants %}
+    {%- liquid
+      assign current_variant = product.selected_or_first_available_variant  
+      assign b2b_discount = 20
+      assign b2b_discount_remaining = 100 | minus: b2b_discount
+      assign discount_price_100 = variant.price | times: 100
+      assign original_price = discount_price_100 | divided_by: b2b_discount_remaining
+
+      if current_variant.sku == variant.sku
+        assign class_display = ''
+      else
+        assign class_display = 'hide'
+      endif
+    -%}
+    <span
+      data-b2b-price="{{ original_price | money }}"
+      data-b2b-sku="{{ variant.id }}"
+      class="variant-b2b-price {{ class_display }}"
+    >
+      {{- original_price | money }}
+    </span>
+  {% endfor %}
+</div>
+
+{%- style -%}
+  .variant-b2b-text {
+    font-weight: 700;
+  }
+  
+  .variant-b2b-price {
+    text-decoration: line-through;
+  }
+{%- endstyle -%}

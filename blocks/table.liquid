@@ -1,0 +1,28 @@
+{% style %}
+  .block--{{ block.id }} {
+    td,  tr {
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }     
+  }
+{% endstyle %}
+
+<div class="block block--{{ block.id }}" {{ block.shopify_attributes }}>
+  <table>
+    {% content_for 'blocks' %}
+  </table>
+</div>
+
+{% schema %}
+{
+  "name": "Table",
+  "blocks": [{"type": "_table-row"},{"type": "_table-header"}],
+  "settings": [],
+  "presets": [
+    {
+      "name": "Table",
+      "category": "Layout"
+    }
+  ]
+}
+{% endschema %}

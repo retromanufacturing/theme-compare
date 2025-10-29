@@ -1,4 +1,4 @@
-{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License %}
 {%- comment -%}
   Renders product variant-picker
 
@@ -36,12 +36,16 @@
     {{ block.shopify_attributes }}
   >
     {%- for option in product.options_with_values -%}
-      {%- if block.settings.picker_type == 'button' -%}
-        {%- render 'variant-button', option: option, block: block, prev_block_index: prev_block_index -%}
-      {%- else -%}
+      {% case block.settings.picker_type %}
+        {% when 'button' %}
+           {%- render 'variant-button', option: option, block: block, prev_block_index: prev_block_index -%}      
+        {% when 'dropdown' %}
         {%- render 'variant-dropdown', option: option, block: block -%}
-      {%- endif -%}
+        {% when 'tab' %}  
+           {%- render 'variant-tab', option: option, block: block, prev_block_index: prev_block_index, forloop: forloop -%} 
+      {% endcase %}  
     {%- endfor -%}
+
     <script type="application/json">
       {{ product.variants | json }}
     </script>

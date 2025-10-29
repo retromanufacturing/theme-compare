@@ -1,0 +1,29 @@
+{% comment %}
+  <script src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script>
+
+  Additional scripts: 
+  vehicle-search
+  build your own radio
+  build your own din
+  customThumbnails - radio motors, bezels, 
+  Shipping calculator
+  getDimensions
+  updateVariantInfo - knob types, comparison charts, variant tab option
+  updateMSRP
+  updateBackorders
+{% if template == 'collection' %}
+  
+{% endif %}
+
+{% endcomment %}
+
+<script type="module" src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script> 
+<script type="module" src="{{ 'vehicle-search-fitment.js' | asset_url }}" defer="defer"></script> 
+{% if template.name == 'product' %}
+  <script type="module" src="{{ 'motors.js' | asset_url }}" defer="defer"></script> 
+  <script type="module" src="{{ 'product-variants.js' | asset_url }}" defer="defer"></script> 
+  <script type="module" src="{{ 'product-options.js' | asset_url }}" defer="defer"></script> 
+{% endif %}
+{% if template == 'cart' %}
+  <script src="{{ 'shipping-calculator.js' | asset_url }}" defer="defer"></script> 
+{% endif %}

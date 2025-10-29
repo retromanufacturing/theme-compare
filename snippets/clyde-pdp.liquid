@@ -1,0 +1,75 @@
+<div id="yourClydePDPSelector"></div>
+
+<script defer>
+var addToCartSelector = "[data-add-to-cart]";
+
+//Define the active Product SKU on PDP
+var productData = {
+  sku: "{{ product.selected_or_first_available_variant.id }}",
+  price: "{{ product.price | money }}",
+}; 
+  
+var interval = setInterval(function(){
+  if(Clyde.checkReady()==true){ //Ensure Clyde scripts are ready
+    ClydePDP();
+    clearInterval(interval);
+  }             
+}, 100);
+  
+function ClydePDP() {   
+  //PDP CTA logic
+  if(Clyde.getSettings().productPage == true){//Recommended logic which allows you to enable/disable PDP CTA via Clyde Dashboard settings
+    Clyde.setActiveProduct(productData,function(){
+      Clyde.appendToSelector("#yourClydePDPSelector");//Any ID or Class for an element where you'd like to inject the Clyde PDP CTA. We recommend creating an empty div specific to Clyde
+    });
+
+    //Add an event listener to any "Add To Cart" buttons to use the Clyde.getSelectedContract logic and add Contract SKUs to Cart
+    //Note: you may want to add the Clyde.getSelectedContract logic to an existing "Add To Cart" event or combine with Modal CTA if you'd prefer
+    document.querySelectorAll(addToCartSelector).forEach((cart)=>{
+      cart.addEventListener("click", function () {
+      if (Clyde.checkInit() && Clyde.checkReady()) {
+        var selectedContract = Clyde.getSelectedContract();
+        if (selectedContract) {        
+          //Add contract to Cart as part of your existing "Add to Cart" function along with the Product SKU
+          addClydeToCart(selectedContract);
+        }
+      }       
+    })
+    })
+  }
+
+  //Modal CTA on Add To Cart event
+  if (Clyde.getSettings().modal == true) {//Recommended logic which allows you to enable/disable Modal via Clyde Dashboard settings
+    if(Clyde.getActiveProduct()==null){
+      Clyde.setActiveProduct(productData,function(){});
+    }
+    //Add an event listener to your Add To Cart buttons to fire the Clyde Modal if the Product is eligible
+    //Note: you may want to simply add this Clyde logic to any existing Add To Cart events
+    document
+    .querySelector(addToCartSelector)
+    .addEventListener("click", function () {
+      if(Clyde.getSelectedContract() == null){
+        Clyde.showModal(null, closeModalCb); //1st parameter is optional "on open modal callback". 2nd parameter is required "on close modal callback"
+      }
+    });
+  }
+
+  //Ensure correct variant is set as the active product
+  if(Clyde.getSettings().productPage == true || Clyde.getSettings().modal == true){  
+    var href = window.location.href; // Store the current page URL on load
+    
+    setInterval(function() { // listen for changes
+      if (href != location.href)
+      {
+        href = location.href;  // page has changed, set new page as 'current'
+        var variantId = new URL(href).searchParams.get('variant');
+        productData = {
+          sku: variantId,
+          price: "{{ variant.price | money }}",
+        }; 
+        Clyde.setActiveProduct(productData);
+      }
+    }, 500); 
+  }
+}
+</script>

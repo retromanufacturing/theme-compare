@@ -23,7 +23,7 @@ class VariantSku extends HTMLElement {
       return
     }
 
-    const skuSource = html.querySelector(`[data-section-id="${sectionId}"] variant-sku`)
+    const skuSource = html.querySelector(`[data-section-id="${sectionId}"] variant-sku`) 
 
     if (skuSource) {
       this.textContent = skuSource.textContent

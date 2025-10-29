@@ -1,0 +1,89 @@
+<div class="block block--{{ block.id }}">
+  {% render 'product-features', block: block %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Features",
+  "blocks": [{"type": "group"}],
+  "settings": [  
+    {   
+      "type": "checkbox",
+      "label": "Display product logos",
+      "id": "product_logos",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Product Logos Settings",
+       "visible_if": "{{ block.settings.product_logos == true }}"
+    },
+    {
+      "type": "header",
+      "content": "t:settings.styling"
+    },
+    {    
+      "type": "color",
+      "id": "color_text",
+      "label": "Text Color",
+      "default": "#000000"    
+    },
+    {    
+      "type": "color",
+      "id": "color_link",
+      "label": "Link Color",
+      "default": "#810F12"    
+    },
+    {
+      "type": "header",
+      "content": "t:settings.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }  
+  ],
+  "presets": [
+    {
+      "name": "Product features",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

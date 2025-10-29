@@ -178,6 +178,18 @@ class BlockVariantPicker extends HTMLElement {
       if (!colorLabel) return
       colorLabel.textContent = input.value
     })
+
+    // Logic for tab-based variant picker
+    this.querySelectorAll('[data-variant-color-label]').forEach((colorLabel) => {
+      // Find all checked radio inputs in the entire picker
+      const checkedInputs = this.querySelectorAll('input[type="radio"]:checked')
+      const optionName = colorLabel.getAttribute('data-option-name')
+      
+      checkedInputs.forEach((input) => {
+        // Update the label if this input corresponds to the current option
+        if (optionName === input.name) colorLabel.textContent = input.value   
+      })
+    })
   }
 
   setInputAvailability(elementList, availableValuesList) {

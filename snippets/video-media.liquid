@@ -29,8 +29,13 @@
   assign hydration = hydration | default: 'on:visible'
 
   if external_video != blank
-    assign external_video_host = external_video.host | default: external_video.type
-    assign external_video_id = external_video.external_id | default: external_video.id
+    if external_video.type == 'url'
+       assign external_video_host  = 'youtube'
+       assign external_video_id =  external_video_id
+    else  
+      assign external_video_host = external_video.host | default: external_video.type
+      assign external_video_id = external_video.external_id | default: external_video.id
+    endif
   endif
 %}
 
@@ -72,12 +77,12 @@
         defer-hydration
       >
         <template>
-          {%- if external_video_host == 'youtube' -%}
+          {%- if external_video_host == 'youtube' or external_video_host == 'url'-%}
             <iframe
               src="https://www.youtube.com/embed/{{ external_video_id }}?playsinline=1&{% if autoplay %}autoplay=1&controls=0&mute=1&loop=1&{% endif %}playlist={{ external_video_id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}"
               allow="autoplay; encrypted-media"
               allowfullscreen="allowfullscreen"
-            ></iframe>
+            ></iframe> 
           {%- elsif external_video_host == 'vimeo' -%}
             <iframe
               src="https://player.vimeo.com/video/{{ external_video_id }}?autopause=1&{% if autoplay %}background=1&autoplay=1&loop=1&muted=1&{% endif %}transparent=0&responsive=1&portrait=0&title=0&byline=0"

@@ -1,0 +1,69 @@
+<div class="block block--{{ block.id }}" {{ block.shopify_attributes }}>
+  {%- render 'block-variant-picker', block: block, forloop: forloop -%}
+</div>
+
+{% schema %}
+{
+  "name": "Variant Picker",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "variant_labels",
+      "label": "t:actions.show_variant_labels",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "picker_type",
+      "label": "t:labels.type",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:labels.buttons"
+        },
+        {
+          "value": "dropdown",
+          "label": "t:labels.dropdown"
+        },
+        {
+          "value": "tab",
+          "label": "t:labels.tab"
+        }
+      ],
+      "default": "button"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_dynamic_variants_enable",
+      "label": "t:actions.enable_dynamic_product",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "color_swatches",
+      "label": "t:actions.enable_color_swatches",
+      "info": "t:actions.learn_to_setup_color_swatches"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_features",
+      "label": "Enable product features",
+      "info": "Check only if picker type = tab",
+      "default": false,
+      "visible_if": "{{ block.settings.picker_type == 'tab' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "variant_data_enable",
+      "label": "Enable variant data",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Variant Picker",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

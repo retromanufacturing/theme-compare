@@ -1,0 +1,26 @@
+<div class="{% if section.settings.page_width %}page-width{% endif %}">
+  <div>
+    {% content_for 'blocks' %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "class": "section--group",
+    "blocks": [{ "type": "@theme"}, {"type": "@app"}],
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "page_width",
+        "label": "Make section page width",
+        "default": true       
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Section"
+      }
+    ]
+  }
+{% endschema %}

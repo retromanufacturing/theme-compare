@@ -54,7 +54,13 @@
 
       theme.settings = {
         themeName: 'Expanse',
-        themeVersion: '7.0.0', // x-release-please-version
+        themeVersion: '6.0.0', // x-release-please-version
+      };
+      theme.strings = {     
+        shippingCalcSubmitButton: {{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' | json }},
+        shippingCalcSubmitButtonDisabled: {{ settings.shipping_calculator_submit_button_label_disabled | default: 'Calculating...' | json }},
+        {% if customer %}shippingCalcCustomerIsLoggedIn: true,{% endif %}
+        shippingCalcMoneyFormat: {{ shop.money_with_currency_format | json }}
       };
     </script>
 
@@ -63,6 +69,7 @@
     {%- render 'is-land' -%}
     {%- render 'preload-js' -%}
     {%- render 'theme-editor' -%}
+    {%- render 'custom-scripts' -%}
 
     {{ content_for_header }}
 
@@ -95,6 +102,10 @@
         {%- sections 'header-group' -%}
         {%- sections 'popup-group' -%}
 
+        {% unless template == 'cart' %}
+         {%- sections 'vehicle-search-banner' -%} 
+        {% endunless %} 
+
         <main class="main-content" id="MainContent">
           {{ content_for_layout }}
         </main>
@@ -107,5 +118,7 @@
       render 'photoswipe-template'
       render 'tool-tip'
     -%}
+    {% render 'zoho-chat-script' %}
+    {% if template.name == "product" %} {% render 'clyde-init' %}{% endif %} 
   </body>
 </html>

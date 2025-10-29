@@ -1,4 +1,4 @@
-{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License %}
 {%- comment -%}
   Renders a section with a list of collection blocks.
 
@@ -17,14 +17,49 @@
   assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
   assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
   assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+  assign show_title = section.settings.show_title
+
+  case section.settings.row_maximum
+    when '3x1'
+      assign grid_item_width = '3-1'
+    when '3x2'
+      assign grid_item_width = '3-2'
+    when '4'
+      assign grid_item_width = '4-2'
+    when '5'
+      assign grid_item_width = '5-2'
+    when '6'
+      assign grid_item_width = '6-2'
+    when '7'
+      assign grid_item_width = '7-3'
+    when '8'
+      assign grid_item_width = '8-3'
+  endcase
 -%}
+
+{%- style -%}
+  .section-header--with-link { 
+    display:flex;
+    align-items:center
+  }
+      
+  .view-all-link {      
+    border: 1px solid #dfdfdf;
+    padding: 0.5rem 1rem;
+    font-size: .85rem;
+    text-transform: capitalize;
+  }
+{%- endstyle -%}
 
 {%- if divider -%}<div class="section--divider">{%- endif -%}
 
 <div class="page-width">
   {%- if title != blank -%}
-    <div class="section-header text-{{ heading_position }}">
+    <div class="section-header text-{{ heading_position }}{% if section.settings.view_all %} section-header--with-link{% endif %}">
       <h2 class="section-header__title {{ heading_size }}">{{ title | escape }}</h2>
+      {%- if section.settings.view_all -%}
+        <a href="{{ section.settings.view_all }}" class="view-all-link">View All</a>
+      {%- endif %}
     </div>
   {%- endif -%}
 
@@ -33,7 +68,7 @@
     {% if section.blocks.size < 6 %}
       {%- render 'grid-view-type', products_per_row: section.blocks.size -%}
     {% else %}
-      data-view="6-3"
+      data-view="{{ grid_item_width }}"
     {% endif %}
   >
     {%- liquid
@@ -47,7 +82,7 @@
       {%- liquid
         assign sizeVariable = section.blocks.size | at_most: 6
 
-        render 'collection-grid-item', block: block, collection: block.settings.collection, sizeVariable: sizeVariable, fallback: 'variable'
+        render 'collection-grid-item', block: block, collection: block.settings.collection, sizeVariable: sizeVariable, fallback: 'variable', show_title: show_title
       -%}
     {%- endfor -%}
 

@@ -59,8 +59,29 @@
   }
 {%- endcapture -%}
 
+{%- style -%} 
+  .product-inventory__point {
+    border-radius: 0.5rem;     
+    font-size: .8rem;     
+    padding: 0.125rem 0.5rem; 
+
+   {% unless oos_and_continue_selling %}      
+     {% if show_low_inventory_message %}          
+      background-color: {{ block.settings.inventory_low}};        
+      color: {{ block.settings.inventory_low_text}};
+     {% else %}  
+      background-color: {{ block.settings.inventory_in_stock}};    
+      color: {{ block.settings.inventory_in_stock_text}};
+     {% endif %}
+   {% else %} 
+      background-color: {{ block.settings.inventory_backordered }};
+      color: {{ block.settings.inventory_backordered_text }};
+   {% endunless %}
+  }
+{%- endstyle -%}    
+
 <product-inventory
-  class="product-block product-block--inventory-point"
+  class="product-block product-block--inventory-point {{ inventory_class }}"
   data-product-id="{{ product.id }}"
   data-section-id="{{ section.id }}"
   {{ block.shopify_attributes }}
@@ -68,7 +89,6 @@
   <ul class="product-inventory__points">
     <li class="product-inventory__point {% unless current_variant.inventory_quantity > 0 or current_variant.inventory_management == nil %}hide{% endunless %}">
       <span class="icon-and-text{% if show_low_inventory_message == true %} inventory--low{% endif %}">
-        <span class="icon icon--inventory"></span>
         <span
           data-product-inventory
           data-threshold="{{ block.settings.inventory_threshold }}"
@@ -91,8 +111,10 @@
       class="product-inventory__point {% unless show_incoming_inventory_message %}hide{% endunless %}"
       data-enabled="{{ block.settings.inventory_transfers_enable }}"
     >
-      <span class="icon-and-text {% unless oos_and_continue_selling %}inventory--low{% endunless %} ">
-        <span class="icon icon--inventory"></span>
+      <span class="icon-and-text {% unless oos_and_continue_selling %}inventory--low{% endunless %}">
+       {% comment %}
+         <span class="icon icon--inventory"></span> 
+       {% endcomment %}
         <span class="js-incoming-text">
           {%- if current_variant.next_incoming_date -%}
             {%- assign date = current_variant.next_incoming_date | date: format: 'date' -%}
@@ -104,7 +126,7 @@
               {% render 't_with_fallback', t: info_back_in_stock_on, fallback: fallback_info_back_in_stock_on %}
             {%- endif -%}
           {%- else -%}
-            {% render 't_with_fallback', key: 'info.backordered', fallback: 'Backordered, shipping soon' %}
+            {% render 't_with_fallback', key: 'info.backordered', fallback: 'Backordered' %}
           {%- endif -%}
         </span>
       </span>
@@ -119,7 +141,7 @@
         {%- render 't_with_fallback', key: 'info.back_in_stock_on', fallback: 'Back in stock [date]', as_json: true -%}
       ,
       "waitingForStock":
-        {%- render 't_with_fallback', key: 'info.backordered', fallback: 'Backordered, shipping soon', as_json: true -%}
+        {%- render 't_with_fallback', key: 'info.backordered', fallback: 'Backordered', as_json: true -%}
       ,
       "otherStockLabel":
         {%- assign info_low_stock_count_one = 'info.low_stock_count.one' | t: count: '[count]' -%}

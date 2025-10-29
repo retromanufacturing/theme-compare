@@ -25,6 +25,7 @@
 {%- endcomment -%}
 
 {%- liquid
+  assign current_variant = product.selected_or_first_available_variant
   assign image_position = image_position | default: section.settings.image_position | default: 'left'
   assign mobile_layout = mobile_layout | default: section.settings.mobile_layout | default: 'partial'
   assign image_container_width = image_container_width | default: section.settings.image_container_size | default: 'medium'
@@ -39,37 +40,41 @@
       assign product_description_width = 'medium-up--two-fifths'
   endcase
   capture product_media_gallery_default
-    render 'product-images', sizeVariable: product_image_width
+    render 'product-images-block', sizeVariable: product_image_width
   endcapture
 -%}
-
 <section
   class="page-content page-content--product page-content--{{ mobile_layout }}"
   data-section-id="{{ section.id }}"
   data-product-id="{{ product.id }}"
->
-  <div class="page-width">
-    <div class="product-grid__container product--images float-grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %} clearfix">
-      {%- if image_position == 'left' -%}
-        <div class="grid__item {{ product_image_width }} product-single__sticky">
-          {{- product_media_gallery | default: product_media_gallery_default -}}
+>  
+  <product-section  
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}">
+    <div class="page-width">
+      <div class="product-grid__container product--images float-grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %} clearfix">
+        {%- if image_position == 'left' -%}
+          <div class="grid__item {{ product_image_width }} product-single__sticky">
+            {{- product_media_gallery | default: product_media_gallery_default -}}
+          </div>
+        {%- endif -%}
+        <div class="product-grid__content product--description product-single__sticky grid__item {{ product_description_width }}">
+          <div class="product-single__meta">
+            {%- render 'breadcrumbs' -%}
+            {{- slot -}} 
+          </div>
         </div>
-      {%- endif -%}
-      <div class="product-grid__content product--description product-single__sticky grid__item {{ product_description_width }}">
-        <div class="product-single__meta">
-          {%- render 'breadcrumbs' -%}
-          {{- slot -}}
-        </div>
+        {%- unless image_position == 'left' -%}
+          <div class="grid__item {{ product_image_width }} product-single__sticky">
+            {{- product_media_gallery | default: product_media_gallery_default -}}
+          </div>
+        {%- endunless -%}
       </div>
-      {%- unless image_position == 'left' -%}
-        <div class="grid__item {{ product_image_width }} product-single__sticky">
-          {{- product_media_gallery | default: product_media_gallery_default -}}
-        </div>
-      {%- endunless -%}
     </div>
-  </div>
+  </product-section>   
 </section>
 
 <script type="application/ld+json">
   {{ product | structured_data }}
 </script>
+{% render 'accessories-script', current_variant: current_variant %}

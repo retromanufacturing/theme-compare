@@ -1,0 +1,21 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+-%}
+{% case true %}
+  {% when current_variant.sku contains '-M1' or current_variant.sku contains '-M1A' or current_variant.sku contains 'Motor 1B' %}
+    {% assign motor_class = 'Motor 1' %}
+  {% when current_variant.sku contains '-M1DAB-' %}
+    {% assign motor_class = 'Motor 1DAB' %}
+  {% when current_variant.sku contains '-M2' or current_variant.sku contains '-M2A' or current_variant.sku contains 'Motor 2B' %}
+    {% assign motor_class = 'Motor 2' %}
+  {% when current_variant.sku contains '-M4' or current_variant.sku contains '-M4F' or current_variant.sku contains 'Motor 4HD' %}
+    {% assign motor_class = 'Motor 4' %}
+  {% when current_variant.sku contains '-M6' %}
+    {% assign motor_class = 'Motor 6' %}
+  {% else %}
+    {% assign motor_class = '' %}
+{% endcase %}
+
+
+{{ motor_class }} {{ current_variant.sku  }} this is a test

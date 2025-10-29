@@ -61,7 +61,54 @@
       "id": "divider",
       "label": "t:actions.show_section_divider",
       "default": false
-    }
+    },
+    {
+      "type": "select",
+      "id": "row_maximum",
+      "label": "Items Per Row",
+      "default": "6",
+       "options": [		 
+         {              
+           "value": "3x1",                
+           "label": "3x1"             
+         },			
+         {              
+           "value": "3x2",               
+           "label": "3x2"           
+         },			 
+         {             
+           "value": "4",                
+           "label": "4"              
+         },              
+         {         
+           "value": "5",           
+           "label": "5"           
+         },         
+         {         
+           "value": "6",           
+           "label": "6"           
+         },		
+         {         
+           "value": "7",           
+           "label": "7"           
+         },         
+         {         
+           "value": "8",          
+           "label": "8" 
+         }         
+       ]    
+    },
+    {
+      "type": "checkbox",
+       "id": "show_title",
+       "label": "Show link title",
+       "default": true
+    },
+	{                 
+      "type": "url",
+      "id": "view_all",
+      "label": "View All Link"        
+	}
   ],
   "blocks": [
     {
@@ -79,7 +126,12 @@
           "id": "title",
           "label": "t:labels.title",
           "info": "t:info.defaults_to_collection_title"
-        }
+        },
+		{               		
+          "type": "url",        	
+          "id": "alternate_link",        	
+          "label": "Alternate Link"        
+		}
       ]
     }
   ],

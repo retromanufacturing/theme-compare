@@ -82,7 +82,7 @@
     -%}
   </div>
 
-  <div class="cart__item-remove">
+  <div class="cart__item-remove hide">
     <a href="{{ routes.cart_change_url }}?id={{ item.key }}&amp;quantity=0" class="text-link">
       {% render 't_with_fallback', key: 'actions.remove', fallback: 'Remove' %}
     </a>

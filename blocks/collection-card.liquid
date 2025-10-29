@@ -1,0 +1,59 @@
+{% style %}
+  .block-card--{{ block.id }} {
+    width: {{ block.settings.width }}%;
+  }
+  
+    @media screen and (min-width: 750px) {
+    #shopify-block-{{ block.id }} {
+      width: {{ block.settings.width }}%;
+    }
+
+    .layout--row > #shopify-block-{{ block.id }} {
+      width: calc({{ block.settings.width }}% - var(--layout-gap));
+    }
+  }  
+{% endstyle %}
+
+{% if block.settings.collection != blank %}
+  <div class="block block-card block-card--{{ block.id }}">
+    <a href="{{ block.settings.collection.url }}">
+      <div class="block-card--img">                  
+        {%- if block.settings.collection.featured_image -%}              
+          {{ block.settings.collection.featured_image | image_url: width: 1000 | image_tag: widths: '200, 400, 800, 1000' }}            
+        {%- endif -%}  
+      </div>
+     {% comment %} {{ block.settings.collection.title }}{% endcomment %}
+    </a>    
+  
+  
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Collection card",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Width",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 33
+    }
+  ],
+   "presets": [
+    {
+      "name": "Collection card",
+      "category": "Collections"
+    }
+  ]
+}
+{% endschema %}

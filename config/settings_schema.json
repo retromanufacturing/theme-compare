@@ -3,7 +3,7 @@
     "name": "theme_info",
     "theme_name": "Expanse",
     "theme_author": "Archetype Themes",
-    "theme_version": "7.0.0",
+    "theme_version": "6.0.0",
     "theme_documentation_url": "https://archetypethemes.co/blogs/expanse",
     "theme_support_url": "https://archetypethemes.co/pages/support#expanse"
   },
@@ -66,6 +66,18 @@
         "type": "color",
         "id": "color_sale_tag_text",
         "label": "t:labels.sale_tag_text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_clearance_tag",
+        "label": "t:labels.clearance_tags",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_clearance_tag_text",
+        "label": "t:labels.clearance_tag_text",
         "default": "#ffffff"
       },
       {
@@ -147,6 +159,40 @@
         "id": "color_footer_text",
         "label": "t:labels.text",
         "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": "Motors"
+      },
+      {
+        "type": "color",
+        "id": "color_motor_one",
+        "label": "Motor 1",
+        "default": "#C19E44"
+      },
+      {
+        "type": "color",
+        "id": "color_motor_one_dab",
+        "label": "Motor 1DAB",
+        "default": "#79797A"
+      },
+      {
+        "type": "color",
+        "id": "color_motor_two",
+        "label": "Motor 2",
+        "default": "#294957"
+      },
+      {
+        "type": "color",
+        "id": "color_motor_four",
+        "label": "Motor 4",
+        "default": "#623F36"
+      },
+      {
+        "type": "color",
+        "id": "color_motor_six",
+        "label": "Motor 6",
+        "default": "#B93935"
       },
       {
         "type": "header",
@@ -377,7 +423,7 @@
         "type": "font_picker",
         "id": "type_header_font_family",
         "label": "t:labels.font",
-        "default": "dm_sans_n7"
+        "default": "poppins_n7"
       },
       {
         "type": "select",
@@ -470,7 +516,7 @@
         "type": "font_picker",
         "id": "type_base_font_family",
         "label": "t:labels.font",
-        "default": "dm_sans_n4"
+        "default": "poppins_n5"
       },
       {
         "type": "select",
@@ -1158,5 +1204,58 @@
         "label": "t:actions.show_collections_in_breadcrumbs"
       }
     ]
-  }
+  },
+  {
+    "name": "Shipping Rates Calculator",
+    "settings": [
+      {
+        "type": "select",
+        "id": "shipping_calculator",
+        "label": "Show the shipping calculator?",
+        "options": [
+          {
+            "value": "Disabled",
+            "label": "No"
+          },
+          {
+            "value": "Enabled",
+            "label": "Yes"
+          }
+        ],
+        "default": "Enabled"
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_heading",
+        "label": "Heading text",
+        "default": "Get shipping estimates"
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_default_country",
+        "label": "Default country selection",
+        "default": "United States"
+      },
+      {
+        "type": "paragraph",
+        "content": "If your customer is logged-in, the country in his default shipping address will be selected. If you are not sure about the  spelling to use here, refer to the first checkout page."
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_submit_button_label",
+        "label": "Submit button label",
+        "default": "Calculate shipping"
+      },
+      {
+        "type": "text",
+        "id": "shipping_calculator_submit_button_label_disabled",
+        "label": "Submit button label when calculating",
+        "default": "Calculating..."
+      },
+      {
+        "type": "paragraph",
+        "content": "Do not forget to include the snippet shipping-calculator in your cart.liquid template where you want the shipping  calculator to appear. You can get the snippet here: [shipping-calculator.liquid](https:\/\/github.com\/carolineschnapp\/shipping-calculator\/blob\/master\/shipping-calculator.liquid) ."
+      }
+    ]
+  },
 ]

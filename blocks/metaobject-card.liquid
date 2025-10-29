@@ -1,0 +1,25 @@
+{% if block.settings.logos.count > 0 %}
+  {% for logo in block.settings.logos %}
+    {{ logo.name }}
+  {% endfor %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Metaobjects",
+    "settings": [
+      {
+        "type": "metaobject_list",
+        "id": "logos",
+        "label": "Logo List",
+        "metaobject_type": "logos"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Metaobjects",
+        "category": "Testing"
+      }
+    ]
+  }
+{% endschema %}

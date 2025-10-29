@@ -4,7 +4,7 @@
   assign enable_color_swatches = enable_color_swatches | default: section.settings.enable_color_swatches, allow_false: true | default: true, allow_false: true
 
   assign is_color = false
-  assign swatch_file_extension = 'png'
+  assign swatch_file_extension = 'jpg'
   if enable_color_swatches
     capture swatch_trigger
       assign trigger_color_swatch = 'trigger.color_swatch' | t | downcase

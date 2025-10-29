@@ -21,7 +21,9 @@
       paginate search.results by paginate_by
         for item in search.results
           if item.object_type == 'product'
+           unless item.title == 'Build a Din Radio'
             render 'product-grid-item', product: item
+           endunless
           else
             render 'search-grid-item', item: item
           endif

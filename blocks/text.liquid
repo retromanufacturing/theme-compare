@@ -1,0 +1,249 @@
+{% comment %}
+Add url functionality with conditional logic
+      {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+    },
+{% endcomment %}
+
+{% liquid
+  assign text_decoration = block.settings.text_decoration 
+  if block.settings.font_preset == 'custom'
+    assign element = 'span'
+  else
+    assign element = block.settings.font_preset
+  endif
+
+  if block.settings.font_size == 'custom'
+    assign font_size = block.settings.font_size_custom | append: 'px'
+  else
+    assign font_size = block.settings.font_size
+  endif   
+
+  case text_decoration
+    when 'bold'
+      assign text_decoration_style = 'font-weight'
+    when 'italic'
+      assign text_decoration_style = 'font-style'
+    when 'line-through','underline'
+      assign text_decoration_style = 'text-decoration'
+  endcase
+%}
+
+<div class="block block--{{ block.id }} block--text text-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+  <{{ element }}> 
+    {{ block.settings.text }} 
+  </{{ element }}>
+</div>
+
+{% style %}
+  .block--{{ block.id }} {
+    color: {{ block.settings.font_color }};
+    padding-top: {{ block.settings.padding-block-start }}px;
+    padding-bottom: {{ block.settings.padding-block-end }}px;
+    padding-left: {{ block.settings.padding-inline-start }}px;
+    padding-right: {{ block.settings.padding-inline-end }}px;
+
+    {% if block.settings.font_preset == 'custom' %}
+      font-size: {{ font_size }};
+    {% endif %}
+    {% if block.settings.font_preset == 'blockquote' %}
+      background-color: {{ block.settings.background_color }};
+    {% endif %}
+    {% unless text_decoration == '' %}
+      {{ text_decoration_style }}: {{ text_decoration }};
+    {% endunless %}
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Insert text here"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.typography"
+    },
+    {
+      "type": "select",
+      "id": "font_preset",
+      "label": "Presets",
+      "options": [
+        {
+          "value": "span",
+          "label": "Default"
+        },
+        {
+          "value": "p",
+          "label": "Paragraph"
+        },
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "blockquote",
+          "label": "Blockquote"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "span"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "Font Size",
+      "options": [
+        { "value": "0.625rem", "label": "10px" },
+        { "value": "0.75rem", "label": "12px" },
+        { "value": "0.875rem", "label": "14px" },
+        { "value": "1rem", "label": "16px" },
+        { "value": "1.125rem", "label": "18px" },
+        { "value": "1.25rem", "label": "20px" },
+        { "value": "1.5rem", "label": "24px" },
+        { "value": "2rem", "label": "32px" },
+        { "value": "2.5rem", "label": "40px" },
+        { "value": "3rem", "label": "48px" },
+        { "value": "3.5rem", "label": "56px" },
+        { "value": "4.5rem", "label": "72px" },
+        { "value": "5.5rem", "label": "88px" },
+        { "value": "7.5rem", "label": "120px" },
+        { "value": "9.5rem", "label": "152px" },
+        { "value": "11.5rem", "label": "184px" },
+        { "value": "custom", "label": "Custom" },
+      ],
+      "default": "1rem",
+      "visible_if": "{{ block.settings.font_preset == 'custom' }}"
+    },
+    {
+      "type": "number",
+      "id": "font_size_custom",
+      "label": "Custom Font Size",
+      "info": "Uses px",
+      "default": 12,
+      "visible_if": "{{ block.settings.font_preset == 'custom' and block.settings.font_size == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "text_decoration",
+      "label": "Text decoration",
+      "options": [
+        { "value": "", "label": "None" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "italic", "label": "Italic" },
+        { "value": "line-through", "label": "Strikethrough" },
+        { "value": "underline", "label": "Underline" },
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "t:settings.styling"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ECECEC",
+      "visible_if": "{{ block.settings.font_preset == 'blockquote' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:settings.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text",
+      "category": "Basic"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+<div class="block block--{{ block.id }}" {{ block.shopify_attributes }}>
+  {%- if customer.b2b? -%}
+    {% render 'price-b2b' %}
+  {%- endif -%} 
+  {%- render 'block-price', block: block -%}
+</div>
+
+{% style %}
+ .block--{{ block.id }} {
+   padding-top: {{ block.settings.padding-block-start }}px;
+   padding-bottom: {{ block.settings.padding-block-end }}px;
+   padding-left: {{ block.settings.padding-inline-start }}px;
+   padding-right: {{ block.settings.padding-inline-end }}px;
+ }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Price",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:settings.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    } 
+  ],
+  "presets": [
+    {
+      "name": "Price",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

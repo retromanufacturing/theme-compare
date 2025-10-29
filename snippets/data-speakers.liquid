@@ -1,0 +1,88 @@
+{% capture specifications %}
+  Description, 
+  Nominal Impedance, 
+  Frequency Response, 
+  Sensitivity (SPL@1w/1m), 
+  Power Handling (watts RMS/peak), 
+  Speaker Grill, 
+  Mounting Depth (inch), 
+  Mounting Depth (mm)
+{% endcapture %}
+
+{%- liquid
+  assign install_location = product.metafields.features.install_location | metafield_text
+
+  capture speaker_specs
+    case current_variant.sku
+      when 'R-693N'
+        assign specs = '3-Way, 4ohm, 40Hz-21kHz, 90dB, 100/200, YES, 1.9, 48.5'
+      when 'R-410UK'
+        assign specs = 'Dual Voice Coil, 4+4ohm, 43Hz-21kHz, 87dB, 90/160, NO, 2.32, 59'
+      when 'R-525N'
+        assign specs = '2-Way, 4ohm, 56Hz-21kHz, 88dB, 40/80, YES, 1.47, 37.5'
+      when 'D-412UK'
+        assign specs = 'Dual Voice Coil, 4+4ohm, 48Hz-21kHz, 87dB, 25/50, NO, 2.76, 70'
+      when 'R-69UK'
+        assign specs = 'Dual Voice Coil, 4+4ohm, 40Hz-21kHz, 90dB, 100/200, NO, 2.32, 59'
+    endcase
+    echo specs
+  endcapture
+
+  assign specification_titles = specifications | split: ',' 
+  assign speakers = speaker_specs | split: ','
+-%}
+
+<h3>Specifications</h3>
+<table>
+  <tbody>
+    <tr>
+      <td>Model</td>
+      <td>{{ current_variant.sku }}</td>
+    </tr>
+    <tr>
+      <td>Nominal Diameter (inch)</td>
+      <td>{{ product.metafields.features.size }}</td>
+    </tr>
+    {% if install_location != blank %}
+      <tr>
+        <td>Install Location</td>
+        <td>{{ install_location }}</td>
+      </tr>
+    {% endif %}
+    {% for title in specification_titles %}
+      <tr>
+        <td>{{ title }}</td>
+        <td>{{ speakers[forloop.index0] }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% comment %}
+  <h3>Specifications</h3>
+<table>
+  <tbody>
+    {% for title in specification_titles %}
+      {% case title %}
+        {% when 'Model' %}
+          <tr>
+            <td>{{ title }}</td>
+            <td>{{ current_variant.sku }} test</td>
+          </tr>
+        {% when 'Nominal Diameter' %}
+          <tr>
+            <td>Nominal Diameter (inch)</td>
+            <td>{{ product.metafields.features.size }}</td>
+          </tr>
+        {% else %}
+          <tr>
+            <td>{{ title }}</td>
+            <td>{{ speakers[forloop.index0] }}</td>
+          </tr>
+      {% endcase %}
+    {% endfor %}
+  </tbody>
+</table>
+{% endcomment %}    
+
+

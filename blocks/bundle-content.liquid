@@ -1,0 +1,50 @@
+{% comment %}
+  {% assign list = 'one, two, three' %}
+
+{% for item in list %}
+  {% content_for 'block', type: '_bundle-product', id: 'bundle-product'%}
+{% endfor %}
+
+{{ product.title }} {{ block.settings.product_list }}
+{% endcomment %}
+
+{% capture blocks %}
+  <div>
+    {% content_for 'blocks', closest.product: block.settings.bundle_products  %}
+  </div>
+{% endcapture %}
+
+
+{% for product in block.settings.product_list  %}
+  {{ product.title }}
+{% endfor %}
+
+{% render 'section-main-product-build',  is_build: is_build, build_product: product,  block: block, slot: blocks  %}
+
+{% schema %}
+{
+  "name": "Block name",
+  "blocks": [{ "type": "@theme"}, {"type": "@app"}],
+  "settings": [
+       {
+        "type": "metaobject_list",
+        "id": "bundle_products",
+        "label": "Bundle products",
+        "metaobject_type": "build_your_own"
+      },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Product List"
+    }
+  ],
+   "presets": [
+  {
+    "name": "Bundle Content",
+    "category": "Bundle Builder"
+  }
+]
+}
+{% endschema %}
+
+   

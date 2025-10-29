@@ -1,0 +1,37 @@
+{%- comment -%}
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+  - option {option} - Product Options object
+{%- endcomment -%}
+
+{%- liquid
+  assign product_option_data = metaobjects.product_option_data.values
+  assign option_name = option.name | downcase
+-%}
+
+<product-options
+  data-variant-options-enabled  
+  data-product-id="{{ product.id }}"   
+  data-section-id="{{ section.id }}"
+>
+  {% for product_option in product_option_data %}
+    {% for variant_option_arr in product_option.variant_options.value %}
+      {% assign variant_option = variant_option_arr | downcase %}
+      {% if variant_option == option_name %}
+        {% for value in product_option.variant_option_values.value %} 
+          {%- liquid
+            if value == option.selected_value or option.selected_value contains value
+              assign data_class = ''
+            else
+              assign data_class = 'hide'
+            endif
+          -%}
+          <span class="{{ data_class }}" data-option-value="{{ value }}" data-variant-info>
+            ({{ product_option.name }})
+          </span>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</product-options>

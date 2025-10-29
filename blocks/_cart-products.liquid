@@ -1,0 +1,20 @@
+<div data-products>
+  {% for item in cart.items %}
+    {%- render 'cart-item', item: item -%}
+  {% endfor %}
+</div>
+
+{%- render 'cart-recommendations', context: 'page' -%}
+
+{% schema %}
+{
+  "name": "Cart Products",
+  "settings": [],
+  "presets": [
+  {
+    "name": "Cart Products",
+    "category": "Cart"
+  }
+]
+}
+{% endschema %}

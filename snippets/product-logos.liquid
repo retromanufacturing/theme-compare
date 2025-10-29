@@ -1,0 +1,82 @@
+{%- liquid
+  assign product_logos = product.metafields.media.logos.value
+  assign logo_grid = 'logo-item medium-up--one-quarter small--one-half'  
+-%}
+
+{% style %}
+  .logo-item {
+    max-width: 100px;
+  }
+{% endstyle %}
+
+<div class="new-grid">
+  {% for logo in product_logos %}
+    <div class="grid__item {{ logo_grid }}">
+      {%-
+        render 'image-element',
+        img: logo.image,
+        classes: image_classes,
+        sizes: 25px,
+        sizeVariable: sizeVariable,
+        fallback: fallback,
+        widths: '160, 200, 280, 360, 540, 720, 900'
+      -%}
+    </div>
+  {% endfor %}
+
+  {% for collection in product.collections %}
+    {% for metaobject in collection.metafields.media.content.value %}
+      {% comment %}
+        {% if metaobject.system.type == 'logos' %}
+        <div class="grid__item medium-up--one-quarter">
+          {%-
+            render 'image-element',
+            img: metaobject.image,
+            classes: image_classes,
+            sizes: 25px,
+            sizeVariable: sizeVariable,
+            fallback: fallback,
+            widths: '160, 200, 280, 360, 540, 720, 900'
+          -%}
+        </div>
+      {% endif %}
+      {% endcomment %}
+      
+      {% if metaobject.system.type == 'product_data' %}
+        {%- liquid
+          assign display_class = ''
+          unless motor_class == metaobject.name
+            assign display_class = 'hide'
+          endunless
+   
+          case metaobject.name
+            when 'Motor 1'
+              assign motor_id = 'M1'
+            when 'Motor 2'
+              assign motor_id = 'M2'
+            when 'Motor 4'
+              assign motor_id = 'M4'
+            when 'Motor 1DAB'
+              assign motor_id = 'M1DAB'
+            when 'Motor 6'
+              assign motor_id = 'M6'
+          endcase
+        -%}
+
+        {% for logo in metaobject.logos.value %}
+          <div class="grid__item {{ logo_grid }} {{ display_class }}" data-motor-id="{{ metaobject.name }}">
+            {%-
+              render 'image-element',
+              img: logo.image,
+              classes: image_classes,
+              sizes: 25px,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              widths: '160, 200, 280, 360, 540, 720, 900'
+            -%}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>

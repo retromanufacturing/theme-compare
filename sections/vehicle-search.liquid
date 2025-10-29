@@ -1,0 +1,338 @@
+{%- liquid
+  assign grid_layout = 'grid__item'
+  assign grid_class = 'grid__item-custom'
+  assign id = section.id
+-%}
+
+<vehicle-search-selector>
+  <div class="js-ymm--container ymm-container small--hide">
+    <div class="page-width">
+      <div class="ymm-searchbox grid">
+        <span class="ymm-text {{ grid_class }}">
+          <span class="ymm-title">
+            <center>{{ section.settings.ymm_title }}</center>
+          </span>
+        </span>
+        <span class="ymm-fitments {{ grid_class }}">
+          {%- render 'vehicle-search', grid_layout: grid_layout, id: id -%}
+        </span>
+        <span class="ymm-buttons small--hide {{ grid_class }}">
+          <center>
+            <button class="js-ymm--search btn ymm-button ymm--search" data-search-id="{{ id }}" disabled="disabled">
+              Search
+            </button>
+            <button class="js-ymm--reset btn ymm-button ymm--reset" data-reset-id="{{ id }}">Reset</button>
+          </center>
+        </span>
+      </div>
+      <div class="ymm-disclaimer">
+        <a href="{{ section.settings.not_listed_link }}" class="ymm-missing">{{ section.settings.not_listed }}</a>
+      </div>
+    </div>
+  </div>
+</vehicle-search-selector>
+
+{%- style -%}
+      .ymm_current-fitment {
+       display: block;
+       background-color: #EAF8ED;
+       border: 1px solid #54C63A;
+       padding: 10px;
+       border-radius: 8px;
+       font-size: 14px;
+       font-weight: 700;
+       width: 100%;
+       text-align: center
+  }
+   .ymm-container {
+       background-image: url({{ section.settings.image | image_url }});
+       background-position: center;
+       background-color: {{ section.settings.background_color}};
+       padding-bottom: .5em;
+       border-bottom: white;
+       border: 2px;
+       border-bottom-style: inset;
+  }
+   .ymm-title {
+       color: {{ section.settings.title_color }};
+       clear: both;
+       white-space: nowrap;
+       text-align: center;
+       font-weight: 700;
+       font-size: 1.5em;
+  }
+   .ymm-searchbox {
+       padding-top: 30px;
+       margin-bottom: .5em;
+  }
+   .ymm-filter {
+       margin-right: 11px;
+       color: black;
+       width: 100%;
+       font-size: 15px;
+       padding: 10px 25px 10px 8px;
+       font-weight: 500;
+       min-height: 42px;
+       border: 2px solid #810F12;
+       border-radius: 2px;
+       background-color: white;
+       opacity: 90%;
+       height: auto;
+       line-height: normal;
+       cursor: pointer;
+  }
+   .ymm-buttons .btn {
+       padding:11px 28px;
+       letter-spacing:0;
+       font-size:15px;
+       font-weight:600;
+       margin-right:10px;
+       color:#ffffff;
+       border:solid 1px #000000;
+       border-radius:2px;
+       height:auto;
+       width:auto;
+       line-height: normal;
+       cursor: pointer;
+  }
+   .ymm-buttons .btn[disabled] {
+       border:1px solid #cccccc;
+       opacity:0.4;
+       cursor: not-allowed;
+       background-color:#000;
+  }
+   .ymm-buttons .ymm--search {
+       color: #ffffff;
+  }
+   .ymm-buttons .ymm--search:hover {
+       opacity:0.85;
+  }
+   .ymm-buttons .ymm--reset {
+       background-color:#dddddd;
+       color:#3d4246;
+       border-color:#dddddd;
+       margin-right:0;
+  }
+   .ymm-buttons .ymm--reset:hover {
+       color:#ffffff;
+       background-color:#efefef;
+       border-color:#dddddd;
+  }
+   .ymm-buttons_selected #ymm_change {
+       background-color:white;
+       color:#810f12;
+       font-size: 12px;
+       padding-right:.5rem;
+       padding-left:.5re;
+       padding-top: 0.25rem;
+       padding-bottom: 0.25rem;
+  }
+   .ymm-missing {
+       color: {{ section.settings.link_color }};
+       font-weight: bolder;
+       text-transform: uppercase;
+       border: 1px solid;
+       border-color: #white;
+       padding: 2px 20px 2px 20px;
+       border-radius: 6px;
+       background-color: #000;
+       opacity: 80%;
+  }
+   .ymm-missing:hover {
+      color: {{ section.settings.link_hover_color }};
+       opacity:90%;
+  }
+   .ymm-label {
+       width: 33%;
+  }
+   .ymm-text {
+       width: 20%;
+       padding-right: 2em;
+       text-align: center;
+       margin-top: .5em;
+  }
+   .ymm-fitments {
+       width: 60%;
+  }
+   .ymm-buttons {
+       width: 20%;
+  }
+   .ymm-button {
+       width: 50%;
+  }
+   #ymm_current-vehicle {
+       color: white;
+  }
+
+  .ymm-disclaimer {
+    text-align: center;
+  }
+  /*------------ Page Width Max 1450px ------------*/
+   @media only screen and (max-width:1450px){
+       .ymm-searchbox {
+           padding-top: 10px !important;
+      }
+       .ymm-text {
+           width: 100%;
+           margin-bottom: .5em;
+           margin-top: 2em;
+      }
+       .ymm-fitments {
+           width: 75%;
+      }
+       .ymm-buttons {
+           width: 25%;
+      }
+  }
+   @media only screen and (max-width:999px){
+       .ymm-label {
+           width: 100%;
+      }
+       .ymm-fitments {
+           width: 100%;
+      }
+       .ymm-buttons {
+           width: 100%;
+           margin-top: 1em;
+      }
+       .ymm-filter {
+           width: 100%;
+           font-size: 12px;
+      }
+  }
+   @media only screen and (max-width:769px){
+       .ymm-container {
+           background-image: none !important;
+           background-color: #bababa;
+      }
+       .ymm-searchbox {
+           padding-top: 0px !important;
+           padding-left: 15px;
+      }
+       .ymm-label {
+           width: 100%;
+           padding: 15px 5px 0;
+      }
+       .ymm-fitments {
+           width: 100%;
+      }
+       .ymm-buttons {
+           width: 100%;
+           margin-top: 1em;
+      }
+       .ymm-filter {
+           width: 100%;
+           font-size: 12px;
+      }
+       .ymm-title {
+           font-size: 16px
+      }
+       .ymm-title_selected {
+           background-color:white;
+           color:#810f12;
+      }
+       .ymm-text {
+           margin-bottom: 0px;
+           margin-top: 1em;
+      }
+       .ymm_selected-icon {
+           margin-top: .25rem;
+           width: 12.667%
+      }
+       .ymm_selected-arrow {
+           margin-left: 2.5rem;
+      }
+       .ymm-searchbox_selected {
+           padding-top: .75rem;
+           padding-bottom: .25rem;
+      }
+       .ymm-fitments_selected {
+           margin-top: 2px;
+           font-weight: 700
+      }
+       .ymm_selected-title {
+           font-size: 12px;
+           color: white;
+      }
+       .ymm-button_selected {
+           text-transform: uppercase;
+           margin-top: .5rem;
+           color: white
+      }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Vehicle Search",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ymm_title",
+      "label": "YMM Title",
+      "default": "FIND YOUR VEHICLE"
+    },
+    {
+      "type": "text",
+      "id": "ymm_selected_title",
+      "label": "YMM Title (Selected)",
+      "default": "YOUR VEHICLE"
+    },
+    {
+      "type": "text",
+      "id": "ymm_change",
+      "label": "Change Vehicle Text",
+      "default": "Change Vehicle"
+    },
+    {
+      "type": "text",
+      "id": "not_listed",
+      "label": "Vehicle not available"
+    },
+    {
+      "type": "url",
+      "id": "not_listed_link",
+      "label": "Vehicle not available link"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "URL Color",
+      "default": "#810F12"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "URL Hover Color",
+      "default": "#000"
+    },
+    {
+       "type": "image_picker",
+       "id": "image",
+       "label": "Background image"
+    }
+  ]
+}
+{% endschema %}

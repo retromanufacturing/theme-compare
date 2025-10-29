@@ -1,0 +1,23 @@
+{%- comment -%}
+  Renders what cllection data to display on page load
+
+  Will eventually use for pulling multiple collection variables
+
+  Usage:
+  {% liquid
+    capture collection_data
+      render 'data-collections'
+    endcapture
+
+  %}
+{%- endcomment -%}
+
+{%- liquid
+  capture collection_videos
+    for collection in product.collections
+      echo collection.id
+    endfor
+  endcapture
+
+  echo collection_videos 
+-%}

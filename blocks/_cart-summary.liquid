@@ -1,0 +1,152 @@
+{%- liquid
+  assign free_shipping_fulfilled = false
+
+  if cart.total_price >= localization.market.metafields.cart.free_shipping_amount.value
+    assign free_shipping_fulfilled = true
+  endif
+-%}
+
+{% if cart_notes_enable %}
+  <div class="cart__item-row">
+    {%- render 'cart-note' -%}
+  </div>
+{% endif %}
+
+<div class="cart__item-sub cart__item-row cart__item--subtotal">
+  <div>
+    {% render 't_with_fallback', key: 'labels.subtotal', fallback: 'Subtotal' %}
+  </div>
+  <div data-subtotal id="cart__subtotal" data-amount="{{ cart.original_total_price  }}">
+    {%- render 'price', price: cart.original_total_price -%}
+    {% comment %}{%- render 'price', price: cart.total_price -%}{% endcomment %}
+  </div>
+</div>
+
+<div data-discounts>
+  {% if cart.cart_level_discount_applications != blank %}
+    <div class="cart__discounts text-right">
+      <div>
+        {% for cart_discount in cart.cart_level_discount_applications %}
+          {%- assign savings = cart_discount.total_allocated_amount | money -%}
+          <div class="cart__discount">
+            {% assign info_you_save_amount = 'info.you_save_amount' | t: saved_amount: savings %}
+            {%- capture fallback_info_you_save_amount -%}
+                          You save {{ savings }}
+                        {%- endcapture -%}
+            {% render 't_with_fallback', t: info_you_save_amount, fallback: fallback_info_you_save_amount %}
+            ({{ cart_discount.title }})
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+<div class="cart__item-sub cart__item-row cart__item--detail">
+  <div>
+    {% render 't_with_fallback', key: 'labels.tax', fallback: 'Tax' %}
+  </div>
+  <div>
+    {% render 't_with_fallback', key: 'info.calculated_at_checkout', fallback: 'Calculated at checkout' %}
+  </div>
+</div>
+
+<div class="cart__item-sub cart__item-row cart__item--detail">
+  <div>
+    Estimated Shipping
+    <span id="cart__recalculate-shipping" class="hide">(Recalculate)</span>
+  </div>
+  <div class="cart__shipping-total">
+    <span id="cart__estimated-shipping" data-amount></span>
+    <span id="cart__calculate-shipping">
+      Calculate shipping
+    </span>
+  </div>
+</div>
+
+<div class="shipping-calculator hide">
+  {% render 'shipping-calculator' %}
+</div>
+
+<div class="cart__item-sub cart__item-row cart__item--subtotal">           
+  <div>
+    Estimated Total
+  </div>           
+  <div id="cart__estimated-total">{%- render 'price', price: cart.total_price -%}</div>       
+</div>
+
+{% if cart_terms_conditions_enable %}
+  <div class="cart__item-row cart__terms">
+    <input type="checkbox" id="CartTerms" class="cart__terms-checkbox">
+    <label for="CartTerms" class="text-label">
+      <small>
+        {% if cart_terms_conditions_page != blank %}
+          {% assign actions_terms_i_agree_html = 'actions.terms_i_agree_html'
+            | t: url: cart_terms_conditions_page.url
+          %}
+          {%- capture fallback_actions_terms_i_agree_html -%}
+                        I agree with the <a href='{{ cart_terms_conditions_page.url }}' target='_blank'>terms and conditions</a>
+                      {%- endcapture -%}
+          {% render 't_with_fallback', t: actions_terms_i_agree_html, fallback: fallback_actions_terms_i_agree_html %}
+        {% else %}
+          {% assign actions_terms_i_agree = 'actions.terms_i_agree' | t %}
+          {% render 't_with_fallback', t: actions_terms_i_agree, fallback: 'I agree with the terms and conditions' %}
+        {% endif %}
+      </small>
+    </label>
+  </div>
+{% endif %}
+
+<div class="cart__item-row cart__checkout-wrapper">
+  <button
+    type="submit"
+    name="checkout"
+    data-terms-required="{{ cart_terms_conditions_enable }}"
+    class="btn cart__checkout"
+  >
+    {% render 't_with_fallback', key: 'actions.checkout', fallback: 'Check out' %}
+  </button>
+
+  {% if additional_checkout_buttons and cart_additional_buttons %}
+    <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+  {% endif %}
+
+  <a href="{{ routes.all_products_collection_url }}" class="btn btn--secondary cart__continue">
+    {% render 't_with_fallback', key: 'actions.continue_shopping', fallback: 'Continue shopping' %}
+  </a>
+</div>
+
+<div class="cart__terms-additional-info">
+  {{ block_content }}
+</div>
+
+<div class="cart__item-row text-center">
+  <small>
+    {%- if cart.taxes_included -%}
+      {% assign info_shipping_at_checkout_taxes_included = 'info.shipping_at_checkout_taxes_included' | t %}
+      {% render 't_with_fallback',
+        t: info_shipping_at_checkout_taxes_included,
+        fallback: 'Taxes included. Shipping and discount codes calculated at checkout.'
+      %}
+    {%- else -%}
+      {% assign info_shipping_at_checkout = 'info.shipping_at_checkout' | t -%}
+      {%- render 't_with_fallback',
+        t: info_shipping_at_checkout,
+        fallback: 'Shipping, taxes, and discount codes calculated at checkout.'
+      %}
+    {%- endif -%}
+  </small>
+</div>
+
+{% schema %}
+  {
+    "name": "Cart Summary",
+    "settings": [],
+    "presets": [
+  {
+    "name": "Cart Summary",
+    "category": "Cart"
+  }
+]
+  }
+{% endschema %}

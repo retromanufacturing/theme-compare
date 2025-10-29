@@ -1,0 +1,40 @@
+{%- liquid
+  assign external_video_url = 'https://www.youtube.com/watch?v='
+  assign collection_media = shop.metaobjects.product_videos.values
+
+  capture collection_id
+    render 'data-collections'
+  endcapture
+
+  capture collection_videos
+    for media in collection_media
+      for collection in media.collections.value
+        assign external_video_id = media.link | remove: external_video_url
+        if collection_id contains collection.id
+          render 'video-media', external_video: media.link, external_video_id: external_video_id
+        endif
+      endfor
+    endfor
+  endcapture
+
+  capture videos
+    for media in product.media
+      if media.media_type == 'video'
+        render 'video-media', video: media
+      elsif media.media_type == 'external_video'
+        render 'video-media', video: media
+      endif
+    endfor
+    echo collection_videos
+  endcapture
+-%}
+
+{% if videos != blank %}
+  <div class="new-grid" data-view="3-1">
+    {% for video in videos %}
+      <div class="grid-item">
+        <span class="grid-item__content"> {{ video }}</span>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

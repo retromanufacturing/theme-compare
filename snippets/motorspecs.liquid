@@ -1,0 +1,71 @@
+{% style %}
+
+  .chart__radio-specs {
+    td,  tr {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #ececec;
+  	text-align: center;
+    }
+      }
+{% endstyle %}
+
+{%- liquid
+  assign radio_specifications = shop.metaobjects.radio_specifications.values
+  assign radio_variant_list = 'custom_data.radios.motor_variant_options' | t | downcase
+
+  assign header_list = 'FM, AM (EU and US Tuning Capable), General' | split: ','
+  assign header_list_dab = 'FM, AM (EU Tuning Capable), General' | split: ','
+
+  assign fm = 'Tuning Range (USA, EUR, AUS, JAP, RUS tuning capable) with RDS; Antenna Terminal; Usable Sensitivity; Selectivity; Signal to Noise Ratio; Harmonic Distortion @ 1 kHz; Separation; Frequency Response' | split: ';'
+  assign am = 'Tuning Range (USA, EUR, AUS, JAP, RUS tuning capable); Antenna Terminal' | split: ';'
+
+
+  assign specifications_list = fm | concat: am
+-%}
+
+{% comment %}
+
+{{ metaobjects.radio_specifications.values }}
+
+{{ metaobjects.radio_specifications }}
+
+{{ metaobjects.radio_specifications.key }}
+
+{{ metaobjects.radio_specifications.namespace }}
+<table class="chart__radio-specs">
+  {% for option in product.options_with_values %}
+    {% assign name = option.name | downcase %}
+    {% if radio_variant_list contains name %}
+      <th colspan="4">FM</th>
+      {% for component in fm %}
+        <tr>
+          <td>
+            {{ component }}
+            {{ forloop.index }}
+          </td>
+          {% for value in option.values %}
+            <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+      <th colspan="4">AM (EU and US Tuning Capable)</th>
+      {% for component in am %}
+        <tr>
+          <td>
+            {{ component }}
+            {{ forloop.index }}
+          </td>
+          {% for value in option.values %}
+            <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</table>
+  For each instance (motor), try to map the value index number to the array index number. Example M2 index number 2 = FM index number 2, etc
+{% endcomment %}

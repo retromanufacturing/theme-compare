@@ -18,6 +18,8 @@
           render 'block-quantity-selector', block: block
         when 'inventory_status'
           render 'product-inventory', block: block
+        when 'features'
+          render 'product-features', block: block
         when 'complementary_products'
           render 'product-complementary', block: block
         when 'sales_point'
@@ -324,6 +326,14 @@
           "info": "t:info.learn_inventory_transfers",
           "default": true
         }
+      ]
+    },
+    {
+      "type": "features",
+      "name": "Product features",
+      "limit": 1,
+      "settings": [
+        
       ]
     },
     {

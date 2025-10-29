@@ -1,0 +1,198 @@
+{% style %}
+  td.block--{{ block.id }}-1 {
+    color: {{ block.settings.first_cell_text_color }};
+    background-color: {{ block.settings.first_cell_background_color }};
+  }
+  td.block--{{ block.id }}-2 {
+    color: {{ block.settings.second_cell_text_color }};
+    background-color: {{ block.settings.second_cell_background_color }};
+  }
+  td.block--{{ block.id }}-3 {
+    color: {{ block.settings.third_cell_text_color }};
+    background-color: {{ block.settings.third_cell_background_color }};
+  }
+  td.block--{{ block.id }}-4 {
+    color: {{ block.settings.fourth_cell_text_color }};
+    background-color: {{ block.settings.fourth_cell_background_color }};
+  }
+{% endstyle %}
+
+{%- liquid
+  assign limit = block.settings.cell_count
+  assign range = (1..limit)
+-%}
+
+<tr {{ block.shopify_attributes }}>
+  {% for i in range %}
+    {%- liquid
+      case i
+        when 1
+          assign cell_text = block.settings.first_cell_text
+        when 2
+          assign cell_text = block.settings.second_cell_text
+        when 3
+          assign cell_text = block.settings.third_cell_text
+        when 4
+          assign cell_text = block.settings.fourth_cell_text
+      endcase
+    -%}
+    <td class="text-{{ block.settings.alignment }} block--{{ block.id }}-{{ i }}">
+      {% if i > 1 %}
+        {% if block.settings.duplicate_cell_text %}
+          {{ block.settings.second_cell_text }}
+        {% else %}
+          {{ cell_text }}
+        {% endif %}
+      {% else %}
+        {{ cell_text }}
+      {% endif %}
+    </td>
+  {% endfor %}
+</tr>
+
+{% schema %}
+{
+  "name": "Table Row",
+   "settings": [ 
+    {
+      "type": "select",
+      "id": "cell_count",
+      "label": "Number of Cells",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+    ],
+      "default": "4"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+    ],
+      "default": "left"
+    }, 
+    {
+      "type": "checkbox",
+      "id": "duplicate_cell_text",
+      "label": "Duplicate Cell Text",
+      "default": false,
+      "info": "Check if all cells (except #1) contain the same text",
+      "visible_if": "{{ block.settings.cell_count >= 3}}"
+    },     
+    {
+      "type": "header",
+      "content": "Text"
+    }, 
+    {
+      "type": "richtext",
+      "id": "first_cell_text",
+      "label": "1st Cell Text"
+    },
+    {
+      "type": "richtext",
+      "id": "second_cell_text",
+      "label": "2nd Cell Text"
+    },
+    {
+      "type": "richtext",
+      "id": "third_cell_text",
+      "label": "3rd Cell Text",
+      "visible_if": "{{ block.settings.cell_count >= 3 and block.settings.duplicate_cell_text != true }}"
+    },
+    {
+      "type": "richtext",
+      "id": "fourth_cell_text",
+      "label": "4th Cell Text",
+      "visible_if": "{{ block.settings.cell_count >= 4 and block.settings.duplicate_cell_text != true }}"
+    },
+    {
+      "type": "header",
+      "content": "Text Colors"
+    },
+    {
+      "type": "color",
+      "id": "first_cell_text_color",
+      "label": "1st Cell",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "second_cell_text_color",
+      "label": "2nd Cell",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "third_cell_text_color",
+      "label": "3rd Cell",
+      "default": "#000000",
+      "visible_if": "{{ block.settings.cell_count >= 3 }}"
+    },
+    {
+      "type": "color",
+      "id": "fourth_cell_text_color",
+      "label": "4th Cell",
+      "default": "#000000",
+      "visible_if": "{{ block.settings.cell_count >= 4 }}"
+    },
+    {
+      "type": "header",
+      "content": "Background Colors"
+    },
+    {
+      "type": "color",
+      "id": "first_cell_background_color",
+      "label": "1st Cell",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "second_cell_background_color",
+      "label": "2nd Cell",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "third_cell_background_color",
+      "label": "3rd Cell",
+      "default": "#FFFFFF",
+      "visible_if": "{{ block.settings.cell_count >= 3 }}"
+    },
+    {
+      "type": "color",
+      "id": "fourth_cell_background_color",
+      "label": "4th Cell",
+      "default": "#FFFFFF",
+      "visible_if": "{{ block.settings.cell_count >= 4 }}"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Table Row"
+    }
+  ]
+}
+{% endschema %}

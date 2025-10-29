@@ -25,7 +25,12 @@
   assign collection_grid_image_fill = collection_grid_image_fill | default: settings.collection_grid_image_fill, allow_false: true | default: true, allow_false: true
   assign collection_grid_color = collection_grid_color | default: settings.collection_grid_color | default: 'grey'
 
-  assign collection_link = collection.url
+  if block.settings.alternate_link
+    assign collection_link = block.settings.alternate_link
+  else
+    assign collection_link = collection.url
+  endif
+ 
   if block.settings.title != blank
     assign title_output = block.settings.title
   else
@@ -78,7 +83,9 @@
         </div>
       {%- endif -%}
     </div>
-
-    <span class="collection-item__title">{{ title_output }}</span>
+   
+    {% if show_title %}  
+      <span class="collection-item__title">{{ title_output }}</span>      
+    {% endif %}
   </a>
 </div>
