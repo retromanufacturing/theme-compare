@@ -1,0 +1,175 @@
+{% liquid
+  capture block_content
+    content_for 'blocks'
+  endcapture
+%}
+
+<div
+  class="block block-group block-group--{{ block.id }}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.link != blank %}
+    <a
+      href="{{ block.settings.link }}"
+      class="block-group--link"
+      {% if block.settings.open_in_new_tab %}
+        target="_blank" rel="noopener"
+      {% endif %}
+    >
+      {{ block_content }}
+    </a>
+  {% else %}
+     {{ block_content }}
+  {% endif %}
+</div>
+
+{% style %}
+  .block-group--{{ block.id }} {
+    padding-top: {{ block.settings.padding-block-start }}px;
+    padding-bottom: {{ block.settings.padding-block-end }}px;
+    padding-left: {{ block.settings.padding-inline-start }}px;
+    padding-right: {{ block.settings.padding-inline-end }}px;
+    flex-direction: {{ block.settings.direction }};
+
+    {% if block.settings.direction == 'row' %}
+      justify-content: {{ block.settings.justify_content }};
+    {% else %}
+      align-items: {{ block.settings.justify_content }};
+    {% endif %}
+  }
+
+    @media screen and (min-width: 750px) {
+      .block-group--{{ block.id }} {
+        width: {{ block.settings.width }}%;
+      }
+
+       .layout--row > .block-group--{{ block.id }}  {
+      width: calc({{ block.settings.width }}% - var(--layout-gap));
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Group",
+  "blocks": [{ "type": "@theme"}, {"type": "@app"}],
+  "settings": [
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "Open link in new tab",
+      "default": false,
+      "visible_if": "{{ block.settings.link != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "t:settings.layout"
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Content direction",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "justify_content",
+      "label": "Content position",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Start"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "End"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Width",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "paragraph",
+      "content": "Width is automatically optimized for mobile."
+    },
+    {
+      "type": "header",
+      "content": "t:settings.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Group",
+      "category": "Layout"
+    }
+  ]
+}
+{% endschema %}
