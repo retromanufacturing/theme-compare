@@ -1,4 +1,3 @@
-{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
 {%- comment -%}
   Renders the footer menu block.
 
@@ -7,7 +6,7 @@
   - menu {string} - The menu handle
   - title {string} - The title of the block
   - enable_account_link {boolean} - Whether or not to show the account link
-  - blocks_heading_size - The heading size for the block
+  - blocks_heading_size {'sm'|'md'|'lg'|'xl'} - The heading size for the block
 
   Usage:
   {% render 'footer-menu', block: block %}
@@ -17,10 +16,10 @@
   assign menu = menu | default: block.settings.menu
   assign title = title | default: block.settings.title
   assign enable_account_link = enable_account_link | default: block.settings.enable_account_link, allow_false: true | default: true, allow_false: true
-  assign blocks_heading_size = blocks_heading_size | default: block.settings.heading_size | default: 'h4'
+  assign blocks_heading_size = blocks_heading_size | default: block.settings.heading_size | default: 'sm'
 -%}
 
-<h2 class="footer__title {{ blocks_heading_size }}">
+<h2 class="footer__title heading-{{ blocks_heading_size }}">
   {{ title | default: linklists[menu].title }}
 </h2>
 
@@ -35,7 +34,7 @@
     <li>
       <a href="{{ routes.account_url }}">
         {% assign labels_my_account = 'labels.my_account' | t %}
-        {% render 't_with_fallback', t: labels_my_account, fallback: 'My account' -%}
+        {% render 'utility.translate', t: labels_my_account, fallback: 'My account' -%}
       </a>
     </li>
   {%- endif -%}

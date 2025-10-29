@@ -4,5 +4,10 @@
 
 .footer__title {
   font-weight: bold;
-  font-size: var(--type-base-size);
+  font-size: var(--body-font-size) !important;
+}
+
+.overlay {
+  --element-text-color: rgb(255,255,255);
+  --color-secondary: rgb(0,0,0, 0.6);
 }

@@ -1,0 +1,16 @@
+{%- comment -%}
+  Renders a toggle menu button
+
+  Accepts:
+  - menu_button {string} - The menu button
+
+  Usage:
+  {% render 'header.toggle-menu', menu_button: menu_button %}
+{%- endcomment -%}
+
+<toggle-menu>
+  {{- menu_button -}}
+</toggle-menu>
+<script type="module">
+  import 'header.toggle-menu'
+</script>

@@ -1,0 +1,74 @@
+{% comment %}
+  Renders a header drawer
+
+  Accepts:
+  - class {string} - Additional classes to apply to the header drawer
+  - open {string} - Event name to open the drawer
+  - close {string} - Event name to close the drawer
+
+  Usage:
+  {% render 'header.drawer', slot: slot, open: 'minicart:open', 'minicart:close' %}
+{% endcomment %}
+
+{% stylesheet %}
+	.site-header__drawer {
+	  --color-primary: var(--root-color-primary);
+	  --color-secondary: var(--root-color-secondary);
+	
+	  display: none;
+	  position: absolute;
+	  top: 1px;
+	  padding: 20px;
+	  width: 100%;
+	  max-height: 75vh;
+	  max-height: var(--max-drawer-height);
+	  overflow-y: auto;
+	  background-color: var(--color-secondary);
+	  color: var(--color-primary);
+	  box-shadow: var(--drawer-box-shadow);
+	  z-index: var(--z-index-header-drawers);
+	  transition: all var(--slide-curve);
+	  transform: translateY(-100%);
+	
+	  @media only screen and (max-width: 768px) {
+	    top: 0;
+	    z-index: var(--z-index-header-drawers-mobile);
+	  }
+	
+	  &.is-active {
+	    display: block;
+	    transform: translateY(0);
+	  }
+	
+	  .header-wrapper--compressed & {
+	    top: 0;
+	  }
+	}
+	
+	.site-header__drawer-animate {
+	  transform: translateY(-20px);
+	  opacity: 0;
+	
+	  .is-active & {
+	    opacity: 1;
+	    transform: translateY(0px);
+	    transition:
+	      opacity 0.3s ease 0.15s,
+	      transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) 0.15s;
+	  }
+	}
+{% endstylesheet %}
+
+{%- liquid
+  assign class = class | default: blank
+-%}
+
+<header-drawer class="site-header__drawer {{ class }}" open="{{ open }}" close="{{ close }}" defer-hydration>
+  <div class="site-header__drawer-animate">
+    {{- slot -}}
+  </div>
+</header-drawer>
+
+<script type="module">
+  import 'header.drawer'
+</script>

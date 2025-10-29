@@ -1,0 +1,20 @@
+{% comment %}
+  Template used to generated recently viewed product section
+{% endcomment %}
+{%- liquid
+  capture grid_view
+    render 'utility.grid-view-type', products_per_row: settings.recently_viewed_products_per_row
+  endcapture
+-%}
+
+{%- if search.performed -%}
+  <div class="new-grid product-grid scrollable-grid--small" {{ grid_view }}>
+    {%- for item in search.results -%}
+      {%- if item.object_type == 'product' -%}
+        {%- liquid
+          render 'list.product-card', product: item, sizeVariable: settings.recently_viewed_products_per_row, fallback: '45vw', collection: collection
+        -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}

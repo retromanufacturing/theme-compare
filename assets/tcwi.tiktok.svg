@@ -3,7 +3,7 @@
   aria-hidden="true"
   focusable="false"
   role="presentation"
-  class="icon icon-tiktok"
+  class="element-icon element-icon-tiktok element-icon--line"
   viewbox="0 0 2859 3333"
   width="20"
   height="20"

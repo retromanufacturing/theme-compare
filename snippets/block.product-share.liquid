@@ -1,0 +1,18 @@
+{%- comment -%}
+  Renders the social sharing buttons for a product
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'block.product-share', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+-%}
+
+<div {{ block.shopify_attributes }}>
+  {%- render 'social.sharing', share_title: product.title, share_permalink: product.url, share_image: product -%}
+</div>

@@ -1,0 +1,23 @@
+{%- comment -%}
+  Renders the close cart button
+
+  Accepts:
+  - close_cart_button {string} - The close button
+  - cart_type {string} - The cart type
+
+  Usage:
+  {% render 'header.close-cart', close_cart_button: close_cart_button %}
+{%- endcomment -%}
+
+{%- liquid
+  assign cart_type = cart_type | default: settings.cart_type | default: 'page'
+-%}
+
+{%- if cart_type == 'dropdown' -%}
+  <close-cart>
+    {{- close_cart_button -}}
+  </close-cart>
+  <script type="module">
+    import 'header.close-cart'
+  </script>
+{%- endif -%}

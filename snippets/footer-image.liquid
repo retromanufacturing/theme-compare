@@ -1,4 +1,3 @@
-{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
 {%- comment -%}
   Renders the footer image block.
 
@@ -19,14 +18,14 @@
   {% endif %}
 >
   {% if block.settings.image != blank %}
-    {%- render 'image-element',
+    {%- render 'element.image',
       img: block.settings.image,
       sizeVariable: '210px',
       widths: '360, 540, 720, 1020',
       classes: 'footer__image'
     -%}
   {% else %}
-    {%- render 'placeholder-svg', name: 'image' -%}
+    {%- render 'element.placeholder', name: 'image' -%}
   {% endif %}
 </div>
 {% if block.settings.link != blank %}

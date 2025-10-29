@@ -1,0 +1,23 @@
+{%- comment -%}
+  Renders a quick add.
+
+  Accepts:
+  - content {string} - The content of the quick shop
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {%- render 'overlay.quick-add', content: 'This is some content' -%}
+{%- endcomment -%}
+
+{%- liquid
+  assign content = content | default: blank
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+<quick-add defer-hydration>
+  {{ content }}
+</quick-add>
+
+<script type="module">
+  import 'overlay.quick-add'
+</script>

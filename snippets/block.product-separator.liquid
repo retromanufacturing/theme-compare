@@ -1,0 +1,11 @@
+{%- comment -%}
+  Renders a separator block
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {% render 'block.product-separator', block: block %}
+{%- endcomment -%}
+
+<div {{ block.shopify_attributes }}><hr></div>

@@ -1,0 +1,19 @@
+{%- comment -%}
+  Renders a page section with its title and content.
+
+  Accepts:
+  - page {page} - The page object
+
+  Usage:
+  {% render 'section.main-page' %}
+{%- endcomment -%}
+
+<div class="page-width page-width--narrow page-content">
+  <header class="section-header">
+    <h1 class="section-header__title">
+      {{ page.title | escape }}
+    </h1>
+  </header>
+
+  {%- render 'element.text', text: page.content, variant: 'rte' -%}
+</div>

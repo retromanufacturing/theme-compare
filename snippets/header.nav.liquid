@@ -1,0 +1,32 @@
+{%- comment -%}
+  Renders the header navigation
+
+  Accepts:
+  - slot {string} - The slot content
+  - wrapper_class {string} - The header wrapper class
+  - overlay_header {boolean} - Whether the header has an overlay
+
+  Usage:
+  {% render 'header.nav', slot: slot %}
+{%- endcomment -%}
+
+{% stylesheet %}
+	header-nav {
+	  display: block;
+	}
+{% endstylesheet %}
+
+{%- liquid
+  assign overlay_header = overlay_header | default: false, allow_false: true
+-%}
+
+<header-nav
+  id="HeaderWrapper"
+  class="header-wrapper{% if overlay_header %} header-wrapper--overlay {% endif %}{% if wrapper_class %} {{ wrapper_class }}{%- endif %}"
+  defer-hydration
+>
+  {{- slot -}}
+</header-nav>
+<script type="module">
+  import 'header.nav'
+</script>

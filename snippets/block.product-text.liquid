@@ -1,0 +1,13 @@
+{%- comment -%}
+  Renders a block of text
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {% render 'block.product-text', block: block %}
+{%- endcomment -%}
+
+<div {{ block.shopify_attributes }}>
+  {{ block.settings.text }}
+</div>

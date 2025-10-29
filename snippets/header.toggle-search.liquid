@@ -1,0 +1,25 @@
+{%- comment -%}
+  Renders a toggle search button
+
+  Accepts:
+  - predictive_search_enabled {boolean} - Whether predictive search is enabled
+  - search_link {string} - The search link
+
+  Usage:
+  {% render 'header.toggle-search', search_link: search_link %}
+{%- endcomment -%}
+
+{%- liquid
+  assign predictive_search_enabled = predictive_search_enabled | default: settings.predictive_search_enabled, allow_false: true
+-%}
+
+{%- if predictive_search_enabled -%}
+  <toggle-search>
+    {{- search_link -}}
+  </toggle-search>
+  <script type="module">
+    import 'header.toggle-search'
+  </script>
+{%- else -%}
+  {{- search_link -}}
+{%- endif -%}

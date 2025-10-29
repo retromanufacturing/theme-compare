@@ -1,0 +1,21 @@
+{%- comment -%}
+  Toggle cart button
+
+  Accepts:
+  - cart_type {string} - The cart type
+  - cart_link {string} - The cart link
+
+  Usage:
+  {% render 'header.toggle-cart', cart_link: cart_link %}
+{%- endcomment -%}
+
+{%- liquid
+  assign cart_type = cart_type | default: settings.cart_type | default: 'page'
+-%}
+
+<toggle-cart cart-type="{{ cart_type }}">
+  {{- cart_link -}}
+</toggle-cart>
+<script type="module">
+  import 'header.toggle-cart'
+</script>

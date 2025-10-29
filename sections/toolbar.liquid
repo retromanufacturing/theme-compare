@@ -1,10 +1,16 @@
-{%- render 'section-toolbar' -%}
+{%- render 'section.toolbar' -%}
 
 {% schema %}
 {
 "name": "t:labels.announcement_bar",
 "class": "toolbar-section",
 "settings": [
+  {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color Scheme",
+    "default": "4"
+  },
   {
     "type": "checkbox",
     "id": "announcement_center",

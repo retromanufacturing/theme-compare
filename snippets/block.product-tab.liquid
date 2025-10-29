@@ -1,0 +1,28 @@
+{%- comment -%}
+  Renders a tab block
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+  - title {string} - Title of the tab
+  - tab_content {string} - Content of the tab
+  - page_content {string} - Content of the page
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign title = title | default: block.settings.title
+  assign tab_content = tab_content | default: block.settings.content
+  assign page_content = page_content | default: block.settings.page.content
+
+  capture accordion_content
+    echo tab_content
+    echo page_content
+  endcapture
+-%}
+
+{%- if title != blank and accordion_content != blank -%}
+  <div {{ block.shopify_attributes }}>
+    {%- render 'element.accordion', title: title, slot: accordion_content -%}
+  </div>
+{%- endif -%}

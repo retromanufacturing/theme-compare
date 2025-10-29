@@ -1,0 +1,13 @@
+{%- comment -%}
+  Renders a custom html block
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {% render 'block.product-custom', block: block %}
+{%- endcomment -%}
+
+<div {{ block.shopify_attributes }}>
+  {{ block.settings.code }}
+</div>
