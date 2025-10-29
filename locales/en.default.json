@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "actions": {
     "activate": "Activate account",
@@ -258,5 +267,16 @@
   },
   "trigger": {
     "color_swatch": "Color"
+  },
+  "settings": {
+    "background_color": "Background Color",
+    "bottom": "Bottom",
+    "left": "Left",
+    "layout": "Layout",
+    "right": "Right",
+    "padding": "Padding",
+    "styling": "Styling",
+    "text_color": "Text Color",
+    "top": "Top",
   }
 }
