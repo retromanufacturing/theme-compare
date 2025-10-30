@@ -74,7 +74,30 @@
             "color_description_links": "#810F12",
             "color_manuals": "#810F12"
           },
-          "blocks": {}
+          "blocks": {
+            "text_NXMFfB": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "Insert text here",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_NXMFfB"
+          ]
         },
         "group_mpGcyw": {
           "type": "group",
