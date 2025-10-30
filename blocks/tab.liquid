@@ -85,10 +85,17 @@
     {%- render 'element.accordion',
       id: tab_id,
       title: tab_title,
-      slot tab_content,
+      slot: tab_content,
       borders: true,
       open: block.settings.open
     -%}
+    {% comment %}
+      {%- render 'element.accordion',
+      id: tab_id,
+      borders: true,
+
+    -%}
+    {% endcomment %}
   </div>
 </div>
 
