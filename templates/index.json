@@ -65,7 +65,7 @@
           "type": "tab",
           "name": "Tab",
           "settings": {
-            "title": "Tab",
+            "title": "This is the tab title",
             "open": true,
             "tab_type": "default",
             "tab_title_color": "#000000",
