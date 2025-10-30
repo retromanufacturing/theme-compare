@@ -61,44 +61,6 @@
     "custom_section_yMxNyy": {
       "type": "custom-section",
       "blocks": {
-        "tab_afVnWY": {
-          "type": "tab",
-          "name": "Tab",
-          "settings": {
-            "title": "This is the tab title",
-            "open": true,
-            "tab_type": "default",
-            "tab_title_color": "#000000",
-            "tab_title_font_size": 16,
-            "tab_title_bold": false,
-            "color_description_links": "#810F12",
-            "color_manuals": "#810F12"
-          },
-          "blocks": {
-            "text_NXMFfB": {
-              "type": "text",
-              "name": "Text",
-              "settings": {
-                "text": "Insert text here",
-                "alignment": "left",
-                "font_preset": "span",
-                "font_size": "1rem",
-                "font_size_custom": 12,
-                "text_decoration": "",
-                "font_color": "#000000",
-                "background_color": "#ECECEC",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_NXMFfB"
-          ]
-        },
         "group_mpGcyw": {
           "type": "group",
           "name": "Group",
@@ -114,6 +76,44 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "tab_RNVFzD": {
+              "type": "tab",
+              "name": "Tab",
+              "settings": {
+                "title": "This is the tab title",
+                "open": true,
+                "tab_type": "default",
+                "tab_title_color": "#ba4444",
+                "tab_title_font_size": 16,
+                "tab_title_bold": false,
+                "color_description_links": "#810F12",
+                "color_manuals": "#810F12"
+              },
+              "blocks": {
+                "text_NXMFfB": {
+                  "type": "text",
+                  "name": "Text",
+                  "settings": {
+                    "text": "Insert text here",
+                    "alignment": "left",
+                    "font_preset": "span",
+                    "font_size": "1rem",
+                    "font_size_custom": 12,
+                    "text_decoration": "",
+                    "font_color": "#000000",
+                    "background_color": "#ECECEC",
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_NXMFfB"
+              ]
+            },
             "text_Xek73E": {
               "type": "text",
               "name": "Text",
@@ -135,12 +135,12 @@
             }
           },
           "block_order": [
+            "tab_RNVFzD",
             "text_Xek73E"
           ]
         }
       },
       "block_order": [
-        "tab_afVnWY",
         "group_mpGcyw"
       ],
       "name": "Custom Section",
