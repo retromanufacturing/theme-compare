@@ -58,111 +58,6 @@
         "autoplay_speed": 5
       }
     },
-    "custom_section_yMxNyy": {
-      "type": "custom-section",
-      "blocks": {
-        "group_mpGcyw": {
-          "type": "group",
-          "name": "Group",
-          "settings": {
-            "link": "",
-            "open_in_new_tab": false,
-            "direction": "row",
-            "justify_content": "flex-start",
-            "width": 100,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "tab_RNVFzD": {
-              "type": "tab",
-              "name": "Tab",
-              "settings": {
-                "title": "This is the tab title",
-                "open": true,
-                "tab_type": "default",
-                "tab_title_color": "#000000",
-                "tab_background_color": "#ffffff",
-                "tab_title_font_size": 8,
-                "tab_title_bold": false,
-                "color_description_links": "#810f12",
-                "color_manuals": "#810f12"
-              },
-              "blocks": {
-                "text_NXMFfB": {
-                  "type": "text",
-                  "name": "Text",
-                  "settings": {
-                    "text": "Insert text here",
-                    "alignment": "left",
-                    "font_preset": "span",
-                    "font_size": "1rem",
-                    "font_size_custom": 12,
-                    "text_decoration": "",
-                    "font_color": "#000000",
-                    "background_color": "#ececec",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_NXMFfB"
-              ]
-            },
-            "text_Xek73E": {
-              "type": "text",
-              "name": "Text",
-              "settings": {
-                "text": "This is test text",
-                "alignment": "left",
-                "font_preset": "span",
-                "font_size": "1rem",
-                "font_size_custom": 12,
-                "text_decoration": "",
-                "font_color": "#ba4444",
-                "background_color": "#ececec",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "tab_RNVFzD",
-            "text_Xek73E"
-          ]
-        }
-      },
-      "block_order": [
-        "group_mpGcyw"
-      ],
-      "name": "Custom Section",
-      "settings": {
-        "page_width": true
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
     "countdown": {
       "type": "countdown",
       "blocks": {
@@ -778,8 +673,6 @@
   },
   "order": [
     "slideshow",
-    "custom_section_yMxNyy",
-    "featured-collection",
     "countdown",
     "featured-collections",
     "hotspots",
