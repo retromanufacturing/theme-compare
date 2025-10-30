@@ -102,7 +102,7 @@
 {% style %}
  .block-tab--{{ block.id }} .element-accordion__toggle {
    color: {{ block.settings.tab_title_color}};
-   background-color: blue;
+   background-color: {{  block.settings.tab_background_color }};
    font-size: {{ block.settings.tab_title_font_size}}px;
    {% if block.settings.tab_title_bold %}
      font-weight: bold;
@@ -192,6 +192,12 @@
       "id": "tab_title_color",
       "label": "Title Color",
       "default": "#000000"    
+  },
+  {    
+      "type": "color",
+      "id": "tab_background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"    
   },
   {
       "type": "range",
