@@ -99,6 +99,12 @@
           "primary": "#ffffff",
           "secondary": "#810f12"
         }
+      },
+      "scheme-ecc335f6-2c4b-4474-94b8-e16369e8a1b2": {
+        "settings": {
+          "primary": "#fc3f3f",
+          "secondary": "#ffffff"
+        }
       }
     }
   },
