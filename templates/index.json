@@ -278,72 +278,28 @@
         "block-1": {
           "type": "logo_image",
           "settings": {
+            "image": "shopify://shop_images/RS-Brand.jpg",
             "link": ""
           }
         },
         "block-2": {
           "type": "logo_image",
           "settings": {
+            "image": "shopify://shop_images/RMT-Brand.jpg",
             "link": ""
           }
         },
         "block-3": {
           "type": "logo_image",
           "settings": {
+            "image": "shopify://shop_images/RP-Brand.jpg",
             "link": ""
           }
         },
         "block-4": {
           "type": "logo_image",
           "settings": {
-            "link": ""
-          }
-        },
-        "block-5": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-6": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-7": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-8": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-9": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-10": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-11": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-12": {
-          "type": "logo_image",
-          "settings": {
+            "image": "shopify://shop_images/RA-Brand.jpg",
             "link": ""
           }
         }
@@ -352,18 +308,15 @@
         "block-1",
         "block-2",
         "block-3",
-        "block-4",
-        "block-5",
-        "block-6",
-        "block-7",
-        "block-8",
-        "block-9",
-        "block-10",
-        "block-11",
-        "block-12"
+        "block-4"
+      ],
+      "custom_css": [
+        "{margin-top: 0px; margin-bottom: 0px;}",
+        "div div {margin: 0 auto;}",
+        ".grid-product:after {box-shadow: none;}"
       ],
       "settings": {
-        "title": "Shop by brand",
+        "title": "Our Brands",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
