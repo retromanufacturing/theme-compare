@@ -9,54 +9,55 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
+    "slideshow_split_kA9YHU": {
+      "type": "slideshow-split",
       "blocks": {
-        "slide-1": {
-          "type": "hero",
+        "slide_gRxNib": {
+          "type": "slide",
           "settings": {
             "top_subheading": "NEW RELEASE",
-            "title": "<p>Power Your Classic Car with Modern Audio</p>",
+            "title": "Power Your Classic Car with Modern Audio",
             "title_size": 60,
             "subheading": "Enhance your classic car with the RetroSound 6-12V Converter, providing 10A output for 12V electronics without rewiring.",
-            "link": "shopify://products/retrosound-6-12-volt-converter",
+            "link": "shopify://blogs/news/reliable-6v-to-12v-dc-converter",
             "link_text": "Learn More",
-            "link_2": "",
-            "link_text_2": "",
-            "button_color_scheme": "4",
-            "text_align": "vertical-bottom horizontal-left",
+            "link_2": "shopify://products/retrosound-6-12-volt-converter",
+            "link_text_2": "Shop Now",
+            "text_position": "right",
             "image": "shopify://shop_images/RM-landscape-banner-RS_CONVERTER_631aab66-27a0-4cd7-be11-788346d27d57.jpg",
-            "overlay_opacity": 0
+            "indent_image": false,
+            "color_scheme": "2"
           }
         },
-        "slide-2": {
-          "type": "hero",
+        "slide_xDmBKa": {
+          "type": "slide",
           "settings": {
             "top_subheading": "",
-            "title": "<p>Make an Impact</p>",
-            "title_size": 70,
-            "subheading": "Supports multiple text alignments and mobile-specific images.",
+            "title": "Highlight products",
+            "title_size": 60,
+            "subheading": "Repurpose your product photography with our \"Indented\" image option",
             "link": "",
             "link_text": "Optional button",
             "link_2": "",
             "link_text_2": "",
-            "button_color_scheme": "",
-            "text_align": "vertical-center horizontal-center",
-            "overlay_opacity": 0
+            "text_position": "left",
+            "indent_image": true,
+            "color_scheme": "1"
           }
         }
       },
       "block_order": [
-        "slide-1",
-        "slide-2"
+        "slide_gRxNib",
+        "slide_xDmBKa"
       ],
+      "name": "t:labels.split_optional_slides",
       "settings": {
         "full_width": true,
-        "desktop_size": -20,
-        "mobile_size": 80,
+        "height": 520,
+        "height_mobile": 450,
         "style": "arrows",
         "autoplay": true,
-        "autoplay_speed": 5
+        "autoplay_speed": 7
       }
     },
     "testimonials": {
@@ -461,7 +462,7 @@
     }
   },
   "order": [
-    "slideshow",
+    "slideshow_split_kA9YHU",
     "testimonials",
     "logo-list",
     "rich_text_LjzPxj",
