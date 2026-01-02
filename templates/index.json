@@ -15,16 +15,17 @@
         "slide-1": {
           "type": "hero",
           "settings": {
-            "top_subheading": "",
-            "title": "<p>Overlaid Hero Slide</p>",
-            "title_size": 70,
-            "subheading": "Perfect for rich lifestyle photography.",
-            "link": "",
-            "link_text": "Optional button",
+            "top_subheading": "NEW RELEASE",
+            "title": "<p>Power Your Classic Car with Modern Audio</p>",
+            "title_size": 60,
+            "subheading": "Enhance your classic car with the RetroSound 6-12V Converter, providing 10A output for 12V electronics without rewiring.",
+            "link": "shopify://products/retrosound-6-12-volt-converter",
+            "link_text": "Learn More",
             "link_2": "",
             "link_text_2": "",
-            "button_color_scheme": "",
+            "button_color_scheme": "4",
             "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/RM-landscape-banner-RS_CONVERTER_631aab66-27a0-4cd7-be11-788346d27d57.jpg",
             "overlay_opacity": 0
           }
         },
@@ -51,7 +52,7 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": 0,
+        "desktop_size": -20,
         "mobile_size": 80,
         "style": "arrows",
         "autoplay": true,
@@ -399,44 +400,6 @@
         "bottom_padding": true
       }
     },
-    "17673706355493472d": {
-      "type": "apps",
-      "blocks": {
-        "reviews_io_reviewsio_card_carousel_zdEM6z": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {
-            "star": "#000",
-            "review_type": "product",
-            "reviews_shown": 20,
-            "header_bg_colour": "#810f12",
-            "header_colour": "#fff",
-            "header_star_colour": "#ffd800",
-            "heading_text_colour": "#0E1311",
-            "heading_font": "sans_serif_n4",
-            "body_text_colour": "#0E1311",
-            "badge_icon_colour": "#00a728",
-            "badge_text_colour": "#0E1311",
-            "bg_start_colour": "#e4e4e4",
-            "bg_end_colour": "#ffffff",
-            "item_border_width": "0px",
-            "item_border_colour": "#eaeaea",
-            "item_border_radius": "0px",
-            "item_shadow_size": "10px",
-            "item_shadow_colour": "#F2F2F2",
-            "enable_rich_snippets": false,
-            "disable_same_customer": false,
-            "logo_colour": "var(--logo-inverted)"
-          }
-        }
-      },
-      "block_order": [
-        "reviews_io_reviewsio_card_carousel_zdEM6z"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
     "featured_collections_tHBDnc": {
       "type": "featured-collections",
       "blocks": {
@@ -513,6 +476,44 @@
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
+      }
+    },
+    "17673706355493472d": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_card_carousel_zdEM6z": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#000",
+            "review_type": "product",
+            "reviews_shown": 20,
+            "header_bg_colour": "#810f12",
+            "header_colour": "#fff",
+            "header_star_colour": "#ffd800",
+            "heading_text_colour": "#0E1311",
+            "heading_font": "sans_serif_n4",
+            "body_text_colour": "#0E1311",
+            "badge_icon_colour": "#00a728",
+            "badge_text_colour": "#0E1311",
+            "bg_start_colour": "#e4e4e4",
+            "bg_end_colour": "#ffffff",
+            "item_border_width": "0px",
+            "item_border_colour": "#eaeaea",
+            "item_border_radius": "0px",
+            "item_shadow_size": "10px",
+            "item_shadow_colour": "#F2F2F2",
+            "enable_rich_snippets": false,
+            "disable_same_customer": false,
+            "logo_colour": "var(--logo-inverted)"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_card_carousel_zdEM6z"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
       }
     }
   },
