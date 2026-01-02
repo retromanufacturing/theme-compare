@@ -290,59 +290,6 @@
         "divider": false
       }
     },
-    "blog-posts": {
-      "type": "blog-posts",
-      "settings": {
-        "title": "From the journal",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "blog": "news",
-        "blog_show_tags": false,
-        "blog_show_date": false,
-        "blog_show_comments": false,
-        "blog_show_author": false,
-        "blog_show_excerpt": false,
-        "blog_image_size": "natural",
-        "divider": false
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "title": "Save 10% on your first purchase",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Sign up today and we'll send you a 10% discount code towards<br/>your first purchase.</p>"
-          }
-        },
-        "form": {
-          "type": "form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "title",
-        "text",
-        "form"
-      ],
-      "settings": {
-        "color_scheme": "2",
-        "align_text": "center",
-        "image_width": "33",
-        "image_mask": "none",
-        "image_position": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "featured_collections_tHBDnc": {
       "type": "featured-collections",
       "blocks": {
@@ -421,6 +368,59 @@
         "divider": false
       }
     },
+    "blog-posts": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "From the journal",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "blog": "news",
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "natural",
+        "divider": false
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title": "Save 10% on your first purchase",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sign up today and we'll send you a 10% discount code towards<br/>your first purchase.</p>"
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "text",
+        "form"
+      ],
+      "settings": {
+        "color_scheme": "2",
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "17673706355493472d": {
       "type": "apps",
       "blocks": {
@@ -467,9 +467,9 @@
     "rich_text_LjzPxj",
     "hero_video_6igCR8",
     "featured-collections",
-    "blog-posts",
-    "newsletter",
     "featured_collections_tHBDnc",
-    "17673706355493472d"
+    "blog-posts",
+    "17673706355493472d",
+    "newsletter"
   ]
 }
