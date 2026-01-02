@@ -58,67 +58,6 @@
         "autoplay_speed": 5
       }
     },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "featured-collections-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "featured-collections-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "featured-collections-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "featured-collections-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "featured-collections-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "featured-collections-5": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "featured-collections-0",
-        "featured-collections-1",
-        "featured-collections-2",
-        "featured-collections-3",
-        "featured-collections-4",
-        "featured-collections-5"
-      ],
-      "settings": {
-        "title": "Popular categories",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
-      }
-    },
     "hotspots": {
       "type": "hotspots",
       "blocks": {
@@ -346,28 +285,65 @@
         "height_mobile": 250
       }
     },
-    "promo-grid": {
-      "type": "promo-grid",
+    "featured-collections": {
+      "type": "featured-collections",
       "blocks": {
-        "block-1": {
-          "type": "banner",
+        "featured-collections-0": {
+          "type": "collection",
           "settings": {
-            "heading": "Free U.S. shipping",
-            "text": "On all orders over $100",
-            "link": "",
-            "label": "Shop now",
-            "color_scheme": "1"
+            "collection": "radios",
+            "title": ""
+          }
+        },
+        "featured-collections-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "speakers",
+            "title": ""
+          }
+        },
+        "featured-collections-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "antennas",
+            "title": ""
+          }
+        },
+        "featured-collections-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "amps-subwoofers",
+            "title": ""
+          }
+        },
+        "featured-collections-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "kick-panels-speaker-modules",
+            "title": ""
+          }
+        },
+        "featured-collections-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "replacement-parts",
+            "title": ""
           }
         }
       },
       "block_order": [
-        "block-1"
+        "featured-collections-0",
+        "featured-collections-1",
+        "featured-collections-2",
+        "featured-collections-3",
+        "featured-collections-4",
+        "featured-collections-5"
       ],
       "settings": {
-        "full_width": true,
-        "gutter_size": 0,
-        "space_above": false,
-        "space_below": false
+        "title": "Popular categories",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
       }
     },
     "featured-collection3": {
@@ -583,14 +559,13 @@
   },
   "order": [
     "slideshow",
-    "featured-collections",
     "hotspots",
     "testimonials",
     "featured-collection2",
     "logo-list",
     "rich_text_LjzPxj",
     "hero_video_6igCR8",
-    "promo-grid",
+    "featured-collections",
     "featured-collection3",
     "slideshow-split3",
     "text-columns",
