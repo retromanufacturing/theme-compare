@@ -436,6 +436,84 @@
         "full_width": false,
         "space_around": true
       }
+    },
+    "featured_collections_tHBDnc": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_wQ7cCy": {
+          "type": "collection",
+          "settings": {
+            "collection": "ford",
+            "title": ""
+          }
+        },
+        "collection_drKAgB": {
+          "type": "collection",
+          "settings": {
+            "collection": "chevrolet",
+            "title": ""
+          }
+        },
+        "collection_ctTG7M": {
+          "type": "collection",
+          "settings": {
+            "collection": "pontiac-make",
+            "title": ""
+          }
+        },
+        "collection_QDRNeM": {
+          "type": "collection",
+          "settings": {
+            "collection": "dodge",
+            "title": ""
+          }
+        },
+        "collection_pkEydR": {
+          "type": "collection",
+          "settings": {
+            "collection": "plymouth-make",
+            "title": ""
+          }
+        },
+        "collection_iWnt4d": {
+          "type": "collection",
+          "settings": {
+            "collection": "mercury-make",
+            "title": ""
+          }
+        },
+        "collection_xRXxqy": {
+          "type": "collection",
+          "settings": {
+            "collection": "volkswagen",
+            "title": ""
+          }
+        },
+        "collection_Cqdh3X": {
+          "type": "collection",
+          "settings": {
+            "collection": "mercedes-benz",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wQ7cCy",
+        "collection_drKAgB",
+        "collection_ctTG7M",
+        "collection_QDRNeM",
+        "collection_pkEydR",
+        "collection_iWnt4d",
+        "collection_xRXxqy",
+        "collection_Cqdh3X"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "Shop by Make",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -449,6 +527,7 @@
     "featured-collections",
     "blog-posts",
     "newsletter",
+    "featured_collections_tHBDnc",
     "17673706355493472d"
   ]
 }

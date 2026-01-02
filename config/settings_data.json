@@ -226,6 +226,12 @@
           "primary": "#fc3f3f",
           "secondary": "#ffffff"
         }
+      },
+      "scheme-b5bdc667-afb1-4757-a4b9-1742b0e931d8": {
+        "settings": {
+          "primary": "#810f12",
+          "secondary": "#ffffff"
+        }
       }
     }
   },

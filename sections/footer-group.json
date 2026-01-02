@@ -69,7 +69,15 @@
         "footer-0": {
           "type": "menu",
           "settings": {
-            "title": "",
+            "title": "Shop",
+            "menu": "footer-shop",
+            "enable_account_link": true
+          }
+        },
+        "menu_JURGNm": {
+          "type": "menu",
+          "settings": {
+            "title": "Company",
             "menu": "footer",
             "enable_account_link": false
           }
@@ -77,8 +85,8 @@
         "footer-1": {
           "type": "contact",
           "settings": {
-            "phone": "+1 800 123 1234",
-            "contact": "",
+            "phone": "1-888-325-1555",
+            "contact": "contact-us",
             "chat": "",
             "enable_social": true
           }
@@ -95,14 +103,15 @@
       },
       "block_order": [
         "footer-0",
+        "menu_JURGNm",
         "footer-1",
         "footer-2"
       ],
       "settings": {
-        "color_scheme": "scheme-8c862bb8-bc6a-499a-9a75-e3d8673ada93",
-        "show_newsletter": true,
+        "color_scheme": "scheme-b5bdc667-afb1-4757-a4b9-1742b0e931d8",
+        "show_newsletter": false,
         "newsletter_richtext": "<p>Subscribe today to hear first about our sales</p>",
-        "footer_main_menu": true,
+        "footer_main_menu": false,
         "show_copyright": false,
         "copyright_text": "",
         "policies_menu": ""
