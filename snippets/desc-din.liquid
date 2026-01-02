@@ -1,0 +1,22 @@
+{% for option in product.options_with_values %}
+  {% if option.name contains product.type %}
+    {% for value in option.values %}
+      {%- liquid
+        assign radio_type = value
+        assign product_display = 'hide' 
+
+        if current_variant.title contains radio_type 
+          assign product_display = ''
+        endif 
+      -%}
+      <div class="js-product--variants {{ product_display }}" data-radio-type="{{ radio_type }}">
+        {%- case radio_type -%}
+          {%- when 'Europa', 'DAB EUR' -%}
+            {% render 'desc-europa', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+          {%- when 'Grand Prix', 'DAB GP' -%}
+            {% render 'desc-grandprix', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+        {%- endcase -%}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endfor %}

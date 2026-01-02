@@ -1,0 +1,178 @@
+{% if DAB %}
+<!-- Main Content Section -->
+<div style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 100%;">
+  <!-- Image Section -->
+<div style="text-align: center;">&nbsp;</div>
+<!-- Description Section -->
+<div style="flex: 2; min-width: 300px; padding: 10px;">
+<h2 style="font-size: 1.5rem; color: #333;">{{ product.title }}</h2>
+  <p>
+    RetroSound<sup>®</sup>'s Wonder Bar<sup>®</sup> is the most technologically-advanced radio ever made for your
+    classic {{ ymm }}. The compact size installs easily and discreetly behind the dash for a fully integrated look.
+    Wonder Bar 1 DAB+ is now available with your choice of 2 different feature sets.
+  </p>
+</div>
+
+  
+<!-- DAB Features Section -->
+  <div class="variant__display-motor1{% unless motor_class == 'Motor 1' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+    <h3 style="color: #333; text-align: center;">Motor 1DAB Features</h3>
+
+  <ul>
+    <li>DAB+</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Built-in 275-watt (peak power) Mosfet amplifier</li>
+    <li>18 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Auxiliary input for portable devices</li>
+    <li>Non-volatile memory</li>
+    <li>1-Year Warranty</li>
+    <li>Assembly is required</li>
+  </ul>
+</aside>
+  </div>
+  <!--
+    <p><strong>Motor 2DAB </strong></p>
+  <ul>
+    <li>DAB+</li>
+    <li>Built-in Bluetooth&reg; (Version 5.0)</li>
+    <li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Auxiliary input for portable devices</li>
+    <li>USB port for flash drives and other devices</li>
+    <li>2.1-amp device charging via USB</li>
+    <li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+    <li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Dual RCA pre-outs for external amplifiers</li>
+    <li>Adjustable color display</li>
+    <li>Non-volatile memory</li>
+    <li>1-Year Warranty</li>
+    <li>Assembly is required</li>
+  </ul>
+  -->
+  <div class="variant__display-motor6{% unless motor_class == 'Motor 6' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+    <h3 style="color: #333; text-align: center;">Motor 6 Features</h3>
+  <ul>
+    <li>DAB+</li>
+    <li>Made for iPod&reg;/iPhone&reg;</li>
+    <li>Built-in Bluetooth&reg; (Version 5.0)</li>
+    <li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Two USB ports for flash drives and other devices</li>
+    <li>2.1-amp device charging via USB</li>
+    <li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+    <li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Dual RCA pre-outs for external amplifiers</li>
+    <li>Dedicated subwoofer output</li>
+    <li>Adjustable color display</li>
+    <li>Non-volatile memory</li>
+    <li>2-Year Warranty</li>
+    <li>Assembly is required</li>
+  </ul>
+</aside>
+  </div>
+  {% else %}
+<!-- Main Content Section -->
+<div style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 100%;">
+<!-- Image Section -->
+<div style="text-align: center;"><br></div>
+<!-- Main Description Section --> 
+  
+<div style="flex: 2; min-width: 300px; padding: 10px;">
+<h2 style="font-size: 1.5rem; color: #333;">{{ product.title }}</h2>
+  <p>
+    RetroSound<sup>®</sup>'s Wonder Bar<sup>®</sup> is the most technologically-advanced radio ever made for your
+    classic {{ ymm }}. The compact size installs easily and discreetly behind the dash for a fully integrated look.
+    Wonder Bar 1 is now available with your choice of 3 different feature sets.
+  </p>
+<div class="divTable">
+<div class="divTableBody">
+<div class="divTableRow">
+<div class="divTableCell"><strong><a href="https://www.retromanufacturing.com/products/universal-din-repair-faceplate-and-knob-kit">Universal DIN Repair Kit</a> (sold separately)</strong>
+<p>If the dash in your classic vehicle has been cut or modified, our&nbsp;<a href="https://www.retromanufacturing.com/products/universal-din-repair-faceplate-and-knob-kit">Universal DIN Repair Kit</a>&nbsp;can help you restore an authentic look. Check out&nbsp;<a href="https://www.youtube.com/watch?v=4Gapv_Cfwc8">our video</a>&nbsp;on installing a RetroRadio using our Universal DIN Repair Kit.</p></div>
+</div><br>
+<div class="divTableRow">
+<div class="divTableCell"><strong><a href="hhttps://www.retromanufacturing.com/products/quadraphonic-four-channel-power-amplifier">Quadraphonic Amplifier</a> <strong>(sold separately)</strong></strong>
+<p>Add more power to your RetroSound Radio with the <a href="https://www.retromanufacturing.com/products/quadraphonic-four-channel-power-amplifier">Quadraphonic Amplifier</a>. The Quadraphonic is a 4-channel amplifier and connects directly to your RetroSound radio delivering 45-watts RMS to all four speakers. Pair it with a RetroSound <a href="https://www.retromanufacturing.com/collections/amps-subwoofers/products/sub-8100-amplified-subwoofer-system">8" powered subwoofer</a> for a complete audio system that's a breeze to install.</p></div>
+</div>
+</div>
+</div>
+
+</div>
+      <!-- Features Section -->
+<div class="variant__display-motor4{% unless motor_class == 'Motor 4' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+  <h3 style="color: #333; text-align: center;">Motor 4HD Features</h3>
+  <ul>
+    <li>HD Radio&reg; Technology</li>
+    <li>SiriusXM-Ready&reg; (Requires SXV300V1 tuner sold separately)</li>
+    <li>Built-in Bluetooth&reg; (Version 5.0)</li>
+    <li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Auxiliary input for portable devices</li>
+    <li>Two USB ports for flash drives and other devices</li>
+    <li>1-amp device charging via USB</li>
+    <li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+    <li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Dual RCA pre-outs for external amplifiers</li>
+    <li>Dedicated subwoofer output</li>
+    <li>Adjustable color display</li>
+    <li>Non-volatile memory</li>
+    <li>2-Year Warranty</li>
+    <li>Assembly is required</li>
+  </ul>
+<p><strong>$60 SXM Service Card - when you purchase and activate your RetroSound® Radio with SXV300V1 SirusXM® Tuner<br>Plan options:</strong></p>
+<ul>
+<li>12/$99 – 12 months of the Platinum Plan for $8.25/month</li>
+<li>12/$60 – 12 months of the Music & Entertainment Plan for$5/month</li>
+</ul>
+  <script src=https://embed.jda.synqy.net/smartbrand/WzCmfN7J type="text/javascript"></script>
+
+</aside>
+</div>
+<div class="variant__display-motor2{% unless motor_class == 'Motor 2' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+    <h3 style="color: #333; text-align: center;">Motor 2B Features</h3>
+<ul>
+<li>Built-in Bluetooth&reg; (Version 5.0)</li>
+<li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+<li>AM/FM RDS tuner with 30 presets</li>
+<li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+<li>USB port for flash drives and other devices</li>
+<li>1-amp device charging via USB</li>
+<li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+<li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+<li>Dual RCA pre-outs for external amplifiers</li>
+<li>Dedicated subwoofer output</li>
+<li>Adjustable color display</li>
+<li>Non-volatile memory</li>
+<li>1-Year Warranty</li>
+<li>Assembly is required</li>
+</ul>
+</aside>
+</div>
+
+<div class="variant__display-motor1{% unless motor_class == 'Motor 1' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+    <h3 style="color: #333; text-align: center;">Motor 1B Features</h3>
+<ul>
+<li>Built-in Bluetooth&reg; (Version 5.0)</li>
+<li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+<li>AM/FM RDS tuner with 30 presets</li>
+<li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+<li>Auxiliary input for portable devices</li>
+<li>Built-in 275-watt (peak power) Mosfet amplifier</li>
+<li>18 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+<li>Non-volatile memory</li>
+<li>1-Year Warranty</li>
+<li>Assembly is required</li>
+</ul>
+</aside>
+</div>
+</div>
+{% endif %}

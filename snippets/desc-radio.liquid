@@ -1,0 +1,93 @@
+{% capture ymm %}{{ product.metafields.ymm.year }} {{ product.metafields.ymm.make }} {{ product.metafields.ymm.model }}{% endcapture %}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign DAB = false
+  assign modified_dash = false 
+  for tag in product.tags
+    assign product_tag = tag | downcase
+    if product_tag == 'dab'
+      assign DAB = true
+    endif
+    if product_tag == 'modified dash'
+      assign modified_dash = true 
+    endif
+  endfor
+
+  assign fitment = ymm | strip 
+  if fitment == ''
+    assign ymm = 'vehicle' 
+  endif  
+
+  if current_variant.sku contains '-M1' or current_variant.sku contains '-M1A' or current_variant.sku contains 'Motor 1B'
+    assign motor_class = 'Motor 1'
+  elsif current_variant.sku contains '-M1DAB-'
+    assign motor_class = 'Motor 1DAB'
+  elsif current_variant.sku contains '-M2' or current_variant.sku contains '-M2A' or current_variant.sku contains 'Motor 2B'
+    assign motor_class = 'Motor 2'
+  elsif current_variant.sku contains '-M4' or current_variant.sku contains '-M4F' or current_variant.sku contains 'Motor 4HD'
+    assign motor_class = 'Motor 4'
+  elsif current_variant.sku contains '-M6'
+    assign motor_class = 'Motor 6'
+  endif
+-%}
+
+{% capture radio_upsells %}
+  {% if section.settings.description_upsells %}
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'upsells' -%}
+        {%- render 'product-upsells-description', block:block -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  {% endif %}
+{% endcapture %}
+
+{%- case product.type -%}
+  {%- when 'Apache', 'DAB AP' -%}
+    {% render 'desc-apache', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Apache M1A' -%}
+    {% render 'desc-apache', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Daytona', 'DAB DAY' -%}
+    {% render 'desc-daytona', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Denver', 'DAB DEN' -%}
+    {% render 'desc-denver', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Detroit', 'DAB DET' -%}
+    {% render 'desc-detroit', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Grand Prix', 'DAB GP' -%}
+    {% render 'desc-grandprix', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+    {%- when 'Liberty', 'DAB LIB' -%}
+    {% render 'desc-liberty', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Huntington', 'DAB HUNT' -%}
+    {% render 'desc-huntington', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Monterey', 'DAB MO' -%}
+    {% render 'desc-monterey', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Newport', 'DAB NEW' -%}
+    {% render 'desc-newport', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'New York', 'DAB NY' -%}
+    {% render 'desc-newyork', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Redondo RS', 'DAB REDRS' -%}
+    {% render 'desc-redondors', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Redondo RT', 'DAB REDRT' -%}
+    {% render 'desc-redondort', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'RetroRadio' -%}
+    {% render 'desc-retroradio', ymm: ymm, DAB: DAB, ymm: ymm, DAB: DAB, motor_class: motor_class %}
+    {{ radio_upsells }}
+  {%- when 'Santa Cruz' -%}
+    {% render 'desc-santacruz', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'San Diego' -%}
+    {% render 'desc-sandiego', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Wonder Bar 1', 'DAB WB1' -%}
+    {% render 'desc-wonderbar1', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Wonder Bar 3', 'DAB WB3' -%}
+    {% render 'desc-wonderbar3', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Europa', 'DAB EUR' -%}
+    {% render 'desc-europa', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Dallas', 'DAB DAL' -%}
+    {% render 'desc-dallas', ymm: ymm, DAB: DAB, motor_class: motor_class, modified_dash: modified_dash %}
+  {%- when 'DAB RR' -%}
+    {% render 'desc-dab', ymm: ymm, motor_class: motor_class %}
+     {{ radio_upsells }}
+  {%- when 'DIN' -%}
+     {% render 'desc-din', ymm: ymm, motor_class: motor_class, current_variant: current_variant %}
+{%- endcase -%}

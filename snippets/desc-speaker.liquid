@@ -1,0 +1,58 @@
+{% capture ymm %}{{ product.metafields.ymm.year }} {{ product.metafields.ymm.make }} {{ product.metafields.ymm.model }}{% endcapture %}
+ 
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+-%}
+ 
+{%- case current_variant.sku -%}
+  {%- when 'R-693N' -%}
+    {% render 'desc-r693n' %}
+  {%- when 'R-410N' -%}
+    {% render 'desc-r410n' %}
+  {%- when 'R-525N' -%}
+    {% render 'desc-r525n' %}
+  {%- when 'D-412UK' -%}
+    {% render 'desc-d412uk' %}
+  {%- when 'R-69UK' -%}
+    {% render 'desc-r69uk' %}
+  {%- when 'R-652N' -%}
+    {% render 'desc-r652n' %}
+  {%- when 'S-62' -%}
+    {% render 'desc-s62' %}
+  {%- when 'D-52UK' -%}
+    {% render 'desc-d52uk' %}
+  {%- when 'S-412' -%}
+    {% render 'desc-s412' %}
+  {%- when 'D-572UK' -%}
+    {% render 'desc-d572uk' %}
+  {%- when 'R-483N' -%}
+    {% render 'desc-r483n' %}
+  {%- when 'S-42' -%}
+    {% render 'desc-s42' %}
+  {%- when 'R-65UK' -%}
+    {% render 'desc-r65uk' %}
+  {%- when 'R-57UK' -%}
+    {% render 'desc-r57uk' %}
+  {%- when 'VWMSB6' -%}
+    {% render 'desc-vwmsb6' %}
+  {%- when 'R-410N-SB01' -%}
+    {% render 'desc-r410nsb01' %}
+  {%- when 'R-410N-SB02' -%}
+    {% render 'desc-r410nsb02' %}
+  {%- when 'R-463N' -%}
+    {% render 'desc-r463n' %}
+  {%- when 'R-452N' -%}
+    {% render 'desc-r452n' %}
+  {%- when 'R-507N' -%}
+    {% render 'desc-r507n' %}
+  {%- when 'TS42' -%}
+    {% render 'desc-ts42' %}
+  {%- when 'R-48UK' -%}
+    {% render 'desc-r48uk' %}
+  {%- when 'R-352N' -%}
+    {% render 'desc-r352n' %}
+  {%- when 'R-TB8' -%}
+    {% render 'desc-rtb8' %}
+  {% else %}
+    {{ product.description }}
+{%- endcase -%}
