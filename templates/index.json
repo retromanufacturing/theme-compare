@@ -346,125 +346,6 @@
         "divider": false
       }
     },
-    "featured-collection3": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "slideshow-split3": {
-      "type": "slideshow-split",
-      "blocks": {
-        "slideshow-split3-0": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Side by Side Slide",
-            "title_size": 40,
-            "subheading": "Add optional subtext",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "right",
-            "indent_image": false,
-            "color_scheme": "2"
-          }
-        }
-      },
-      "block_order": [
-        "slideshow-split3-0"
-      ],
-      "settings": {
-        "full_width": true,
-        "height": 550,
-        "height_mobile": 400,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
-    "text-columns": {
-      "type": "text-columns",
-      "blocks": {
-        "block-1": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
-            "button_link": ""
-          }
-        },
-        "block-2": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
-            "button_link": ""
-          }
-        },
-        "block-3": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "title": "",
-        "align_text": "left",
-        "divider": false,
-        "color_scheme": "none"
-      }
-    },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "text"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "none",
-        "divider": false
-      }
-    },
     "blog-posts": {
       "type": "blog-posts",
       "settings": {
@@ -472,12 +353,12 @@
         "heading_size": "h2",
         "heading_position": "left",
         "blog": "news",
-        "blog_show_tags": true,
+        "blog_show_tags": false,
         "blog_show_date": false,
         "blog_show_comments": false,
         "blog_show_author": false,
         "blog_show_excerpt": false,
-        "blog_image_size": "square",
+        "blog_image_size": "natural",
         "divider": false
       }
     },
@@ -566,10 +447,6 @@
     "rich_text_LjzPxj",
     "hero_video_6igCR8",
     "featured-collections",
-    "featured-collection3",
-    "slideshow-split3",
-    "text-columns",
-    "rich-text",
     "blog-posts",
     "newsletter",
     "17673706355493472d"
