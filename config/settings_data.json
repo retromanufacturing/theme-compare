@@ -54,7 +54,7 @@
     "collection_grid_image_margin": 15,
     "cart_type": "dropdown",
     "cart_additional_buttons": true,
-    "cart_collection": "customers-also-bought",
+    "cart_collection": "",
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_page": "terms-and-conditions",
