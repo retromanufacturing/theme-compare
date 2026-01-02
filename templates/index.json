@@ -240,38 +240,6 @@
         "divider": false
       }
     },
-    "slideshow-split": {
-      "type": "slideshow-split",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Side by side slide",
-            "title_size": 40,
-            "subheading": "Tailored for longer text and smaller images. Explain more about your promotion.",
-            "link": "",
-            "link_text": "Shop now",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "left",
-            "indent_image": false,
-            "color_scheme": "1"
-          }
-        }
-      },
-      "block_order": [
-        "slide-1"
-      ],
-      "settings": {
-        "full_width": true,
-        "height": 550,
-        "height_mobile": 450,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
     "logo-list": {
       "type": "logo-list",
       "blocks": {
@@ -322,62 +290,60 @@
         "divider": false
       }
     },
-    "image-compare": {
-      "type": "image-compare",
+    "rich_text_LjzPxj": {
+      "type": "rich-text",
       "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {}
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "fullwidth": true,
-        "slider_style": "classic",
-        "height": 500,
-        "color": "#ffffff"
-      }
-    },
-    "slideshow-split2": {
-      "type": "slideshow-split",
-      "blocks": {
-        "slideshow-split2-0": {
-          "type": "slide",
+        "heading_xXCjH9": {
+          "type": "heading",
           "settings": {
-            "top_subheading": "",
-            "title": "Highlight products",
-            "title_size": 45,
-            "subheading": "Repurpose your product photography with our \"Indented\" image option",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "left",
-            "indent_image": true,
-            "color_scheme": "2"
+            "title": "Classic Car Audio - Radios, Speakers, Amplifiers, & Accessories",
+            "heading_size": "h2"
+          }
+        },
+        "text_pc89a6": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Retro Manufacturing is the leading producer of classic car stereos, speakers, amps, & accessories for the automotive restoration industry. Our award-winning RetroSound® radios are available for thousands of classic vehicles!</p>"
           }
         }
       },
       "block_order": [
-        "slideshow-split2-0"
+        "heading_xXCjH9",
+        "text_pc89a6"
       ],
+      "custom_css": [
+        ".theme-block {margin-bottom: 0px; margin-top: 0px; padding-top: 0px;}",
+        ".index-section.color-scheme-1 {padding-top: 0px; padding-bottom: 0px;}"
+      ],
+      "name": "t:labels.rich_text",
       "settings": {
-        "full_width": true,
-        "height": 550,
-        "height_mobile": 450,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "hero_video_6igCR8": {
+      "type": "hero-video",
+      "custom_css": [
+        ".hero--padded {margin-top: 15px;}",
+        ".hero__text-shadow {display: none;}"
+      ],
+      "name": "t:labels.video_hero",
+      "settings": {
+        "full_width": false,
+        "title": "",
+        "title_size": 40,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "#fff",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://youtu.be/04qIdPbKWSI",
+        "overlay_opacity": 0,
+        "height": 620,
+        "height_mobile": 250
       }
     },
     "promo-grid": {
@@ -621,10 +587,9 @@
     "hotspots",
     "testimonials",
     "featured-collection2",
-    "slideshow-split",
     "logo-list",
-    "image-compare",
-    "slideshow-split2",
+    "rich_text_LjzPxj",
+    "hero_video_6igCR8",
     "promo-grid",
     "featured-collection3",
     "slideshow-split3",
