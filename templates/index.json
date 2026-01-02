@@ -59,49 +59,6 @@
         "autoplay_speed": 5
       }
     },
-    "hotspots": {
-      "type": "hotspots",
-      "blocks": {
-        "block-1": {
-          "type": "product",
-          "settings": {
-            "featured_product": "",
-            "vertical": 70,
-            "horizontal": 33
-          }
-        },
-        "block-2": {
-          "type": "product",
-          "settings": {
-            "featured_product": "",
-            "vertical": 14,
-            "horizontal": 81
-          }
-        },
-        "block-3": {
-          "type": "product",
-          "settings": {
-            "featured_product": "",
-            "vertical": 46,
-            "horizontal": 79
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "title": "Shop the look",
-        "heading_size": "h1",
-        "heading_position": "left",
-        "indent_image": true,
-        "image_position": "right",
-        "hotspot_style": "bag",
-        "hotspot_color": "#ffffff"
-      }
-    },
     "testimonials": {
       "type": "testimonials",
       "blocks": {
@@ -164,20 +121,6 @@
         "align_text": "center",
         "round_images": true,
         "color_scheme": "3"
-      }
-    },
-    "featured-collection2": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": false,
-        "view_all": true,
-        "divider": false
       }
     },
     "logo-list": {
@@ -519,9 +462,7 @@
   },
   "order": [
     "slideshow",
-    "hotspots",
     "testimonials",
-    "featured-collection2",
     "logo-list",
     "rich_text_LjzPxj",
     "hero_video_6igCR8",
