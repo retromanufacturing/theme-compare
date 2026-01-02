@@ -108,13 +108,13 @@
         "footer-2"
       ],
       "settings": {
-        "color_scheme": "scheme-b5bdc667-afb1-4757-a4b9-1742b0e931d8",
+        "color_scheme": "2",
         "show_newsletter": false,
-        "newsletter_richtext": "<p>Subscribe today to hear first about our sales</p>",
+        "newsletter_richtext": "<p><strong>Sign up for the latest news and product announcements!</strong></p>",
         "footer_main_menu": false,
-        "show_copyright": false,
-        "copyright_text": "",
-        "policies_menu": ""
+        "show_copyright": true,
+        "copyright_text": "GM, Chevrolet, all related Emblems, and vehicle body designs are trademarks of General Motors LLC, used under license to Retro Manufacturing.",
+        "policies_menu": "footer-legal"
       }
     }
   },
