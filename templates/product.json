@@ -170,6 +170,48 @@
       "settings": {
         "color_scheme": "2"
       }
+    },
+    "1767636673689ea25c": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_polaris_dxwxXi": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-polaris/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#ffd800",
+            "review_type": "product_review",
+            "per_page": 8,
+            "primary_btn_bg_color": "#000",
+            "primary_btn_border_color": "#000",
+            "primary_btn_text_color": "#fff",
+            "secondary_btn_border_color": "#000",
+            "secondary_btn_text_color": "#000",
+            "border_color": "#D9D9D9",
+            "heading_text_color": "#000",
+            "heading_font": "sans_serif_n4",
+            "body_text_color": "#000",
+            "badge_icon_color": "#00ac11",
+            "badge_text_color": "#000",
+            "enable_rich_snippets": true,
+            "show_location": true,
+            "show_tab_selector": false,
+            "show_dates": true,
+            "show_avatar": true,
+            "enable_sentiment_analysis": false,
+            "enable_replies": false,
+            "widget_spacing": 0,
+            "capitalise_headers_and_buttons": false,
+            "show_review_title": false,
+            "default_sort": "date_desc"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_polaris_dxwxXi"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
     }
   },
   "order": [
@@ -179,6 +221,7 @@
     "more-products-vendor",
     "more-products-collection",
     "recently-viewed",
-    "collection-return"
+    "collection-return",
+    "1767636673689ea25c"
   ]
 }
