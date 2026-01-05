@@ -103,14 +103,6 @@
     "sub": {
       "type": "product-full-width",
       "blocks": {
-        "tab_VUcKjD": {
-          "type": "tab",
-          "settings": {
-            "title": "Manual",
-            "content": "<p>Manuals Links here</p>",
-            "page": ""
-          }
-        },
         "description": {
           "type": "description",
           "settings": {
@@ -124,12 +116,20 @@
             "content": "<p>Filler Text</p>",
             "page": ""
           }
+        },
+        "tab_VUcKjD": {
+          "type": "tab",
+          "settings": {
+            "title": "Manuals",
+            "content": "<p>Manuals Links here</p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
-        "tab_VUcKjD",
         "description",
-        "tab"
+        "tab",
+        "tab_VUcKjD"
       ],
       "settings": {
         "max_width": false
