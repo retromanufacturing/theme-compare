@@ -103,6 +103,14 @@
     "sub": {
       "type": "product-full-width",
       "blocks": {
+        "tab_VUcKjD": {
+          "type": "tab",
+          "settings": {
+            "title": "Manual",
+            "content": "<p>Manuals Links here</p>",
+            "page": ""
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -119,6 +127,7 @@
         }
       },
       "block_order": [
+        "tab_VUcKjD",
         "description",
         "tab"
       ],
