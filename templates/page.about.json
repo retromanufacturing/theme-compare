@@ -339,6 +339,37 @@
         "full_width": false,
         "space_around": true
       }
+    },
+    "advanced_content_pHp8CE": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_qg4tNT": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GMA.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_Rtm4XM": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>SEMA Global Media Awards</h2><p>Having received numerous SEMA Global Media Awards from esteemed publications worldwide, from countries as far away as Brazil and Australia, we're humbled by the international acclaim. This global recognition fuels our commitment to enhancing accessibility globally, reflected in our efforts to offer product packaging, website content, manuals, and guides in multiple languages with the goal of making our products more accessible to everyone who loves classic vehicles.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_qg4tNT",
+        "liquid_Rtm4XM"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
     }
   },
   "order": [
@@ -352,6 +383,7 @@
     "form",
     "rich_text_tFDpbU",
     "advanced_content_aJFwQ8",
-    "advanced_content_xhpdfz"
+    "advanced_content_xhpdfz",
+    "advanced_content_pHp8CE"
   ]
 }
