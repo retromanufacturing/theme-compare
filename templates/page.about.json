@@ -168,7 +168,7 @@
     "map": {
       "type": "map",
       "settings": {
-        "map_title": "Our retail store",
+        "map_title": "Our location",
         "heading_size": "h2",
         "heading_position": "left",
         "address": "<p>7470 Commercial Way<br/>Henderson, NV 89011<br/></p><p>Monday - Friday<br/>6:30AM - 4:30PM PST<br/><br/></p>",
