@@ -93,76 +93,45 @@
         "divider": false
       }
     },
-    "text-columns": {
-      "type": "text-columns",
+    "advanced_content_WCUdkA": {
+      "type": "advanced-content",
       "blocks": {
-        "column1": {
-          "type": "text_block",
+        "image_FDdRL6": {
+          "type": "image",
           "settings": {
-            "enable_image": true,
             "image": "shopify://shop_images/RetroManufacturing_Blk_4x_feef05d1-c760-4b3d-b72d-4b283b4769de.png",
-            "image_mask": "none",
-            "image_width": 300,
-            "title": "",
-            "text": "<p>RetroSound radios are the most technologically advanced car stereo available for classic cars and trucks. With updated features like the latest Bluetooth®, SiriusXM-Ready®, made-for-iPhone/iPod, USB, RCA outputs, and more, RetroSound brand radios transform your classic car into your favorite daily driver! To take your listening experience to the next level, RetroSound speakers, kick panels, and accessories cover everything you need for a top-quality stereo system.</p>",
-            "button_label": "",
-            "button_link": ""
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
           }
         },
-        "column2": {
-          "type": "text_block",
+        "liquid_UNg6Wm": {
+          "type": "liquid",
           "settings": {
-            "enable_image": true,
+            "code": "<p>RetroSound radios are the most technologically advanced car stereo available for classic cars and trucks. With updated features like the latest Bluetooth®, SiriusXM-Ready®, made-for-iPhone/iPod, USB, RCA outputs, and more, RetroSound brand radios transform your classic car into your favorite daily driver! To take your listening experience to the next level, RetroSound speakers, kick panels, and accessories cover everything you need for a top-quality stereo system.</p>",
+            "width": "75%",
+            "alignment": "center"
+          }
+        },
+        "image_XxXeEb": {
+          "type": "image",
+          "settings": {
             "image": "shopify://shop_images/RetroAntenna_logo_30c839d7-7429-41e6-b060-7a7a549b8786.jpg",
-            "image_mask": "none",
-            "image_width": 300,
-            "title": "",
-            "text": "<p>RetroAntenna classic car antennas cover thousands of makes and models and is your go-to source for aftermarket replacement antennas, upgraded power antennas, or hide-away antenna solutions for your favorite classic ride.</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "column3": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/RetroMat.jpg",
-            "image_mask": "none",
-            "image_width": 300,
-            "title": "",
-            "text": "<p>RetroMat brand products are classic car lovers’ best friend when it comes to eliminating all the road noise and vibration normally experienced in a classic car or truck. RetroMat eliminates excessive noise and greatly reduces external heat from outside the cabin or engine bay.</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "text_block_U77LMQ": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/RetroPod-Logo.jpg",
-            "image_mask": "none",
-            "image_width": 300,
-            "title": "",
-            "text": "<p>RetroPods are the ultimate solution for installing speakers classic that did not have factory speakers. They mount to any flat surface like your doors, package tray, or rear deck without the need to cut large holes in the interior, making them ideal for adding additional speakers in new locations. Paint or wrap the RetroPods to match your vehicle’s interior to add a custom kick panel that blends seamlessly with your interior.</p>",
-            "button_label": "",
-            "button_link": ""
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3",
-        "text_block_U77LMQ"
+        "image_FDdRL6",
+        "liquid_UNg6Wm",
+        "image_XxXeEb"
       ],
-      "custom_css": [
-        "h2 {font-size: 26px;}"
-      ],
+      "name": "t:labels.custom_content",
       "settings": {
-        "title": "Our Brands",
-        "align_text": "left",
-        "divider": false,
-        "color_scheme": "none"
+        "full_width": false,
+        "space_around": true
       }
     },
     "map": {
@@ -177,18 +146,35 @@
         "show_button": true
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
+    "advanced_content_jmUDzX": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_DRrAxK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/OfficiallyLicensedProducts.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_K7VHBw": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2><b>Officially Licensed Products</b></h2>\n<p>Retro Manufacturing offers many officially licensed products for Ford, GM, and Mopar restorations to provide an authentic look in your classic vehicle.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_DRrAxK",
+        "liquid_K7VHBw"
+      ],
+      "name": "t:labels.custom_content",
       "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 6,
-        "products_per_row": 3,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
+        "full_width": false,
+        "space_around": true
       }
     },
     "form": {
@@ -208,9 +194,9 @@
     "main",
     "slideshow_w8gbkG",
     "rich-text",
-    "text-columns",
+    "advanced_content_WCUdkA",
+    "advanced_content_jmUDzX",
     "map",
-    "featured-collection",
     "form"
   ]
 }
