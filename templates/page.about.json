@@ -134,6 +134,37 @@
         "space_around": true
       }
     },
+    "advanced_content_jmUDzX": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_K7VHBw": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2><b>Officially Licensed Products</b></h2>\n<p>Retro Manufacturing offers many officially licensed products for Ford, GM, and Mopar restorations to provide an authentic look in your classic vehicle.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_DRrAxK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/OfficiallyLicensedProducts.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_K7VHBw",
+        "image_DRrAxK"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
     "map": {
       "type": "map",
       "settings": {
@@ -144,37 +175,6 @@
         "map_address": "7470 Commercial Way Henderson, NV 89011",
         "api_key": "pk.eyJ1IjoiYW1vcmFsZXNybSIsImEiOiJjbWs0Y2R5dnMwNmd6M2hwd2pkaWsweXlzIn0.8WQbHZUrAHFDBKhn3PsErQ",
         "show_button": true
-      }
-    },
-    "advanced_content_jmUDzX": {
-      "type": "advanced-content",
-      "blocks": {
-        "image_DRrAxK": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/OfficiallyLicensedProducts.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "liquid_K7VHBw": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2><b>Officially Licensed Products</b></h2>\n<p>Retro Manufacturing offers many officially licensed products for Ford, GM, and Mopar restorations to provide an authentic look in your classic vehicle.</p>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "image_DRrAxK",
-        "liquid_K7VHBw"
-      ],
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
       }
     },
     "form": {
@@ -188,6 +188,37 @@
         "narrow_column": true,
         "color_scheme": "none"
       }
+    },
+    "advanced_content_QxPVfj": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_mQDHA7": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2><b>Community</b></h2>\nRetro Manufacturing is a proud member of SEMA, ARMO and the restoration community. We love working with local builders and restoration shops and seeing our products represented in your builds. For more information, please submit a sponsorship request.\n\nWe are located in Henderson, Nevada, and are also members of the Henderson Chamber of Commerce. We strongly believe in supporting your local community and passionately support local charities. We often donate to organizations in support of local kids, Veterans, and first responders. If you're working on an important project, contact us if there is something we can do to help.",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_ffknrU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Communities.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_mQDHA7",
+        "image_ffknrU"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
     }
   },
   "order": [
@@ -197,6 +228,7 @@
     "advanced_content_WCUdkA",
     "advanced_content_jmUDzX",
     "map",
-    "form"
+    "form",
+    "advanced_content_QxPVfj"
   ]
 }
