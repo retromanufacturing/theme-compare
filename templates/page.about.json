@@ -165,30 +165,6 @@
         "space_around": true
       }
     },
-    "map": {
-      "type": "map",
-      "settings": {
-        "map_title": "Our location",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "address": "<p>7470 Commercial Way<br/>Henderson, NV 89011<br/></p><p>Monday - Friday<br/>6:30AM - 4:30PM PST<br/><br/></p>",
-        "map_address": "7470 Commercial Way Henderson, NV 89011",
-        "api_key": "pk.eyJ1IjoiYW1vcmFsZXNybSIsImEiOiJjbWs0Y2R5dnMwNmd6M2hwd2pkaWsweXlzIn0.8WQbHZUrAHFDBKhn3PsErQ",
-        "show_button": true
-      }
-    },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "title": "Contact us",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "text": "",
-        "show_phone": false,
-        "narrow_column": true,
-        "color_scheme": "none"
-      }
-    },
     "advanced_content_QxPVfj": {
       "type": "advanced-content",
       "blocks": {
@@ -219,6 +195,150 @@
         "full_width": false,
         "space_around": true
       }
+    },
+    "map": {
+      "type": "map",
+      "settings": {
+        "map_title": "Our location",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "address": "<p>7470 Commercial Way<br/>Henderson, NV 89011<br/></p><p>Monday - Friday<br/>6:30AM - 4:30PM PST<br/><br/></p>",
+        "map_address": "7470 Commercial Way Henderson, NV 89011",
+        "api_key": "pk.eyJ1IjoiYW1vcmFsZXNybSIsImEiOiJjbWs0Y2R5dnMwNmd6M2hwd2pkaWsweXlzIn0.8WQbHZUrAHFDBKhn3PsErQ",
+        "show_button": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true,
+        "color_scheme": "none"
+      }
+    },
+    "rich_text_tFDpbU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hYkciq": {
+          "type": "heading",
+          "settings": {
+            "title": "Awards and Accolades",
+            "heading_size": "h2"
+          }
+        },
+        "text_hnFVJ3": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>We're deeply appreciative of the industry accolades we have received. They stand as a testament to our dedication to developing great products and our passion for exceptional audio. The overwhelming support from the restoration community fills us with immense gratitude and drives us to continuously push the boundaries of innovation creating products for the restoration community.</p>"
+          }
+        },
+        "heading_ykk33X": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "title": "SEMA New Product Awards",
+            "heading_size": "h2"
+          }
+        },
+        "text_crP7Re": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>The annual SEMA New Product Awards recognizes outstanding achievements in new product development for the automotive specialty-equipment market at the SEMA Show. The products are judged in 16 categories on innovation, technical achievement, quality, and workmanship.</p>"
+          }
+        },
+        "text_7NcBJY": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "enlarge_text": true,
+            "text": "<ul><li>2024 Hot Product Awards - SUB8100</li><li>2022 Hot Product Awards – Detroit Radio</li><li>2021 Hot Product Awards – Redondo Radio</li><li>2019 Hot Product Awards – Daytona Radio</li><li>2018 Hot Product Awards - Wonder Bar Radio</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_hYkciq",
+        "text_hnFVJ3",
+        "heading_ykk33X",
+        "text_crP7Re",
+        "text_7NcBJY"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "advanced_content_aJFwQ8": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_RqgUQM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Awards-and-Accolades.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_DiEDMx": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>SEMA New Product Awards</h2><p>The annual SEMA New Product Awards recognizes outstanding achievements in new product development for the automotive specialty-equipment market at the SEMA Show. The products are judged in 16 categories on innovation, technical achievement, quality, and workmanship.</p>\n<ul>\n<li>2023 Best New Interior Accessory Product &ndash; Europa Radio (runner up)</li>\n<li>2023 Packaging Design &ndash; Europa Radio (runner up)</li>\n<li>2022 Best New Interior Accessory Product &ndash; Denver Radio (runner up)</li>\n<li>2022 Best New Packaging Design &ndash; Huntington Radio (runner up)</li>\n<li>2014 Best New Mobile Electronics Product &ndash; Newport Radio (runner up)</li>\n<li>2014 Best New Mobile Electronics Product &ndash; RetroPod (runner up)</li>\n</ul>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_RqgUQM",
+        "liquid_DiEDMx"
+      ],
+      "custom_css": [],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "advanced_content_xhpdfz": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_CxBTyP": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>ARMO Hot Product Showcase\n</h2><p>The ARMO Hot Products Showcase takes place every year at Spring Carlisle in Carlisle, Pennsylvania and recognizes the year’s hottest products for the automotive restoration community.</p>\n<ul>\n<li>2024 Hot Product Awards - SUB8100</li>\n<li>2022 Hot Product Awards &ndash; Detroit Radio</li>\n<li>2021 Hot Product Awards &ndash; Redondo Radio</li>\n<li>2019 Hot Product Awards &ndash; Daytona Radio</li>\n<li>2018 Hot Product Awards - Wonder Bar Radio</li>\n</ul>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_yEAhCF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RM-IndAwards.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_CxBTyP",
+        "image_yEAhCF"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
     }
   },
   "order": [
@@ -227,8 +347,11 @@
     "rich-text",
     "advanced_content_WCUdkA",
     "advanced_content_jmUDzX",
+    "advanced_content_QxPVfj",
     "map",
     "form",
-    "advanced_content_QxPVfj"
+    "rich_text_tFDpbU",
+    "advanced_content_aJFwQ8",
+    "advanced_content_xhpdfz"
   ]
 }
