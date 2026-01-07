@@ -371,124 +371,6 @@
         "space_around": true
       }
     },
-    "advanced_content_xhpdfz": {
-      "type": "advanced-content",
-      "blocks": {
-        "liquid_CxBTyP": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>ARMO Hot Product Showcase\n</h2><p>The ARMO Hot Products Showcase takes place every year at Spring Carlisle in Carlisle, Pennsylvania and recognizes the year’s hottest products for the automotive restoration community.</p>\n<ul>\n<li>2024 Hot Product Awards - SUB8100</li>\n<li>2022 Hot Product Awards &ndash; Detroit Radio</li>\n<li>2021 Hot Product Awards &ndash; Redondo Radio</li>\n<li>2019 Hot Product Awards &ndash; Daytona Radio</li>\n<li>2018 Hot Product Awards - Wonder Bar Radio</li>\n</ul>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "image_yEAhCF": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/RM-IndAwards.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "liquid_CxBTyP",
-        "image_yEAhCF"
-      ],
-      "disabled": true,
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
-    "advanced_content_pHp8CE": {
-      "type": "advanced-content",
-      "blocks": {
-        "image_qg4tNT": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/GMA.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "liquid_Rtm4XM": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>SEMA Global Media Awards</h2><p>Having received numerous SEMA Global Media Awards from esteemed publications worldwide, from countries as far away as Brazil and Australia, we're humbled by the international acclaim. This global recognition fuels our commitment to enhancing accessibility globally, reflected in our efforts to offer product packaging, website content, manuals, and guides in multiple languages with the goal of making our products more accessible to everyone who loves classic vehicles.</p>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "image_qg4tNT",
-        "liquid_Rtm4XM"
-      ],
-      "disabled": true,
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
-    "advanced_content_yqWaLx": {
-      "type": "advanced-content",
-      "blocks": {
-        "liquid_WFPye6": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>Henderson Chamber of Commerce</h2><p>We are proud members of the Henderson Chamber of Commerce and are delighted to have been selected for the All in the Family Award in 2021 for our outstanding achievements as a family-owned business.</p>\n<ul>\n<li>HCC All in the Family Award 2021</li>\n</ul>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "image_MkXRyQ": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/RM-BusAwards.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "liquid_WFPye6",
-        "image_MkXRyQ"
-      ],
-      "disabled": true,
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
-    "advanced_content_BcGdea": {
-      "type": "advanced-content",
-      "blocks": {
-        "liquid_cDqxUf": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>U.S Small Business Administration</h2><p>The SBA empowers entrepreneurs and small business owners with the resources and support they need to start, grow or expand their businesses. Retro Manufacturing has proudly received the following Exporter of the Year awards:</p>\n<ul>\n<li>SBA 2020 Nevada Exporter of the Year</li>\n<li>SBA 2020 Region IX Exporter of the Year</li>\n</ul>",
-            "width": "100%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "liquid_cDqxUf"
-      ],
-      "disabled": true,
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
     "rich_text_9KbVDn": {
       "type": "rich-text",
       "blocks": {
@@ -541,10 +423,6 @@
     "map",
     "rich_text_tFDpbU",
     "advanced_content_aJFwQ8",
-    "advanced_content_xhpdfz",
-    "advanced_content_pHp8CE",
-    "advanced_content_yqWaLx",
-    "advanced_content_BcGdea",
     "rich_text_9KbVDn",
     "form"
   ]
