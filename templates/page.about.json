@@ -231,38 +231,6 @@
         "space_around": true
       }
     },
-    "advanced_content_QxPVfj": {
-      "type": "advanced-content",
-      "blocks": {
-        "liquid_mQDHA7": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2><b>Community</b></h2>\nRetro Manufacturing is a proud member of SEMA, ARMO and the restoration community. We love working with local builders and restoration shops and seeing our products represented in your builds. For more information, please submit a sponsorship request.\n\nWe are located in Henderson, Nevada, and are also members of the Henderson Chamber of Commerce. We strongly believe in supporting your local community and passionately support local charities. We often donate to organizations in support of local kids, Veterans, and first responders. If you're working on an important project, contact us if there is something we can do to help.",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "image_ffknrU": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Communities.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "liquid_mQDHA7",
-        "image_ffknrU"
-      ],
-      "disabled": true,
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
     "map": {
       "type": "map",
       "settings": {
@@ -324,11 +292,77 @@
             "width": "50%",
             "alignment": "center"
           }
+        },
+        "liquid_aGMkBq": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>ARMO Hot Product Showcase\n</h2><p>The ARMO Hot Products Showcase takes place every year at Spring Carlisle in Carlisle, Pennsylvania and recognizes the year’s hottest products for the automotive restoration community.</p>\n<ul>\n<li>2024 Hot Product Awards - SUB8100</li>\n<li>2022 Hot Product Awards &ndash; Detroit Radio</li>\n<li>2021 Hot Product Awards &ndash; Redondo Radio</li>\n<li>2019 Hot Product Awards &ndash; Daytona Radio</li>\n<li>2018 Hot Product Awards - Wonder Bar Radio</li>\n</ul>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_tbRdjj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RM-IndAwards.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_gM4mAR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/GMA.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_xBNaAD": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>SEMA Global Media Awards</h2><p>Having received numerous SEMA Global Media Awards from esteemed publications worldwide, from countries as far away as Brazil and Australia, we're humbled by the international acclaim. This global recognition fuels our commitment to enhancing accessibility globally, reflected in our efforts to offer product packaging, website content, manuals, and guides in multiple languages with the goal of making our products more accessible to everyone who loves classic vehicles.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_ncFygE": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Henderson Chamber of Commerce</h2><p>We are proud members of the Henderson Chamber of Commerce and are delighted to have been selected for the All in the Family Award in 2021 for our outstanding achievements as a family-owned business.</p>\n<ul>\n<li>HCC All in the Family Award 2021</li>\n</ul>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_KFG8DU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RM-BusAwards.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_L9JP6q": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>U.S Small Business Administration</h2><p>The SBA empowers entrepreneurs and small business owners with the resources and support they need to start, grow or expand their businesses. Retro Manufacturing has proudly received the following Exporter of the Year awards:</p>\n<ul>\n<li>SBA 2020 Nevada Exporter of the Year</li>\n<li>SBA 2020 Region IX Exporter of the Year</li>\n</ul>",
+            "width": "100%",
+            "alignment": "center"
+          }
         }
       },
       "block_order": [
         "image_RqgUQM",
-        "liquid_DiEDMx"
+        "liquid_DiEDMx",
+        "liquid_aGMkBq",
+        "image_tbRdjj",
+        "image_gM4mAR",
+        "liquid_xBNaAD",
+        "liquid_ncFygE",
+        "image_KFG8DU",
+        "liquid_L9JP6q"
       ],
       "custom_css": [],
       "name": "t:labels.custom_content",
@@ -362,6 +396,7 @@
         "liquid_CxBTyP",
         "image_yEAhCF"
       ],
+      "disabled": true,
       "name": "t:labels.custom_content",
       "settings": {
         "full_width": false,
@@ -393,6 +428,7 @@
         "image_qg4tNT",
         "liquid_Rtm4XM"
       ],
+      "disabled": true,
       "name": "t:labels.custom_content",
       "settings": {
         "full_width": false,
@@ -424,6 +460,7 @@
         "liquid_WFPye6",
         "image_MkXRyQ"
       ],
+      "disabled": true,
       "name": "t:labels.custom_content",
       "settings": {
         "full_width": false,
@@ -445,6 +482,7 @@
       "block_order": [
         "liquid_cDqxUf"
       ],
+      "disabled": true,
       "name": "t:labels.custom_content",
       "settings": {
         "full_width": false,
@@ -500,7 +538,6 @@
     "rich-text",
     "advanced_content_WCUdkA",
     "advanced_content_jmUDzX",
-    "advanced_content_QxPVfj",
     "map",
     "rich_text_tFDpbU",
     "advanced_content_aJFwQ8",
