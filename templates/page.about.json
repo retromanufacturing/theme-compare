@@ -112,11 +112,68 @@
             "width": "75%",
             "alignment": "center"
           }
+        },
+        "image_RHt3Wi": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RetroAntenna_logo_30c839d7-7429-41e6-b060-7a7a549b8786.jpg",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "liquid_cdVi8A": {
+          "type": "liquid",
+          "settings": {
+            "code": "<p>RetroAntenna classic car antennas cover thousands of makes and models and is your go-to source for aftermarket replacement antennas, upgraded power antennas, or hide-away antenna solutions for your favorite classic ride.</p>",
+            "width": "75%",
+            "alignment": "center"
+          }
+        },
+        "image_JxNNJW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RetroMat.jpg",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "liquid_kLRki9": {
+          "type": "liquid",
+          "settings": {
+            "code": "<p>RetroMat brand products are classic car lovers’ best friend when it comes to eliminating all the road noise and vibration normally experienced in a classic car or truck. RetroMat eliminates excessive noise and greatly reduces external heat from outside the cabin or engine bay.</p>",
+            "width": "75%",
+            "alignment": "center"
+          }
+        },
+        "image_UFtKWC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RetroPod-Logo.jpg",
+            "link": "",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "liquid_t77CyW": {
+          "type": "liquid",
+          "settings": {
+            "code": "<p>RetroPods are the ultimate solution for installing  speakers classic that did not have factory speakers. They mount to any flat surface like your doors, package tray, or rear deck without the need to cut large holes in the interior, making them ideal for adding additional speakers in new locations. Paint or wrap the RetroPods to match your vehicle’s interior to add a custom kick panel that blends seamlessly with your interior.</p>",
+            "width": "75%",
+            "alignment": "center"
+          }
         }
       },
       "block_order": [
         "image_FDdRL6",
-        "liquid_UNg6Wm"
+        "liquid_UNg6Wm",
+        "image_RHt3Wi",
+        "liquid_cdVi8A",
+        "image_JxNNJW",
+        "liquid_kLRki9",
+        "image_UFtKWC",
+        "liquid_t77CyW"
       ],
       "name": "t:labels.custom_content",
       "settings": {
@@ -143,11 +200,30 @@
             "width": "50%",
             "alignment": "center"
           }
+        },
+        "image_9FREtW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Communities.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_pgmixX": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2><b>Community</b></h2>\nRetro Manufacturing is a proud member of SEMA, ARMO and the restoration community. We love working with local builders and restoration shops and seeing our products represented in your builds. For more information, please submit a sponsorship request.\n\nWe are located in Henderson, Nevada, and are also members of the Henderson Chamber of Commerce. We strongly believe in supporting your local community and passionately support local charities. We often donate to organizations in support of local kids, Veterans, and first responders. If you're working on an important project, contact us if there is something we can do to help.",
+            "width": "50%",
+            "alignment": "center"
+          }
         }
       },
       "block_order": [
         "liquid_K7VHBw",
-        "image_DRrAxK"
+        "image_DRrAxK",
+        "image_9FREtW",
+        "liquid_pgmixX"
       ],
       "name": "t:labels.custom_content",
       "settings": {
@@ -180,6 +256,7 @@
         "liquid_mQDHA7",
         "image_ffknrU"
       ],
+      "disabled": true,
       "name": "t:labels.custom_content",
       "settings": {
         "full_width": false,
@@ -415,36 +492,6 @@
         "narrow_column": true,
         "color_scheme": "none"
       }
-    },
-    "advanced_content_Vhd4je": {
-      "type": "advanced-content",
-      "blocks": {
-        "image_Rr7RNL": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "liquid_mt9UUk": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>Custom content</h2><p>Use this advanced section to build your own layouts or to add custom HTML, Liquid, or scripts.</p>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "image_Rr7RNL",
-        "liquid_mt9UUk"
-      ],
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
     }
   },
   "order": [
@@ -462,7 +509,6 @@
     "advanced_content_yqWaLx",
     "advanced_content_BcGdea",
     "rich_text_9KbVDn",
-    "form",
-    "advanced_content_Vhd4je"
+    "form"
   ]
 }
