@@ -60,54 +60,65 @@
         "autoplay_speed": 7
       }
     },
-    "logo-list": {
-      "type": "logo-list",
+    "advanced_content_FLUrJF": {
+      "type": "advanced-content",
       "blocks": {
-        "block-1": {
-          "type": "logo_image",
+        "liquid_GkTKHg": {
+          "type": "liquid",
           "settings": {
-            "image": "shopify://shop_images/RS-Brand.jpg",
-            "link": ""
+            "code": "<h2>Our Brands</h2>",
+            "width": "100%",
+            "alignment": "center"
           }
         },
-        "block-2": {
-          "type": "logo_image",
+        "image_ctY8dH": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/RMT-Brand.jpg",
-            "link": ""
+            "image": "shopify://shop_images/retro_black.jpg",
+            "link": "shopify://pages/radios",
+            "width": "25%",
+            "alignment": "center"
           }
         },
-        "block-3": {
-          "type": "logo_image",
+        "image_LLJVdB": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/RP-Brand.jpg",
-            "link": ""
+            "image": "shopify://shop_images/RetroMat.jpg",
+            "link": "shopify://collections/sound-dampening",
+            "width": "25%",
+            "alignment": "center"
           }
         },
-        "block-4": {
-          "type": "logo_image",
+        "image_8raKjr": {
+          "type": "image",
           "settings": {
-            "image": "shopify://shop_images/RA-Brand.jpg",
-            "link": ""
+            "image": "shopify://shop_images/RetroPod-Logo.jpg",
+            "link": "shopify://collections/speaker-pods",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "image_cQkjAN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RetroAntenna_logo_30c839d7-7429-41e6-b060-7a7a549b8786.jpg",
+            "link": "shopify://collections/antennas",
+            "width": "25%",
+            "alignment": "center"
           }
         }
       },
       "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4"
+        "liquid_GkTKHg",
+        "image_ctY8dH",
+        "image_LLJVdB",
+        "image_8raKjr",
+        "image_cQkjAN"
       ],
-      "custom_css": [
-        "{margin-top: 0px; margin-bottom: 0px;}",
-        "div div {margin: 0 auto;}",
-        ".grid-product:after {box-shadow: none;}"
-      ],
+      "name": "t:labels.custom_content",
       "settings": {
-        "title": "Our Brands",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
+        "full_width": false,
+        "space_around": true
       }
     },
     "rich_text_LjzPxj": {
@@ -158,7 +169,7 @@
         "subheading": "",
         "link_text": "",
         "link": "",
-        "color_accent": "#fff",
+        "color_accent": "#ffffff",
         "text_align": "vertical-center horizontal-center",
         "video_url": "https://youtu.be/04qIdPbKWSI",
         "overlay_opacity": 0,
@@ -327,24 +338,24 @@
         "reviews_io_reviewsio_card_carousel_zdEM6z": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
-            "star": "#000",
+            "star": "#000000",
             "review_type": "product",
             "reviews_shown": 20,
             "header_bg_colour": "#810f12",
-            "header_colour": "#fff",
+            "header_colour": "#ffffff",
             "header_star_colour": "#ffd800",
-            "heading_text_colour": "#0E1311",
+            "heading_text_colour": "#0e1311",
             "heading_font": "sans_serif_n4",
-            "body_text_colour": "#0E1311",
+            "body_text_colour": "#0e1311",
             "badge_icon_colour": "#00a728",
-            "badge_text_colour": "#0E1311",
+            "badge_text_colour": "#0e1311",
             "bg_start_colour": "#e4e4e4",
             "bg_end_colour": "#ffffff",
             "item_border_width": "0px",
             "item_border_colour": "#eaeaea",
             "item_border_radius": "0px",
             "item_shadow_size": "10px",
-            "item_shadow_colour": "#F2F2F2",
+            "item_shadow_colour": "#f2f2f2",
             "enable_rich_snippets": false,
             "disable_same_customer": false,
             "logo_colour": "var(--logo-inverted)"
@@ -399,7 +410,7 @@
   },
   "order": [
     "slideshow_split_kA9YHU",
-    "logo-list",
+    "advanced_content_FLUrJF",
     "rich_text_LjzPxj",
     "hero_video_6igCR8",
     "featured-collections",
