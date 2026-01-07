@@ -92,7 +92,7 @@
         "image_8raKjr": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/RetroPod-Logo.jpg",
+            "image": "shopify://shop_images/retropod_logo_blk.jpg",
             "link": "shopify://collections/speaker-pods",
             "width": "25%",
             "alignment": "center"
