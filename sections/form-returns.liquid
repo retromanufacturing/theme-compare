@@ -1,0 +1,221 @@
+
+<style>
+  .form__container {
+    margin-bottom: 1.5em;
+  }  
+  .required-field:after { 
+    content:"*"; 
+    color: red;
+  } 
+  .label {
+    display: inline-block;
+    padding-right: 20px;
+    padding-left: none;
+  } 
+  .return-disclaimer{
+  	margin: 10px;
+  }
+  .select-return {
+    margin: 0 !important;
+    max-width: 95%;
+  }
+</style>
+
+<script>
+ function Request() {
+ 	var request =  document.getElementById("ReturnsFormRequest");
+    var reason = document.getElementById("ReturnsFormReason");
+   	var other = document.getElementById("ReturnsFormOther");
+    var option = request.value; 
+    var select = document.getElementById("ReasonSelect");
+    var reason_option = select.value;
+   
+   if (option == 'Refund') {
+     reason.classList.remove("hide");
+   }
+   
+   if (option == 'Refund' && reason_option == 'Other' ) {
+     reason.classList.remove("hide");
+     other.classList.remove("hide");
+   }
+   
+   if (option == 'Warranty') {
+     reason.classList.add("hide");
+     other.classList.add("hide");
+     
+   }  
+ }
+  
+ function Reason() {
+    var request =  document.getElementById("ReturnsFormRequest");
+    var reason = document.getElementById("ReasonSelect");
+    var other = document.getElementById("ReturnsFormOther");
+    var option = request.value; 
+    var reason_option = reason.value; 
+   
+   
+   if (reason_option == 'Other') {
+     other.classList.remove("hide");
+    }
+   
+   if (reason_option != "Other"){
+   	 other.classList.add("hide");
+   }
+   }
+</script>
+
+<div class="page-width page-content">
+  <header class="section-header">  
+    <h1 class="section-header__title">{{ section.settings.title }}</h1>         
+  </header>  
+  {%- liquid
+
+  assign grid = 'grid__item--no-padding medium-up--one-half'
+  assign grid_third = 'grid__item--no-padding medium-up--one-third'
+  assign input = 'grid__item--input'
+  assign input_width = 'grid__item--input-width'
+  
+-%}
+    
+     
+  <div class="returns-form">
+
+{% form 'contact' %}
+
+ {% if form.posted_successfully? %}
+   
+      {{ 'contact.returns.post_success' | t }}
+  
+ {% endif %}
+  
+  {{ form.errors | default_errors }}
+
+  {% unless form.posted_successfully? %}
+  
+ <div>
+   <span class="form__container">
+   	<span>
+   	  <label for="ReturnsFormName" class="required-field label--hidden">{{ 'contact.returns.name' | t }}</label>
+      <input required class="{{input}}" type="text" id="ReturnsFormName" name="contact[{{ 'contact.returns.name' | t }}]" placeholder="{{ 'contact.returns.name' | t }}">
+   	</span> 
+   </span>
+   <span class="form__container">
+   	<span class="{{grid}}">
+      <label for="ReturnsFormEmail" class="required-field label--hidden">{{ 'contact.returns.email' | t }}</label>
+      <input required class="{{input}} {{input_width}}" type="email" id="ReturnsFormEmail" name="contact[email]" placeholder="{{ 'contact.returns.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+   	</span>
+   	<span class="{{grid}}">
+      <label for="ReturnsFormPhone" class="required-field label--hidden">{{ 'contact.returns.phone' | t }}</label>
+      <input required class="{{input}}" type="tel" id="ReturnsFormPhone" name="contact[phone]" placeholder="{{ 'contact.returns.phone' | t }}" autocorrect="off" autocapitalize="off" >
+   	</span>
+   </span>
+   <span class="form__container">
+   	<span class="{{grid}}">
+   	  <label for="ReturnsFormFirstAdress" class="required-field label--hidden">{{ 'contact.returns.first_address' | t }}</label>
+      <input required class="{{input}} {{input_width}}" type="text" id="ReturnsFormFirstAdress" name="contact[{{ 'contact.returns.first_address' | t }}]" placeholder="{{ 'contact.returns.first_address' | t }}">
+   	</span>
+   	<span class="{{grid}}">
+      <label for="ReturnsFormSecondAddress" class="label--hidden">{{ 'contact.returns.second_address' | t }}</label>
+      <input class="{{input}}" type="text" id="ReturnsFormSecondAddress" name="contact[{{ 'contact.returns.second_address' | t }}]" placeholder="{{ 'contact.returns.second_address' | t }}">
+   	</span>
+   </span>   
+   <span class="form__container">
+   	<span class="{{grid_third}}">
+   	  <label for="ReturnsFormCity" class="required-field label--hidden">{{ 'contact.returns.city' | t }}</label>
+      <input required class="{{input}} {{input_width}}" type="text" id="ReturnsFormCity" name="contact[{{ 'contact.returns.city' | t }}]" placeholder="{{ 'contact.returns.city' | t }}">
+   	</span>
+   	<span class="{{grid_third}}">
+      <label for="ReturnsFormState" class="required-field label--hidden">{{ 'contact.returns.state' | t }}</label>
+      <input required class="{{input}} {{input_width}}" type="text" id="ReturnsFormState" name="contact[{{ 'contact.returns.state' | t }}]" placeholder="{{ 'contact.returns.state' | t }}">
+    </span>
+    <span class="{{grid_third}}">
+   	  <label for="ReturnsFormZip" class="required-field label--hidden">{{ 'contact.returns.zip' | t }}</label>
+      <input required class="{{input}}" type="text" id="ReturnsFormZip" name="contact[{{ 'contact.returns.zip' | t }}]" placeholder="{{ 'contact.returns.zip' | t }}">
+   	</span>
+   </span>   
+   <span>
+      <label for="ReturnsFormOrder" class="required-field label--hidden">{{ 'contact.returns.order_number' | t}} (as appears on packing slip)</label>
+      <input required class="{{input}}" type="text" id="ReturnsFormOrder" name="contact[{{ 'contact.returns.order_number' | t}}]" placeholder="{{ 'contact.returns.order_number' | t}}">
+   </span>
+   <span>
+      <label for="ReturnsFormLocation" class="label--hidden">{{ 'contact.returns.location' | t}}</label>
+      <input required class="{{input}}" type="text" id="ReturnsFormLocation" name="contact[{{ 'contact.returns.location' | t}}]" placeholder="{{ 'contact.returns.location' | t}}">
+   </span>
+   <span>
+     <label class="required-field">{{ 'contact.returns.request_type' | t}}</label>
+   	 <select class="{{input}}" required id="ReturnsFormRequest" name="contact[{{ 'contact.returns.request_type' | t}}]" onchange="Request()">
+       <option value="" disabled selected>Make a selection</option>
+       <option value="Refund">Refund</option>
+       <option value="Warranty">Warranty</option>
+  	 </select> 
+   </span>
+   <span id="ReturnsFormReason" class="hide">
+     <label class="required-field">{{ 'contact.returns.return_reason' | t}}</label>
+   	 <select class="{{input}}" id="ReasonSelect" name="contact[{{ 'contact.returns.return_reason' | t}}]" onchange="Reason()">
+       <option value="" disabled selected>Make a selection</option>       
+       <option value="Cannot fit">Cannot fit</option>  
+       <option value="Exchange">Want something else</option>
+       <option value="No audio/sound">No audio/sound</option>
+       <option value="Order error">Order error</option>
+       <option value="Will not turn on">Will not turn on</option>      
+       <option value="Wrong application">Wrong application</option>
+       <option value="Other">Other</option>
+  	 </select> 
+   </span> 
+   <span id="ReturnsFormOther" class="hide">
+      <label class="label--hidden required-field ">{{ 'contact.returns.other' | t }}</label>
+      <textarea class="{{input}}" rows="2"  name="contact[{{ 'contact.returns.other' | t }}]" placeholder="{{ 'contact.returns.other' | t }}"></textarea>
+   </span>
+   <span>
+     <p class="required-field">Has the item been opened?</p>
+  	 <input type="radio" name="contact[{{ 'contact.returns.condition' | t}}]" id="ConditionYes" value="Yes">
+     <label for ="yes" class="label">Yes</label>
+     <input type="radio" name="contact[{{ 'contact.returns.condition' | t}}]" id="ConditionNo" value="No">
+     <label for ="no" class="label">No</label>      
+   </span>
+   <span>
+     <p class="required-field">Do you still have the original packaging?</p>
+  	 <input type="radio" name="contact[{{ 'contact.returns.packaging' | t}}]" id="PackagingYes" value="Yes">
+     <label for ="yes" class="label">Yes</label>
+     <input type="radio" name="contact[{{ 'contact.returns.packaging' | t}}]" id="PackagingNo" value="No">
+     <label for ="no" class="label">No</label>
+   </span>
+   <span>
+     <p class="required-field">Have you attempted to install this item?</p>
+  	 <input type="radio" name="contact[{{ 'contact.returns.installation' | t}}]" id="InstallationYes" value="Yes" onclick="Installation()">
+     <label for ="yes" class="label">Yes</label>
+     <input type="radio" name="contact[{{ 'contact.returns.installation' | t}}]" id="InstallationNo" value="No" onclick="Installation()">
+     <label for ="no" class="label">No</label>     
+   </span>
+   <span>
+      <label for="ReturnFormComment" class="label--hidden">{{ 'contact.returns.comment' | t }}</label>
+      <textarea class="{{input}}" rows="5" id="ReturnFormComment" name="contact[body]" placeholder="{{ 'contact.returns.comment' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+   </span>
+   <input type="submit" class="btn right" value="{{ 'contact.returns.send' | t }}" id="ReturnSubmit">
+</div> 
+  {% endunless %}
+
+  </div>
+     
+</div>
+
+{% endform %}
+
+
+{% schema %}
+  {
+    "name": "Returns form",
+    "settings": [     
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+		"default": "Returns Form"
+      }   
+    ],
+    "presets": [{
+      "name": "Returns form"
+    }]
+  }
+{% endschema %}
+
