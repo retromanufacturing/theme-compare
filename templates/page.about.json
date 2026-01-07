@@ -14,13 +14,47 @@
       "disabled": true,
       "settings": {}
     },
+    "slideshow_w8gbkG": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_XRMCHP": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/About-Us_Banner.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_XRMCHP"
+      ],
+      "name": "t:labels.hero_optional_slides",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "minimal",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
         "heading": {
           "type": "heading",
           "settings": {
-            "title": "Rich text",
+            "title": "About Retro Manufacturing",
             "heading_size": "h2"
           }
         },
@@ -28,17 +62,33 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "text": "<p>Retro Manufacturing has been designing classic car stereos, speakers, and audio accessories for the restoration marketplace for over a decade. Our passion for classic vehicles and our love of top-quality sound systems has driven us to develop solutions for over 2,000 classic cars and trucks over the years. Today, we continue to invest in new product designs and expand our product offering to include more classic vehicles, bringing new and exciting audio products to the market for classic car fans all over the world. Each new iteration of our products offers the most up-to-date technologies in hardware and software, ensuring the best audio quality possible in a classic car or truck.</p>"
+          }
+        },
+        "heading_F83PXw": {
+          "type": "heading",
+          "settings": {
+            "title": "Our Vision",
+            "heading_size": "h2"
+          }
+        },
+        "text_D3TK9C": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>At Retro Manufacturing, we are dedicated to preserving the timeless essence of classic vehicles while seamlessly integrating cutting-edge audio technology. Our mission is to provide enthusiasts with unparalleled audio solutions that enhance their driving experience, embodying the perfect fusion of nostalgia and innovation.</p>"
           }
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "text",
+        "heading_F83PXw",
+        "text_D3TK9C"
       ],
       "settings": {
-        "align_text": "center",
-        "narrow_column": true,
+        "align_text": "left",
+        "narrow_column": false,
         "color_scheme": "none",
         "divider": false
       }
@@ -50,11 +100,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/RetroManufacturing_Blk_4x_feef05d1-c760-4b3d-b72d-4b283b4769de.png",
             "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
+            "image_width": 300,
+            "title": "",
+            "text": "<p>RetroSound radios are the most technologically advanced car stereo available for classic cars and trucks. With updated features like the latest Bluetooth®, SiriusXM-Ready®, made-for-iPhone/iPod, USB, RCA outputs, and more, RetroSound brand radios transform your classic car into your favorite daily driver! To take your listening experience to the next level, RetroSound speakers, kick panels, and accessories cover everything you need for a top-quality stereo system.</p>",
+            "button_label": "",
             "button_link": ""
           }
         },
@@ -62,11 +113,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/RetroAntenna_logo_30c839d7-7429-41e6-b060-7a7a549b8786.jpg",
             "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
+            "image_width": 300,
+            "title": "",
+            "text": "<p>RetroAntenna classic car antennas cover thousands of makes and models and is your go-to source for aftermarket replacement antennas, upgraded power antennas, or hide-away antenna solutions for your favorite classic ride.</p>",
+            "button_label": "",
             "button_link": ""
           }
         },
@@ -74,11 +126,25 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/RetroMat.jpg",
             "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
+            "image_width": 300,
+            "title": "",
+            "text": "<p>RetroMat brand products are classic car lovers’ best friend when it comes to eliminating all the road noise and vibration normally experienced in a classic car or truck. RetroMat eliminates excessive noise and greatly reduces external heat from outside the cabin or engine bay.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_U77LMQ": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/RetroPod-Logo.jpg",
+            "image_mask": "none",
+            "image_width": 300,
+            "title": "",
+            "text": "<p>RetroPods are the ultimate solution for installing speakers classic that did not have factory speakers. They mount to any flat surface like your doors, package tray, or rear deck without the need to cut large holes in the interior, making them ideal for adding additional speakers in new locations. Paint or wrap the RetroPods to match your vehicle’s interior to add a custom kick panel that blends seamlessly with your interior.</p>",
+            "button_label": "",
             "button_link": ""
           }
         }
@@ -86,10 +152,14 @@
       "block_order": [
         "column1",
         "column2",
-        "column3"
+        "column3",
+        "text_block_U77LMQ"
+      ],
+      "custom_css": [
+        "h2 {font-size: 26px;}"
       ],
       "settings": {
-        "title": "",
+        "title": "Our Brands",
         "align_text": "left",
         "divider": false,
         "color_scheme": "none"
@@ -101,9 +171,9 @@
         "map_title": "Our retail store",
         "heading_size": "h2",
         "heading_position": "left",
-        "address": "<p>301 Front St W<br>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br>Saturday, 8:30am - 10:30pm<br>Sunday, 8:30am - 10:30pm</p>",
-        "map_address": "301 Front St W, Toronto, ON M5V 2T6",
-        "api_key": "",
+        "address": "<p>7470 Commercial Way<br/>Henderson, NV 89011<br/></p><p>Monday - Friday<br/>6:30AM - 4:30PM PST<br/><br/></p>",
+        "map_address": "7470 Commercial Way Henderson, NV 89011",
+        "api_key": "pk.eyJ1IjoiYW1vcmFsZXNybSIsImEiOiJjbWs0Y2R5dnMwNmd6M2hwd2pkaWsweXlzIn0.8WQbHZUrAHFDBKhn3PsErQ",
         "show_button": true
       }
     },
@@ -136,6 +206,7 @@
   },
   "order": [
     "main",
+    "slideshow_w8gbkG",
     "rich-text",
     "text-columns",
     "map",
