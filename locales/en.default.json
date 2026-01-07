@@ -278,5 +278,26 @@
     "styling": "Styling",
     "text_color": "Text Color",
     "top": "Top",
-  }
+  },
+  "returns": {
+      "name": "Name (First and Last)",
+      "email": "Email",
+      "phone": "Phone number",
+      "first_address": "Address Line 1",
+      "second_address": "Address Line 2 (optional)",
+      "city": "City",
+      "state": "State/Providence",
+      "zip": "Zip",
+      "order_number": "PO Number",
+      "location": "Where did you purchase this from? (ex. Amazon, Crutchfield, eBay, Retromanufacturing.com, etc)",
+      "request_type": "Request Type",
+      "return_reason": "Return Reason",
+      "condition": "Has the item been opened and used?",
+      "packaging": "Do you still have the original packaging?",
+      "installation": "Has the item been installed or plugged in?",
+      "send": "Submit",
+      "comment": "Additional Comments",
+      "other": "If Other, please specify",
+      "post_success": "Thank you for filling out a return request. We will review your request and reply within 3 business days. "
+    }
 }
