@@ -112,21 +112,11 @@
             "width": "75%",
             "alignment": "center"
           }
-        },
-        "image_XxXeEb": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/RetroAntenna_logo_30c839d7-7429-41e6-b060-7a7a549b8786.jpg",
-            "link": "",
-            "width": "25%",
-            "alignment": "center"
-          }
         }
       },
       "block_order": [
         "image_FDdRL6",
-        "liquid_UNg6Wm",
-        "image_XxXeEb"
+        "liquid_UNg6Wm"
       ],
       "name": "t:labels.custom_content",
       "settings": {
@@ -384,18 +374,6 @@
         "space_around": true
       }
     },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "title": "Contact us",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "text": "",
-        "show_phone": false,
-        "narrow_column": true,
-        "color_scheme": "none"
-      }
-    },
     "rich_text_9KbVDn": {
       "type": "rich-text",
       "blocks": {
@@ -425,6 +403,48 @@
         "color_scheme": "none",
         "divider": false
       }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true,
+        "color_scheme": "none"
+      }
+    },
+    "advanced_content_Vhd4je": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_Rr7RNL": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_mt9UUk": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Custom content</h2><p>Use this advanced section to build your own layouts or to add custom HTML, Liquid, or scripts.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_Rr7RNL",
+        "liquid_mt9UUk"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
     }
   },
   "order": [
@@ -442,6 +462,7 @@
     "advanced_content_yqWaLx",
     "advanced_content_BcGdea",
     "rich_text_9KbVDn",
-    "form"
+    "form",
+    "advanced_content_Vhd4je"
   ]
 }
