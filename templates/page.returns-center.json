@@ -196,6 +196,13 @@
         "opened": false,
         "disabled": false
       }
+    },
+    "form_returns_mKHHbR": {
+      "type": "form-returns",
+      "name": "Returns form",
+      "settings": {
+        "title": "Returns Form"
+      }
     }
   },
   "order": [
@@ -204,6 +211,7 @@
     "advanced_accordion_VGCHMz",
     "advanced_accordion_DcAQ6t",
     "advanced_accordion_kga8Hy",
-    "advanced_accordion_HgmFcR"
+    "advanced_accordion_HgmFcR",
+    "form_returns_mKHHbR"
   ]
 }
