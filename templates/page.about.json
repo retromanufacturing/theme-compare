@@ -208,18 +208,6 @@
         "show_button": true
       }
     },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "title": "Contact us",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "text": "",
-        "show_phone": false,
-        "narrow_column": true,
-        "color_scheme": "none"
-      }
-    },
     "rich_text_tFDpbU": {
       "type": "rich-text",
       "blocks": {
@@ -236,45 +224,18 @@
             "enlarge_text": true,
             "text": "<p>We're deeply appreciative of the industry accolades we have received. They stand as a testament to our dedication to developing great products and our passion for exceptional audio. The overwhelming support from the restoration community fills us with immense gratitude and drives us to continuously push the boundaries of innovation creating products for the restoration community.</p>"
           }
-        },
-        "heading_ykk33X": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "title": "SEMA New Product Awards",
-            "heading_size": "h2"
-          }
-        },
-        "text_crP7Re": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>The annual SEMA New Product Awards recognizes outstanding achievements in new product development for the automotive specialty-equipment market at the SEMA Show. The products are judged in 16 categories on innovation, technical achievement, quality, and workmanship.</p>"
-          }
-        },
-        "text_7NcBJY": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "enlarge_text": true,
-            "text": "<ul><li>2024 Hot Product Awards - SUB8100</li><li>2022 Hot Product Awards – Detroit Radio</li><li>2021 Hot Product Awards – Redondo Radio</li><li>2019 Hot Product Awards – Daytona Radio</li><li>2018 Hot Product Awards - Wonder Bar Radio</li></ul>"
-          }
         }
       },
       "block_order": [
         "heading_hYkciq",
-        "text_hnFVJ3",
-        "heading_ykk33X",
-        "text_crP7Re",
-        "text_7NcBJY"
+        "text_hnFVJ3"
       ],
       "name": "t:labels.rich_text",
       "settings": {
         "align_text": "left",
         "narrow_column": false,
         "color_scheme": "none",
-        "divider": false
+        "divider": true
       }
     },
     "advanced_content_aJFwQ8": {
@@ -370,6 +331,100 @@
         "full_width": false,
         "space_around": true
       }
+    },
+    "advanced_content_yqWaLx": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_WFPye6": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Henderson Chamber of Commerce</h2><p>We are proud members of the Henderson Chamber of Commerce and are delighted to have been selected for the All in the Family Award in 2021 for our outstanding achievements as a family-owned business.</p>\n<ul>\n<li>HCC All in the Family Award 2021</li>\n</ul>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_MkXRyQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RM-BusAwards.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_WFPye6",
+        "image_MkXRyQ"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "advanced_content_BcGdea": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_cDqxUf": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>U.S Small Business Administration</h2><p>The SBA empowers entrepreneurs and small business owners with the resources and support they need to start, grow or expand their businesses. Retro Manufacturing has proudly received the following Exporter of the Year awards:</p>\n<ul>\n<li>SBA 2020 Nevada Exporter of the Year</li>\n<li>SBA 2020 Region IX Exporter of the Year</li>\n</ul>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_cDqxUf"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "",
+        "show_phone": false,
+        "narrow_column": true,
+        "color_scheme": "none"
+      }
+    },
+    "rich_text_9KbVDn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tBQEzr": {
+          "type": "heading",
+          "settings": {
+            "title": "Family Owned and Operated in Henderson, Nevada",
+            "heading_size": "h2"
+          }
+        },
+        "text_nr7jHg": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Retro Manufacturing is a company of hard-working individuals that is family-owned and operated. We live and work in beautiful Henderson, Nevada. We take great pride in the quality of our products and services to the automotive restoration community. From the moment you purchase one of our products until you’re on the road enjoying your favorite songs, the entire team at Retro Manufacturing hopes you have a great experience from start to finish. If you have any questions, comments, or concerns, please feel free to contact us</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tBQEzr",
+        "text_nr7jHg"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -380,10 +435,13 @@
     "advanced_content_jmUDzX",
     "advanced_content_QxPVfj",
     "map",
-    "form",
     "rich_text_tFDpbU",
     "advanced_content_aJFwQ8",
     "advanced_content_xhpdfz",
-    "advanced_content_pHp8CE"
+    "advanced_content_pHp8CE",
+    "advanced_content_yqWaLx",
+    "advanced_content_BcGdea",
+    "rich_text_9KbVDn",
+    "form"
   ]
 }
