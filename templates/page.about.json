@@ -107,7 +107,7 @@
         "image_FDdRL6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/RetroManufacturing_Blk_4x_feef05d1-c760-4b3d-b72d-4b283b4769de.png",
+            "image": "shopify://shop_images/retro_black.jpg",
             "link": "",
             "width": "25%",
             "alignment": "center"
@@ -158,7 +158,7 @@
         "image_UFtKWC": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/RetroPod-Logo.jpg",
+            "image": "shopify://shop_images/retropod_logo_blk.jpg",
             "link": "",
             "width": "25%",
             "alignment": "center"
