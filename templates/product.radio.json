@@ -39,6 +39,13 @@
             "color_swatches": true
           }
         },
+        "size_chart_RtGzAi": {
+          "type": "size_chart",
+          "disabled": true,
+          "settings": {
+            "size_chart": "radio-features"
+          }
+        },
         "w3_product_accessories_widget_pWm94A": {
           "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
           "settings": {}
@@ -61,6 +68,7 @@
         "inventory_status",
         "reviews_io_reviewsio_rating_output_nmfn4X",
         "variant_picker",
+        "size_chart_RtGzAi",
         "w3_product_accessories_widget_pWm94A",
         "price",
         "buy_buttons"
