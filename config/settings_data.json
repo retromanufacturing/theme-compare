@@ -271,6 +271,12 @@
           "primary": "#ffffff",
           "secondary": "#810f12"
         }
+      },
+      "scheme-3c6e6ac2-e194-4c1b-9741-3b9372941411": {
+        "settings": {
+          "primary": "#0071dc",
+          "secondary": "#003c75"
+        }
       }
     }
   },
