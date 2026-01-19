@@ -41,10 +41,30 @@
   assign current_variant = product.selected_or_first_available_variant 
   assign product_features = product.metafields.description.features.value
 
+  capture collection_features
+    for collection in product.collections
+      for metaobject in collection.metafields.media.content.value
+        if metaobject.system.type == 'product_data'
+          for feature in metaobject.features.value
+            assign data_name = 'data-motor-id'
+            if motor_class == metaobject.name
+              assign feature_class = collection_features_class
+            else
+              assign feature_class = collection_features_class | append: hide
+            endif
+
+            render 'item-lists', list_content: feature, list_class: feature_class, is_data: true, data_name: data_name, data_value: metaobject.name 
+          endfor
+        endif
+      endfor
+    endfor
+  endcapture
+
   capture features
     for feature in product_features
         render 'item-lists', list_content: feature
     endfor
+    echo collection_features
   endcapture
 -%}
 
