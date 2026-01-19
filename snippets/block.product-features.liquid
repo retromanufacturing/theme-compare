@@ -1,3 +1,42 @@
+{% style %}
+  .block--{{ block.id }} {
+    padding-top: {{ block.settings.padding-block-start }}px;
+    padding-bottom: {{ block.settings.padding-block-end }}px;
+    padding-left: {{ block.settings.padding-inline-start }}px;
+    padding-right: {{ block.settings.padding-inline-end }}px;
+  }
+  
+  .product__features {
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid #ddd;
+    margin-bottom: 1em;
+  }
+
+  .product__features-content {
+    list-style: initial;
+    
+    li {
+      color: {{ block.settings.color_text }};
+      font-size: 14px;
+    }
+
+    a{
+      color: {{ block.settings.color_link }} !important;
+      font-weight: bold;
+    }
+  }
+
+  .collapsible-content {  
+    .product__features {       
+      padding: 22px 25px 22px !important;
+      border: 1px solid #ddd !important; 
+      margin-bottom: 1.5rem !important;
+      border-radius: 0rem !important;
+    }   
+  }
+{% endstyle %}
+
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant 
   assign product_features = product.metafields.description.features.value
