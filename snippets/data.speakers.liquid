@@ -1,0 +1,8 @@
+{% assign install_location = product.metafields.features.install_location %}
+
+{% if install_location != blank %}
+  <tr>
+    <td>Install Location</td>
+    <td>{{ install_location | metafield_text }}</td>
+  </tr>
+{% endif %}
