@@ -32,17 +32,6 @@
   endif
 -%}
 
-{% capture radio_upsells %}
-  {% if section.settings.description_upsells %}
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'upsells' -%}
-        {%- render 'product-upsells-description', block:block -%}
-      {%- endcase -%}
-    {%- endfor -%}
-  {% endif %}
-{% endcapture %}
-
 {%- case product.type -%}
   {%- when 'Apache', 'DAB AP' -%}
     {% render 'desc-apache', ymm: ymm, DAB: DAB, motor_class: motor_class %}
