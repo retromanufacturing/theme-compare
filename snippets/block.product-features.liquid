@@ -39,7 +39,6 @@
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant  
-  assign dynamic_features = false 
   assign product_features = product.metafields.description.features.value
   assign collection_media = shop.metaobjects.product_videos.values
   assign collection_features_class = 'product__features-item' 
