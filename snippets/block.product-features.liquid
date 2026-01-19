@@ -45,7 +45,7 @@
   assign hide = ' hide' 
 
   capture motor_class
-    render 'data.motors' with 'motor_class' as data
+    render 'data.motors', data: 'motor_class' 
   endcapture
 
   capture collection_videos
