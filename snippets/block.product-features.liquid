@@ -1,0 +1,11 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant 
+
+  capture features
+    for feature in product_features
+      echo feature
+    endfor
+  endcapture
+-%}
+
+{{ features }}
