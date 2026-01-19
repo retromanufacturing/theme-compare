@@ -1,0 +1,63 @@
+{%- comment -%}
+  Renders which motor data to display on page load
+
+  Usage:
+  {% liquid
+    capture motor_data
+      render 'data-motors', with 'motor_class' as data
+    endcapture
+
+  %}
+
+   if current_variant.sku contains '-M1' or current_variant.sku contains '-M1A' or current_variant.sku contains 'Motor 1B'
+        assign motor_class = 'Motor 1'
+      elsif current_variant.sku contains '-M1DAB-'
+        assign motor_class = 'Motor 1DAB'
+      elsif current_variant.sku contains '-M2' or current_variant.sku contains '-M2A' or current_variant.sku contains 'Motor 2B'
+        assign motor_class = 'Motor 2'
+      elsif current_variant.sku contains '-M4' or current_variant.sku contains '-M4F' or current_variant.sku contains 'Motor 4HD'
+        assign motor_class = 'Motor 4'
+      elsif current_variant.sku contains '-M6'
+        assign motor_class = 'Motor 6'
+      endif
+
+      for variant in product.variants
+        echo variant.metafields.data.motor
+      endfor
+{%- endcomment -%}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+  case data
+    when 'motor_class'
+      if current_variant.sku contains '-M1' or current_variant.sku contains '-M1A' or current_variant.sku contains 'Motor 1B'
+        assign motor_class = 'Motor 1'
+      elsif current_variant.sku contains '-M1DAB-'
+        assign motor_class = 'Motor 1DAB'
+      elsif current_variant.sku contains '-M2' or current_variant.sku contains '-M2A' or current_variant.sku contains 'Motor 2B'
+        assign motor_class = 'Motor 2'
+      elsif current_variant.sku contains '-M4' or current_variant.sku contains '-M4F' or current_variant.sku contains 'Motor 4HD'
+        assign motor_class = 'Motor 4'
+      elsif current_variant.sku contains '-M6'
+        assign motor_class = 'Motor 6'
+      endif
+      echo motor_class
+    when 'ymm'
+      capture fitment
+        echo product.metafields.ymm.year
+        echo product.metafields.ymm.make | prepend: ' '
+        echo product.metafields.ymm.model | prepend: ' '
+      endcapture
+      echo fitment
+    when 'DAB'
+      assign DAB = false
+      for tag in product.tags
+        assign product_tag = tag | downcase
+        if product_tag == 'dab'
+          assign DAB = true
+        endif
+      endfor
+      echo product_tag
+  endcase
+-%}

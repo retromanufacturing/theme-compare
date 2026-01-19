@@ -44,6 +44,10 @@
   assign collection_features_class = 'product__features-item' 
   assign hide = ' hide' 
 
+  capture motor_class
+    render 'data.motors' with 'motor_class' as data
+  endcapture
+
   capture collection_videos
     for collection in product.collections
       echo collection.id
