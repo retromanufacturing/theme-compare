@@ -4,7 +4,7 @@
 
   capture features
     for feature in product_features
-      echo feature
+        render 'item-lists', list_content: feature
     endfor
   endcapture
 -%}
