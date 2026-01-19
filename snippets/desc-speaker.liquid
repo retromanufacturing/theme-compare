@@ -16,53 +16,53 @@
  
 {%- case current_variant.sku -%}
   {%- when 'R-693N' -%}
-    {% render 'desc-r693n' %}
+    {% render 'desc-r693n', speaker_location: speaker_location %}
   {%- when 'R-410N' -%}
     {% render 'desc-r410n', speaker_location: speaker_location %}
   {%- when 'R-525N' -%}
     {% render 'desc-r525n', speaker_location: speaker_location %}
   {%- when 'D-412UK' -%}
-    {% render 'desc-d412uk' %}
+    {% render 'desc-d412uk', speaker_location: speaker_location %}
   {%- when 'R-69UK' -%}
-    {% render 'desc-r69uk' %}
+    {% render 'desc-r69uk', speaker_location: speaker_location %}
   {%- when 'R-652N' -%}
-    {% render 'desc-r652n' %}
+    {% render 'desc-r652n', speaker_location: speaker_location %}
   {%- when 'S-62' -%}
-    {% render 'desc-s62' %}
+    {% render 'desc-s62', speaker_location: speaker_location %}
   {%- when 'D-52UK' -%}
-    {% render 'desc-d52uk' %}
+    {% render 'desc-d52uk', speaker_location: speaker_location %}
   {%- when 'S-412' -%}
-    {% render 'desc-s412' %}
+    {% render 'desc-s412', speaker_location: speaker_location %}
   {%- when 'D-572UK' -%}
-    {% render 'desc-d572uk' %}
+    {% render 'desc-d572uk', speaker_location: speaker_location %}
   {%- when 'R-483N' -%}
-    {% render 'desc-r483n' %}
+    {% render 'desc-r483n', speaker_location: speaker_location %}
   {%- when 'S-42' -%}
-    {% render 'desc-s42' %}
+    {% render 'desc-s42', speaker_location: speaker_location %}
   {%- when 'R-65UK' -%}
-    {% render 'desc-r65uk' %}
+    {% render 'desc-r65uk', speaker_location: speaker_location %}
   {%- when 'R-57UK' -%}
-    {% render 'desc-r57uk' %}
+    {% render 'desc-r57uk', speaker_location: speaker_location %}
   {%- when 'VWMSB6' -%}
-    {% render 'desc-vwmsb6' %}
+    {% render 'desc-vwmsb6', speaker_location: speaker_location %}
   {%- when 'R-410N-SB01' -%}
-    {% render 'desc-r410nsb01' %}
+    {% render 'desc-r410nsb01', speaker_location: speaker_location %}
   {%- when 'R-410N-SB02' -%}
-    {% render 'desc-r410nsb02' %}
+    {% render 'desc-r410nsb02', speaker_location: speaker_location %}
   {%- when 'R-463N' -%}
-    {% render 'desc-r463n' %}
+    {% render 'desc-r463n', speaker_location: speaker_location %}
   {%- when 'R-452N' -%}
-    {% render 'desc-r452n' %}
+    {% render 'desc-r452n', speaker_location: speaker_location %}
   {%- when 'R-507N' -%}
-    {% render 'desc-r507n' %}
+    {% render 'desc-r507n', speaker_location: speaker_location %}
   {%- when 'TS42' -%}
-    {% render 'desc-ts42' %}
+    {% render 'desc-ts42', speaker_location: speaker_location %}
   {%- when 'R-48UK' -%}
-    {% render 'desc-r48uk' %}
+    {% render 'desc-r48uk', speaker_location: speaker_location %}
   {%- when 'R-352N' -%}
-    {% render 'desc-r352n' %}
+    {% render 'desc-r352n', speaker_location: speaker_location %}
   {%- when 'R-TB8' -%}
-    {% render 'desc-rtb8' %}
+    {% render 'desc-rtb8', speaker_location: speaker_location %}
   {% else %}
     {{ product.description }}
 {%- endcase -%}
