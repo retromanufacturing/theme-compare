@@ -2,7 +2,17 @@
  
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
+  assign install_location = product.metafields.features.install_location
 -%}
+
+{% if install_location != blank %}
+  {% capture speaker_location %}   
+    <tr>
+      <td>Install Location</td>
+      <td>{{ install_location | metafield_text }}</td>
+    </tr>
+  {% endcapture %}
+{% endif %}
  
 {%- case current_variant.sku -%}
   {%- when 'R-693N' -%}
@@ -10,7 +20,7 @@
   {%- when 'R-410N' -%}
     {% render 'desc-r410n' %}
   {%- when 'R-525N' -%}
-    {% render 'desc-r525n' %}
+    {% render 'desc-r525n', speaker_location: speaker_location %}
   {%- when 'D-412UK' -%}
     {% render 'desc-d412uk' %}
   {%- when 'R-69UK' -%}
