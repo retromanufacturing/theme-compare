@@ -38,8 +38,30 @@
 {% endstyle %}
 
 {%- liquid
-  assign current_variant = product.selected_or_first_available_variant 
+  assign current_variant = product.selected_or_first_available_variant  
+  assign dynamic_features = false 
   assign product_features = product.metafields.description.features.value
+  assign collection_media = shop.metaobjects.product_videos.values
+  assign collection_features_class = 'product__features-item' 
+  assign hide = ' hide' 
+
+  capture collection_videos
+    for collection in product.collections
+      echo collection.id
+    endfor
+  endcapture
+
+  capture videos
+    for media in collection_media
+      if media.product_feature
+        for collection in media.collections.value
+          if collection_videos contains collection.id
+            render 'item-lists', url_content: media.title, url: media.link, is_url: true, new_tab: true
+          endif
+        endfor
+      endif
+    endfor
+  endcapture
 
   capture collection_features
     for collection in product.collections
@@ -60,11 +82,29 @@
     endfor
   endcapture
 
+  capture variant_features
+    for variant in product.variants 
+      if variant.metafields.description.features
+        for variant_feature in variant.metafields.description.features.value
+          assign data_name = 'data-variant-sku'
+          if current_variant.id == variant.id  
+            assign feature_class = collection_features_class
+          else
+              assign feature_class = collection_features_class | append: hide
+          endif
+          render 'item-lists', list_content: variant_feature, list_class: feature_class, is_data: true, data_name: data_name, data_value: variant.sku
+        endfor
+      endif
+    endfor
+  endcapture
+
   capture features
     for feature in product_features
         render 'item-lists', list_content: feature
     endfor
+    echo variant_features
     echo collection_features
+    echo videos
   endcapture
 -%}
 
