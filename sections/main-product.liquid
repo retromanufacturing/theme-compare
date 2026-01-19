@@ -38,6 +38,8 @@
           render 'block.product-custom', block: block
         when 'share'
           render 'block.product-share', block: block
+        when 'product_features'
+          render 'block.product-features' , block: block 
       endcase
     endfor
   endcapture
@@ -582,6 +584,11 @@
           "content": "t:info.choose_which_platforms_share_theme_settings"
         }
       ]
+    },
+    {
+      "type": "product_features",
+      "name": "Product Features",
+      "limit": 1
     }
   ]
 }
