@@ -35,6 +35,10 @@
             "color_swatches": true
           }
         },
+        "product_features_ViPAGW": {
+          "type": "product_features",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -52,6 +56,7 @@
         "title",
         "inventory_status",
         "variant_picker",
+        "product_features_ViPAGW",
         "price",
         "buy_buttons"
       ],
