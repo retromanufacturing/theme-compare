@@ -14,9 +14,24 @@
   assign product = section.settings.product | default: product
   assign is_tab = is_tab | default: block.settings.is_tab, allow_false: true | default: true, allow_false: true
   assign description = 'info.placeholder_product_description' | t
+  assign is_liquid = false
+
+  capture liquid_description
+    if product.template_suffix contains 'radio'
+      render 'desc-radio'
+      assign is_liquid = true
+    elsif product.type == 'Speaker'
+      render 'desc-speaker'
+      assign is_liquid = true
+    endif
+  endcapture
 
   if product
-    assign description = product.description
+    if is_liquid
+      assign description = liquid_description
+    else
+      assign description = product.description
+    endif
   endif
 
   if is_tab
@@ -25,7 +40,7 @@
     endcapture
   endif
 -%}
-{{ product.template_suffix }}--{{ product.type }}
+
 <div style="width: 100%;" {{ block.shopify_attributes }}>
   {%- liquid
     if is_tab
