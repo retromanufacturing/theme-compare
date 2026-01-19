@@ -9,4 +9,20 @@
   endcapture
 -%}
 
-{{ features }}
+{% if features != blank %}
+  <product-features data-product-id="{{ product.id }}" data-section-id="{{ section.id }}">
+    <div class="product__features">
+      <ul class="product__features-content">
+        {{ features }}
+      </ul>
+      
+      {% if block.settings.product_logos %}
+       <div class="product__features-logos">
+         {% render 'product-logos', block: block, current_variant: current_variant, motor_class: motor_class %}
+       </div>
+      {% endif %}
+    </div>
+  </product-features>
+{% endif %}
+
+{{  block.id }}
