@@ -12,6 +12,22 @@
     "slideshow_split_kA9YHU": {
       "type": "slideshow-split",
       "blocks": {
+        "slide_xDmBKa": {
+          "type": "slide",
+          "settings": {
+            "top_subheading": "",
+            "title": "Highlight products",
+            "title_size": 60,
+            "subheading": "Repurpose your product photography with our \"Indented\" image option",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "left",
+            "indent_image": true,
+            "color_scheme": "1"
+          }
+        },
         "slide_gRxNib": {
           "type": "slide",
           "settings": {
@@ -28,27 +44,11 @@
             "indent_image": false,
             "color_scheme": "2"
           }
-        },
-        "slide_xDmBKa": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Highlight products",
-            "title_size": 60,
-            "subheading": "Repurpose your product photography with our \"Indented\" image option",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "left",
-            "indent_image": true,
-            "color_scheme": "1"
-          }
         }
       },
       "block_order": [
-        "slide_gRxNib",
-        "slide_xDmBKa"
+        "slide_xDmBKa",
+        "slide_gRxNib"
       ],
       "name": "t:labels.split_optional_slides",
       "settings": {
