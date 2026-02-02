@@ -14,26 +14,6 @@
       "disabled": true,
       "settings": {}
     },
-    "background_image_text_U6F8Ve": {
-      "type": "background-image-text",
-      "custom_css": [
-        ".animation-contents {box-shadow: 0.25em -0.25em 1em rgba(2, 2, 2, 0.2); border: 0px solid; opacity: 50%;}",
-        "p.h3 {font-family: impact; color: #8c1828;}"
-      ],
-      "name": "t:labels.large_image_with",
-      "settings": {
-        "subtitle": "",
-        "title": "What is a RetroSound Radio?",
-        "text": "<p>RetroSound® radios are modular units that allow you to select the radio face, knobs, and trim that are most period-correct for your classic vehicle and pair it with a selection of radio motors for a choice of audio features and connectivity. </p>",
-        "button_label": "",
-        "button_link": "",
-        "image": "shopify://shop_images/Radio-Motors-And-Face-Domestic-update.jpg",
-        "layout": "right",
-        "height": 550,
-        "parallax": true,
-        "parallax_direction": "top"
-      }
-    },
     "text_columns_U4JA8a": {
       "type": "text-columns",
       "blocks": {
@@ -85,7 +65,7 @@
       "name": "t:labels.text_columns_with",
       "settings": {
         "title": "",
-        "align_text": "left",
+        "align_text": "center",
         "divider": false,
         "color_scheme": "none"
       }
@@ -267,15 +247,35 @@
         "divider": false,
         "color_scheme": "none"
       }
+    },
+    "background_image_text_U6F8Ve": {
+      "type": "background-image-text",
+      "custom_css": [
+        ".animation-contents {box-shadow: 0.25em -0.25em 1em rgba(2, 2, 2, 0.2); border: 0px solid; opacity: 50%;}",
+        "p.h3 {font-family: impact; color: #8c1828;}"
+      ],
+      "name": "t:labels.large_image_with",
+      "settings": {
+        "subtitle": "",
+        "title": "What is a RetroSound Radio?",
+        "text": "<p>RetroSound® radios are modular units that allow you to select the radio face, knobs, and trim that are most period-correct for your classic vehicle and pair it with a selection of radio motors for a choice of audio features and connectivity. </p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/Radio-Motors-And-Face-Domestic-update.jpg",
+        "layout": "right",
+        "height": 550,
+        "parallax": true,
+        "parallax_direction": "top"
+      }
     }
   },
   "order": [
     "main",
-    "background_image_text_U6F8Ve",
     "text_columns_U4JA8a",
     "advanced_content_jBKULE",
     "featured_collections_yjtJXY",
     "rich_text_aFVw6A",
-    "text_columns_k4LiGr"
+    "text_columns_k4LiGr",
+    "background_image_text_U6F8Ve"
   ]
 }
