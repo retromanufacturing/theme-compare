@@ -110,7 +110,7 @@
         "collection_6LUBFa": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "apache",
             "title": ""
           }
         },
@@ -158,11 +158,10 @@
         "collection_UfQ93w",
         "collection_yLPtYx"
       ],
-      "disabled": true,
       "name": "t:labels.collection_list",
       "settings": {
-        "title": "Popular categories",
-        "heading_size": "h2",
+        "title": "",
+        "heading_size": "h3",
         "heading_position": "left",
         "divider": false
       }
