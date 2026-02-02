@@ -171,6 +171,7 @@
       "blocks": {
         "heading_gC8KBq": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "title": "RetroSound® Radio Motors [Feature Sets]",
             "heading_size": "h2"
@@ -180,6 +181,7 @@
       "block_order": [
         "heading_gC8KBq"
       ],
+      "disabled": true,
       "custom_css": [
         ".index-section {height: 2em; padding-bottom: 60px;}"
       ],
@@ -241,8 +243,8 @@
       ],
       "name": "t:labels.text_columns_with",
       "settings": {
-        "title": "",
-        "align_text": "left",
+        "title": "RetroSound® Radio Motor Feature Sets",
+        "align_text": "center",
         "divider": false,
         "color_scheme": "none"
       }
