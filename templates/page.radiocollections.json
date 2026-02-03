@@ -110,42 +110,126 @@
         "collection_6LUBFa": {
           "type": "collection",
           "settings": {
-            "collection": "apache",
+            "collection": "retroradio",
             "title": ""
           }
         },
         "collection_jCKMyb": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "apache",
             "title": ""
           }
         },
         "collection_DERmHn": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "daytona",
             "title": ""
           }
         },
         "collection_WtczyJ": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "detroit",
             "title": ""
           }
         },
         "collection_UfQ93w": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "huntington",
             "title": ""
           }
         },
         "collection_yLPtYx": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "monterey",
+            "title": ""
+          }
+        },
+        "collection_jEPaNc": {
+          "type": "collection",
+          "settings": {
+            "collection": "santa-cruz",
+            "title": ""
+          }
+        },
+        "collection_LzHHdE": {
+          "type": "collection",
+          "settings": {
+            "collection": "redondo",
+            "title": ""
+          }
+        },
+        "collection_gnEeET": {
+          "type": "collection",
+          "settings": {
+            "collection": "wonderbar",
+            "title": ""
+          }
+        },
+        "collection_HPXcyP": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-york",
+            "title": ""
+          }
+        },
+        "collection_wicb78": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-redondo-rs",
+            "title": ""
+          }
+        },
+        "collection_YriKTt": {
+          "type": "collection",
+          "settings": {
+            "collection": "wonder-bar-iii",
+            "title": ""
+          }
+        },
+        "collection_pwhjXg": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-newport-radio",
+            "title": ""
+          }
+        },
+        "collection_pdBMLp": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-grand-prix-radio",
+            "title": ""
+          }
+        },
+        "collection_TVNrL4": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-denver-radio",
+            "title": ""
+          }
+        },
+        "collection_gqQ7Ti": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-dallas-radio",
+            "title": ""
+          }
+        },
+        "collection_PC9qJq": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-europa-radio",
+            "title": ""
+          }
+        },
+        "collection_LxGbWL": {
+          "type": "collection",
+          "settings": {
+            "collection": "build-your-own-radio",
             "title": ""
           }
         }
@@ -156,7 +240,19 @@
         "collection_DERmHn",
         "collection_WtczyJ",
         "collection_UfQ93w",
-        "collection_yLPtYx"
+        "collection_yLPtYx",
+        "collection_jEPaNc",
+        "collection_LzHHdE",
+        "collection_gnEeET",
+        "collection_HPXcyP",
+        "collection_wicb78",
+        "collection_YriKTt",
+        "collection_pwhjXg",
+        "collection_pdBMLp",
+        "collection_TVNrL4",
+        "collection_gqQ7Ti",
+        "collection_PC9qJq",
+        "collection_LxGbWL"
       ],
       "name": "t:labels.collection_list",
       "settings": {
