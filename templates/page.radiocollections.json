@@ -337,6 +337,9 @@
         "text_block_KL8mmK",
         "text_block_FHTagX"
       ],
+      "custom_css": [
+        ".element-button {background-color: #003c75; color: #fff;}"
+      ],
       "name": "t:labels.text_columns_with",
       "settings": {
         "title": "RetroSound® Radio Motor Feature Sets",
