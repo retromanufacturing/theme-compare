@@ -338,7 +338,8 @@
         "text_block_FHTagX"
       ],
       "custom_css": [
-        ".element-button {background-color: #003c75; color: #fff;}"
+        ".element-button {background-color: #003c75; color: #fff;}",
+        ".heading-md {font-size: 22px;}"
       ],
       "name": "t:labels.text_columns_with",
       "settings": {
