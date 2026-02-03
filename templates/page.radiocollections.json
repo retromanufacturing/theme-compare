@@ -256,9 +256,9 @@
       ],
       "name": "t:labels.collection_list",
       "settings": {
-        "title": "",
-        "heading_size": "h3",
-        "heading_position": "left",
+        "title": "RetroSound® Radio Faces",
+        "heading_size": "h2",
+        "heading_position": "center",
         "divider": false
       }
     },
