@@ -62,6 +62,9 @@
         "text_block_wBqPy7",
         "text_block_74z6dY"
       ],
+      "custom_css": [
+        ".heading-md {font-size:22px;}"
+      ],
       "name": "t:labels.text_columns_with",
       "settings": {
         "title": "",
