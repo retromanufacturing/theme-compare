@@ -63,7 +63,7 @@
         "text_block_74z6dY"
       ],
       "custom_css": [
-        ".heading-md {font-size:22px;}"
+        ".heading-md {font-size: 22px;}"
       ],
       "name": "t:labels.text_columns_with",
       "settings": {
@@ -342,7 +342,8 @@
       ],
       "custom_css": [
         ".element-button {background-color: #003c75; color: #fff;}",
-        ".heading-md {font-size: 22px;}"
+        ".heading-md {font-size: 22px;}",
+        ".index-section:not(.index-section--sub-product):first-child {padding-top:5px;}"
       ],
       "name": "t:labels.text_columns_with",
       "settings": {
