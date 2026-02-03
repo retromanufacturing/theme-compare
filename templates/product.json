@@ -43,6 +43,10 @@
           "type": "product_features",
           "settings": {}
         },
+        "w3_product_accessories_widget_8zCKdf": {
+          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -62,6 +66,7 @@
         "inventory_status",
         "variant_picker",
         "product_features_ViPAGW",
+        "w3_product_accessories_widget_8zCKdf",
         "price",
         "buy_buttons"
       ],
