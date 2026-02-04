@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "reviews_io_reviewsio_rating_output_nmfn4X": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -25,10 +29,6 @@
             "inventory_threshold": 10,
             "inventory_transfers_enable": true
           }
-        },
-        "reviews_io_reviewsio_rating_output_nmfn4X": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -68,9 +68,9 @@
         }
       },
       "block_order": [
+        "reviews_io_reviewsio_rating_output_nmfn4X",
         "title",
         "inventory_status",
-        "reviews_io_reviewsio_rating_output_nmfn4X",
         "variant_picker",
         "product_features_Kp4pgm",
         "size_chart_RtGzAi",
