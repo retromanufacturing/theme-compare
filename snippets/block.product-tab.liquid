@@ -26,3 +26,12 @@
     {%- render 'element.accordion', title: title, slot: accordion_content -%}
   </div>
 {%- endif -%}
+
+{% case title %}
+  {% when 'Manuals, manuals' %}
+    Manuals here
+  {% when 'Specifications, specifications' %}
+    product specifications
+  {% else %}
+    none
+{% endcase %}
