@@ -1,1 +1,104 @@
-{"sections":{"collection-header":{"type":"collection-header","settings":{}},"main-collection":{"type":"main-collection","blocks":{"collection_description":{"type":"collection_description","settings":{}},"product_grid":{"type":"product_grid","settings":{}},"subcollections":{"type":"subcollections","settings":{}}},"block_order":["collection_description","subcollections","product_grid"],"settings":{}},"promo-grid":{"type":"promo-grid","blocks":{"banner":{"type":"banner","settings":{"color_scheme":"1"}}},"block_order":["banner"],"settings":{"space_below":false}},"recently-viewed":{"type":"recently-viewed","settings":{}}},"order":["collection-header","promo-grid","main-collection","recently-viewed"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "background_image_text_eT4FKd": {
+      "type": "background-image-text",
+      "name": "t:labels.large_image_with",
+      "settings": {
+        "subtitle": "",
+        "title": "Large image with text box",
+        "text": "{{ collection.description }}",
+        "button_label": "",
+        "button_link": "",
+        "image": "{{ collection.metafields.media.banner_image.value }}",
+        "layout": "left",
+        "height": 450,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "collection-header": {
+      "type": "collection-header",
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "collection_image_enable": true,
+        "parallax": false,
+        "parallax_direction": "top"
+      }
+    },
+    "promo-grid": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner": {
+          "type": "banner",
+          "settings": {
+            "heading": "Banner promotion",
+            "text": "Add the details of your promotion in smaller text",
+            "link": "",
+            "label": "Shop now",
+            "color_scheme": "1"
+          }
+        }
+      },
+      "block_order": [
+        "banner"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": false
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        },
+        "subcollections": {
+          "type": "subcollections",
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "grid_style": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "subcollections",
+        "product_grid"
+      ],
+      "settings": {
+        "enable_sidebar": true,
+        "collapse_filters": true,
+        "enable_color_swatches": false,
+        "enable_sort": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {}
+    }
+  },
+  "order": [
+    "background_image_text_eT4FKd",
+    "collection-header",
+    "promo-grid",
+    "main-collection",
+    "recently-viewed"
+  ]
+}
