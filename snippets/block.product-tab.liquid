@@ -15,18 +15,16 @@
   assign tab_content = tab_content | default: block.settings.content
   assign page_content = page_content | default: block.settings.page.content
 
-  case title
-    when 'Manuals, manuals'
-      assign tab_content = 'product manuals'
-      echo tab_content
-    when 'Specifications, specifications'
-      assign tab_content = 'specifications here'
-      echo tab_content
-  endcase
-
   capture accordion_content
-    echo tab_content
-    echo page_content
+    case title
+      when 'Manuals, manuals'
+        assign tab_content = 'product manuals'
+      when 'Specifications, specifications'
+        assign tab_content = 'specifications here'
+      else
+        echo tab_content
+        echo page_content
+    endcase
   endcapture
 -%}
 
