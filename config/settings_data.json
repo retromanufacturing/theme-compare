@@ -43,7 +43,7 @@
     "product_grid_image_fill": false,
     "product_hover_image": false,
     "enable_swatches": false,
-    "swatch_style": "round",
+    "swatch_style": "square",
     "product_grid_style": "simple",
     "product_grid_image_margin": 0,
     "recently_viewed_products_per_row": 3,
