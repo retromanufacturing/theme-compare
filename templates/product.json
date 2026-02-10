@@ -12,16 +12,16 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "vendor_enable": false,
-            "sku_enable": true
-          }
-        },
         "reviews_io_reviewsio_rating_output_9xPbYD": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": true,
+            "sku_enable": true
+          }
         },
         "inventory_status": {
           "type": "inventory_status",
@@ -61,8 +61,8 @@
         }
       },
       "block_order": [
-        "title",
         "reviews_io_reviewsio_rating_output_9xPbYD",
+        "title",
         "inventory_status",
         "variant_picker",
         "product_features_ViPAGW",
