@@ -14,7 +14,7 @@
       "name": "t:labels.large_image_with",
       "settings": {
         "subtitle": "",
-        "title": "Large image with text box",
+        "title": "{{ collection.title }}",
         "text": "{{ collection.description }}",
         "button_label": "",
         "button_link": "",

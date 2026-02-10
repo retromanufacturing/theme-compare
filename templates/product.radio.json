@@ -113,7 +113,7 @@
           "type": "tab",
           "settings": {
             "title": "Manuals",
-            "content": "<p>Manuals Links here</p>",
+            "content": "<p>Manuals Links here</p>{{ product.metafields.media.manuals | metafield_tag: field: 'name' }}",
             "page": ""
           }
         }
