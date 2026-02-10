@@ -58,7 +58,7 @@
         "logo_R37f4i"
       ],
       "settings": {
-        "main_menu_link_list": "main-menu",
+        "main_menu_link_list": "product-menu",
         "color_scheme": "scheme-8c862bb8-bc6a-499a-9a75-e3d8673ada93",
         "cart_button_color_scheme": "scheme-ecc335f6-2c4b-4474-94b8-e16369e8a1b2",
         "type_navigation_style": "body",
