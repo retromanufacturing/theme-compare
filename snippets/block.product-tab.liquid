@@ -19,6 +19,13 @@
     echo tab_content
     echo page_content
   endcapture
+
+  case title
+    when 'Manuals, manuals'
+      assign accordion_content = 'product manuals'
+    when 'Specifications, specifications'
+      assign accordion_content = 'specifications here'
+  endcase
 -%}
 
 {%- if title != blank and accordion_content != blank -%}
@@ -26,12 +33,3 @@
     {%- render 'element.accordion', title: title, slot: accordion_content -%}
   </div>
 {%- endif -%}
-
-{% case title %}
-  {% when 'Manuals, manuals' %}
-    Manuals here
-  {% when 'Specifications, specifications' %}
-    product specifications
-  {% else %}
-    none
-{% endcase %}
