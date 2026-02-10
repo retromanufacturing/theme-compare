@@ -19,7 +19,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "vendor_enable": true,
+            "vendor_enable": false,
             "sku_enable": true
           }
         },
