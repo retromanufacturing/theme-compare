@@ -16,19 +16,10 @@
   assign page_content = page_content | default: block.settings.page.content
 
   capture accordion_content
-    case title
-      when 'Manuals'
-        assign tab_content = 'product manuals'
-      when 'Specifications'
-        assign tab_content = 'specifications here'
-      else
-        echo tab_content
-        echo page_content
-    endcase
+    echo tab_content
+    echo page_content
   endcapture
 -%}
-
-{{ title }} 
 
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
