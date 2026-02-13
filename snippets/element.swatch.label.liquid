@@ -87,7 +87,8 @@
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
 
-/* The outer wrapper should not have the border; the inner card will. */
+{% stylesheet %}
+  /* The outer wrapper should not have the border; the inner card will. */
 .element-swatch {
   display: inline-block !important;
   margin: 5px;
@@ -134,3 +135,4 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+{% endstylesheet %}
