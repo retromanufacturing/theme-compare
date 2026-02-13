@@ -94,39 +94,7 @@
     cursor: pointer;
     text-decoration: none;
     transition: border-color 0.2s ease, transform 0.1s ease;
-
-    display: inline-block;
-    background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
-    width: var(--_size);
-    height: var(--_size);
-    border-radius: var(--_radius);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--_color-secondary) 100%, transparent),
-      0 0 0 var(--_outline-width) color-mix(in srgb, var(--_color-primary) var(--_shade-outer), transparent),
-      inset 0 0 0 var(--_border-width) color-mix(in srgb, var(--_color-border) var(--_shade-inset), transparent);
-    outline: 0;
-
-    @media only screen and (max-width: 768px) {
-      --_size: calc(var(--_size-small) * var(--_size-mobile-ratio));
-    }
-
-    label:hover &,
-    &:hover {
-      --_outline-width: 4px;
-      --_shade-outer: var(--_shade-outer-hover);
-    }
-
-    &:focus,
-    input:checked ~ &,
-    .element-swatch--selected {
-      --_shade-outer: var(--_shade-outer-selected);
-    } 
-
-    /* Focus State */
-    &:focus-visible,
-    input[type='radio']:focus-visible ~ & {
-      --_color-primary: var(--_color-focus);
-      --_outline-width: 4px;
-    }
+    
   }
 
   /* The Visual Circle */
