@@ -72,7 +72,7 @@
   {%- if attributes != blank -%}
     {{ attributes }}
   {%- endif -%}
->test</{{ element }}>this is a test
+>test</{{ element }}>
 
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
@@ -157,14 +157,4 @@
       transparent calc(50% + var(--_line-disabled-width))
     );
   }
-
-  .element-swatch[data-variant-name]::after {
-    content: attr(data-variant-name);
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-    font-size: 10px;
-}
 {% endstylesheet %}
