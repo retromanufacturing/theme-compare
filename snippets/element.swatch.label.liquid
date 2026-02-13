@@ -71,24 +71,24 @@
     --swatch-size: 44px;
 
     /* Force vertical stacking and center alignment */
-    display: inline-flex ;
-    flex-direction: column ;
-    align-items: center ;
-    justify-content: center ;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     
     /* Layout Reset */
-    position: relative ;
-    vertical-align: top ;
-    width: 85px ; 
-    min-height: 95px ;
-    padding: 12px 5px ;
-    margin: 6px ;
-    box-sizing: border-box ;
+    position: relative !important;
+    vertical-align: top !important;
+    width: 85px !important; 
+    min-height: 95px !important;
+    padding: 12px 5px !important;
+    margin: 6px !important;
+    box-sizing: border-box !important;
     
     /* Aesthetics */
-    border: 1px solid var(--_border-color) ;
-    border-radius: 4px ;
-    background: #ffffff ;
+    border: 1px solid var(--_border-color) !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
     cursor: pointer;
     text-decoration: none;
     transition: border-color 0.2s ease, transform 0.1s ease;
@@ -96,54 +96,54 @@
 
   /* The Visual Circle */
   .element-swatch__visual {
-    display: block ;
-    width: var(--swatch-size) ;
-    height: var(--swatch-size) ;
-    border-radius: 50% ;
-    margin-bottom: 8px ;
+    display: block !important;
+    width: var(--swatch-size) !important;
+    height: var(--swatch-size) !important;
+    border-radius: 50% !important;
+    margin-bottom: 8px !important;
     background-color: var(--element-swatch-color-background, #eee);
     background-image: var(--element-swatch-color-background-image, none);
-    background-size: cover ;
-    background-position: center ;
-    border: 1px solid rgba(0,0,0,0.1) ;
-    flex-shrink: 0 ;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    flex-shrink: 0 !important;
   }
 
   /* The Text Label */
   .element-swatch__label {
-    display: block ;
-    font-size: 11px ;
-    font-weight: 600 ;
-    color: #333 ;
-    text-align: center ;
-    line-height: 1.2 ;
-    white-space: normal ;
-    word-break: break-word ;
+    display: block !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
   /* Selected State */
   .element-swatch--selected {
-    border: 2px solid var(--_accent-color) ;
-    padding: 11px 4px ; /* Offset for 2px border */
-    background-color: #f9f9f9 ;
+    border: 2px solid var(--_accent-color) !important;
+    padding: 11px 4px !important; /* Offset for 2px border */
+    background-color: #f9f9f9 !important;
     z-index: 2;
   }
 
   /* Hover State */
   .element-swatch:hover:not(.element-swatch--disabled) {
-    border-color: #888 ;
+    border-color: #888 !important;
   }
 
   /* Disabled/Out of Stock State */
   .element-swatch--disabled {
-    opacity: 0.4 ;
-    cursor: not-allowed ;
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
     filter: grayscale(1);
   }
 
   /* Large Variant Support */
   .element-swatch--large {
-    width: 100px ;
+    width: 100px !important;
     --swatch-size: 55px;
   }
 {% endstylesheet %}
