@@ -204,7 +204,9 @@
       display_icon: false,
       slot: radio_label
     -%}
-
+{% if  !value.swatch.color %}
+  no swatch color
+{% endif %}
   {%- endfor -%}
 
 
