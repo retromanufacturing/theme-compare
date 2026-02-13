@@ -129,6 +129,7 @@
 
       assign bg_color = color_swatch_fallback
       assign bg_color_image = color_image
+      assign bg_color_image_fallback = value.name
 
       if value.swatch.color
         assign bg_color = value.swatch.color
@@ -137,7 +138,7 @@
       if value.swatch.image
         assign bg_color_image = value.swatch.image | image_url: width: 50
       else
-        assign bg_color_image = value.name
+        assign bg_color_image = bg_color_image_fallback
       endif
 
     -%}
