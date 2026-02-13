@@ -94,6 +94,13 @@
     --_line-disabled-width: var(
       --element-swatch-line-disabled-width,
       max(var(--size-0-25), calc(var(--_size) * 0.0625))
+
+    display: inline-flex !important;
+    align-items: center;      /* Vertical center */
+    justify-content: center;   /* Horizontal center */
+    vertical-align: middle;
+    overflow: hidden;         /* Keeps text from breaking the circle shape */
+    color: #000;              /* Default text color */  
     );
 
     /* Colors */
@@ -161,4 +168,12 @@
       transparent calc(50% + var(--_line-disabled-width))
     );
   }
+
+  .element-swatch__content {
+  line-height: 1;
+  font-size: 12px;          /* Adjust based on your preference */
+  font-weight: bold;
+  pointer-events: none;     /* Clicks go through text to the swatch */
+  z-index: 2;               /* Keeps text above the background color */
+}
 {% endstylesheet %}
