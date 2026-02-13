@@ -11,7 +11,7 @@
 {%- liquid
   capture swatch_trigger
     assign trigger_color_swatch = 'trigger.color_swatch' | t | downcase
-    render 'utility.translate', t: trigger_color_swatch, fallback: 'color'
+    render 'utility.translate', t: trigger_color_swatch, fallback: 'choose'
   endcapture
 
   assign swatch_file_extension = 'png'
