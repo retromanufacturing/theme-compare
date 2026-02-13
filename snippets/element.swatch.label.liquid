@@ -87,70 +87,50 @@
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
 
-{% stylesheet %}
-  .element-swatch {
-    --swatch-size: 40px;
-    --accent-blue: #0076bd; /* Crutchfield-style blue or use #000 for black */
-    
-    display: inline-block !important;
-    vertical-align: top;
-    margin: 4px;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-  }
+/* The outer wrapper should not have the border; the inner card will. */
+.element-swatch {
+  display: inline-block !important;
+  margin: 5px;
+  padding: 0;
+  border: none !important; /* Remove theme's default border */
+  background: none !important;
+}
 
-  .element-swatch__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 8px;
-    min-width: 85px;
-    border: 1px solid #e1e1e1;
-    border-radius: 4px;
-    background: #ffffff;
-  }
+/* This is the rectangular box (Crutchfield style) */
+.element-swatch__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 10px;
+  min-width: 80px;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
 
-  /* The Circle Preview */
-  .element-swatch__visual {
-    display: block;
-    width: var(--swatch-size);
-    height: var(--swatch-size);
-    border-radius: 50%;
-    margin-bottom: 8px;
-    background-size: cover;
-    background-position: center;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
-  }
+/* Ensure the circle stays a circle */
+.element-swatch__visual {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  background-color: var(--element-swatch-color-background, #eee);
+  background-image: var(--element-swatch-color-background-image, none);
+  background-size: cover;
+  border: 1px solid rgba(0,0,0,0.1);
+}
 
-  /* The Label Text */
-  .element-swatch__label {
-    font-size: 13px;
-    font-weight: 500;
-    color: #333;
-    line-height: 1.2;
-    text-align: center;
-    word-break: break-word;
-  }
+/* Style for the selected state */
+.element-swatch--selected .element-swatch__card {
+  border: 2px solid #000000 !important;
+  padding: 11px 9px; /* Offset for the 2px border so it doesn't jump */
+}
 
-  /* Selected State: Border gets thicker and darker/colored */
-  .element-swatch.is-selected .element-swatch__inner,
-  .element-swatch--selected .element-swatch__inner {
-    border: 2px solid var(--accent-blue);
-    padding: 11px 7px; /* Adjust padding so size doesn't jump due to 2px border */
-    background-color: #f8faff;
-  }
-
-  /* Hover State */
-  .element-swatch:hover .element-swatch__inner {
-    border-color: #999;
-  }
-
-  /* Disabled State */
-  .element-swatch--disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    filter: grayscale(1);
-  }
-{% endstylesheet %}
+/* Style for the disabled state */
+.element-swatch--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
