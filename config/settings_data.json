@@ -36,7 +36,7 @@
     "superscript_decimals": true,
     "product_save_amount": false,
     "vendor_enable": false,
-    "swatch_size": 40,
+    "swatch_size": 80,
     "quick_shop_enable": true,
     "quick_add_enable": true,
     "product_grid_image_size": "square",
