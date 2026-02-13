@@ -20,8 +20,6 @@
   assign variants_option2_arr = product.variants | map: 'option2'
   assign variants_option3_arr = product.variants | map: 'option3'
 
-  assign variants_sku = product.variants | map: 'sku'
-
   assign form_id = 'product-form-' | append: section.id
 
   if block.settings.color_swatches
