@@ -137,7 +137,7 @@
       if value.swatch.image
         assign bg_color_image = value.swatch.image | image_url: width: 50
       else
-        assign bg_color_image = value.id
+        assign bg_color_image = value.variant
       endif
 
     -%}
