@@ -161,7 +161,9 @@
 
     {%- if is_color -%}
       {%- capture swatch_style -%}
-        --element-swatch-color-background: {{ bg_color }};
+       {% unless value.swatch.color == blank %}
+         --element-swatch-color-background: {{ bg_color }};
+       {% endunless %} 
         --element-swatch-color-background-image: url({{ bg_color_image }});
       {%- endcapture -%}
 
