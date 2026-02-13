@@ -129,7 +129,7 @@
 
       assign bg_color = color_swatch_fallback
       assign bg_color_image = color_image
-      assign bg_color_image_fallback = value.name | append: '.' | append: swatch_file_extension 
+      assign bg_color_image_fallback = value.name | append: '.' | append: swatch_file_extension | file_url
 
       if value.swatch.color
         assign bg_color = value.swatch.color
@@ -205,7 +205,7 @@
       slot: radio_label
     -%}
 
-    {{ value.swatch.color }}
+    {{ bg_color_image_fallback }}
   {%- endfor -%}
 
 
