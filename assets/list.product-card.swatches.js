@@ -2,7 +2,7 @@ class ColorSwatches extends HTMLElement {
   connectedCallback() {
     this.selectors = {
       colorSwatchImage: '.grid-product__color-image',
-      colorSwatch: '.element-swatch',
+      colorSwatch: '.element-swatch .element-swatch-label',
       gridItemOverlayLink: '.grid-item__overlay-link',
       gridProductImageWrap: '.grid-product__image-wrap'
     }
