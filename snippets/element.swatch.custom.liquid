@@ -2,6 +2,7 @@
   Copyright © 2025 Archetype Themes LP. All rights reserved.
 
   Color or pattern swatch with various sizes and states for product selection.
+  Modified to support internal slots and Crutchfield-style high-contrast borders.
 
   @param {boolean} [large] - Whether the swatch is large
   @param {boolean} [selected] - Whether the swatch is selected
@@ -11,9 +12,10 @@
   @param {string} [href] - Link (only works if element is 'a')
   @param {boolean} [disabled] - Whether the swatch is disabled
   @param {string} [attributes] - Additional attributes
+  @param {string} [slot] - Content to render inside the swatch
 
   @example
-  {% render 'element.swatch', color: '#000000', selected: true %}
+  {% render 'element.swatch', color: '#000000', selected: true, slot: 'Text' %}
 {% enddoc %}
 
 {% liquid
@@ -26,6 +28,7 @@
   assign href = href | default: ''
   assign disabled = disabled | default: false
   assign attributes = attributes | default: ''
+  assign slot = slot | default: ''
 
   if element == 'a' and href != blank
     assign classlist = classlist | append: ' element-swatch--link'
@@ -60,101 +63,111 @@
 
 <{{ element }}
   class="{{ classlist }}"
-  
   {% if element == 'a' and href != blank %}
     href="{{ href }}"
   {% endif %}
-
   {%- if style != blank -%}
     style="{{ style }}"
   {%- endif -%}
-
   {%- if attributes != blank -%}
     {{ attributes }}
   {%- endif -%}
->test</{{ element }}>
+>
+  {{ slot }}
+</{{ element }}>
 
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
 
 {% stylesheet %}
   .element-swatch {
-    /* Layout */
+    /* Layout Basics */
     --_size-small: var(--element-swatch-size-small, var(--size-4));
     --_size-large: var(--element-swatch-size-large, var(--size-8));
-    --_size-mobile-ratio: var(--element-swatch-size-mobile-ratio, 0.875); /* 3.5/4 for small, 6/8 for large (0.75) */
+    --_size-mobile-ratio: var(--element-swatch-size-mobile-ratio, 0.875);
     --_size: var(--_size-small);
     --_radius: var(--element-swatch-radius, var(--radius-full));
-    --_border-width: var(--element-swatch-border-width, var(--size-0-25));
-    --_outline-width: var(--element-swatch-outline-width, 3px);
-    --_line-disabled-width: var(
-      --element-swatch-line-disabled-width,
-      max(var(--size-0-25), calc(var(--_size) * 0.0625))
-    );
+    
+    /* Crutchfield Border Controls */
+    --_border-width-default: 1px;
+    --_border-width-selected: 3px;
+    --_border-color-default: #d1d1d1;
+    --_border-color-selected: #000000; /* Crutchfield Black or #0076bd Blue */
 
-    /* Colors */
+    /* Color Logic */
     --_color-primary: var(--color-primary, #000);
     --_color-secondary: var(--color-secondary, #fff);
     --_color-background: var(--element-swatch-color-background, var(--_color-primary));
     --_color-background-image: var(--element-swatch-color-background-image, none);
-    --_color-border: var(--element-swatch-color-border, var(--_color-primary));
     --_color-disabled: var(--element-swatch-color-disabled, none);
-    --_color-focus: var(--element-swatch-color-focus, var(--color-focus, #4a9afc));
-    --_shade-inset: var(--element-swatch-shade-inset, 16%);
-    --_shade-outer: var(--element-swatch-shade-outer, 0%);
-    --_shade-outer-hover: var(--element-swatch-shade-outer-hover, 20%);
-    --_shade-outer-selected: var(--element-swatch-shade-outer-selected, 100%);
 
-    display: inline-block;
+    /* Center content inside the swatch */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    
     background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
     width: var(--_size);
     height: var(--_size);
     border-radius: var(--_radius);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--_color-secondary) 100%, transparent),
-      0 0 0 var(--_outline-width) color-mix(in srgb, var(--_color-primary) var(--_shade-outer), transparent),
-      inset 0 0 0 var(--_border-width) color-mix(in srgb, var(--_color-border) var(--_shade-inset), transparent);
+    
+    /* Remove shadow ring, use solid border */
+    border: var(--_border-width-default) solid var(--_border-color-default);
+    box-shadow: none; 
     outline: 0;
+    transition: all 0.15s ease-in-out;
+    
+    /* Internal text defaults */
+    font-size: 11px;
+    font-weight: 700;
+    color: inherit; 
+    text-transform: uppercase;
+    overflow: hidden;
 
     @media only screen and (max-width: 768px) {
       --_size: calc(var(--_size-small) * var(--_size-mobile-ratio));
     }
 
+    /* Hover State */
     label:hover &,
     &:hover {
-      --_outline-width: 4px;
-      --_shade-outer: var(--_shade-outer-hover);
+      border-color: #000;
     }
 
+    /* Selected State: Heavy direct border */
     &:focus,
     input:checked ~ &,
     .element-swatch--selected {
-      --_shade-outer: var(--_shade-outer-selected);
+      border: var(--_border-width-selected) solid var(--_border-color-selected);
+      border-color: var(--_border-color-selected) !important;
     } 
 
-    /* Focus State */
+    /* Accessibility focus */
     &:focus-visible,
     input[type='radio']:focus-visible ~ & {
-      --_color-primary: var(--_color-focus);
-      --_outline-width: 4px;
+      outline: 2px solid var(--_border-color-selected);
+      outline-offset: 2px;
     }
   }
 
   .element-swatch--large {
     --_size: var(--_size-large);
-
     @media only screen and (max-width: 768px) {
       --_size: calc(var(--_size-large) * var(--_size-mobile-ratio));
     }
   }
 
+  /* Out of stock logic */
   .element-swatch--disabled,
   .disabled > input[type='radio'] ~ &,
   input:disabled + & {
+    opacity: 0.5;
     --_color-disabled: linear-gradient(
       to bottom right,
-      transparent calc(50% - var(--_line-disabled-width)),
-      var(--color-secondary) calc(50% - var(--_line-disabled-width)) calc(50% + var(--_line-disabled-width)),
-      transparent calc(50% + var(--_line-disabled-width))
+      transparent calc(50% - 1px),
+      #e02b27 calc(50% - 1px) calc(50% + 1px),
+      transparent calc(50% + 1px)
     );
   }
 {% endstylesheet %}
