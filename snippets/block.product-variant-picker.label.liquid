@@ -129,7 +129,7 @@
 
       assign bg_color = color_swatch_fallback
       assign bg_color_image = color_image
-      assign bg_color_image_fallback = value.name | prepend: 'test-'
+      assign bg_color_image_fallback = value.name | file_url
 
       if value.swatch.color
         assign bg_color = value.swatch.color
