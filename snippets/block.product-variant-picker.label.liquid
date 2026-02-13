@@ -62,7 +62,7 @@
     render 'element.icon', name: 'size-chart'
   endcapture
 -%}
-{{ swatch_trigger }}
+
 <fieldset class="variant-button-wrap">
   <legend class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
     {{ option.name }}
@@ -200,7 +200,6 @@
       display_icon: false,
       slot: radio_label
     -%}
-{{ color_file_name }}, {{ color_image }}, {{ color_swatch_fallback }};
   {%- endfor -%}
 
 
