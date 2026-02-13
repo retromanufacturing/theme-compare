@@ -60,21 +60,19 @@
 
 <{{ element }}
   class="{{ classlist }}"
-  
-  {% if element == 'a' and href != blank %}
-    href="{{ href }}"
-  {% endif %}
-
   {%- if style != blank -%}
     style="{{ style }}"
   {%- endif -%}
-
   {%- if attributes != blank -%}
     {{ attributes }}
   {%- endif -%}
 >
-{%- if slot != blank -%}
-    <span class="element-swatch__content">{{ slot }}</span>
+  {% comment %} 1. The Visual Circle/Image Area {% endcomment %}
+  <span class="element-swatch__visual"></span>
+
+  {% comment %} 2. The Text Label Area {% endcomment %}
+  {%- if slot != blank -%}
+    <span class="element-swatch__label">{{ slot }}</span>
   {%- endif -%}
 </{{ element }}>
 
@@ -83,97 +81,61 @@
 
 {% stylesheet %}
   .element-swatch {
-    /* Layout */
-    --_size-small: var(--element-swatch-size-small, var(--size-4));
-    --_size-large: var(--element-swatch-size-large, var(--size-8));
-    --_size-mobile-ratio: var(--element-swatch-size-mobile-ratio, 0.875); /* 3.5/4 for small, 6/8 for large (0.75) */
-    --_size: var(--_size-small);
-    --_radius: var(--element-swatch-radius, var(--radius-full));
-    --_border-width: var(--element-swatch-border-width, var(--size-0-25));
-    --_outline-width: var(--element-swatch-outline-width, 3px);
-    --_line-disabled-width: var(
-      --element-swatch-line-disabled-width,
-      max(var(--size-0-25), calc(var(--_size) * 0.0625))
+    --_border-color: #d1d1d1;
+    --_border-width: 1px;
+    --_accent-color: #000000; /* Crutchfield Black */
 
     display: inline-flex !important;
-    align-items: center;      /* Vertical center */
-    justify-content: center;   /* Horizontal center */
-    vertical-align: middle;
-    overflow: hidden;         /* Keeps text from breaking the circle shape */
-    color: #000;              /* Default text color */  
-    );
-
-    /* Colors */
-    --_color-primary: var(--color-primary, #000);
-    --_color-secondary: var(--color-secondary, #fff);
-    --_color-background: var(--element-swatch-color-background, var(--_color-primary));
-    --_color-background-image: var(--element-swatch-color-background-image, none);
-    --_color-border: var(--element-swatch-color-border, var(--_color-primary));
-    --_color-disabled: var(--element-swatch-color-disabled, none);
-    --_color-focus: var(--element-swatch-color-focus, var(--color-focus, #4a9afc));
-    --_shade-inset: var(--element-swatch-shade-inset, 16%);
-    --_shade-outer: var(--element-swatch-shade-outer, 0%);
-    --_shade-outer-hover: var(--element-swatch-shade-outer-hover, 20%);
-    --_shade-outer-selected: var(--element-swatch-shade-outer-selected, 100%);
-
-    display: inline-block;
-    background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
-    width: var(--_size);
-    height: var(--_size);
-    border-radius: var(--_radius);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--_color-secondary) 100%, transparent),
-      0 0 0 var(--_outline-width) color-mix(in srgb, var(--_color-primary) var(--_shade-outer), transparent),
-      inset 0 0 0 var(--_border-width) color-mix(in srgb, var(--_color-border) var(--_shade-inset), transparent);
-    outline: 0;
-
-    @media only screen and (max-width: 768px) {
-      --_size: calc(var(--_size-small) * var(--_size-mobile-ratio));
-    }
-
-    label:hover &,
-    &:hover {
-      --_outline-width: 4px;
-      --_shade-outer: var(--_shade-outer-hover);
-    }
-
-    &:focus,
-    input:checked ~ &,
-    .element-swatch--selected {
-      --_shade-outer: var(--_shade-outer-selected);
-    } 
-
-    /* Focus State */
-    &:focus-visible,
-    input[type='radio']:focus-visible ~ & {
-      --_color-primary: var(--_color-focus);
-      --_outline-width: 4px;
-    }
+    flex-direction: column;    /* Stack Image over Text */
+    align-items: center;
+    padding: 10px;
+    border: var(--_border-width) solid var(--_border-color);
+    border-radius: 4px;        /* Soft rounded corners for the card */
+    background: #ffffff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;           /* Ensures a consistent width */
+    margin: 5px;
+    text-decoration: none;
   }
 
-  .element-swatch--large {
-    --_size: var(--_size-large);
-
-    @media only screen and (max-width: 768px) {
-      --_size: calc(var(--_size-large) * var(--_size-mobile-ratio));
-    }
+  /* The Visual Swatch (The circle inside the card) */
+  .element-swatch__visual {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 8px;        /* Space between circle and text */
+    background-color: var(--element-swatch-color-background, #eee);
+    background-image: var(--element-swatch-color-background-image, none);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(0,0,0,0.1);
   }
 
-  .element-swatch--disabled,
-  .disabled > input[type='radio'] ~ &,
-  input:disabled + & {
-    --_color-disabled: linear-gradient(
-      to bottom right,
-      transparent calc(50% - var(--_line-disabled-width)),
-      var(--color-secondary) calc(50% - var(--_line-disabled-width)) calc(50% + var(--_line-disabled-width)),
-      transparent calc(50% + var(--_line-disabled-width))
-    );
+  /* The Text Label */
+  .element-swatch__label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    line-height: 1.2;
   }
 
-  .element-swatch__content {
-  line-height: 1;
-  font-size: 12px;          /* Adjust based on your preference */
-  font-weight: bold;
-  pointer-events: none;     /* Clicks go through text to the swatch */
-  z-index: 2;               /* Keeps text above the background color */
-}
+  /* SELECTED STATE: Apply border to the WHOLE card */
+  input:checked ~ .element-swatch,
+  .element-swatch--selected {
+    border: 2px solid var(--_accent-color) !important;
+    background-color: #f9f9f9;
+  }
+
+  /* Hover State */
+  .element-swatch:hover {
+    border-color: #888;
+  }
+
+  /* Handle Disabled/Out of Stock */
+  .element-swatch--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 {% endstylesheet %}
