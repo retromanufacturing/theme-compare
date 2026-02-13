@@ -1,19 +1,6 @@
 {% doc %}
   Copyright © 2025 Archetype Themes LP. All rights reserved.
-
-  Color or pattern swatch with various sizes and states for product selection.
-
-  @param {boolean} [large] - Whether the swatch is large
-  @param {boolean} [selected] - Whether the swatch is selected
-  @param {string} [classlist] - Additional CSS classes
-  @param {object} [swatch] - Swatch object
-  @param {string} [style] - Style attribute
-  @param {string} [href] - Link (only works if element is 'a')
-  @param {boolean} [disabled] - Whether the swatch is disabled
-  @param {string} [attributes] - Additional attributes
-
-  @example
-  {% render 'element.swatch', color: '#000000', selected: true %}
+  Modified to Crutchfield-style Card Layout.
 {% enddoc %}
 
 {% liquid
@@ -44,7 +31,7 @@
   endif
 
   if swatch != null
-    assign swatch_image = swatch.image | image_url: width: 50
+    assign swatch_image = swatch.image | image_url: width: 100
     capture swatch_style
       if swatch.color != blank
         echo '--element-swatch-color-background: ' | append: swatch.color | append: ';'
@@ -67,72 +54,98 @@
     {{ attributes }}
   {%- endif -%}
 >
-  {% comment %} 
-    We wrap everything in a 'card' div to ensure the border 
-    is a rectangle, not an oval.
-  {% endcomment %}
-  <div class="element-swatch__card">
-    
-    {% comment %} 1. The Circle Preview Area {% endcomment %}
-    <span class="element-swatch__visual"></span>
+  {% comment %} 1. The Circular Image Area {% endcomment %}
+  <span class="element-swatch__visual"></span>
 
-    {% comment %} 2. The Text Label Area {% endcomment %}
-    {%- if slot != blank -%}
-      <span class="element-swatch__label">{{ slot }}</span>
-    {%- endif -%}
-    
-  </div>
+  {% comment %} 2. The Text Label Area {% endcomment %}
+  {%- if slot != blank -%}
+    <span class="element-swatch__label">{{ slot }}</span>
+  {%- endif -%}
 </{{ element }}>
 
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
 
 {% stylesheet %}
-  /* The outer wrapper should not have the border; the inner card will. */
-.element-swatch {
-  display: inline-block !important;
-  margin: 5px;
-  padding: 0;
-  border: none !important; /* Remove theme's default border */
-  background: none !important;
-}
+  .element-swatch {
+    --_border-color: #d1d1d1;
+    --_accent-color: #000000;
+    --swatch-size: 44px;
 
-/* This is the rectangular box (Crutchfield style) */
-.element-swatch__card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 10px;
-  min-width: 80px;
-  border: 1px solid #d1d1d1;
-  border-radius: 4px;
-  background: #ffffff;
-  transition: all 0.2s ease;
-}
+    /* Force vertical stacking and center alignment */
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* Layout Reset */
+    position: relative !important;
+    vertical-align: top !important;
+    width: 85px !important; 
+    min-height: 95px !important;
+    padding: 12px 5px !important;
+    margin: 6px !important;
+    box-sizing: border-box !important;
+    
+    /* Aesthetics */
+    border: 1px solid var(--_border-color) !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.1s ease;
+  }
 
-/* Ensure the circle stays a circle */
-.element-swatch__visual {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-bottom: 8px;
-  background-color: var(--element-swatch-color-background, #eee);
-  background-image: var(--element-swatch-color-background-image, none);
-  background-size: cover;
-  border: 1px solid rgba(0,0,0,0.1);
-}
+  /* The Visual Circle */
+  .element-swatch__visual {
+    display: block !important;
+    width: var(--swatch-size) !important;
+    height: var(--swatch-size) !important;
+    border-radius: 50% !important;
+    margin-bottom: 8px !important;
+    background-color: var(--element-swatch-color-background, #eee);
+    background-image: var(--element-swatch-color-background-image, none);
+    background-size: cover !important;
+    background-position: center !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    flex-shrink: 0 !important;
+  }
 
-/* Style for the selected state */
-.element-swatch--selected .element-swatch__card {
-  border: 2px solid #000000 !important;
-  padding: 11px 9px; /* Offset for the 2px border so it doesn't jump */
-}
+  /* The Text Label */
+  .element-swatch__label {
+    display: block !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
 
-/* Style for the disabled state */
-.element-swatch--disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
+  /* Selected State */
+  .element-swatch--selected {
+    border: 2px solid var(--_accent-color) !important;
+    padding: 11px 4px !important; /* Offset for 2px border */
+    background-color: #f9f9f9 !important;
+    z-index: 2;
+  }
+
+  /* Hover State */
+  .element-swatch:hover:not(.element-swatch--disabled) {
+    border-color: #888 !important;
+  }
+
+  /* Disabled/Out of Stock State */
+  .element-swatch--disabled {
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+    filter: grayscale(1);
+  }
+
+  /* Large Variant Support */
+  .element-swatch--large {
+    width: 100px !important;
+    --swatch-size: 55px;
+  }
 {% endstylesheet %}
