@@ -57,7 +57,7 @@
     assign style = style | append: swatch_style
   endif
 %}
-<span class="element-swatch-label">
+
 <{{ element }}
   class="{{ classlist }}"
   
@@ -72,13 +72,13 @@
   {%- if attributes != blank -%}
     {{ attributes }}
   {%- endif -%}
-></{{ element }}>this is a test
-</span>
+></{{ element }}>
+
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
 
 {% stylesheet %}
-  .element-swatch-label {
+  .element-swatch {
     /* Layout */
     --_size-small: var(--element-swatch-size-small, var(--size-4));
     --_size-large: var(--element-swatch-size-large, var(--size-8));
