@@ -34,7 +34,7 @@
           "type": "variant_picker",
           "settings": {
             "variant_labels": true,
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "product_dynamic_variants_enable": true,
             "color_swatches": true
           }
