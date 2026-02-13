@@ -89,6 +89,7 @@
   {%- for value in option.values -%}
     {%- liquid
       assign option_disabled = true
+      assign matching_variants = product.variants | where: option.name, value 
 
       if block.settings.product_dynamic_variants_enable
         for option1_name in variants_option1_arr
@@ -199,9 +200,8 @@
       display_icon: false,
       slot: radio_label
     -%}
-    
+    {{ matching_variants }}
   {%- endfor -%}
 
 
 </fieldset>
- <li> {{ variants_sku }},</li>
