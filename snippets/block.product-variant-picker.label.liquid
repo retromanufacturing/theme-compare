@@ -168,7 +168,7 @@
       {%- endcapture -%}
 
       {%- capture radio_label -%}
-        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, attributes: 'data-variant-name="Limited Edition"' -%}
+        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: value -%}
 
         <span class="visually-hidden">
           {{ value | escape }}
