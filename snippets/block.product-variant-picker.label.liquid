@@ -28,7 +28,7 @@
     assign is_color = false
 
     capture swatch_trigger
-      render 'utility.translate', key: 'trigger.color_swatch', fallback: 'choose, color'
+      render 'utility.translate', key: 'trigger.color_swatch', fallback: 'choose'
     endcapture
     assign swatch_trigger = swatch_trigger | downcase | strip
 
