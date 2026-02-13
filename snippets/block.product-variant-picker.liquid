@@ -182,6 +182,12 @@
           block: block,
           prev_block_index: prev_block_index
         -%}
+	  {%- elsif block.settings.picker_type == 'button_label' -%}
+        {%- render 'block.product-variant-picker.label',
+          option: option,
+          block: block,
+          prev_block_index: prev_block_index
+        -%}
       {%- else -%}
         {%- render 'block.product-variant-picker.dropdown', option: option, block: block -%}
       {%- endif -%}
