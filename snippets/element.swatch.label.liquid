@@ -19,7 +19,7 @@
 {% liquid
   assign large = large | default: false
   assign selected = selected | default: false
-  assign classlist = classlist | default: '' | append: ' element-swatch element-swatch-label' | strip
+  assign classlist = classlist | default: '' | append: ' element-swatch' | strip
   assign color = color | default: ''
   assign style = style | default: ''
   assign element = element | default: 'span'
@@ -57,7 +57,7 @@
     assign style = style | append: swatch_style
   endif
 %}
-
+<span class="element-swatch-label">
 <{{ element }}
   class="{{ classlist }}"
   
@@ -73,7 +73,7 @@
     {{ attributes }}
   {%- endif -%}
 ></{{ element }}>
-
+</span>
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
 
