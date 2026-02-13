@@ -72,7 +72,11 @@
   {%- if attributes != blank -%}
     {{ attributes }}
   {%- endif -%}
-></{{ element }}>
+>
+{%- if slot != blank -%}
+    <span class="element-swatch__content">{{ slot }}</span>
+  {%- endif -%}
+</{{ element }}>
 
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
