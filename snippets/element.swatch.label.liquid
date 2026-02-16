@@ -72,7 +72,9 @@
   {%- if attributes != blank -%}
     {{ attributes }} 
   {%- endif -%}
-></{{ element }}>
+>
+  <span class="element-swatch__fill" aria-hidden="true"></span>
+</{{ element }}>
 
 {% render 'style.primitive-tokens' %}
 {% render 'style.normalize' %}
@@ -106,7 +108,7 @@
     --_shade-outer-selected: var(--element-swatch-shade-outer-selected, 100%);
 
     display: inline-block;
-    background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
+    
     width: 85px;
     height: 95px;
     border-radius: 4px;
@@ -114,6 +116,12 @@
       0 0 0 var(--_outline-width) color-mix(in srgb, var(--_color-primary) var(--_shade-outer), transparent),
       inset 0 0 0 var(--_border-width) color-mix(in srgb, var(--_color-border) var(--_shade-inset), transparent);
     outline: 0;
+
+     /* IMPORTANT: remove background painting from parent */
+    background: transparent;
+
+    /* Make sure child clips to circle */
+    overflow: hidden;
 
     @media only screen and (max-width: 768px) {
       --_size: calc(var(--_size-small) * var(--_size-mobile-ratio));
@@ -139,8 +147,13 @@
     }
 
     .element-swatch__fill {
+      display: block;
       width: 44px;
       height: 44px;
+      border-radius: inherit;
+
+      /* Paint happens here now */
+      background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
     }
   }
 
