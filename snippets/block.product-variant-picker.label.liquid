@@ -150,9 +150,9 @@
 
     -%}
 
-     Option 1: {{variants_option1_arr}} 
+     {% comment %} Option 1: {{variants_option1_arr}} 
      Option 2: {{ variants_option2_arr }}
-     Option 3: {{ variants_option3_arr }}
+     Option 3: {{ variants_option3_arr }} {% endcomment %}
 
     {%- capture button_text -%}
       {{ value | escape}}
