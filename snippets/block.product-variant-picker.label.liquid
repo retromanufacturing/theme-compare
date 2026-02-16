@@ -87,8 +87,6 @@
   {%- for value in option.values -%}
     {%- liquid
       assign option_disabled = true
-      assign variant_swatch_metafield = value.variant.metafields.data.motor
-      assign variant_price = value.variant.price | money
 
       if block.settings.product_dynamic_variants_enable
         for option1_name in variants_option1_arr
@@ -141,6 +139,9 @@
         assign bg_color_image = bg_color_image_fallback
       endif
 
+           
+      assign variant_swatch_metafield = value.variant.metafields.data.motor
+      assign variant_price = value.variant.price | money
     -%}
 
     {%- capture button_text -%}
