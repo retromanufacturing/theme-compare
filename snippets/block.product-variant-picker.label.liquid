@@ -59,8 +59,6 @@
     echo 'labels.size_chart' | t
     render 'element.icon', name: 'size-chart'
   endcapture
-
-  assign swatch_option_metafield =  product.variants | map: 'metafields' | map: 'data' | map: 'motor'
 -%}
 
 <fieldset class="variant-button-wrap">
@@ -91,7 +89,7 @@
   {%- for value in option.values -%}
     {%- liquid
       assign option_disabled = true
-      assign swatch_metafield = blank
+      assign variant_swatch_metafield = value.variant.metafields.data.motor
 
       if block.settings.product_dynamic_variants_enable
         for option1_name in variants_option1_arr
@@ -99,17 +97,15 @@
             when 1
               if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
                 assign option_disabled = false
-                assign swatch_metafield = swatch_option_metafield[forloop.index0]
+
               endif
             when 2
               if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
                 assign option_disabled = false
-                assign swatch_metafield = swatch_option_metafield[forloop.index0]
               endif
             when 3
               if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
                 assign option_disabled = false
-                assign swatch_metafield = swatch_option_metafield[forloop.index0]
               endif
           endcase
         endfor
@@ -147,10 +143,6 @@
       endif
 
     -%}
-        {{ value.variant.metafields.data.motor }}
-     {% comment %} Option 1: {{variants_option1_arr}} 
-     Option 2: {{ variants_option2_arr }}
-     Option 3: {{ variants_option3_arr }} {% endcomment %}
 
     {%- capture button_text -%}
       {{ value | escape}}
@@ -177,7 +169,7 @@
       {%- endcapture -%}
 
       {%- capture radio_label -%}
-        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: swatch_metafield -%}
+        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: variant_swatch_metafield -%}
 
         <span class="visually-hidden">
           {{ value | escape }}
