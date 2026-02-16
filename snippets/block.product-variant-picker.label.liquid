@@ -86,10 +86,7 @@
     {%- endif -%}
   </legend>
 
-  Variant Data
-  {% for variant in product.variants %}
-    {{ variant.title }}--{{ variant.metafields.data.motor }}
-  {% endfor %}
+{{ option.name }}
 
   {%- for value in option.values -%}
     {%- liquid
