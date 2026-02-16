@@ -86,6 +86,7 @@
     {%- endif -%}
   </legend>
 
+  Variant Data
   {% for variant in product.variants %}
     {{ variant.title }}--{{ variant.metafields.data.motor }}
   {% endfor %}
