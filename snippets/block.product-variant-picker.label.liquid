@@ -167,7 +167,7 @@
       {%- endcapture -%}
 
       {%- capture radio_label -%}
-        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: variant_swatch_metafield -%}
+        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: value -%}
 
         <span class="visually-hidden">
           {{ value | escape }}
