@@ -26,6 +26,7 @@
   assign href = href | default: ''
   assign disabled = disabled | default: false
   assign attributes = attributes | default: ''
+  assign slot = slot | default: ' '
 
   if element == 'a' and href != blank
     assign classlist = classlist | append: ' element-swatch--link'
