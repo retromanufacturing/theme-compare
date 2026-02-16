@@ -86,6 +86,10 @@
     {%- endif -%}
   </legend>
 
+  {% for variant in product.variants %}
+    {{ variant.title }}--{{ variant.metafields.data.motor }}
+  {% endfor %}
+
   {%- for value in option.values -%}
     {%- liquid
       assign option_disabled = true
