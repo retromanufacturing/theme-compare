@@ -1,6 +1,19 @@
 {% doc %}
   Copyright © 2025 Archetype Themes LP. All rights reserved.
-  Modified to Crutchfield-style Card Layout.
+
+  Color or pattern swatch with various sizes and states for product selection.
+
+  @param {boolean} [large] - Whether the swatch is large
+  @param {boolean} [selected] - Whether the swatch is selected
+  @param {string} [classlist] - Additional CSS classes
+  @param {object} [swatch] - Swatch object
+  @param {string} [style] - Style attribute
+  @param {string} [href] - Link (only works if element is 'a')
+  @param {boolean} [disabled] - Whether the swatch is disabled
+  @param {string} [attributes] - Additional attributes
+
+  @example
+  {% render 'element.swatch', color: '#000000', selected: true %}
 {% enddoc %}
 
 {% liquid
