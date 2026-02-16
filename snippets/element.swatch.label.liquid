@@ -19,7 +19,7 @@
 {% liquid
   assign large = large | default: false
   assign selected = selected | default: false
-  assign classlist = classlist | default: '' | append: ' element-swatch' | strip
+  assign classlist = classlist | default: '' | append: ' element-swatch element-swatch-label' | strip
   assign color = color | default: ''
   assign style = style | default: ''
   assign element = element | default: 'span'
@@ -78,7 +78,7 @@
 {% render 'style.normalize' %}
 
 {% stylesheet %}
-  .element-swatch {
+  .element-swatch.element-swatch-label {
     /* Layout */
     --_size-small: var(--element-swatch-size-small, var(--size-4));
     --_size-large: var(--element-swatch-size-large, var(--size-8));
