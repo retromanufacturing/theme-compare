@@ -146,6 +146,10 @@
 
     -%}
 
+     Option 1: {{variants_option1_arr}} 
+     Option 2: {{ variants_option2_arr }}
+     Option 3: {{ variants_option3_arr }}
+
     {%- capture button_text -%}
       {{ value | escape}}
       {%- if option_disabled -%}
@@ -169,8 +173,6 @@
        {% endunless %} 
         --element-swatch-color-background-image: url({{ bg_color_image }});
       {%- endcapture -%}
-
-test
 
       {%- capture radio_label -%}
         {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: swatch_metafield -%}
