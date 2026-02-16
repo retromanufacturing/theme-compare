@@ -60,7 +60,7 @@
     render 'element.icon', name: 'size-chart'
   endcapture
 
-  assign swatch_option_metafield =  product.variants | map: 'metafields.data.motor'
+  assign swatch_option_metafield =  product.variants | map: 'metafields' | map: 'data' | map: 'motor'
 -%}
 
 <fieldset class="variant-button-wrap">
