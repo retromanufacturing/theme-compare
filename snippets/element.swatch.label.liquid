@@ -108,7 +108,6 @@
     --_shade-outer-selected: var(--element-swatch-shade-outer-selected, 100%);
 
     display: inline-flex;
-    align-items: center;    /* vertical center */
     justify-content: center;/* horizontal center */
     
     width: 85px;
@@ -156,6 +155,9 @@
 
       /* Paint happens here now */
       background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   }
 
