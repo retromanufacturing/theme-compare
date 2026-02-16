@@ -74,6 +74,7 @@
   {%- endif -%}
 >
   <span class="element-swatch__fill" aria-hidden="true"></span>
+  <span class="element-swatch__text">{{ slot }}</span>
 </{{ element }}>
 
 {% render 'style.primitive-tokens' %}
@@ -152,12 +153,15 @@
       width: 44px;
       height: 44px;
 
-
       /* Paint happens here now */
       background: var(--_color-disabled), var(--_color-background-image) center / cover, var(--_color-background);
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
+    }
+
+    .element-swatch__text {
+      font-size: 12px;
     }
   }
 
