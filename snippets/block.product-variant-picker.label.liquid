@@ -88,6 +88,7 @@
     {%- liquid
       assign option_disabled = true
       assign variant_swatch_metafield = value.variant.metafields.data.motor
+      assign variant_price = value.variant.price
 
       if block.settings.product_dynamic_variants_enable
         for option1_name in variants_option1_arr
@@ -167,7 +168,7 @@
       {%- endcapture -%}
 
       {%- capture radio_label -%}
-        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: value -%}
+        {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: variant_price -%}
 
         <span class="visually-hidden">
           {{ value | escape }}
