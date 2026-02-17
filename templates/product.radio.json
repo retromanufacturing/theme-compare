@@ -37,7 +37,9 @@
             "picker_type": "button_label",
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
-            "non_label_options": "Choose a Face Color"
+            "non_label_options": "Choose a Face Color",
+            "label_width": 60,
+            "label_height": 85
           }
         },
         "product_features_Kp4pgm": {
