@@ -140,7 +140,7 @@
       endif
 
            
-      assign variant_swatch_metafield = value.variant.metafields.data.variant_details
+      assign variant_swatch_metafield = value.variant.metafields.data.variant_details.value.description
       assign variant_price = value.variant.price | money
     -%}
 
@@ -185,7 +185,7 @@
         {%- endif -%}
       {%- endcapture -%}
     {%- endif -%}
-{{ value.variant.metafields.data.variant_details.value[description] }}
+
     {%- capture radio_attributes -%}
       form="{{ form_id }}"
       data-index="option{{ option.position }}"
