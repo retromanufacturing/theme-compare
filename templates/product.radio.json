@@ -34,9 +34,10 @@
           "type": "variant_picker",
           "settings": {
             "variant_labels": true,
-            "picker_type": "button",
+            "picker_type": "button_label",
             "product_dynamic_variants_enable": true,
-            "color_swatches": true
+            "color_swatches": true,
+            "non_label_options": "Choose a Face Color"
           }
         },
         "product_features_Kp4pgm": {
