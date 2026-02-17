@@ -185,7 +185,7 @@
         {%- endif -%}
       {%- endcapture -%}
     {%- endif -%}
-{{ value.variant.metafields.data.variant_details.value.description }}
+{{ value.variant.metafields.data.variant_details.value[description] }}
     {%- capture radio_attributes -%}
       form="{{ form_id }}"
       data-index="option{{ option.position }}"
