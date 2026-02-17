@@ -167,7 +167,7 @@
        {% endunless %} 
         --element-swatch-color-background-image: url({{ bg_color_image }});
       {%- endcapture -%}
-{{ block.settings.label_width }}
+{{ block.settings.label_width }}--{{ block.settings.label_height }}
       {%- capture radio_label -%}
         {%- render 'element.swatch.label', large: true, style: swatch_style, disabled: option_disabled, slot: variant_swatch_metafield -%}
 
