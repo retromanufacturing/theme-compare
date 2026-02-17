@@ -38,7 +38,7 @@
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
             "non_label_options": "Choose a Face Color",
-            "label_width": 60,
+            "label_width": 85,
             "label_height": 85
           }
         },
