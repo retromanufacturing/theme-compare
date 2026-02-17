@@ -113,8 +113,8 @@
     align-items: center;
     flex-direction: column;
     
-    width: 85px;
-    height: 85px;
+    width: {{ block.settings.label_width }}px;
+    height: {{ block.settings.label_height }}px;
     border-radius: 4px;
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--_color-secondary) 100%, transparent),
       0 0 0 var(--_outline-width) color-mix(in srgb, var(--_color-primary) var(--_shade-outer), transparent),
@@ -189,4 +189,4 @@
       transparent calc(50% + var(--_line-disabled-width))
     );
   }
-{% endstylesheet %}{{ block.settings.label_width }}--{{ block.settings.label_height }}
+{% endstylesheet %}
