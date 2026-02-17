@@ -175,7 +175,7 @@
     data-product-id="{{ product.id }}"
     {{ block.shopify_attributes }}
   >
-    {%- for option in product.options_with_values -%} {{ option.name }}--{{ option.position }}--{{ block.settings.non_label_options }}
+    {%- for option in product.options_with_values -%} 
       {%- if block.settings.picker_type == 'button' -%}
         {%- render 'block.product-variant-picker.button',
           option: option,
@@ -187,7 +187,7 @@
           option: option,
           block: block,
           prev_block_index: prev_block_index
-        -%}
+        -%} {% if option.name == block.settings.non_label_options %}{{ option.name }}--{{ option.position }}--{{ block.settings.non_label_options }}{% endif %}
       {%- else -%}
         {%- render 'block.product-variant-picker.dropdown', option: option, block: block -%}
       {%- endif -%}
