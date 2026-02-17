@@ -157,6 +157,7 @@
   assign update_url = update_url | default: true, allow_false: true
   assign prev_block_index = forloop.index0 | minus: 1
   assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
+  assign options_without_labels = block.settings.non_label_options 
 -%}
 
 {%- unless product.has_only_default_variant -%}
@@ -180,7 +181,7 @@
 		  {% when 'button' %}
 			{%- render 'block.product-variant-picker.button', option: option, block: block, prev_block_index: prev_block_index -%}
 		  {% when 'button_label' %}
-			{% if option.name != block.settings.non_label_options %}
+			{% if option.name != options_without_labels  %}
 				{%- render 'block.product-variant-picker.label', option: option, block: block, prev_block_index: prev_block_index -%}
 			{% else %} 
 				{%- render 'block.product-variant-picker.button', option: option, block: block, prev_block_index: prev_block_index -%}
