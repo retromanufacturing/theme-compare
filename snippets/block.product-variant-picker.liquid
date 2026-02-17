@@ -175,7 +175,7 @@
     data-product-id="{{ product.id }}"
     {{ block.shopify_attributes }}
   >
-    {%- for option in product.options_with_values -%} {{ option.name }}--{{ option.position }}
+    {%- for option in product.options_with_values -%} {{ option.name }}--{{ option.position }}--{{ block.settings.non_label_options }}
       {%- if block.settings.picker_type == 'button' -%}
         {%- render 'block.product-variant-picker.button',
           option: option,
