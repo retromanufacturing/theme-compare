@@ -178,18 +178,10 @@
     {%- for option in product.options_with_values -%} 
 		{% case block.settings.picker_type  %}
 		  {% when 'button' %}
-			{%- render 'block.product-variant-picker.button',
-          		option: option,
-          		block: block,
-          		prev_block_index: prev_block_index
-        	-%}
+			{%- render 'block.product-variant-picker.button', option: option, block: block, prev_block_index: prev_block_index -%}
 		  {% when 'button_label' %}
 			{% if option.name != block.settings.non_label_options %}
-			{%- render 'block.product-variant-picker.label',         
-				option: option,        
-				block: block,         
-				prev_block_index: prev_block_index   
-			-%}
+				{%- render 'block.product-variant-picker.label', option: option, block: block, prev_block_index: prev_block_index -%}
 			{% else %} 
 				{%- render 'block.product-variant-picker.button', option: option, block: block, prev_block_index: prev_block_index -%}
 			{% endif %}
