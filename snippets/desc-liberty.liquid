@@ -1,0 +1,516 @@
+{% if DAB %}
+<!-- Radio Motor Notice + Motor Feature Blocks (updated) -->
+<style>
+  .rm-motor-notice {
+    width: 100%;
+    background: #810f12;
+    color: #fff;
+    text-align: center;
+    padding: 14px 12px;
+    font: 700 18px/1.25 Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  .rm-motor-notice a {
+    color: #ffe65a;
+    text-decoration: underline;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .rm-motor-spacer { height: 72px; }
+
+  .rm-motor-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 14px 22px;
+    font-family: Arial, sans-serif;
+    color: #1b1b1b;
+  }
+
+  .rm-motor-card {
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0,0,0,.08);
+    margin: 14px 0;
+    background: #fff;
+  }
+  .rm-motor-head-1b {
+    padding: 14px 16px;
+    background: #bc9923;
+    color: #fff;
+  }
+  .rm-motor-head-2b {
+    padding: 14px 16px;
+    background: #1d3748;
+    color: #fff;
+  }
+  .rm-motor-head-4hd {
+    padding: 14px 16px;
+    background: #5d3324;
+    color: #fff;
+  }
+  .rm-motor-head-6 {
+    padding: 14px 16px;
+    background: #2d5a3d;
+    color: #fff;
+  }
+  .rm-motor-head-1b h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-head-2b h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-head-4hd h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-head-6 h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-sub {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: .9;
+    font-weight: 600;
+  }
+
+  .rm-motor-body { padding: 14px 16px 16px; }
+  .rm-motor-body p { margin: 0 0 10px; line-height: 1.45; }
+
+  .rm-motor-feats {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 14px;
+  }
+  .rm-motor-feats li {
+    margin: 0;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.35;
+  }
+  .rm-motor-feats li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0a7a2f;
+    font-weight: 900;
+  }
+
+  .rm-motor-note {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(129,15,18,.08);
+    border: 1px solid rgba(129,15,18,.18);
+    color: #2a2a2a;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 640px) {
+    .rm-motor-notice { font-size: 16px; padding: 12px 10px; }
+    .rm-motor-spacer { height: 84px; }
+    .rm-motor-feats { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Main Content Section -->
+<div style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 100%;">
+<!-- Image Section -->
+<div style="text-align: center;"><br></div>
+<!-- Description Section -->
+<div style="flex: 2; min-width: 300px; padding: 10px;">
+	<h2 style="font-size: 1.8rem; color: #333;">Bring your classic car or truck into the modern era without sacrificing its vintage charm.</h2>
+		<p>The RetroSound DIN Solution Liberty Radio (patents pending) is the ultimate single DIN stereo for vintage vehicles with cut or modified dashes, including Ford, Chevy, and GM models. Its ultra-slim profile provides a seamless fit, preserving your car's classic interior while integrating cutting-edge technology.</p>
+		<div><img alt="Liberty comparision with typical DIN radio" src="https://cdn.shopify.com/s/files/1/0932/8664/files/Liberty-comparision-ford-install.jpg?v=1741122410"></div>
+		<p>Enjoy Bluetooth connectivity, USB ports, and wireless audio streaming—modern conveniences designed to enhance your driving experience without compromising the period-correct look. With simple installation and three knob combinations that reflect classic car eras, the Liberty Radio is the perfect solution for restoring your vehicle's sound system.</p>
+		<p>Whether you're repairing a damaged dash or upgrading your sound system, the Liberty Radio effortlessly merges modern performance with classic aesthetics.</p>
+</div>
+<!-- Features Section -->
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start;">
+	<h3 style="color: #333; text-align: center;">Have a CUT DASH?</h3>
+		<div style="text-align: center;"><img alt="Open modified dash" src="https://cdn.shopify.com/s/files/1/0932/8664/files/Liberty-Features-Cut-dash-example-with-install.jpg?v=1743454524"></div>
+		<p style="font-size: .9rem">The dash shown above is an example of a modified dash. The Liberty Radio is specifically designed to fit seamlessly into cut or altered dashes, making installation quick and easy while maintaining the period-correct look of your classic car. Its ultra-slim profile and retro-inspired knobs ensure a sleek appearance, solving the problem of modified dashes without the need for costly repairs.</p>
+		<div style="text-align: center; margin-bottom: 10px; margin-top-30px;"><a class="btn btn--secondary btn--small" href="https://www.retromanufacturing.com/blogs/news/how-the-liberty-radio-solves-cut-dash-issues-in-classic-cars">Learn more about the Liberty Radio</a></div>
+</aside>
+</div>
+<!-- End Main Description Content here -->
+
+<div class="rm-motor-wrap">
+
+<!-- Features Section -->
+<div class="variant__display-motor1{% unless motor_class == 'Motor 1' %} hide{% endunless %}">
+  <!-- Motor 1DAB -->
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-1b">
+      <h3>Motor 1DAB</h3>
+      <div class="rm-motor-sub">DAB+ Digital Radio + AM/FM RDS + AUX input</div>
+    </div>
+    <div class="rm-motor-body">
+      <p>
+        The Motor 1DAB feature set includes DAB+ digital radio for superior sound quality and more station options, 
+        an AM/FM RDS tuner with 30 presets, and a built-in 275-watt (peak power) MOSFET amplifier (18 watts RMS x 4 channels). 
+        It also includes a rear-mounted auxiliary input for portable devices.
+      </p>
+
+      <ul class="rm-motor-feats">
+        <li>DAB+ Digital Radio</li>
+        <li>AM/FM RDS tuner with 30 presets</li>
+        <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+        <li>Built-in 275-watt (peak power) MOSFET amplifier</li>
+        <li>18 watts RMS x 4 channels (TrueRating™)</li>
+        <li>Auxiliary input for portable devices</li>
+        <li>Non-volatile memory</li>
+        <li>1-Year Warranty</li>
+        <li>Assembly is required</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="variant__display-motor6{% unless motor_class == 'Motor 4DAB' %} hide{% endunless %}">
+  <!-- Motor 4DAB -->
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-6">
+      <h3>Motor 4DAB</h3>
+      <div class="rm-motor-sub">DAB+ + Made for iPod®/iPhone® + Bluetooth® + Dual USB</div>
+    </div>
+    <div class="rm-motor-body">
+      <p>
+        The Motor 4DAB feature set adds DAB+ digital radio technology along with Made for iPod®/iPhone® compatibility, 
+        built-in Bluetooth® for hands-free calling and audio streaming, and a built-in 300-watt (peak power) MOSFET 
+        amplifier (25 watts RMS x 4 channels). It includes an AM/FM RDS tuner with 30 presets, two rear-mounted USB 
+        ports for music playback and 2.1-amp charging, dual RCA pre-outs, and a dedicated subwoofer output. 
+        The 32,000-color display is adjustable to match your vehicle's gauge lighting.
+      </p>
+
+      <ul class="rm-motor-feats">
+        <li>DAB+ Digital Radio</li>
+        <li>Made for iPod®/iPhone®</li>
+        <li>Built-in Bluetooth® (Version 5.0)</li>
+        <li>Includes Bluetooth® microphone for hands-free calls</li>
+        <li>AM/FM RDS tuner with 30 presets</li>
+        <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+        <li>Two USB ports for flash drives and devices</li>
+        <li>2.1-amp device charging via USB</li>
+        <li>Built-in 300-watt (peak power) MOSFET amplifier</li>
+        <li>25 watts RMS x 4 channels (TrueRating™)</li>
+        <li>Dual RCA pre-outs for external amplifiers</li>
+        <li>Dedicated subwoofer output</li>
+        <li>Adjustable color display</li>
+        <li>Non-volatile memory</li>
+        <li>2-Year Warranty</li>
+        <li>Assembly is required</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+</div>
+
+<strong
+  ><a href="https://www.retromanufacturing.com/products/quadraphonic-four-channel-power-amplifier"
+    >Quadraphonic Amplifier</a
+  >
+  <strong>(sold separately)</strong></strong
+>
+<p>
+  Add more power to your RetroSound Radio with the Quadraphonic Amplifier. The Quadraphonic is a 4-channel amplifier
+  and connects directly to your RetroSound radio delivering 45-watts RMS to all four speakers. Pair it with a
+  RetroSound 8" powered subwoofer for a complete audio system that's a breeze to install.
+</p>
+
+{% else %}
+
+<!-- Radio Motor Notice + Motor Feature Blocks (updated) -->
+<style>
+  .rm-motor-notice {
+    width: 100%;
+    background: #810f12;
+    color: #fff;
+    text-align: center;
+    padding: 14px 12px;
+    font: 700 18px/1.25 Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
+  .rm-motor-notice a {
+    color: #ffe65a;
+    text-decoration: underline;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .rm-motor-spacer { height: 72px; }
+
+  .rm-motor-wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 14px 22px;
+    font-family: Arial, sans-serif;
+    color: #1b1b1b;
+  }
+
+  .rm-motor-card {
+    border: 1px solid rgba(0,0,0,.12);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0,0,0,.08);
+    margin: 14px 0;
+    background: #fff;
+  }
+  .rm-motor-head-1b {
+    padding: 14px 16px;
+    background: #bc9923;
+    color: #fff;
+  }
+  .rm-motor-head-2b {
+    padding: 14px 16px;
+    background: #1d3748;
+    color: #fff;
+  }
+  .rm-motor-head-4hd {
+    padding: 14px 16px;
+    background: #5d3324;
+    color: #fff;
+  }
+  .rm-motor-head-1b h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-head-2b h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-head-4hd h3 {
+    margin: 0;
+    margin-bottom:5px;
+    font-size: 20px;
+    font-weight:800;
+    letter-spacing: .2px;
+  }
+  .rm-motor-sub {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: .9;
+    font-weight: 600;
+  }
+
+  .rm-motor-body { padding: 14px 16px 16px; }
+  .rm-motor-body p { margin: 0 0 10px; line-height: 1.45; }
+
+  .rm-motor-feats {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 14px;
+  }
+  .rm-motor-feats li {
+    margin: 0;
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.35;
+  }
+  .rm-motor-feats li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #0a7a2f;
+    font-weight: 900;
+  }
+
+  .rm-motor-note {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(129,15,18,.08);
+    border: 1px solid rgba(129,15,18,.18);
+    color: #2a2a2a;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 640px) {
+    .rm-motor-notice { font-size: 16px; padding: 12px 10px; }
+    .rm-motor-spacer { height: 84px; }
+    .rm-motor-feats { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Main Content Section -->
+<div style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 100%;">
+<!-- Image Section -->
+<div style="text-align: center;"><br></div>
+<!-- Description Section -->
+<div style="flex: 2; min-width: 300px; padding: 10px;">
+	<h2 style="font-size: 1.8rem; color: #333;">Bring your classic car or truck into the modern era without sacrificing its vintage charm.</h2>
+		<p>The RetroSound DIN Solution Liberty Radio (patents pending) is the ultimate single DIN stereo for vintage vehicles with cut or modified dashes, including Ford, Chevy, and GM models. Its ultra-slim profile provides a seamless fit, preserving your car's classic interior while integrating cutting-edge technology.</p>
+		<div><img alt="Liberty comparision with typical DIN radio" src="https://cdn.shopify.com/s/files/1/0932/8664/files/Liberty-comparision-ford-install.jpg?v=1741122410"></div>
+		<p>Enjoy Bluetooth connectivity, USB ports, and wireless audio streaming—modern conveniences designed to enhance your driving experience without compromising the period-correct look. With simple installation and three knob combinations that reflect classic car eras, the Liberty Radio is the perfect solution for restoring your vehicle's sound system.</p>
+		<p>Whether you're repairing a damaged dash or upgrading your sound system, the Liberty Radio effortlessly merges modern performance with classic aesthetics.</p>
+</div>
+<!-- Features Section -->
+<aside style="flex: 1; min-width: 300px; padding: 15px; background: #f3f3f3; border-radius: 8px; margin-left: auto; align-self: flex-start;">
+	<h3 style="color: #333; text-align: center;">Have a CUT DASH?</h3>
+		<div style="text-align: center;"><img alt="Open modified dash" src="https://cdn.shopify.com/s/files/1/0932/8664/files/Liberty-Features-Cut-dash-example-with-install.jpg?v=1743454524"></div>
+		<p style="font-size: .9rem">The dash shown above is an example of a modified dash. The Liberty Radio is specifically designed to fit seamlessly into cut or altered dashes, making installation quick and easy while maintaining the period-correct look of your classic car. Its ultra-slim profile and retro-inspired knobs ensure a sleek appearance, solving the problem of modified dashes without the need for costly repairs.</p>
+		<div style="text-align: center; margin-bottom: 10px; margin-top-30px;"><a class="btn btn--secondary btn--small" href="https://www.retromanufacturing.com/blogs/news/how-the-liberty-radio-solves-cut-dash-issues-in-classic-cars">Learn more about the Liberty Radio</a></div>
+</aside>
+</div>
+<!-- End Main Description Content here -->
+
+<div class="rm-motor-wrap">
+
+<!-- Features Section -->
+<div class="variant__display-motor4{% unless motor_class == 'Motor 4' %} hide{% endunless %}">
+  <!-- Motor 4HD -->
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-4hd">
+      <h3>Motor 4HD</h3>
+      <div class="rm-motor-sub">HD Radio + SiriusXM-Ready + RetroSound Radio App compatible</div>
+    </div>
+    <div class="rm-motor-body">
+      <div class="rm-motor-note">
+        <strong>Latest update:</strong> Motor 4HD now supports the RetroSound Radio App.
+      </div>
+      <p>
+        The Motor 4HD feature set adds HD Radio® technology and SiriusXM-Ready® capability (SXV300V1 tuner sold separately),
+        along with a built-in 300-watt (peak power) MOSFET amplifier (25 watts RMS x 4 channels). It includes built-in
+        Bluetooth® for hands-free calling and high-quality audio streaming, two rear-mounted USB ports for music playback
+        and 2.1-amp charging, dual RCA pre-outs, and a dedicated subwoofer output. The 32,000-color display is adjustable
+        to match your vehicle’s gauge lighting.
+      </p>
+
+      <ul class="rm-motor-feats">
+        <li>HD Radio® Technology</li>
+        <li>SiriusXM-Ready® (SXV300V1 tuner sold separately)</li>
+        <li>RetroSound Radio App compatible</li>
+        <li>Built-in Bluetooth® (Version 5.0)</li>
+        <li>Includes Bluetooth® microphone for hands-free calls</li>
+        <li>AM/FM RDS tuner with 30 presets</li>
+        <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+        <li>Auxiliary input for portable devices</li>
+        <li>Two USB ports for flash drives and devices</li>
+        <li>1-amp device charging via USB</li>
+        <li>Built-in 300-watt (peak power) MOSFET amplifier</li>
+        <li>25 watts RMS x 4 channels (TrueRating™)</li>
+        <li>Dual RCA pre-outs for external amplifiers</li>
+        <li>Dedicated subwoofer output</li>
+        <li>Adjustable color display</li>
+        <li>Non-volatile memory</li>
+        <li>2-Year Warranty</li>
+        <li>Assembly is required</li>
+      </ul>
+
+      <div class="rm-motor-note">
+        <strong>SiriusXM Service Card:</strong> $60 SXM Service Card available when you purchase and activate your RetroSound® Radio with SXV300V1 SiriusXM® Tuner.<br>
+        <strong>Plan options:</strong> 12/$99 – 12 months of the Platinum Plan for $8.25/month | 12/$60 – 12 months of the Music & Entertainment Plan for $5/month
+      </div>
+    </div>
+    <center><script src=https://embed.jda.synqy.net/smartbrand/WzCmfN7J type="text/javascript"></script></center>
+  </section>
+  
+</div>
+
+<div class="variant__display-motor2{% unless motor_class == 'Motor 2' %} hide{% endunless %}">
+  <!-- Motor 2B -->
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-2b">
+      <h3>Motor 2B</h3>
+      <div class="rm-motor-sub">Bluetooth® + USB playback + More power + Pre-outs</div>
+    </div>
+    <div class="rm-motor-body">
+      <p>
+        The Motor 2B feature set includes an AM/FM RDS tuner with 30 presets, built-in Bluetooth® (hands-free calling and
+        audio streaming), and a built-in 300-watt (peak power) MOSFET amplifier (25 watts RMS x 4 channels). It adds a
+        rear-mounted USB port for music playback and 1-amp charging, plus dual RCA pre-outs and a dedicated subwoofer
+        output for easy system upgrades. The 32,000-color display is adjustable to match your vehicle's gauge lighting.
+      </p>
+
+      <ul class="rm-motor-feats">
+        <li>Built-in Bluetooth® (Version 5.0)</li>
+        <li>Includes Bluetooth® microphone for hands-free calls</li>
+        <li>AM/FM RDS tuner with 30 presets</li>
+        <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+        <li>USB port for flash drives and devices</li>
+        <li>1-amp device charging via USB</li>
+        <li>Built-in 300-watt (peak power) MOSFET amplifier</li>
+        <li>25 watts RMS x 4 channels (TrueRating™)</li>
+        <li>Dual RCA pre-outs for external amplifiers</li>
+        <li>Dedicated subwoofer output</li>
+        <li>Adjustable color display</li>
+        <li>Non-volatile memory</li>
+        <li>1-Year Warranty</li>
+        <li>Assembly is required</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="variant__display-motor1{% unless motor_class == 'Motor 1' %} hide{% endunless %}">
+  <!-- Motor 1B -->
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-1b">
+      <h3>Motor 1B</h3>
+      <div class="rm-motor-sub">Bluetooth® + AM/FM RDS + AUX input</div>
+    </div>
+    <div class="rm-motor-body">
+      <p>
+        The Motor 1B feature set includes an AM/FM RDS tuner with 30 presets, built-in Bluetooth® (hands-free calling and
+        audio streaming), and a built-in 275-watt (peak power) MOSFET amplifier (18 watts RMS x 4 channels). It also
+        includes a rear-mounted auxiliary input for portable devices.
+      </p>
+
+      <ul class="rm-motor-feats">
+        <li>Built-in Bluetooth® (Version 5.0)</li>
+        <li>Includes Bluetooth® microphone for hands-free calls</li>
+        <li>AM/FM RDS tuner with 30 presets</li>
+        <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+        <li>Auxiliary input for portable devices</li>
+        <li>Built-in 275-watt (peak power) MOSFET amplifier</li>
+        <li>18 watts RMS x 4 channels (TrueRating™)</li>
+        <li>Non-volatile memory</li>
+        <li>1-Year Warranty</li>
+        <li>Assembly is required</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+</div>
+
+{% endif %}
