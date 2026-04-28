@@ -82,7 +82,7 @@
       "7": {
         "settings": {
           "primary": "#ffffff",
-          "secondary": "#383a46"
+          "secondary": "#810f12"
         }
       },
       "8": {
@@ -95,12 +95,6 @@
         "settings": {
           "primary": "#ffffff",
           "secondary": "#272831"
-        }
-      },
-      "scheme-63e484b9-f95e-48d5-9de1-f822508da6ef": {
-        "settings": {
-          "primary": "#ffffff",
-          "secondary": "#810f12"
         }
       },
       "scheme-4e3022c5-d830-4a6c-a542-6763866b2c4b": {
