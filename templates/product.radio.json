@@ -12,11 +12,15 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "reviews_io_reviewsio_rating_output_j6EnEt": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {
-            "vendor_enable": true,
-            "sku_enable": false
+            "vendor_enable": false,
+            "sku_enable": true
           }
         },
         "variant_picker": {
@@ -28,44 +32,20 @@
             "color_swatches": false
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "sales_point": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "globe",
-            "text": "Free worldwide shipping"
-          }
-        },
-        "sales_point2": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "truck",
-            "text": "Free returns"
-          }
-        },
-        "sales_point3": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "leaf",
-            "text": "Carbon neutral"
-          }
-        },
-        "sales_point4": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "lock",
-            "text": "Secure payments"
-          }
-        },
         "inventory_status": {
           "type": "inventory_status",
           "settings": {
             "inventory_threshold": 10,
             "inventory_transfers_enable": true
           }
+        },
+        "w3_product_accessories_widget_idB8gw": {
+          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -77,14 +57,12 @@
         }
       },
       "block_order": [
+        "reviews_io_reviewsio_rating_output_j6EnEt",
         "title",
         "variant_picker",
-        "price",
-        "sales_point",
-        "sales_point2",
-        "sales_point3",
-        "sales_point4",
         "inventory_status",
+        "w3_product_accessories_widget_idB8gw",
+        "price",
         "buy_buttons"
       ],
       "settings": {
