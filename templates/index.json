@@ -44,11 +44,28 @@
             "indent_image": true,
             "color_scheme": "1"
           }
+        },
+        "slide_Uj9FNz": {
+          "type": "slide",
+          "settings": {
+            "top_subheading": "",
+            "title": "Side by Side Slide",
+            "title_size": 60,
+            "subheading": "Add optional subtext",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "left",
+            "indent_image": false,
+            "color_scheme": "none"
+          }
         }
       },
       "block_order": [
         "slide_VUkLfJ",
-        "slide_MQiU8b"
+        "slide_MQiU8b",
+        "slide_Uj9FNz"
       ],
       "name": "t:labels.split_optional_slides",
       "settings": {
