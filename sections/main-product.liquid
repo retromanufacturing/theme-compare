@@ -37,7 +37,9 @@
         when 'custom'
           render 'block.product-custom', block: block
         when 'share'
-          render 'block.product-share', block: block
+          render 'block.product-share', block: block         
+        when 'product_features'
+          render 'block.product-features' , block: block   
       endcase
     endfor
   endcapture
@@ -245,6 +247,10 @@
             {
               "value": "dropdown",
               "label": "t:labels.dropdown"
+            },
+            {
+              "value": "button_label",
+              "label": "t:custom.button_label"
             }
           ],
           "default": "button"
@@ -260,6 +266,29 @@
           "id": "color_swatches",
           "label": "t:actions.enable_color_swatches",
           "info": "t:actions.learn_to_setup_color_swatches"
+        },
+        {
+          "type": "header",
+          "content": "Labels",
+          "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
+        },
+        {
+          "type": "text",
+          "id": "non_label_options",
+          "label": "Options with no labels",
+          "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
+        },
+        {
+          "type": "number",
+          "id": "label_width",
+          "label": "Label Width",
+          "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
+        },
+        {
+          "type": "number",
+          "id": "label_height",
+          "label": "Label Height",
+          "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
         }
       ]
     },
@@ -582,6 +611,11 @@
           "content": "t:info.choose_which_platforms_share_theme_settings"
         }
       ]
+    },
+    {
+      "type": "product_features",
+      "name": "Product Features",
+      "limit": 1
     }
   ]
 }
