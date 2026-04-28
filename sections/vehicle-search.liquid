@@ -1,0 +1,1004 @@
+{%- liquid
+  assign grid_layout = 'ymm__item'
+  assign grid_class = 'ymm__item-custom'
+  assign id = section.id
+  assign is_icon = false
+  assign widget_style = section.settings.widget_style
+
+  if section.settings.widget_style == 'icon'
+    assign is_icon = true
+  endif
+-%}
+
+{% capture ymm_search_form %}
+  <div
+    class="js-ymm--widget-bar ymm__widget-bar collapsibles-wrapper"
+    data-widget-style="{{ widget_style }}"
+    data-fitment
+  >
+    <div class="ymm__widget-container">
+      <button class="widget__close js-ymm--widget-close">
+        {% render 'svg-icons' with 'close' as icon_type, icon_color: 'white' %}
+      </button>
+
+      <div class="ymm__widget-title">
+        <span class="js-ymm--title js-ymm-link-placeholder ymm__widget-fitment">{{ section.settings.ymm_title }}</span>
+      </div>
+
+      <button
+        type="button"
+        class="label btn hide ymm__widget-btn js-ymm--widget-btn collapsible-trigger collapsible-trigger-btn collapsible--auto-height{% if is_open %} is-open{% endif %}"
+        aria-controls="Product-content-{{ id }}"
+        data-btn-id="{{ id }}"
+        data-btn-status="closed"
+        data-btn-opened="{{ section.settings.ymm_btn_open }}"
+        data-btn-closed="{{ section.settings.ymm_btn_close }}"
+        data-btn-reset="{{ section.settings.ymm_btn_reset }}"
+      >
+      </button>
+    </div>
+
+    <div
+      id="Product-content-{{ id }}"
+      class="js-ymm--collapsible collapsible-content collapsible-content--all{% if is_open %} is-open{% endif %}"
+    >
+      <div class="ymm__widget-container--inner collapsible-content__inner">
+        <vehicle-search-selector>
+          <div class="js-ymm--container ymm-container ymm-large">
+            <div class="page-width">
+              <div class="ymm-searchbox ymm_grid">
+                <span class="ymm-text {{ grid_class }}">
+                  <span class="ymm-title">
+                    {{ section.settings.ymm_title }}
+                  </span>
+                </span>
+
+                <span class="ymm-fitments {{ grid_class }}">
+                  {%- render 'vehicle-search', grid_layout: grid_layout, id: id -%}
+                </span>
+
+                <span class="ymm-buttons {{ grid_class }}">
+                  <div class="ymm-buttons-row">
+                    <button
+                      class="js-ymm--search btn ymm-button ymm--search"
+                      data-search-id="{{ id }}"
+                      disabled="disabled"
+                      type="button"
+                    >
+                      {{ section.settings.ymm_btn_search }}
+                    </button>
+
+                    <button
+                      class="js-ymm--reset btn ymm-button ymm--reset"
+                      data-reset-id="{{ id }}"
+                      type="button"
+                    >
+                      {{ section.settings.ymm_btn_reset }}
+                    </button>
+
+                    <a href="{{ section.settings.not_listed_link }}" class="ymm-missing">
+                      {{ section.settings.not_listed }}
+                    </a>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+        </vehicle-search-selector>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+
+<vehicle-search-widget
+  class="js-ymm--widget"
+  data-template-name="{{ template.name }}"
+  data-bar-display="{{ section.settings.disable_bar_no_homepage }}"
+>
+  {%- liquid
+    assign ymm_title = section.settings.ymm_title | capitalize
+  -%}
+
+  {{ ymm_search_form }}
+
+  <div
+    class="js-ymm--widget-icon ymm__widget medium-up--hide{% unless is_icon %} hide{% endunless %}"
+    {% if is_icon %}
+      data-icon-status="closed"
+    {% endif %}
+  >
+    <div class="ymm__widget-icon">
+      {% render 'svg-icons' with 'vehicle_search' as icon_type, icon_color: 'white', width: '30px' %}
+    </div>
+    <span class="ymm__widget-text">
+      {{ ymm_title }}
+    </span>
+  </div>
+</vehicle-search-widget>
+
+{%- style -%}
+  .ymm_grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ymm_current-fitment {
+    display: block;
+    background-color: #EAF8ED;
+    border: 1px solid #54C63A;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ymm-container {
+    background-image: url({{ section.settings.image | image_url }});
+    background-position: center;
+    background-color: {{ section.settings.background_color }};
+    border-bottom: white;
+    border: 2px;
+    border-bottom-style: inset;
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+  }
+
+  .ymm-title {
+    color: {{ section.settings.title_color }};
+    clear: both;
+    white-space: nowrap;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5em;
+  }
+
+  .ymm-searchbox {
+    padding: 1.5rem;
+  }
+
+  .ymm-filter {
+    color: black;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 25px 10px 8px;
+    font-weight: 500;
+    min-height: 42px;
+    border: 2px solid #810F12;
+    border-radius: 2px;
+    background-color: white;
+    opacity: 90%;
+    height: auto;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  .ymm-buttons .btn {
+    padding: 11px 28px;
+    letter-spacing: 0;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 10px;
+    color: #ffffff;
+    border: solid 1px #000000;
+    border-radius: 2px;
+    height: auto;
+    width: auto;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  .ymm-buttons .btn[disabled] {
+    border: 1px solid #cccccc;
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: #000;
+  }
+
+  .ymm-buttons .ymm--search {
+    color: #ffffff;
+    background-color: #0071dc;
+  }
+
+  .ymm-buttons .ymm--search:hover {
+    opacity: 0.85;
+  }
+
+  .ymm-buttons .ymm--reset {
+    background-color: #dddddd;
+    color: #3d4246;
+    border-color: #dddddd;
+    margin-right: 0;
+  }
+
+  .ymm-buttons .ymm--reset:hover {
+    color: #ffffff;
+    background-color: #efefef;
+    border-color: #dddddd;
+  }
+
+  .ymm-buttons_selected #ymm_change {
+    background-color: white;
+    color: #810f12;
+    font-size: 12px;
+    padding-right: .5rem;
+    padding-left: .5re;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .ymm-missing {
+    color: {{ section.settings.link_color }};
+    font-weight: bolder;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-color: #white;
+    padding: 2px 5px 2px 5px;
+    border-radius: 6px;
+    background-color: #000;
+  }
+
+  .ymm-missing:hover {
+    color: {{ section.settings.link_hover_color }};
+    opacity: 90%;
+  }
+
+  .ymm-button {
+    width: auto;
+  }
+
+  #ymm_current-vehicle {
+    color: white;
+  }
+
+  .ymm-disclaimer {
+    text-align: center;
+  }
+
+  /* ===== Option A desktop/mobile behavior ===== */
+  @media only screen and (min-width: 769px) {
+    .js-ymm--widget-icon {
+      display: none !important;
+    }
+
+    .ymm__widget-bar {
+      position: relative !important;
+      bottom: auto !important;
+      width: 100%;
+      margin: 0 !important;
+      background-color: transparent;   
+      display: block !important;
+    }
+
+    .ymm__widget-container {
+      display: none !important;
+    }
+
+    .js-ymm--collapsible {
+      display: block !important;
+      height: auto !important;
+      opacity: 1 !important;
+      overflow: visible !important;
+    }
+
+    .ymm__widget-container--inner {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    .widget__close {
+      display: none !important;
+    }
+
+    .ymm-container .ymm-searchbox.ymm_grid {
+      display: grid;
+      grid-template-columns: minmax(180px, 20%) minmax(420px, 1fr) minmax(220px, 30%);
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ymm-container .ymm-text,
+    .ymm-container .ymm-fitments,
+    .ymm-container .ymm-buttons,
+    .ymm-container .ymm__item,
+    .ymm-container .ymm__item-custom {
+      float: none;
+      width: auto;
+      min-width: 0;
+      padding-right: 0;
+      margin-top: 0;
+    }
+
+    .ymm-container .dropdowns.ymm_grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-left: 0;
+      align-items: stretch;
+    }
+
+    .ymm-container .dropdowns .ymm-label {
+      width: auto;
+      padding: 0;
+    }
+
+    .ymm-container .ymm-filter,
+    .ymm-container .ymm-buttons .btn {
+      width: 100%;
+      margin-right: 0;
+    }
+
+    .ymm-container .ymm-buttons center {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, auto));
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ymm-container .ymm-missing {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    .ymm-container .ymm-title {
+      white-space: normal;
+    }
+  }
+
+  @media only screen and (max-width: 1450px) {
+    .ymm-searchbox {
+      padding-top: 10px !important;
+      padding: 0rem;
+    }
+
+    .ymm-text {
+      width: 100%;
+      margin-bottom: .5em;
+      margin-top: 2em;
+    }
+
+    .ymm-fitments {
+      width: 75%;
+    }
+
+    .ymm-buttons {
+      width: 25%;
+    }
+  }
+
+  @media only screen and (max-width: 989px) {
+    .ymm-container .ymm-searchbox.ymm_grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .ymm-container .ymm-text,
+    .ymm-container .ymm-fitments,
+    .ymm-container .ymm-buttons {
+      width: 100%;
+      padding-right: 0;
+      margin-top: 0;
+    }
+
+    .ymm-container .dropdowns.ymm_grid {
+      grid-template-columns: 1fr;
+    }
+
+    .ymm-container .ymm-buttons center {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .js-ymm--collapsible:not(.is-open) {
+      display: none;
+    }
+
+    .js-ymm--collapsible.is-open {
+      display: block;
+    }
+
+    .ymm-container {
+      background-image: none !important;
+      /* padding-top: 1rem; */
+    }
+
+    .ymm-searchbox {
+      padding-top: 0px !important;
+    }
+
+    .ymm-label {
+      width: 100%;
+      padding: 15px 5px 0;
+    }
+
+    .ymm-fitments {
+      width: 100%;
+    }
+
+    .ymm-buttons {
+      width: 100%;
+      margin-top: 1em;
+    }
+
+    .ymm-filter {
+      font-size: 12px;
+    }
+
+    .ymm-title {
+      font-size: 16px;
+    }
+
+    .ymm-title_selected {
+      background-color: white;
+      color: #810f12;
+    }
+
+    .ymm-text {
+      margin-bottom: 0px;
+      margin-top: 1em;
+    }
+
+    .ymm_selected-icon {
+      margin-top: .25rem;
+      width: 12.667%;
+    }
+
+    .ymm_selected-arrow {
+      margin-left: 2.5rem;
+    }
+
+    .ymm-searchbox_selected {
+      padding-top: .75rem;
+      padding-bottom: .25rem;
+    }
+
+    .ymm-fitments_selected {
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    .ymm_selected-title {
+      font-size: 12px;
+      color: white;
+    }
+
+    .ymm-button_selected {
+      text-transform: uppercase;
+      margin-top: .5rem;
+      color: white;
+    }
+  }
+
+  @media only screen and (max-width: 749px) {
+    .ymm-container.small--hide,
+    .ymm-container .ymm-buttons.small--hide {
+      display: block !important;
+    }
+  }
+
+  .ymm-buttons-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .ymm-buttons .btn,
+  .ymm-missing {
+    margin: 0;
+  }
+
+  .ymm-button {
+    width: auto;
+  }
+
+  .ymm-missing {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  @media only screen and (max-width: 769px) {
+    .ymm-buttons-row {
+      flex-wrap: wrap;
+      margin-top: .5rem;
+    }
+
+    .ymm-missing {
+      width: 100%;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .ymm__widget-title {
+      .ymm__widget-fitment {
+        font-size: .75rem !important;
+      }
+  }
+
+    .ymm-title {
+      display: none;
+    }
+
+    .ymm-container {
+      border-bottom: none;
+      border: 0px;
+    }
+  }
+
+  .ymm__close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .ymm__widget-container--inner {
+    position: relative;
+  }
+
+  .ymm__widget-bar {
+    bottom: 0;
+    position: fixed;
+    z-index: 3 !important;
+    background-color: transparent;
+    width: 100%;
+
+    .collapsible-content--all.is-open {
+      border-bottom: 0px solid;
+    }
+  }
+
+  .ymm__widget-bar:has(.ymm__widget-btn.is-open) {
+    {% unless section.settings.widget_style == 'full_width' %}
+      bottom: 160px! important;
+      margin-bottom: 1rem;
+      animation: modal-open 1s forwards;
+    {% endunless %}
+  }
+
+  .ymm__widget-bar--full {
+    height: 25rem;
+    background-color: black;
+    bottom: 0;
+    position: fixed;
+    z-index: 3 !important;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: .5rem;
+  }
+
+  [data-fitment="set"] {
+    bottom: 130px! important;
+
+    .ymm__widget-title {
+      width: 100% !important;
+    }
+
+    .ymm__widget-fitment {
+      margin: 0rem !important;
+      float: none !important;
+    }
+
+    .ymm__widget-title a {
+      font-size: .7rem;
+    }
+
+    .ymm__widget-btn,
+    .ymm__widget-icon {
+      width: 0% !important;
+    }
+
+    .ymm__widget-btn.is-open,
+    .ymm__widget-icon {
+      display: none;
+    }
+  }
+
+  .ymm__widget-container {
+    display: flex;
+    padding: 1rem .5rem;
+    align-items: center;
+    background-color: {{ section.settings.background_color_top }};
+    {% unless section.settings.widget_style == 'full_width' %}
+      border-radius: 1rem;
+      margin: 1rem;
+    {% endunless %}
+
+    .ymm__widget-title {
+      color: {{ section.settings.title_color }};
+      text-align: center;
+    }
+
+    .collapsible-trigger-btn {
+      text-align: center;
+      padding: 11px 10px !important;
+    }
+  }
+
+  .ymm__widget-container:has(.ymm__widget-btn.is-open) {
+    {% unless section.settings.widget_style == 'full_width' %}
+      margin: 1rem 1rem 0rem 1rem;
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+      border-bottom-right-radius: 0rem;
+      border-bottom-left-radius: 0rem;
+      border-left: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+      border-right: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+      border-top: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    {% endunless %}
+  }
+
+  .ymm__widget-container--inner {
+    height: auto;
+    background-color: {{ section.settings.background_color_inner }};
+    padding: 0rem 1rem;
+    {% unless section.settings.widget_style == 'full_width' %}
+      margin: 0rem 1rem;
+      border-bottom-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      border-left: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+      border-right: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+      border-bottom: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+    {% endunless %}
+  }
+
+  .ymm__widget-container--fitment {
+    .grid {
+      margin-left: 0px !important;
+    }
+
+    .ymm-filter {
+      background-color: white;
+    }
+
+    .ymm-label {
+      width: 100% !important;
+    }
+  }
+
+  .ymm__widget-container--btns {
+    display: flex;
+    margin-top: 1rem;
+
+    .btn {
+      margin: .25rem;
+    }
+
+    .ymm--search[disabled] {
+      background-color: white;
+    }
+
+    .ymm--search {
+      width: 100% !important;
+      background-color: {{ section.settings.search_color }};
+    }
+  }
+
+  .ymm__widget-container--links {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+
+    .ymm-missing {
+      align-self: center;
+      border-radius: 9999px;
+    }
+  }
+
+  .ymm__widget-title {
+    .ymm__widget-fitment {
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      float: inline-start;
+      margin: 0.5rem 1rem;
+    }
+  }
+
+  .ymm__widget-title a {
+    color: white;
+    font-size: 1rem;
+  }
+
+  .ymm__widget {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: {{ section.settings.background_color_icon }};
+    color: white;
+    padding: 10px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    cursor: pointer;
+    z-index: 3 !important;
+  }
+
+  .ymm__widget svg {
+    margin: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  .ymm__widget-text {
+    font-size: {{ section.settings.font_size_title }}px;
+    font-weight: 600;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  .widget__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.widget__close .icon-close {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+  @media only screen and (max-width: 768px) {
+    .ymm__widget-container--inner {
+      padding-bottom: 2rem;
+    }
+
+    .siq_bR {
+      {% if section.settings.widget_style == 'padded' %}
+        bottom: 115px !important;
+      {% elsif section.settings.widget_style == 'icon' or section.settings.widget_style == 'full_width' %}
+        bottom: 95px !important;
+      {% endif %}
+    }
+     
+    .ymm__widget-bar[data-widget-style="icon"] {
+      display: none !important;
+    }
+
+    .ymm__widget-bar[data-widget-style="icon"]:has(.collapsible-content--all.is-open) {
+      display: block !important;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .ymm__widget-container--inner {
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+    }
+
+    .ymm__widget-container--fitment {
+      .ymm-label {
+        width: 100% !important;
+        padding-bottom: .5rem;
+      }
+    }
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Vehicle Search",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ymm_title",
+      "label": "Title",
+      "default": "FIND YOUR VEHICLE"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_open",
+      "label": "Open fitment button text",
+      "default": "Click Here"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_close",
+      "label": "Close fitment button text",
+      "default": "Close"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_search",
+      "label": "Search fitment button text",
+      "default": "Search"
+    },
+    {
+      "type": "text",
+      "id": "ymm_btn_reset",
+      "label": "Reset fitment button text",
+      "default": "Reset"
+    },
+    {
+      "type": "text",
+      "id": "not_listed",
+      "label": "Vehicle not available"
+    },
+    {
+      "type": "url",
+      "id": "not_listed_link",
+      "label": "Vehicle not available link"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "widget_style",
+      "label": "Widget Style",
+      "default": "full_width",
+      "options": [
+        {
+          "value": "full_width",
+          "label": "Full Width"
+        },
+        {
+          "value": "padded",
+          "label": "Padded"
+        },
+        {
+          "value": "icon",
+          "label": "Icon"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bar_no_homepage",
+      "label": "Only show vehicle search bar on homepage"
+    },
+    {
+      "type": "range",
+      "id": "font_size_title",
+      "label": "Title Font Size",
+      "default": 10,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border Width",
+      "default": 0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "underline_width",
+      "label": "Title Underline Width",
+      "default": 0,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "URL Color",
+      "default": "#810F12"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "URL Hover Color",
+      "default": "#000"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "background_color_top",
+      "label": "Background Color Top",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "background_color_inner",
+      "label": "Background Color Inner",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "background_color_icon",
+      "label": "Icon Background Color",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "btn_color",
+      "label": "Button Color",
+      "default": "#810F12"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "search_color",
+      "label": "Search Color",
+      "default": "#78726D"
+    },
+    {
+      "type": "color",
+      "id": "reset_color",
+      "label": "Reset Color",
+      "default": "#810F12"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#FFF"
+    }
+  ]
+}
+{% endschema %}
