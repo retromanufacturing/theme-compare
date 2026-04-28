@@ -9,170 +9,227 @@
  */
 {
   "sections": {
-    "slideshow": {
-      "type": "slideshow",
+    "slideshow_split_X6yYJb": {
+      "type": "slideshow-split",
       "blocks": {
-        "slide-1": {
-          "type": "hero",
+        "slide_VUkLfJ": {
+          "type": "slide",
           "settings": {
-            "top_subheading": "",
-            "title": "<p>Overlaid Hero Slide</p>",
-            "title_size": 70,
-            "subheading": "Perfect for rich lifestyle photography.",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "button_color_scheme": "",
-            "text_align": "vertical-bottom horizontal-left",
-            "overlay_opacity": 0
+            "top_subheading": "NEW RELEASE",
+            "title": "Power Your Classic Car with Modern Audio",
+            "title_size": 60,
+            "subheading": "Enhance your classic car with the RetroSound 6-12V Converter, providing 10A output for 12V electronics without rewiring.",
+            "link": "shopify://blogs/news/reliable-6v-to-12v-dc-converter",
+            "link_text": "Learn More",
+            "link_2": "shopify://products/retrosound-6-12-volt-converter",
+            "link_text_2": "Shop Now",
+            "text_position": "right",
+            "image": "shopify://shop_images/RM-landscape-banner-RS_CONVERTER_631aab66-27a0-4cd7-be11-788346d27d57.jpg",
+            "indent_image": false,
+            "color_scheme": "2"
           }
         },
-        "slide-2": {
-          "type": "hero",
+        "slide_MQiU8b": {
+          "type": "slide",
           "settings": {
             "top_subheading": "",
-            "title": "<p>Make an Impact</p>",
-            "title_size": 70,
-            "subheading": "Supports multiple text alignments and mobile-specific images.",
+            "title": "Highlight products",
+            "title_size": 60,
+            "subheading": "Repurpose your product photography with our \"Indented\" image option",
             "link": "",
             "link_text": "Optional button",
             "link_2": "",
             "link_text_2": "",
-            "button_color_scheme": "",
-            "text_align": "vertical-center horizontal-center",
-            "overlay_opacity": 0
+            "text_position": "left",
+            "indent_image": true,
+            "color_scheme": "1"
           }
         }
       },
       "block_order": [
-        "slide-1",
-        "slide-2"
+        "slide_VUkLfJ",
+        "slide_MQiU8b"
       ],
+      "name": "t:labels.split_optional_slides",
       "settings": {
         "full_width": true,
-        "desktop_size": 0,
-        "mobile_size": 80,
+        "height": 520,
+        "height_mobile": 450,
         "style": "arrows",
         "autoplay": true,
-        "autoplay_speed": 5
+        "autoplay_speed": 7
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
+    "advanced_content_T3red9": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_FyzDLq": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Our Brands</h2>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "image_bcmEnC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/retro_black.jpg",
+            "link": "shopify://pages/radios",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "image_zwr8QY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RetroMat.jpg",
+            "link": "shopify://collections/sound-dampening",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "image_3GTBaF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/retropod_logo_blk.jpg",
+            "link": "shopify://collections/speaker-pods",
+            "width": "25%",
+            "alignment": "center"
+          }
+        },
+        "image_M3tWkx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/RetroAntenna_logo_30c839d7-7429-41e6-b060-7a7a549b8786.jpg",
+            "link": "shopify://collections/antennas",
+            "width": "25%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_FyzDLq",
+        "image_bcmEnC",
+        "image_zwr8QY",
+        "image_3GTBaF",
+        "image_M3tWkx"
+      ],
+      "name": "t:labels.custom_content",
       "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "rich_text_AntMzN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9jGgL6": {
+          "type": "heading",
+          "settings": {
+            "title": "Classic Car Audio - Radios, Speakers, Amplifiers, & Accessories",
+            "heading_size": "h2"
+          }
+        },
+        "text_6WEabH": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Retro Manufacturing is the leading producer of classic car stereos, speakers, amps, & accessories for the automotive restoration industry. Our award-winning RetroSound® radios are available for thousands of classic vehicles!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9jGgL6",
+        "text_6WEabH"
+      ],
+      "custom_css": [
+        ".theme-block {margin-bottom: 0px; margin-top: 0px; padding-top: 0px;}",
+        ".index-section.color-scheme-1 {padding-top: 0px; padding-bottom: 0px;}"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
         "divider": false
       }
     },
-    "countdown": {
-      "type": "countdown",
-      "blocks": {
-        "block-1": {
-          "type": "content",
-          "settings": {
-            "heading": "Countdown",
-            "heading_size": "h3",
-            "text": "<p>Use this timer to create urgency and boost sales.</p>",
-            "content_alignment": "left"
-          }
-        },
-        "block-2": {
-          "type": "timer",
-          "settings": {
-            "year": "2024",
-            "month": "07",
-            "day": "1",
-            "hour": "03",
-            "minute": "00",
-            "hide_timer": false,
-            "text": ""
-          }
-        },
-        "block-3": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_link": "",
-            "button": "Shop Collection",
-            "button_style": "solid"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
+    "hero_video_iJjrRf": {
+      "type": "hero-video",
+      "custom_css": [
+        ".hero--padded {margin-top: 15px;}",
+        ".hero__text-shadow {display: none;}"
       ],
+      "name": "t:labels.video_hero",
       "settings": {
-        "layout": "banner",
-        "full_width": false,
-        "color_scheme": "1",
-        "blur_image": true,
-        "overlay_color": "#82350e",
-        "overlay_opacity": 42
+        "full_width": true,
+        "title": "",
+        "title_size": 40,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "#fff",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://youtu.be/04qIdPbKWSI",
+        "overlay_opacity": 0,
+        "height": 620,
+        "height_mobile": 250
       }
     },
-    "featured-collections": {
+    "featured_collections_4zRygh": {
       "type": "featured-collections",
       "blocks": {
-        "featured-collections-0": {
+        "collection_XqwKQU": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "radios",
             "title": ""
           }
         },
-        "featured-collections-1": {
+        "collection_HVLHCN": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "speakers",
             "title": ""
           }
         },
-        "featured-collections-2": {
+        "collection_8hbYGP": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "antennas",
             "title": ""
           }
         },
-        "featured-collections-3": {
+        "collection_fLwBiw": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "amps-subwoofers",
             "title": ""
           }
         },
-        "featured-collections-4": {
+        "collection_rV9b3H": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "kick-panels-speaker-modules",
             "title": ""
           }
         },
-        "featured-collections-5": {
+        "collection_beHUPH": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "replacement-parts",
             "title": ""
           }
         }
       },
       "block_order": [
-        "featured-collections-0",
-        "featured-collections-1",
-        "featured-collections-2",
-        "featured-collections-3",
-        "featured-collections-4",
-        "featured-collections-5"
+        "collection_XqwKQU",
+        "collection_HVLHCN",
+        "collection_8hbYGP",
+        "collection_fLwBiw",
+        "collection_rV9b3H",
+        "collection_beHUPH"
       ],
       "settings": {
         "title": "Popular categories",
@@ -181,499 +238,163 @@
         "divider": false
       }
     },
-    "hotspots": {
-      "type": "hotspots",
+    "featured_collections_p6RKmN": {
+      "type": "featured-collections",
       "blocks": {
-        "block-1": {
-          "type": "product",
+        "collection_FDnX8n": {
+          "type": "collection",
           "settings": {
-            "featured_product": "",
-            "vertical": 70,
-            "horizontal": 33
+            "collection": "ford",
+            "title": ""
           }
         },
-        "block-2": {
-          "type": "product",
+        "collection_jjhmy4": {
+          "type": "collection",
           "settings": {
-            "featured_product": "",
-            "vertical": 14,
-            "horizontal": 81
+            "collection": "chevrolet",
+            "title": ""
           }
         },
-        "block-3": {
-          "type": "product",
+        "collection_RWEKzX": {
+          "type": "collection",
           "settings": {
-            "featured_product": "",
-            "vertical": 46,
-            "horizontal": 79
+            "collection": "pontiac-make",
+            "title": ""
+          }
+        },
+        "collection_FkA49K": {
+          "type": "collection",
+          "settings": {
+            "collection": "dodge",
+            "title": ""
+          }
+        },
+        "collection_yrYGac": {
+          "type": "collection",
+          "settings": {
+            "collection": "plymouth-make",
+            "title": ""
+          }
+        },
+        "collection_9fCaqF": {
+          "type": "collection",
+          "settings": {
+            "collection": "mercury-make",
+            "title": ""
+          }
+        },
+        "collection_CgWxjY": {
+          "type": "collection",
+          "settings": {
+            "collection": "volkswagen",
+            "title": ""
+          }
+        },
+        "collection_X8NLGB": {
+          "type": "collection",
+          "settings": {
+            "collection": "mercedes-benz",
+            "title": ""
           }
         }
       },
       "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
+        "collection_FDnX8n",
+        "collection_jjhmy4",
+        "collection_RWEKzX",
+        "collection_FkA49K",
+        "collection_yrYGac",
+        "collection_9fCaqF",
+        "collection_CgWxjY",
+        "collection_X8NLGB"
       ],
+      "name": "t:labels.collection_list",
       "settings": {
-        "title": "Shop the look",
-        "heading_size": "h1",
-        "heading_position": "left",
-        "indent_image": true,
-        "image_position": "right",
-        "hotspot_style": "bag",
-        "hotspot_color": "#ffffff"
-      }
-    },
-    "testimonials": {
-      "type": "testimonials",
-      "blocks": {
-        "block-1": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "block-2": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "block-3": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "block-4": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "block-5": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4",
-        "block-5"
-      ],
-      "settings": {
-        "title": "Don't take our word for it",
-        "align_text": "center",
-        "round_images": true,
-        "color_scheme": "3"
-      }
-    },
-    "featured-collection2": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": false,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "slideshow-split": {
-      "type": "slideshow-split",
-      "blocks": {
-        "slide-1": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Side by side slide",
-            "title_size": 40,
-            "subheading": "Tailored for longer text and smaller images. Explain more about your promotion.",
-            "link": "",
-            "link_text": "Shop now",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "left",
-            "indent_image": false,
-            "color_scheme": "1"
-          }
-        }
-      },
-      "block_order": [
-        "slide-1"
-      ],
-      "settings": {
-        "full_width": true,
-        "height": 550,
-        "height_mobile": 450,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
-    "logo-list": {
-      "type": "logo-list",
-      "blocks": {
-        "block-1": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-2": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-3": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-4": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-5": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-6": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-7": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-8": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-9": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-10": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-11": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        },
-        "block-12": {
-          "type": "logo_image",
-          "settings": {
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3",
-        "block-4",
-        "block-5",
-        "block-6",
-        "block-7",
-        "block-8",
-        "block-9",
-        "block-10",
-        "block-11",
-        "block-12"
-      ],
-      "settings": {
-        "title": "Shop by brand",
+        "title": "Shop by Make",
         "heading_size": "h2",
         "heading_position": "left",
         "divider": false
       }
     },
-    "image-compare": {
-      "type": "image-compare",
-      "blocks": {
-        "block-1": {
-          "type": "image",
-          "settings": {}
-        },
-        "block-2": {
-          "type": "image",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "fullwidth": true,
-        "slider_style": "classic",
-        "height": 500,
-        "color": "#ffffff"
-      }
-    },
-    "slideshow-split2": {
-      "type": "slideshow-split",
-      "blocks": {
-        "slideshow-split2-0": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Highlight products",
-            "title_size": 45,
-            "subheading": "Repurpose your product photography with our \"Indented\" image option",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "left",
-            "indent_image": true,
-            "color_scheme": "2"
-          }
-        }
-      },
-      "block_order": [
-        "slideshow-split2-0"
-      ],
-      "settings": {
-        "full_width": true,
-        "height": 550,
-        "height_mobile": 450,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
-    "promo-grid": {
-      "type": "promo-grid",
-      "blocks": {
-        "block-1": {
-          "type": "banner",
-          "settings": {
-            "heading": "Free U.S. shipping",
-            "text": "On all orders over $100",
-            "link": "",
-            "label": "Shop now",
-            "color_scheme": "1",
-            "width": "100"
-          }
-        }
-      },
-      "block_order": [
-        "block-1"
-      ],
-      "settings": {
-        "full_width": true,
-        "gutter_size": 0,
-        "space_above": false,
-        "space_below": false,
-        "hide_block_images": true
-      }
-    },
-    "featured-collection3": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "slideshow-split3": {
-      "type": "slideshow-split",
-      "blocks": {
-        "slideshow-split3-0": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Side by Side Slide",
-            "title_size": 40,
-            "subheading": "Add optional subtext",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "right",
-            "indent_image": false,
-            "color_scheme": "2"
-          }
-        }
-      },
-      "block_order": [
-        "slideshow-split3-0"
-      ],
-      "settings": {
-        "full_width": true,
-        "height": 550,
-        "height_mobile": 400,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
-    "text-columns": {
-      "type": "text-columns",
-      "blocks": {
-        "block-1": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
-            "button_link": ""
-          }
-        },
-        "block-2": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
-            "button_link": ""
-          }
-        },
-        "block-3": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
-            "button_label": "Optional button",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "block-1",
-        "block-2",
-        "block-3"
-      ],
-      "settings": {
-        "title": "",
-        "align_text": "left",
-        "divider": false,
-        "color_scheme": "none"
-      }
-    },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "text"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "none",
-        "divider": false
-      }
-    },
-    "blog-posts": {
+    "blog_posts_xYaJ84": {
       "type": "blog-posts",
       "settings": {
         "title": "From the journal",
         "heading_size": "h2",
         "heading_position": "left",
         "blog": "news",
-        "blog_show_tags": true,
+        "blog_show_tags": false,
         "blog_show_date": false,
         "blog_show_comments": false,
         "blog_show_author": false,
         "blog_show_excerpt": false,
-        "blog_image_size": "square",
+        "blog_image_size": "natural",
         "divider": false
       }
     },
-    "newsletter": {
+    "1777398250d76a262b": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_card_carousel_MQJ74H": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#000",
+            "review_type": "product",
+            "reviews_shown": 20,
+            "header_bg_colour": "#810f12",
+            "header_colour": "#fff",
+            "header_star_colour": "#ffd800",
+            "heading_text_colour": "#0E1311",
+            "heading_font": "sans_serif_n4",
+            "body_text_colour": "#0E1311",
+            "badge_icon_colour": "#00a728",
+            "badge_text_colour": "#0E1311",
+            "bg_start_colour": "#e4e4e4",
+            "bg_end_colour": "#ffffff",
+            "item_border_width": "0px",
+            "item_border_colour": "#eaeaea",
+            "item_border_radius": "0px",
+            "item_shadow_size": "10px",
+            "item_shadow_colour": "#F2F2F2",
+            "enable_rich_snippets": false,
+            "disable_same_customer": false,
+            "logo_colour": "var(--logo-inverted)"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_card_carousel_MQJ74H"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "newsletter_DepPeX": {
       "type": "newsletter",
       "blocks": {
-        "title": {
+        "title_JwpxNm": {
           "type": "title",
           "settings": {
             "title": "Save 10% on your first purchase",
             "heading_size": "h2"
           }
         },
-        "text": {
+        "text_3XMVyk": {
           "type": "text",
           "settings": {
             "text": "<p>Sign up today and we'll send you a 10% discount code towards<br/>your first purchase.</p>"
           }
         },
-        "form": {
+        "form_4LMk6c": {
           "type": "form",
           "settings": {}
         }
       },
       "block_order": [
-        "title",
-        "text",
-        "form"
+        "title_JwpxNm",
+        "text_3XMVyk",
+        "form_4LMk6c"
       ],
       "settings": {
         "color_scheme": "2",
@@ -685,57 +406,17 @@
         "top_padding": true,
         "bottom_padding": true
       }
-    },
-    "advanced_content_MFHt4q": {
-      "type": "advanced-content",
-      "blocks": {
-        "image_zGpeh3": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "liquid_kJKtgd": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>Custom content</h2><p>Use this advanced section to build your own layouts or to add custom HTML, Liquid, or scripts.</p>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "image_zGpeh3",
-        "liquid_kJKtgd"
-      ],
-      "name": "t:labels.custom_content",
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
     }
   },
   "order": [
-    "slideshow",
-    "featured-collection",
-    "advanced_content_MFHt4q",
-    "countdown",
-    "featured-collections",
-    "hotspots",
-    "testimonials",
-    "featured-collection2",
-    "slideshow-split",
-    "logo-list",
-    "image-compare",
-    "slideshow-split2",
-    "promo-grid",
-    "featured-collection3",
-    "slideshow-split3",
-    "text-columns",
-    "rich-text",
-    "blog-posts",
-    "newsletter"
+    "slideshow_split_X6yYJb",
+    "advanced_content_T3red9",
+    "rich_text_AntMzN",
+    "hero_video_iJjrRf",
+    "featured_collections_4zRygh",
+    "featured_collections_p6RKmN",
+    "blog_posts_xYaJ84",
+    "1777398250d76a262b",
+    "newsletter_DepPeX"
   ]
 }
