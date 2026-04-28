@@ -1,4 +1,4 @@
-{%- render 'section-advanced-content' -%}
+{%- render 'section.advanced-content' -%}
 
 {% schema %}
 {
@@ -158,6 +158,7 @@
   "presets": [
     {
       "name": "t:labels.custom_content",
+      "category": "t:labels.category_storytelling",
       "blocks": [
         {
           "type": "image",
@@ -175,9 +176,7 @@
     }
   ],
   "disabled_on": {
-    "groups": [
-      "custom.popups"
-    ]
+    "groups": ["custom.popups"]
   }
 }
 {% endschema %}

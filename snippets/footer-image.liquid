@@ -1,13 +1,13 @@
-{% # components v3.0.1 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
-{%- comment -%}
-  Renders the footer image block.
+{%- doc -%}
+  Copyright © 2025 Archetype Themes LP. All rights reserved.
 
-  Accepts:
-  - block {block} - The block object
+  Renders the footer image block for the footer.
 
-  Usage:
+  @param {object} block - The block object
+
+  @example
   {% render 'footer-image', block: block %}
-{%- endcomment -%}
+{%- enddoc -%}
 
 {% if block.settings.link != blank %}
   <a href="{{ block.settings.link }}">
@@ -19,14 +19,14 @@
   {% endif %}
 >
   {% if block.settings.image != blank %}
-    {%- render 'image-element',
+    {%- render 'element.image',
       img: block.settings.image,
       sizeVariable: '210px',
       widths: '360, 540, 720, 1020',
-      classes: 'footer__image'
+      classlist: 'footer__image'
     -%}
   {% else %}
-    {%- render 'placeholder-svg', name: 'image' -%}
+    {%- render 'element.placeholder', name: 'image' -%}
   {% endif %}
 </div>
 {% if block.settings.link != blank %}

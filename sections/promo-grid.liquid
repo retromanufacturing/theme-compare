@@ -1,4 +1,4 @@
-{%- render 'section-promo-grid' -%}
+{%- render 'section.promo-grid' -%}
 
 {% schema %}
 {
@@ -32,11 +32,18 @@
       "id": "space_below",
       "label": "t:actions.add_bottom_spacing",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_block_images",
+      "label": "t:actions.hide_all_image_blocks_mobile",
+      "default": true
     }
   ],
   "presets": [
     {
       "name": "t:labels.promotional_grid",
+      "category": "t:labels.category_storytelling",
       "blocks": [
         {
           "type": "advanced",
@@ -122,12 +129,24 @@
           "default": "100",
           "options": [
             {
+              "value": "25",
+              "label": "25%"
+            },
+            {
               "value": "33",
               "label": "33%"
             },
             {
               "value": "50",
               "label": "50%"
+            },
+            {
+              "value": "66",
+              "label": "66%"
+            },
+            {
+              "value": "75",
+              "label": "75%"
             },
             {
               "value": "100",
@@ -192,16 +211,6 @@
               "label": "t:labels.alignments.bottom_right"
             }
           ]
-        },
-        {
-          "type": "header",
-          "content": "t:labels.design"
-        },
-        {
-          "type": "color",
-          "id": "color_accent",
-          "label": "t:labels.buttons",
-          "default": "#fff"
         }
       ]
     },
@@ -210,26 +219,26 @@
       "name": "t:labels.banner",
       "settings": [
         {
-          "type": "text",
+          "type": "inline_richtext",
           "id": "heading",
           "label": "t:labels.heading",
-          "default": "Banner promotion"
+          "default": "Banner <em>promotion</em>"
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "text",
           "label": "t:labels.text",
-          "default": "Add the details of your promotion in smaller text"
+          "default": "Add the details of your promotion"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "t:labels.link"
+          "label": "t:labels.button_text"
         },
         {
           "type": "text",
           "id": "label",
-          "label": "t:labels.link_label",
+          "label": "t:labels.button_link",
           "default": "Shop now"
         },
         {
@@ -253,6 +262,38 @@
             {
               "value": "3",
               "label": "3"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:labels.width",
+          "default": "100",
+          "options": [
+            {
+              "value": "25",
+              "label": "25%"
+            },
+            {
+              "value": "33",
+              "label": "33%"
+            },
+            {
+              "value": "50",
+              "label": "50%"
+            },
+            {
+              "value": "66",
+              "label": "66%"
+            },
+            {
+              "value": "75",
+              "label": "75%"
+            },
+            {
+              "value": "100",
+              "label": "100%"
             }
           ]
         }
@@ -279,12 +320,24 @@
           "default": "100",
           "options": [
             {
+              "value": "25",
+              "label": "25%"
+            },
+            {
               "value": "33",
               "label": "33%"
             },
             {
               "value": "50",
               "label": "50%"
+            },
+            {
+              "value": "66",
+              "label": "66%"
+            },
+            {
+              "value": "75",
+              "label": "75%"
             },
             {
               "value": "100",
@@ -344,8 +397,24 @@
           "default": "100",
           "options": [
             {
+              "value": "25",
+              "label": "25%"
+            },
+            {
+              "value": "33",
+              "label": "33%"
+            },
+            {
               "value": "50",
               "label": "50%"
+            },
+            {
+              "value": "66",
+              "label": "66%"
+            },
+            {
+              "value": "75",
+              "label": "75%"
             },
             {
               "value": "100",
@@ -447,19 +516,19 @@
         {
           "type": "text",
           "id": "top_text",
-          "label": "t:labels.alignments.top_text",
+          "label": "t:labels.top_text",
           "default": "Up to"
         },
         {
           "type": "text",
           "id": "middle_text",
-          "label": "t:labels.alignments.middle_text",
+          "label": "t:labels.middle_text",
           "default": "50%"
         },
         {
           "type": "text",
           "id": "bottom_text",
-          "label": "t:labels.alignments.bottom_text",
+          "label": "t:labels.bottom_text",
           "default": "Off select products"
         },
         {
@@ -475,6 +544,14 @@
             {
               "value": "50",
               "label": "50%"
+            },
+            {
+              "value": "66",
+              "label": "66%"
+            },
+            {
+              "value": "75",
+              "label": "75%"
             },
             {
               "value": "100",
@@ -594,12 +671,24 @@
           "default": "50",
           "options": [
             {
+              "value": "25",
+              "label": "25%"
+            },
+            {
               "value": "33",
               "label": "33%"
             },
             {
               "value": "50",
               "label": "50%"
+            },
+            {
+              "value": "66",
+              "label": "66%"
+            },
+            {
+              "value": "75",
+              "label": "75%"
             },
             {
               "value": "100",

@@ -3,7 +3,7 @@
   aria-hidden="true"
   focusable="false"
   role="presentation"
-  class="icon icon-tcwi-gears icon--line"
+  class="element-icon element-icon-tcwi-gears element-icon--line element-icon-gears"
   viewbox="0 0 100 100"
   width="20"
   height="20"

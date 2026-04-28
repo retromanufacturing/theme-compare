@@ -15,37 +15,19 @@
       <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
     {%- endif -%}
 
-    {%- render 'page-title' -%}
+    {%- render 'head.page-title' -%}
 
     {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
     {%- endif -%}
 
-    {%- render 'social-meta-tags' -%}
-
-    {%- render 'font-face' -%}
-    {{ 'components.css' | asset_url | stylesheet_tag: preload: true }}
-    {%- render 'css-variables' -%}
-    {{ 'overrides.css' | asset_url | stylesheet_tag }}
+    {%- render 'head.social-meta-tags' -%}
 
     {%- style -%}
       :root {
         --product-grid-padding: 12px;
       }
     {%- endstyle -%}
-
-    {%- liquid
-      assign enableSuperScript = false
-      unless shop.money_format contains 'money' or shop.money_format contains '.'
-        if settings.superscript_decimals
-          if shop.money_format contains '{{amount}}' or shop.money_format contains '{{ amount }}'
-            assign enableSuperScript = true
-          elsif shop.money_format contains '{{amount_with_comma_separator}}' or shop.money_format contains '{{ amount_with_comma_separator }}'
-            assign enableSuperScript = true
-          endif
-        endif
-      endunless
-    -%}
 
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -54,17 +36,20 @@
 
       theme.settings = {
         themeName: 'Expanse',
-        themeVersion: '7.0.0', // x-release-please-version
+        themeVersion: '9.1.0', // x-release-please-version
       };
     </script>
 
-    {%- render 'import-map' -%}
-    {%- render 'es-module-shims' -%}
-    {%- render 'is-land' -%}
-    {%- render 'preload-js' -%}
-    {%- render 'theme-editor' -%}
+    {%- render 'head.import-map' -%}
+    {%- render 'head.es-module-shims' -%}
+    {%- render 'head.is-land' -%}
+    {%- render 'head.preload-js' -%}
+    {%- render 'head.theme-editor' -%}
 
     {{ content_for_header }}
+
+    {%- render 'head.styles' -%}
+    {%- render 'utility.stylesheet', name: 'overrides.css', load: 'inline' -%}
 
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
@@ -104,8 +89,8 @@
     </div>
 
     {%- liquid
-      render 'photoswipe-template'
-      render 'tool-tip'
+      render 'product.gallery.photoswipe-template'
+      render 'overlay.tool-tip'
     -%}
   </body>
 </html>

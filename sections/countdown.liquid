@@ -1,4 +1,4 @@
-{%- render 'section-countdown' -%}
+{%- render 'section.countdown' -%}
 
 {% schema %}
 {
@@ -774,6 +774,7 @@
   "presets": [
     {
       "name": "t:labels.countdown",
+      "category": "t:labels.category_banners",
       "blocks": [
         {
           "type": "content"
@@ -799,9 +800,7 @@
     }
   },
   "disabled_on": {
-    "groups": [
-      "custom.popups"
-    ]
+    "groups": ["custom.popups"]
   }
 }
 {% endschema %}
