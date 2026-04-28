@@ -97,7 +97,7 @@
         "thumbnail_arrows": false,
         "mobile_layout": "partial",
         "enable_video_looping": true,
-        "product_video_style": "muted"
+        "product_video_style": "unmuted"
       }
     },
     "sub": {
