@@ -1,1 +1,135 @@
-{"sections":{"main":{"type":"main-product","blocks":{"reviews_io_reviewsio_rating_output_nmfn4X":{"type":"shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-rating-output\/92a082e5-b297-4e88-b428-ac96cbc505f9","settings":{}},"title":{"type":"title","settings":{"vendor_enable":false,"sku_enable":true}},"inventory_status":{"type":"inventory_status","settings":{"inventory_threshold":10,"inventory_transfers_enable":true}},"variant_picker":{"type":"variant_picker","settings":{"variant_labels":true,"picker_type":"button","product_dynamic_variants_enable":true,"color_swatches":true,"non_label_options":"Choose a Face Color","label_width":85,"label_height":85}},"product_features_Kp4pgm":{"type":"product_features","settings":{}},"size_chart_RtGzAi":{"type":"size_chart","disabled":true,"settings":{"size_chart":"radio-features"}},"w3_product_accessories_widget_pWm94A":{"type":"shopify:\/\/apps\/w3-product-accessories\/blocks\/widget\/cebf1474-e4fa-4cb4-a91e-d313690bf6f1","disabled":true,"settings":{}},"price":{"type":"price","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"surface_pickup_enable":true,"show_gift_card_recipient":false}}},"block_order":["reviews_io_reviewsio_rating_output_nmfn4X","title","inventory_status","variant_picker","product_features_Kp4pgm","size_chart_RtGzAi","w3_product_accessories_widget_pWm94A","price","buy_buttons"],"settings":{"image_position":"left","image_container_size":"medium","product_image_size":"square","product_zoom_enable":true,"thumbnail_position":"beside","thumbnail_height":"flexible","thumbnail_arrows":false,"mobile_layout":"partial","enable_video_looping":true,"product_video_style":"muted"}},"sub":{"type":"product-full-width","blocks":{"description":{"type":"description","settings":{"is_tab":true}},"tab":{"type":"tab","settings":{"title":"Specifications","content":"<p>Filler Text<\/p>","page":""}},"tab_VUcKjD":{"type":"tab","settings":{"title":"Manuals","content":"<p>Manuals Links here<\/p>{{ product.metafields.media.manuals | metafield_tag: field: 'name' }}","page":""}}},"block_order":["description","tab","tab_VUcKjD"],"settings":{"max_width":false}},"recommendations":{"type":"product-recommendations","settings":{"product_recommendations_heading":"You may also like","related_count":5,"products_per_row":5}},"more-products-vendor":{"type":"more-products-vendor","disabled":true,"settings":{"products_per_row":3,"max_products":5}},"more-products-collection":{"type":"more-products-collection","disabled":true,"settings":{"products_per_row":3,"max_products":5}},"recently-viewed":{"type":"recently-viewed","disabled":true,"settings":{}},"collection-return":{"type":"collection-return","disabled":true,"settings":{"color_scheme":"2"}},"1767636673689ea25c":{"type":"apps","blocks":{"reviews_io_reviewsio_polaris_dxwxXi":{"type":"shopify:\/\/apps\/reviews-io\/blocks\/reviewsio-polaris\/92a082e5-b297-4e88-b428-ac96cbc505f9","settings":{"star":"#ffd800","review_type":"product_review","per_page":8,"primary_btn_bg_color":"#000000","primary_btn_border_color":"#000000","primary_btn_text_color":"#ffffff","secondary_btn_border_color":"#000000","secondary_btn_text_color":"#000000","border_color":"#d9d9d9","heading_text_color":"#000000","heading_font":"sans_serif_n4","body_text_color":"#000000","badge_icon_color":"#00ac11","badge_text_color":"#000000","enable_rich_snippets":true,"show_location":true,"show_tab_selector":false,"show_dates":true,"show_avatar":true,"enable_sentiment_analysis":false,"enable_replies":false,"widget_spacing":0,"capitalise_headers_and_buttons":false,"show_review_title":false,"default_sort":"date_desc"}}},"block_order":["reviews_io_reviewsio_polaris_dxwxXi"],"settings":{"full_width":false,"space_around":true}}},"order":["main","sub","recommendations","more-products-vendor","more-products-collection","recently-viewed","collection-return","1767636673689ea25c"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {}
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {}
+        },
+        "sales_point2": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "truck",
+            "text": "Free returns"
+          }
+        },
+        "sales_point3": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "leaf",
+            "text": "Carbon neutral"
+          }
+        },
+        "sales_point4": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "lock",
+            "text": "Secure payments"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "variant_picker",
+        "price",
+        "sales_point",
+        "sales_point2",
+        "sales_point3",
+        "sales_point4",
+        "inventory_status",
+        "buy_buttons"
+      ],
+      "settings": {}
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {}
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "description",
+        "tab",
+        "contact"
+      ],
+      "settings": {}
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {}
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "settings": {}
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "settings": {}
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {}
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "recommendations",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return"
+  ]
+}
