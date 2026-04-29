@@ -160,7 +160,7 @@
   assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
   assign options_without_labels = block.settings.non_label_options
 -%}
-
+{{ block.settings.picker_type  }} test
 {%- unless product.has_only_default_variant -%}
   <block-variant-picker
     class="block-variant-picker"
@@ -178,7 +178,7 @@
     {{ block.shopify_attributes }}
   >
     {%- for option in product.options_with_values -%}
-      {% case block.settings.picker_type %} {{ block.settings.picker_type  }} test
+      {% case block.settings.picker_type %} 
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
             option: option,
