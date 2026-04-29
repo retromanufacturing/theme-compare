@@ -30,8 +30,18 @@
             "sku_enable": true
           }
         },
+        "variant_picker_tab_N8wkmi": {
+          "type": "variant_picker_tab",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
+          "disabled": true,
           "settings": {
             "variant_labels": true,
             "picker_type": "button",
@@ -61,6 +71,7 @@
         "reviews_io_reviewsio_rating_output_j6EnEt",
         "inventory_status",
         "title",
+        "variant_picker_tab_N8wkmi",
         "variant_picker",
         "w3_product_accessories_widget_idB8gw",
         "price",
