@@ -202,7 +202,7 @@
         {%- else -%}
           {%- render 'block.product-variant-picker.dropdown', option: option, block: block -%}
       {% endcase %}
-      {%- render 'block.product-tab', option: option, block: block, title: option.name -%}
+      {%- render 'block.product-tab', option: option, block: block, title: option.name, tab_content: 'test' -%}
     {%- endfor -%}
     <script type="application/json">
       {{ product.variants | json }}
