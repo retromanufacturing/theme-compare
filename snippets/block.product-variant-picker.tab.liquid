@@ -178,7 +178,7 @@
     {{ block.shopify_attributes }}
   >
     {%- for option in product.options_with_values -%}
-      {% case block.settings.picker_type %}
+      {% case block.settings.picker_type %} {{ block.settings.picker_type  }}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
             option: option,
