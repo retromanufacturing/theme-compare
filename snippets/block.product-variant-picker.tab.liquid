@@ -178,31 +178,33 @@
     {{ block.shopify_attributes }}
   >
     {%- for option in product.options_with_values -%}
-      {% case block.settings.picker_type %} 
-        {% when 'button' %}
-          {%- render 'block.product-variant-picker.button',
-            option: option,
-            block: block,
-            prev_block_index: prev_block_index
-          -%}
-        {% when 'button_label' %}
-          {% if option.name != options_without_labels %}
-            {%- render 'block.product-variant-picker.label',
-              option: option,
-              block: block,
-              prev_block_index: prev_block_index
-            -%}
-          {% else %}
+      {% capture content %}
+        {% case block.settings.picker_type %} 
+            {% when 'button' %}
             {%- render 'block.product-variant-picker.button',
-              option: option,
-              block: block,
-              prev_block_index: prev_block_index
+                option: option,
+                block: block,
+                prev_block_index: prev_block_index
             -%}
-          {% endif %}
-        {%- else -%}
-          {%- render 'block.product-variant-picker.dropdown', option: option, block: block -%}
-      {% endcase %}
-      {%- render 'block.product-tab', option: option, block: block, title: option.name, tab_content: 'test' -%}
+            {% when 'button_label' %}
+            {% if option.name != options_without_labels %}
+                {%- render 'block.product-variant-picker.label',
+                option: option,
+                block: block,
+                prev_block_index: prev_block_index
+                -%}
+            {% else %}
+                {%- render 'block.product-variant-picker.button',
+                option: option,
+                block: block,
+                prev_block_index: prev_block_index
+                -%}
+            {% endif %}
+            {%- else -%}
+            {%- render 'block.product-variant-picker.dropdown', option: option, block: block -%}
+         {% endcase %}
+        {% endcapture %}
+      {%- render 'block.product-tab', option: option, block: block, title: option.name, tab_content: content -%}
     {%- endfor -%}
     <script type="application/json">
       {{ product.variants | json }}
