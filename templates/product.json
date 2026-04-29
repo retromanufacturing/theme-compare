@@ -105,7 +105,7 @@
         "contact"
       ],
       "settings": {
-        "max_width": true
+        "max_width": false
       }
     },
     "recommendations": {
