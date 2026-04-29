@@ -16,6 +16,13 @@
           "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {}
         },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -31,13 +38,6 @@
             "product_dynamic_variants_enable": true,
             "color_swatches": false,
             "non_label_options": ""
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {
-            "inventory_threshold": 10,
-            "inventory_transfers_enable": true
           }
         },
         "w3_product_accessories_widget_idB8gw": {
@@ -59,9 +59,9 @@
       },
       "block_order": [
         "reviews_io_reviewsio_rating_output_j6EnEt",
+        "inventory_status",
         "title",
         "variant_picker",
-        "inventory_status",
         "w3_product_accessories_widget_idB8gw",
         "price",
         "buy_buttons"
