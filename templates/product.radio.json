@@ -32,16 +32,17 @@
         },
         "variant_picker_tab_N8wkmi": {
           "type": "variant_picker_tab",
+          "disabled": true,
           "settings": {
             "variant_labels": true,
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
-            "color_swatches": false
+            "color_swatches": false,
+            "non_label_options": ""
           }
         },
         "variant_picker": {
           "type": "variant_picker",
-          "disabled": true,
           "settings": {
             "variant_labels": true,
             "picker_type": "button",
