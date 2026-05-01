@@ -54,13 +54,15 @@
           },
           "blocks": {}
         },
-        "section-flex-pdp-media-gallery": {
-          "type": "_section-flex-pdp-media-gallery",
+        "custom-media-gallery": {
+          "type": "custom-media-gallery",
           "static": true,
           "settings": {
-            "image_aspect_ratio": "1/1",
-            "enable_video_looping": true,
-            "enable_video_autoplay": false
+            "product_image_size": "square",
+            "product_zoom_enable": true,
+            "thumbnail_position": "beside",
+            "thumbnail_height": "flexible",
+            "thumbnail_arrows": true
           },
           "blocks": {}
         }
