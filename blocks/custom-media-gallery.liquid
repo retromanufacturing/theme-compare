@@ -1,0 +1,61 @@
+{% render 'product.gallery',
+  sizeVariable: 'medium-up--one-half',
+  product_zoom_enable: block.settings.product_zoom_enable,
+  thumbnail_position: block.settings.thumbnail_position,
+  thumbnail_height: block.settings.thumbnail_height,
+  thumbnail_arrows: block.settings.thumbnail_arrows,
+  image_size: block.settings.product_image_size,
+  media_gallery_layout: block.settings.media_gallery_layout
+%}
+
+{% schema %}
+{
+  "name": "Media gallery",
+  "settings": [
+    {
+      "type": "select",
+      "id": "product_image_size",
+      "label": "Image size",
+      "default": "square",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_zoom_enable",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnail position",
+      "default": "beside",
+      "options": [
+        { "value": "beside", "label": "Next to media" },
+        { "value": "below", "label": "Below media" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_height",
+      "label": "Thumbnail height",
+      "default": "flexible",
+      "options": [
+        { "value": "fixed", "label": "Fixed" },
+        { "value": "flexible", "label": "Flexible" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "thumbnail_arrows",
+      "label": "Show thumbnail arrows"
+    }
+  ],
+  "presets": [{ "name": "Media gallery" }]
+}
+{% endschema %}
