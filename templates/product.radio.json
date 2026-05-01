@@ -59,8 +59,7 @@
           "static": true,
           "settings": {
             "product_image_size": "square",
-            "product_zoom_enable": true,
-            "thumbnail_position": "below",
+            "thumbnail_position": "beside",
             "thumbnail_height": "flexible",
             "thumbnail_arrows": true
           },
@@ -80,6 +79,7 @@
         "padding": "both",
         "color_scheme": "none",
         "product_image_size": "square",
+        "product_zoom_enable": true,
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted"
