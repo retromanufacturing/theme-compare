@@ -24,7 +24,7 @@
   {% content_for 'blocks' %}
 {% endcapture %}
 
-{%- render 'section.main-product-radio', slot_gallery: slot_gallery, slot_details: slot_details -%}
+{%- render 'section.flex-pdp', slot_gallery: slot_gallery, slot_details: slot_details -%}
 
 {% javascript %}
   document.addEventListener('product-form:cart:navigate', (event) => {
