@@ -1,6 +1,5 @@
 {% render 'product.gallery',
   sizeVariable: 'medium-up--one-half',
-  product_zoom_enable: block.settings.product_zoom_enable,
   thumbnail_position: block.settings.thumbnail_position,
   thumbnail_height: block.settings.thumbnail_height,
   thumbnail_arrows: block.settings.thumbnail_arrows,
@@ -23,12 +22,6 @@
         { "value": "landscape", "label": "Landscape (4:3)" },
         { "value": "portrait", "label": "Portrait (2:3)" }
       ]
-    },
-    {
-      "type": "checkbox",
-      "id": "product_zoom_enable",
-      "label": "Enable image zoom",
-      "default": true
     },
     {
       "type": "select",
