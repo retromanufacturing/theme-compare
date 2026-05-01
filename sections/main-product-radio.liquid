@@ -26,6 +26,48 @@
 
 {%- render 'section.main-product-radio', slot_gallery: slot_gallery, slot_details: slot_details -%}
 
+{% javascript %}
+  document.addEventListener('product-form:cart:navigate', (event) => {
+    const headerEl = document.querySelector('header-section[data-cart-type]');
+    const cartType = headerEl ? headerEl.getAttribute('data-cart-type') : undefined;
+    if (cartType !== 'page') {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener('product-form:submit:success', async (event) => {
+    try {
+      const response = await fetch(`${window.Shopify.routes.root}cart?sections=cart-ajax`, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      });
+      const sections = await response.json();
+      const state = { sections };
+
+      document.dispatchEvent(
+        new CustomEvent('ajaxProduct:added', {
+          bubbles: true,
+          detail: {
+            product: state,
+          },
+        })
+      );
+
+      document.dispatchEvent(
+        new CustomEvent('cart:updated', {
+          bubbles: true,
+          detail: {
+            cart: state,
+          },
+        })
+      );
+    } catch (e) {
+      console.warn('Failed to load cart sections after add:', e);
+    }
+  });
+
+  document.addEventListener('product-form:message:success', (event) => event.preventDefault());
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "Product block",
