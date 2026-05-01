@@ -152,7 +152,8 @@
           "settings": {
             "title": "Specifications",
             "content": "",
-            "page": ""
+            "page": "",
+            "is_open": false
           }
         },
         "tab_yCddyT": {
@@ -160,7 +161,8 @@
           "settings": {
             "title": "Manuals",
             "content": "",
-            "page": ""
+            "page": "",
+            "is_open": false
           }
         }
       },
