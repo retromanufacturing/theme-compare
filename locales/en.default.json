@@ -217,7 +217,7 @@
     "shipping_address": "Shipping address",
     "site_navigation": "Site navigation",
     "size_chart": "Size chart",
-    "sku": "SKU",
+    "sku": "Part Number",
     "small": "Small",
     "subtotal": "Subtotal",
     "suggestions": "Suggestions",
@@ -270,5 +270,10 @@
   },
   "custom": {
     "button_label": "Buttons with label"
+  },
+  "sections": {
+    "countdown": {
+      "section_name": "countdown"
+    }
   }
 }
