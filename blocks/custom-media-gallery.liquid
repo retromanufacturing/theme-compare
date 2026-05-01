@@ -5,6 +5,7 @@
   thumbnail_arrows: block.settings.thumbnail_arrows,
   image_size: block.settings.product_image_size,
   media_gallery_layout: block.settings.media_gallery_layout
+  hide_variant_media: block.settings.hide_variant_media
 %}
 
 {% schema %}
@@ -47,6 +48,12 @@
       "type": "checkbox",
       "id": "thumbnail_arrows",
       "label": "Show thumbnail arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variant_media",
+      "label": "Hide unselected variant media",
+      "default": false
     }
   ],
   "presets": [{ "name": "Media gallery custom" }]
