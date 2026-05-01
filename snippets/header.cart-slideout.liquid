@@ -1,0 +1,167 @@
+{% comment %}
+  header.cart-slideout.liquid
+  Place in: /snippets/header.cart-slideout.liquid
+
+  Slideout cart using Expanse's overlay.drawer primitive.
+  Rendered from section.header.liquid when cart_type == 'slideout'.
+
+  Structure:
+    <header-cart-slideout>     — CartSlideout custom element, Horizon behaviors
+      <overlay-drawer>         — Expanse's dialog primitive, open/close/animate
+        <dialog>
+          <header-cart-drawer> — Expanse's CartForm element, cart content updates
+          <live-region>        — screen reader announcements
+        </dialog>
+      </overlay-drawer>
+    </header-cart-slideout>
+{% endcomment %}
+
+{%- liquid
+  assign cart_notes_enable = settings.cart_notes_enable | default: true, allow_false: true
+  assign cart_terms_conditions_enable = settings.cart_terms_conditions_enable | default: false, allow_false: true
+  assign cart_additional_buttons = settings.cart_additional_buttons | default: true, allow_false: true
+  assign cart_terms_conditions_page = settings.cart_terms_conditions_page
+  assign money_format = shop.money_format
+
+  capture superscript
+    render 'utility.enable-superscript'
+  endcapture
+
+  capture button_submit_text
+    render 'utility.translate', key: 'actions.checkout', fallback: 'Checkout'
+  endcapture
+-%}
+
+{%- capture button_submit_attributes -%}
+  data-terms-required="{{ cart_terms_conditions_enable }}"
+{%- endcapture -%}
+
+{%- capture checkbox_label -%}
+  {%- if cart_terms_conditions_page != blank -%}
+    {%- assign actions_terms_i_agree_html = 'actions.terms_i_agree_html' | t: url: cart_terms_conditions_page.url -%}
+    {%- capture fallback_terms -%}
+      I agree with the <a href='{{ cart_terms_conditions_page.url }}' target='_blank'>terms and conditions</a>
+    {%- endcapture -%}
+    {%- render 'utility.translate', t: actions_terms_i_agree_html, fallback: fallback_terms -%}
+  {%- else -%}
+    {%- assign actions_terms_i_agree = 'actions.terms_i_agree' | t -%}
+    {%- render 'utility.translate', t: actions_terms_i_agree, fallback: 'I agree with the terms and conditions' -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture drawer_header -%}
+  {%- render 'utility.translate', key: 'labels.cart', fallback: 'Cart' -%}
+{%- endcapture -%}
+
+{%- capture drawer_body -%}
+  <header-cart-drawer
+    class="cart-drawer"
+    defer-hydration
+    cart-type="slideout"
+  >
+    <form
+      action="{{ routes.cart_url }}"
+      method="post"
+      novalidate
+      data-location="header"
+      class="cart__drawer-form"
+      data-money-format="{{ money_format }}"
+      data-super-script="{{ superscript | strip }}"
+    >
+      <div class="cart__scrollable cart-slideout__scrollable">
+        <div data-products></div>
+        {%- render 'cart.recommendations', context: 'drawer' -%}
+
+        {%- if cart_notes_enable -%}
+          <div class="cart__item-row">
+            {%- render 'cart.order-note' -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="cart__footer cart-slideout__footer">
+        <div class="cart__item-sub cart__item-row cart__item--subtotal">
+          <div>
+            {%- render 'utility.translate', key: 'labels.subtotal', fallback: 'Subtotal' -%}
+          </div>
+          {%- render 'element.price', price: cart.total_price, attributes: 'data-subtotal' -%}
+        </div>
+
+        <div data-discounts></div>
+
+        {%- if cart_terms_conditions_enable -%}
+          <div class="cart__item-row cart__terms">
+            {%- render 'element.checkbox',
+              classlist: 'cart__terms-checkbox',
+              value: '',
+              label: checkbox_label,
+              name: 'CartTerms'
+            -%}
+          </div>
+        {%- endif -%}
+
+        <div class="cart__item-row cart__checkout-wrapper payment-buttons">
+          {%- render 'element.button',
+            type: 'submit',
+            name: 'checkout',
+            text: button_submit_text,
+            classlist: 'cart__checkout',
+            attributes: button_submit_attributes
+          -%}
+
+          {%- if cart_additional_buttons and additional_checkout_buttons -%}
+            <div class="additional-checkout-buttons">
+              {{ content_for_additional_checkout_buttons }}
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div class="cart__item-row--footer text-center">
+          <small>
+            {%- if cart.taxes_included -%}
+              {%- assign info_taxes = 'info.shipping_at_checkout_taxes_included' | t -%}
+              {%- render 'utility.translate', t: info_taxes, fallback: 'Taxes included. Shipping and discount codes calculated at checkout.' -%}
+            {%- else -%}
+              {%- assign info_shipping = 'info.shipping_at_checkout' | t -%}
+              {%- render 'utility.translate', t: info_shipping, fallback: 'Shipping, taxes, and discount codes calculated at checkout.' -%}
+            {%- endif -%}
+          </small>
+        </div>
+      </div>
+
+      <script type="application/json" data-locales>
+        {
+          "cartTermsConfirmation":
+            {%- render 'utility.translate', key: 'info.you_must_agree', fallback: 'You must agree with the terms and conditions of sales to check out', as_json: true -%}
+          ,
+          "cartSavings":
+            {%- assign info_save_amount = 'info.save_amount' | t: saved_amount: "[savings]" -%}
+            {%- render 'utility.translate', t: info_save_amount, fallback: 'Save [savings]', as_json: true -%}
+        }
+      </script>
+    </form>
+
+    <div class="site-header__cart-empty">
+      {%- render 'utility.translate', key: 'info.cart_empty', fallback: 'Your cart is currently empty.' -%}
+    </div>
+  </header-cart-drawer>
+
+  <div class="cart-slideout__live-region visually-hidden" aria-live="polite" aria-atomic="true"></div>
+{%- endcapture -%}
+
+<header-cart-slideout>
+  {%- render 'overlay.drawer',
+    id: 'cart-slideout',
+    slot_header: drawer_header,
+    slot: drawer_body,
+    placement: 'end',
+    light_dismiss: true
+  -%}
+</header-cart-slideout>
+
+<script type="module">
+  import 'header.cart-slideout'
+</script>
+<script type="module">
+  import 'header.cart-drawer'
+</script>
