@@ -1,40 +1,11 @@
-{% comment %}
-  custom-media-gallery.liquid
-
-  Full-featured product gallery block using Expanse's product.gallery snippet.
-  Provides zoom, Flickity slideshow, flexible thumbnails, image sets, and 3D/video
-  support. Use this instead of _section-flex-pdp-media-gallery when you want the
-  main-product.liquid gallery experience in a theme block context.
-
-  All settings are passed explicitly so they resolve from block.settings
-  rather than section.settings, which is the correct scope for theme blocks.
-
-  Note: product.gallery handles its own JS import internally — no import needed here.
-{% endcomment %}
-
-{%- liquid
-  assign image_container_size = block.settings.image_container_size
-  case image_container_size
-    when 'small'
-      assign sizeVariable = 'medium-up--two-fifths'
-    when 'large'
-      assign sizeVariable = 'medium-up--three-fifths'
-    else
-      assign sizeVariable = 'medium-up--one-half'
-  endcase
--%}
-
 {% render 'product.gallery',
-  sizeVariable: sizeVariable,
-  image_position: block.settings.image_position,
-  image_size: block.settings.product_image_size,
+  sizeVariable: 'medium-up--one-half',
   product_zoom_enable: block.settings.product_zoom_enable,
   thumbnail_position: block.settings.thumbnail_position,
   thumbnail_height: block.settings.thumbnail_height,
   thumbnail_arrows: block.settings.thumbnail_arrows,
-  media_gallery_layout: block.settings.media_gallery_layout,
-  enable_video_looping: block.settings.enable_video_looping,
-  product_video_style: block.settings.product_video_style
+  image_size: block.settings.product_image_size,
+  media_gallery_layout: block.settings.media_gallery_layout
 %}
 
 {% schema %}
@@ -42,59 +13,9 @@
   "name": "Media gallery custom",
   "settings": [
     {
-      "type": "header",
-      "content": "Layout"
-    },
-    {
-      "type": "select",
-      "id": "image_position",
-      "label": "Image position",
-      "default": "left",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "right", "label": "Right" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "image_container_size",
-      "label": "Image container size",
-      "default": "medium",
-      "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "media_gallery_layout",
-      "label": "Gallery layout",
-      "default": "beside",
-      "options": [
-        { "value": "beside", "label": "Thumbnails beside" },
-        { "value": "below", "label": "Thumbnails below" },
-        { "value": "stacked", "label": "Stacked" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "mobile_layout",
-      "label": "Mobile layout",
-      "default": "partial",
-      "options": [
-        { "value": "partial", "label": "75% width" },
-        { "value": "full", "label": "Full width" }
-      ]
-    },
-    {
-      "type": "header",
-      "content": "Image"
-    },
-    {
       "type": "select",
       "id": "product_image_size",
-      "label": "Force image size",
+      "label": "Image size",
       "default": "square",
       "options": [
         { "value": "natural", "label": "Natural" },
@@ -110,10 +31,6 @@
       "default": true
     },
     {
-      "type": "header",
-      "content": "Thumbnails"
-    },
-    {
       "type": "select",
       "id": "thumbnail_position",
       "label": "Thumbnail position",
@@ -127,7 +44,6 @@
       "type": "select",
       "id": "thumbnail_height",
       "label": "Thumbnail height",
-      "info": "Applies when thumbnails are next to media",
       "default": "flexible",
       "options": [
         { "value": "fixed", "label": "Fixed" },
@@ -137,35 +53,9 @@
     {
       "type": "checkbox",
       "id": "thumbnail_arrows",
-      "label": "Show thumbnail arrows",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "Video"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_video_looping",
-      "label": "Enable video looping",
-      "default": true
-    },
-    {
-      "type": "select",
-      "id": "product_video_style",
-      "label": "Video style",
-      "default": "muted",
-      "options": [
-        { "value": "muted", "label": "Without sound (autoplay)" },
-        { "value": "unmuted", "label": "With sound (no autoplay)" }
-      ],
-      "info": "Videos with sound cannot autoplay"
+      "label": "Show thumbnail arrows"
     }
   ],
-  "presets": [
-    {
-      "name": "Media gallery custom"
-    }
-  ]
+  "presets": [{ "name": "Media gallery custom" }]
 }
 {% endschema %}
