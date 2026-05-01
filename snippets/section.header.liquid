@@ -833,12 +833,16 @@
       <div class="site-header__drawers-container">
         {%- # Enable header cart drawer when not on cart page -%}
         {%- unless request.page_type == 'cart' -%}
-          {%- render 'header.drawer',
-            slot: mini_cart,
-            open: 'cart:open',
-            close: 'cart:close',
-            class: 'site-header__cart'
-          -%}
+          {%- if cart_type == 'slideout' -%}
+            {{- mini_cart -}}
+          {%- else -%}
+            {%- render 'header.drawer',
+              slot: mini_cart,
+              open: 'cart:open',
+              close: 'cart:close',
+              class: 'site-header__cart'
+            -%}
+          {%- endif -%}
         {%- endunless -%}
 
         {%- render 'header.drawer',
@@ -865,7 +869,7 @@
 
   <template data-island>
     <script type="module">
-      import 'section.header'
+      import 'section.header';
     </script>
   </template>
 </is-land>
