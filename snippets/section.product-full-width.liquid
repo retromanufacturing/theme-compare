@@ -31,7 +31,7 @@
           {%- render 'block.product-tab', block: block -%}
         {%- when 'contact' -%}
           {%- render 'block.product-contact', block: block -%}
-        {%- when 'description' -%} {{ block.settings.is_open }}none
+        {%- when 'description' -%} 
           {%- render 'block.product-description', block: block -%}
         {%- when 'share' -%}
           <div {{ block.shopify_attributes }}>

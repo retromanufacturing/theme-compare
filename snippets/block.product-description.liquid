@@ -16,6 +16,7 @@
   assign is_tab = is_tab | default: block.settings.is_tab, allow_false: true | default: true, allow_false: true
   assign description = 'info.placeholder_product_description' | t
   assign is_liquid = false
+  assign is_open = block.settings.is_open
 
   capture liquid_description
     if product.template_suffix contains 'radio'
@@ -45,7 +46,7 @@
 <div style="width: 100%;" {{ block.shopify_attributes }}>
   {%- liquid
     if is_tab
-      render 'element.accordion', title: accordion_title, slot: description
+      render 'element.accordion', title: accordion_title, slot: description, open: is_open
     else
       render 'element.text', text: description, variant: 'rte'
     endif
