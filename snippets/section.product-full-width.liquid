@@ -14,7 +14,7 @@
   assign product = product | default: section.settings.product
   assign max_width = max_width | default: section.settings.max_width, allow_false: true | default: true, allow_false: true
 -%}
-{{ block.settings.is_tab }}none
+
 {%- if section.blocks.size > 0 -%}
   <div class="page-width{% if max_width %} page-width--narrow{% endif %}">
     {%- for block in section.blocks -%}
@@ -31,7 +31,7 @@
           {%- render 'block.product-tab', block: block -%}
         {%- when 'contact' -%}
           {%- render 'block.product-contact', block: block -%}
-        {%- when 'description' -%}
+        {%- when 'description' -%} {{ block.settings.is_tab }}none
           {%- render 'block.product-description', block: block -%}
         {%- when 'share' -%}
           <div {{ block.shopify_attributes }}>
