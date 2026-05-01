@@ -16,6 +16,29 @@
   they cannot be passed through the render chain.
 {% endcomment %}
 
+{%- liquid
+  case section.settings.image_container_size
+    when 'small'
+      assign gallery_width = '40%'
+      assign details_width = '60%'
+    when 'large'
+      assign gallery_width = '60%'
+      assign details_width = '40%'
+    else
+      assign gallery_width = '50%'
+      assign details_width = '50%'
+  endcase
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} .grid__cell:first-child {
+    width: {{ gallery_width }};
+  }
+  #shopify-section-{{ section.id }} .grid__cell:last-child {
+    width: {{ details_width }};
+  }
+{% endstyle %}
+
 {% capture slot_gallery %}
   {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
 {% endcapture %}
