@@ -30,6 +30,6 @@
 
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
-    {%- render 'element.accordion', title: title, slot: accordion_content -%}
+    {%- render 'element.accordion', title: title, slot: accordion_content, is_open: is_open -%}
   </div>
 {%- endif -%}
