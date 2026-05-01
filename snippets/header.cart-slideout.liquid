@@ -2,19 +2,37 @@
   header.cart-slideout.liquid
   Place in: /snippets/header.cart-slideout.liquid
 
-  Slideout cart using Expanse's overlay.drawer primitive.
-  Rendered from section.header.liquid when cart_type == 'slideout'.
-
-  Structure:
-    <header-cart-slideout>     — CartSlideout custom element, Horizon behaviors
-      <overlay-drawer>         — Expanse's dialog primitive, open/close/animate
-        <dialog>
-          <header-cart-drawer> — Expanse's CartForm element, cart content updates
-          <live-region>        — screen reader announcements
-        </dialog>
-      </overlay-drawer>
-    </header-cart-slideout>
+  Slideout cart using Expanse's header.drawer primitive.
+  Uses the same open/close event system as the dropdown cart.
+  CSS modifier class positions it as a side panel instead of top dropdown.
 {% endcomment %}
+
+{% stylesheet %}
+  .site-header__cart--slideout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    transform: translateX(100%);
+    padding: 0;
+  }
+
+  .site-header__cart--slideout.is-active {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: transform var(--slide-curve);
+  }
+
+  .site-header__cart--slideout .cart__drawer-form {
+    max-height: 100%;
+    height: 100%;
+  }
+{% endstylesheet %}
 
 {%- liquid
   assign cart_notes_enable = settings.cart_notes_enable | default: true, allow_false: true
@@ -39,9 +57,7 @@
 {%- capture checkbox_label -%}
   {%- if cart_terms_conditions_page != blank -%}
     {%- assign actions_terms_i_agree_html = 'actions.terms_i_agree_html' | t: url: cart_terms_conditions_page.url -%}
-    {%- capture fallback_terms -%}
-      I agree with the <a href='{{ cart_terms_conditions_page.url }}' target='_blank'>terms and conditions</a>
-    {%- endcapture -%}
+    {%- capture fallback_terms -%}I agree with the <a href='{{ cart_terms_conditions_page.url }}' target='_blank'>terms and conditions</a>{%- endcapture -%}
     {%- render 'utility.translate', t: actions_terms_i_agree_html, fallback: fallback_terms -%}
   {%- else -%}
     {%- assign actions_terms_i_agree = 'actions.terms_i_agree' | t -%}
@@ -49,11 +65,7 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- capture drawer_header -%}
-  {%- render 'utility.translate', key: 'labels.cart', fallback: 'Cart' -%}
-{%- endcapture -%}
-
-{%- capture drawer_body -%}
+{%- capture cart_content -%}
   <header-cart-drawer
     class="cart-drawer"
     defer-hydration
@@ -68,7 +80,7 @@
       data-money-format="{{ money_format }}"
       data-super-script="{{ superscript | strip }}"
     >
-      <div class="cart__scrollable cart-slideout__scrollable">
+      <div class="cart__scrollable">
         <div data-products></div>
         {%- render 'cart.recommendations', context: 'drawer' -%}
 
@@ -79,7 +91,7 @@
         {%- endif -%}
       </div>
 
-      <div class="cart__footer cart-slideout__footer">
+      <div class="cart__footer">
         <div class="cart__item-sub cart__item-row cart__item--subtotal">
           <div>
             {%- render 'utility.translate', key: 'labels.subtotal', fallback: 'Subtotal' -%}
@@ -145,23 +157,15 @@
       {%- render 'utility.translate', key: 'info.cart_empty', fallback: 'Your cart is currently empty.' -%}
     </div>
   </header-cart-drawer>
-
-  <div class="cart-slideout__live-region visually-hidden" aria-live="polite" aria-atomic="true"></div>
 {%- endcapture -%}
 
-<header-cart-slideout>
-  {%- render 'overlay.drawer',
-    id: 'cart-slideout',
-    slot_header: drawer_header,
-    slot: drawer_body,
-    placement: 'end',
-    light_dismiss: true
-  -%}
-</header-cart-slideout>
+{%- render 'header.drawer',
+  slot: cart_content,
+  open: 'cart:open',
+  close: 'cart:close',
+  class: 'site-header__cart site-header__cart--slideout'
+-%}
 
-<script type="module">
-  import 'header.cart-slideout'
-</script>
 <script type="module">
   import 'header.cart-drawer'
 </script>
