@@ -18,6 +18,12 @@
           "settings": {},
           "blocks": {}
         },
+        "section_flex_pdp_sku_bEQEUf": {
+          "type": "_section-flex-pdp-sku",
+          "name": "t:labels.sku",
+          "settings": {},
+          "blocks": {}
+        },
         "reviews_io_reviewsio_rating_output_j6EnEt": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {}
@@ -61,6 +67,7 @@
       },
       "block_order": [
         "section_flex_pdp_title_z8nXXj",
+        "section_flex_pdp_sku_bEQEUf",
         "reviews_io_reviewsio_rating_output_j6EnEt",
         "section_flex_pdp_variant_picker_V4CtE6",
         "w3_product_accessories_widget_idB8gw",
