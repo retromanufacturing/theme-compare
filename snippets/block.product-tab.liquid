@@ -18,12 +18,15 @@
   assign title = title | default: block.settings.title
   assign tab_content = tab_content | default: block.settings.content
   assign page_content = page_content | default: block.settings.page.content
+  assign is_open = is_open | default: block.settings.is_open
 
   capture accordion_content
     echo tab_content
     echo page_content
   endcapture
 -%}
+
+{{ is_open }}
 
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
