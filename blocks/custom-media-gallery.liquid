@@ -1,83 +1,34 @@
-{% comment %}
-  custom-media-gallery.liquid
-  Place in: /blocks/custom-media-gallery.liquid
-
-  Full-featured product gallery block using Expanse's product.gallery snippet.
-  Provides zoom, Flickity slideshow, flexible thumbnails, image sets, 3D/video support.
-
-  SETTINGS SPLIT:
-  - This block holds layout/positioning settings: thumbnail position, height, arrows,
-    gallery layout, image position, and container size. These only affect product.gallery
-    and are legitimately block-level.
-  - main-product-radio.liquid section schema holds image rendering settings:
-    product_zoom_enable, product_image_size, enable_video_looping, product_video_style,
-    mobile_layout. These are read directly from section.settings by product.gallery.media
-    and cannot be passed through the render chain — they must live at section level.
-{% endcomment %}
-
-{%- liquid
-  case block.settings.image_container_size
-    when 'small'
-      assign sizeVariable = 'medium-up--two-fifths'
-    when 'large'
-      assign sizeVariable = 'medium-up--three-fifths'
-    else
-      assign sizeVariable = 'medium-up--one-half'
-  endcase
--%}
-
 {% render 'product.gallery',
-  sizeVariable: sizeVariable,
-  image_position: block.settings.image_position,
+  sizeVariable: 'medium-up--one-half',
+  product_zoom_enable: block.settings.product_zoom_enable,
   thumbnail_position: block.settings.thumbnail_position,
   thumbnail_height: block.settings.thumbnail_height,
   thumbnail_arrows: block.settings.thumbnail_arrows,
+  image_size: block.settings.product_image_size,
   media_gallery_layout: block.settings.media_gallery_layout
 %}
 
 {% schema %}
 {
-  "name": "Media Gallery",
+  "name": "Media gallery custom",
   "settings": [
     {
-      "type": "header",
-      "content": "Layout"
-    },
-    {
       "type": "select",
-      "id": "image_position",
-      "label": "Image position",
-      "default": "left",
+      "id": "product_image_size",
+      "label": "Image size",
+      "default": "square",
       "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "right", "label": "Right" }
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
       ]
     },
     {
-      "type": "select",
-      "id": "image_container_size",
-      "label": "Image container size",
-      "default": "medium",
-      "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "media_gallery_layout",
-      "label": "Gallery layout",
-      "default": "beside",
-      "options": [
-        { "value": "beside", "label": "Thumbnails beside" },
-        { "value": "below", "label": "Thumbnails below" },
-        { "value": "stacked", "label": "Stacked" }
-      ]
-    },
-    {
-      "type": "header",
-      "content": "Thumbnails"
+      "type": "checkbox",
+      "id": "product_zoom_enable",
+      "label": "Enable image zoom",
+      "default": true
     },
     {
       "type": "select",
@@ -93,7 +44,6 @@
       "type": "select",
       "id": "thumbnail_height",
       "label": "Thumbnail height",
-      "info": "Applies when thumbnails are next to media",
       "default": "flexible",
       "options": [
         { "value": "fixed", "label": "Fixed" },
@@ -103,14 +53,9 @@
     {
       "type": "checkbox",
       "id": "thumbnail_arrows",
-      "label": "Show thumbnail arrows",
-      "default": false
+      "label": "Show thumbnail arrows"
     }
   ],
-  "presets": [
-    {
-      "name": "Media Gallery"
-    }
-  ]
+  "presets": [{ "name": "Media gallery custom" }]
 }
 {% endschema %}
