@@ -1,3 +1,21 @@
+{% comment %}
+  main-product-radio.liquid
+  Place in: /sections/main-product-radio.liquid
+
+  Custom radio product section using the @theme block architecture.
+  Based on main-product-high-variant.liquid structure — do not modify that file.
+
+  Gallery slot uses custom-media-gallery block (blocks/custom-media-gallery.liquid).
+  All other product blocks (title, price, buy buttons, etc.) are added via the
+  Theme Editor using @theme blocks.
+
+  IMAGE RENDERING SETTINGS NOTE:
+  product_zoom_enable, product_image_size, enable_video_looping, product_video_style,
+  and mobile_layout are defined here at section level — not in the custom-media-gallery
+  block — because product.gallery.media reads them directly from section.settings and
+  they cannot be passed through the render chain.
+{% endcomment %}
+ 
 {% capture slot_gallery %}
   {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
 {% endcapture %}
@@ -52,81 +70,113 @@
 
 {% schema %}
 {
-  "name": "t:labels.product_high_variants",
+  "name": "Radio Product",
   "settings": [
+    {
+      "type": "header",
+      "content": "Section"
+    },
     {
       "type": "select",
       "id": "padding",
-      "label": "t:labels.padding",
+      "label": "Padding",
       "default": "both",
       "options": [
-        { "value": "none", "label": "t:labels.none" },
-        { "value": "top", "label": "t:labels.alignments.top" },
-        { "value": "bottom", "label": "t:labels.alignments.bottom" },
-        { "value": "both", "label": "t:labels.both" }
+        { "value": "none", "label": "None" },
+        { "value": "top", "label": "Top" },
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "both", "label": "Both" }
       ]
     },
     {
       "type": "select",
       "id": "color_scheme",
-      "label": "t:labels.color_scheme",
+      "label": "Color scheme",
       "default": "none",
       "options": [
-        {
-          "value": "none",
-          "label": "t:labels.none"
-        },
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        }
+        { "value": "none", "label": "None" },
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "These settings apply to the gallery and cannot be set at block level because product.gallery.media reads them directly from section settings."
+    },
+    {
+      "type": "select",
+      "id": "product_image_size",
+      "label": "Force image size",
+      "default": "square",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_zoom_enable",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "partial",
+      "options": [
+        { "value": "partial", "label": "75% width" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_video_style",
+      "label": "Video style",
+      "default": "muted",
+      "options": [
+        { "value": "muted", "label": "Without sound (autoplay)" },
+        { "value": "unmuted", "label": "With sound (no autoplay)" }
+      ],
+      "info": "Videos with sound cannot autoplay"
     }
   ],
   "blocks": [
     { "type": "@app" },
-    { "type": "@theme" },
-    { "type": "_section-flex-pdp-buy-buttons" },
-    { "type": "_section-flex-pdp-description" },
-    { "type": "_section-flex-pdp-divider" },
-    { "type": "_section-flex-pdp-media-gallery" },
-    { "type": "_section-flex-pdp-policies" },
-    { "type": "_section-flex-pdp-price" },
-    { "type": "_section-flex-pdp-quantity-picker" },
-    { "type": "_section-flex-pdp-sku" },
-    { "type": "_section-flex-pdp-title" },
-    { "type": "_section-flex-pdp-variant-picker" },
-    { "type": "_section-flex-pdp-vendor" },
-    { "type": "_section-flex-pdp-pick-up" },
-    { "type": "_section-flex-pdp-installments" }
+    { "type": "@theme" }
   ],
   "presets": [
     {
-      "name": "t:labels.product_high_variants",
-      "category": "t:labels.category_products",
-      "blocks": [
-        { "type": "_section-flex-pdp-title" },
-        { "type": "_section-flex-pdp-vendor" },
-        { "type": "_section-flex-pdp-price" },
-        { "type": "_section-flex-pdp-installments" },
-        { "type": "_section-flex-pdp-divider" },
-        { "type": "_section-flex-pdp-variant-picker" },
-        { "type": "_section-flex-pdp-quantity-picker" },
-        { "type": "_section-flex-pdp-buy-buttons" },
-        { "type": "_section-flex-pdp-pick-up" },
-        { "type": "_section-flex-pdp-description" }
+      "name": "Radio Product",
+      "category": "Products",
+      "blocks": {
+        "custom-media-gallery": {
+          "type": "custom-media-gallery"
+        }
+      },
+      "block_order": [
+        "custom-media-gallery"
       ]
     }
   ],
-    "enabled_on": {
+  "enabled_on": {
     "templates": ["product"]
   }
 }
