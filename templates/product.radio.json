@@ -22,11 +22,33 @@
           "type": "group",
           "name": "Group",
           "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 10,
+            "width": "100",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "none",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
             "link": "",
             "open_in_new_tab": false,
-            "direction": "row",
-            "justify_content": "flex-start",
-            "width": 100,
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -47,7 +69,7 @@
               },
               "blocks": {}
             },
-            "reviews_io_reviewsio_rating_output_cTXVcT": {
+            "reviews_io_reviewsio_rating_output_y8E4VJ": {
               "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
               "settings": {}
             }
@@ -55,7 +77,7 @@
           "block_order": [
             "section_flex_pdp_sku_NKTXb7",
             "section_flex_pdp_inventory_mjyHBK",
-            "reviews_io_reviewsio_rating_output_cTXVcT"
+            "reviews_io_reviewsio_rating_output_y8E4VJ"
           ]
         },
         "section_flex_pdp_variant_picker_V4CtE6": {
