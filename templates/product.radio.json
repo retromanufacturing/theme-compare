@@ -61,7 +61,8 @@
             "product_image_size": "square",
             "thumbnail_position": "beside",
             "thumbnail_height": "flexible",
-            "thumbnail_arrows": true
+            "thumbnail_arrows": true,
+            "hide_variant_media": true
           },
           "blocks": {}
         }
