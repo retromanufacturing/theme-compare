@@ -18,23 +18,45 @@
           "settings": {},
           "blocks": {}
         },
-        "section_flex_pdp_sku_bEQEUf": {
-          "type": "_section-flex-pdp-sku",
-          "name": "t:labels.sku",
-          "settings": {},
-          "blocks": {}
-        },
-        "section_flex_pdp_inventory_7RLKeR": {
-          "type": "_section-flex-pdp-inventory",
-          "name": "t:labels.inventory",
+        "group_wwWmHP": {
+          "type": "group",
+          "name": "Group",
           "settings": {
-            "inventory_threshold": 10
+            "link": "",
+            "open_in_new_tab": false,
+            "direction": "row",
+            "justify_content": "flex-start",
+            "width": 100,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
-          "blocks": {}
-        },
-        "reviews_io_reviewsio_rating_output_j6EnEt": {
-          "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
-          "settings": {}
+          "blocks": {
+            "section_flex_pdp_sku_NKTXb7": {
+              "type": "_section-flex-pdp-sku",
+              "name": "t:labels.sku",
+              "settings": {},
+              "blocks": {}
+            },
+            "section_flex_pdp_inventory_mjyHBK": {
+              "type": "_section-flex-pdp-inventory",
+              "name": "t:labels.inventory",
+              "settings": {
+                "inventory_threshold": 10
+              },
+              "blocks": {}
+            },
+            "reviews_io_reviewsio_rating_output_cTXVcT": {
+              "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "section_flex_pdp_sku_NKTXb7",
+            "section_flex_pdp_inventory_mjyHBK",
+            "reviews_io_reviewsio_rating_output_cTXVcT"
+          ]
         },
         "section_flex_pdp_variant_picker_V4CtE6": {
           "type": "_section-flex-pdp-variant-picker",
@@ -77,9 +99,7 @@
       },
       "block_order": [
         "section_flex_pdp_title_z8nXXj",
-        "section_flex_pdp_sku_bEQEUf",
-        "section_flex_pdp_inventory_7RLKeR",
-        "reviews_io_reviewsio_rating_output_j6EnEt",
+        "group_wwWmHP",
         "section_flex_pdp_variant_picker_V4CtE6",
         "w3_product_accessories_widget_idB8gw",
         "section_flex_pdp_price_NdtWir",
