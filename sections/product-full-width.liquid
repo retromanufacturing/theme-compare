@@ -35,7 +35,8 @@
           "type": "checkbox",
           "id": "is_open",
           "label": "Is open",
-          "default": false
+          "default": false,
+          "visible_if": "{{ block.settings.is_tab }}"
         }
       ]
     },
@@ -71,6 +72,12 @@
           "type": "page",
           "id": "page",
           "label": "t:labels.tab_content_from"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_open",
+          "label": "Is open",
+          "default": false
         }
       ]
     },
