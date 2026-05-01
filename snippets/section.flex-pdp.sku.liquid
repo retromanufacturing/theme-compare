@@ -12,6 +12,6 @@
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 
 {%- if current_variant.sku != blank -%}
-  {%- assign sku = 'SKU: ' | append: current_variant.sku -%}
+  {%- assign sku = 'Part Number: ' | append: current_variant.sku -%}
   {%- render 'element.text', text: sku, variant: 'body-sm' -%}
 {%- endif -%}
