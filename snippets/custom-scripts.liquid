@@ -1,9 +1,13 @@
 {% comment %}
- Snippet for custom scripts loaded on theme.liquid
+  Snippet for custom scripts loaded on theme.liquid
 
- -- vehicle-search: controls the vehicle search desktop display
- -- vehicle-search: controls the vehicle search mobile widget display
+  -- vehicle-search: controls the vehicle search desktop display
+  -- vehicle-search: controls the vehicle search mobile widget display
 {% endcomment %}
- <script type="module" src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script> 
- <script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script> 
- <script type="module" src="{{ 'header.cart-slideout.js' | asset_url }}"></script>
+<script type="module" src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script>
+<script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
+
+{%- if settings.cart_type == 'slideout' -%}
+  <script type="module" src="{{ 'header.cart-slideout.js' | asset_url }}"></script>
+{%- endif -%}
+
