@@ -6,7 +6,3 @@
 {% endcomment %}
 <script type="module" src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
-
-{%- if request.page_type == 'product' -%}
-  <script type="module" src="{{ 'sticky-add-to-cart.js' | asset_url }}"></script>
-{%- endif -%}
