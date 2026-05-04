@@ -32,7 +32,7 @@
     "collection_grid_color": "white",
     "collection_grid_image": "collection",
     "collection_grid_image_margin": 17,
-    "cart_type": "dropdown",
+    "cart_type": "slideout",
     "cart_terms_conditions_page": "terms-and-conditions",
     "social_facebook_link": "https://www.facebook.com/RetroManufacturing",
     "social_twitter_link": "https://twitter.com/Retro_MFG",
