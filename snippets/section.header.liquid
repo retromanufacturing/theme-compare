@@ -688,11 +688,7 @@
 {%- endcapture -%}
 
 {%- capture mini_cart -%}
-  {%- if cart_type == 'slideout' -%}
-    {%- render 'header.cart-slideout' -%}
-  {%- else -%}
-    {%- render 'header.cart-drawer' -%}
-  {%- endif -%}
+  {%- render 'header.cart-drawer' -%}
 {%- endcapture -%}
 
 {%- capture close_cart_button -%}
