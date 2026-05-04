@@ -38,14 +38,12 @@ class StickyAddToCart extends HTMLElement {
   }
 
   #getTargetBuyButtons() {
-    return this.#getSection()?.querySelector(
-      `block-buy-buttons[data-product-id="${this.dataset.productId}"]`
-    )
-  }
+  return document.querySelector('block-buy-buttons')
+}
 
-  #getRealAddToCartButton() {
-    return this.#getTargetBuyButtons()?.querySelector('[name="add"]')
-  }
+ #getRealAddToCartButton() {
+  return document.querySelector('block-buy-buttons')?.querySelector('[name="add"]')
+}
 
   #setupObservers() {
     const buyButtons = this.#getTargetBuyButtons()
