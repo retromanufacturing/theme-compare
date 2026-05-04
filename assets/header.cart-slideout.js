@@ -1,11 +1,13 @@
 import { EVENTS } from 'util.events'
 
 class CartSlideout extends HTMLElement {
-  connectedCallback() {
-    this.abortController = new AbortController()
-    const { signal } = this.abortController
+  get drawer() {
+  return document.getElementById('cart-slideout')
+}
 
-    this.drawer = document.getElementById('cart-slideout')
+connectedCallback() {
+  this.abortController = new AbortController()
+  const { signal } = this.abortController
 
     // Open on cart icon click
     document.addEventListener(EVENTS.cartOpen, this.#handleOpen.bind(this), { signal })
