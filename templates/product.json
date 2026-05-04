@@ -25,7 +25,7 @@
             "variant_labels": true,
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
-            "color_swatches": false,
+            "color_swatches": true,
             "non_label_options": ""
           }
         },
@@ -80,7 +80,8 @@
         "description": {
           "type": "description",
           "settings": {
-            "is_tab": true
+            "is_tab": true,
+            "is_open": false
           }
         },
         "tab": {
@@ -88,7 +89,8 @@
           "settings": {
             "title": "Shipping information",
             "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-            "page": ""
+            "page": "",
+            "is_open": false
           }
         },
         "contact": {
