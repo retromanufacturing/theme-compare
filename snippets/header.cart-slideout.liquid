@@ -2,35 +2,34 @@
   header.cart-slideout.liquid
   Place in: /snippets/header.cart-slideout.liquid
 
-  Slideout cart using Expanse's header.drawer primitive.
-  Uses the same open/close event system as the dropdown cart.
-  CSS modifier class positions it as a side panel instead of top dropdown.
+  Slideout cart using overlay.drawer as the side panel container.
+  Uses Expanse's existing header-cart-drawer element and CartForm unchanged.
+  cart-type="dropdown" on header-cart-drawer so HeaderCart fires EVENTS.cartOpen
+  on ajaxProductAdded, which header.cart-slideout.js uses to open the panel.
 {% endcomment %}
 
 {% stylesheet %}
-  .site-header__cart--slideout {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
+  #cart-slideout .overlay-drawer__dialog--end {
     width: 400px;
     max-width: 100%;
-    max-height: 100%;
     height: 100%;
-    transform: translateX(100%);
     padding: 0;
-  }
-
-  .site-header__cart--slideout.is-active {
     display: flex;
     flex-direction: column;
-    transform: translateX(0);
-    transition: transform var(--slide-curve);
+    background-color: var(--color-secondary);
   }
 
-  .site-header__cart--slideout .cart__drawer-form {
-    max-height: 100%;
+  #cart-slideout .overlay-drawer__body {
+    flex: 1 1 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #cart-slideout .cart__drawer-form {
     height: 100%;
+    max-height: 100%;
+    flex: 1 1 auto;
   }
 {% endstylesheet %}
 
@@ -46,7 +45,7 @@
   endcapture
 
   capture button_submit_text
-    render 'utility.translate', key: 'actions.checkout', fallback: 'Checkout'
+    render 'utility.translate', key: 'actions.checkout', fallback: 'Check out'
   endcapture
 -%}
 
@@ -69,7 +68,7 @@
   <header-cart-drawer
     class="cart-drawer"
     defer-hydration
-    cart-type="slideout"
+    cart-type="dropdown"
   >
     <form
       action="{{ routes.cart_url }}"
@@ -159,13 +158,19 @@
   </header-cart-drawer>
 {%- endcapture -%}
 
-{%- render 'header.drawer',
-  slot: cart_content,
-  open: 'cart:open',
-  close: 'cart:close',
-  class: 'site-header__cart site-header__cart--slideout'
--%}
+<cart-slideout>
+  {%- render 'overlay.drawer',
+    id: 'cart-slideout',
+    label: 'Cart',
+    slot: cart_content,
+    placement: 'end',
+    light_dismiss: true
+  -%}
+</cart-slideout>
 
 <script type="module">
   import 'header.cart-drawer'
+</script>
+<script type="module">
+  import 'header.cart-slideout'
 </script>
