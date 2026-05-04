@@ -8,7 +8,7 @@
 {% enddoc %}
 
 {% stylesheet %}
-  .site-header__cart--slideout {
+  /* .site-header__cart--slideout {
     position: fixed;
     top: 0;
     right: 0;
@@ -25,7 +25,21 @@
       flex-direction: column;
       transform: translateX(0);
     }
-  }
+  } */
+
+  .site-header__cart--slideout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: 0;
+  width: min(480px, 100vw);
+  max-height: 100dvh;
+  overflow-y: hidden;
+  padding: 0;
+  transform: translateX(100%);
+  display: none;
+}
 
   .site-header__cart--slideout .site-header__drawer-animate {
     display: flex;
