@@ -25,7 +25,6 @@
 {% endcapture %}
 
 {%- render 'section.flex-pdp.custom', slot_gallery: slot_gallery, slot_details: slot_details -%}
-{%- render 'block.product-sticky-add-to-cart', product: product, section_id: section.id -%}
 
 {% javascript %}
   document.addEventListener('product-form:cart:navigate', (event) => {
