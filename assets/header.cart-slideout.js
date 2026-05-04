@@ -11,6 +11,7 @@ class CartSlideout extends HTMLElement {
 
     // Set open attribute so toggle-cart can track open state correctly
     this.setAttribute('open', EVENTS.cartOpen)
+    this.setAttribute('close', EVENTS.cartClose)
 
     // Open on cart icon click
     document.addEventListener(EVENTS.cartOpen, this.#handleOpen.bind(this), { signal })
