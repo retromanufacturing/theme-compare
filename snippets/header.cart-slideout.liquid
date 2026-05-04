@@ -1,20 +1,64 @@
 {% doc %}
   header.cart-slideout.liquid
   Place in: /snippets/header.cart-slideout.liquid
+
+  Slideout cart using header.drawer positioned as a full-height side panel.
+  Identical functionality to dropdown — same events, same JS, same cart behavior.
+  Visual difference achieved through CSS only.
 {% enddoc %}
 
 {% stylesheet %}
-  .cart-slideout .cart__drawer-form {
+  .site-header__cart--slideout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    bottom: 0;
+    width: min(480px, 100vw);
     max-height: 100dvh;
+    overflow-y: hidden;
+    padding: 0;
+    transform: translateX(100%);
+
+    &.is-active {
+      display: flex;
+      flex-direction: column;
+      transform: translateX(0);
+    }
+  }
+
+  .site-header__cart--slideout .site-header__drawer-animate {
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    transform: none;
+    opacity: 1;
+    transition: none;
+
+    .is-active & {
+      transform: none;
+      opacity: 1;
+      transition: none;
+    }
   }
 
-  .cart-slideout .cart__scrollable {
+  .site-header__cart--slideout .cart__drawer-form {
+    max-height: 100dvh;
     flex: 1 1 auto;
+    overflow: hidden;
   }
 
-  .cart-slideout .cart__footer {
+  .site-header__cart--slideout .cart__scrollable {
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+
+  .site-header__cart--slideout .cart__footer {
     flex-shrink: 0;
+  }
+
+  header-section.cart-open:has(.site-header__cart--slideout) .site-nav__icons {
+    display: flex;
   }
 {% endstylesheet %}
 
@@ -22,12 +66,9 @@
   {%- render 'header.cart-drawer', cart_type: 'slideout' -%}
 {%- endcapture -%}
 
-<cart-slideout class="cart-slideout">
-  {%- render 'overlay.drawer',
-    id: 'cart-slideout',
-    label: 'Cart',
-    slot: cart_content,
-    placement: 'end',
-    light_dismiss: true
-  -%}
-</cart-slideout>
+{%- render 'header.drawer',
+  slot: cart_content,
+  open: 'cart:open',
+  close: 'cart:close',
+  class: 'site-header__cart site-header__cart--slideout'
+-%}

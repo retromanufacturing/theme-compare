@@ -6,8 +6,8 @@
 {% endcomment %}
 <script type="module" src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
-
+{% comment %} 
 {%- if settings.cart_type == 'slideout' -%}
   <script type="module" src="{{ 'header.cart-slideout.js' | asset_url }}"></script>
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 
