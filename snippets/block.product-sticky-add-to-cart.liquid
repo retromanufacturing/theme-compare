@@ -130,14 +130,9 @@
   >
     {%- if image_to_show != blank -%}
       <div class="sticky-add-to-cart__image">
-        {{- image_to_show
-          | image_url: width: 96
-          | image_tag:
-            loading: 'lazy',
-            alt: image_to_show.alt | default: product.title | escape,
-            widths: '48, 96',
-            sizes: '48px'
-        -}}
+        {%- assign image_alt = image_to_show.alt | default: product.title | escape -%}
+        {%- assign image_src = image_to_show | image_url: width: 96 -%}
+        {{- image_src | image_tag: loading: 'lazy', alt: image_alt, widths: '48, 96', sizes: '48px' -}}
       </div>
     {%- endif -%}
 
@@ -154,7 +149,8 @@
       {%- render 'element.price', price: current_variant.price -%}
     </div>
 
-    {%- render 'element.button',
+    {%-
+      render 'element.button',
       type: 'button',
       text: current_variant.available ? add_to_cart_text : sold_out_text,
       classlist: 'sticky-add-to-cart__button',
