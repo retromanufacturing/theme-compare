@@ -136,21 +136,47 @@
       "name": "Custom tab",
       "settings": [
         {
+          "type": "select",
+          "id": "tab_type",
+          "label": "Tab Type",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "manuals",
+              "label": "Manuals"
+            },
+            {
+              "value": "specifications",
+              "label": "Specifications"
+            },
+            {
+              "value": "videos",
+              "label": "Videos"
+            }
+          ],
+          "default": "default"
+        },
+        {
           "type": "text",
           "id": "title",
           "label": "t:labels.heading",
-          "default": "Shipping information"
+          "default": "Shipping information",
+          "visible_if": "{{ block.settings.tab_type == 'default' }}"
         },
         {
           "type": "richtext",
           "id": "content",
           "label": "t:labels.tab_content",
-          "default": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>"
+          "default": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+          "visible_if": "{{ block.settings.tab_type == 'default' }}"
         },
         {
           "type": "page",
           "id": "page",
-          "label": "t:labels.tab_content_from"
+          "label": "t:labels.tab_content_from",
         },
         {
           "type": "checkbox",
@@ -159,7 +185,7 @@
           "default": false
         }
       ]
-    },
+    }
   ],
   "disabled_on": {
     "groups": ["footer", "header", "custom.popups"]
