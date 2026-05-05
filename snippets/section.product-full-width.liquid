@@ -45,6 +45,8 @@
           <div {{ block.shopify_attributes }}>
             {{ block.settings.code }}
           </div>
+        {%- when 'custom-tab' -%}
+          {%- render 'block.product-tab-custom', block: block -%}  
       {%- endcase -%}
     {%- endfor -%}
   </div>
