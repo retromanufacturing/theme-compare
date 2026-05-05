@@ -147,6 +147,15 @@
             "is_open": true
           }
         },
+        "custom_tab_3Y3kJ9": {
+          "type": "custom-tab",
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": "",
+            "is_open": false
+          }
+        },
         "tab": {
           "type": "tab",
           "settings": {
@@ -168,6 +177,7 @@
       },
       "block_order": [
         "description",
+        "custom_tab_3Y3kJ9",
         "tab",
         "tab_yCddyT"
       ],

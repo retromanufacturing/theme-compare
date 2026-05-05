@@ -25,7 +25,7 @@
     echo page_content
   endcapture
 -%}
-custom tabs
+
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
     {%- render 'element.accordion', title: title, slot: accordion_content, open: is_open -%}
