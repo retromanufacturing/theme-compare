@@ -16,17 +16,24 @@
 {%- liquid
   assign product = section.settings.product | default: product
   assign title = title | default: block.settings.title
-  assign tab_content = tab_content | default: block.settings.content
   assign page_content = page_content | default: block.settings.page.content
   assign is_open = block.settings.is_open
+  assign tab_type = block.settings.tab_type
+
+  capture tab_content
+    case tab_type
+      when 'manuals'
+        render 'block.product-manuals'
+      else        
+        assign tab_content = block.settings.content 
+    endcase
+  endcapture
 
   capture accordion_content
     echo tab_content
     echo page_content
   endcapture
 -%}
-
-{% render 'block.product-manuals' %}
 
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
