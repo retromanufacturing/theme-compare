@@ -130,7 +130,36 @@
           "info": "t:labels.supports_liquid"
         }
       ]
-    }
+    },
+    {
+      "type": "custom-tab",
+      "name": "Custom tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Shipping information"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:labels.tab_content",
+          "default": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:labels.tab_content_from"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_open",
+          "label": "Is open",
+          "default": false
+        }
+      ]
+    },
   ],
   "disabled_on": {
     "groups": ["footer", "header", "custom.popups"]
