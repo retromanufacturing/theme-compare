@@ -35,10 +35,12 @@
   endcapture
 -%}
 
-{{ tab_content }}
+
 
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
     {%- render 'element.accordion', title: title, slot: accordion_content, open: is_open -%}
   </div>
 {%- endif -%}
+
+{{ tab_content }}
