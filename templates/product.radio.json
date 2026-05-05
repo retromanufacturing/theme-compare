@@ -147,6 +147,16 @@
             "is_open": true
           }
         },
+        "custom_tab_w4BzFf": {
+          "type": "custom-tab",
+          "settings": {
+            "tab_type": "specifications",
+            "title": "Specifications",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": "about-us",
+            "is_open": false
+          }
+        },
         "custom_tab_3Y3kJ9": {
           "type": "custom-tab",
           "settings": {
@@ -157,21 +167,22 @@
             "is_open": false
           }
         },
-        "custom_tab_w4BzFf": {
+        "custom_tab_7ByYYH": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "specifications",
-            "title": "Specifications",
+            "tab_type": "videos",
+            "title": "Product Videos",
             "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-            "page": "about-us",
-            "is_open": false
+            "page": "",
+            "is_open": true
           }
         }
       },
       "block_order": [
         "description",
+        "custom_tab_w4BzFf",
         "custom_tab_3Y3kJ9",
-        "custom_tab_w4BzFf"
+        "custom_tab_7ByYYH"
       ],
       "settings": {
         "max_width": false
