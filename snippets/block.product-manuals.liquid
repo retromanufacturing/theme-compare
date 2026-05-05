@@ -1,0 +1,19 @@
+{%- liquid
+  assign product_manuals = product.metafields.media.manuals.value
+
+  capture manuals
+    for manual in product_manuals
+      render 'block.lists', url_content: manual.name, url: manual.link, is_url: true, new_tab: true
+    endfor
+    for collection in product.collections
+      for manual in collection.metafields.media.manuals.value
+        render 'block.lists', url_content: manual.name, url: manual.link, is_url: true, new_tab: true
+      endfor
+    endfor
+  endcapture
+-%}
+{% if manuals != blank %}
+  <ul class="product__manuals no-bullets">
+    {{ manuals }}
+  </ul>
+{% endif %}
