@@ -1,0 +1,19 @@
+<li
+  class="{{ list_class }}"
+  {% if is_data %}
+    {{ data_name }}="{{ data_value }}"
+  {% endif %}
+>
+  {{ list_content }}
+  {% if is_url %}
+    <a
+      href="{{ url }}"
+      class="{{ url_class }}"
+      {% if new_tab %}
+        target="_blank"
+      {% endif %}
+    >
+      {{- url_content -}}
+    </a>
+  {% endif %}
+</li>
