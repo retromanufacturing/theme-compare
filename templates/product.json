@@ -130,10 +130,17 @@
               "name": "Product features",
               "settings": {},
               "blocks": {}
+            },
+            "custom_product_logos_etnqLd": {
+              "type": "custom-product-logos",
+              "name": "Logos",
+              "settings": {},
+              "blocks": {}
             }
           },
           "block_order": [
-            "custom_product_features_U8LMKw"
+            "custom_product_features_U8LMKw",
+            "custom_product_logos_etnqLd"
           ]
         },
         "w3_product_accessories_widget_nxpwTX": {
