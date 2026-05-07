@@ -112,7 +112,7 @@
             "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
-            "border_radius": 1,
+            "border_radius": 16,
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
