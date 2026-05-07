@@ -1,16 +1,11 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign radio_features = current_variant.metafields.custom.radio_features.value
-
-  capture features
-    echo radio_features.features.value
-  endcapture
 -%}
 
 {%- if radio_features != blank -%}
-  {{ radio_features.features }}
   <ul>
-    {%- for feature in features -%}
+    {%- for feature in radio_features.features.value -%}
       <li>{{ feature }}</li>
     {%- endfor -%}
   </ul>
