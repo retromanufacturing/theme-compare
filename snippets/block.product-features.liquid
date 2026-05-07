@@ -15,6 +15,14 @@
   </ul>
 {%- endif -%}
 
+{%- if variant_features != blank -%}
+  <ul>
+    {%- for feature in variant_features -%}
+      {% render 'block.lists', list_content: feature %}
+    {%- endfor -%}
+  </ul>
+{%- endif -%}
+
 {%- if radio_features != blank -%}
   <ul>
     {%- for feature in radio_features -%}
