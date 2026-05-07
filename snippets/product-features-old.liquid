@@ -1,0 +1,128 @@
+{% style %}
+  .block--{{ block.id }} {
+    padding-top: {{ block.settings.padding-block-start }}px;
+    padding-bottom: {{ block.settings.padding-block-end }}px;
+    padding-left: {{ block.settings.padding-inline-start }}px;
+    padding-right: {{ block.settings.padding-inline-end }}px;
+  }
+  
+  .product__features {
+    padding: 0rem 0rem;
+    border-radius: 0rem;
+    border: 0px solid #ddd;
+    margin-bottom: 0em;
+  }
+
+  .product__features-content {
+    list-style: initial;
+    
+    li {
+      color: {{ block.settings.color_text }};
+      font-size: 14px;
+    }
+
+    a{
+      color: {{ block.settings.color_link }} !important;
+      font-weight: bold;
+    }
+  }
+
+  .collapsible-content {  
+    .product__features {       
+      padding: 22px 25px 22px !important;
+      border: 1px solid #ddd !important; 
+      margin-bottom: 1.5rem !important;
+      border-radius: 0rem !important;
+    }   
+  }
+{% endstyle %}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant  
+  assign product_features = product.metafields.description.features.value
+  assign collection_media = shop.metaobjects.product_videos.values
+  assign collection_features_class = 'product__features-item' 
+  assign hide = ' hide' 
+
+  capture motor_class
+    render 'data.motors', data: 'motor_class' 
+  endcapture
+
+  capture collection_videos
+    for collection in product.collections
+      echo collection.id
+    endfor
+  endcapture
+
+  capture videos
+    for media in collection_media
+      if media.product_feature
+        for collection in media.collections.value
+          if collection_videos contains collection.id
+            render 'item-lists', url_content: media.title, url: media.link, is_url: true, new_tab: true
+          endif
+        endfor
+      endif
+    endfor
+  endcapture
+
+  capture collection_features
+    for collection in product.collections
+      for metaobject in collection.metafields.media.content.value
+        if metaobject.system.type == 'product_data'
+          for feature in metaobject.features.value
+            assign data_name = 'data-motor-id'
+            if motor_class == metaobject.name
+              assign feature_class = collection_features_class
+            else
+              assign feature_class = collection_features_class | append: hide
+            endif
+
+            render 'item-lists', list_content: feature, list_class: feature_class, is_data: true, data_name: data_name, data_value: metaobject.name 
+          endfor
+        endif
+      endfor
+    endfor
+  endcapture
+
+  capture variant_features
+    for variant in product.variants 
+      if variant.metafields.description.features
+        for variant_feature in variant.metafields.description.features.value
+          assign data_name = 'data-variant-sku'
+          if current_variant.id == variant.id  
+            assign feature_class = collection_features_class
+          else
+              assign feature_class = collection_features_class | append: hide
+          endif
+          render 'item-lists', list_content: variant_feature, list_class: feature_class, is_data: true, data_name: data_name, data_value: variant.sku
+        endfor
+      endif
+    endfor
+  endcapture
+
+  capture features
+    for feature in product_features
+        render 'item-lists', list_content: feature
+    endfor
+    echo variant_features
+    echo collection_features
+    echo videos
+  endcapture
+-%}
+
+{% if features != blank %}
+  <product-features data-product-id="{{ product.id }}" data-section-id="{{ section.id }}">
+    <div class="product__features">
+      <ul class="product__features-content">
+        {{ features }}
+      </ul>
+      
+      {% comment %} {% if block.settings.product_logos %}
+       <div class="product__features-logos">
+         {% render 'product-logos', block: block, current_variant: current_variant, motor_class: motor_class %}
+       </div>
+      {% endif %} {% endcomment %}
+    </div>
+  </product-features>
+{% endif %}
