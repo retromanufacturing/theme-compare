@@ -5,11 +5,11 @@
   assign logo_count = product_logos.size | plus: radio_logos.size
 
   if logo_count <= 2
-    assign logo_max_height = 80
-  elsif logo_count <= 4
-    assign logo_max_height = 60
-  else
     assign logo_max_height = 40
+  elsif logo_count <= 4
+    assign logo_max_height = 30
+  else
+    assign logo_max_height = 24
   endif
 
   capture logos
@@ -28,7 +28,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
     }
     .product__logos .logo-image {
       width: auto;
