@@ -81,7 +81,7 @@
           ]
         },
         "product_features_yyAAMG": {
-          "type": "product-features",
+          "type": "custom-product-features",
           "name": "Product features",
           "settings": {},
           "blocks": {}
