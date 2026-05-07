@@ -21,7 +21,13 @@
   assign tab_type = block.settings.tab_type
 
   capture product_specs
-    render 'motorspecs'
+    case template.suffix
+      when 'radio'
+        assign spec_text = 'this is a radio'
+      when 'speaker'
+        assign spec_text = 'this is a speaker'
+    endcase
+    echo spec_text
   endcapture
 
   capture tab_content
@@ -50,4 +56,4 @@
 {%- endif -%}
 
 
-{{ template.suffix }}
+{{ template.suffix }}--{{ product_specs }}
