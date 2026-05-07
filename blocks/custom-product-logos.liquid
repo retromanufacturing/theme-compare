@@ -1,10 +1,36 @@
 {% render 'block.product-logos',
+  block: block,
+  product: product,
+  logo_sizing: block.settings.logo_sizing,
+  logo_custom_height: block.settings.logo_custom_height
 %}
 
 {% schema %}
 {
   "name": "Logos",
   "settings": [
+    {
+      "type": "select",
+      "id": "logo_sizing",
+      "label": "Logo sizing",
+      "default": "default",
+      "options": [
+        { "value": "default", "label": "Default (count-based)" },
+        { "value": "metaobject", "label": "Use metaobject dimensions" },
+        { "value": "custom", "label": "Custom" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "logo_custom_height",
+      "label": "Custom height (px)",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60,
+      "info": "Only applies when sizing is set to Custom"
+    }
   ],
   "presets": [{ "name": "Logos" }]
 }
