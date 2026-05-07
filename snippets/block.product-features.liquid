@@ -3,8 +3,6 @@
   assign product_features = product.metafields.description.features.value
   assign variant_features = current_variant.metafields.description.features.value
   assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
-
- 
 -%}
 
 {%- if product_features != blank -%}
