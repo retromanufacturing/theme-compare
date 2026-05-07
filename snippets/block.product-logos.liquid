@@ -5,10 +5,10 @@
 
   capture logos
     for logo in product_logos  
-        render 'element.image', img: entry.image.value, alt: entry.subtitle.value, loading: 'lazy'
+        render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy'
     endfor
     for logo in radio_logos
-      render 'element.image', img: entry.image.value, alt: entry.subtitle.value, loading: 'lazy'
+      render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy'
     endfor
   endcapture
 -%}
