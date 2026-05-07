@@ -2,8 +2,6 @@
   assign current_variant = product.selected_or_first_available_variant
   assign radio_features = current_variant.metafields.custom.radio_features.value
 -%}
-{{ current_variant.sku }}
-{{ radio_features }}
 
 {%- if radio_features != blank -%}
   <ul>
@@ -13,5 +11,3 @@
   </ul>
 {%- endif -%}
 
-
-product features block
