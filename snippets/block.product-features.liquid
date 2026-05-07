@@ -1,6 +1,6 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
-  assign radio_features = current_variant.metafields.product_data.radio_features.value
+  assign radio_features = current_variant.metafields.custom.radio_features.value
 -%}
 
 {%- if radio_features != blank -%}
