@@ -80,6 +80,12 @@
             "reviews_io_reviewsio_rating_output_8CgQtG"
           ]
         },
+        "product_features_yyAAMG": {
+          "type": "product-features",
+          "name": "Product features",
+          "settings": {},
+          "blocks": {}
+        },
         "section_flex_pdp_variant_picker_V4CtE6": {
           "type": "_section-flex-pdp-variant-picker",
           "name": "t:labels.variant_picker",
@@ -122,6 +128,7 @@
       "block_order": [
         "section_flex_pdp_title_z8nXXj",
         "custom_group_HLtKW7",
+        "product_features_yyAAMG",
         "section_flex_pdp_variant_picker_V4CtE6",
         "w3_product_accessories_widget_idB8gw",
         "section_flex_pdp_price_NdtWir",
