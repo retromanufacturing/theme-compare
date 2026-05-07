@@ -162,7 +162,7 @@
             "thumbnail_position": "beside",
             "thumbnail_height": "flexible",
             "thumbnail_arrows": false,
-            "hide_variant_media": false
+            "hide_variant_media": true
           },
           "blocks": {}
         }
