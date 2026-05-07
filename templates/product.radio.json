@@ -134,7 +134,10 @@
             "custom_product_logos_xqngKB": {
               "type": "custom-product-logos",
               "name": "Logos",
-              "settings": {},
+              "settings": {
+                "logo_sizing": "metaobject",
+                "logo_custom_height": 60
+              },
               "blocks": {}
             }
           },
