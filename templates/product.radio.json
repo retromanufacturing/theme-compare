@@ -135,7 +135,7 @@
               "type": "custom-product-logos",
               "name": "Logos",
               "settings": {
-                "logo_sizing": "metaobject",
+                "logo_sizing": "default",
                 "logo_custom_height": 60
               },
               "blocks": {}
