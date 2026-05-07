@@ -9,7 +9,7 @@
 
 {%- if radio_features != blank -%}
   <ul>
-    {%- for feature in features -%}
+    {%- for feature in radio_features -%}
       <li>{{ feature }}</li>
       {% render 'block.lists', list_content: feature %}
     {%- endfor -%}
