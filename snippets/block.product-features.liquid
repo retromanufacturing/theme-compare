@@ -8,7 +8,7 @@
 -%}
 
 {%- if radio_features != blank -%}
-  {{ radio_features.features.value }}
+  {{ radio_features.features }}
   <ul>
     {%- for feature in features -%}
       <li>{{ feature }}</li>
