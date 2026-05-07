@@ -1,0 +1,25 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_features = product.metafields.description.features.value
+  assign variant_features = current_variant.metafields.description.features.value
+  assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
+
+  capture features
+    for feature in product_features
+      render 'block.lists', list_content: feature
+    endfor
+    for feature in variant_features
+      render 'block.lists', list_content: feature
+    endfor
+    for feature in radio_features
+      render 'block.lists', list_content: feature
+    endfor
+  endcapture
+-%}
+
+{%- if features != blank -%}
+  <ul>
+    {{ features }}
+  </ul>
+{%- endif -%}
+
