@@ -26,6 +26,8 @@
         render 'motorspecs'
       when 'manuals'
         render 'block.product-manuals'
+      when 'videos'
+        render 'block.product-media'
       else        
         assign tab_content = block.settings.content 
     endcase
