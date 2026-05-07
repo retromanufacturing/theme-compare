@@ -2,20 +2,44 @@
   assign current_variant = product.selected_or_first_available_variant
   assign product_logos = product.metafields.media.logos.value
   assign radio_logos = current_variant.metafields.custom.radio_features.value.logos.value
+  assign logo_count = product_logos.size | plus: radio_logos.size
+
+  if logo_count <= 2
+    assign logo_max_height = 80
+  elsif logo_count <= 4
+    assign logo_max_height = 60
+  else
+    assign logo_max_height = 40
+  endif
 
   capture logos
-    for logo in product_logos  
-        render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy'
+    for logo in product_logos
+      render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy', classlist: 'logo-image'
     endfor
     for logo in radio_logos
-      render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy'
+      render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy', classlist: 'logo-image'
     endfor
   endcapture
 -%}
 
 {%- if logos != blank -%}
-  <ul>
-    {{ logos }}
-  </ul>
-{%- endif -%}
+  {% style %}
+    .product__logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+    .product__logos .logo-image {
+      width: auto;
+      max-width: 100%;
+      max-height: {{ logo_max_height }}px;
+      object-fit: contain;
+      display: block;
+    }
+  {% endstyle %}
 
+  <div class="product__logos">
+    {{ logos }}
+  </div>
+{%- endif -%}
