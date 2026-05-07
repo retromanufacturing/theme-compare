@@ -3,13 +3,13 @@
   assign radio_features = current_variant.metafields.custom.radio_features.value
 
   capture features
-    echo radio_features
+    echo radio_features.features.value
   endcapture
 -%}
 
 {%- if radio_features != blank -%}
   <ul>
-    {%- for feature in features.value -%}
+    {%- for feature in features -%}
       <li>{{ feature }}</li>
     {%- endfor -%}
   </ul>
