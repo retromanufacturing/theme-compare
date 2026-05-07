@@ -173,7 +173,7 @@
             "tab_type": "videos",
             "title": "Product Videos",
             "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-            "page": "dab-radios-comparison",
+            "page": "",
             "is_open": true
           }
         }
