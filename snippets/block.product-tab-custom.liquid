@@ -20,10 +20,14 @@
   assign is_open = block.settings.is_open
   assign tab_type = block.settings.tab_type
 
+  capture product_specs
+    render 'motorspecs'
+  endcapture
+
   capture tab_content
     case tab_type
       when 'specificiations'
-        render 'motorspecs'
+        echo product_specs
       when 'manuals'
         render 'block.product-manuals'
       when 'videos'
