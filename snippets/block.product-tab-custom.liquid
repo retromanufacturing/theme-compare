@@ -22,6 +22,8 @@
 
   capture tab_content
     case tab_type
+      when 'specificiations'
+        render 'motorspecs'
       when 'manuals'
         render 'block.product-manuals'
       else        
