@@ -3,6 +3,8 @@
   assign radio_features = current_variant.metafields.custom.radio_features.value
 -%}
 
+{{ radio_features }}
+
 {%- if radio_features != blank -%}
   <ul>
     {%- for feature in radio_features.features.value -%}
