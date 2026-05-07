@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product-radio",
+      "type": "main-product-custom",
       "blocks": {
         "section_flex_pdp_title_z8nXXj": {
           "type": "_section-flex-pdp-title",
@@ -130,10 +130,17 @@
               "name": "Product features",
               "settings": {},
               "blocks": {}
+            },
+            "custom_product_logos_xqngKB": {
+              "type": "custom-product-logos",
+              "name": "Logos",
+              "settings": {},
+              "blocks": {}
             }
           },
           "block_order": [
-            "custom_product_features_6KTFTR"
+            "custom_product_features_6KTFTR",
+            "custom_product_logos_xqngKB"
           ]
         },
         "w3_product_accessories_widget_idB8gw": {
