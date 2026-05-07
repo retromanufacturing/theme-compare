@@ -3,29 +3,23 @@
   assign product_features = product.metafields.description.features.value
   assign variant_features = current_variant.metafields.description.features.value
   assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
+
+  capture features
+    for feature in product_features
+      render 'block.lists', list_content: feature
+    endfor
+    for feature in variant_features
+      render 'block.lists', list_content: feature
+    endfor
+    for feature in radio_features
+      render 'block.lists', list_content: feature
+    endfor
+  endcapture
 -%}
 
-{%- if product_features != blank -%}
+{%- if features != blank -%}
   <ul>
-    {%- for feature in product_features -%}
-      {% render 'block.lists', list_content: feature %}
-    {%- endfor -%}
-  </ul>
-{%- endif -%}
-
-{%- if variant_features != blank -%}
-  <ul>
-    {%- for feature in variant_features -%}
-      {% render 'block.lists', list_content: feature %}
-    {%- endfor -%}
-  </ul>
-{%- endif -%}
-
-{%- if radio_features != blank -%}
-  <ul>
-    {%- for feature in radio_features -%}
-      {% render 'block.lists', list_content: feature %}
-    {%- endfor -%}
+    {{ features }}
   </ul>
 {%- endif -%}
 
