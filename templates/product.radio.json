@@ -12,6 +12,52 @@
     "main": {
       "type": "main-product-radio",
       "blocks": {
+        "custom_group_bpV6wj": {
+          "type": "custom-group",
+          "name": "Group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "none",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 16,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "section_flex_pdp_variant_picker_V4CtE6": {
+          "type": "_section-flex-pdp-variant-picker",
+          "name": "t:labels.variant_picker",
+          "settings": {
+            "variant_selector_type": "radio"
+          },
+          "blocks": {}
+        },
         "section_flex_pdp_title_z8nXXj": {
           "type": "_section-flex-pdp-title",
           "name": "t:labels.title",
@@ -86,14 +132,6 @@
           "settings": {},
           "blocks": {}
         },
-        "section_flex_pdp_variant_picker_V4CtE6": {
-          "type": "_section-flex-pdp-variant-picker",
-          "name": "t:labels.variant_picker",
-          "settings": {
-            "variant_selector_type": "radio"
-          },
-          "blocks": {}
-        },
         "w3_product_accessories_widget_idB8gw": {
           "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
           "settings": {}
@@ -126,10 +164,11 @@
         }
       },
       "block_order": [
+        "custom_group_bpV6wj",
+        "section_flex_pdp_variant_picker_V4CtE6",
         "section_flex_pdp_title_z8nXXj",
         "custom_group_HLtKW7",
         "product_features_yyAAMG",
-        "section_flex_pdp_variant_picker_V4CtE6",
         "w3_product_accessories_widget_idB8gw",
         "section_flex_pdp_price_NdtWir",
         "section_flex_pdp_buy_buttons_TiYxqb"
