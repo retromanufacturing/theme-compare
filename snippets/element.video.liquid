@@ -66,7 +66,7 @@ assign external_video_id = external_video_id | default: external_video.external_
             preload: 'metadata'
         }}
       </video-media>
-    {%- elsif external_video != blank -%}
+    {%- elsif external_video != blank or external_video_host != blank -%}
       <video-media
         host="{{ external_video_host }}"
         {% if autoplay %}
