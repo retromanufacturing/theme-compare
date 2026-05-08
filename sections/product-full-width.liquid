@@ -141,10 +141,6 @@
           "label": "Tab Type",
           "options": [
             {
-              "value": "default",
-              "label": "Default"
-            },
-            {
               "value": "manuals",
               "label": "Manuals"
             },
@@ -157,25 +153,13 @@
               "label": "Videos"
             }
           ],
-          "default": "default"
+          "default": "manuals"
         },
         {
           "type": "text",
           "id": "title",
           "label": "t:labels.heading",
-          "default": "Shipping information"
-        },
-        {
-          "type": "richtext",
-          "id": "content",
-          "label": "t:labels.tab_content",
-          "default": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-          "visible_if": "{{ block.settings.tab_type == 'default' }}"
-        },
-        {
-          "type": "page",
-          "id": "page",
-          "label": "t:labels.tab_content_from",
+          "default": "Product information"
         },
         {
           "type": "checkbox",
