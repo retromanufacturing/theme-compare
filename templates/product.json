@@ -211,7 +211,8 @@
           "settings": {
             "tab_type": "videos",
             "title": "Product videos",
-            "is_open": true
+            "is_open": true,
+            "video_width": 650
           }
         },
         "custom_tab_pNRnYb": {
@@ -219,7 +220,8 @@
           "settings": {
             "tab_type": "specifications",
             "title": "Specifications",
-            "is_open": false
+            "is_open": false,
+            "video_width": 650
           }
         },
         "custom_tab_tpYMTQ": {
@@ -227,7 +229,8 @@
           "settings": {
             "tab_type": "manuals",
             "title": "Manuals",
-            "is_open": false
+            "is_open": false,
+            "video_width": 650
           }
         }
       },
