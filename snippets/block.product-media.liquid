@@ -36,8 +36,7 @@
   </div>
 {%- endif -%}
 
-{{ custom_videos }}
-  {% for video in custom_videos %}
-    {{ video.title.value }}--{{ video.link.value }}
+
+  {% for media in custom_videos %}
+    {{ media.title.value }}--{{ media.link.value }}
   {% endfor %}
-this is a test
