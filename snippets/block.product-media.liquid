@@ -38,7 +38,7 @@
         assign external_video_host = 'youtube'
         assign external_video_id = media.link.value | split: 'v=' | last | split: '&' | first
       -%}
-     {{ external_video_id }}--{{ media.link.value }}
+     {% comment %} {{ external_video_id }}--{{ media.link.value }} {% endcomment %}
     {% endfor %}
   </div>
 {%- endif -%}
