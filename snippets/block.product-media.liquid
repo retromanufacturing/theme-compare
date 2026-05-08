@@ -20,7 +20,7 @@
       .product__video-item { width: 100%; }
     }
   {% endstyle %}
-
+{{ custom_videos }}
   {% for video in custom_videos %}
     {{ video.title.value }}--{{ video.link.value }}
   {% endfor %}
