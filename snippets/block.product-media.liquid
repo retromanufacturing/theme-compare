@@ -17,6 +17,10 @@
   endcapture
 -%}
 
+{% for media in product.media %}
+  {{ media.media_type }}
+{% endfor %}
+
 {% if videos != blank %}
   {{ videos }}
 {% endif %}
