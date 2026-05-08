@@ -166,6 +166,17 @@
           "id": "is_open",
           "label": "Is open",
           "default": false
+        },
+        {
+          "type": "range",
+          "id": "video_width",
+          "label": "Video width",
+          "default": 650,
+          "min": 60,
+          "max": 650,
+          "step": 10,
+          "unit": "px",
+          "visible_if": "{{ block.settings.tab_type == 'video' }}"
         }
       ]
     }
