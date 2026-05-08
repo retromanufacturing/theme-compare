@@ -48,7 +48,7 @@
     echo page_content
   endcapture
 -%}
-
+this is a test
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
     {%- render 'element.accordion', title: title, slot: accordion_content, open: is_open -%}
