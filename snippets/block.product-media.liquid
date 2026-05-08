@@ -25,11 +25,11 @@
     {%- for media in product.media -%}
       {%- if media.media_type == 'video' -%}
         <div class="product__video-item">
-          {%- render 'element.video', video: media -%}
+          {%- render 'element.video', video: media -%} 
         </div>
       {%- elsif media.media_type == 'external_video' -%}
         <div class="product__video-item">
-          {%- render 'element.video', external_video: media -%}
+          {%- render 'element.video', external_video: media -%} {{ external_video_id }}
         </div>
       {%- endif -%}
     {%- endfor -%}
