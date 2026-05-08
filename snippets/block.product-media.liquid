@@ -10,18 +10,12 @@
     for media in product.media
       if media.media_type == 'video'
         render 'element.video', video: media
-      elsif media.media_type == 'external-video'
+      elsif media.media_type == 'external_video'
         render 'element.video', external_video: media
       endif
     endfor 
   endcapture
 -%}
-
-{% for media in product.media %}
- {% if media.media_type == 'external-video' %}
-   {% render 'element.video', external_video: media %}
- {% endif %}
-{% endfor %}
 
 {% if videos != blank %}
   {{ videos }}
