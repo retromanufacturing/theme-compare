@@ -1,1 +1,22 @@
-This is the product media block.
+{%- liquid
+  comment 
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_videos = product.metafields.media.logos.value
+  assign custom_videos = current_variant.metafields.custom.radio_features.value.logos.value
+  assign logo_count = product_logos.size | plus: radio_logos.size
+  endcomment 
+
+  capture videos
+    for media in product.media
+      if media.media_type == 'video'
+        render 'element.video', video: media
+      elsif media.media_type == 'external-video'
+        render 'element.video', external_video: media
+      endif
+    endfor 
+  endcapture
+-%}
+
+{% if videos != blank %}
+  {{ videos }}
+{% endif %}
