@@ -5,7 +5,7 @@
 -%}
 
 {%- if product_videos.size > 0 or external_videos.size > 0 -%}
-  {% style%}
+  {% style %}
     .product__videos {
       display: flex;
       flex-wrap: wrap;
@@ -33,10 +33,12 @@
         </div>
       {%- endif -%}
     {%- endfor -%}
+    {% for media in custom_videos %}
+      {%- liquid
+        assign external_video_host = 'youtube'
+        assign external_video_id = entry.link.value | split: 'v=' | last | split: '&' | first
+      -%}
+      {%- render 'element.video', external_video_host: external_video_host, external_video_id: external_video_id -%}
+    {% endfor %}
   </div>
 {%- endif -%}
-
-{{ custom_videos }}
-  {% for media in custom_videos %}
-    {{ media.title.value }}--{{ media.link.value }}
-  {% endfor %}

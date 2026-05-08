@@ -29,8 +29,8 @@
   assign hydration = hydration | default: 'on:visible'
 
   if external_video != blank
-    assign external_video_host = external_video.host | default: external_video.type
-    assign external_video_id = external_video.external_id | default: external_video.id
+    assign external_video_host = external_video_host | default: external_video.host | default: external_video.type
+    assign external_video_id = external_video_id | default: external_video.external_id | default: external_video.id
   endif
 %}
 
