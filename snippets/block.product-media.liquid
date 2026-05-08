@@ -4,7 +4,7 @@
   assign custom_videos = product.metafields.media.videos.value
 -%}
 
-{%- if product_videos.size > 0 or external_videos.size > 0 -%}
+{%- if product_videos.size > 0 or external_videos.size > 0 or custom_videos != blank -%}
   {% style %}
     .product__videos {
       display: flex;
