@@ -29,7 +29,7 @@
   assign hydration = hydration | default: 'on:visible'
 
   if external_video != blank
-    assign external_video_host = external_video_host | default: external_video.host | default: external_video.type
+   assign external_video_host = external_video_host | default: external_video.host | default: external_video.type
 assign external_video_id = external_video_id | default: external_video.external_id | default: external_video.id
   endif
 %}
@@ -97,7 +97,7 @@ assign external_video_id = external_video_id | default: external_video.external_
     {%- endif -%}
   </div>
 
-  {% if video != blank or external_video != blank %}
+{% if video != blank or external_video != blank or external_video_host != blank %}
     <template data-island>
       <script type="module">
         import 'element.video'
