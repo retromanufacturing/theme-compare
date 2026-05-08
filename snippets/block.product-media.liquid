@@ -1,28 +1,36 @@
 {%- liquid
-  comment 
-  assign current_variant = product.selected_or_first_available_variant
-  assign product_videos = product.metafields.media.logos.value
-  assign custom_videos = current_variant.metafields.custom.radio_features.value.logos.value
-  assign logo_count = product_logos.size | plus: radio_logos.size
-  endcomment 
-
-  capture videos
-    for media in product.media
-      if media.media_type == 'video'
-        render 'element.video', video: media
-      elsif media.media_type == 'external_video'
-        render 'element.video', external_video: media
-      endif
-    endfor 
-  endcapture
+  assign product_videos = product.media | where: 'media_type', 'video'
+  assign external_videos = product.media | where: 'media_type', 'external_video'
 -%}
-{%  for media in product.media %}
-  {% if media.media_type == 'external_video' %}
-    {{ media }}-{{ media.host }}
-  {% endif %}
-{% endfor %}
 
+{%- if product_videos.size > 0 or external_videos.size > 0 -%}
+  {% style%}
+    .product__videos {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-{% if videos != blank %}
-  {{ videos }}
-{% endif %}
+    .has-1-per-row .product__video-item { width: 100%; }
+    .has-2-per-row .product__video-item { width: 50%; }
+    .has-3-per-row .product__video-item { width: 33.333%; }
+    .has-4-per-row .product__video-item { width: 25%; }
+
+    @media only screen and (max-width: 768px) {
+      .product__video-item { width: 100%; }
+    }
+  {% endstyle %}
+
+  <div class="product__videos has-{{ columns_per_row }}-per-row" {{ block.shopify_attributes }}>
+    {%- for media in product.media -%}
+      {%- if media.media_type == 'video' -%}
+        <div class="product__video-item">
+          {%- render 'element.video', video: media -%}
+        </div>
+      {%- elsif media.media_type == 'external_video' -%}
+        <div class="product__video-item">
+          {%- render 'element.video', external_video: media -%}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
