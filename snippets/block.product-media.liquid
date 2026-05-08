@@ -1,6 +1,7 @@
 {%- liquid
   assign product_videos = product.media | where: 'media_type', 'video'
   assign external_videos = product.media | where: 'media_type', 'external_video'
+  assign custom_videos = product.metafields.media.videos.value
 -%}
 
 {%- if product_videos.size > 0 or external_videos.size > 0 -%}
@@ -19,6 +20,10 @@
       .product__video-item { width: 100%; }
     }
   {% endstyle %}
+
+  {% for video in custom_videos %}
+    {{ video }}
+  {% endfor %}
 
   <div class="product__videos has-{{ columns_per_row }}-per-row" {{ block.shopify_attributes }}>
     {%- for media in product.media -%}
