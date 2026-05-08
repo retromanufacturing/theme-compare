@@ -22,7 +22,7 @@
   {% endstyle %}
 
   {% for video in custom_videos %}
-    {{ video.value }}
+    {{ video.title.value }}--{{ video.link.value }}
   {% endfor %}
 
   <div class="product__videos has-{{ columns_per_row }}-per-row" {{ block.shopify_attributes }}>
