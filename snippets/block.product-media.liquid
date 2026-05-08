@@ -16,7 +16,13 @@
     endfor 
   endcapture
 -%}
-{{external_video.type }}
+{%  for media in product.media %}
+  {% if media.media_type == 'external_video' %}
+    {{ media }}
+  {% endif %}
+{% endfor %}
+
+
 {% if videos != blank %}
   {{ videos }}
 {% endif %}
