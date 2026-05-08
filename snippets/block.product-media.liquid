@@ -18,8 +18,9 @@
 -%}
 
 {% for media in product.media %}
-  {{ media.media_type }} 
-  {% render 'element.video', external_video: media %}
+ {% if media.media_type == 'external-video' %}
+   {% render 'element.video', external_video: media %}
+ {% endif %}
 {% endfor %}
 
 {% if videos != blank %}
