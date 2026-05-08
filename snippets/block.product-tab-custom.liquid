@@ -37,7 +37,7 @@
       when 'manuals'
         render 'block.product-manuals'
       when 'videos'
-        render 'block.product-media'
+        render 'block.product-media', columns_per_row: block.settings.columns_per_row
       else        
         assign tab_content = block.settings.content 
     endcase
