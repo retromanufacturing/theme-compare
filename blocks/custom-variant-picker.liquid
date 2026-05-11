@@ -1,18 +1,11 @@
-{% if block.settings.enable_tabs %}
-  {% content_for 'block', type: 'text', id: 'text' %}
-{% else %}
-  {% render 'section.flex-pdp.variant-picker',
-    product: closest.product,
-    variant_selector_type: block.settings.variant_selector_type
-  %}
-{% endif %}
+{% render 'section.flex-pdp.variant-picker',
+  product: closest.product,
+  variant_selector_type: block.settings.variant_selector_type
+%}
 
 {% schema %}
 {
   "name": "t:custom.variant_picker_tabs",
-  "blocks": [
-     { "type": "text" },
-  ],
   "settings": [
     {
       "type": "checkbox",

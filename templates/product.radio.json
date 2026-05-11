@@ -12,6 +12,36 @@
     "main": {
       "type": "main-product-custom",
       "blocks": {
+        "custom_variant_picker_VnG4QX": {
+          "type": "custom-variant-picker",
+          "name": "t:custom.variant_picker_tabs",
+          "settings": {
+            "enable_tabs": false,
+            "variant_selector_type": "radio"
+          },
+          "blocks": {
+            "text": {
+              "type": "text",
+              "static": true,
+              "settings": {
+                "text": "Insert text here",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
+        },
         "section_flex_pdp_title_z8nXXj": {
           "type": "_section-flex-pdp-title",
           "name": "t:labels.title",
@@ -84,7 +114,6 @@
           "type": "_section-flex-pdp-variant-picker",
           "name": "t:labels.variant_picker",
           "settings": {
-            "enable_tabs": false,
             "variant_selector_type": "radio"
           },
           "blocks": {}
@@ -179,6 +208,7 @@
         }
       },
       "block_order": [
+        "custom_variant_picker_VnG4QX",
         "section_flex_pdp_title_z8nXXj",
         "custom_group_HLtKW7",
         "section_flex_pdp_variant_picker_V4CtE6",
