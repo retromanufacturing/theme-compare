@@ -152,7 +152,7 @@
     {% endif %}
 
     {% if block.settings.border != 'none' %}
-      border: {{ block.settings.border_width }}px {{ block.settings.border }} color-mix(in srgb, var(--color-primary) {{ block.settings.border_opacity }}%, transparent);
+      border: {{ block.settings.border_width }}px {{ block.settings.border }} color-mix(in srgb, {{ block.settings.border_color }} {{ block.settings.border_opacity }}%, transparent);
     {% endif %}
 
     {% if block.settings.toggle_overlay %}
@@ -493,6 +493,13 @@
       "step": 1,
       "unit": "px",
       "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#42434d",
+      "visible_if": "{{ block.settings.border != 'none' }}"
     },
     {
       "type": "checkbox",
