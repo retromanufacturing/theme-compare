@@ -1,12 +1,22 @@
-{% render 'section.flex-pdp.variant-picker',
-  product: closest.product,
-  variant_selector_type: block.settings.variant_selector_type
-%}
+{% if block.settings.enable_tabs %}
+  variants as tabs
+{% else %}
+  {% render 'section.flex-pdp.variant-picker',
+    product: closest.product,
+    variant_selector_type: block.settings.variant_selector_type
+  %}
+{% endif %}
 
 {% schema %}
 {
   "name": "t:labels.variant_picker",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_tabs",
+      "label": "Display variants as tabs",
+      "default": false
+    },
     {
       "type": "select",
       "id": "variant_selector_type",
