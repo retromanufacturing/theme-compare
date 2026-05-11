@@ -743,6 +743,9 @@
   },
   "custom": {
     "button_label": "Buttons with label",
+    "actions": {
+      "enable_dropdown_icons": "Enable dropdown icons"
+    },
     "custom": "Custom settings",
     "variant_picker_tabs": "Variant picker tabs"
   }
