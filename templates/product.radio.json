@@ -151,30 +151,6 @@
             "custom_product_logos_xqngKB"
           ]
         },
-        "bundle_tab_JfRfYM": {
-          "type": "bundle-tab",
-          "name": "Tab",
-          "settings": {
-            "title": "Tab",
-            "open": true,
-            "tab_type": "default",
-            "tab_title_color": "#000000",
-            "tab_background_color": "#FFFFFF",
-            "tab_title_font_size": 16,
-            "tab_title_bold": false,
-            "color_description_links": "#810F12",
-            "color_manuals": "#810F12"
-          },
-          "blocks": {
-            "w3_product_accessories_widget_tchbGH": {
-              "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
-              "settings": {}
-            }
-          },
-          "block_order": [
-            "w3_product_accessories_widget_tchbGH"
-          ]
-        },
         "section_flex_pdp_price_NdtWir": {
           "type": "_section-flex-pdp-price",
           "name": "t:labels.price",
@@ -207,7 +183,6 @@
         "custom_group_HLtKW7",
         "custom_variant_picker_jQ7J3j",
         "custom_group_bpV6wj",
-        "bundle_tab_JfRfYM",
         "section_flex_pdp_price_NdtWir",
         "section_flex_pdp_buy_buttons_TiYxqb"
       ],
