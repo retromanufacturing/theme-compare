@@ -18,36 +18,6 @@
           "settings": {},
           "blocks": {}
         },
-        "custom_variant_picker_jQ7J3j": {
-          "type": "custom-variant-picker",
-          "name": "t:custom.variant_picker_tabs",
-          "settings": {
-            "enable_tabs": false,
-            "variant_selector_type": "radio"
-          },
-          "blocks": {
-            "text": {
-              "type": "text",
-              "static": true,
-              "settings": {
-                "text": "Insert text here",
-                "alignment": "left",
-                "font_preset": "span",
-                "font_size": "1rem",
-                "font_size_custom": 12,
-                "text_decoration": "",
-                "font_color": "#000000",
-                "background_color": "#ECECEC",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        },
         "custom_group_HLtKW7": {
           "type": "custom-group",
           "name": "Group",
@@ -109,6 +79,36 @@
             "section_flex_pdp_inventory_bmzzgD",
             "reviews_io_reviewsio_rating_output_8CgQtG"
           ]
+        },
+        "custom_variant_picker_jQ7J3j": {
+          "type": "custom-variant-picker",
+          "name": "t:custom.variant_picker_tabs",
+          "settings": {
+            "enable_tabs": false,
+            "variant_selector_type": "radio"
+          },
+          "blocks": {
+            "text": {
+              "type": "text",
+              "static": true,
+              "settings": {
+                "text": "Insert text here",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
         },
         "custom_group_bpV6wj": {
           "type": "custom-group",
@@ -201,8 +201,8 @@
       },
       "block_order": [
         "section_flex_pdp_title_z8nXXj",
-        "custom_variant_picker_jQ7J3j",
         "custom_group_HLtKW7",
+        "custom_variant_picker_jQ7J3j",
         "custom_group_bpV6wj",
         "w3_product_accessories_widget_idB8gw",
         "section_flex_pdp_price_NdtWir",
