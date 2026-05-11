@@ -84,6 +84,7 @@
           "type": "_section-flex-pdp-variant-picker",
           "name": "t:labels.variant_picker",
           "settings": {
+            "enable_tabs": false,
             "variant_selector_type": "radio"
           },
           "blocks": {}
@@ -203,7 +204,7 @@
           "type": "description",
           "settings": {
             "is_tab": true,
-            "is_open": false
+            "is_open": true
           }
         },
         "custom_tab_BLzAcA": {

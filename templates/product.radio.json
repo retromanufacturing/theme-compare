@@ -84,6 +84,7 @@
           "type": "_section-flex-pdp-variant-picker",
           "name": "t:labels.variant_picker",
           "settings": {
+            "enable_tabs": false,
             "variant_selector_type": "radio"
           },
           "blocks": {}
