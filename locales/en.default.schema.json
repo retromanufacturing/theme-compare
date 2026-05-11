@@ -747,6 +747,7 @@
       "enable_dropdown_icons": "Enable dropdown icons"
     },
     "custom": "Custom settings",
+    "font_size": "Font size",
     "variant_picker_tabs": "Variant picker tabs"
   }
 }

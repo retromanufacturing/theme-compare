@@ -1,10 +1,18 @@
-{% render 'block.product-features',
-%}
+{% render 'block.product-features' %}
 
 {% schema %}
 {
   "name": "Product features",
   "settings": [
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "t:custom.font_size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "unit": "px"
+    }
   ],
   "presets": [{ "name": "Product features" }]
 }
