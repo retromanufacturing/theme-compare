@@ -742,6 +742,7 @@
     "youtube": "YouTube"
   },
   "custom": {
-    "button_label": "Buttons with label"
+    "button_label": "Buttons with label",
+    "variant_picker_tabs": "Variant picker tabs"
   }
 }
