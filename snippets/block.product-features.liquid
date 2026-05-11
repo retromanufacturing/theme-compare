@@ -16,9 +16,11 @@
     endfor
   endcapture
 -%}
-{{ block.id }}
- {% style %}
 
+ {% style %}
+    .shopify-block-{{ block.id }} {
+      display: none;
+    }
   {% endstyle %}
 
 {%- if features != blank -%}
