@@ -743,6 +743,7 @@
   },
   "custom": {
     "button_label": "Buttons with label",
+    "custom": "Custom settings",
     "variant_picker_tabs": "Variant picker tabs"
   }
 }
