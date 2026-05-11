@@ -1,5 +1,5 @@
 {% if block.settings.enable_tabs %}
-  variants as tabs
+  {% content_for 'block', type: 'text', id: 'text' %}
 {% else %}
   {% render 'section.flex-pdp.variant-picker',
     product: closest.product,
@@ -10,6 +10,9 @@
 {% schema %}
 {
   "name": "t:labels.variant_picker",
+  "blocks": [
+     { "type": "text" },
+  ],
   "settings": [
     {
       "type": "checkbox",
