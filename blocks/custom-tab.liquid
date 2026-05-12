@@ -10,22 +10,24 @@
       assign option_count_2 = forloop.length | plus: 2 | append: '. '
     endif
   endfor
+  
+  capture block_content
+    content_for 'blocks'
+  endcapture
 
-  capture tab_title
+  capture accordion_content
     case tab_type
+      when 'default'
       when 'accessories'
         assign title = block.settings.title | prepend: option_count
       when 'warranty'
         assign title = block.settings.title | prepend: option_count_2
     endcase
+    echo block_content
   endcapture
 
-  capture accordion_content
-    content_for 'blocks'
-  endcapture
-
-  capture title
-    echo tab_title
+  capture tab_title
+    echo title
   endcapture
 -%}
 
@@ -33,7 +35,7 @@
 
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
-    {%- render 'element.accordion', title: title, slot: accordion_content, open: is_open -%}
+    {%- render 'element.accordion', title: tab_title, slot: accordion_content, open: is_open -%}
   </div>
 {%- endif -%}
 
