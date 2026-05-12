@@ -268,7 +268,7 @@
     "more-products-collection": {
       "type": "more-products-collection",
       "settings": {
-        "products_per_row": 3,
+        "products_per_row": 5,
         "max_products": 5
       }
     },
