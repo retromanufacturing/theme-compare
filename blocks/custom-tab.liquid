@@ -22,8 +22,11 @@
         assign title = block.settings.title | prepend: option_count
       when 'warranty'
         assign title = block.settings.title | prepend: option_count_2
+        render 'clyde-pdp'
     endcase
-    echo block_content
+    unless tab_type == 'warranty'
+      echo block_content
+    endunless  
   endcapture
 
   capture tab_title
