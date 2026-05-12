@@ -31,8 +31,6 @@
   endcapture
 -%}
 
-{{ title }}--{{ tab_title }}--{{ accordion_content }}
-
 {%- if title != blank and accordion_content != blank -%}
   <div {{ block.shopify_attributes }}>
     {%- render 'element.accordion', title: tab_title, slot: accordion_content, open: is_open -%}
