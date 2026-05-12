@@ -151,6 +151,12 @@
             "custom_product_logos_xqngKB"
           ]
         },
+        "custom_tab_rCeciL": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {},
+          "blocks": {}
+        },
         "section_flex_pdp_price_NdtWir": {
           "type": "_section-flex-pdp-price",
           "name": "t:labels.price",
@@ -183,6 +189,7 @@
         "custom_group_HLtKW7",
         "custom_variant_picker_jQ7J3j",
         "custom_group_bpV6wj",
+        "custom_tab_rCeciL",
         "section_flex_pdp_price_NdtWir",
         "section_flex_pdp_buy_buttons_TiYxqb"
       ],
