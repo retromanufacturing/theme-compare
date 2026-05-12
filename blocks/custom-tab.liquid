@@ -1,6 +1,6 @@
 {%- liquid
   assign product = section.settings.product | default: product
-  assign tab_title = title | default: block.settings.title
+  assign title = title | default: block.settings.title
   assign is_open = block.settings.is_open
   assign tab_type = block.settings.tab_type
 
@@ -11,17 +11,21 @@
     endif
   endfor
 
-  capture title
+  capture tab_title
     case tab_type
       when 'accessories'
-        assign tab_title = block.settings.title | prepend: option_count
+        assign title = block.settings.title | prepend: option_count
       when 'warranty'
-        assign tab_title = block.settings.title | prepend: option_count_2
+        assign title = block.settings.title | prepend: option_count_2
     endcase
   endcapture
 
   capture accordion_content
     content_for 'blocks'
+  endcapture
+
+  capture title
+    echo tab_title
   endcapture
 -%}
 
