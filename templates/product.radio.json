@@ -151,6 +151,38 @@
             "custom_product_logos_xqngKB"
           ]
         },
+        "custom_tab_jPCqnt": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Tab heading",
+            "is_open": false
+          },
+          "blocks": {
+            "text_xwUdLX": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "Insert text here",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_xwUdLX"
+          ]
+        },
         "section_flex_pdp_price_NdtWir": {
           "type": "_section-flex-pdp-price",
           "name": "t:labels.price",
@@ -163,12 +195,6 @@
           "settings": {
             "show_dynamic_checkout": true
           },
-          "blocks": {}
-        },
-        "custom_tab_jPCqnt": {
-          "type": "custom-tab",
-          "name": "Tab",
-          "settings": {},
           "blocks": {}
         },
         "custom-media-gallery": {
@@ -189,9 +215,9 @@
         "custom_group_HLtKW7",
         "custom_variant_picker_jQ7J3j",
         "custom_group_bpV6wj",
+        "custom_tab_jPCqnt",
         "section_flex_pdp_price_NdtWir",
-        "section_flex_pdp_buy_buttons_TiYxqb",
-        "custom_tab_jPCqnt"
+        "section_flex_pdp_buy_buttons_TiYxqb"
       ],
       "settings": {
         "image_position": "left",
