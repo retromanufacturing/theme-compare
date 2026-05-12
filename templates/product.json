@@ -43,6 +43,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
+            "border_color": "#42434d",
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
@@ -84,7 +85,6 @@
           "type": "_section-flex-pdp-variant-picker",
           "name": "t:labels.variant_picker",
           "settings": {
-            "enable_tabs": false,
             "variant_selector_type": "radio"
           },
           "blocks": {}
@@ -114,6 +114,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 16,
+            "border_color": "#dddddd",
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
@@ -129,7 +130,9 @@
             "custom_product_features_U8LMKw": {
               "type": "custom-product-features",
               "name": "Product features",
-              "settings": {},
+              "settings": {
+                "font_size": 14
+              },
               "blocks": {}
             },
             "custom_product_logos_etnqLd": {
