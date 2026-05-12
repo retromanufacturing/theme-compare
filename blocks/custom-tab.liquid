@@ -1,7 +1,24 @@
 {%- liquid
   assign product = section.settings.product | default: product
-  assign title = title | default: block.settings.title
+  assign tab_title = title | default: block.settings.title
   assign is_open = block.settings.is_open
+  assign tab_type = block.settings.tab_type
+
+  for options in product.options_with_values
+    if forloop.last
+      assign option_count = forloop.length | plus: 1 | append: '. '
+      assign option_count_2 = forloop.length | plus: 2 | append: '. '
+    endif
+  endfor
+
+  capture title
+    case tab_type
+      when 'accessories'
+        assign tab_title = block.settings.title | prepend: option_count
+      when 'warranty'
+        assign tab_title = block.settings.title | prepend: option_count_2
+    endcase
+  endcapture
 
   capture accordion_content
     content_for 'blocks'
@@ -23,13 +40,34 @@
       "type": "text",
       "id": "title",
       "label": "t:labels.heading",
-      "default": "Tab heading"
+      "default": "Tab heading",
+      "visible_if": "{{ block.settings.tab_type == 'default' }}"
     },
     {
       "type": "checkbox",
       "id": "is_open",
       "label": "Is open",
       "default": false
+    },
+    {
+      "type": "select",
+      "id": "tab_type",
+      "label": "Tab Type",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "accessories",
+          "label": "Accessories"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        }
+      ],
+      "default": "default"
     }
   ],
   "presets": [{ "name": "Tab", "category": "Layout" }]
