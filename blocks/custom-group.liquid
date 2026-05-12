@@ -123,10 +123,6 @@
 
   {{ stack_content }}
 </div>
-this is a test {{ children }}--{{ slot }}
-{% if children == blank %} 
-  no child content {% else %} {{children }}
-{% endif %}
 
 {% style %}
   .custom-group--{{ block.id }} {
