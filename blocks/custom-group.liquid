@@ -123,8 +123,9 @@
 
   {{ stack_content }}
 </div>
-
-{{ stack_content }}
+{%if stack_content == blank %}
+  no content
+{% endif %}
 
 {% style %}
   .custom-group--{{ block.id }} {
