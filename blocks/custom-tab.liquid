@@ -1,10 +1,37 @@
-{% render 'block.product-tab-custom', block: block %}
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign title = title | default: block.settings.title
+  assign is_open = block.settings.is_open
+
+  capture accordion_content
+    content_for 'blocks'
+  endcapture
+-%}
+
+{%- if title != blank and accordion_content != blank -%}
+  <div {{ block.shopify_attributes }}>
+    {%- render 'element.accordion', title: title, slot: accordion_content, open: is_open -%}
+  </div>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Tab",
   "blocks": [{ "type": "@theme" }, { "type": "@app" }],
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "Tab heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_open",
+      "label": "Is open",
+      "default": false
+    }
+  ],
   "presets": [{ "name": "Tab", "category": "Layout" }]
 }
 {% endschema %}
