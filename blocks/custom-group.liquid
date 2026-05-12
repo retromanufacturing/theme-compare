@@ -124,6 +124,10 @@
   {{ stack_content }}
 </div>
 
+{% if children == blank %}
+  no child content {% else %} {{children }}
+{% endif %}
+
 {% style %}
   .custom-group--{{ block.id }} {
     --custom-group-gap: {{ block.settings.gap }}px;
