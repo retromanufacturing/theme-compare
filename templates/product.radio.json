@@ -155,16 +155,30 @@
           "type": "custom-tab",
           "name": "Tab",
           "settings": {
-            "title": "Tab heading",
-            "is_open": false,
+            "title": "Accessories",
+            "is_open": true,
             "tab_type": "accessories"
           },
           "blocks": {
             "w3_product_accessories_widget_XFqFPQ": {
               "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
               "settings": {}
-            },
-            "text_7HAUJW": {
+            }
+          },
+          "block_order": [
+            "w3_product_accessories_widget_XFqFPQ"
+          ]
+        },
+        "custom_tab_a9cccL": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Warranty",
+            "is_open": false,
+            "tab_type": "warranty"
+          },
+          "blocks": {
+            "text_dzhNE7": {
               "type": "text",
               "name": "Text",
               "settings": {
@@ -185,8 +199,7 @@
             }
           },
           "block_order": [
-            "w3_product_accessories_widget_XFqFPQ",
-            "text_7HAUJW"
+            "text_dzhNE7"
           ]
         },
         "section_flex_pdp_price_NdtWir": {
@@ -222,6 +235,7 @@
         "custom_variant_picker_jQ7J3j",
         "custom_group_bpV6wj",
         "custom_tab_bgGeGj",
+        "custom_tab_a9cccL",
         "section_flex_pdp_price_NdtWir",
         "section_flex_pdp_buy_buttons_TiYxqb"
       ],
