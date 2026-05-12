@@ -123,7 +123,7 @@
 
   {{ stack_content }}
 </div>
-this is a test {{ children }}
+this is a test {{ children }}--{{ slot }}
 {% if children == blank %} 
   no child content {% else %} {{children }}
 {% endif %}
