@@ -17,3 +17,9 @@
     {{ manuals }}
   </ul>
 {% endif %}
+
+{% style %}
+  .product__manuals li{
+    color: {{ block.settings.text_color }}
+  }
+{% endstyle %}
