@@ -3,7 +3,7 @@
   variant_selector_type: block.settings.variant_selector_type,
   enable_tabs: block.settings.enable_tabs,
   accordion_default_open: block.settings.accordion_default_open,
-  enable_features_and_logos: block.settings.enable_features_and_logos,
+  enable_features_and_logos: block.settings.enable_features_and_logos
 %}
 
 {% schema %}
@@ -45,6 +45,45 @@
       "label": "Display product features and logos",
       "default": true
     },
+    {
+      "type": "header",
+      "content": "Features and logos settings",
+      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "t:custom.font_size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "unit": "px",
+      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+    },
+    {
+      "type": "select",
+      "id": "logo_sizing",
+      "label": "Logo sizing",
+      "default": "default",
+      "options": [
+        { "value": "default", "label": "Default (count-based)" },
+        { "value": "metaobject", "label": "Use metaobject dimensions" },
+        { "value": "custom", "label": "Custom" }
+      ],
+      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_custom_height",
+      "label": "Custom height (px)",
+      "min": 16,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 60,
+      "info": "Only applies when sizing is set to Custom",
+      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+    }
   ],
   "presets": [
     {
