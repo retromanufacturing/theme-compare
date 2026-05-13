@@ -18,6 +18,12 @@
 %}
 {% if enable_features_and_logos %}
   {% render 'block.product-features' %}
+  {% render 'block.product-logos',
+  block: block,
+  product: product,
+  logo_sizing: block.settings.logo_sizing,
+  logo_custom_height: block.settings.logo_custom_height
+%}
 {% endif %}
 
 {% capture variant_selector %}
