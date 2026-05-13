@@ -813,7 +813,7 @@
           {% unless disable_aria %}
             role="navigation" aria-label="Primary"
           {% endunless %}
-        >
+        >{{  block.settings.enable_menu_icons }}
           {%- render 'header.desktop-nav', nav_position: nav_position -%}
         </div>
       </div>
