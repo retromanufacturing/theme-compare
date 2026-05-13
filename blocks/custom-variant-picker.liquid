@@ -2,7 +2,8 @@
   product: closest.product,
   variant_selector_type: block.settings.variant_selector_type,
   enable_tabs: block.settings.enable_tabs,
-  accordion_default_open: block.settings.accordion_default_open
+  accordion_default_open: block.settings.accordion_default_open,
+  enable_features_and_logos: block.settings.enable_features_and_logos,
 %}
 
 {% schema %}
@@ -37,7 +38,13 @@
         { "value": "all", "label": "All options" }
       ],
       "visible_if": "{{ block.settings.enable_tabs }}"
-    }
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_features_and_logos",
+      "label": "Display product features and logos",
+      "default": true
+    },
   ],
   "presets": [
     {
