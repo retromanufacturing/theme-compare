@@ -88,7 +88,6 @@
   -%}
 {%- endcapture -%}
 
-{%- if children != blank -%}
 <div
   class="custom-group custom-group--{{ block.id }}{% if use_color_scheme %} color-scheme-{{ block.settings.color_scheme }}{% endif %}"
   {{ block.shopify_attributes }}
@@ -124,7 +123,6 @@
 
   {{ stack_content }}
 </div>
-{% endif %}
 
 {% style %}
   .custom-group--{{ block.id }} {
