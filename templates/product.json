@@ -216,6 +216,7 @@
             "tab_type": "videos",
             "title": "Product videos",
             "is_open": true,
+            "text_color": "#42434d",
             "columns_per_row": 4
           }
         },
@@ -225,6 +226,7 @@
             "tab_type": "specifications",
             "title": "Specifications",
             "is_open": false,
+            "text_color": "#42434d",
             "columns_per_row": 2
           }
         },
@@ -234,6 +236,7 @@
             "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
+            "text_color": "#ba4444",
             "columns_per_row": 2
           }
         }
