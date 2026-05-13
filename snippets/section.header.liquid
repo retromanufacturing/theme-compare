@@ -637,6 +637,7 @@
   assign cart_type = cart_type | default: settings.cart_type | default: blank
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
   assign cart_button_color_scheme = cart_button_color_scheme | default: section.settings.cart_button_color_scheme
+  assign enable_menu_icons = enable_menu_icons | default: section.settings.enable_menu_icons
 
   if main_menu_alignment == 'left' or main_menu_alignment == 'left-center'
     assign nav_position = 'beside'
@@ -779,7 +780,7 @@
               {% unless disable_aria %}
                 role="navigation" aria-label="Primary"
               {% endunless %}
-            >{{  section.settings.enable_menu_icons }}-beside
+            >{{  enable_menu_icons }}-beside
               {%- render 'header.desktop-nav', nav_position: nav_position -%}
             </div>
           {%- endif -%}
