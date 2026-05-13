@@ -319,7 +319,7 @@
   assign show_mega_products = show_mega_products | default: section.settings.mega_products, allow_false: true | default: true, allow_false: true
   assign show_mega_collections = show_mega_collections | default: section.settings.mega_collections, allow_false: true
   assign megamenu_type = 'products'
-  assign menu_icons = menu_icons
+  assign dropdown_icons = dropdown_icons
 
   if show_mega_collections
     assign show_mega_products = false
@@ -374,7 +374,7 @@
           aria-controls="site-nav-item--{{ forloop.index }}"
           class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
         >
-          {{ link.title }} {% if menu_icons == false %}no icons{% endif %}
+          {{ link.title }} {% if dropdown_icons == false %}no icons{% endif %}
           {% render 'element.icon', name: 'chevron-down' %}
         </summary>
       {% endif %}
