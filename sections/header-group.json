@@ -70,7 +70,8 @@
         "header_sticky": true,
         "header_footer_menu": false,
         "sticky_index": false,
-        "sticky_collection": false
+        "sticky_collection": false,
+        "enable_dropdown_icons": false
       }
     }
   },
