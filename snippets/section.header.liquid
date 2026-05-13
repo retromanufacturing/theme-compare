@@ -779,7 +779,7 @@
               {% unless disable_aria %}
                 role="navigation" aria-label="Primary"
               {% endunless %}
-            >{{  block.settings.enable_menu_icons }}
+            >{{  section.settings.enable_menu_icons }}-beside
               {%- render 'header.desktop-nav', nav_position: nav_position -%}
             </div>
           {%- endif -%}
@@ -813,7 +813,7 @@
           {% unless disable_aria %}
             role="navigation" aria-label="Primary"
           {% endunless %}
-        >{{  block.settings.enable_menu_icons }}
+        >{{  section.settings.enable_menu_icons }}-below
           {%- render 'header.desktop-nav', nav_position: nav_position -%}
         </div>
       </div>
