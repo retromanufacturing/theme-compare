@@ -85,7 +85,8 @@
           "type": "custom-variant-picker",
           "name": "t:custom.variant_picker_tabs",
           "settings": {
-            "enable_tabs": false,
+            "enable_tabs": true,
+            "accordion_default_open": "first",
             "variant_selector_type": "radio"
           },
           "blocks": {}
