@@ -10,6 +10,17 @@
   "name": "t:custom.variant_picker_tabs",
   "settings": [
     {
+      "type": "select",
+      "id": "variant_selector_type",
+      "label": "t:labels.style",
+      "default": "radio",
+      "options": [
+        { "value": "radio", "label": "t:labels.button" },
+        { "value": "select", "label": "t:labels.dropdown" }
+      ],
+      "info": "t:info.variant_picker_display_options"
+    },
+    {
       "type": "checkbox",
       "id": "enable_tabs",
       "label": "Display variants as tabs",
@@ -26,17 +37,6 @@
         { "value": "all", "label": "All options" }
       ],
       "visible_if": "{{ block.settings.enable_tabs }}"
-    },
-    {
-      "type": "select",
-      "id": "variant_selector_type",
-      "label": "t:labels.style",
-      "default": "radio",
-      "options": [
-        { "value": "radio", "label": "t:labels.button" },
-        { "value": "select", "label": "t:labels.dropdown" }
-      ],
-      "info": "t:info.variant_picker_display_options"
     }
   ],
   "presets": [
