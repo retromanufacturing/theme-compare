@@ -88,8 +88,8 @@
   -%}
 {%- endcapture -%}
 
-{% if children == blank %}
-  no content {% else %} 
+{% if stack_content == blank %}
+  no content {% else %}  {{  stack_content }}
 {% endif %}
 
 
