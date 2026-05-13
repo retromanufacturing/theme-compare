@@ -168,6 +168,18 @@
           "default": false
         },
         {
+          "type": "header",
+          "content": "Color settings",
+          "visible_if": "{{ block.settings.tab_type == 'manuals' }}"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#42434d",
+          "visible_if": "{{ block.settings.tab_type == 'manuals' }}"
+        },
+        {
           "type": "range",
           "id": "columns_per_row",
           "label": "Videos per row",
