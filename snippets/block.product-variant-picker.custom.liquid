@@ -16,7 +16,7 @@
   assign accordion_default_open = accordion_default_open | default: 'first'
   assign enable_features_and_logos = enable_features_and_logos | default: true
 %}
-{% if enable_features_and_logos %} this is a test
+{% if enable_features_and_logos %}
   {% render 'block.product-features' %}
 {% endif %}
 
