@@ -1,6 +1,8 @@
-{% render 'section.flex-pdp.variant-picker',
+{% render 'block.product-variant-picker.custom',
   product: closest.product,
-  variant_selector_type: block.settings.variant_selector_type
+  variant_selector_type: block.settings.variant_selector_type,
+  enable_tabs: block.settings.enable_tabs,
+  accordion_default_open: block.settings.accordion_default_open
 %}
 
 {% schema %}
@@ -12,6 +14,18 @@
       "id": "enable_tabs",
       "label": "Display variants as tabs",
       "default": false
+    },
+    {
+      "type": "select",
+      "id": "accordion_default_open",
+      "label": "Default open",
+      "default": "first",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "first", "label": "First option" },
+        { "value": "all", "label": "All options" }
+      ],
+      "visible_if": "{{ block.settings.enable_tabs }}"
     },
     {
       "type": "select",
