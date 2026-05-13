@@ -16,12 +16,12 @@
   <ul class="product__manuals no-bullets">
     {{ manuals }}
   </ul>
-{% endif %}
-{% style %}
-   .product__manuals {
-    a:not(.btn){
-      color: {{ block.settings.text_color }}; 
-      text-decoration: none !important;;
+  {% style %}
+     .product__manuals {
+      a:not(.btn){
+        color: {{ block.settings.text_color }};
+        text-decoration: none !important;
+      }
     }
-  }
-{% endstyle %}
+  {% endstyle %}
+{% endif %}
