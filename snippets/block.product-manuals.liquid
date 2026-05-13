@@ -19,7 +19,10 @@
 {% endif %}
 
 {% style %}
-  .product__manuals a{
-    color: {{ block.settings.text_color }}
+   .product__manuals {
+    a:not(.btn){
+      color: {{ block.settings.text_color }}; 
+      text-decoration: none !important;;
+    }
   }
 {% endstyle %}
