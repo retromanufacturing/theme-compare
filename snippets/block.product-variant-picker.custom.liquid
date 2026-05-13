@@ -95,7 +95,8 @@
           {% endcapture %}
 
           {% if enable_tabs %}
-            {% render 'element.accordion', title: option_name, slot: option_stack, open: is_open %}
+            {% capture accordion_title %}{{ forloop.index }}. {{ option_name }}{% endcapture %}
+            {% render 'element.accordion', title: accordion_title, slot: option_stack, open: is_open %}
           {% else %}
             {% capture full_stack %}
               {{ option_name }}
@@ -140,7 +141,8 @@
           {% endcapture %}
 
           {% if enable_tabs %}
-            {% render 'element.accordion', title: option.name, slot: option_stack, open: is_open %}
+            {% capture accordion_title %}{{ forloop.index }}. {{ option.name }}{% endcapture %}
+            {% render 'element.accordion', title: accordion_title, slot: option_stack, open: is_open %}
           {% else %}
             {% capture full_stack %}
               {% render 'element.text', as: 'label', variant: 'body-sm', text: option.name, style: 'font-weight: 600;' %}
