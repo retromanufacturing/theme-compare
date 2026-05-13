@@ -17,15 +17,14 @@
   endcapture
 -%}
 
- {% style %}
+{%- if features != blank -%}
+  {% style %}
     #shopify-block-{{ block.id }} li {
       font-size: {{ block.settings.font_size}}px;
     }
   {% endstyle %}
 
-{%- if features != blank -%}
   <ul>
     {{ features }}
   </ul>
 {%- endif -%}
-
