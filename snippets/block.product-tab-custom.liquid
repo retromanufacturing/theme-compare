@@ -35,7 +35,7 @@
       when 'specificiations'
         echo product_specs
       when 'manuals'
-        render 'block.product-manuals'
+        render 'block.product-manuals', block: block
       when 'videos'
         render 'block.product-media', columns_per_row: block.settings.columns_per_row
       else        
