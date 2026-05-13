@@ -374,7 +374,7 @@
           aria-controls="site-nav-item--{{ forloop.index }}"
           class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
         >
-          {{ link.title }} {{ menu_icons }}-test
+          {{ link.title }} {% if menu_icons == false %}no icons{% endif %}
           {% render 'element.icon', name: 'chevron-down' %}
         </summary>
       {% endif %}
