@@ -25,48 +25,16 @@
 ></div>
 
 {% stylesheet %}
-  .layout-panel-flex--column > .spacer-block {
+  .spacer-block {
+    display: block;
     width: 100%;
-  }
-
-  .layout-panel-flex--row > .spacer-block {
-    height: 100%;
-  }
-
-  :is(.layout-panel-flex--row, .layout-panel-flex--column) > .spacer-block--size-percent {
-    flex: var(--spacer-size);
-  }
-
-  .layout-panel-flex--row > .spacer-block--size-pixel {
-    width: var(--spacer-size);
-  }
-
-  .layout-panel-flex--column > .spacer-block--size-pixel {
     height: var(--spacer-size);
+    flex-shrink: 0;
   }
 
   @media screen and (max-width: 750px) {
-    .layout-panel-flex--row:not(.mobile-column) > .spacer-block--size-mobile-percent {
-      flex: var(--spacer-size-mobile);
-      height: 100%;
-    }
-
-    .layout-panel-flex--column > .spacer-block--size-mobile-percent,
-    .mobile-column > .spacer-block--size-percent:not(.spacer-block--size-mobile-pixel) {
-      width: 100%;
-      flex: var(--spacer-size-mobile);
-    }
-
-    .layout-panel-flex--row:not(.mobile-column) > .spacer-block--size-mobile-pixel {
-      width: var(--spacer-size-mobile);
-      height: 100%;
-    }
-
-    .layout-panel-flex--column > .spacer-block--size-mobile-pixel,
-    .mobile-column > .spacer-block--size-mobile-pixel {
-      width: 100%;
-      flex: 0;
-      height: var(--spacer-size-mobile);
+    .spacer-block {
+      height: var(--spacer-size-mobile, var(--spacer-size));
     }
   }
 {% endstylesheet %}

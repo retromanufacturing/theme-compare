@@ -94,6 +94,20 @@
             "logo_custom_height": 60
           },
           "blocks": {
+            "custom_spacer_qgKqjx": {
+              "type": "custom-spacer",
+              "name": "Spacer",
+              "settings": {
+                "size": "pixel",
+                "percent_size": 100,
+                "pixel_size": 76,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
             "custom_group_KPeVXN": {
               "type": "custom-group",
               "name": "Group",
@@ -157,6 +171,7 @@
             }
           },
           "block_order": [
+            "custom_spacer_qgKqjx",
             "custom_group_KPeVXN"
           ]
         },
