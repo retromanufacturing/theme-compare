@@ -3,9 +3,12 @@
   variant_selector_type: block.settings.variant_selector_type,
   enable_tabs: block.settings.enable_tabs,
   accordion_default_open: block.settings.accordion_default_open,
+  children: children
 %}
 
- {% content_for 'blocks' %}
+{% capture children %}
+   {% content_for 'blocks' %}
+{% endcapture %}
 
 {% schema %}
 {
