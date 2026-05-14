@@ -1,3 +1,7 @@
+{% capture children %}
+   {% content_for 'blocks' %}
+{% endcapture %}
+
 {% render 'block.product-variant-picker.custom',
   product: closest.product,
   variant_selector_type: block.settings.variant_selector_type,
@@ -5,10 +9,6 @@
   accordion_default_open: block.settings.accordion_default_open,
   children: children
 %}
-
-{% capture children %}
-   {% content_for 'blocks' %}
-{% endcapture %}
 
 {% schema %}
 {
