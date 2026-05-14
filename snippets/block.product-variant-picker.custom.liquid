@@ -5,6 +5,12 @@
   @param {string} [variant_selector_type] - ('radio'|'select') - The type of variant selector to render
   @param {boolean} [enable_tabs] - Whether to display variants as accordions
   @param {string} [accordion_default_open] - ('none'|'first'|'all') - Which accordions are open by default
+  @param {boolean} [enable_variant_labels] - Whether to show enhanced labels from Variant Details metaobject
+  @param {string} [variant_label_options] - Comma-separated option names that use variant labels
+  @param {boolean} [enable_colored_options] - Whether to apply colors to option tabs
+  @param {string} [color_motor_m1] - Color for Motor 1 variants
+  @param {string} [color_motor_m2] - Color for Motor 2 variants
+  @param {string} [color_motor_m4] - Color for Motor 4 variants
 
   @example
   {% render 'custom-variant-picker', product: product, variant_selector_type: 'radio', enable_tabs: true, accordion_default_open: 'first' %}
@@ -14,8 +20,72 @@
   assign variant_selector_type = variant_selector_type | default: block.settings.variant_selector_type | default: 'radio'
   assign enable_tabs = enable_tabs | default: false, allow_false: true
   assign accordion_default_open = accordion_default_open | default: 'first'
+  assign enable_variant_labels = enable_variant_labels | default: false, allow_false: true
+  assign enable_colored_options = enable_colored_options | default: false, allow_false: true
+  assign variant_label_options = variant_label_options | default: ''
   assign children = children
 %}
+
+{% stylesheet %}
+  .variant-input .element-radio {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  }
+
+  .variant-input-wrap__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .variant-input-wrap__tabs .variant-input {
+    flex: 1 1 0;
+    margin: 0;
+  }
+
+  .variant-input .element-radio:has(input:checked) {
+    border: 2.5px solid #fff;
+    outline-offset: 1px;
+    transform: translateY(-2px) scale(1.03);
+    position: relative;
+    z-index: 1;
+  }
+
+  .variant__tab-badge {
+    font-size: 0.68rem;
+    padding: 0px 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.45);
+    background: rgba(0,0,0,0.15);
+    display: inline-block;
+    margin-left: 4px;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .variant__tab-label-main {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .variant__tab-label-subtitle {
+    display: block;
+    font-size: 0.75em;
+    font-weight: normal;
+    opacity: 0.75;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+{% endstylesheet %}
 
 {% capture variant_selector %}
   {%- unless product.has_only_default_variant -%}
@@ -27,6 +97,18 @@
           assign is_open = true
         elsif accordion_default_open == 'first' and forloop.index == 1
           assign is_open = true
+        endif
+
+        assign use_labels = false
+        if enable_variant_labels and variant_label_options != blank
+          assign label_options = variant_label_options | split: ','
+          for label_option in label_options
+            assign label_option_trimmed = label_option | strip
+            if label_option_trimmed == option.name
+              assign use_labels = true
+              break
+            endif
+          endfor
         endif
       -%}
 
@@ -56,15 +138,46 @@
 
               {% assign input_value = value | escape %}
 
+              {%- liquid
+                assign variant_details = nil
+                assign variant_color = nil
+                if use_labels
+                  assign variant_details = value.variant.metafields.custom.radio_features.value.variant_details.value
+                  if variant_details == blank
+                    assign variant_details = value.variant.metafields.custom.variant_details.value
+                  endif
+                endif
+                if enable_colored_options and use_labels
+                  assign normalized_value = value | downcase | replace: ' ', '_' | replace: 'motor_', 'm'
+                  case normalized_value
+                    when 'm1'
+                      assign variant_color = color_motor_m1
+                    when 'm2'
+                      assign variant_color = color_motor_m2
+                    when 'm4'
+                      assign variant_color = color_motor_m4
+                  endcase
+                endif
+              -%}
+
               {%- capture input_label -%}
                 {% if value.swatch %}
                   {% assign swatch_disabled = false %}
                   {% if value.available == false %}
                     {% assign swatch_disabled = true %}
                   {% endif %}
-
                   {%- render 'element.text', text: value, visually_hidden: true -%}
                   {%- render 'element.swatch', swatch: value.swatch, large: true, selected: value.selected, disabled: swatch_disabled -%}
+                {% elsif use_labels and variant_details != blank %}
+                  <span class="variant__tab-label-main">
+                    {{ variant_details.name.value | default: value }}
+                    {% if variant_details.badge.value != blank %}
+                      <span class="variant__tab-badge">{{ variant_details.badge.value }}</span>
+                    {% endif %}
+                  </span>
+                  {% if variant_details.description.value != blank %}
+                    <span class="variant__tab-label-subtitle">{{ variant_details.description.value }}</span>
+                  {% endif %}
                 {% else %}
                   {% if value.selected %}
                     {%- render 'element.button', as: 'span', text: value, size: 'sm', style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);' -%}
@@ -78,21 +191,45 @@
                 {% render 'product.hot-reload.radio-attributes', value: value %}
               {%- endcapture -%}
 
-              {%- render 'element.radio',
-                id: input_id,
-                name: option.name,
-                value: input_value,
-                slot: input_label,
-                checked: value.selected,
-                display_icon: false,
-                classlist: classlist,
-                attributes: input_attributes
-              -%}
+              {% if use_labels %}
+                <div class="variant-input"
+                  data-value="{{ value | escape }}"
+                  {% if variant_color != blank %}style="--variant-color: {{ variant_color }};"{% endif %}
+                >
+                  {%- render 'element.radio',
+                    id: input_id,
+                    name: option.name,
+                    value: input_value,
+                    slot: input_label,
+                    checked: value.selected,
+                    display_icon: false,
+                    classlist: classlist,
+                    attributes: input_attributes
+                  -%}
+                </div>
+              {% else %}
+                {%- render 'element.radio',
+                  id: input_id,
+                  name: option.name,
+                  value: input_value,
+                  slot: input_label,
+                  checked: value.selected,
+                  display_icon: false,
+                  classlist: classlist,
+                  attributes: input_attributes
+                -%}
+              {% endif %}
             {% endfor %}
           {% endcapture %}
 
           {% capture option_stack %}
-            {% render 'layout.stack', horizontal: true, gap: 'xs', slot: option_values %} 
+            {% if use_labels %}
+              <div class="variant-input-wrap__tabs">
+                {{ option_values }}
+              </div>
+            {% else %}
+              {% render 'layout.stack', horizontal: true, gap: 'xs', slot: option_values %}
+            {% endif %}
             {% if forloop.index == 1 %}{{ children }}{% endif %}
           {% endcapture %}
 
@@ -123,7 +260,6 @@
                 {% endif %}
                 {% render 'product.hot-reload.select-attributes', value: value, element: 'option' %}
               {%- endcapture -%}
-
               <option value="{{ value | escape }}" {{ option_input_attributes }}>{{ value }}</option>
             {% endfor %}
           {% endcapture %}
@@ -157,5 +293,20 @@
     {% endfor %}
   {%- endunless -%}
 {% endcapture %}
+
+{% if enable_colored_options %}
+  {% style %}
+    .variant-input .element-radio {
+      background-color: var(--variant-color);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .variant-input .element-radio:has(input:checked) {
+      outline: 2.5px solid var(--variant-color);
+      box-shadow: 0 0 0 3px var(--variant-color), 0 4px 14px rgba(0,0,0,0.25);
+    }
+  {% endstyle %}
+{% endif %}
 
 {% render 'layout.stack', gap: 'sm', slot: variant_selector %}
