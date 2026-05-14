@@ -16,7 +16,7 @@
   assign accordion_default_open = accordion_default_open | default: 'first'
   assign children = children
 %}
-{{ children }}
+
 {% capture variant_selector %}
   {%- unless product.has_only_default_variant -%}
     {% for option in product.options_with_values %}
