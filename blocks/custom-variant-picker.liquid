@@ -13,10 +13,7 @@
 {% schema %}
 {
   "name": "t:custom.variant_picker_tabs",
-  "blocks": [
-    { "type": "custom-group" },
-    { "type": "custom-spacer" },
-  ],
+  "blocks": [{ "type": "custom-group" }, { "type": "custom-spacer" }],
   "settings": [
     {
       "type": "select",
@@ -55,42 +52,48 @@
     },
     {
       "type": "header",
-      "content": "Features and logos settings",
-      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+      "content": "Variant labels"
     },
     {
-      "type": "range",
-      "id": "font_size",
-      "label": "t:custom.font_size",
-      "default": 14,
-      "min": 8,
-      "max": 60,
-      "unit": "px",
-      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+      "type": "checkbox",
+      "id": "enable_variant_labels",
+      "label": "Enable variant labels",
+      "default": false
     },
     {
-      "type": "select",
-      "id": "logo_sizing",
-      "label": "Logo sizing",
-      "default": "default",
-      "options": [
-        { "value": "default", "label": "Default (count-based)" },
-        { "value": "metaobject", "label": "Use metaobject dimensions" },
-        { "value": "custom", "label": "Custom" }
-      ],
-      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+      "type": "text",
+      "id": "variant_label_options",
+      "label": "Option names with variant labels",
+      "info": "Comma-separated list of option names e.g. Feature Set, Motor, Choose your Look",
+      "visible_if": "{{ block.settings.enable_variant_labels }}"
     },
     {
-      "type": "range",
-      "id": "logo_custom_height",
-      "label": "Logo custom height (px)",
-      "min": 16,
-      "max": 120,
-      "step": 4,
-      "unit": "px",
-      "default": 60,
-      "info": "Only applies when sizing is set to Custom",
-      "visible_if": "{{ block.settings.enable_features_and_logos }}"
+      "type": "checkbox",
+      "id": "enable_colored_options",
+      "label": "Enable colored options",
+      "default": false,
+      "visible_if": "{{ block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "color",
+      "id": "color_motor_m1",
+      "label": "Motor 1 color",
+      "default": "#c19e44",
+      "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "color",
+      "id": "color_motor_m2",
+      "label": "Motor 2 color",
+      "default": "#2e5f6e",
+      "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "color",
+      "id": "color_motor_m4",
+      "label": "Motor 4 color",
+      "default": "#623f36",
+      "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
     }
   ],
   "presets": [
