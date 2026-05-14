@@ -14,7 +14,6 @@
   assign variant_selector_type = variant_selector_type | default: block.settings.variant_selector_type | default: 'radio'
   assign enable_tabs = enable_tabs | default: false, allow_false: true
   assign accordion_default_open = accordion_default_open | default: 'first'
-  assign enable_features_and_logos = enable_features_and_logos | default: true
 %}
 
 {% capture variant_selector %}
