@@ -85,9 +85,13 @@
           "type": "custom-variant-picker",
           "name": "t:custom.variant_picker_tabs",
           "settings": {
+            "variant_selector_type": "radio",
             "enable_tabs": true,
             "accordion_default_open": "first",
-            "variant_selector_type": "radio"
+            "enable_features_and_logos": false,
+            "font_size": 14,
+            "logo_sizing": "default",
+            "logo_custom_height": 60
           },
           "blocks": {}
         },
