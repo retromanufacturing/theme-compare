@@ -43,10 +43,8 @@
           {% endcapture %}
 
           {% capture features_logos %}
-            {% if enable_features_and_logos and forloop.index == 1 %}
               {% render 'block.product-features' %}
               {% render 'block.product-logos', block: block, product: product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height %}
-            {% endif %}
           {% endcapture %}
 
           {% capture option_values %}
@@ -99,7 +97,8 @@
           {% endcapture %}
 
           {% capture option_stack %}
-            {% render 'layout.stack', horizontal: true, gap: 'xs', slot: option_values %} this is a test
+            {% render 'layout.stack', horizontal: true, gap: 'xs', slot: option_values %} 
+            {% if enable_features_and_logos and forloop.index == 1 %}{{ features_logos }}{% endif %}
           {% endcapture %}
 
           {% if enable_tabs %}
