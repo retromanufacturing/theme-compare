@@ -93,7 +93,72 @@
             "logo_sizing": "default",
             "logo_custom_height": 60
           },
-          "blocks": {}
+          "blocks": {
+            "custom_group_KPeVXN": {
+              "type": "custom-group",
+              "name": "Group",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "none",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "border_color": "#42434d",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "custom_product_features_LhHN3W": {
+                  "type": "custom-product-features",
+                  "name": "Product features",
+                  "settings": {
+                    "font_size": 14
+                  },
+                  "blocks": {}
+                },
+                "custom_product_logos_7KNJzC": {
+                  "type": "custom-product-logos",
+                  "name": "Logos",
+                  "settings": {
+                    "logo_sizing": "default",
+                    "logo_custom_height": 60
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "custom_product_features_LhHN3W",
+                "custom_product_logos_7KNJzC"
+              ]
+            }
+          },
+          "block_order": [
+            "custom_group_KPeVXN"
+          ]
         },
         "custom_group_bpV6wj": {
           "type": "custom-group",
