@@ -16,15 +16,6 @@
   assign accordion_default_open = accordion_default_open | default: 'first'
   assign enable_features_and_logos = enable_features_and_logos | default: true
 %}
-{% if enable_features_and_logos %}
-  {% render 'block.product-features' %}
-  {% render 'block.product-logos',
-  block: block,
-  product: product,
-  logo_sizing: block.settings.logo_sizing,
-  logo_custom_height: block.settings.logo_custom_height
-%}
-{% endif %}
 
 {% capture variant_selector %}
   {%- unless product.has_only_default_variant -%}
@@ -49,6 +40,13 @@
 
           {% capture option_name %}
             {% render 'element.text', variant: 'body-sm', text: option_name_content %}
+          {% endcapture %}
+
+          {% capture features_logos %}
+            {% if enable_features_and_logos %}
+              {% render 'block.product-features' %}
+              {% render 'block.product-logos', block: block, product: product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height %}
+            {% endif %}
           {% endcapture %}
 
           {% capture option_values %}
