@@ -42,11 +42,6 @@
             {% render 'element.text', variant: 'body-sm', text: option_name_content %}
           {% endcapture %}
 
-          {% capture features_logos %}
-              {% render 'block.product-features' %}
-              {% render 'block.product-logos', block: block, product: product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height %}
-          {% endcapture %}
-
           {% capture option_values %}
             {% for value in option.values %}
               {% unless value.available %}
@@ -98,7 +93,7 @@
 
           {% capture option_stack %}
             {% render 'layout.stack', horizontal: true, gap: 'xs', slot: option_values %} 
-            {{ children }}
+            {% if forloop.index == 1 %}{{ children }}{% endif %}
           {% endcapture %}
 
           {% if enable_tabs %}
