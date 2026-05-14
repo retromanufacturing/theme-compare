@@ -89,9 +89,12 @@
             "enable_tabs": true,
             "accordion_default_open": "first",
             "enable_features_and_logos": false,
-            "font_size": 14,
-            "logo_sizing": "default",
-            "logo_custom_height": 60
+            "enable_variant_labels": true,
+            "variant_label_options": "Feature Set, Motor",
+            "enable_colored_options": true,
+            "color_motor_m1": "#c19e44",
+            "color_motor_m2": "#2e5f6e",
+            "color_motor_m4": "#623f36"
           },
           "blocks": {
             "custom_spacer_qgKqjx": {
