@@ -104,7 +104,7 @@
                 "vertical_alignment": "center",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
+                "vertical_alignment_flex_direction_column": "flex-start",
                 "gap": 12,
                 "width": "fill",
                 "custom_width": 100,
@@ -115,21 +115,21 @@
                 "inherit_color_scheme": true,
                 "color_scheme": "none",
                 "background_image_position": "cover",
-                "border": "none",
+                "border": "solid",
                 "border_width": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
-                "border_color": "#42434d",
+                "border_color": "#dddddd",
                 "toggle_overlay": false,
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "link": "",
                 "open_in_new_tab": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "padding-block-start": 22,
+                "padding-block-end": 22,
+                "padding-inline-start": 25,
+                "padding-inline-end": 25
               },
               "blocks": {
                 "custom_product_features_LhHN3W": {
@@ -158,67 +158,6 @@
           },
           "block_order": [
             "custom_group_KPeVXN"
-          ]
-        },
-        "custom_group_bpV6wj": {
-          "type": "custom-group",
-          "name": "Group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "flex-start",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fill",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "none",
-            "background_image_position": "cover",
-            "border": "solid",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "border_color": "#dddddd",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "padding-block-start": 22,
-            "padding-block-end": 22,
-            "padding-inline-start": 25,
-            "padding-inline-end": 25
-          },
-          "blocks": {
-            "custom_product_features_6KTFTR": {
-              "type": "custom-product-features",
-              "name": "Product features",
-              "settings": {
-                "font_size": 14
-              },
-              "blocks": {}
-            },
-            "custom_product_logos_xqngKB": {
-              "type": "custom-product-logos",
-              "name": "Logos",
-              "settings": {
-                "logo_sizing": "default",
-                "logo_custom_height": 60
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "custom_product_features_6KTFTR",
-            "custom_product_logos_xqngKB"
           ]
         },
         "custom_tab_bgGeGj": {
@@ -280,7 +219,6 @@
         "section_flex_pdp_title_z8nXXj",
         "custom_group_HLtKW7",
         "custom_variant_picker_jQ7J3j",
-        "custom_group_bpV6wj",
         "custom_tab_bgGeGj",
         "custom_tab_a9cccL",
         "section_flex_pdp_price_NdtWir",
