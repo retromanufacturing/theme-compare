@@ -159,7 +159,7 @@
                   endcase
                 endif
               -%}
-                  {{ variant_details }}
+                  {{ variant_details.name.value }}
               {%- capture input_label -%}
                 {% if value.swatch %}
                   {% assign swatch_disabled = false %}
