@@ -159,7 +159,7 @@
                   endcase
                 endif
               -%}
-                  {{ variant_details.name.value }}
+                 {{ value.variant.metafields.custom.radio_features.value.variant_details.value.name.value }}
               {%- capture input_label -%}
                 {% if value.swatch %}
                   {% assign swatch_disabled = false %}
