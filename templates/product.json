@@ -66,7 +66,8 @@
               "type": "_section-flex-pdp-inventory",
               "name": "t:labels.inventory",
               "settings": {
-                "inventory_threshold": 10
+                "inventory_threshold": 10,
+                "enable_labels": true
               },
               "blocks": {}
             },
