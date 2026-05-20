@@ -92,13 +92,13 @@
   {{ product_inventory }}
 </span>
 
-<ul>
+{% comment %} <ul>
   <li>Labels: {{ enable_labels }}</li>
   <li>Low inventory: {{ low_inventory_message }}--</li>
   <li>Low stock count: {{ info_low_stock_count }}</li>
   <li>Show low inv: {{ show_low_inventory_message }}</li>
   <li>Inv status: {{ inventory_status }}</li>
-</ul>
+</ul> {% endcomment %}
 
 {% style %}
   .product-inventory--in-stock {
