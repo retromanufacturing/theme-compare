@@ -83,6 +83,7 @@
     {%- if current_variant.available -%}
     {% render 'utility.translate', key: 'info.in_stock', fallback: 'In stock' %}
     {%- else -%}
+      {% assign inventory_status = 'sold-out' %}
       {% render 'utility.translate', key: 'info.sold_out', fallback: 'Sold out' %}
     {%- endif -%}
   {% endif %}
