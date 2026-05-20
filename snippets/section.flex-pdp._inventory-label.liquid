@@ -51,6 +51,7 @@
   {% capture low_inventory_message %}
     {%- if show_low_inventory_message -%}
       {% assign info_low_stock_count = 'info.low_stock_count' | t: count: current_variant.inventory_quantity %}
+      {% assign inventory_status = 'low' %}
       {% capture fallback_info_low_stock_count %}
         Low stock - {{ current_variant.inventory_quantity }} item{% if coucurrent_variant.inventory_quantity != 1 %}s{% endif %} left
       {% endcapture %}
@@ -69,6 +70,7 @@
         {% render 'utility.translate', t: info_back_in_stock_on, fallback: fallback_info_back_in_stock_on %}
       {%- endif -%}
     {%- else -%}
+      {% assign inventory_status = 'backordered' %}
       {% render 'utility.translate', key: 'info.backordered', fallback: 'Backordered, shipping soon' %}
     {%- endif -%}
   {% endcapture %}
