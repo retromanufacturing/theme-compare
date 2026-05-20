@@ -15,11 +15,14 @@
 -%}
 
 {% capture inventory_text %}
-  {% render 'section.flex-pdp._inventory-text', product: product, inventory_threshold: inventory_threshold %}
+  {% if enable_labels %}
+    {% render 'section.flex-pdp._inventory-label', product: product, inventory_threshold: inventory_threshold, enable_labels: enable_labels %}
+  {% else %}
+    {% render 'section.flex-pdp._inventory-text', product: product, inventory_threshold: inventory_threshold %}
+  {% endif %}
+  
 {% endcapture %}
 
 {% if inventory_text != blank %}
   {% render 'element.text', variant: 'body-sm', text: inventory_text %}
 {% endif %}
-
-{{ enable_labels }}
