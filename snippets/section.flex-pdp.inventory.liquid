@@ -11,6 +11,7 @@
 
 {%- liquid
   assign inventory_threshold = inventory_threshold | default: block.settings.inventory_threshold | default: 10
+  assign enable_labels = block.settings.enable_labels
 -%}
 
 {% capture inventory_text %}
@@ -21,4 +22,4 @@
   {% render 'element.text', variant: 'body-sm', text: inventory_text %}
 {% endif %}
 
-{{ block.settings.enable_labels }}
+{{ enable_labels }}
