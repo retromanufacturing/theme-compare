@@ -15,6 +15,7 @@
   {%  liquid
     assign current_variant = current_variant | default: product.selected_or_first_available_variant
     assign inventory_threshold = inventory_threshold | default: 10
+    assign inventory_status = 'in stock'
 
 
     assign show_low_inventory_message = false
