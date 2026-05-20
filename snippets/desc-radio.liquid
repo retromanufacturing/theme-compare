@@ -56,8 +56,12 @@
     {% render 'desc-detroit', ymm: ymm, DAB: DAB, motor_class: motor_class %}
   {%- when 'Grand Prix', 'DAB GP' -%}
     {% render 'desc-grandprix', ymm: ymm, DAB: DAB, motor_class: motor_class %}
-    {%- when 'Liberty', 'DAB LIB' -%}
+  {%- when 'Liberty', 'DAB LIB' -%}
     {% render 'desc-liberty', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Monza', 'DAB MNZ' -%}
+    {% render 'desc-monza', ymm: ymm, DAB: DAB, motor_class: motor_class %}
+  {%- when 'Traffic', 'DAB TRA' -%}
+    {% render 'desc-traffic', ymm: ymm, DAB: DAB, motor_class: motor_class %}
   {%- when 'Huntington', 'DAB HUNT' -%}
     {% render 'desc-huntington', ymm: ymm, DAB: DAB, motor_class: motor_class %}
   {%- when 'Monterey', 'DAB MO' -%}
