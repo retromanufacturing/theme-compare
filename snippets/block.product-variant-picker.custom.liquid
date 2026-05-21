@@ -101,10 +101,11 @@
 
         assign use_labels = false
         if enable_variant_labels and variant_label_options != blank
-          assign label_options = variant_label_options | split: ','
+          assign label_options = variant_label_options | downcase | split: ','
           for label_option in label_options
             assign label_option_trimmed = label_option | strip
-            if label_option_trimmed == option.name
+            assign option_name = option.name | downcase
+            if label_option_trimmed == option_name
               assign use_labels = true
               break
             endif
