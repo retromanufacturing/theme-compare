@@ -11,10 +11,137 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {}
+    },
+    "background_image_text_UDnxCF": {
+      "type": "background-image-text",
+      "name": "t:labels.large_image_with",
+      "settings": {
+        "subtitle": "",
+        "title": "What is a RetroSound Radio?",
+        "text": "<p>RetroSound® radios are modular units that allow you to select the radio face, knobs, and trim that are most period-correct for your classic vehicle and pair it with a selection of radio motors for a choice of audio features and connectivity. </p>",
+        "button_label": "",
+        "button_link": "https://www.retrobelt.com/pages/dont-see-your-vehicle",
+        "image": "shopify://shop_images/Radio-Motors-And-Face-Domestic-update.jpg",
+        "layout": "right",
+        "height": 550,
+        "parallax": true,
+        "parallax_direction": "top"
+      }
+    },
+    "text_columns_Rdqf3M": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_jU87PR": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Choose-A-Look.png",
+            "image_width": 650,
+            "title": "Choose a Look",
+            "text": "<p>Select a Radio Face that best suits your classic vehicle for a truly authentic look.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_NcfJEU": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Choose-Audio-Features.png",
+            "image_width": 650,
+            "title": "Select A Feature Set",
+            "text": "<p>Choose a Radio Motor to select the radio features that matter most for your classic vehicle.<br/></p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_txnH8G": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Get-A-Factory-Fit.png",
+            "image_width": 650,
+            "title": "Get a Perfect Fit",
+            "text": "<p>Use our InfiniMount Brackets to get a perfect factory-like fit during installation in the vehicle’s dash.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_jU87PR",
+        "text_block_NcfJEU",
+        "text_block_txnH8G"
+      ],
+      "name": "t:labels.text_columns_with",
+      "settings": {
+        "title": "",
+        "align_text": "left",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "featured_collections_iPydzP": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_fEbX3C": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-liberty-radio",
+            "title": ""
+          }
+        },
+        "collection_aQAqDK": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-traffic-radio",
+            "title": ""
+          }
+        },
+        "collection_fnXLaV": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-monza-radio",
+            "title": ""
+          }
+        },
+        "collection_V8kXhL": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-grand-prix-radio",
+            "title": ""
+          }
+        },
+        "collection_LBejFt": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-europa-radio",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_fEbX3C",
+        "collection_aQAqDK",
+        "collection_fnXLaV",
+        "collection_V8kXhL",
+        "collection_LBejFt"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "Popular categories",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "background_image_text_UDnxCF",
+    "text_columns_Rdqf3M",
+    "featured_collections_iPydzP"
   ]
 }
