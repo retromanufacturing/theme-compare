@@ -166,7 +166,7 @@
       ],
       "name": "t:labels.rich_text",
       "settings": {
-        "align_text": "center",
+        "align_text": "left",
         "narrow_column": false,
         "color_scheme": "none",
         "divider": false
@@ -349,79 +349,66 @@
         "divider": false
       }
     },
-    "1777398250d76a262b": {
+    "apps_ihxT4i": {
       "type": "apps",
       "blocks": {
-        "reviews_io_reviewsio_card_carousel_MQJ74H": {
+        "reviews_io_reviewsio_card_carousel_YPE3tJ": {
           "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
           "settings": {
-            "star": "#000",
-            "review_type": "product",
+            "star": "#ffc200",
+            "review_type": "company, product",
             "reviews_shown": 20,
-            "header_bg_colour": "#810f12",
-            "header_colour": "#fff",
-            "header_star_colour": "#ffd800",
-            "heading_text_colour": "#0E1311",
+            "header_bg_colour": "#000000",
+            "header_colour": "#ffffff",
+            "header_star_colour": "#ffffff",
+            "heading_text_colour": "#0e1311",
             "heading_font": "sans_serif_n4",
-            "body_text_colour": "#0E1311",
-            "badge_icon_colour": "#00a728",
-            "badge_text_colour": "#0E1311",
-            "bg_start_colour": "#e4e4e4",
+            "body_text_colour": "#000000",
+            "badge_icon_colour": "#66b2a5",
+            "badge_text_colour": "#0e1311",
+            "bg_start_colour": "#ffffff",
             "bg_end_colour": "#ffffff",
             "item_border_width": "0px",
-            "item_border_colour": "#eaeaea",
+            "item_border_colour": "#f2f2f2",
             "item_border_radius": "0px",
             "item_shadow_size": "10px",
-            "item_shadow_colour": "#F2F2F2",
-            "enable_rich_snippets": false,
+            "item_shadow_colour": "#f2f2f2",
+            "enable_rich_snippets": true,
             "disable_same_customer": false,
             "logo_colour": "var(--logo-inverted)"
           }
         }
       },
       "block_order": [
-        "reviews_io_reviewsio_card_carousel_MQJ74H"
+        "reviews_io_reviewsio_card_carousel_YPE3tJ"
       ],
       "settings": {
         "full_width": false,
         "space_around": true
       }
     },
-    "newsletter_DepPeX": {
-      "type": "newsletter",
+    "advanced_content_V9PcCf": {
+      "type": "advanced-content",
       "blocks": {
-        "title_JwpxNm": {
-          "type": "title",
+        "liquid_hMrMhW": {
+          "type": "liquid",
           "settings": {
-            "title": "Save 10% on your first purchase",
-            "heading_size": "h2"
+            "code": "<div style=\"\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 30px;\n  width: 100%;\n  flex-wrap: wrap;\n  padding: 20px 60px;\n\">\n\n  <!-- Left Text -->\n  <div style=\"\n    font-size: 18px;\n    font-weight: 700;\n    letter-spacing: 0.5px;\n    text-align:center;\n    color: #ffffff;\n  \">\n    Sign up for the Latest News and Promotions\n  </div>\n\n  <!-- Right Button -->\n  <a href=\"https://mailchi.mp/retromanufacturing.com/retrosound-newsletters-and-offers\"\n     target=\"_blank\"\n     rel=\"noopener noreferrer\"\n     style=\"\n       display: inline-block;\n       background-color: #810F12;\n       color: #ffffff;\n       text-decoration: none;\n       padding: 14px 50px;\n       font-size: 18px;\n       font-weight: 600;\n       letter-spacing: 0.5px;\n       border-radius: 4px;\n       text-align: center;\n       transition: all 0.2s ease-in-out;\n       white-space: nowrap;\n     \"\n     onmouseover=\"this.style.backgroundColor='#333333';\"\n     onmouseout=\"this.style.backgroundColor='#810F12';\">\n     Stay in the Loop\n  </a>",
+            "width": "100%",
+            "alignment": "center"
           }
-        },
-        "text_3XMVyk": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Sign up today and we'll send you a 10% discount code towards<br/>your first purchase.</p>"
-          }
-        },
-        "form_4LMk6c": {
-          "type": "form",
-          "settings": {}
         }
       },
       "block_order": [
-        "title_JwpxNm",
-        "text_3XMVyk",
-        "form_4LMk6c"
+        "liquid_hMrMhW"
       ],
+      "custom_css": [
+        ".custom-content {justify-content: center; background-image: url(\"https://cdn.shopify.com/s/files/1/0932/8664/files/RM-landing-page-retail-sign-up-c10-page-base-dm.jpg?v=1765391836\"); background-size: cover; background-position: center; background-repeat: no-repeat;}"
+      ],
+      "name": "Custom content",
       "settings": {
-        "color_scheme": "2",
-        "align_text": "center",
-        "image_width": "33",
-        "image_mask": "none",
-        "image_position": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
+        "full_width": true,
+        "space_around": false
       }
     }
   },
@@ -433,7 +420,7 @@
     "featured_collections_4zRygh",
     "featured_collections_p6RKmN",
     "blog_posts_xYaJ84",
-    "1777398250d76a262b",
-    "newsletter_DepPeX"
+    "apps_ihxT4i",
+    "advanced_content_V9PcCf"
   ]
 }
