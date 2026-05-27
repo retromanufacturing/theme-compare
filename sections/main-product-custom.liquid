@@ -68,6 +68,8 @@
   document.addEventListener('product-form:message:success', (event) => event.preventDefault());
 {% endjavascript %}
 
+{{ product.template_suffix }}
+
 {% schema %}
 {
   "name": "Product block",
