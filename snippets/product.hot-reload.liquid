@@ -241,13 +241,13 @@
 
     async updateProductWithTransition(html, newProductUrl, targetId) {
       const updatedHtml = html.getElementById(this.id);
-      morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true })
+      const { morph, MORPH_OPTIONS } = await import('custom-morph');
 
       if (this.supportsViewTransitions) {
         // Use View Transitions API for smooth transitions
         const transition = document.startViewTransition(() => {
           // this.innerHTML = updatedHtml.innerHTML;
-          morph(this, updatedHtml, { childrenOnly: true })
+          morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true })
           this.dataset.productUrl = updatedHtml.dataset.productUrl;
           this.dataset.variantId = updatedHtml.dataset.variantId;
         });
@@ -257,15 +257,20 @@
       } else {
         // Fallback: Update content immediately without animations
         // this.innerHTML = updatedHtml.innerHTML;
-        morph(this, updatedHtml, { childrenOnly: true })
+        morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true });
         this.dataset.productUrl = updatedHtml.dataset.productUrl;
         this.dataset.variantId = updatedHtml.dataset.variantId;
       }
 
-      document.querySelectorAll('product-hot-reload .shopify-app-block').forEach(function (block) {
-        const clone = block.cloneNode(true);
-        block.parentNode.replaceChild(clone, block);
-      });
+      this.dispatchEvent(
+        new CustomEvent('hot-reload:complete', {
+          bubbles: true,
+          detail: {
+            variantId: this.dataset.variantId,
+            productUrl: this.dataset.productUrl,
+          },
+        })
+      );
 
       // Update URL and history
       let url = new URL(newProductUrl, window.location.origin);
