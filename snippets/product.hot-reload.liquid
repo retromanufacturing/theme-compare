@@ -246,8 +246,8 @@
       if (this.supportsViewTransitions) {
         // Use View Transitions API for smooth transitions
         const transition = document.startViewTransition(() => {
-          // this.innerHTML = updatedHtml.innerHTML;
-           morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true })
+          this.innerHTML = updatedHtml.innerHTML;
+          // morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true })
           this.dataset.productUrl = updatedHtml.dataset.productUrl;
           this.dataset.variantId = updatedHtml.dataset.variantId;
         });
@@ -256,8 +256,8 @@
         await transition.finished;
       } else {
         // Fallback: Update content immediately without animations
-        // this.innerHTML = updatedHtml.innerHTML;
-        morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true });
+        this.innerHTML = updatedHtml.innerHTML;
+        // morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true });
         this.dataset.productUrl = updatedHtml.dataset.productUrl;
         this.dataset.variantId = updatedHtml.dataset.variantId;
       }
