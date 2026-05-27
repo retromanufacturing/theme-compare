@@ -241,7 +241,7 @@
 
     async updateProductWithTransition(html, newProductUrl, targetId) {
       const updatedHtml = html.getElementById(this.id);
-      const { morph } = await import('custom-morph')
+      morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true })
 
       if (this.supportsViewTransitions) {
         // Use View Transitions API for smooth transitions
