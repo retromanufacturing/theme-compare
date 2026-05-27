@@ -270,6 +270,15 @@
         })
       );
 
+      document.dispatchEvent(
+        new CustomEvent('shopify:section:load', {
+          bubbles: true,
+          detail: {
+            sectionId: this.dataset.sectionId,
+          },
+        })
+      );
+
       // Update URL and history
       let url = new URL(newProductUrl, window.location.origin);
 
