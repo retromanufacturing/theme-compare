@@ -1,0 +1,191 @@
+{% comment %}
+  main-product-radio.liquid
+  Place in: /sections/main-product-radio.liquid
+
+  Custom radio product section using the @theme block architecture.
+  Based on main-product-high-variant.liquid structure — do not modify that file.
+
+  Gallery slot uses custom-media-gallery block (blocks/custom-media-gallery.liquid).
+  All other product blocks (title, price, buy buttons, etc.) are added via the
+  Theme Editor using @theme blocks.
+
+  IMAGE RENDERING SETTINGS NOTE:
+  product_zoom_enable, product_image_size, enable_video_looping, product_video_style,
+  and mobile_layout are defined here at section level — not in the custom-media-gallery
+  block — because product.gallery.media reads them directly from section.settings and
+  they cannot be passed through the render chain.
+{% endcomment %}
+
+{% capture slot_gallery %}
+  {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
+{% endcapture %}
+
+{% capture slot_details %}
+  {% content_for 'blocks' %}
+{% endcapture %}
+
+{%- render 'section.flex-pdp.custom', slot_gallery: slot_gallery, slot_details: slot_details -%}
+
+{% javascript %}
+  document.addEventListener('product-form:cart:navigate', (event) => {
+    const headerEl = document.querySelector('header-section[data-cart-type]');
+    const cartType = headerEl ? headerEl.getAttribute('data-cart-type') : undefined;
+    if (cartType !== 'page') {
+      event.preventDefault();
+    }
+  });
+
+  document.addEventListener('product-form:submit:success', async (event) => {
+    try {
+      const response = await fetch(`${window.Shopify.routes.root}cart?sections=cart-ajax`, {
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      });
+      const sections = await response.json();
+      const state = { sections };
+
+      document.dispatchEvent(
+        new CustomEvent('ajaxProduct:added', {
+          bubbles: true,
+          detail: {
+            product: state,
+          },
+        })
+      );
+
+      document.dispatchEvent(
+        new CustomEvent('cart:updated', {
+          bubbles: true,
+          detail: {
+            cart: state,
+          },
+        })
+      );
+    } catch (e) {
+      console.warn('Failed to load cart sections after add:', e);
+    }
+  });
+
+  document.addEventListener('product-form:message:success', (event) => event.preventDefault());
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_container_size",
+      "label": "Image container size",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Small (2/5)" },
+        { "value": "medium", "label": "Medium (1/2)" },
+        { "value": "large", "label": "Large (3/5)" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "These settings apply to the gallery and cannot be set at block level because product.gallery.media reads them directly from section settings."
+    },
+    {
+      "type": "select",
+      "id": "product_image_size",
+      "label": "Force image size",
+      "default": "square",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_zoom_enable",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "partial",
+      "options": [
+        { "value": "partial", "label": "75% width" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_video_style",
+      "label": "Video style",
+      "default": "muted",
+      "options": [
+        { "value": "muted", "label": "Without sound (autoplay)" },
+        { "value": "unmuted", "label": "With sound (no autoplay)" }
+      ],
+      "info": "Videos with sound cannot autoplay"
+    }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    { "type": "@theme" },
+    { "type": "_section-flex-pdp-title" },
+    { "type": "_section-flex-pdp-sku" },
+    { "type": "_section-flex-pdp-inventory" },
+    { "type": "_section-flex-pdp-variant-picker" },
+    { "type": "_section-flex-pdp-price" },
+    { "type": "_section-flex-pdp-buy-buttons" },
+    { "type": "_section-flex-pdp-pick-up" },
+    { "type": "_section-flex-pdp-installments" },
+    { "type": "_section-flex-pdp-description" },
+    { "type": "_section-flex-pdp-divider" },
+    { "type": "_section-flex-pdp-policies" },
+    { "type": "_section-flex-pdp-quantity-picker" },
+    { "type": "_section-flex-pdp-vendor" }
+  ],
+  "presets": [
+    {
+      "name": "Product block",
+      "category": "Products",
+      "blocks": {
+        "custom-media-gallery": {
+          "type": "custom-media-gallery"
+        }
+      },
+      "block_order": ["custom-media-gallery"]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}
