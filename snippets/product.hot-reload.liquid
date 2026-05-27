@@ -279,6 +279,11 @@
         })
       );
 
+      document.querySelectorAll('product-hot-reload .shopify-app-block').forEach(function (block) {
+        const clone = block.cloneNode(true);
+        block.parentNode.replaceChild(clone, block);
+      });
+
       // Update URL and history
       let url = new URL(newProductUrl, window.location.origin);
 
