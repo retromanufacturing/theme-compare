@@ -115,5 +115,5 @@
 {% render 'product.hot-reload', section: section, product: product, slot: section_layout %}
 
 {% if radio_features != blank %}
-  has radio features
+  {%- render 'accessories-script', current_variant: current_variant -%}
 {% endif %}

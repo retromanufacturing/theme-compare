@@ -1,0 +1,29 @@
+{%- liquid
+  assign motor_accessories = current_variant.metafields.custom.radio_features.value.accessories.value
+-%}
+
+{% for accessory in motor_accessories %}
+      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+
+{% comment %} {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
+
+<script type="text/javascript">
+  if (Shopify.designMode != true) {
+    accessoriesJS($);
+  }
+</script>
+
+<script type="text/javascript">
+  var motorAccessoryIds = [
+    {% for accessory in motor_accessories %}
+      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  function accessoryItemAddedCallback(div, product) {
+    if (motorAccessoryIds.indexOf(product.id) === -1) {
+      div.addClass("hide");
+    }
+  }
+</script> {% endcomment %}
