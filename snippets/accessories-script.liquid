@@ -6,7 +6,7 @@
       {{ accessory.id }}{% unless forloop.last %},{% endunless %}
 {% endfor %}
 
-{% comment %} {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
+{{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
 
 <script type="text/javascript">
   if (Shopify.designMode != true) {
@@ -26,4 +26,4 @@
       div.addClass("hide");
     }
   }
-</script> {% endcomment %}
+</script> 
