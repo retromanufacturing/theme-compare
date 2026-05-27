@@ -73,6 +73,8 @@
       assign product_image_width = 'medium-up--three-fifths'
       assign product_description_width = 'medium-up--two-fifths'
   endcase
+
+  assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
 -%}
 
 {% capture section_layout %}
@@ -110,3 +112,7 @@
 {% endcapture %}
 
 {% render 'product.hot-reload', section: section, product: product, slot: section_layout %}
+
+{% if radio_features != blank %}
+  has radio features
+{% endif %}
