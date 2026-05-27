@@ -241,13 +241,11 @@
 
     async updateProductWithTransition(html, newProductUrl, targetId) {
       const updatedHtml = html.getElementById(this.id);
-      const { morph, MORPH_OPTIONS } = await import('custom-morph');
 
       if (this.supportsViewTransitions) {
         // Use View Transitions API for smooth transitions
         const transition = document.startViewTransition(() => {
           this.innerHTML = updatedHtml.innerHTML;
-          // morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true })
           this.dataset.productUrl = updatedHtml.dataset.productUrl;
           this.dataset.variantId = updatedHtml.dataset.variantId;
         });
@@ -257,20 +255,9 @@
       } else {
         // Fallback: Update content immediately without animations
         this.innerHTML = updatedHtml.innerHTML;
-        // morph(this, updatedHtml, { ...MORPH_OPTIONS, childrenOnly: true });
         this.dataset.productUrl = updatedHtml.dataset.productUrl;
         this.dataset.variantId = updatedHtml.dataset.variantId;
       }
-
-      this.dispatchEvent(
-        new CustomEvent('hot-reload:complete', {
-          bubbles: true,
-          detail: {
-            variantId: this.dataset.variantId,
-            productUrl: this.dataset.productUrl,
-          },
-        })
-      );
 
       // Update URL and history
       let url = new URL(newProductUrl, window.location.origin);
