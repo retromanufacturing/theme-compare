@@ -6,3 +6,14 @@
 {% endcomment %}
 <script type="module" src="{{ 'vehicle-search.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
+
+<script>
+  document.addEventListener('hot-reload:complete', function () {
+    document.querySelectorAll('product-hot-reload script').forEach(function (oldScript) {
+      const newScript = document.createElement('script');
+      Array.from(oldScript.attributes).forEach((attr) => newScript.setAttribute(attr.name, attr.value));
+      newScript.textContent = oldScript.textContent;
+      oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+  });
+</script>
