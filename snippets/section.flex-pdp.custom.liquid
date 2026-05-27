@@ -73,7 +73,8 @@
       assign product_image_width = 'medium-up--three-fifths'
       assign product_description_width = 'medium-up--two-fifths'
   endcase
-
+  
+  assign current_variant = product.selected_or_first_available_variant
   assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
 -%}
 
