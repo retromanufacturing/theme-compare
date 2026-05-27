@@ -241,11 +241,13 @@
 
     async updateProductWithTransition(html, newProductUrl, targetId) {
       const updatedHtml = html.getElementById(this.id);
+      const { morph } = await import('custom-morph')
 
       if (this.supportsViewTransitions) {
         // Use View Transitions API for smooth transitions
         const transition = document.startViewTransition(() => {
-          this.innerHTML = updatedHtml.innerHTML;
+          // this.innerHTML = updatedHtml.innerHTML;
+          morph(this, updatedHtml, { childrenOnly: true })
           this.dataset.productUrl = updatedHtml.dataset.productUrl;
           this.dataset.variantId = updatedHtml.dataset.variantId;
         });
@@ -254,30 +256,11 @@
         await transition.finished;
       } else {
         // Fallback: Update content immediately without animations
-        this.innerHTML = updatedHtml.innerHTML;
+        // this.innerHTML = updatedHtml.innerHTML;
+        morph(this, updatedHtml, { childrenOnly: true })
         this.dataset.productUrl = updatedHtml.dataset.productUrl;
         this.dataset.variantId = updatedHtml.dataset.variantId;
       }
-
-      // Custom event dispatch for variant changes
-      this.dispatchEvent(
-        new CustomEvent('hot-reload:complete', {
-          bubbles: true,
-          detail: {
-            variantId: this.dataset.variantId,
-            productUrl: this.dataset.productUrl,
-          },
-        })
-      );
-
-      document.dispatchEvent(
-        new CustomEvent('shopify:section:load', {
-          bubbles: true,
-          detail: {
-            sectionId: this.dataset.sectionId,
-          },
-        })
-      );
 
       document.querySelectorAll('product-hot-reload .shopify-app-block').forEach(function (block) {
         const clone = block.cloneNode(true);
