@@ -8,7 +8,7 @@
 
 {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
 
-<script type="text/javascript">
+{% comment %} <script type="text/javascript">
   if (Shopify.designMode != true) {
     accessoriesJS($);
   }
@@ -26,4 +26,4 @@
       div.addClass("hide");
     }
   }
-</script> 
+</script>  {% endcomment %}
