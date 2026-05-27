@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product",
+      "type": "main-product-custom",
       "blocks": {
         "buy_buttons": {
           "type": "buy_buttons",
