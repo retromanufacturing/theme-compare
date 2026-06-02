@@ -204,13 +204,108 @@
             "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
             "overlay_opacity": 0
           }
+        },
+        "hero_HLNxYq": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Bundle & SAVE!",
+            "title": "<p>SUB8100 + Quadraphonic</p>",
+            "title_size": 60,
+            "subheading": "Experience a Richer, More Immersive Sound in Your Classic Car with this Plug-In Upgrade!",
+            "link": "shopify://products/retrosound-subwoofer-amplifier",
+            "link_text": "SHOP NOW",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-Sub8100-Quadrophonic-combo.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-sub8100-quadrophinc-combo_62e1b912-c106-4f12-9586-04cfecbb15e3.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_7AYag3": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "EXCITING NEWS...",
+            "title": "<p>All Radio Models have Bluetooth®!</p>",
+            "title_size": 40,
+            "subheading": "We've updated our Radio Motors. All models now come with Bluetooth 5.0 built-in.",
+            "link": "https://www.retromanufacturing.com/collections/replacement-parts/products/retrosound-radio-motor",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-general-bluetooth.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-general-bluetooth.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_hNqDfy": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "FORD OFFICIALLY LICENSED",
+            "title": "<p>Dallas Radio</p>",
+            "title_size": 64,
+            "subheading": "For 1985-1986 F-Series Trucks, Broncos & Mustangs.",
+            "link": "https://www.retromanufacturing.com/collections/retrosound-dallas-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-dallas-86-bronco_3087df80-1d9a-4608-9f72-84248c8ee8a6.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-86-bronco_47645fa5-0a78-4ddf-8dfa-12485d9cdf07.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_f7QQTD": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "LIMITED TIME",
+            "title": "<p>Free Vintage Overlay Set</p>",
+            "title_size": 46,
+            "subheading": "With the purchase of any RetroRadio®",
+            "link": "shopify://collections/retroradio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_F4xbgK": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "LIMITED TIME",
+            "title": "<p>Free Vintage Overlay Set</p>",
+            "title_size": 46,
+            "subheading": "With the purchase of any RetroRadio®",
+            "link": "shopify://collections/retroradio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
         "hero_QW4Xbe",
         "hero_9rBerh",
         "hero_yxrLCb",
-        "hero_jbKFQE"
+        "hero_jbKFQE",
+        "hero_HLNxYq",
+        "hero_7AYag3",
+        "hero_hNqDfy",
+        "hero_f7QQTD",
+        "hero_F4xbgK"
       ],
       "name": "Slideshow",
       "settings": {
