@@ -294,6 +294,24 @@
             "image_mobile": "shopify://shop_images/780x780-Port-grand-prix-67-mercedes-560_38780cc9-d4cc-4c18-9c44-c45fdef78d03.jpg",
             "overlay_opacity": 0
           }
+        },
+        "hero_izxxgF": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Seat Belts For Your Classic",
+            "title": "<p>RetroBelt®</p>",
+            "title_size": 46,
+            "subheading": "2-point, 3-point, and 4-point seat belts for classic cars and trucks",
+            "link": "https://www.retrobelt.com/",
+            "link_text": "Shop Seat Belts",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-retrobelt-site-link.jpg",
+            "image_mobile": "shopify://shop_images/780x780-retrobelt-site-link.jpg",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
@@ -305,7 +323,8 @@
         "hero_7AYag3",
         "hero_hNqDfy",
         "hero_f7QQTD",
-        "hero_F4xbgK"
+        "hero_F4xbgK",
+        "hero_izxxgF"
       ],
       "name": "Slideshow",
       "settings": {
