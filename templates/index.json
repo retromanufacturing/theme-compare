@@ -67,11 +67,63 @@
         "slide_MQiU8b",
         "slide_Uj9FNz"
       ],
+      "disabled": true,
       "name": "t:labels.split_optional_slides",
       "settings": {
         "full_width": true,
         "height": 520,
         "height_mobile": 450,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "slideshow_3b9V68": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_gMefHQ": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 70,
+            "subheading": "Perfect for rich lifestyle photography.",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_Q7eAC9": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Make an Impact</p>",
+            "title_size": 70,
+            "subheading": "Supports multiple text alignments and mobile-specific images.",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-center horizontal-center",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_gMefHQ",
+        "hero_Q7eAC9"
+      ],
+      "disabled": true,
+      "name": "t:labels.hero_optional_slides",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
@@ -414,6 +466,7 @@
   },
   "order": [
     "slideshow_split_X6yYJb",
+    "slideshow_3b9V68",
     "advanced_content_T3red9",
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
