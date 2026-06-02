@@ -99,6 +99,7 @@
         },
         "hero_Q7eAC9": {
           "type": "hero",
+          "disabled": true,
           "settings": {
             "top_subheading": "",
             "title": "<p>Make an Impact</p>",
@@ -170,18 +171,19 @@
         },
         "hero_yxrLCb": {
           "type": "hero",
-          "disabled": true,
           "settings": {
-            "top_subheading": "",
-            "title": "<p>Make an Impact</p>",
-            "title_size": 70,
-            "subheading": "Supports multiple text alignments and mobile-specific images.",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
+            "top_subheading": "Now Available",
+            "title": "<p>DIN Solutions Liberty</p>",
+            "title_size": 46,
+            "subheading": "For 60's-70's GM, Chevy, & Ford Vehicles with a cut/modified dash.",
+            "link": "shopify://collections/retrosound-liberty-radio",
+            "link_text": "Shop Now",
+            "link_2": "shopify://blogs/news/how-the-liberty-radio-solves-cut-dash-issues-in-classic-cars",
+            "link_text_2": "Learn More",
             "button_color_scheme": "",
-            "text_align": "vertical-center horizontal-center",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/DinSolutions-Single-Din-Liberty-Radio-horizontal.jpg",
+            "image_mobile": "shopify://shop_images/DinSolutions-Single-Din-Liberty-Radio-vertl.jpg",
             "overlay_opacity": 0
           }
         }
