@@ -186,12 +186,31 @@
             "image_mobile": "shopify://shop_images/DinSolutions-Single-Din-Liberty-Radio-vertl.jpg",
             "overlay_opacity": 0
           }
+        },
+        "hero_jbKFQE": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "LIMITED TIME",
+            "title": "<p>Free Vintage Overlay Set</p>",
+            "title_size": 46,
+            "subheading": "With the purchase of any RetroRadio®",
+            "link": "shopify://collections/retroradio",
+            "link_text": "Shop Now",
+            "link_2": "shopify://blogs/news/how-the-liberty-radio-solves-cut-dash-issues-in-classic-cars",
+            "link_text_2": "Learn More",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-center",
+            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
         "hero_QW4Xbe",
         "hero_9rBerh",
-        "hero_yxrLCb"
+        "hero_yxrLCb",
+        "hero_jbKFQE"
       ],
       "name": "Slideshow",
       "settings": {
