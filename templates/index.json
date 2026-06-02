@@ -280,18 +280,18 @@
         "hero_F4xbgK": {
           "type": "hero",
           "settings": {
-            "top_subheading": "LIMITED TIME",
-            "title": "<p>Free Vintage Overlay Set</p>",
+            "top_subheading": "SINGLE DIN",
+            "title": "<p>RetroSound Grand Prix</p>",
             "title_size": 46,
-            "subheading": "With the purchase of any RetroRadio®",
-            "link": "shopify://collections/retroradio",
+            "subheading": "1980's Style Single-DIN Radio",
+            "link": "https://www.retromanufacturing.com/collections/retrosound-grand-prix-radio",
             "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
-            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
-            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
+            "image": "shopify://shop_images/1296x450-grand-prix-67-mercedes-560_f94455e6-414b-4213-9dae-fd731a09d549.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-grand-prix-67-mercedes-560_38780cc9-d4cc-4c18-9c44-c45fdef78d03.jpg",
             "overlay_opacity": 0
           }
         }
