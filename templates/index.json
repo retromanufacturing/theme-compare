@@ -262,18 +262,18 @@
         "hero_f7QQTD": {
           "type": "hero",
           "settings": {
-            "top_subheading": "LIMITED TIME",
-            "title": "<p>Free Vintage Overlay Set</p>",
+            "top_subheading": "New Release",
+            "title": "<p>Upgrade Your Ride with the USB/USB-C Extension Harness</p>",
             "title_size": 46,
-            "subheading": "With the purchase of any RetroRadio®",
-            "link": "shopify://collections/retroradio",
-            "link_text": "Shop Now",
+            "subheading": "Available in both black and chrome finishes",
+            "link": "https://www.retromanufacturing.com/products/usb-auxiliary-extension-cable",
+            "link_text": "SHOP NOW",
             "link_2": "",
             "link_text_2": "",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
-            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
-            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
+            "image": "shopify://shop_images/1296x450-new-USB-c.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-new-usb-c.jpg",
             "overlay_opacity": 0
           }
         },
