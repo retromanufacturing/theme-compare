@@ -1,5 +1,10 @@
 {%- render 'section.background-image-text' -%}
 
+{% if section.settings.image != blank %} 
+  {{ section.settings.image  }}
+  {% else %} no image
+{% endif %}
+
 {% schema %}
 {
   "name": "t:labels.large_image_with",
