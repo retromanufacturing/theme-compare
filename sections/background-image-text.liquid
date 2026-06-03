@@ -3,11 +3,13 @@
 {% else %}
   {% style %}
     .index-section--flush {
-      margin: 1rem;
+      margin: 2rem;
     }
   {% endstyle %}
   {% render 'element.text', text: section.settings.title, classlist: 'element-text--heading-xl' %}  
 {% endif %}
+
+shopify-section-template--{{ section.id }}
 
 {% schema %}
 {
