@@ -16,6 +16,10 @@
     },
     "background_image_text_UDnxCF": {
       "type": "background-image-text",
+      "custom_css": [
+        ".animation-contents {box-shadow: 0.25em -0.25em 1em rgba(2, 2, 2, 0.2); border: 0px solid; opacity: 50%;}",
+        ".heading-md {font-family: impact; color: #8c1828;}"
+      ],
       "name": "t:labels.large_image_with",
       "settings": {
         "subtitle": "",
@@ -38,6 +42,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Choose-A-Look.png",
+            "image_mask": "none",
             "image_width": 650,
             "title": "Choose a Look",
             "text": "<p>Select a Radio Face that best suits your classic vehicle for a truly authentic look.</p>",
@@ -50,6 +55,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Choose-Audio-Features.png",
+            "image_mask": "none",
             "image_width": 650,
             "title": "Select A Feature Set",
             "text": "<p>Choose a Radio Motor to select the radio features that matter most for your classic vehicle.<br/></p>",
@@ -62,6 +68,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/Get-A-Factory-Fit.png",
+            "image_mask": "none",
             "image_width": 650,
             "title": "Get a Perfect Fit",
             "text": "<p>Use our InfiniMount Brackets to get a perfect factory-like fit during installation in the vehicle’s dash.</p>",
