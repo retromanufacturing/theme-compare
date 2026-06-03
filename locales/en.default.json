@@ -269,7 +269,8 @@
     "color_swatch": "Color"
   },
   "custom": {
-    "button_label": "Buttons with label"
+    "button_label": "Buttons with label",
+    "background_color_scheme": "Background"
   },
   "sections": {
     "countdown": {
