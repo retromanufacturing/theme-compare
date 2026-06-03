@@ -1,12 +1,3 @@
-{%- for block in section.blocks -%}
-  {%- render 'utility.color-scheme-override',
-    class_name: 'slideshow__slide--' | append: block.id,
-    id: block.id,
-    background_color: block.settings.background_color,
-    text_color: block.settings.text_color
-  -%}
-{%- endfor -%}
-
 <span class="small--hide">
   {%- render 'section.slideshow-split' -%}
 </span>

@@ -184,8 +184,8 @@
       },
       "5": {
         "settings": {
-          "primary": "#343643",
-          "secondary": "#ffffff"
+          "primary": "#ffffff",
+          "secondary": "#afb2bc"
         }
       },
       "6": {
@@ -209,25 +209,7 @@
       "9": {
         "settings": {
           "primary": "#ffffff",
-          "secondary": "#272831"
-        }
-      },
-      "scheme-4e3022c5-d830-4a6c-a542-6763866b2c4b": {
-        "settings": {
-          "primary": "#fc3f3f",
-          "secondary": "#ffffff"
-        }
-      },
-      "scheme-fa7d9211-bffc-45f2-b5e7-25cd77a9e8c9": {
-        "settings": {
-          "primary": "#ffffff",
           "secondary": "#000000"
-        }
-      },
-      "scheme-df956f5c-df26-43c7-a082-01f4176bf08f": {
-        "settings": {
-          "primary": "#272831",
-          "secondary": "#d3dac9"
         }
       }
     }
