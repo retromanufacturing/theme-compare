@@ -1,8 +1,5 @@
-{%- render 'section.background-image-text' -%}
-
-{% if section.settings.image != blank %} 
-  {{ section.settings.image  }}
-  {% else %} no image
+{% if section.settings.image != blank %}
+  {%- render 'section.background-image-text' -%}
 {% endif %}
 
 {% schema %}
