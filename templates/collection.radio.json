@@ -23,14 +23,14 @@
       "type": "background-image-text",
       "name": "t:labels.large_image_with",
       "settings": {
-        "subtitle": "",
+        "subtitle": "Fits {{ collection.metafields.custom.additional_information | metafield_text }}",
         "title": "{{ collection.title }}",
         "text": "{{ collection.description }}",
         "button_label": "",
         "button_link": "",
         "image": "{{ collection.metafields.media.banner_image.value }}",
         "layout": "left",
-        "height": 550,
+        "height": 450,
         "parallax": false,
         "parallax_direction": "top"
       }
