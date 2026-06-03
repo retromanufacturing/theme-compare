@@ -1,8 +1,6 @@
-{% if section.settings.image != blank %}
+{% if section.settings.image != blank and template.name == 'collection' %}
   {%- render 'section.background-image-text' -%}
 {% endif %}
-
-{{ template.name }}
 
 {% schema %}
 {
