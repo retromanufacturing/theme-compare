@@ -329,8 +329,8 @@
       "name": "Slideshow",
       "settings": {
         "full_width": true,
-        "desktop_size": 0,
-        "mobile_size": 20,
+        "height": 460,
+        "height_mobile": 470,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
