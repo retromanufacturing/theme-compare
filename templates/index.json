@@ -9,27 +9,26 @@
  */
 {
   "sections": {
-    "slideshow_split_X6yYJb": {
+    "slideshow_split_WWnCkd": {
       "type": "slideshow-split",
       "blocks": {
-        "slide_VUkLfJ": {
+        "slide_YGPBrN": {
           "type": "slide",
           "settings": {
-            "top_subheading": "NEW RELEASE",
-            "title": "Power Your Classic Car with Modern Audio",
+            "top_subheading": "",
+            "title": "Side by side slide",
             "title_size": 60,
-            "subheading": "Enhance your classic car with the RetroSound 6-12V Converter, providing 10A output for 12V electronics without rewiring.",
-            "link": "shopify://blogs/news/reliable-6v-to-12v-dc-converter",
-            "link_text": "Learn More",
-            "link_2": "shopify://products/retrosound-6-12-volt-converter",
-            "link_text_2": "Shop Now",
+            "subheading": "Tailored for longer text and smaller images. Explain more about your promotion.",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
             "text_position": "right",
-            "image": "shopify://shop_images/RM-landscape-banner-RS_CONVERTER_631aab66-27a0-4cd7-be11-788346d27d57.jpg",
             "indent_image": false,
             "color_scheme": "2"
           }
         },
-        "slide_MQiU8b": {
+        "slide_DMAAfq": {
           "type": "slide",
           "settings": {
             "top_subheading": "",
@@ -44,87 +43,18 @@
             "indent_image": true,
             "color_scheme": "1"
           }
-        },
-        "slide_Uj9FNz": {
-          "type": "slide",
-          "settings": {
-            "top_subheading": "",
-            "title": "Side by Side Slide",
-            "title_size": 60,
-            "subheading": "Add optional subtext",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "text_position": "left",
-            "indent_image": false,
-            "color_scheme": "none"
-          }
         }
       },
       "block_order": [
-        "slide_VUkLfJ",
-        "slide_MQiU8b",
-        "slide_Uj9FNz"
+        "slide_YGPBrN",
+        "slide_DMAAfq"
       ],
       "disabled": true,
       "name": "t:labels.split_optional_slides",
       "settings": {
         "full_width": true,
-        "height": 520,
+        "height": 650,
         "height_mobile": 450,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
-    },
-    "slideshow_3b9V68": {
-      "type": "slideshow",
-      "blocks": {
-        "hero_gMefHQ": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "<p>Overlaid Hero Slide</p>",
-            "title_size": 60,
-            "subheading": "Perfect for rich lifestyle photography.",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "button_color_scheme": "",
-            "text_align": "vertical-bottom horizontal-left",
-            "overlay_opacity": 0
-          }
-        },
-        "hero_Q7eAC9": {
-          "type": "hero",
-          "disabled": true,
-          "settings": {
-            "top_subheading": "",
-            "title": "<p>Make an Impact</p>",
-            "title_size": 70,
-            "subheading": "Supports multiple text alignments and mobile-specific images.",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "button_color_scheme": "",
-            "text_align": "vertical-center horizontal-center",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "hero_gMefHQ",
-        "hero_Q7eAC9"
-      ],
-      "disabled": true,
-      "name": "t:labels.hero_optional_slides",
-      "settings": {
-        "full_width": true,
-        "desktop_size": 0,
-        "mobile_size": 0,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
@@ -163,8 +93,8 @@
             "link_text": "Learn More",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
-            "button_color_scheme": "6",
+            "color_scheme": "9",
+            "button_color_scheme": "7",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-Template-App-green_45d0c1c8-f390-4466-9ad7-5c7cca899630.jpg",
             "image_mobile": "shopify://shop_images/780x780-Port-Template-App-Green_6b867ad9-586d-44c9-816d-dad3ee66675d.jpg",
@@ -201,7 +131,7 @@
             "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
+            "color_scheme": "8",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
@@ -220,8 +150,8 @@
             "link_text": "SHOP NOW",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
-            "button_color_scheme": "",
+            "color_scheme": "9",
+            "button_color_scheme": "7",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-Sub8100-Quadrophonic-combo.jpg",
             "image_mobile": "shopify://shop_images/780x780-Port-sub8100-quadrophinc-combo_62e1b912-c106-4f12-9586-04cfecbb15e3.jpg",
@@ -239,7 +169,7 @@
             "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
+            "color_scheme": "7",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-general-bluetooth.jpg",
@@ -258,7 +188,7 @@
             "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
+            "color_scheme": "2",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-dallas-86-bronco_3087df80-1d9a-4608-9f72-84248c8ee8a6.jpg",
@@ -277,7 +207,7 @@
             "link_text": "SHOP NOW",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
+            "color_scheme": "9",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-new-USB-c.jpg",
@@ -296,7 +226,7 @@
             "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
+            "color_scheme": "3",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-grand-prix-67-mercedes-560_f94455e6-414b-4213-9dae-fd731a09d549.jpg",
@@ -315,7 +245,7 @@
             "link_text": "Shop Seat Belts",
             "link_2": "",
             "link_text_2": "",
-            "color_scheme": "",
+            "color_scheme": "7",
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-center",
             "image": "shopify://shop_images/1296x450-retrobelt-site-link.jpg",
@@ -682,8 +612,7 @@
     }
   },
   "order": [
-    "slideshow_split_X6yYJb",
-    "slideshow_3b9V68",
+    "slideshow_split_WWnCkd",
     "slideshow_custom_gcH6jR",
     "advanced_content_T3red9",
     "rich_text_AntMzN",
