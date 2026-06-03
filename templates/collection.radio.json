@@ -38,10 +38,6 @@
     "main-collection": {
       "type": "main-collection",
       "blocks": {
-        "collection_description": {
-          "type": "collection_description",
-          "settings": {}
-        },
         "subcollections": {
           "type": "subcollections",
           "settings": {}
@@ -54,7 +50,6 @@
         }
       },
       "block_order": [
-        "collection_description",
         "subcollections",
         "product_grid"
       ],
