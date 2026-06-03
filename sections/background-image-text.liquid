@@ -2,14 +2,14 @@
   {%- render 'section.background-image-text' -%}
 {% else %}
   {% style %}
-    .index-section--flush {
+    #shopify-section-template--{{ section.id }}.index-section--flush {
       margin: 2rem;
     }
   {% endstyle %}
   {% render 'element.text', text: section.settings.title, classlist: 'element-text--heading-xl' %}  
 {% endif %}
 
-shopify-section-template--{{ section.id }}
+
 
 {% schema %}
 {
