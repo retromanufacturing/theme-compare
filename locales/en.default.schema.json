@@ -743,7 +743,7 @@
   },
   "custom": {
     "button_label": "Buttons with label",
-    "background_color_scheme": "Background",
+    "background_color_scheme": "Background color",
     "actions": {
       "enable_dropdown_icons": "Enable dropdown icons"
     },
