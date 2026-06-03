@@ -1,7 +1,7 @@
 {% if section.settings.image != blank and template.name == 'collection' %}
   {%- render 'section.background-image-text' -%}
 {% else %}
-  {% render 'element.text', text: section.settings.title %}  
+  {% render 'element.text', text: section.settings.title, classlist: 'element-text--heading-xl' %}  
 {% endif %}
 
 {% schema %}
