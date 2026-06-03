@@ -23,7 +23,7 @@
       "type": "background-image-text",
       "custom_css": [
         ".heading-md {font-family: impact; color: #fff;}",
-        ".accent-subtitle {color: #ba4444; font-size: 0.85em;}",
+        ".accent-subtitle {color: #ba4444; font-size: 0.95em;}",
         ".background-media-text__text {color: #fff; font-size: 1em; background: #000000; opacity: 90%;}",
         "@media screen and (min-width: 769px) {.background-media-text__text {width: 560px !important; }}"
       ],
