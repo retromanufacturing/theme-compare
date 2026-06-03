@@ -270,7 +270,6 @@
   },
   "custom": {
     "button_label": "Buttons with label",
-    "background_color_scheme": "Background"
   },
   "sections": {
     "countdown": {
