@@ -11,6 +11,7 @@
   "sections": {
     "collection-header": {
       "type": "collection-header",
+      "disabled": true,
       "settings": {
         "enable": true,
         "collection_image_enable": true,
@@ -18,30 +19,20 @@
         "parallax_direction": "top"
       }
     },
-    "promo-grid": {
-      "type": "promo-grid",
-      "blocks": {
-        "banner": {
-          "type": "banner",
-          "settings": {
-            "heading": "Banner <em>promotion</em>",
-            "text": "Add the details of your promotion",
-            "link": "",
-            "label": "Shop now",
-            "color_scheme": "1",
-            "width": "100"
-          }
-        }
-      },
-      "block_order": [
-        "banner"
-      ],
+    "background_image_text_dAT8Gw": {
+      "type": "background-image-text",
+      "name": "t:labels.large_image_with",
       "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": false,
-        "hide_block_images": true
+        "subtitle": "",
+        "title": "{{ collection.title }}",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "{{ collection.metafields.media.banner_image.value }}",
+        "layout": "left",
+        "height": 550,
+        "parallax": false,
+        "parallax_direction": "top"
       }
     },
     "main-collection": {
@@ -81,7 +72,7 @@
   },
   "order": [
     "collection-header",
-    "promo-grid",
+    "background_image_text_dAT8Gw",
     "main-collection",
     "recently-viewed"
   ]
