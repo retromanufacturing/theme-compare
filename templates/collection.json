@@ -35,7 +35,7 @@
         "button_link": "",
         "image": "{{ collection.metafields.media.banner_image.value }}",
         "layout": "left",
-        "height": 550,
+        "height": 450,
         "parallax": false,
         "parallax_direction": "top"
       }
