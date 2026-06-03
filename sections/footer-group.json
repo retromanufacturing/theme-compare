@@ -109,7 +109,7 @@
       ],
       "settings": {
         "color_scheme": "7",
-        "show_newsletter": true,
+        "show_newsletter": false,
         "newsletter_richtext": "<p><strong>Sign up for the latest news and product announcements!</strong></p>",
         "footer_main_menu": false,
         "show_copyright": true,
