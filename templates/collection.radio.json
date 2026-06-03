@@ -51,7 +51,7 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "grid_style": "small"
+            "grid_style": "large"
           }
         }
       },
@@ -68,6 +68,7 @@
     },
     "recently-viewed": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {}
     }
   },
