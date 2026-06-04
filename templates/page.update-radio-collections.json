@@ -164,12 +164,28 @@
     "promo_grid_R7iAnL": {
       "type": "promo-grid",
       "blocks": {
-        "collection_JN9yLq": {
+        "collection_eVptDm": {
+          "type": "collection",
+          "settings": {
+            "collection": "retrosound-liberty-radio",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "collection_9RFjnQ": {
           "type": "collection",
           "settings": {
             "collection": "",
             "link": "",
-            "width": "100"
+            "width": "33"
+          }
+        },
+        "collection_e97KXK": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "width": "33"
           }
         },
         "banner_HyiKKL": {
@@ -225,7 +241,9 @@
         }
       },
       "block_order": [
-        "collection_JN9yLq",
+        "collection_eVptDm",
+        "collection_9RFjnQ",
+        "collection_e97KXK",
         "banner_HyiKKL",
         "image_gHaRb4",
         "image_nJMJqX",
