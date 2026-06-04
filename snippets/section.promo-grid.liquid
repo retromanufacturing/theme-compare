@@ -1183,6 +1183,12 @@
                 {%- liquid
                   assign collection = collections[block.settings.collection]
 
+                  if block.settings.link != blank
+                    assign block_link = block.settings.link
+                  else
+                    assign block_link = collection.url
+                  endif
+
                   if block.settings.image != blank
                     assign block_image = block.settings.image
                   else
@@ -1196,7 +1202,7 @@
                   "
                 >
                   {%- if block.settings.collection != blank -%}
-                    <a href="{{ collection.url }}">
+                    <a href="{{ block_link }}">
                   {%- endif -%}
                   {%- if block.settings.image != blank -%}
                     {% if promo_grid_image_ratio %}
