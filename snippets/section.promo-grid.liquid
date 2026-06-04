@@ -1186,7 +1186,7 @@
                   if block.settings.image != blank
                     assign block_image = block.settings.image
                   else
-                    assign block_image = collection.featured_image
+                    assign block_image = collection.image | image_url
                   endif
                 -%}
                 {{ collection.featured_image }}--{{ block_image }}
