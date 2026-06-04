@@ -196,42 +196,51 @@
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
       <div class="toolbar__content">
+        {% for blocks in section.blocks %}
+          {% case block.type %}
+            {% when 'announcement' %}
+              {%- if text != blank -%}
+                {%- render 'element.marquee',
+                  classlist: 'toolbar__scrolling-text',
+                  slot: text,
+                  direction: direction,
+                  speed: speed,
+                  gap: 'md'
+                -%}
+              {%- else -%}
+                {%- render 'section.toolbar.announcement-bar' -%}
+              {%- endif -%}
+            {% when 'social' %}
+
+            {% when 'menu_link' %}
+
+          {% endcase %}
+        {% endfor %}
+
+        {% comment %}
 
 
-        {% comment %} {%- if text != blank -%}
-          {%- render 'element.marquee',
-            classlist: 'toolbar__scrolling-text',
-            slot: text,
-            direction: direction,
-            speed: speed,
-            gap: 'md'
-          -%}
-        {%- else -%}
-          {%- render 'section.toolbar.announcement-bar' -%}
-        {%- endif -%}
+          {%- if menu_link_list != blank -%}
+            {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
+          {%- endif -%}
 
-        {%- if menu_link_list != blank -%}
-          {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
-        {%- endif -%}
+          {%- if toolbar_social -%}
+            <div class="toolbar__item toolbar__item--social">
+              {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
+            </div>
+          {%- endif -%}
 
-        {%- if toolbar_social -%}
-          <div class="toolbar__item toolbar__item--social">
-            {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
-          </div>
-        {%- endif -%}
-
-        {%- if show_locale_selector or show_currency_selector -%}
-          <div class="toolbar__item toolbar__item--multi-selectors small--hide">
-            {%- render 'form.localization',
-              context: 'toolbar',
-              show_locale_selector: show_locale_selector,
-              show_currency_selector: show_currency_selector,
-              show_currency_flags: show_currency_flags
-            -%}
-          </div>
-        {%- endif -%} {% endcomment %}
-
-
+          {%- if show_locale_selector or show_currency_selector -%}
+            <div class="toolbar__item toolbar__item--multi-selectors small--hide">
+              {%- render 'form.localization',
+                context: 'toolbar',
+                show_locale_selector: show_locale_selector,
+                show_currency_selector: show_currency_selector,
+                show_currency_flags: show_currency_flags
+              -%}
+            </div>
+          {%- endif -%}
+        {% endcomment %}
       </div>
     </div>
   </div>
