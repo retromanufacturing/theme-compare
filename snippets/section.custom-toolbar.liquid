@@ -211,10 +211,11 @@
                 {%- render 'section.toolbar.announcement-bar' -%}
               {%- endif -%}
             {% when 'social' %}
-              {% assign toolbar__social = true %}
-              <div class="toolbar__item toolbar__item--social">
-                {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
-              </div>
+              {%- if toolbar_social -%}
+                <div class="toolbar__item toolbar__item--social">
+                  {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
+                </div>
+              {%- endif -%}
             {% when 'menu_link' %}
 
           {% endcase %}
@@ -225,9 +226,7 @@
             {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
           {%- endif -%}
 
-          {%- if toolbar_social -%}
 
-          {%- endif -%}
 
           {%- if show_locale_selector or show_currency_selector -%}
             <div class="toolbar__item toolbar__item--multi-selectors small--hide">
