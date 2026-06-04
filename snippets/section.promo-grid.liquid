@@ -1186,7 +1186,7 @@
                   if block.settings.image != blank
                     assign block_image = block.settings.image
                   else
-                    assign block_image = collection.image
+                    assign block_image = collection.image | img_url
                   endif
                 -%}
                 {{ collection.image }}--{{ collection.url }}
@@ -1195,10 +1195,8 @@
                     promo-grid__container
                     {% if promo_grid_image_ratio %} image-wrap{% endif %}
                   "
-                >
-                  {%- if block.settings.link -%}
-                    <a href="{{ block.settings.link }}">
-                  {%- endif -%}
+                > 
+                    <a href="{{ collection.url }}">  
                   {%- if block.settings.image != blank -%}
                     {% if promo_grid_image_ratio %}
                       {%- render 'element.image',
@@ -1222,10 +1220,8 @@
                     {% endif %}
                   {%- else -%}
                     {%- render 'element.placeholder', name: 'lifestyle-1' -%}
-                  {%- endif -%}
-                  {%- if block.settings.link -%}
+                  {%- endif -%}      
                     </a>
-                  {%- endif -%}
                 </div>
             {%- endcase -%}
           </div>
