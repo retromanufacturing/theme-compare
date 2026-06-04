@@ -25,6 +25,13 @@
             "richtext_mobile": ""
           }
         },
+        "announcement_wjTAPF": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
+            "richtext_mobile": ""
+          }
+        },
         "menu_link_G8w9Vr": {
           "type": "menu_link",
           "settings": {}
@@ -33,6 +40,7 @@
       "block_order": [
         "social_TMUnVq",
         "toolbar-1",
+        "announcement_wjTAPF",
         "menu_link_G8w9Vr"
       ],
       "settings": {
