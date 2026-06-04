@@ -64,6 +64,7 @@
         "toolbar-0",
         "toolbar-1"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "9",
         "announcement_center": true,
