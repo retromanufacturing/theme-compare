@@ -179,12 +179,13 @@
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
   assign announcement_center = section.settings.announcement_center
 -%}
-
+ {%- for block in section.blocks -%}test{{block.position }}
+  {%endfor %}
 <section>
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
       <div class="toolbar__content{% if announcement_center %} text-center{% endif %}">
-        {%- for block in section.blocks -%} {{block.position }}
+        {%- for block in section.blocks -%} 
           {%- case block.type -%}
             {%- when '@app' -%}
               {%- render block -%}
