@@ -215,7 +215,7 @@
               -%}
               {%- if menu_link_list != blank -%}
                 <div class="toolbar__item" {{ block.shopify_attributes }}>
-                  {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
+                  {%- render 'section.toolbar.menu-link-list', menu_link_list: block.settings.menu_link_list, wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
                 </div>
               {%- endif -%}
           {%- endcase -%}
