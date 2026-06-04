@@ -11,8 +11,8 @@
   "type": "header",
   "name": "t:labels.header_group",
   "sections": {
-    "toolbar": {
-      "type": "toolbar",
+    "custom-toolbar": {
+      "type": "custom-toolbar",
       "blocks": {
         "toolbar-0": {
           "type": "announcement",
@@ -42,8 +42,8 @@
         "show_currency_flags": true
       }
     },
-    "custom-toolbar": {
-      "type": "custom-toolbar",
+    "toolbar": {
+      "type": "toolbar",
       "blocks": {
         "toolbar-0": {
           "type": "announcement",
@@ -107,8 +107,8 @@
     }
   },
   "order": [
+    "custom-toolbar",
     "toolbar",
-    "header",
-    "custom-toolbar"
+    "header"
   ]
 }
