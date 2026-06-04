@@ -417,6 +417,19 @@
     }
   }
 
+    /* ======================= Custom Type: Collection ===================== */
+  .type-collection {
+    & .promo-grid__container {
+      background: none;
+    }
+
+    & img,
+    & a,
+    & .image-wrap {
+      width: 100%;
+    }
+  }
+
   /*================ Type: Product ================*/
   .type-product__wrapper {
     flex: 1 1 100%;
@@ -607,7 +620,7 @@
       }
 
       /*This min-width may need to change slightly depending on
-	    embedded video dimensions. Can do on a per-shop basis*/
+     embedded video dimensions. Can do on a per-shop basis*/
       @media screen and (min-width: 1140px) {
         width: 100%;
         height: 300%;
@@ -1165,6 +1178,44 @@
                       </div>
                     </div>
                   </div>
+                </div>
+              {%- when 'collection' -%}
+                <div
+                  class="
+                    promo-grid__container
+                    {% if promo_grid_image_ratio %} image-wrap{% endif %}
+                  "
+                >
+                  {%- if block.settings.link -%}
+                    <a href="{{ block.settings.link }}">
+                  {%- endif -%}
+                  {%- if block.settings.image != blank -%}
+                    {% if promo_grid_image_ratio %}
+                      {%- render 'element.image',
+                        img: block.settings.image,
+                        loading: loading,
+                        widths: '360, 540, 720, 900, 1080, 1600',
+                        sizeVariable: block.settings.width
+                      -%}
+                    {% else %}
+                      <div
+                        class="image-wrap"
+                        style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                      >
+                        {%- render 'element.image',
+                          img: block.settings.image,
+                          loading: loading,
+                          widths: '360, 540, 720, 900, 1080, 1600',
+                          sizeVariable: block.settings.width
+                        -%}
+                      </div>
+                    {% endif %}
+                  {%- else -%}
+                    {%- render 'element.placeholder', name: 'lifestyle-1' -%}
+                  {%- endif -%}
+                  {%- if block.settings.link -%}
+                    </a>
+                  {%- endif -%}
                 </div>
             {%- endcase -%}
           </div>
