@@ -371,7 +371,7 @@
         "banner_fHKeGW": {
           "type": "banner",
           "settings": {
-            "heading": "RetroSound® Radio Faces",
+            "heading": "<strong>RetroSound® Radio Motors [Feature Sets]</strong>",
             "text": "",
             "link": "",
             "label": "",
@@ -386,12 +386,12 @@
       "custom_css": [
         ".heading-md {text-align: left !important;}"
       ],
-      "name": "RetroSound® Radio Faces",
+      "name": "RetroSound® Radio Motors [Feature Sets]",
       "settings": {
         "full_width": false,
         "gutter_size": 20,
         "space_above": false,
-        "space_below": true,
+        "space_below": false,
         "hide_block_images": false
       }
     },
