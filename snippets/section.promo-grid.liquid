@@ -1195,8 +1195,10 @@
                     promo-grid__container
                     {% if promo_grid_image_ratio %} image-wrap{% endif %}
                   "
-                > 
-                    <a href="{{ collection.url }}">  
+                >
+                  {%- if block.settings.collection -%}
+                    <a href="{{ collection.url }}">
+                  {%- endif -%}
                   {%- if block.settings.image != blank -%}
                     {% if promo_grid_image_ratio %}
                       {%- render 'element.image',
@@ -1220,8 +1222,10 @@
                     {% endif %}
                   {%- else -%}
                     {%- render 'element.placeholder', name: 'lifestyle-1' -%}
-                  {%- endif -%}      
+                  {%- endif -%}
+                  {%- if block.settings.link -%}
                     </a>
+                  {%- endif -%}
                 </div>
             {%- endcase -%}
           </div>
