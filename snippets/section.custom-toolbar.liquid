@@ -217,7 +217,16 @@
                 </div>
               {%- endif -%}
             {% when 'menu_link' %}
-
+  {%- if show_locale_selector or show_currency_selector -%}
+            <div class="toolbar__item toolbar__item--multi-selectors small--hide">
+              {%- render 'form.localization',
+                context: 'toolbar',
+                show_locale_selector: show_locale_selector,
+                show_currency_selector: show_currency_selectfor,
+                show_currency_flags: show_currency_flags
+              -%}
+            </div>
+          {%- endif -%}
           {% endcase %}
         {% endfor %}
 
@@ -228,16 +237,7 @@
 
 
 
-          {%- if show_locale_selector or show_currency_selector -%}
-            <div class="toolbar__item toolbar__item--multi-selectors small--hide">
-              {%- render 'form.localization',
-                context: 'toolbar',
-                show_locale_selector: show_locale_selector,
-                show_currency_selector: show_currency_selector,
-                show_currency_flags: show_currency_flags
-              -%}
-            </div>
-          {%- endif -%}
+        
         {% endcomment %}
       </div>
     </div>
