@@ -431,6 +431,9 @@
       "block_order": [
         "liquid_xkBttM"
       ],
+      "custom_css": [
+        ".rs-motors-simple .rs-cta {color: #fff; text-decoration: none;}"
+      ],
       "name": "Custom content",
       "settings": {
         "full_width": true,
