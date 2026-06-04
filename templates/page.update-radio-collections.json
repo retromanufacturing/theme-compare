@@ -17,8 +17,8 @@
     "background_image_text_FEiGNP": {
       "type": "background-image-text",
       "custom_css": [
-        ".animation-contents {box-shadow: 0.25em -0.25em 1em rgba(2, 2, 2, 0.2); border: 0px solid; opacity: 50%;}",
-        "p.h3 {font-family: impact; color: #8c1828;}"
+        ".heading-md {font-family: impact; color: #8c1828; font-size: 1.25em;}",
+        ".background-media-text__text {box-shadow: 0.25em -0.25em 1em rgba(2, 2, 2, 0.2); border: 0px solid;}"
       ],
       "settings": {
         "subtitle": "",
@@ -29,7 +29,8 @@
         "image": "shopify://shop_images/Radio-Motors-And-Face-Domestic-update.jpg",
         "layout": "right",
         "height": 550,
-        "parallax": true
+        "parallax": true,
+        "parallax_direction": "top"
       }
     },
     "text_columns_Rdqf3M": {
