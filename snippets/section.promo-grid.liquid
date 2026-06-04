@@ -1182,6 +1182,7 @@
               {%- when 'collection' -%}
                 {%- liquid
                   assign collection = block.settings.collection
+
                 -%}
                 {{ collection.image }}--{{ collection.url }}
                 <div
@@ -1207,7 +1208,7 @@
                         style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
                       >
                         {%- render 'element.image',
-                          img: block.settings.image,
+                          img: collection.image,
                           loading: loading,
                           widths: '360, 540, 720, 900, 1080, 1600',
                           sizeVariable: block.settings.width
