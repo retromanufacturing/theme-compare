@@ -195,7 +195,7 @@
 <section>
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
-      <div class="toolbar__content">
+      <div class="toolbar__content"> {{section.blocks }}--{{section.id }}
         {% for blocks in section.blocks %}
           {% case block.type %}
             {% when 'announcement' %}
