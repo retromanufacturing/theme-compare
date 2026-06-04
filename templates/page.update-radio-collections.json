@@ -179,6 +179,7 @@
           "type": "collection",
           "settings": {
             "collection": "retrosound-liberty-radio",
+            "image": "shopify://shop_images/8x4-rm-tiles-liberty_fc8b25ae-ae88-4d2b-8a7d-0fe634bb92f7.jpg",
             "link": "",
             "width": "33"
           }
@@ -196,6 +197,7 @@
           "type": "collection",
           "settings": {
             "collection": "retroradio",
+            "image": "{{ block.settings.collection.image }}",
             "link": "",
             "width": "33"
           }
