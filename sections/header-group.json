@@ -18,30 +18,22 @@
           "type": "social",
           "settings": {}
         },
-        "menu_link_G8w9Vr": {
-          "type": "menu_link",
-          "settings": {}
-        },
-        "toolbar-0": {
-          "type": "announcement",
-          "settings": {
-            "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
-            "richtext_mobile": ""
-          }
-        },
         "toolbar-1": {
           "type": "announcement",
           "settings": {
             "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
             "richtext_mobile": ""
           }
+        },
+        "menu_link_G8w9Vr": {
+          "type": "menu_link",
+          "settings": {}
         }
       },
       "block_order": [
         "social_TMUnVq",
-        "menu_link_G8w9Vr",
-        "toolbar-0",
-        "toolbar-1"
+        "toolbar-1",
+        "menu_link_G8w9Vr"
       ],
       "settings": {
         "color_scheme": "9",
