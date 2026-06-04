@@ -398,29 +398,49 @@
         "collection_mxxYJR": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "width": "25"
+            "collection": "radios",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "33"
           }
         },
         "collection_dDQ6XD": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "width": "25"
+            "collection": "speakers",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "33"
           }
         },
         "collection_Jw3Q4x": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "width": "25"
+            "collection": "antennas",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "33"
           }
         },
         "collection_QGgbmy": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "width": "25"
+            "collection": "replacement-parts",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "33"
+          }
+        },
+        "collection_cyRWxb": {
+          "type": "collection",
+          "settings": {
+            "collection": "amps-subwoofers",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "33"
+          }
+        },
+        "collection_b89rbA": {
+          "type": "collection",
+          "settings": {
+            "collection": "kick-panels-speaker-modules",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "33"
           }
         }
       },
@@ -429,13 +449,15 @@
         "collection_mxxYJR",
         "collection_dDQ6XD",
         "collection_Jw3Q4x",
-        "collection_QGgbmy"
+        "collection_QGgbmy",
+        "collection_cyRWxb",
+        "collection_b89rbA"
       ],
       "name": "Popular Categories",
       "settings": {
         "full_width": false,
         "gutter_size": 20,
-        "space_above": true,
+        "space_above": false,
         "space_below": true,
         "hide_block_images": false
       }
@@ -448,7 +470,7 @@
           "settings": {
             "heading": "Shop By Make",
             "text": "",
-            "link": "",
+            "link": "shopify://pages/all-car-makes",
             "label": "View All",
             "color_scheme": "none",
             "width": "100"
@@ -457,28 +479,64 @@
         "collection_LK6AWQ": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "ford",
+            "image": "{{ block.settings.collection.image }}",
             "width": "25"
           }
         },
         "collection_DAbCAa": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "chevrolet",
+            "image": "{{ block.settings.collection.image }}",
             "width": "25"
           }
         },
         "collection_9YtTjx": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "pontiac-make",
+            "image": "{{ block.settings.collection.image }}",
             "width": "25"
           }
         },
         "collection_BUbKhR": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "dodge",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "25"
+          }
+        },
+        "collection_qRkR3J": {
+          "type": "collection",
+          "settings": {
+            "collection": "plymouth-make",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "25"
+          }
+        },
+        "collection_Cx4Y4L": {
+          "type": "collection",
+          "settings": {
+            "collection": "mercury-make",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "25"
+          }
+        },
+        "collection_GEcQXx": {
+          "type": "collection",
+          "settings": {
+            "collection": "volkswagen",
+            "image": "{{ block.settings.collection.image }}",
+            "width": "25"
+          }
+        },
+        "collection_TJJbyw": {
+          "type": "collection",
+          "settings": {
+            "collection": "mercedes-benz",
+            "image": "{{ block.settings.collection.image }}",
             "width": "25"
           }
         }
@@ -488,7 +546,11 @@
         "collection_LK6AWQ",
         "collection_DAbCAa",
         "collection_9YtTjx",
-        "collection_BUbKhR"
+        "collection_BUbKhR",
+        "collection_qRkR3J",
+        "collection_Cx4Y4L",
+        "collection_GEcQXx",
+        "collection_TJJbyw"
       ],
       "name": "Shop By Make",
       "settings": {
