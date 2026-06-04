@@ -233,6 +233,27 @@
         "space_below": true,
         "hide_block_images": false
       }
+    },
+    "advanced_content_jxUYDp": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_xkBttM": {
+          "type": "liquid",
+          "settings": {
+            "code": "<!-- Simple RetroSound Radio Motors (Basics + Link Out)\nUses provided placeholder image for all motors.\nPaste into a Shopify Custom Liquid / Custom HTML block.\n-->\n\n<style>\n  .rs-motors-simple {\n    max-width: 1300px;\n    margin: 0 auto;\n    padding: 22px 16px;\n  }\n\n  .rs-motors-simple .rs-head {\n    display: flex;\n    align-items: flex-end;\n    justify-content: space-between;\n    gap: 14px;\n    flex-wrap: wrap;\n    margin-bottom: 14px;\n  }\n\n  .rs-motors-simple .rs-title {\n    margin: 0;\n    font-size: clamp(1.35rem, 2vw, 1.85rem);\n    line-height: 1.2;\n  }\n\n  .rs-motors-simple .rs-intro {\n    margin: 8px 0 0 0;\n    font-size: 1rem;\n    line-height: 1.45;\n    opacity: 0.92;\n    max-width: 72ch;\n  }\n\n  .rs-motors-simple .rs-cta {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    gap: 8px;\n    padding: 10px 14px;\n    border-radius: 12px;\n    border: 1px solid rgba(0,0,0,0.18);\n    background: #111;\n    color: #fff;\n    text-decoration: none;\n    font-size: 0.95rem;\n    line-height: 1;\n    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;\n    white-space: nowrap;\n  }\n\n  .rs-motors-simple .rs-cta:hover {\n    transform: translateY(-1px);\n    box-shadow: 0 8px 18px rgba(0,0,0,0.10);\n    background: #000;\n  }\n\n  .rs-motors-simple .rs-grid {\n    display: grid;\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: 12px;\n    margin-top: 14px;\n  }\n\n  .rs-motors-simple .rs-card {\n    border: 1px solid rgba(0,0,0,0.12);\n    border-radius: 14px;\n    background: #fff;\n    overflow: hidden;\n    display: flex;\n    flex-direction: column;\n    min-height: 100%;\n  }\n\n  .rs-motors-simple .rs-img {\n    background: rgba(0,0,0,0.03);\n  }\n\n  .rs-motors-simple .rs-img img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n\n  .rs-motors-simple .rs-body {\n    padding: 12px 12px 14px;\n    display: flex;\n    flex-direction: column;\n    gap: 8px;\n    flex: 1;\n  }\n\n  .rs-motors-simple .rs-name-row {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 10px;\n    flex-wrap: wrap;\n  }\n\n  .rs-motors-simple .rs-name {\n    margin: 0;\n    font-size: 1.05rem;\n    line-height: 1.25;\n  }\n\n  .rs-motors-simple .rs-badge {\n    display: inline-flex;\n    align-items: center;\n    padding: 6px 10px;\n    border-radius: 999px;\n    border: 1px solid rgba(0,0,0,0.16);\n    background: rgba(0,0,0,0.02);\n    font-size: 0.78rem;\n    line-height: 1;\n    white-space: nowrap;\n  }\n\n  .rs-motors-simple .rs-desc {\n    margin: 0;\n    font-size: 0.95rem;\n    line-height: 1.45;\n    opacity: 0.92;\n  }\n\n  .rs-motors-simple .rs-foot {\n    margin-top: 10px;\n    font-size: 0.92rem;\n    line-height: 1.4;\n    opacity: 0.9;\n  }\n\n  .rs-motors-simple .rs-link {\n    color: inherit;\n    text-decoration: underline;\n    text-underline-offset: 3px;\n  }\n\n  @media (max-width: 900px) {\n    .rs-motors-simple .rs-grid {\n      grid-template-columns: 1fr;\n    }\n\n    /* Show original image aspect ratio on small screens (no crop) */\n    .rs-motors-simple .rs-img img {\n      height: auto;          /* remove fixed height */\n      max-height: 320px;     /* optional: keeps super-tall images from taking over */\n      object-fit: contain;   /* no cropping */\n    }\n  }\n</style>\n\n<section class=\"rs-motors-simple\" aria-label=\"RetroSound Radio Motors basics\">\n  <div class=\"rs-head\">\n    <div>\n      <h2 class=\"rs-title\">RetroSound Radio Motors</h2>\n      <p class=\"rs-intro\">\n        Motors determine the features of your RetroSound radio. All motors include Bluetooth.\n        Step up for more power, more connectivity, and advanced capability.\n      </p>\n    </div>\n\n    <a class=\"rs-cta\"\n       href=\"https://www.retromanufacturing.com/pages/retrosound-radio-motors\"\n       aria-label=\"Learn more about RetroSound Radio Motors\">\n      Motor Details ›\n    </a>\n  </div>\n\n  <div class=\"rs-grid\">\n    <!-- Motor 1B -->\n    <article class=\"rs-card\">\n      <div class=\"rs-img\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/Motor-1B-fullwidth-1100.jpg?v=1766180139\"\n          alt=\"RetroSound Motor 1B radio motor\">\n      </div>\n\n      <div class=\"rs-body\">\n        <div class=\"rs-name-row\">\n          <h3 class=\"rs-name\">Motor 1B</h3>\n          <span class=\"rs-badge\">Essential</span>\n        </div>\n        <p class=\"rs-desc\">\n          Simple Bluetooth setup with a single AUX input and white display illumination.\n          Ideal for factory or lightly upgraded speakers.\n        </p>\n      </div>\n    </article>\n\n    <!-- Motor 2B -->\n    <article class=\"rs-card\">\n      <div class=\"rs-img\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/Motor-2B-fullwidth-1100.jpg?v=1766180978\"\n          alt=\"RetroSound Motor 2B radio motor\">\n      </div>\n      <div class=\"rs-body\">\n        <div class=\"rs-name-row\">\n          <h3 class=\"rs-name\">Motor 2B</h3>\n          <span class=\"rs-badge\">Most Popular</span>\n        </div>\n        <p class=\"rs-desc\">\n          Adds a 300 watt internal amplifier, USB connectivity, dual RCA pre-outs,\n          a dedicated subwoofer output, and multi-color display.\n        </p>\n      </div>\n    </article>\n\n    <!-- Motor 4HD -->\n    <article class=\"rs-card\">\n      <div class=\"rs-img\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/Motor-4HD-fullwidth-1100.jpg?v=1766181841\"\n          alt=\"RetroSound Motor 4HD radio motor\">\n      </div>\n      <div class=\"rs-body\">\n        <div class=\"rs-name-row\">\n          <h3 class=\"rs-name\">Motor 4HD</h3>\n          <span class=\"rs-badge\">Flagship</span>\n        </div>\n        <p class=\"rs-desc\">\n          The most advanced platform with RetroSound Radio App support,\n          SiriusXM readiness, and dual USB ports for expanded control.\n        </p>\n      </div>\n    </article>\n  </div>\n\n  <p class=\"rs-foot\">\n    Want the full breakdown?\n    <a class=\"rs-link\"\n       href=\"https://www.retromanufacturing.com/pages/retrosound-radio-motors\">\n       Visit the Motor Details page\n    </a>.\n  </p>\n</section>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_xkBttM"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
     }
   },
   "order": [
@@ -240,6 +261,7 @@
     "background_image_text_UDnxCF",
     "text_columns_Rdqf3M",
     "promo_grid_A6gW6e",
-    "promo_grid_UYK6Le"
+    "promo_grid_UYK6Le",
+    "advanced_content_jxUYDp"
   ]
 }
