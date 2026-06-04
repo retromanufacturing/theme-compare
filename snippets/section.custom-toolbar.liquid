@@ -199,8 +199,6 @@
               <div class="toolbar__item toolbar__item--social" {{ block.shopify_attributes }}>
                 {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
               </div>
-
-            {%- when 'menu_link' -%}
               {%- if show_locale_selector or show_currency_selector -%}
                 <div class="toolbar__item toolbar__item--multi-selectors small--hide" {{ block.shopify_attributes }}>
                   {%- render 'form.localization',
@@ -211,7 +209,7 @@
                   -%}
                 </div>
               {%- endif -%}
-
+            {%- when 'menu_link' -%}
           {%- endcase -%}
         {%- endfor -%}
       </div>
