@@ -42,6 +42,37 @@
         "show_currency_flags": true
       }
     },
+    "custom-toolbar": {
+      "type": "custom-toolbar",
+      "blocks": {
+        "toolbar-0": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
+            "richtext_mobile": ""
+          }
+        },
+        "toolbar-1": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
+            "richtext_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "toolbar-0",
+        "toolbar-1"
+      ],
+      "settings": {
+        "color_scheme": "9",
+        "announcement_center": true,
+        "toolbar_social": true,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "show_currency_flags": true
+      }
+    },
     "header": {
       "type": "header",
       "blocks": {
@@ -77,6 +108,7 @@
   },
   "order": [
     "toolbar",
-    "header"
+    "header",
+    "custom-toolbar"
   ]
 }
