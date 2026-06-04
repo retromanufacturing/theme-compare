@@ -31,7 +31,6 @@
         },
         "toolbar-1": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
             "richtext_mobile": ""
