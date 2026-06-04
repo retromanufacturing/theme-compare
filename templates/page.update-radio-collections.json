@@ -168,15 +168,17 @@
           "type": "collection",
           "settings": {
             "collection": "retrosound-liberty-radio",
-            "link": "",
+            "image": "{{ block.settings.collection.metafields.media.banner_image.value }}",
+            "link": "{{ block.settings.collection.url }}",
             "width": "33"
           }
         },
-        "collection_9RFjnQ": {
+        "collection_He4MWx": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "link": "",
+            "collection": "retrosound-traffic-radio",
+            "image": "{{ block.settings.collection.metafields.media.banner_image.value }}",
+            "link": "{{ block.settings.collection.url }}",
             "width": "33"
           }
         },
@@ -242,7 +244,7 @@
       },
       "block_order": [
         "collection_eVptDm",
-        "collection_9RFjnQ",
+        "collection_He4MWx",
         "collection_e97KXK",
         "banner_HyiKKL",
         "image_gHaRb4",
