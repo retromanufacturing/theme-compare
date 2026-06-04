@@ -28,7 +28,7 @@
         "announcement_wjTAPF": {
           "type": "announcement",
           "settings": {
-            "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
+            "richtext": "<p>This is a test</p>",
             "richtext_mobile": ""
           }
         },
