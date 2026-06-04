@@ -152,6 +152,9 @@
         "collection_h4tECY",
         "collection_AyVKLM"
       ],
+      "custom_css": [
+        ".heading-md{text-align: left !important;}"
+      ],
       "name": "DIN Solutions Single DIN Radio Faces",
       "settings": {
         "full_width": false,
