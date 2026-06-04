@@ -381,6 +381,28 @@
         "divider": false
       }
     },
+    "hero_video_iJjrRf": {
+      "type": "hero-video",
+      "custom_css": [
+        ".hero--padded {margin-top: 15px;}",
+        ".hero__text-shadow {display: none;}"
+      ],
+      "name": "t:labels.video_hero",
+      "settings": {
+        "full_width": true,
+        "title": "",
+        "title_size": 40,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "color_accent": "#fff",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://youtu.be/04qIdPbKWSI",
+        "overlay_opacity": 0,
+        "height": 620,
+        "height_mobile": 250
+      }
+    },
     "promo_grid_CiVJpa": {
       "type": "promo-grid",
       "blocks": {
@@ -457,7 +479,7 @@
       "settings": {
         "full_width": false,
         "gutter_size": 20,
-        "space_above": false,
+        "space_above": true,
         "space_below": true,
         "hide_block_images": false
       }
@@ -559,28 +581,6 @@
         "space_above": true,
         "space_below": true,
         "hide_block_images": false
-      }
-    },
-    "hero_video_iJjrRf": {
-      "type": "hero-video",
-      "custom_css": [
-        ".hero--padded {margin-top: 15px;}",
-        ".hero__text-shadow {display: none;}"
-      ],
-      "name": "t:labels.video_hero",
-      "settings": {
-        "full_width": true,
-        "title": "",
-        "title_size": 40,
-        "subheading": "",
-        "link_text": "",
-        "link": "",
-        "color_accent": "#fff",
-        "text_align": "vertical-center horizontal-center",
-        "video_url": "https://youtu.be/04qIdPbKWSI",
-        "overlay_opacity": 0,
-        "height": 620,
-        "height_mobile": 250
       }
     },
     "blog_posts_xYaJ84": {
