@@ -211,6 +211,7 @@
                 {%- render 'section.toolbar.announcement-bar' -%}
               {%- endif -%}
             {% when 'social' %}
+              {% assign toolbar__social = true %}
               <div class="toolbar__item toolbar__item--social">
                 {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
               </div>
