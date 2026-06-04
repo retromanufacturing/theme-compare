@@ -178,7 +178,7 @@
         "image_PArayL": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-liberty_fc8b25ae-ae88-4d2b-8a7d-0fe634bb92f7.jpg",
+            "image": "shopify://shop_images/8x4-rm-tiles-newport.jpg",
             "link": "",
             "width": "33"
           }
@@ -186,31 +186,7 @@
         "image_LBKHJJ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-traffic_c512edf6-ddb7-476a-90f6-a215fbfcf786.jpg",
-            "link": "",
-            "width": "33"
-          }
-        },
-        "image_yPjr8H": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-monza_ef57a0aa-2e8e-4c04-bae3-0b3cdd9a24f7.jpg",
-            "link": "",
-            "width": "33"
-          }
-        },
-        "image_xajGwC": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-grand-prix_d89962bf-6904-415f-9d71-f65266e656ae.jpg",
-            "link": "",
-            "width": "33"
-          }
-        },
-        "image_kPV3Yg": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-europa_cd44e29d-d695-454d-bb47-8933bec39820.jpg",
+            "image": "shopify://shop_images/8x4-rm-tiles-newyork.jpg",
             "link": "",
             "width": "33"
           }
@@ -219,10 +195,7 @@
       "block_order": [
         "banner_eKPqty",
         "image_PArayL",
-        "image_LBKHJJ",
-        "image_yPjr8H",
-        "image_xajGwC",
-        "image_kPV3Yg"
+        "image_LBKHJJ"
       ],
       "name": "RetroSound® DIN 1.5 Specialty Radio Faces",
       "settings": {
