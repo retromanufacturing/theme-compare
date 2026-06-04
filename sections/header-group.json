@@ -16,7 +16,16 @@
       "blocks": {
         "social_TMUnVq": {
           "type": "social",
+          "disabled": true,
           "settings": {}
+        },
+        "multi_selector_9c8yfi": {
+          "type": "multi_selector",
+          "settings": {
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
         },
         "toolbar-1": {
           "type": "announcement",
@@ -34,16 +43,13 @@
       },
       "block_order": [
         "social_TMUnVq",
+        "multi_selector_9c8yfi",
         "toolbar-1",
         "menu_link_G8w9Vr"
       ],
       "settings": {
         "color_scheme": "9",
-        "announcement_center": true,
-        "toolbar_social": true,
-        "show_locale_selector": true,
-        "show_currency_selector": true,
-        "show_currency_flags": true
+        "announcement_center": true
       }
     },
     "toolbar": {
