@@ -208,7 +208,7 @@
                 assign show_locale_selector = show_locale_selector | default: block.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
                 assign show_currency_selector = show_currency_selector | default: block.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
                 assign show_currency_flags = show_currency_flags | default: block.settings.show_currency_flags, allow_false: true | default: true, allow_false: true
-              -%}
+              -%} {{block.position }}
               {%- if show_locale_selector or show_currency_selector -%}
                 <div class="toolbar__item toolbar__item--multi-selectors small--hide" {{ block.shopify_attributes }}>
                   {%- render 'form.localization',
