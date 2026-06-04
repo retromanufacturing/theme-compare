@@ -187,7 +187,7 @@
           "type": "collection",
           "settings": {
             "collection": "retrosound-traffic-radio",
-            "image": "{{ block.settings.collection.metafields.media.banner_image.value }}",
+            "image": "shopify://shop_images/8x4-rm-tiles-traffic_c512edf6-ddb7-476a-90f6-a215fbfcf786.jpg",
             "width": "33"
           }
         },
@@ -195,47 +195,23 @@
           "type": "collection",
           "settings": {
             "collection": "retroradio",
-            "image": "{{ block.settings.collection.image }}",
-            "width": "33"
-          }
-        },
-        "image_gHaRb4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-liberty_fc8b25ae-ae88-4d2b-8a7d-0fe634bb92f7.jpg",
-            "link": "",
-            "width": "33"
-          }
-        },
-        "image_nJMJqX": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-traffic_c512edf6-ddb7-476a-90f6-a215fbfcf786.jpg",
-            "link": "",
-            "width": "33"
-          }
-        },
-        "image_9Yp6dB": {
-          "type": "image",
-          "settings": {
             "image": "shopify://shop_images/8x4-rm-tiles-monza_ef57a0aa-2e8e-4c04-bae3-0b3cdd9a24f7.jpg",
-            "link": "",
             "width": "33"
           }
         },
-        "image_7wdehL": {
-          "type": "image",
+        "collection_h4tECY": {
+          "type": "collection",
           "settings": {
+            "collection": "retrosound-grand-prix-radio",
             "image": "shopify://shop_images/8x4-rm-tiles-grand-prix_d89962bf-6904-415f-9d71-f65266e656ae.jpg",
-            "link": "",
             "width": "33"
           }
         },
-        "image_ajiL7h": {
-          "type": "image",
+        "collection_AyVKLM": {
+          "type": "collection",
           "settings": {
+            "collection": "retrosound-europa-radio",
             "image": "shopify://shop_images/8x4-rm-tiles-europa_cd44e29d-d695-454d-bb47-8933bec39820.jpg",
-            "link": "",
             "width": "33"
           }
         }
@@ -245,11 +221,8 @@
         "collection_eVptDm",
         "collection_He4MWx",
         "collection_e97KXK",
-        "image_gHaRb4",
-        "image_nJMJqX",
-        "image_9Yp6dB",
-        "image_7wdehL",
-        "image_ajiL7h"
+        "collection_h4tECY",
+        "collection_AyVKLM"
       ],
       "name": "DIN Solutions Single DIN Radio Faces",
       "settings": {
