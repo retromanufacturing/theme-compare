@@ -1181,7 +1181,7 @@
                 </div>
               {%- when 'collection' -%}
                 {%- liquid
-                  assign collection = collection[block.settings.collection.handle]
+                  assign collection = collections[block.settings.collection]
 
                   if block.settings.image != blank
                     assign block_image = block.settings.image
