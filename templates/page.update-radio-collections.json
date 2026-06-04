@@ -178,27 +178,27 @@
             "width": "100"
           }
         },
-        "image_PArayL": {
-          "type": "image",
+        "collection_FfqxKr": {
+          "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-newport.jpg",
-            "link": "",
+            "collection": "retrosound-newport-radio",
+            "image": "{{ block.settings.collection.image }}",
             "width": "33"
           }
         },
-        "image_LBKHJJ": {
-          "type": "image",
+        "collection_PM6dkX": {
+          "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/8x4-rm-tiles-newyork.jpg",
-            "link": "",
+            "collection": "new-york",
+            "image": "{{ block.settings.collection.image }}",
             "width": "33"
           }
         }
       },
       "block_order": [
         "banner_eKPqty",
-        "image_PArayL",
-        "image_LBKHJJ"
+        "collection_FfqxKr",
+        "collection_PM6dkX"
       ],
       "name": "RetroSound® DIN 1.5 Specialty Radio Faces",
       "settings": {
