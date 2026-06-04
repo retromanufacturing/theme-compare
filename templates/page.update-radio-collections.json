@@ -164,12 +164,22 @@
     "promo_grid_R7iAnL": {
       "type": "promo-grid",
       "blocks": {
+        "banner_HyiKKL": {
+          "type": "banner",
+          "settings": {
+            "heading": "DIN Solutions Single DIN Radio Faces",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
         "collection_eVptDm": {
           "type": "collection",
           "settings": {
             "collection": "retrosound-liberty-radio",
-            "image": "{{ block.settings.collection.metafields.media.banner_image.value }}",
-            "link": "{{ block.settings.collection.url }}",
+            "link": "",
             "width": "33"
           }
         },
@@ -188,17 +198,6 @@
             "collection": "",
             "link": "",
             "width": "33"
-          }
-        },
-        "banner_HyiKKL": {
-          "type": "banner",
-          "settings": {
-            "heading": "DIN Solutions Single DIN Radio Faces",
-            "text": "",
-            "link": "",
-            "label": "",
-            "color_scheme": "none",
-            "width": "100"
           }
         },
         "image_gHaRb4": {
@@ -243,10 +242,10 @@
         }
       },
       "block_order": [
+        "banner_HyiKKL",
         "collection_eVptDm",
         "collection_He4MWx",
         "collection_e97KXK",
-        "banner_HyiKKL",
         "image_gHaRb4",
         "image_nJMJqX",
         "image_9Yp6dB",
