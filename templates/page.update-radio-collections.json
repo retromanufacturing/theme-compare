@@ -108,7 +108,8 @@
           "settings": {
             "collection": "retrosound-liberty-radio",
             "image": "shopify://shop_images/8x4-rm-tiles-liberty_fc8b25ae-ae88-4d2b-8a7d-0fe634bb92f7.jpg",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_He4MWx": {
@@ -116,7 +117,8 @@
           "settings": {
             "collection": "retrosound-traffic-radio",
             "image": "shopify://shop_images/8x4-rm-tiles-traffic_c512edf6-ddb7-476a-90f6-a215fbfcf786.jpg",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_e97KXK": {
@@ -124,7 +126,8 @@
           "settings": {
             "collection": "retroradio",
             "image": "shopify://shop_images/8x4-rm-tiles-monza_ef57a0aa-2e8e-4c04-bae3-0b3cdd9a24f7.jpg",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_h4tECY": {
@@ -132,7 +135,8 @@
           "settings": {
             "collection": "retrosound-grand-prix-radio",
             "image": "shopify://shop_images/8x4-rm-tiles-grand-prix_d89962bf-6904-415f-9d71-f65266e656ae.jpg",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_AyVKLM": {
@@ -140,7 +144,8 @@
           "settings": {
             "collection": "retrosound-europa-radio",
             "image": "shopify://shop_images/8x4-rm-tiles-europa_cd44e29d-d695-454d-bb47-8933bec39820.jpg",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         }
       },
@@ -183,7 +188,8 @@
           "settings": {
             "collection": "retrosound-newport-radio",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_PM6dkX": {
@@ -191,7 +197,8 @@
           "settings": {
             "collection": "new-york",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         }
       },
@@ -228,7 +235,8 @@
           "settings": {
             "collection": "retroradio",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_Mtq9nj": {
@@ -236,7 +244,8 @@
           "settings": {
             "collection": "apache",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_FdJAk7": {
@@ -244,7 +253,8 @@
           "settings": {
             "collection": "daytona",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_LczBcE": {
@@ -252,7 +262,8 @@
           "settings": {
             "collection": "detroit",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_qUcExn": {
@@ -260,7 +271,8 @@
           "settings": {
             "collection": "huntington",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_L8LAHK": {
@@ -268,7 +280,8 @@
           "settings": {
             "collection": "monterey",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_PYezM9": {
@@ -276,7 +289,8 @@
           "settings": {
             "collection": "santa-cruz",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_8eqGCL": {
@@ -284,7 +298,8 @@
           "settings": {
             "collection": "redondo",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_wfXh6a": {
@@ -292,7 +307,8 @@
           "settings": {
             "collection": "wonderbar",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_R9A7LB": {
@@ -300,7 +316,8 @@
           "settings": {
             "collection": "retrosound-redondo-rs",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_gwRdGj": {
@@ -308,7 +325,8 @@
           "settings": {
             "collection": "wonder-bar-iii",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_9a8BYK": {
@@ -316,7 +334,8 @@
           "settings": {
             "collection": "retrosound-denver-radio",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_AAD7X4": {
@@ -324,7 +343,8 @@
           "settings": {
             "collection": "retrosound-dallas-radio",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_yhEid9": {
@@ -332,7 +352,8 @@
           "settings": {
             "collection": "build-your-own-radio",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": "shopify://products/retroradio-build-your-own-radio"
           }
         }
       },
