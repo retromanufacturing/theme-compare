@@ -14,8 +14,13 @@
     "custom-toolbar": {
       "type": "custom-toolbar",
       "blocks": {
+        "menu_link_G8w9Vr": {
+          "type": "menu_link",
+          "settings": {}
+        },
         "toolbar-0": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
             "richtext_mobile": ""
@@ -23,6 +28,7 @@
         },
         "toolbar-1": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>",
             "richtext_mobile": ""
@@ -30,6 +36,7 @@
         }
       },
       "block_order": [
+        "menu_link_G8w9Vr",
         "toolbar-0",
         "toolbar-1"
       ],

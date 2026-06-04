@@ -196,7 +196,9 @@
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
       <div class="toolbar__content">
-        {%- if text != blank -%}
+
+
+        {% comment %} {%- if text != blank -%}
           {%- render 'element.marquee',
             classlist: 'toolbar__scrolling-text',
             slot: text,
@@ -227,7 +229,9 @@
               show_currency_flags: show_currency_flags
             -%}
           </div>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
+
+
       </div>
     </div>
   </div>
