@@ -161,6 +161,87 @@
         "hide_block_images": false
       }
     },
+    "promo_grid_R7iAnL": {
+      "type": "promo-grid",
+      "blocks": {
+        "collection_JN9yLq": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "link": "",
+            "width": "100"
+          }
+        },
+        "banner_HyiKKL": {
+          "type": "banner",
+          "settings": {
+            "heading": "DIN Solutions Single DIN Radio Faces",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
+        "image_gHaRb4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8x4-rm-tiles-liberty_fc8b25ae-ae88-4d2b-8a7d-0fe634bb92f7.jpg",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "image_nJMJqX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8x4-rm-tiles-traffic_c512edf6-ddb7-476a-90f6-a215fbfcf786.jpg",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "image_9Yp6dB": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8x4-rm-tiles-monza_ef57a0aa-2e8e-4c04-bae3-0b3cdd9a24f7.jpg",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "image_7wdehL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8x4-rm-tiles-grand-prix_d89962bf-6904-415f-9d71-f65266e656ae.jpg",
+            "link": "",
+            "width": "33"
+          }
+        },
+        "image_ajiL7h": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/8x4-rm-tiles-europa_cd44e29d-d695-454d-bb47-8933bec39820.jpg",
+            "link": "",
+            "width": "33"
+          }
+        }
+      },
+      "block_order": [
+        "collection_JN9yLq",
+        "banner_HyiKKL",
+        "image_gHaRb4",
+        "image_nJMJqX",
+        "image_9Yp6dB",
+        "image_7wdehL",
+        "image_ajiL7h"
+      ],
+      "name": "DIN Solutions Single DIN Radio Faces",
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": true,
+        "hide_block_images": false
+      }
+    },
     "promo_grid_UYK6Le": {
       "type": "promo-grid",
       "blocks": {
@@ -233,6 +314,7 @@
     "background_image_text_FEiGNP",
     "text_columns_Rdqf3M",
     "promo_grid_A6gW6e",
+    "promo_grid_R7iAnL",
     "promo_grid_UYK6Le",
     "advanced_content_jxUYDp"
   ]
