@@ -3,18 +3,13 @@
 
   Top toolbar with language, currency selectors, and social links.
 
-  @param {string} [text] - Text to display
-  @param {string} [direction] - ('normal'|'reverse') Scroll direction
-  @param {number} [speed] - Marquee scroll speed (1-10)
-  @param {object} [menu_link_list] - Menu link list to display
   @param {boolean} [show_locale_selector] - Show language selector
   @param {boolean} [show_currency_selector] - Show currency selector
   @param {boolean} [show_currency_flags] - Show currency flags
-  @param {boolean} [toolbar_social] - Show social icons
-  @param {string} [color_scheme] - ('none'|'1'|'2'|'3') Color scheme
+  @param {string} [color_scheme] - Color scheme
 
   @example
-  {% render 'section.toolbar', show_currency_selector: true, toolbar_social: true %}
+  {% render 'section.custom-toolbar', show_currency_selector: true %}
 {% enddoc %}
 
 {% stylesheet %}
@@ -181,63 +176,44 @@
 {% endstylesheet %}
 
 {%- liquid
-  assign text = text | default: section.settings.text
-  assign direction = direction | default: section.settings.direction
-  assign speed = speed | default: section.settings.speed
-  assign menu_link_list = menu_link_list | default: section.settings.menu_link_list
   assign show_locale_selector = show_locale_selector | default: section.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
   assign show_currency_selector = show_currency_selector | default: section.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
   assign show_currency_flags = show_currency_flags | default: section.settings.show_currency_flags, allow_false: true | default: true, allow_false: true
-  assign toolbar_social = toolbar_social | default: section.settings.toolbar_social, allow_false: true | default: true, allow_false: true
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
+  assign announcement_center = section.settings.announcement_center
 -%}
+
 <section>
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
-      <div class="toolbar__content">
-        {% for blocks in section.blocks %}
-          {% case block.type %}
-            {% when 'announcement' %}
-              {%- if text != blank -%}
-                {%- render 'element.marquee',
-                  classlist: 'toolbar__scrolling-text',
-                  slot: text,
-                  direction: direction,
-                  speed: speed,
-                  gap: 'md'
-                -%}
-              {%- else -%}
-                {%- render 'section.toolbar.announcement-bar' -%}
-              {%- endif -%}
-            {% when 'social' %}
-              {%- if toolbar_social -%}
-                <div class="toolbar__item toolbar__item--social">
-                  {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
+      <div class="toolbar__content{% if announcement_center %} text-center{% endif %}">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {%- render block -%}
+
+            {%- when 'announcement' -%}
+              {%- render 'section.toolbar.announcement-bar', block: block -%}
+
+            {%- when 'social' -%}
+              <div class="toolbar__item toolbar__item--social" {{ block.shopify_attributes }}>
+                {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
+              </div>
+
+            {%- when 'menu_link' -%}
+              {%- if show_locale_selector or show_currency_selector -%}
+                <div class="toolbar__item toolbar__item--multi-selectors small--hide" {{ block.shopify_attributes }}>
+                  {%- render 'form.localization',
+                    context: 'toolbar',
+                    show_locale_selector: show_locale_selector,
+                    show_currency_selector: show_currency_selector,
+                    show_currency_flags: show_currency_flags
+                  -%}
                 </div>
               {%- endif -%}
-            {% when 'menu_link' %}
-  {%- if show_locale_selector or show_currency_selector -%}
-            <div class="toolbar__item toolbar__item--multi-selectors small--hide">
-              {%- render 'form.localization',
-                context: 'toolbar',
-                show_locale_selector: show_locale_selector,
-                show_currency_selector: show_currency_selectfor,
-                show_currency_flags: show_currency_flags
-              -%}
-            </div>
-          {%- endif -%}
-          {% endcase %}
-        {% endfor %}
 
-        {% comment %}
-          {%- if menu_link_list != blank -%}
-            {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
-          {%- endif -%}
-
-
-
-        
-        {% endcomment %}
+          {%- endcase -%}
+        {%- endfor -%}
       </div>
     </div>
   </div>
