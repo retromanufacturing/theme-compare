@@ -214,7 +214,9 @@
                 assign menu_link_list = block.settings.menu_link_list
               -%}
               {%- if menu_link_list != blank -%}
-                {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
+                <div class="toolbar__item " {{ block.shopify_attributes }}>
+                  {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
+                </div>
               {%- endif -%}
           {%- endcase -%}
         {%- endfor -%}
