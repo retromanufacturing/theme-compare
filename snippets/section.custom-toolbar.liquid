@@ -191,11 +191,11 @@
   assign toolbar_social = toolbar_social | default: section.settings.toolbar_social, allow_false: true | default: true, allow_false: true
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
 -%}
-{{section.blocks }}--{{section.id }}
+{{ section.blocks }}--{{ section.id }}
 <section>
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
-      <div class="toolbar__content"> 
+      <div class="toolbar__content">
         {% for blocks in section.blocks %}
           {% case block.type %}
             {% when 'announcement' %}
@@ -211,23 +211,21 @@
                 {%- render 'section.toolbar.announcement-bar' -%}
               {%- endif -%}
             {% when 'social' %}
-
+              <div class="toolbar__item toolbar__item--social">
+                {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
+              </div>
             {% when 'menu_link' %}
 
           {% endcase %}
         {% endfor %}
 
         {% comment %}
-
-
           {%- if menu_link_list != blank -%}
             {%- render 'section.toolbar.menu-link-list', wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
           {%- endif -%}
 
           {%- if toolbar_social -%}
-            <div class="toolbar__item toolbar__item--social">
-              {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
-            </div>
+
           {%- endif -%}
 
           {%- if show_locale_selector or show_currency_selector -%}
