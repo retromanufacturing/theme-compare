@@ -27,7 +27,9 @@
         },
         "menu_link_G8w9Vr": {
           "type": "menu_link",
-          "settings": {}
+          "settings": {
+            "menu_link_list": "product-menu"
+          }
         }
       },
       "block_order": [
