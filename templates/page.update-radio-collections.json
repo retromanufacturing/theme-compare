@@ -375,7 +375,7 @@
         "collection_yhEid9"
       ],
       "custom_css": [
-        ".heading-md {text-align: left !important;}"
+        ".heading-md {/* font-size: 42px; text-align: right !important; */}"
       ],
       "name": "RetroSound® Radio Faces",
       "settings": {
