@@ -1183,6 +1183,11 @@
                 {%- liquid
                   assign collection = block.settings.collection
 
+                  if block.settings.image != blank
+                    assign block_image = block.settings.image
+                  else
+                    assign block_image = collection.image
+                  endif
                 -%}
                 {{ collection.image }}--{{ collection.url }}
                 <div
@@ -1197,7 +1202,7 @@
                   {%- if block.settings.image != blank -%}
                     {% if promo_grid_image_ratio %}
                       {%- render 'element.image',
-                        img: block.settings.image,
+                        img: block_image,
                         loading: loading,
                         widths: '360, 540, 720, 900, 1080, 1600',
                         sizeVariable: block.settings.width
@@ -1208,7 +1213,7 @@
                         style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
                       >
                         {%- render 'element.image',
-                          img: collection.image,
+                          img: block_image,
                           loading: loading,
                           widths: '360, 540, 720, 900, 1080, 1600',
                           sizeVariable: block.settings.width
