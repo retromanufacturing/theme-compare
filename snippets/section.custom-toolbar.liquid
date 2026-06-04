@@ -176,9 +176,6 @@
 {% endstylesheet %}
 
 {%- liquid
-  assign show_locale_selector = show_locale_selector | default: section.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
-  assign show_currency_selector = show_currency_selector | default: section.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
-  assign show_currency_flags = show_currency_flags | default: section.settings.show_currency_flags, allow_false: true | default: true, allow_false: true
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
   assign announcement_center = section.settings.announcement_center
 -%}
@@ -191,14 +188,27 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {%- render block -%}
-
             {%- when 'announcement' -%}
               {%- render 'section.toolbar.announcement-bar', block: block -%}
-
             {%- when 'social' -%}
               <div class="toolbar__item toolbar__item--social" {{ block.shopify_attributes }}>
                 {%- render 'social.icons', wrapper_class: 'inline-list toolbar__social' -%}
               </div>
+            {%- when 'menu_link' -%}
+              {%- if block.settings.menu_link_list != blank -%}
+                <div class="toolbar__item toolbar__menu-link-list" {{ block.shopify_attributes }}>
+                  {%- render 'section.toolbar.menu-link-list',
+                    menu_link_list: block.settings.menu_link_list,
+                    wrapper_class: 'toolbar__menu-link-list no-bullets'
+                  -%}
+                </div>
+              {%- endif -%}
+            {%- when 'multi_selector' -%}
+              {%- liquid
+                assign show_locale_selector = show_locale_selector | default: block.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
+                assign show_currency_selector = show_currency_selector | default: block.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
+                assign show_currency_flags = show_currency_flags | default: block.settings.show_currency_flags, allow_false: true | default: true, allow_false: true
+              -%}
               {%- if show_locale_selector or show_currency_selector -%}
                 <div class="toolbar__item toolbar__item--multi-selectors small--hide" {{ block.shopify_attributes }}>
                   {%- render 'form.localization',
@@ -207,12 +217,6 @@
                     show_currency_selector: show_currency_selector,
                     show_currency_flags: show_currency_flags
                   -%}
-                </div>
-              {%- endif -%}
-            {%- when 'menu_link' -%}
-              {%- if block.settings.menu_link_list != blank -%}
-                <div class="toolbar__item toolbar__menu-link-list" {{ block.shopify_attributes }}>
-                  {%- render 'section.toolbar.menu-link-list', menu_link_list: block.settings.menu_link_list, wrapper_class: 'toolbar__menu-link-list no-bullets' -%}
                 </div>
               {%- endif -%}
           {%- endcase -%}

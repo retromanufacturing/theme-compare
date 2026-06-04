@@ -15,34 +15,6 @@
       "type": "checkbox",
       "id": "announcement_center",
       "label": "t:labels.alignments.center_text"
-    },
-    {
-      "type": "header",
-      "content": "t:info.to_add_language_settings",
-      "info": "t:info.to_add_language_settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_locale_selector",
-      "label": "t:actions.show_language_selector",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "t:info.to_add_currency_settings",
-      "info": "t:info.to_add_currency_settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_currency_selector",
-      "label": "t:actions.show_currency_selector",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_currency_flags",
-      "label": "t:actions.show_currency_flags",
-      "default": true
     }
   ],
   "blocks": [
@@ -81,6 +53,40 @@
           "id": "menu_link_list",
           "label": "t:labels.navigation",
           "default": "main-menu"
+        }
+      ]
+    },
+    {
+      "type": "multi_selector",
+      "name": "Languages and currency",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:info.to_add_language_settings",
+          "info": "t:info.to_add_language_settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_locale_selector",
+          "label": "t:actions.show_language_selector",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:info.to_add_currency_settings",
+          "info": "t:info.to_add_currency_settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_selector",
+          "label": "t:actions.show_currency_selector",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_flags",
+          "label": "t:actions.show_currency_flags",
+          "default": true
         }
       ]
     }
