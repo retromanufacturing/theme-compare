@@ -583,145 +583,6 @@
         "height_mobile": 250
       }
     },
-    "featured_collections_4zRygh": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_XqwKQU": {
-          "type": "collection",
-          "settings": {
-            "collection": "radios",
-            "title": ""
-          }
-        },
-        "collection_HVLHCN": {
-          "type": "collection",
-          "settings": {
-            "collection": "speakers",
-            "title": ""
-          }
-        },
-        "collection_8hbYGP": {
-          "type": "collection",
-          "settings": {
-            "collection": "antennas",
-            "title": ""
-          }
-        },
-        "collection_fLwBiw": {
-          "type": "collection",
-          "settings": {
-            "collection": "amps-subwoofers",
-            "title": ""
-          }
-        },
-        "collection_rV9b3H": {
-          "type": "collection",
-          "settings": {
-            "collection": "kick-panels-speaker-modules",
-            "title": ""
-          }
-        },
-        "collection_beHUPH": {
-          "type": "collection",
-          "settings": {
-            "collection": "replacement-parts",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_XqwKQU",
-        "collection_HVLHCN",
-        "collection_8hbYGP",
-        "collection_fLwBiw",
-        "collection_rV9b3H",
-        "collection_beHUPH"
-      ],
-      "settings": {
-        "title": "Popular categories",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
-      }
-    },
-    "featured_collections_p6RKmN": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_FDnX8n": {
-          "type": "collection",
-          "settings": {
-            "collection": "ford",
-            "title": ""
-          }
-        },
-        "collection_jjhmy4": {
-          "type": "collection",
-          "settings": {
-            "collection": "chevrolet",
-            "title": ""
-          }
-        },
-        "collection_RWEKzX": {
-          "type": "collection",
-          "settings": {
-            "collection": "pontiac-make",
-            "title": ""
-          }
-        },
-        "collection_FkA49K": {
-          "type": "collection",
-          "settings": {
-            "collection": "dodge",
-            "title": ""
-          }
-        },
-        "collection_yrYGac": {
-          "type": "collection",
-          "settings": {
-            "collection": "plymouth-make",
-            "title": ""
-          }
-        },
-        "collection_9fCaqF": {
-          "type": "collection",
-          "settings": {
-            "collection": "mercury-make",
-            "title": ""
-          }
-        },
-        "collection_CgWxjY": {
-          "type": "collection",
-          "settings": {
-            "collection": "volkswagen",
-            "title": ""
-          }
-        },
-        "collection_X8NLGB": {
-          "type": "collection",
-          "settings": {
-            "collection": "mercedes-benz",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_FDnX8n",
-        "collection_jjhmy4",
-        "collection_RWEKzX",
-        "collection_FkA49K",
-        "collection_yrYGac",
-        "collection_9fCaqF",
-        "collection_CgWxjY",
-        "collection_X8NLGB"
-      ],
-      "name": "t:labels.collection_list",
-      "settings": {
-        "title": "Shop by Make",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
-      }
-    },
     "blog_posts_xYaJ84": {
       "type": "blog-posts",
       "settings": {
@@ -806,11 +667,9 @@
     "slideshow_custom_gcH6jR",
     "advanced_content_T3red9",
     "rich_text_AntMzN",
+    "hero_video_iJjrRf",
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
-    "hero_video_iJjrRf",
-    "featured_collections_4zRygh",
-    "featured_collections_p6RKmN",
     "blog_posts_xYaJ84",
     "apps_ihxT4i",
     "advanced_content_V9PcCf"
