@@ -191,11 +191,11 @@
   assign toolbar_social = toolbar_social | default: section.settings.toolbar_social, allow_false: true | default: true, allow_false: true
   assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
 -%}
-
+{{section.blocks }}--{{section.id }}
 <section>
   <div class="toolbar color-scheme-{{ color_scheme }}">
     <div class="page-width">
-      <div class="toolbar__content"> {{section.blocks }}--{{section.id }}
+      <div class="toolbar__content"> 
         {% for blocks in section.blocks %}
           {% case block.type %}
             {% when 'announcement' %}
