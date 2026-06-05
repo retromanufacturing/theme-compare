@@ -422,7 +422,8 @@
           "settings": {
             "collection": "radios",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_dDQ6XD": {
@@ -430,7 +431,8 @@
           "settings": {
             "collection": "speakers",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_Jw3Q4x": {
@@ -438,7 +440,8 @@
           "settings": {
             "collection": "antennas",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_QGgbmy": {
@@ -446,7 +449,8 @@
           "settings": {
             "collection": "replacement-parts",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_cyRWxb": {
@@ -454,7 +458,8 @@
           "settings": {
             "collection": "amps-subwoofers",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         },
         "collection_b89rbA": {
@@ -462,7 +467,8 @@
           "settings": {
             "collection": "kick-panels-speaker-modules",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33"
+            "width": "33",
+            "link": ""
           }
         }
       },
@@ -503,7 +509,8 @@
           "settings": {
             "collection": "ford",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_DAbCAa": {
@@ -511,7 +518,8 @@
           "settings": {
             "collection": "chevrolet",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_9YtTjx": {
@@ -519,7 +527,8 @@
           "settings": {
             "collection": "pontiac-make",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_BUbKhR": {
@@ -527,7 +536,8 @@
           "settings": {
             "collection": "dodge",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_qRkR3J": {
@@ -535,7 +545,8 @@
           "settings": {
             "collection": "plymouth-make",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_Cx4Y4L": {
@@ -543,7 +554,8 @@
           "settings": {
             "collection": "mercury-make",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_GEcQXx": {
@@ -551,7 +563,8 @@
           "settings": {
             "collection": "volkswagen",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         },
         "collection_TJJbyw": {
@@ -559,7 +572,8 @@
           "settings": {
             "collection": "mercedes-benz",
             "image": "{{ block.settings.collection.image }}",
-            "width": "25"
+            "width": "25",
+            "link": ""
           }
         }
       },
