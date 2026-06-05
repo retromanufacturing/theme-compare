@@ -14,12 +14,9 @@
     "custom-toolbar": {
       "type": "custom-toolbar",
       "blocks": {
-        "toolbar-1": {
-          "type": "announcement",
-          "settings": {
-            "richtext": "",
-            "richtext_mobile": ""
-          }
+        "social_TMUnVq": {
+          "type": "social",
+          "settings": {}
         },
         "multi_selector_9c8yfi": {
           "type": "multi_selector",
@@ -30,10 +27,12 @@
             "show_currency_flags": true
           }
         },
-        "social_TMUnVq": {
-          "type": "social",
-          "disabled": true,
-          "settings": {}
+        "toolbar-1": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "",
+            "richtext_mobile": ""
+          }
         },
         "menu_link_G8w9Vr": {
           "type": "menu_link",
@@ -43,9 +42,9 @@
         }
       },
       "block_order": [
-        "toolbar-1",
-        "multi_selector_9c8yfi",
         "social_TMUnVq",
+        "multi_selector_9c8yfi",
+        "toolbar-1",
         "menu_link_G8w9Vr"
       ],
       "settings": {
