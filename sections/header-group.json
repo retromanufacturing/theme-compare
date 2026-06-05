@@ -14,8 +14,16 @@
     "custom-toolbar": {
       "type": "custom-toolbar",
       "blocks": {
+        "toolbar-1": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "",
+            "richtext_mobile": ""
+          }
+        },
         "multi_selector_9c8yfi": {
           "type": "multi_selector",
+          "disabled": true,
           "settings": {
             "show_locale_selector": true,
             "show_currency_selector": true,
@@ -27,13 +35,6 @@
           "disabled": true,
           "settings": {}
         },
-        "toolbar-1": {
-          "type": "announcement",
-          "settings": {
-            "richtext": "",
-            "richtext_mobile": ""
-          }
-        },
         "menu_link_G8w9Vr": {
           "type": "menu_link",
           "settings": {
@@ -42,9 +43,9 @@
         }
       },
       "block_order": [
+        "toolbar-1",
         "multi_selector_9c8yfi",
         "social_TMUnVq",
-        "toolbar-1",
         "menu_link_G8w9Vr"
       ],
       "settings": {
