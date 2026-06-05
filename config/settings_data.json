@@ -25,7 +25,7 @@
     "product_hover_image": false,
     "enable_swatches": false,
     "swatch_style": "square",
-    "product_grid_style": "gridlines-thick",
+    "product_grid_style": "simple",
     "product_grid_image_margin": 0,
     "collection_grid_shape": "landscape",
     "collection_grid_image_fill": false,
