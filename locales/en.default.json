@@ -269,11 +269,18 @@
     "color_swatch": "Color"
   },
   "custom": {
-    "button_label": "Buttons with label",
+    "button_label": "Buttons with label"
   },
   "sections": {
     "countdown": {
       "section_name": "countdown"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "stock": {
+        "sold_out_label": "Available Soon"
+      }
     }
   }
 }
