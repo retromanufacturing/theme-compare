@@ -179,10 +179,44 @@
             "custom_variant_picker_Teah97",
             "custom_group_gYXAkY"
           ]
+        },
+        "custom_tab_7BRxW3": {
+          "type": "custom-tab",
+          "name": "Knob Sets",
+          "settings": {
+            "title": "2. Choose Knob Sets",
+            "is_open": false,
+            "tab_type": "default"
+          },
+          "blocks": {
+            "text_WXKtRj": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "Insert text here",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_WXKtRj"
+          ]
         }
       },
       "block_order": [
-        "custom_tab_KNdKjr"
+        "custom_tab_KNdKjr",
+        "custom_tab_7BRxW3"
       ],
       "settings": {
         "image_position": "left",
@@ -201,37 +235,42 @@
           "type": "description",
           "settings": {
             "is_tab": true,
-            "is_open": false
+            "is_open": true
           }
         },
-        "tab": {
-          "type": "tab",
+        "custom_tab_rPgteC": {
+          "type": "custom-tab",
           "settings": {
-            "title": "Shipping information",
-            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
-            "page": "",
-            "is_open": false
+            "tab_type": "specifications",
+            "title": "Specifications",
+            "is_open": false,
+            "text_color": "#42434d",
+            "columns_per_row": 2
           }
         },
-        "contact": {
-          "type": "contact",
+        "custom_tab_BHYiFf": {
+          "type": "custom-tab",
           "settings": {
-            "title": "Ask a question",
-            "phone": false
+            "tab_type": "manuals",
+            "title": "Manuals",
+            "is_open": false,
+            "text_color": "#ba4444",
+            "columns_per_row": 2
           }
         }
       },
       "block_order": [
         "description",
-        "tab",
-        "contact"
+        "custom_tab_rPgteC",
+        "custom_tab_BHYiFf"
       ],
       "settings": {
-        "max_width": true
+        "max_width": false
       }
     },
     "recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "product_recommendations_heading": "You may also like",
         "related_count": 6,
@@ -240,6 +279,7 @@
     },
     "more-products-vendor": {
       "type": "more-products-vendor",
+      "disabled": true,
       "settings": {
         "products_per_row": 3,
         "max_products": 5
@@ -247,6 +287,7 @@
     },
     "more-products-collection": {
       "type": "more-products-collection",
+      "disabled": true,
       "settings": {
         "products_per_row": 3,
         "max_products": 5
@@ -254,12 +295,56 @@
     },
     "recently-viewed": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {}
     },
     "collection-return": {
       "type": "collection-return",
+      "disabled": true,
       "settings": {
         "color_scheme": "2"
+      }
+    },
+    "17809449285cf16131": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_polaris_7qYT3E": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-polaris/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#000",
+            "review_type": "product_review,questions",
+            "per_page": 8,
+            "primary_btn_bg_color": "#000",
+            "primary_btn_border_color": "#000",
+            "primary_btn_text_color": "#fff",
+            "secondary_btn_border_color": "#000",
+            "secondary_btn_text_color": "#000",
+            "border_color": "#D9D9D9",
+            "heading_text_color": "#000",
+            "heading_font": "sans_serif_n4",
+            "body_text_color": "#000",
+            "badge_icon_color": "#000",
+            "badge_text_color": "#000",
+            "enable_rich_snippets": true,
+            "show_location": true,
+            "show_tab_selector": false,
+            "show_dates": true,
+            "show_avatar": true,
+            "enable_sentiment_analysis": false,
+            "enable_replies": false,
+            "widget_spacing": 0,
+            "capitalise_headers_and_buttons": false,
+            "show_review_title": false,
+            "default_sort": "date_desc"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_polaris_7qYT3E"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
       }
     }
   },
@@ -270,6 +355,7 @@
     "more-products-vendor",
     "more-products-collection",
     "recently-viewed",
-    "collection-return"
+    "collection-return",
+    "17809449285cf16131"
   ]
 }
