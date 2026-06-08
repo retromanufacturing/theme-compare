@@ -83,7 +83,7 @@
           ]
         },
         "custom_variant_picker_jQ7J3j": {
-          "type": "custom-variant-picker",
+          "type": "custom-variant-picker-tabs",
           "name": "t:custom.variant_picker_tabs",
           "settings": {
             "variant_selector_type": "radio",
