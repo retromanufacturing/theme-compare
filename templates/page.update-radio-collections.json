@@ -158,7 +158,7 @@
         "collection_AyVKLM"
       ],
       "custom_css": [
-        ".heading-md {text-align: left !important;}"
+        ".heading-md {text-align: left !important; font-size: 24px;}"
       ],
       "name": "DIN Solutions Single DIN Radio Faces",
       "settings": {
@@ -166,7 +166,8 @@
         "gutter_size": 20,
         "space_above": false,
         "space_below": true,
-        "hide_block_images": false
+        "hide_block_images": false,
+        "enable_title": false
       }
     },
     "promo_grid_UYK6Le": {
@@ -213,7 +214,8 @@
         "gutter_size": 20,
         "space_above": false,
         "space_below": true,
-        "hide_block_images": false
+        "hide_block_images": false,
+        "enable_title": false
       }
     },
     "promo_grid_cQBwnz": {
@@ -383,7 +385,8 @@
         "gutter_size": 20,
         "space_above": false,
         "space_below": true,
-        "hide_block_images": false
+        "hide_block_images": false,
+        "enable_title": false
       }
     },
     "promo_grid_crBAmd": {
@@ -413,7 +416,8 @@
         "gutter_size": 20,
         "space_above": false,
         "space_below": false,
-        "hide_block_images": false
+        "hide_block_images": false,
+        "enable_title": false
       }
     },
     "advanced_content_jxUYDp": {
