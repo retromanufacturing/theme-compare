@@ -1,39 +1,35 @@
 {% doc %}
-  section.main-product-radio.liquid
-  Place in: /snippets/section.main-product-radio.liquid
+  Copyright © 2025 Archetype Themes LP. All rights reserved.
 
-  Custom radio product layout snippet. Extends section.main-product's float grid
-  layout with named slot_gallery and slot_details parameters so main-product-radio.liquid
-  can pass theme block content into both columns while retaining image_container_size,
-  image_position, and mobile_layout support.
+  Main product template with gallery, details, and configurable blocks.
 
-  Falls back to product.gallery.custom if no slot_gallery is passed.
-  Falls back to empty details column if no slot_details is passed.
-
-  @param {string} [slot_gallery]        - Gallery column content (from content_for 'block')
-  @param {string} [slot_details]        - Details column content (from content_for 'blocks')
-  @param {string} [image_position]      - 'left' or 'right', defaults to section.settings
-  @param {string} [mobile_layout]       - 'partial' or 'full', defaults to section.settings
-  @param {string} [image_container_width] - 'small', 'medium', 'large', defaults to section.settings.image_container_size
+  @param {string} [slot] - Product info content
+  @param {string} [product_media_gallery] - Gallery content
+  @param {string} [image_position] - Image placement
+  @param {string} [mobile_layout] - Mobile layout style
+  @param {string} [image_container_width] - Image container width
 
   @example
-  {% capture slot_gallery %}
-    {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
-  {% endcapture %}
-  {% capture slot_details %}
-    {% content_for 'blocks' %}
-  {% endcapture %}
-  {% render 'section.main-product-radio', slot_gallery: slot_gallery, slot_details: slot_details %}
+  {% liquid
+    capture blocks
+      for block in section.blocks
+        case block.type
+          when 'description'
+            render 'block.product-description', block: block
+        endcase
+      endfor
+    endcapture
+
+    render 'section.main-product', slot: blocks
+  %}
 {% enddoc %}
 
 {%- liquid
   assign image_position = image_position | default: section.settings.image_position | default: 'left'
   assign mobile_layout = mobile_layout | default: section.settings.mobile_layout | default: 'partial'
   assign image_container_width = image_container_width | default: section.settings.image_container_size | default: 'medium'
-
   assign product_image_width = 'medium-up--one-half'
   assign product_description_width = 'medium-up--one-half'
-
   case image_container_width
     when 'small'
       assign product_image_width = 'medium-up--two-fifths'
@@ -44,31 +40,29 @@
   endcase
 -%}
 
-{%- capture resolved_gallery -%}
-  {%- if slot_gallery != blank -%}
-    {{- slot_gallery -}}
-  {%- elsif section.settings.media_gallery_layout == 'stacked' -%}
+{% capture product_media_gallery_default %}
+  {% if section.settings.media_gallery_layout == 'stacked' %}
+    {% capture mobile_gallery %}
+      {% render 'product.gallery', sizeVariable: product_image_width, media_gallery_layout: 'below' %}
+    {% endcapture %}
+    {% capture desktop_gallery %}
+      {% render 'product.gallery', sizeVariable: product_image_width, media_gallery_layout: 'stacked' %}
+    {% endcapture %}
     <div class="medium-up--hide">
-      {%- render 'product.gallery.custom',
-        sizeVariable: product_image_width,
-        media_gallery_layout: 'below'
-      -%}
+      {{ mobile_gallery }}
     </div>
     <div class="small--hide">
-      {%- render 'product.gallery.custom',
-        sizeVariable: product_image_width,
-        media_gallery_layout: 'stacked'
-      -%}
+      {{ desktop_gallery }}
     </div>
-  {%- else -%}
-    {%- render 'product.gallery.custom', sizeVariable: product_image_width -%}
-  {%- endif -%}
-{%- endcapture -%}
+  {% else %}
+    {% render 'product.gallery', sizeVariable: product_image_width %}
+  {% endif %}
+{% endcapture %}
 
-{%- capture product_content -%}
-  {%- render 'element.breadcrumbs' -%}
-  {{- slot_details -}}
-{%- endcapture -%}
+{% capture product_content %}
+  {% render 'element.breadcrumbs' %}
+  {{- slot -}}
+{% endcapture %}
 
 <section
   class="page-content page-content--product page-content--{{ mobile_layout }}"
@@ -77,23 +71,19 @@
 >
   <div class="page-width">
     <div class="product-grid__container product--images float-grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %} clearfix">
-
       {%- if image_position == 'left' -%}
         <div class="grid__item {{ product_image_width }} product-single__sticky">
-          {{- resolved_gallery -}}
+          {{- product_media_gallery | default: product_media_gallery_default -}}
         </div>
       {%- endif -%}
-
       <div class="product-grid__content product--description product-single__sticky grid__item {{ product_description_width }}">
-        {%- render 'layout.stack', slot: product_content, classlist: 'product-single__meta', gap: 'sm' -%}
+        {% render 'layout.stack', slot: product_content, classlist: 'product-single__meta', gap: 'sm' %}
       </div>
-
       {%- unless image_position == 'left' -%}
         <div class="grid__item {{ product_image_width }} product-single__sticky">
-          {{- resolved_gallery -}}
+          {{- product_media_gallery | default: product_media_gallery_default -}}
         </div>
       {%- endunless -%}
-
     </div>
   </div>
 </section>
