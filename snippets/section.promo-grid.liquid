@@ -1228,7 +1228,7 @@
                   {%- else -%}
                     {%- render 'element.placeholder', name: 'lifestyle-1' -%}
                   {%- endif -%}
-                  {% if block.settings.enable_title %}
+                  {% if section.settings.enable_title %}
                     {{ collection.title }}
                   {% endif %}
                   {%- if block.settings.collection != blank  -%}
