@@ -59,12 +59,19 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "custom_sku_XeAMqw": {
+                  "type": "custom-sku",
+                  "name": "Product sku",
+                  "settings": {},
+                  "blocks": {}
+                },
                 "reviews_io_reviewsio_rating_output_R33VWB": {
                   "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
                   "settings": {}
                 }
               },
               "block_order": [
+                "custom_sku_XeAMqw",
                 "reviews_io_reviewsio_rating_output_R33VWB"
               ]
             },
