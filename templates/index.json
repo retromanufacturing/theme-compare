@@ -423,7 +423,7 @@
             "collection": "radios",
             "image": "{{ block.settings.collection.image }}",
             "width": "33",
-            "link": ""
+            "link": "https://www.retromanufacturing.com/pages/radios"
           }
         },
         "collection_dDQ6XD": {
