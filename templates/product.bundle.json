@@ -21,7 +21,7 @@
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
-            "tab_padding": 0
+            "tab_padding": 1
           },
           "blocks": {
             "custom_group_RNx3w6": {
@@ -192,7 +192,7 @@
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
-            "tab_padding": 0
+            "tab_padding": 1
           },
           "blocks": {
             "text_WXKtRj": {
@@ -228,7 +228,7 @@
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
-            "tab_padding": 0
+            "tab_padding": 1
           },
           "blocks": {
             "text_mYcCde": {
