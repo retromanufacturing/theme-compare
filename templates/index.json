@@ -409,7 +409,7 @@
         "banner_YViVy9": {
           "type": "banner",
           "settings": {
-            "heading": "Popular Categories",
+            "heading": "<strong>Popular Categories</strong>",
             "text": "",
             "link": "",
             "label": "",
