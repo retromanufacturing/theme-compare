@@ -516,7 +516,7 @@
             "label": "View All",
             "color_scheme": "none",
             "width": "50",
-            "align_content": "center"
+            "align_content": "flex-end"
           }
         },
         "collection_LK6AWQ": {
