@@ -596,7 +596,7 @@
         "space_above": true,
         "space_below": true,
         "hide_block_images": false,
-        "enable_title": false
+        "enable_title": true
       }
     },
     "blog_posts_xYaJ84": {
