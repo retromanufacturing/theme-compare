@@ -68,6 +68,18 @@
                 "reviews_io_reviewsio_rating_output_R33VWB"
               ]
             },
+            "custom_variant_picker_Teah97": {
+              "type": "custom-variant-picker",
+              "name": "Variant picker",
+              "settings": {
+                "variant_labels": true,
+                "picker_type": "button",
+                "product_dynamic_variants_enable": true,
+                "color_swatches": false,
+                "non_label_options": ""
+              },
+              "blocks": {}
+            },
             "custom_product_features_tYxEr6": {
               "type": "custom-product-features",
               "name": "Product features",
@@ -88,6 +100,7 @@
           },
           "block_order": [
             "custom_group_RNx3w6",
+            "custom_variant_picker_Teah97",
             "custom_product_features_tYxEr6",
             "custom_product_logos_6mKWbb"
           ]
