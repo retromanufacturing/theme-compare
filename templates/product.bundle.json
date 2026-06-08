@@ -212,11 +212,45 @@
           "block_order": [
             "text_WXKtRj"
           ]
+        },
+        "custom_tab_84ECRe": {
+          "type": "custom-tab",
+          "name": "Bezels/Faceplates",
+          "settings": {
+            "title": "3. Choose Bezels or Faceplate",
+            "is_open": false,
+            "tab_type": "default"
+          },
+          "blocks": {
+            "text_mYcCde": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "Insert text here",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "1rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ECECEC",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_mYcCde"
+          ]
         }
       },
       "block_order": [
         "custom_tab_KNdKjr",
-        "custom_tab_7BRxW3"
+        "custom_tab_7BRxW3",
+        "custom_tab_84ECRe"
       ],
       "settings": {
         "image_position": "left",
