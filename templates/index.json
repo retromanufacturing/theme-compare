@@ -414,7 +414,8 @@
             "link": "",
             "label": "",
             "color_scheme": "none",
-            "width": "100"
+            "width": "100",
+            "align_content": "center"
           }
         },
         "collection_mxxYJR": {
@@ -502,7 +503,8 @@
             "link": "",
             "label": "",
             "color_scheme": "none",
-            "width": "50"
+            "width": "50",
+            "align_content": "flex-start"
           }
         },
         "banner_94gdbG": {
@@ -513,7 +515,8 @@
             "link": "shopify://pages/all-car-makes",
             "label": "View All",
             "color_scheme": "none",
-            "width": "50"
+            "width": "50",
+            "align_content": "center"
           }
         },
         "collection_LK6AWQ": {
