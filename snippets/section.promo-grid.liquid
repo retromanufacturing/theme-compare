@@ -1229,7 +1229,7 @@
                     {%- render 'element.placeholder', name: 'lifestyle-1' -%}
                   {%- endif -%}
                   {% if section.settings.enable_title %}
-                    {{ collection.title }}
+                     {% render 'element.text', text: collection.title, as: 'p', classlist: 'text-center' %}
                   {% endif %}
                   {%- if block.settings.collection != blank  -%}
                     </a>
