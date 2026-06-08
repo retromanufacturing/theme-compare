@@ -179,7 +179,10 @@
             "custom_price_eL3yHn": {
               "type": "custom-price",
               "name": "t:labels.price",
-              "settings": {},
+              "settings": {
+                "hide_subtitle": true,
+                "color": "#ba4444"
+              },
               "blocks": {}
             }
           },
