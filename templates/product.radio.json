@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product-custom",
+      "type": "main-product-backup",
       "blocks": {
         "section_flex_pdp_title_z8nXXj": {
           "type": "_section-flex-pdp-title",
