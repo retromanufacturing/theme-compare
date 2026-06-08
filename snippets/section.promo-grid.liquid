@@ -391,7 +391,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
     padding: 0 10px;
   }
 
@@ -1061,6 +1060,11 @@
                   {%- render 'utility.color-scheme-texture', color_scheme: block.settings.color_scheme -%}
 
                   <div class="type-banner__content text-center">
+                    {% style %}
+                      .type-banner__content {
+                        justify-content: {{ block.settings.align_content }};
+                      }
+                    {% endstyle %}
                     <div class="type-banner__text">
                       {%- if block.settings.heading != blank -%}
                         <h2

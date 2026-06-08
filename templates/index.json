@@ -499,10 +499,21 @@
           "settings": {
             "heading": "Shop By Make",
             "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "50"
+          }
+        },
+        "banner_94gdbG": {
+          "type": "banner",
+          "settings": {
+            "heading": "",
+            "text": "",
             "link": "shopify://pages/all-car-makes",
             "label": "View All",
             "color_scheme": "none",
-            "width": "100"
+            "width": "50"
           }
         },
         "collection_LK6AWQ": {
@@ -580,6 +591,7 @@
       },
       "block_order": [
         "banner_mf7r9y",
+        "banner_94gdbG",
         "collection_LK6AWQ",
         "collection_DAbCAa",
         "collection_9YtTjx",
