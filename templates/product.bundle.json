@@ -175,12 +175,19 @@
                 "custom_product_features_qbFhC4",
                 "custom_product_logos_zxEXGx"
               ]
+            },
+            "custom_price_eL3yHn": {
+              "type": "custom-price",
+              "name": "t:labels.price",
+              "settings": {},
+              "blocks": {}
             }
           },
           "block_order": [
             "custom_group_RNx3w6",
             "custom_variant_picker_Teah97",
-            "custom_group_gYXAkY"
+            "custom_group_gYXAkY",
+            "custom_price_eL3yHn"
           ]
         },
         "custom_tab_7BRxW3": {
