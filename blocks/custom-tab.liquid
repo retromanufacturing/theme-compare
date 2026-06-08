@@ -44,6 +44,9 @@
       .element-accordion__toggle {            
         color: {{ block.settings.tab_title_color}};
         background-color: {{  block.settings.tab_background_color }};
+        {% if block.settings.tab_padding > 0 %}
+          padding: {{ block.settings.tab_padding }}rem;
+        {% endif %}
       }
     }
   {% endstyle %}
@@ -101,6 +104,15 @@
       "id": "tab_background_color",
       "label": "Background Color",
       "default": " #4A4A4A"
+    },
+    {
+      "type": "range",
+      "id": "tab_padding",
+      "label": "Tab padding",
+      "default": 0,
+      "min": 0,
+      "max": 5,
+      "unit": "rem"
     }
   ],
   "presets": [{ "name": "Tab", "category": "Layout" }]
