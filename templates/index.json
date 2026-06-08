@@ -481,6 +481,9 @@
         "collection_cyRWxb",
         "collection_b89rbA"
       ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}"
+      ],
       "name": "Popular Categories",
       "settings": {
         "full_width": false,
@@ -588,6 +591,9 @@
         "collection_Cx4Y4L",
         "collection_GEcQXx",
         "collection_TJJbyw"
+      ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}"
       ],
       "name": "Shop By Make",
       "settings": {
