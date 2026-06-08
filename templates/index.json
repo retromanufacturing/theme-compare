@@ -422,7 +422,7 @@
           "settings": {
             "collection": "radios",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33",
+            "width": "12-5",
             "link": "https://www.retromanufacturing.com/pages/radios"
           }
         },
@@ -431,7 +431,7 @@
           "settings": {
             "collection": "speakers",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33",
+            "width": "12-5",
             "link": ""
           }
         },
@@ -440,7 +440,7 @@
           "settings": {
             "collection": "antennas",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33",
+            "width": "12-5",
             "link": ""
           }
         },
@@ -449,7 +449,7 @@
           "settings": {
             "collection": "replacement-parts",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33",
+            "width": "12-5",
             "link": ""
           }
         },
@@ -458,7 +458,7 @@
           "settings": {
             "collection": "amps-subwoofers",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33",
+            "width": "12-5",
             "link": ""
           }
         },
@@ -467,7 +467,7 @@
           "settings": {
             "collection": "kick-panels-speaker-modules",
             "image": "{{ block.settings.collection.image }}",
-            "width": "33",
+            "width": "12-5",
             "link": ""
           }
         }
