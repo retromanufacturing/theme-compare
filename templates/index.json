@@ -414,8 +414,7 @@
             "link": "",
             "label": "",
             "color_scheme": "none",
-            "width": "100",
-            "align_content": "center"
+            "width": "100"
           }
         },
         "collection_mxxYJR": {
@@ -495,28 +494,15 @@
     "promo_grid_HM9HPg": {
       "type": "promo-grid",
       "blocks": {
-        "banner_mf7r9y": {
+        "banner_94gdbG": {
           "type": "banner",
           "settings": {
             "heading": "Shop By Make",
             "text": "",
-            "link": "",
-            "label": "",
-            "color_scheme": "none",
-            "width": "50",
-            "align_content": "flex-start"
-          }
-        },
-        "banner_94gdbG": {
-          "type": "banner",
-          "settings": {
-            "heading": "",
-            "text": "",
             "link": "shopify://pages/all-car-makes",
             "label": "View All",
             "color_scheme": "none",
-            "width": "50",
-            "align_content": "flex-end"
+            "width": "100"
           }
         },
         "collection_LK6AWQ": {
@@ -593,7 +579,6 @@
         }
       },
       "block_order": [
-        "banner_mf7r9y",
         "banner_94gdbG",
         "collection_LK6AWQ",
         "collection_DAbCAa",
