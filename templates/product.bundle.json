@@ -11,7 +11,119 @@
   "sections": {
     "main": {
       "type": "main-product-block",
-      "settings": {}
+      "blocks": {
+        "custom_tab_KNdKjr": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "1. Choose Radio",
+            "is_open": true,
+            "tab_type": "default"
+          },
+          "blocks": {
+            "custom_group_RNx3w6": {
+              "type": "custom-group",
+              "name": "Group",
+              "settings": {
+                "content_direction": "row",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "flex-start",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "none",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "border_color": "#42434d",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "section_flex_pdp_sku_Wk3cGV": {
+                  "type": "_section-flex-pdp-sku",
+                  "name": "t:labels.sku",
+                  "settings": {},
+                  "blocks": {}
+                },
+                "section_flex_pdp_inventory_iiVdnc": {
+                  "type": "_section-flex-pdp-inventory",
+                  "name": "t:labels.inventory",
+                  "settings": {
+                    "inventory_threshold": 10,
+                    "enable_labels": false
+                  },
+                  "blocks": {}
+                },
+                "reviews_io_reviewsio_rating_output_R33VWB": {
+                  "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
+                  "settings": {}
+                }
+              },
+              "block_order": [
+                "section_flex_pdp_sku_Wk3cGV",
+                "section_flex_pdp_inventory_iiVdnc",
+                "reviews_io_reviewsio_rating_output_R33VWB"
+              ]
+            },
+            "custom_variant_picker_gqXNRn": {
+              "type": "custom-variant-picker",
+              "name": "t:custom.variant_picker_tabs",
+              "settings": {
+                "variant_selector_type": "radio",
+                "enable_tabs": false,
+                "accordion_default_open": "first",
+                "enable_features_and_logos": true,
+                "enable_variant_labels": false,
+                "variant_label_options": "",
+                "enable_colored_options": false,
+                "color_motor_m1": "#c19e44",
+                "color_motor_m2": "#2e5f6e",
+                "color_motor_m4": "#623f36"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_group_RNx3w6",
+            "custom_variant_picker_gqXNRn"
+          ]
+        }
+      },
+      "block_order": [
+        "custom_tab_KNdKjr"
+      ],
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
     },
     "sub": {
       "type": "product-full-width",
@@ -19,16 +131,25 @@
         "description": {
           "type": "description",
           "settings": {
-            "is_tab": true
+            "is_tab": true,
+            "is_open": false
           }
         },
         "tab": {
           "type": "tab",
-          "settings": {}
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": "",
+            "is_open": false
+          }
         },
         "contact": {
           "type": "contact",
-          "settings": {}
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
         }
       },
       "block_order": [
@@ -36,19 +157,31 @@
         "tab",
         "contact"
       ],
-      "settings": {}
+      "settings": {
+        "max_width": true
+      }
     },
     "recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 3
+      }
     },
     "more-products-vendor": {
       "type": "more-products-vendor",
-      "settings": {}
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
     },
     "more-products-collection": {
       "type": "more-products-collection",
-      "settings": {}
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
     },
     "recently-viewed": {
       "type": "recently-viewed",
@@ -56,7 +189,9 @@
     },
     "collection-return": {
       "type": "collection-return",
-      "settings": {}
+      "settings": {
+        "color_scheme": "2"
+      }
     }
   },
   "order": [
