@@ -391,6 +391,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 10px;
   }
 
@@ -588,8 +589,8 @@
     }
 
     /*Custom flex sizes*/
-    .flex-grid__item--16-6 {
-      flex-basis: 16.66%;
+    .flex-grid__item--12-5 {
+      flex-basis: 12.5%;
     }
 
     .flex-grid__item--20 {
@@ -1059,12 +1060,7 @@
                 <div class="promo-grid__container color-scheme-{{ block.settings.color_scheme }}">
                   {%- render 'utility.color-scheme-texture', color_scheme: block.settings.color_scheme -%}
 
-                  <div class="type-banner__content text-center type-banner__content--{{block.id }}">
-                    {% style %}
-                      .type-banner__content--{{block.id }} {
-                        justify-content: {{ block.settings.align_content }};
-                      }
-                    {% endstyle %}
+                  <div class="type-banner__content text-center">
                     <div class="type-banner__text">
                       {%- if block.settings.heading != blank -%}
                         <h2
