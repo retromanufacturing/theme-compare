@@ -16,57 +16,16 @@
   they cannot be passed through the render chain.
 {% endcomment %}
 
-{% capture slot_gallery %}
+{% comment %} {% capture slot_gallery %}
   {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
-{% endcapture %}
+{% endcapture %} {% endcomment %}
 
-{% capture slot_details %}
+{% capture blocks %}
   {% content_for 'blocks' %}
 {% endcapture %}
 
-{%- render 'section.flex-pdp.custom', slot_gallery: slot_gallery, slot_details: slot_details -%}
+{% render 'section.main-product-radio', slot: blocks %}
 
-{% javascript %}
-  document.addEventListener('product-form:cart:navigate', (event) => {
-    const headerEl = document.querySelector('header-section[data-cart-type]');
-    const cartType = headerEl ? headerEl.getAttribute('data-cart-type') : undefined;
-    if (cartType !== 'page') {
-      event.preventDefault();
-    }
-  });
-
-  document.addEventListener('product-form:submit:success', async (event) => {
-    try {
-      const response = await fetch(`${window.Shopify.routes.root}cart?sections=cart-ajax`, {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' },
-      });
-      const sections = await response.json();
-      const state = { sections };
-
-      document.dispatchEvent(
-        new CustomEvent('ajaxProduct:added', {
-          bubbles: true,
-          detail: {
-            product: state,
-          },
-        })
-      );
-
-      document.dispatchEvent(
-        new CustomEvent('cart:updated', {
-          bubbles: true,
-          detail: {
-            cart: state,
-          },
-        })
-      );
-    } catch (e) {
-      console.warn('Failed to load cart sections after add:', e);
-    }
-  });
-
-  document.addEventListener('product-form:message:success', (event) => event.preventDefault());
-{% endjavascript %}
 
 {% schema %}
 {
@@ -157,20 +116,7 @@
   ],
   "blocks": [
     { "type": "@app" },
-    { "type": "@theme" },
-    { "type": "_section-flex-pdp-title" },
-    { "type": "_section-flex-pdp-sku" },
-    { "type": "_section-flex-pdp-inventory" },
-    { "type": "_section-flex-pdp-variant-picker" },
-    { "type": "_section-flex-pdp-price" },
-    { "type": "_section-flex-pdp-buy-buttons" },
-    { "type": "_section-flex-pdp-pick-up" },
-    { "type": "_section-flex-pdp-installments" },
-    { "type": "_section-flex-pdp-description" },
-    { "type": "_section-flex-pdp-divider" },
-    { "type": "_section-flex-pdp-policies" },
-    { "type": "_section-flex-pdp-quantity-picker" },
-    { "type": "_section-flex-pdp-vendor" }
+    { "type": "@theme" }
   ],
   "presets": [
     {
