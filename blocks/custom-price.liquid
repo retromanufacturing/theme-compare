@@ -6,9 +6,11 @@
   .block-price--{{ block.id }} {
     color: {{ block.settings.color }};
 
-    label.variant__label.element-text {
+    {% if block.settings.hide_subtitle %}
+      .label.variant__label.element-text {
         display: none;
     } 
+    {% endif %}
   }
 {% endstyle %}
 
