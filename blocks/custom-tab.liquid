@@ -35,9 +35,18 @@
 -%}
 
 {%- if title != blank and accordion_content != blank -%}
-  <div {{ block.shopify_attributes }}>
+  <div class="block-tab--{{ block.id }}" {{ block.shopify_attributes }}>
     {%- render 'element.accordion', title: tab_title, slot: accordion_content, open: is_open -%}
   </div>
+
+  {% style %}
+    .block-tab--{{ block.id }} {
+      .element-accordion__toggle {            
+        color: {{ block.settings.tab_title_color}};
+        background-color: {{  block.settings.tab_background_color }};
+      }
+    }
+  {% endstyle %}
 {%- endif -%}
 
 {% schema %}
@@ -76,6 +85,22 @@
         }
       ],
       "default": "default"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "tab_title_color",
+      "label": "Title Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tab_background_color",
+      "label": "Background Color",
+      "default": " #4A4A4A"
     }
   ],
   "presets": [{ "name": "Tab", "category": "Layout" }]
