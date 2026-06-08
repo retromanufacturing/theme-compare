@@ -1,9 +1,30 @@
+<span class="block-price--{{ block.id }}">
+  {% render 'block.product-price' %}
+</span>
 
-{% render 'block.product-price' %}
+{% style %}
+  .block-price--{{ block.id }} {
+    color: {{ block.settings.color }};
+  }
+{% endstyle %}
 
 {% schema %}
 {
-   "name": "t:labels.price",
+  "name": "t:labels.price",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_subtitle",
+      "label": "Is open",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": " #000"
+    }
+  ],
   "presets": [{ "name": "t:labels.price" }]
 }
 {% endschema %}
