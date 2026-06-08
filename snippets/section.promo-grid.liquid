@@ -1059,7 +1059,7 @@
                 <div class="promo-grid__container color-scheme-{{ block.settings.color_scheme }}">
                   {%- render 'utility.color-scheme-texture', color_scheme: block.settings.color_scheme -%}
 
-                  <div class="type-banner__content text-center">
+                  <div class="type-banner__content text-center type-banner__content--{{block.id }}">
                     {% style %}
                       .type-banner__content--{{block.id }} {
                         justify-content: {{ block.settings.align_content }};
