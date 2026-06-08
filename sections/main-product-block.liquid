@@ -1,176 +1,136 @@
-{% capture blocks %}
-  <div>
-    {% content_for 'blocks' %}
-  </div>
-{% endcapture %}
+{% comment %}
+  main-product-radio.liquid
+  Place in: /sections/main-product-radio.liquid
 
-{% comment %} {% capture bundle_content %}
- {% content_for 'block', type: 'bundle-content', id: 'bundle-builder' %}
+  Custom radio product section using the @theme block architecture.
+  Based on main-product-high-variant.liquid structure — do not modify that file.
+
+  Gallery slot uses custom-media-gallery block (blocks/custom-media-gallery.liquid).
+  All other product blocks (title, price, buy buttons, etc.) are added via the
+  Theme Editor using @theme blocks.
+
+  IMAGE RENDERING SETTINGS NOTE:
+  product_zoom_enable, product_image_size, enable_video_looping, product_video_style,
+  and mobile_layout are defined here at section level — not in the custom-media-gallery
+  block — because product.gallery.media reads them directly from section.settings and
+  they cannot be passed through the render chain.
+{% endcomment %}
+
+{% comment %} {% capture slot_gallery %}
+  {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
 {% endcapture %} {% endcomment %}
 
-{% case product.template_suffix %}
-  {% when 'build' %}
-    {% comment %} {% render 'section-main-product-build', slot: blocks, bundle_content: bundle_content  %} {% endcomment %}
-  {% else %}
-    {% render 'section.main-product', slot: blocks %}
-{% endcase %}
+{% capture blocks %}
+  {% content_for 'blocks' %}
+{% endcapture %}
+
+{% render 'section.main-product-radio', slot: blocks %}
 
 {% schema %}
 {
-  "name": "Product (Blocks)",
+  "name": "Product block",
   "settings": [
     {
-    "type": "header",
-    "content": "t:labels.media"
-  },
-  {
-    "type": "paragraph",
-    "content": "t:info.learn_more_media_types"
-  },
-  {
-    "type": "select",
-    "id": "image_position",
-    "label": "t:labels.position",
-    "default": "left",
-    "options": [
-      {
-        "value": "left",
-        "label": "t:labels.alignments.left"
-      },
-      {
-        "value": "right",
-        "label": "t:labels.alignments.right"
-      }
-    ]
-  },
-  {
-    "type": "select",
-    "id": "image_container_size",
-    "label": "t:labels.size",
-    "default": "medium",
-    "options": [
-      {
-        "value": "small",
-        "label": "t:labels.sizes.small"
-      },
-      {
-        "value": "medium",
-        "label": "t:labels.sizes.medium"
-      },
-      {
-        "value": "large",
-        "label": "t:labels.sizes.large"
-      }
-    ]
-  },
-  {
-    "type": "select",
-    "id": "product_image_size",
-    "label": "t:actions.force_image_size",
-    "default": "square",
-    "options": [
-      {
-        "value": "natural",
-        "label": "t:labels.natural"
-      },
-      {
-        "value": "square",
-        "label": "t:labels.square_11"
-      },
-      {
-        "value": "landscape",
-        "label": "t:labels.landscape_43"
-      },
-      {
-        "value": "portrait",
-        "label": "t:labels.portrait_23"
-      }
-    ]
-  },
-  {
-    "type": "checkbox",
-    "id": "product_zoom_enable",
-    "label": "t:actions.enable_image_zoom",
-    "default": true
-  },
-  {
-    "type": "select",
-    "id": "thumbnail_position",
-    "label": "t:labels.thumbnail_position",
-    "default": "beside",
-    "options": [
-      {
-        "value": "beside",
-        "label": "t:labels.next_to_media"
-      },
-      {
-        "value": "below",
-        "label": "t:labels.below_media"
-      }
-    ]
-  },
-  {
-    "type": "select",
-    "id": "thumbnail_height",
-    "label": "t:labels.thumbnail_height",
-    "info": "t:info.applys_when_thumbnail_next_to_media",
-    "default": "flexible",
-    "options": [
-      {
-        "value": "fixed",
-        "label": "t:labels.fixed"
-      },
-      {
-        "value": "flexible",
-        "label": "t:labels.flexible"
-      }
-    ]
-  },
-  {
-    "type": "checkbox",
-    "id": "thumbnail_arrows",
-    "label": "t:actions.show_thumbnail_arrows"
-  },
-  {
-    "type": "select",
-    "id": "mobile_layout",
-    "label": "t:labels.mobile_layout",
-    "default": "partial",
-    "options": [
-      {
-        "value": "partial",
-        "label": "t:labels.75_width"
-      },
-      {
-        "value": "full",
-        "label": "t:labels.full_width"
-      }
-    ]
-  },
-  {
-    "type": "checkbox",
-    "id": "enable_video_looping",
-    "label": "t:actions.enable_video_looping",
-    "default": true
-  },
-  {
-    "type": "select",
-    "id": "product_video_style",
-    "label": "t:labels.video_style",
-    "default": "muted",
-    "options": [
-      {
-        "value": "muted",
-        "label": "t:labels.video_without_sound"
-      },
-      {
-        "value": "unmuted",
-        "label": "t:labels.video_with_sound"
-      }
-    ],
-    "info": "t:info.video_with_sound_not_autoplay"
-  }
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_container_size",
+      "label": "Image container size",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Small (2/5)" },
+        { "value": "medium", "label": "Medium (1/2)" },
+        { "value": "large", "label": "Large (3/5)" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "These settings apply to the gallery and cannot be set at block level because product.gallery.media reads them directly from section settings."
+    },
+    {
+      "type": "select",
+      "id": "product_image_size",
+      "label": "Force image size",
+      "default": "square",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_zoom_enable",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "partial",
+      "options": [
+        { "value": "partial", "label": "75% width" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_video_style",
+      "label": "Video style",
+      "default": "muted",
+      "options": [
+        { "value": "muted", "label": "Without sound (autoplay)" },
+        { "value": "unmuted", "label": "With sound (no autoplay)" }
+      ],
+      "info": "Videos with sound cannot autoplay"
+    }
   ],
-  "blocks": [{ "type": "@theme"}, {"type": "@app"}],
+  "blocks": [
+    { "type": "@app" },
+    { "type": "@theme" }
+  ],
+  "presets": [
+    {
+      "name": "Product block",
+      "category": "Products",
+      "blocks": {
+        "custom-media-gallery": {
+          "type": "custom-media-gallery"
+        }
+      },
+      "block_order": ["custom-media-gallery"]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
 }
 {% endschema %}
