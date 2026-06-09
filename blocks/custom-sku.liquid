@@ -2,7 +2,7 @@
   assign current_variant = closest.product.selected_or_first_available_variant
 -%}
 
-<variant-sku data-product-id="{{ product.id }}" data-section-id="{{ section.id }}">
+<variant-sku data-product-id="{{ closest.product.id }}" data-section-id="{{ section.id }}">
   {%- if current_variant.sku != blank -%}
     {%- assign sku = 'Part Number: ' | append: current_variant.sku -%}
     {%- render 'element.text', text: sku, variant: 'body-sm' -%}
