@@ -1,5 +1,5 @@
 {%- liquid
-  assign current_variant = product.selected_or_first_available_variant
+  assign current_variant = closest.product.selected_or_first_available_variant
 -%}
 
 <variant-sku data-product-id="{{ product.id }}" data-section-id="{{ section.id }}">
