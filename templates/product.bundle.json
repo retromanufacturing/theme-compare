@@ -296,7 +296,7 @@
                     "variant_labels": true,
                     "picker_type": "button",
                     "product_dynamic_variants_enable": true,
-                    "color_swatches": false,
+                    "color_swatches": true,
                     "non_label_options": ""
                   },
                   "blocks": {}
@@ -330,7 +330,7 @@
               "type": "custom-product-card",
               "name": "Product Card",
               "settings": {
-                "product": "chrome-dot-knob-sets",
+                "product": "miscellaneous-knob-sets",
                 "image_position": "left",
                 "image_container_size": "small",
                 "mobile_layout": "partial"
@@ -402,7 +402,7 @@
                     "variant_labels": true,
                     "picker_type": "button",
                     "product_dynamic_variants_enable": true,
-                    "color_swatches": false,
+                    "color_swatches": true,
                     "non_label_options": ""
                   },
                   "blocks": {}
