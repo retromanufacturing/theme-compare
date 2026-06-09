@@ -213,13 +213,54 @@
           "name": "Knob Sets",
           "settings": {
             "title": "2. Choose Knob Sets",
-            "is_open": false,
+            "is_open": true,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
             "tab_padding": 1
           },
           "blocks": {
+            "custom_product_card_qdMcfy": {
+              "type": "custom-product-card",
+              "name": "Product Card",
+              "settings": {
+                "product": "black-dot-knob-sets",
+                "image_position": "left",
+                "image_container_size": "medium",
+                "mobile_layout": "partial"
+              },
+              "blocks": {
+                "custom_price_PpBkRh": {
+                  "type": "custom-price",
+                  "name": "t:labels.price",
+                  "settings": {
+                    "hide_subtitle": false,
+                    "color": "#000"
+                  },
+                  "blocks": {}
+                },
+                "custom_product_inventory_ikXH8M": {
+                  "type": "custom-product-inventory",
+                  "name": "t:labels.inventory_status",
+                  "settings": {
+                    "inventory_threshold": 10,
+                    "inventory_transfers_enable": true
+                  },
+                  "blocks": {}
+                },
+                "custom_sku_FWLPTR": {
+                  "type": "custom-sku",
+                  "name": "Product sku",
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "custom_price_PpBkRh",
+                "custom_product_inventory_ikXH8M",
+                "custom_sku_FWLPTR"
+              ]
+            },
             "text_WXKtRj": {
               "type": "text",
               "name": "Text",
@@ -241,6 +282,7 @@
             }
           },
           "block_order": [
+            "custom_product_card_qdMcfy",
             "text_WXKtRj"
           ]
         },
