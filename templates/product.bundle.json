@@ -465,13 +465,13 @@
             "tab_padding": 1
           },
           "blocks": {
-            "custom_product_list_Dit4wR": {
+            "custom_product_list_EA9bR4": {
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
                 "product_list": [
-                  "1947-53-chevrolet-trucks-full-range-speaker-system",
-                  "1947-53-chevrolet-truck-retroradio"
+                  "1947-53-chevrolet-truck-retroradio",
+                  "1947-53-chevrolet-trucks-full-range-speaker-system"
                 ]
               },
               "blocks": {
@@ -592,7 +592,7 @@
             }
           },
           "block_order": [
-            "custom_product_list_Dit4wR",
+            "custom_product_list_EA9bR4",
             "custom_product_card_EtXDmL"
           ]
         },
