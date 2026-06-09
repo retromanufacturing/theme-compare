@@ -450,52 +450,6 @@
             "tab_padding": 1
           },
           "blocks": {
-            "custom_collection_tPapmY": {
-              "type": "custom-collection",
-              "name": "Collection",
-              "settings": {
-                "collection": "accessories"
-              },
-              "blocks": {
-                "product-card": {
-                  "type": "custom-product-card",
-                  "static": true,
-                  "settings": {
-                    "product": "",
-                    "image_position": "left",
-                    "image_container_size": "medium",
-                    "mobile_layout": "partial"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": []
-            },
-            "custom_product_list_RTrrL7": {
-              "type": "custom-product-list",
-              "name": "Product List",
-              "settings": {
-                "product_list": [
-                  "faceplates",
-                  "mounting-bezels",
-                  "universal-din-repair-faceplate-and-knob-kit"
-                ]
-              },
-              "blocks": {
-                "product-card": {
-                  "type": "custom-product-card",
-                  "static": true,
-                  "settings": {
-                    "product": "",
-                    "image_position": "left",
-                    "image_container_size": "medium",
-                    "mobile_layout": "partial"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": []
-            },
             "text_mYcCde": {
               "type": "text",
               "name": "Text",
@@ -517,8 +471,6 @@
             }
           },
           "block_order": [
-            "custom_collection_tPapmY",
-            "custom_product_list_RTrrL7",
             "text_mYcCde"
           ]
         },
