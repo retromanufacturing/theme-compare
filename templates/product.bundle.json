@@ -450,28 +450,33 @@
             "tab_padding": 1
           },
           "blocks": {
-            "text_mYcCde": {
-              "type": "text",
-              "name": "Text",
+            "custom_product_list_awbgKf": {
+              "type": "custom-product-list",
+              "name": "Product List",
               "settings": {
-                "text": "Insert text here",
-                "alignment": "left",
-                "font_preset": "span",
-                "font_size": "1rem",
-                "font_size_custom": 12,
-                "text_decoration": "",
-                "font_color": "#000000",
-                "background_color": "#ececec",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "product_list": [
+                  "faceplates",
+                  "mounting-bezels"
+                ]
               },
-              "blocks": {}
+              "blocks": {
+                "product-card": {
+                  "type": "custom-product-card",
+                  "static": true,
+                  "settings": {
+                    "product": "",
+                    "image_position": "left",
+                    "image_container_size": "medium",
+                    "mobile_layout": "partial"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": []
             }
           },
           "block_order": [
-            "text_mYcCde"
+            "custom_product_list_awbgKf"
           ]
         },
         "custom_tab_kqgEP8": {
