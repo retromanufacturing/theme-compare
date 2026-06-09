@@ -465,13 +465,13 @@
             "tab_padding": 1
           },
           "blocks": {
-            "custom_product_list_nfndnL": {
+            "custom_product_list_zrJJ4h": {
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
                 "product_list": [
-                  "1947-53-chevrolet-truck-retroradio",
-                  "1947-53-chevrolet-truck-side-mount-antenna"
+                  "1947-53-gmc-trucks-full-range-speaker-system",
+                  "1947-53-chevrolet-truck-retroradio"
                 ]
               },
               "blocks": {
@@ -485,7 +485,7 @@
                     "mobile_layout": "partial"
                   },
                   "blocks": {
-                    "custom_group_6FjBgU": {
+                    "custom_group_a4cnR7": {
                       "type": "custom-group",
                       "settings": {
                         "content_direction": "column",
@@ -522,12 +522,12 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
-                        "custom_sku_W8Tiwj": {
+                        "custom_sku_q6WCYU": {
                           "type": "custom-sku",
                           "settings": {},
                           "blocks": {}
                         },
-                        "custom_product_inventory_cjdWMi": {
+                        "custom_product_inventory_hNwGG6": {
                           "type": "custom-product-inventory",
                           "settings": {
                             "inventory_threshold": 10,
@@ -537,11 +537,11 @@
                         }
                       },
                       "block_order": [
-                        "custom_sku_W8Tiwj",
-                        "custom_product_inventory_cjdWMi"
+                        "custom_sku_q6WCYU",
+                        "custom_product_inventory_hNwGG6"
                       ]
                     },
-                    "custom_variant_picker_E3MReR": {
+                    "custom_variant_picker_YfHB3n": {
                       "type": "custom-variant-picker",
                       "settings": {
                         "variant_labels": true,
@@ -552,7 +552,7 @@
                       },
                       "blocks": {}
                     },
-                    "custom_price_nkpQM3": {
+                    "custom_price_zbNPE6": {
                       "type": "custom-price",
                       "settings": {
                         "hide_subtitle": false,
@@ -560,7 +560,7 @@
                       },
                       "blocks": {}
                     },
-                    "custom_product_features_UTX3Rt": {
+                    "custom_product_features_iy8NTF": {
                       "type": "custom-product-features",
                       "settings": {
                         "font_size": 14
@@ -569,10 +569,10 @@
                     }
                   },
                   "block_order": [
-                    "custom_group_6FjBgU",
-                    "custom_variant_picker_E3MReR",
-                    "custom_price_nkpQM3",
-                    "custom_product_features_UTX3Rt"
+                    "custom_group_a4cnR7",
+                    "custom_variant_picker_YfHB3n",
+                    "custom_price_zbNPE6",
+                    "custom_product_features_iy8NTF"
                   ]
                 }
               },
@@ -681,7 +681,7 @@
             }
           },
           "block_order": [
-            "custom_product_list_nfndnL",
+            "custom_product_list_zrJJ4h",
             "custom_product_card_EtXDmL"
           ]
         },
