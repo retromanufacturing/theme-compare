@@ -184,7 +184,7 @@
             option: option,
             block: block,
             prev_block_index: prev_block_index,
-
+            product: product
           -%}
         {% when 'button_label' %}
           {% if option.name != options_without_labels %}
@@ -192,18 +192,18 @@
               option: option,
               block: block,
               prev_block_index: prev_block_index,
-    
+              product: product
             -%}
           {% else %}
             {%- render 'block.product-variant-picker.button',
               option: option,
               block: block,
               prev_block_index: prev_block_index,
-    
+              product: product
             -%}
           {% endif %}
         {%- else -%}
-          {%- render 'block.product-variant-picker.dropdown', option: option, block: block,  -%}
+          {%- render 'block.product-variant-picker.dropdown', option: option, block: block, product: product -%}
       {% endcase %}
     {%- endfor -%}
     <script type="application/json">
