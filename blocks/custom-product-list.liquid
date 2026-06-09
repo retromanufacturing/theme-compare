@@ -1,7 +1,7 @@
 {%- for product in block.settings.product_list -%}
   {%- content_for 'block',
     type: 'custom-product-card',
-    id: 'product-card-',
+    id: 'static-product-card',
     closest.product: product
   -%}
 {%- endfor -%}
