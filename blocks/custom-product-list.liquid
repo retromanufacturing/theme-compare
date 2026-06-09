@@ -1,0 +1,26 @@
+{%- for product in block.settings.collection.products -%}
+  {%- content_for 'block',
+    type: 'custom-product-card',
+    id: 'product-card',
+    closest.product: product
+  -%}
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "Product List",
+  "tag": null,
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product List"
+    }
+  ]
+}
+{% endschema %}
