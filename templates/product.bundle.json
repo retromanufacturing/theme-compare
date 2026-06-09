@@ -191,6 +191,20 @@
                 "custom_product_logos_zxEXGx"
               ]
             },
+            "custom_spacer_DMrtRx": {
+              "type": "custom-spacer",
+              "name": "Spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
             "custom_price_eL3yHn": {
               "type": "custom-price",
               "name": "t:labels.price",
@@ -205,6 +219,7 @@
             "custom_group_RNx3w6",
             "custom_variant_picker_Teah97",
             "custom_group_gYXAkY",
+            "custom_spacer_DMrtRx",
             "custom_price_eL3yHn"
           ]
         },
