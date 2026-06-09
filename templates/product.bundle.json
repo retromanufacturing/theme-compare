@@ -230,6 +230,18 @@
                 "mobile_layout": "partial"
               },
               "blocks": {
+                "custom_variant_picker_94pMYg": {
+                  "type": "custom-variant-picker",
+                  "name": "Variant picker",
+                  "settings": {
+                    "variant_labels": true,
+                    "picker_type": "button",
+                    "product_dynamic_variants_enable": true,
+                    "color_swatches": false,
+                    "non_label_options": ""
+                  },
+                  "blocks": {}
+                },
                 "custom_price_PpBkRh": {
                   "type": "custom-price",
                   "name": "t:labels.price",
@@ -256,6 +268,7 @@
                 }
               },
               "block_order": [
+                "custom_variant_picker_94pMYg",
                 "custom_price_PpBkRh",
                 "custom_product_inventory_ikXH8M",
                 "custom_sku_FWLPTR"
