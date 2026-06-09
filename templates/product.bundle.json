@@ -332,7 +332,7 @@
               "settings": {
                 "product": "chrome-dot-knob-sets",
                 "image_position": "left",
-                "image_container_size": "medium",
+                "image_container_size": "small",
                 "mobile_layout": "partial"
               },
               "blocks": {
