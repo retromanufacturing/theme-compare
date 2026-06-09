@@ -1,7 +1,7 @@
 {%- for product in block.settings.product_list -%}
   {%- content_for 'block',
     type: 'custom-product-card',
-    id: 'static-product-card',
+    id: 'product-card',
     closest.product: product
   -%}
 {%- endfor -%}
@@ -19,7 +19,28 @@
   ],
   "presets": [
     {
-      "name": "Product List"
+      "name": "Product List",
+      "blocks": {
+        "product-card": {
+          "type": "custom-product-card",
+          "static": true,
+          "blocks": {
+            "custom-group": {
+              "type": "custom-group",
+              "blocks": {
+                "custom-sku": { "type": "custom-sku" },
+                "custom-product-inventory": { "type": "custom-product-inventory" }
+              },
+              "block_order": ["custom-sku", "custom-product-inventory"]
+            },
+            "custom-variant-picker": { "type": "custom-variant-picker" },
+            "custom-price": { "type": "custom-price" },
+            "custom-product-features": { "type": "custom-product-features" }
+          },
+          "block_order": ["custom-group", "custom-variant-picker", "custom-price", "custom-product-features"]
+        }
+      },
+      "block_order": []
     }
   ]
 }
