@@ -454,7 +454,11 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": "{{ metaobjects.build_your_own[\"choose-bezels-of-faceplate\"].products.value }}"
+                "product_list": [
+                  "faceplates",
+                  "mounting-bezels",
+                  "universal-din-repair-faceplate-and-knob-kit"
+                ]
               },
               "blocks": {
                 "product-card": {
