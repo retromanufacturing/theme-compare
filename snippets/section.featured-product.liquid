@@ -46,7 +46,7 @@
     render 'product.gallery', isModal: isModal, sizeVariable: product_image_width, product: product
   endcapture
   assign divider = section.settings.divider
-  assign product = section.settings.product | default: product
+  assign product = product | default: section.settings.product
 -%}
 
 {%- if divider -%}<div class="section--divider">{%- endif -%}
