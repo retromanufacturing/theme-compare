@@ -26,10 +26,7 @@
 {
   "name": "Product Card",
   "tag": null,
-  "blocks": [
-    { "type": "@theme" },
-    { "type": "@app" }
-  ],
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
   "settings": [
     {
       "type": "product",
@@ -70,7 +67,16 @@
   ],
   "presets": [
     {
-      "name": "Product Card"
+      "name": "Product Card",
+      "blocks": [
+        {
+          "type": "custom-group",
+          "blocks": [{ "type": "custom-sku" }, { "type": "custom-product-inventory" }]
+        },
+        { "type": "custom-variant-picker" },
+        { "type": "custom-price" },
+        { "type": "custom-product-features" }
+      ]
     }
   ]
 }
