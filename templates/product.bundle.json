@@ -443,13 +443,34 @@
           "name": "Bezels/Faceplates",
           "settings": {
             "title": "3. Choose Bezels or Faceplate",
-            "is_open": false,
+            "is_open": true,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
             "tab_padding": 1
           },
           "blocks": {
+            "custom_product_list_RTrrL7": {
+              "type": "custom-product-list",
+              "name": "Product List",
+              "settings": {
+                "product_list": "{{ metaobjects.build_your_own[\"choose-bezels-of-faceplate\"].products.value }}"
+              },
+              "blocks": {
+                "product-card": {
+                  "type": "custom-product-card",
+                  "static": true,
+                  "settings": {
+                    "product": "",
+                    "image_position": "left",
+                    "image_container_size": "medium",
+                    "mobile_layout": "partial"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": []
+            },
             "text_mYcCde": {
               "type": "text",
               "name": "Text",
@@ -471,6 +492,7 @@
             }
           },
           "block_order": [
+            "custom_product_list_RTrrL7",
             "text_mYcCde"
           ]
         },
