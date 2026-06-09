@@ -1,4 +1,4 @@
-{%- for product in block.settings.collection.products -%}
+{%- for product in block.settings.product_list -%}
   {%- content_for 'block',
     type: 'custom-product-card',
     id: 'product-card',
@@ -12,9 +12,9 @@
   "tag": null,
   "settings": [
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products"
     }
   ],
   "presets": [
