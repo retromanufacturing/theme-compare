@@ -154,7 +154,7 @@
 {% endstylesheet %}
 
 {%- liquid
-  assign product = product | default: section.settings.product
+  assign product = section.settings.product | default: product
   assign update_url = update_url | default: true, allow_false: true
   assign prev_block_index = forloop.index0 | minus: 1
   assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
