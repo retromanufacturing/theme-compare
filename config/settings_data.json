@@ -41,7 +41,8 @@
     "social_tiktok_link": "https://www.tiktok.com/@retromanufacturing",
     "social_youtube_link": "https://www.youtube.com/channel/UCM5yKOf77Gjew_HBYPS57FQ",
     "favicon": "shopify://shop_images/RM-FavICO2.png",
-    "show_breadcrumbs_collection_link": false,
+    "show_breadcrumbs": true,
+    "show_breadcrumbs_collection_link": true,
     "content_for_index": [],
     "blocks": {
       "10830403595879607806": {
