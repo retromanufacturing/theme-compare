@@ -62,6 +62,20 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "custom_spacer_gGA74E": {
+                  "type": "custom-spacer",
+                  "name": "Spacer",
+                  "settings": {
+                    "size": "percent",
+                    "percent_size": 100,
+                    "pixel_size": 120,
+                    "custom_mobile_size": false,
+                    "size_mobile": "percent",
+                    "percent_size_mobile": 100,
+                    "pixel_size_mobile": 120
+                  },
+                  "blocks": {}
+                },
                 "custom_sku_XeAMqw": {
                   "type": "custom-sku",
                   "name": "Product sku",
@@ -83,6 +97,7 @@
                 }
               },
               "block_order": [
+                "custom_spacer_gGA74E",
                 "custom_sku_XeAMqw",
                 "custom_product_inventory_3Ga7kF",
                 "reviews_io_reviewsio_rating_output_R33VWB"
