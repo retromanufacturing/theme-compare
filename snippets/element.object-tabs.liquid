@@ -45,6 +45,8 @@
   {%- endfor -%}
 </fieldset>
 
+<script src="{{ 'element.object-tabs.js' | asset_url }}" defer></script>
+
 {% stylesheet %}
     .object-tabs-wrap {
       border: none;
@@ -54,16 +56,4 @@
       flex-wrap: wrap;
       gap: var(--size-2);
     }
-
-    object-tabs [data-index] {
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-  }
-
-  object-tabs [data-index="1"] {
-    visibility: visible;
-    height: auto;
-    overflow: visible;
-  }
 {% endstylesheet %}
