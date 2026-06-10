@@ -48,24 +48,25 @@
 <script src="{{ 'element.object-tabs.js' | asset_url }}" defer></script>
 
 {% stylesheet %}
-      .object-tabs-wrap {
+    .object-tabs-wrap {
         border: none;
         padding: 0;
         margin: 0;
         display: flex;
         flex-wrap: wrap;
         gap: var(--size-2);
-      }
+        margin-top: 1rem;
+    }
 
-      object-tabs > [data-tab-index]:not([data-tab-index="1"]) {
-    display: none;
-  }
+    object-tabs > [data-tab-index]:not([data-tab-index="1"]) {
+        display: none;
+    }
 
-  object-tabs > [data-tab-index][aria-hidden="true"] {
-    display: none;
-  }
+    object-tabs > [data-tab-index][aria-hidden="true"] {
+        display: none;
+    }
 
-  object-tabs > [data-tab-index][aria-hidden="false"] {
-    display: block;
-  }
+    object-tabs > [data-tab-index][aria-hidden="false"] {
+        display: block;
+    }
 {% endstylesheet %}
