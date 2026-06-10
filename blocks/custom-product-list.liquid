@@ -4,7 +4,7 @@
 -%}
 
 {%- if group_items -%}
-  <div class="product-list--tabbed">
+  <object-tabs>
     {%- render 'element.object-tabs',
       items: block.settings.product_list,
       name: tab_name
@@ -28,7 +28,7 @@
 {%- endfor -%}
 
 {%- if group_items -%}
-  </div>
+  </object-tabs>
 {%- endif -%}
 
 {% schema %}
