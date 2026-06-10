@@ -1,28 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.object-tabs-wrap input[type="radio"]').forEach(input => {
-    if (input.checked) {
-      const panel = getPanel(input)
-      resizeGallery(panel)
-    }
+window.addEventListener('load', () => {
+  document.querySelectorAll('.object-tabs-wrap').forEach(tabs => {
+    const container = tabs.closest('[class*="tabbed"]')
+    if (!container) return
 
-    input.addEventListener('change', () => {
-      const panel = getPanel(input)
-      setTimeout(() => resizeGallery(panel), 50)
+    // Hide all panels except the first on load
+    container.querySelectorAll('[data-index]').forEach(panel => {
+      if (panel.dataset.index !== '1') {
+        panel.classList.add('hide')
+      }
+    })
+
+    tabs.querySelectorAll('input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        container.querySelectorAll('[data-index]').forEach(panel => {
+          panel.classList.add('hide')
+        })
+        const activePanel = container.querySelector(`[data-index="${input.value}"]`)
+        if (activePanel) activePanel.classList.remove('hide')
+      })
     })
   })
 })
-
-function getPanel(input) {
-  const index = input.value
-  const container = input.closest('[class*="tabbed"]')
-  if (!container) return null
-  return container.querySelector(`[data-index="${index}"]`)
-}
-
-function resizeGallery(panel) {
-  if (!panel) return
-  const gallery = panel.querySelector('product-images')
-  if (gallery && gallery.flickity) {
-    gallery.flickity.resize()
-  }
-}
