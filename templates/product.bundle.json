@@ -371,7 +371,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"choose-bezels-of-faceplate\"].products.value }}",
-                "group_items": false
+                "group_items": true
               },
               "blocks": {
                 "product-card": {
