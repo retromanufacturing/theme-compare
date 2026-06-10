@@ -2,7 +2,11 @@
   Inside css and content for variant labels and custom settings
 {% endcomment %}
 
-{% render 'block.product-variant-picker', product: closest.product, block: block  %}
+{%- liquid
+  assign update_url = block.settings.update_url
+-%}
+
+{% render 'block.product-variant-picker', product: closest.product, block: block, update_url: update_url  %}
 
 {% schema %}
 {
