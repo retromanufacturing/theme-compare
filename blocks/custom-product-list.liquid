@@ -31,22 +31,6 @@
   </div>
 {%- endif -%}
 
-{% style %}
-  .product-list--tabbed [data-index]:not([data-index="1"]) {
-    display: none;
-  }
-
-  {% for i in (1..20) %}
-    .product-list--tabbed:has(.object-tabs-wrap input[value="{{ i }}"]:checked) [data-index="{{ i }}"] {
-      display: block;
-    }
-
-    .product-list--tabbed:has(.object-tabs-wrap input[value="{{ i }}"]:checked) [data-index]:not([data-index="{{ i }}"]) {
-      display: none;
-    }
-  {% endfor %}
-{% endstyle %}
-
 {% schema %}
 {
   "name": "Product List",
