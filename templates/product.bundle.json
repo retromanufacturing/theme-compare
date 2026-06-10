@@ -229,7 +229,7 @@
           "name": "Knob Sets",
           "settings": {
             "title": "2. Choose Knob Sets",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
