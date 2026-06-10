@@ -747,9 +747,13 @@
     "actions": {
       "enable_dropdown_icons": "Enable dropdown icons"
     },
+    "bundle":{
+      "group_collections": "Group collections",
+      "group_products": "Group products"
+    },
     "custom": "Custom settings",
     "font_size": "Font size",
     "variant_picker_tabs": "Variant picker tabs",
-    "variant_picker_update_url": "Update variant url"
+    "variant_picker_update_url": "Update variant url",
   }
 }
