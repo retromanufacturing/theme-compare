@@ -559,8 +559,8 @@
                     "custom_price_kWU8nE": {
                       "type": "custom-price",
                       "settings": {
-                        "hide_subtitle": false,
-                        "color": "#000000"
+                        "hide_subtitle": true,
+                        "color": "#ba4444"
                       },
                       "blocks": {}
                     },
