@@ -1,25 +1,26 @@
-{%- for product in block.settings.collection -%}
-  {%- content_for 'block',
-    type: 'custom-product-card',
-    id: 'product-card',
-    closest.product: product
-  -%}
-{%- endfor -%}
+{% for collection in block.settings.collection_list %}
+  {% assign tab_index = forloop.index %}
+  {%- for product in collection.products -%}
+    <div data-tab-index="{{ tab_index }}">
+      {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
+    </div>
+  {%- endfor -%}
+{% endfor %}
 
 {% schema %}
 {
-  "name": "Product List",
+  "name": "Collections",
   "tag": null,
   "settings": [
     {
-      "type": "collection",
-      "id": "collection",
+      "type": "collection_list",
+      "id": "collection_list",
       "label": "collection"
     }
   ],
   "presets": [
     {
-      "name": "Collection",
+      "name": "Collections",
       "blocks": {
         "product-card": {
           "type": "custom-product-card",
@@ -36,13 +37,34 @@
               "settings": {},
               "blocks": {
                 "custom-sku": { "type": "custom-sku", "settings": {}, "blocks": {} },
-                "custom-product-inventory": { "type": "custom-product-inventory", "settings": { "inventory_threshold": 10, "inventory_transfers_enable": true }, "blocks": {} }
+                "custom-product-inventory": {
+                  "type": "custom-product-inventory",
+                  "settings": { "inventory_threshold": 10, "inventory_transfers_enable": true },
+                  "blocks": {}
+                }
               },
               "block_order": ["custom-sku", "custom-product-inventory"]
             },
-            "custom-variant-picker": { "type": "custom-variant-picker", "settings": { "variant_labels": true, "picker_type": "button", "product_dynamic_variants_enable": true, "color_swatches": false }, "blocks": {} },
-            "custom-price": { "type": "custom-price", "settings": { "hide_subtitle": false, "color": "#000" }, "blocks": {} },
-            "custom-product-features": { "type": "custom-product-features", "settings": { "font_size": 14 }, "blocks": {} }
+            "custom-variant-picker": {
+              "type": "custom-variant-picker",
+              "settings": {
+                "variant_labels": true,
+                "picker_type": "button",
+                "product_dynamic_variants_enable": true,
+                "color_swatches": false
+              },
+              "blocks": {}
+            },
+            "custom-price": {
+              "type": "custom-price",
+              "settings": { "hide_subtitle": false, "color": "#000" },
+              "blocks": {}
+            },
+            "custom-product-features": {
+              "type": "custom-product-features",
+              "settings": { "font_size": 14 },
+              "blocks": {}
+            }
           },
           "block_order": ["custom-group", "custom-variant-picker", "custom-price", "custom-product-features"]
         }
