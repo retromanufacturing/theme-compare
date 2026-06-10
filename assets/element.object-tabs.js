@@ -8,12 +8,16 @@ window.addEventListener('load', () => {
 
     container.querySelectorAll('input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
-        console.log('change fired', input.value)
-        console.log('panel found', container.querySelector(`[data-tab-index="${input.value}"]`))
-        panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
-        const activePanel = container.querySelector(`[data-tab-index="${input.value}"]`)
-        if (activePanel) activePanel.setAttribute('aria-hidden', 'false')
-      })
+  panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
+  const activePanel = container.querySelector(`[data-tab-index="${input.value}"]`)
+  if (!activePanel) return
+  activePanel.setAttribute('aria-hidden', 'false')
+
+  const gallery = activePanel.querySelector('product-images')
+  if (gallery && gallery.flickity) {
+    gallery.flickity.resize()
+  }
+})
     })
   })
 })
