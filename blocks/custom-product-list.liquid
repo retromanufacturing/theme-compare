@@ -13,7 +13,7 @@
 
 {%- for product in block.settings.product_list -%}
   {%- if group_items -%}
-    <div data-index="{{ forloop.index }}">
+    <div data-tab-index="{{ forloop.index }}">
   {%- endif -%}
 
   {%- content_for 'block',
