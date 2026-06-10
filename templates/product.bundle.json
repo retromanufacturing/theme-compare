@@ -359,7 +359,7 @@
           "name": "Bezels/Faceplates",
           "settings": {
             "title": "3. Choose Bezels or Faceplate",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
@@ -489,7 +489,7 @@
           "name": "Speakers",
           "settings": {
             "title": "4. Upgrade Your Sound",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
@@ -614,7 +614,7 @@
           "name": "Vintage Overlay",
           "settings": {
             "title": "5. Add Vintage Overlay",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
@@ -744,7 +744,7 @@
           "name": "Accessories",
           "settings": {
             "title": "5. Add Accessories",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
