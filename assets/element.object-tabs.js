@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     input.addEventListener('change', () => {
       const panel = getPanel(input)
-      resizeGallery(panel)
+      setTimeout(() => resizeGallery(panel), 50)
     })
   })
 })
