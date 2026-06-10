@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
 
     container.querySelectorAll('input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
-        console.log('change fired', input.value
+        console.log('change fired', input.value)
         panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
         const activePanel = container.querySelector(`[data-index="${input.value}"]`)
         if (activePanel) activePanel.setAttribute('aria-hidden', 'false')
