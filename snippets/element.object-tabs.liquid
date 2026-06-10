@@ -56,4 +56,16 @@
       flex-wrap: wrap;
       gap: var(--size-2);
     }
+
+    object-tabs [data-index]:not([data-index="1"]) {
+  display: none;
+}
+
+object-tabs [aria-hidden="false"] {
+  display: block;
+}
+
+object-tabs [aria-hidden="true"] {
+  display: none;
+}
 {% endstylesheet %}
