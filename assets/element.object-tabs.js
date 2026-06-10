@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
         console.log('change fired', input.value)
         console.log('panel found', container.querySelector(`[data-tab-index="${input.value}"]`))
         panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
-        const activePanel = container.querySelector(`[data-index="${input.value}"]`)
+        const activePanel = container.querySelector(`[data-tab-index="${input.value}"]`)
         if (activePanel) activePanel.setAttribute('aria-hidden', 'false')
       })
     })
