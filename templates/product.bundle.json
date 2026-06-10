@@ -741,9 +741,9 @@
         },
         "custom_tab_3YpMhd": {
           "type": "custom-tab",
-          "name": "Vintage Overlay",
+          "name": "Accessories",
           "settings": {
-            "title": "5. Add Vintage Overlay",
+            "title": "5. Add Accessories",
             "is_open": true,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
