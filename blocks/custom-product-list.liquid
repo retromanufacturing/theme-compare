@@ -33,15 +33,6 @@
 
 {% style %}
  
-  {% for i in (1..20) %}
-    .product-list--tabbed:has(.object-tabs-wrap input[value="{{ i }}"]:checked) [data-index="{{ i }}"] {
-      display: block;
-    }
-
-    .product-list--tabbed:has(.object-tabs-wrap input[value="{{ i }}"]:checked) [data-index]:not([data-index="{{ i }}"]) {
-      display: none;
-    }
-  {% endfor %}
 {% endstyle %}
 
 {% schema %}
