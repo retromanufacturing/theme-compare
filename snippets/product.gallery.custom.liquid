@@ -434,9 +434,9 @@
             {% liquid
               if hide_variant_media and variant_images contains media.src
                 if media.id != featured_media.id
-                    continue
+                  continue
                 endif
-              endif  
+              endif
 
               assign loading = 'eager'
               assign animation = 'image-fade-in'
@@ -476,102 +476,102 @@
           </button>
         {%- endif -%}
       </div>
-{% if hide_thumbnails %}
-  hide thumbnails enabled
-{% endif %}
+
       {% if media_gallery_layout != 'stacked' %}
-        <div
-          data-product-thumbs
-          class="product__thumbs product__thumbs--{{ thumbnail_position }} product__thumbs-placement--{{ image_position }}{% if product.media.size == 1 %} medium-up--hide{% endif %} small--hide"
-          data-position="{{ thumbnail_position }}"
-          data-arrows="{{ thumbnail_arrows }}"
-        >
-          {%- if thumbnail_arrows -%}
-            <button
-              type="button"
-              class="product__thumb-arrow product__thumb-arrow--prev hide"
-              aria-label="{%- render 'utility.translate', key: 'actions.previous', fallback: 'Previous' -%}"
-            >
-              {% render 'element.icon', name: 'chevron-left' %}
-            </button>
-          {%- endif -%}
+        {% unless hide_thumbnails %}
+          <div
+            data-product-thumbs
+            class="product__thumbs product__thumbs--{{ thumbnail_position }} product__thumbs-placement--{{ image_position }}{% if product.media.size == 1 %} medium-up--hide{% endif %} small--hide"
+            data-position="{{ thumbnail_position }}"
+            data-arrows="{{ thumbnail_arrows }}"
+          >
+            {%- if thumbnail_arrows -%}
+              <button
+                type="button"
+                class="product__thumb-arrow product__thumb-arrow--prev hide"
+                aria-label="{%- render 'utility.translate', key: 'actions.previous', fallback: 'Previous' -%}"
+              >
+                {% render 'element.icon', name: 'chevron-left' %}
+              </button>
+            {%- endif -%}
 
-          <div class="product__thumbs--scroller">
-            {%- if product.media.size > 1 -%}
-              {%- for media in product.media -%}
-                {%- liquid
-                  if hide_variant_media and variant_images contains media.src
-                    if media.id != featured_media.id
+            <div class="product__thumbs--scroller">
+              {%- if product.media.size > 1 -%}
+                {%- for media in product.media -%}
+                  {%- liquid
+                    if hide_variant_media and variant_images contains media.src
+                      if media.id != featured_media.id
                         continue
+                      endif
                     endif
-                  endif    
-                  
-                  assign image_set = false
-                  assign image_set_group = ''
-                  if media.alt contains '#'
-                    assign image_set_full = media.alt | split: '#' | last
-                    if image_set_full contains '_'
-                      assign image_set = true
-                      assign image_set_group = image_set_full | split: '_' | first
-                    endif
-                  endif
-                -%}
-                <div
-                  class="product__thumb-item"
-                  data-index="{{ forloop.index0 }}"
-                  {% if image_set %}
-                    data-set-name="{{ image_set_group }}"
-                    data-group="{{ image_set_full }}"
-                  {% endif %}
-                >
-                  <a
-                    href="{{ media.preview_image | image_url: width: product_zoom_size }}"
-                    data-product-thumb
-                    class="product__thumb js-no-transition"
-                    data-index="{{ forloop.index0 }}"
-                    data-id="{{ media.id }}"
-                  >
-                    <div
-                      class="image-wrap image-wrap__thumbnail"
-                      style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
-                    >
-                      {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
-                        <span class="product__thumb-icon">
-                          {% render 'element.icon', name: 'play' %}
-                        </span>
-                      {%- endif -%}
-                      {%- if media.media_type == 'model' -%}
-                        <span class="product__thumb-icon">
-                          {% render 'element.icon', name: '3d' %}
-                        </span>
-                      {%- endif -%}
 
-                      {%- assign loading = 'eager' -%}
-                      {%- assign media_alt = media.alt | escape | split: '#' | first -%}
-                      {%- render 'element.image',
-                        img: media.preview_image,
-                        alt: media_alt,
-                        widths: '120, 360, 540, 720',
-                        sizeVariable: '80px',
-                        loading: loading
-                      -%}
-                    </div>
-                  </a>
-                </div>
-              {%- endfor -%}
+                    assign image_set = false
+                    assign image_set_group = ''
+                    if media.alt contains '#'
+                      assign image_set_full = media.alt | split: '#' | last
+                      if image_set_full contains '_'
+                        assign image_set = true
+                        assign image_set_group = image_set_full | split: '_' | first
+                      endif
+                    endif
+                  -%}
+                  <div
+                    class="product__thumb-item"
+                    data-index="{{ forloop.index0 }}"
+                    {% if image_set %}
+                      data-set-name="{{ image_set_group }}"
+                      data-group="{{ image_set_full }}"
+                    {% endif %}
+                  >
+                    <a
+                      href="{{ media.preview_image | image_url: width: product_zoom_size }}"
+                      data-product-thumb
+                      class="product__thumb js-no-transition"
+                      data-index="{{ forloop.index0 }}"
+                      data-id="{{ media.id }}"
+                    >
+                      <div
+                        class="image-wrap image-wrap__thumbnail"
+                        style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
+                      >
+                        {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                          <span class="product__thumb-icon">
+                            {% render 'element.icon', name: 'play' %}
+                          </span>
+                        {%- endif -%}
+                        {%- if media.media_type == 'model' -%}
+                          <span class="product__thumb-icon">
+                            {% render 'element.icon', name: '3d' %}
+                          </span>
+                        {%- endif -%}
+
+                        {%- assign loading = 'eager' -%}
+                        {%- assign media_alt = media.alt | escape | split: '#' | first -%}
+                        {%- render 'element.image',
+                          img: media.preview_image,
+                          alt: media_alt,
+                          widths: '120, 360, 540, 720',
+                          sizeVariable: '80px',
+                          loading: loading
+                        -%}
+                      </div>
+                    </a>
+                  </div>
+                {%- endfor -%}
+              {%- endif -%}
+            </div>
+
+            {%- if thumbnail_arrows -%}
+              <button
+                type="button"
+                class="product__thumb-arrow product__thumb-arrow--next"
+                aria-label="{% render 'utility.translate', key: 'actions.next', fallback: 'Next' -%}"
+              >
+                {% render 'element.icon', name: 'chevron-right' %}
+              </button>
             {%- endif -%}
           </div>
-
-          {%- if thumbnail_arrows -%}
-            <button
-              type="button"
-              class="product__thumb-arrow product__thumb-arrow--next"
-              aria-label="{% render 'utility.translate', key: 'actions.next', fallback: 'Next' -%}"
-            >
-              {% render 'element.icon', name: 'chevron-right' %}
-            </button>
-          {%- endif -%}
-        </div>
+        {% endunless %}
       {% endif %}
     </div>
     <script type="application/json" data-current-variant-json>
@@ -583,7 +583,7 @@
   </product-images>
 
   <script type="module">
-    import 'product.gallery'
+    import 'product.gallery';
   </script>
 
   {% if thumbnail_height == 'fixed' %}
