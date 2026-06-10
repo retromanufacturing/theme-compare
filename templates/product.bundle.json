@@ -743,7 +743,7 @@
           "type": "custom-tab",
           "name": "Accessories",
           "settings": {
-            "title": "5. Add Accessories",
+            "title": "6. Add Accessories",
             "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
