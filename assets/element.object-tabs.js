@@ -1,6 +1,6 @@
 window.addEventListener('load', () => {
   document.querySelectorAll('object-tabs').forEach(container => {
-    const panels = container.querySelectorAll('[data-index]')
+    const panels = container.querySelectorAll('[data-tab-index]')
 
     panels.forEach(panel => {
       if (panel.dataset.index !== '1') panel.setAttribute('aria-hidden', 'true')
@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     container.querySelectorAll('input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
         console.log('change fired', input.value)
-        console.log('panel found', container.querySelector(`[data-index="${input.value}"]`))
+        console.log('panel found', container.querySelector(`[data-tab-index="${input.value}"]`))
         panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
         const activePanel = container.querySelector(`[data-index="${input.value}"]`)
         if (activePanel) activePanel.setAttribute('aria-hidden', 'false')
