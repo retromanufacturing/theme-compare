@@ -474,7 +474,9 @@
           </button>
         {%- endif -%}
       </div>
-custom media gallery
+{% unless hide_thumbnails %}
+  this is a test
+{% endunless %}
       {% if media_gallery_layout != 'stacked' %}
         <div
           data-product-thumbs

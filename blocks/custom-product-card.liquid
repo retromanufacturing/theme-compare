@@ -3,6 +3,7 @@
   assign image_position = block.settings.image_position
   assign image_container_size = block.settings.image_container_size
   assign mobile_layout = block.settings.mobile_layout
+  assign hide_thumbnails = block.settings.hide_thumbnails
 
   capture gallery
     render 'product.gallery.custom', product: product
@@ -19,7 +20,8 @@
   product_media_gallery: gallery,
   image_position: image_position,
   image_container_width: image_container_size,
-  mobile_layout: mobile_layout
+  mobile_layout: mobile_layout,
+  hide_thumbnails: hide_thumbnails
 -%}
 
 {% schema %}
