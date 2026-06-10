@@ -111,6 +111,7 @@
                 "picker_type": "button",
                 "product_dynamic_variants_enable": true,
                 "color_swatches": true,
+                "update_url": false,
                 "non_label_options": ""
               },
               "blocks": {}
@@ -316,6 +317,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
+                        "update_url": false,
                         "non_label_options": ""
                       },
                       "blocks": {}
@@ -444,6 +446,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
+                        "update_url": false,
                         "non_label_options": ""
                       },
                       "blocks": {}
@@ -569,6 +572,7 @@
                     "picker_type": "button",
                     "product_dynamic_variants_enable": true,
                     "color_swatches": false,
+                    "update_url": false,
                     "non_label_options": ""
                   },
                   "blocks": {}
@@ -696,6 +700,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
+                        "update_url": false,
                         "non_label_options": ""
                       },
                       "blocks": {}
@@ -824,6 +829,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
+                        "update_url": false,
                         "non_label_options": ""
                       },
                       "blocks": {}
