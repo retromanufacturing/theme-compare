@@ -32,12 +32,8 @@
 {%- endif -%}
 
 {% style %}
-  .product-list--tabbed [data-index] {
+  .product-list--tabbed [data-index]:not([data-index="1"]) {
     display: none;
-  }
-
-  .product-list--tabbed [data-index="1"] {
-    display: block;
   }
 
   {% for i in (1..20) %}
