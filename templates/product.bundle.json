@@ -240,7 +240,8 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": "{{ metaobjects.build_your_own[\"choose-knob-sets\"].products.value }}"
+                "product_list": "{{ metaobjects.build_your_own[\"choose-knob-sets\"].products.value }}",
+                "group_items": true
               },
               "blocks": {
                 "product-card": {
@@ -369,7 +370,8 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": "{{ metaobjects.build_your_own[\"choose-bezels-of-faceplate\"].products.value }}"
+                "product_list": "{{ metaobjects.build_your_own[\"choose-bezels-of-faceplate\"].products.value }}",
+                "group_items": false
               },
               "blocks": {
                 "product-card": {
@@ -623,7 +625,8 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": "{{ metaobjects.build_your_own[\"add-vintage-overlay\"].products.value }}"
+                "product_list": "{{ metaobjects.build_your_own[\"add-vintage-overlay\"].products.value }}",
+                "group_items": false
               },
               "blocks": {
                 "product-card": {
@@ -752,7 +755,8 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": "{{ metaobjects.build_your_own[\"add-accessories\"].products.value }}"
+                "product_list": "{{ metaobjects.build_your_own[\"add-accessories\"].products.value }}",
+                "group_items": false
               },
               "blocks": {
                 "product-card": {
