@@ -242,7 +242,8 @@
                 "product": "black-dot-knob-sets",
                 "image_position": "left",
                 "image_container_size": "small",
-                "mobile_layout": "partial"
+                "mobile_layout": "partial",
+                "hide_thumbnails": true
               },
               "blocks": {
                 "custom_group_fBK8LA": {
@@ -348,7 +349,8 @@
                 "product": "miscellaneous-knob-sets",
                 "image_position": "left",
                 "image_container_size": "small",
-                "mobile_layout": "partial"
+                "mobile_layout": "partial",
+                "hide_thumbnails": false
               },
               "blocks": {
                 "custom_group_caUBki": {
@@ -474,109 +476,7 @@
                   "1947-53-chevrolet-truck-retroradio"
                 ]
               },
-              "blocks": {
-                "product-card": {
-                  "type": "custom-product-card",
-                  "static": true,
-                  "settings": {
-                    "product": "",
-                    "image_position": "left",
-                    "image_container_size": "medium",
-                    "mobile_layout": "partial"
-                  },
-                  "blocks": {
-                    "custom_group_a4cnR7": {
-                      "type": "custom-group",
-                      "settings": {
-                        "content_direction": "column",
-                        "vertical_on_mobile": true,
-                        "horizontal_alignment": "flex-start",
-                        "vertical_alignment": "center",
-                        "align_baseline": false,
-                        "horizontal_alignment_flex_direction_column": "flex-start",
-                        "vertical_alignment_flex_direction_column": "center",
-                        "gap": 12,
-                        "width": "fill",
-                        "custom_width": 100,
-                        "width_mobile": "fill",
-                        "custom_width_mobile": 100,
-                        "height": "fit",
-                        "custom_height": 100,
-                        "inherit_color_scheme": true,
-                        "color_scheme": "none",
-                        "background_image_position": "cover",
-                        "border": "none",
-                        "border_width": 1,
-                        "border_opacity": 100,
-                        "border_radius": 0,
-                        "border_color": "#42434d",
-                        "toggle_overlay": false,
-                        "overlay_color": "#00000026",
-                        "overlay_style": "solid",
-                        "gradient_direction": "to top",
-                        "link": "",
-                        "open_in_new_tab": false,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {
-                        "custom_sku_q6WCYU": {
-                          "type": "custom-sku",
-                          "settings": {},
-                          "blocks": {}
-                        },
-                        "custom_product_inventory_hNwGG6": {
-                          "type": "custom-product-inventory",
-                          "settings": {
-                            "inventory_threshold": 10,
-                            "inventory_transfers_enable": true
-                          },
-                          "blocks": {}
-                        }
-                      },
-                      "block_order": [
-                        "custom_sku_q6WCYU",
-                        "custom_product_inventory_hNwGG6"
-                      ]
-                    },
-                    "custom_variant_picker_YfHB3n": {
-                      "type": "custom-variant-picker",
-                      "settings": {
-                        "variant_labels": true,
-                        "picker_type": "button",
-                        "product_dynamic_variants_enable": true,
-                        "color_swatches": false,
-                        "non_label_options": ""
-                      },
-                      "blocks": {}
-                    },
-                    "custom_price_zbNPE6": {
-                      "type": "custom-price",
-                      "settings": {
-                        "hide_subtitle": false,
-                        "color": "#000000"
-                      },
-                      "blocks": {}
-                    },
-                    "custom_product_features_iy8NTF": {
-                      "type": "custom-product-features",
-                      "settings": {
-                        "font_size": 14
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "custom_group_a4cnR7",
-                    "custom_variant_picker_YfHB3n",
-                    "custom_price_zbNPE6",
-                    "custom_product_features_iy8NTF"
-                  ]
-                }
-              },
-              "block_order": []
+              "blocks": {}
             },
             "custom_product_card_EtXDmL": {
               "type": "custom-product-card",
@@ -586,7 +486,8 @@
                 "product": "faceplates",
                 "image_position": "left",
                 "image_container_size": "medium",
-                "mobile_layout": "partial"
+                "mobile_layout": "partial",
+                "hide_thumbnails": false
               },
               "blocks": {
                 "custom_group_aedNWz": {
@@ -704,7 +605,8 @@
                 "product": "4x8-inch-ultra-thin-dash-replacement-speaker",
                 "image_position": "left",
                 "image_container_size": "medium",
-                "mobile_layout": "partial"
+                "mobile_layout": "partial",
+                "hide_thumbnails": false
               },
               "blocks": {
                 "custom_group_djdyqD": {
