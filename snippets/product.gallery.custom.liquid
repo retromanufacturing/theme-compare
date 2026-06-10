@@ -397,6 +397,8 @@
   assign thumbnail_position = thumbnail_position | default: section.settings.thumbnail_position | default: 'beside'
   assign hide_variant_media = hide_variant_media | default: section.settings.hide_variant_media, allow_false: true | default: false
 
+  assign hide_thumbnails = hide_thumbnails
+
   if hide_variant_media
     assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
   endif
