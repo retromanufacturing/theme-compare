@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 
     container.querySelectorAll('input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
-        // panels.forEach(panel => panel.classList.add('hide'))
+        panels.forEach(panel => panel.classList.add('hide'))
         const activePanel = container.querySelector(`[data-index="${input.value}"]`)
         if (activePanel) activePanel.classList.remove('hide')
       })
