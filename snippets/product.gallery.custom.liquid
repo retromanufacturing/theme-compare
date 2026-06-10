@@ -474,9 +474,9 @@
           </button>
         {%- endif -%}
       </div>
-{% unless hide_thumbnails %}
-  hide thumbnails disabled
-{% endunless %}
+{% if hide_thumbnails %}
+  hide thumbnails enabled
+{% endif %}
       {% if media_gallery_layout != 'stacked' %}
         <div
           data-product-thumbs
