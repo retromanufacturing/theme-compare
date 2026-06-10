@@ -1,3 +1,12 @@
+{%- liquid
+  assign tab_name = 'product-tabs-' | append: block.id
+-%}
+
+ <object-tabs>
+    {%- render 'element.object-tabs',
+      items: block.settings.collection_list,
+      name: tab_name
+    -%}
 {% for collection in block.settings.collection_list %}
   {% assign tab_index = forloop.index %}
   {%- for product in collection.products -%}
@@ -6,6 +15,7 @@
     </div>
   {%- endfor -%}
 {% endfor %}
+</object-tabs>
 
 {% schema %}
 {
