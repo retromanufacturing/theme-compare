@@ -749,6 +749,7 @@
     },
     "custom": "Custom settings",
     "font_size": "Font size",
-    "variant_picker_tabs": "Variant picker tabs"
+    "variant_picker_tabs": "Variant picker tabs",
+    "variant_picker_update_url": "Update variant url"
   }
 }
