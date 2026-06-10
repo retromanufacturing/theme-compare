@@ -6,7 +6,7 @@
   assign hide_thumbnails = block.settings.hide_thumbnails
 
   capture gallery
-    render 'product.gallery.custom', product: product
+    render 'product.gallery.custom', product: product, hide_thumbnails: hide_thumbnails
   endcapture
 
   capture info
@@ -21,7 +21,7 @@
   image_position: image_position,
   image_container_width: image_container_size,
   mobile_layout: mobile_layout,
-  hide_thumbnails: hide_thumbnails
+
 -%}
 
 {% schema %}
