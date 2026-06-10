@@ -241,7 +241,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"choose-knob-sets\"].products.value }}",
-                "group_items": true
+                "group_items": false
               },
               "blocks": {
                 "product-card": {
