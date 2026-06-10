@@ -606,7 +606,7 @@
                 "image_position": "left",
                 "image_container_size": "medium",
                 "mobile_layout": "partial",
-                "hide_thumbnails": false
+                "hide_thumbnails": true
               },
               "blocks": {
                 "custom_group_djdyqD": {
