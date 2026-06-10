@@ -9,15 +9,13 @@ window.addEventListener('load', () => {
     container.querySelectorAll('.object-tabs-wrap input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
         panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
-        const activePanel = container.querySelector(`[data-tab-index="${input.value}"]`)
-        if (!activePanel) return
-        activePanel.setAttribute('aria-hidden', 'false')
-
-        const gallery = activePanel.querySelector('product-images')
-        if (gallery && gallery.flickity) {
-            gallery.flickity.resize()
-        } 
-    })
+        const activePanels = container.querySelectorAll(`[data-tab-index="${input.value}"]`)
+        activePanels.forEach(panel => {
+            panel.setAttribute('aria-hidden', 'false')
+            const gallery = panel.querySelector('product-images')
+            if (gallery && gallery.flickity) gallery.flickity.resize()
+            })
+        })
     })
   })
 })
