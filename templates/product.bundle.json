@@ -512,9 +512,9 @@
                   "settings": {
                     "product": "{{ closest.product }}",
                     "image_position": "left",
-                    "image_container_size": "medium",
+                    "image_container_size": "small",
                     "mobile_layout": "partial",
-                    "hide_thumbnails": false
+                    "hide_thumbnails": true
                   },
                   "blocks": {
                     "custom_group_W8Lbe7": {
@@ -580,7 +580,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": true,
+                        "update_url": false,
                         "non_label_options": ""
                       },
                       "blocks": {}
