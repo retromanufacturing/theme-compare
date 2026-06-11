@@ -17,3 +17,9 @@
     });
   });
 </script>
+
+{% if product %}
+  {% if product.template_suffix == 'bundle' %}
+      bundle buy button
+  {% endif %}
+{% endif %}
