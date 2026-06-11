@@ -13,7 +13,6 @@
 
   {%- for collection in block.settings.collection_list -%}
     {%- assign tab_index = forloop.index -%}
-
     {%- if filter_type != 'none' -%}
       {%- liquid
         assign child_values = collection.products
@@ -22,7 +21,6 @@
         endfor
         assign child_values = child_values | uniq | compact
       -%}
-
       <fieldset class="object-child-tabs-wrap variant-button-wrap" data-parent-index="{{ tab_index }}"{% if tab_index != 1 %} aria-hidden="true"{% endif %}>
         <legend class="visually-hidden">{{ collection.title }}</legend>
         {%- for value in child_values -%}
@@ -41,7 +39,19 @@
         {%- endfor -%}
       </fieldset>
     {%- endif -%}
+  {%- endfor -%}
 
+  {%- for collection in block.settings.collection_list -%}
+    {%- assign tab_index = forloop.index -%}
+    {%- if filter_type != 'none' -%}
+      {%- liquid
+        assign child_values = collection.products
+        for part in path_parts
+          assign child_values = child_values | map: part
+        endfor
+        assign child_values = child_values | uniq | compact
+      -%}
+    {%- endif -%}
     {%- for product in collection.products -%}
       {%- liquid
         if filter_type != 'none'
