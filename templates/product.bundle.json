@@ -503,7 +503,9 @@
                 "collection_list": [
                   "dash-speakers",
                   "stereo-speakers"
-                ]
+                ],
+                "filter_type": "metafield",
+                "filter_value": "metafields.features.size"
               },
               "blocks": {
                 "product-card": {
