@@ -1,0 +1,31 @@
+{% render 'block.product-buy-buttons', product: closest.product %}
+
+{% schema %}
+{
+  "name": "t:labels.buy_buttons",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout",
+      "label": "t:actions.show_dynamic_checkout",
+      "info": "t:info.lets_customers_checkout_familiar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "surface_pickup_enable",
+      "label": "t:actions.enable_pickup_availability",
+      "info": "t:actions.learn_to_setup_local_pickup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gift_card_recipient",
+      "default": false,
+      "label": "t:actions.show_recipient_information",
+      "info": "t:info.gift_card_products"
+    }
+  ],
+  "presets": [{ "name": "t:labels.buy_buttons" }]
+}
+{% endschema %}
