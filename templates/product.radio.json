@@ -12,25 +12,6 @@
     "main": {
       "type": "main-product-block",
       "blocks": {
-        "text_tM4wUV": {
-          "type": "text",
-          "name": "Text",
-          "settings": {
-            "text": "Insert text here",
-            "alignment": "left",
-            "font_preset": "span",
-            "font_size": "1rem",
-            "font_size_custom": 12,
-            "text_decoration": "",
-            "font_color": "#000000",
-            "background_color": "#ececec",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
         "custom_group_PPrm6E": {
           "type": "custom-group",
           "name": "Group",
@@ -162,7 +143,6 @@
         }
       },
       "block_order": [
-        "text_tM4wUV",
         "custom_group_PPrm6E",
         "custom_variant_picker_qbdrbg",
         "custom_product_features_E4bDXB",
