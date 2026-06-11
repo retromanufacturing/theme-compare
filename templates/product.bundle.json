@@ -890,16 +890,6 @@
           "name": "t:custom.bundle.buy_buttons",
           "settings": {},
           "blocks": {}
-        },
-        "custom_buy_button_dh6tRh": {
-          "type": "custom-buy-button",
-          "name": "t:labels.buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true,
-            "show_gift_card_recipient": false
-          },
-          "blocks": {}
         }
       },
       "block_order": [
@@ -909,8 +899,7 @@
         "custom_tab_kqgEP8",
         "custom_tab_Xb7JWF",
         "custom_tab_3YpMhd",
-        "custom_buy_button_bundle_M9pGHE",
-        "custom_buy_button_dh6tRh"
+        "custom_buy_button_bundle_M9pGHE"
       ],
       "settings": {
         "image_position": "left",
