@@ -131,7 +131,7 @@
       "type": "text",
       "id": "filter_label",
       "label": "Filter label",
-      "visible_if": "{{ block.settings.filter_value != blank }}"
+      "visible_if": "{{ block.settings.filter_type != 'none' and block.settings.filter_value != blank }}"
     }
   ],
   "presets": [

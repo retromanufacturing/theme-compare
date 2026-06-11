@@ -241,6 +241,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"choose-knob-sets\"].products.value }}",
+                "required": true,
                 "group_items": true
               },
               "blocks": {
@@ -371,6 +372,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"choose-bezels-of-faceplate\"].products.value }}",
+                "required": true,
                 "group_items": true
               },
               "blocks": {
@@ -504,8 +506,11 @@
                   "dash-speakers",
                   "stereo-speakers"
                 ],
+                "required": true,
+                "collection_label": "Speakers",
                 "filter_type": "metafield",
-                "filter_value": "metafields.features.size"
+                "filter_value": "metafields.features.size",
+                "filter_label": "Speaker Sizes"
               },
               "blocks": {
                 "product-card": {
@@ -635,6 +640,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"add-vintage-overlay\"].products.value }}",
+                "required": true,
                 "group_items": true
               },
               "blocks": {
@@ -765,6 +771,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"add-accessories\"].products.value }}",
+                "required": true,
                 "group_items": false
               },
               "blocks": {
