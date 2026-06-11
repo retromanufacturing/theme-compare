@@ -1,16 +1,33 @@
 {%- liquid
   assign group_items = block.settings.group_items
+  assign required = block.settings.required
   assign tab_name = 'product-tabs-' | append: block.id
 -%}
 
 {%- if group_items -%}
-  <object-tabs data-required="{{ block.settings.required }}">
+  <object-tabs data-required="{{ required }}">
     {%- render 'element.object-tabs', items: block.settings.product_list, name: tab_name -%}
 {%- endif -%}
 
 {%- for product in block.settings.product_list -%}
   {%- if group_items -%}
-    <div data-tab-index="{{ forloop.index }}">
+    <div
+      data-tab-index="{{ forloop.index }}"
+      {% if forloop.first and required == false %}
+        data-optional-selected
+      {% endif %}
+    >
+      {%- unless required -%}
+        <input
+          type="radio"
+          class="bundle-optional-radio"
+          name="optional-{{ block.id }}"
+          data-panel-index="{{ forloop.index }}"
+          {% if forloop.first %}
+            checked
+          {% endif %}
+        >
+      {%- endunless -%}
   {%- endif -%}
 
   {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
