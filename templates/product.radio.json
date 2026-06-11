@@ -95,6 +95,19 @@
             "reviews_io_reviewsio_rating_output_FjQ9LB"
           ]
         },
+        "custom_variant_picker_qbdrbg": {
+          "type": "custom-variant-picker",
+          "name": "Variant picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false,
+            "update_url": true,
+            "non_label_options": ""
+          },
+          "blocks": {}
+        },
         "custom_buy_button_MYrA6y": {
           "type": "custom-buy-button",
           "name": "t:labels.buy_buttons",
@@ -109,6 +122,7 @@
       "block_order": [
         "text_tM4wUV",
         "custom_group_PPrm6E",
+        "custom_variant_picker_qbdrbg",
         "custom_buy_button_MYrA6y"
       ],
       "settings": {
