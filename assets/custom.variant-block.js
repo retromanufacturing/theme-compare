@@ -1,4 +1,4 @@
-class VariantBlock extends HTMLElement {
+class VariantBlockTest extends HTMLElement {
   connectedCallback() {
     document.addEventListener(
       `variantChange:${this.dataset.sectionId}:${this.dataset.productId}`,
@@ -16,7 +16,7 @@ class VariantBlock extends HTMLElement {
   }
 }
 
-customElements.define('variant-block', VariantBlock)
+customElements.define('variant-block-test', VariantBlockTest)
 
 // Attach to an existing block-variant-picker to get the right sectionId and productId
 const picker = document.querySelector('block-variant-picker')
