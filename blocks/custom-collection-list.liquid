@@ -106,6 +106,11 @@
       "default": true
     },
     {
+      "type": "text",
+      "id": "collection_label",
+      "label": "Collection label"
+    },
+    {
       "type": "select",
       "id": "filter_type",
       "label": "Filter Products",
@@ -121,6 +126,12 @@
       "label": "Filter value",
       "info": "e.g. metafields.features.size",
       "visible_if": "{{ block.settings.filter_type != 'none' }}"
+    },
+    {
+      "type": "text",
+      "id": "filter_label",
+      "label": "Filter label",
+      "visible_if": "{{ block.settings.filter_value != blank }}"
     }
   ],
   "presets": [
