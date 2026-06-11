@@ -6,6 +6,10 @@
   {% render 'block.product-features', product: closest.product | default: product, block: block %}
 </variant-block>
 
+<script type="module">
+  import 'custom.variant-block'
+</script>
+
 {% schema %}
 {
   "name": "Product features",
