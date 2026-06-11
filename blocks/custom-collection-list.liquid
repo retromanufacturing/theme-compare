@@ -1,20 +1,68 @@
 {%- liquid
   assign tab_name = 'product-tabs-' | append: block.id
+  assign filter_type = block.settings.filter_type
+  assign filter_value = block.settings.filter_value
+  assign path_parts = filter_value | split: '.'
 -%}
 
- <object-tabs>
-    {%- render 'element.object-tabs',
-      items: block.settings.collection_list,
-      name: tab_name
-    -%}
-{% for collection in block.settings.collection_list %}
-  {% assign tab_index = forloop.index %}
-  {%- for product in collection.products -%}
-    <div data-tab-index="{{ tab_index }}">
-      {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
-    </div>
+<object-tabs>
+  {%- render 'element.object-tabs',
+    items: block.settings.collection_list,
+    name: tab_name
+  -%}
+
+  {%- for collection in block.settings.collection_list -%}
+    {%- assign tab_index = forloop.index -%}
+
+    {%- if filter_type != 'none' -%}
+      {%- liquid
+        assign child_values = collection.products
+        for part in path_parts
+          assign child_values = child_values | map: part
+        endfor
+        assign child_values = child_values | uniq | compact
+      -%}
+
+      <fieldset class="object-child-tabs-wrap variant-button-wrap" data-parent-index="{{ tab_index }}">
+        <legend class="visually-hidden">{{ collection.title }}</legend>
+        {%- for value in child_values -%}
+          {%- assign child_id = tab_name | append: '-child-' | append: tab_index | append: '-' | append: forloop.index -%}
+          {%- capture child_label -%}
+            {%- render 'element.button', type: 'button', text: value, inverted: true, style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);' -%}
+          {%- endcapture -%}
+          {%- render 'element.radio',
+            id: child_id,
+            name: tab_name | append: '-child-' | append: tab_index,
+            value: forloop.index,
+            checked: forloop.first,
+            display_icon: false,
+            slot: child_label
+          -%}
+        {%- endfor -%}
+      </fieldset>
+    {%- endif -%}
+
+    {%- for product in collection.products -%}
+      {%- liquid
+        if filter_type != 'none'
+          assign product_value = product
+          for part in path_parts
+            assign product_value = product_value[part]
+          endfor
+          assign child_index = 1
+          for value in child_values
+            if value == product_value
+              break
+            endif
+            assign child_index = child_index | plus: 1
+          endfor
+        endif
+      -%}
+      <div data-tab-index="{{ tab_index }}"{% if filter_type != 'none' %} data-child-index="{{ child_index }}"{% endif %}>
+        {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
+      </div>
+    {%- endfor -%}
   {%- endfor -%}
-{% endfor %}
 </object-tabs>
 
 {% schema %}
@@ -26,6 +74,23 @@
       "type": "collection_list",
       "id": "collection_list",
       "label": "t:labels.collection"
+    },
+    {
+      "type": "select",
+      "id": "filter_type",
+      "label": "Filter Products",
+      "default": "none",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "metafield", "label": "Metafield" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "filter_value",
+      "label": "Filter value",
+      "info": "e.g. metafields.features.size",
+      "visible_if": "{{ block.settings.filter_type != 'none' }}"
     }
   ],
   "presets": [
