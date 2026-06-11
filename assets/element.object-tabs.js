@@ -23,6 +23,20 @@ window.addEventListener('load', () => {
       { selector: '.object-child-tabs-wrap input[type="radio"]', panelAttribute: 'data-child-index' }
     ]
 
+    container.querySelectorAll('.bundle-optional-radio').forEach(radio => {
+        // Set initial state
+        if (radio.checked) {
+            const panel = container.querySelector(`[data-tab-index="${radio.dataset.panelIndex}"]`)
+            if (panel) panel.setAttribute('data-optional-selected', '')
+        }
+
+        radio.addEventListener('change', () => {
+            container.querySelectorAll('[data-tab-index]').forEach(p => p.removeAttribute('data-optional-selected'))
+            const panel = container.querySelector(`[data-tab-index="${radio.dataset.panelIndex}"]`)
+            if (panel) panel.setAttribute('data-optional-selected', '')
+        })
+    })
+
     tabSelectors.forEach(({ selector, panelAttribute, onActivate }) => {
       container.querySelectorAll(selector).forEach(input => {
         input.addEventListener('change', () => {
