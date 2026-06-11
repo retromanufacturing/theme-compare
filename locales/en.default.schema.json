@@ -748,6 +748,7 @@
       "enable_dropdown_icons": "Enable dropdown icons"
     },
     "bundle":{
+      "buy_buttons": "Buy button (bundles)",
       "group_collections": "Group collections",
       "group_products": "Group products"
     },
