@@ -23,7 +23,7 @@
         assign child_values = child_values | uniq | compact
       -%}
 
-      <fieldset class="object-child-tabs-wrap variant-button-wrap" data-parent-index="{{ tab_index }}">
+      <fieldset class="object-child-tabs-wrap variant-button-wrap" data-parent-index="{{ tab_index }}"{% if tab_index != 1 %} aria-hidden="true"{% endif %}>
         <legend class="visually-hidden">{{ collection.title }}</legend>
         {%- for value in child_values -%}
           {%- assign child_id = tab_name | append: '-child-' | append: tab_index | append: '-' | append: forloop.index -%}
