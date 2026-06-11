@@ -1,8 +1,9 @@
-{% render 'block.product-logos',
-  block: block,
-  product: closest.product,
-  logo_sizing: block.settings.logo_sizing,
-  logo_custom_height: block.settings.logo_custom_height
+{% liquid
+  capture content
+    render 'block.product-logos', block: block, product: closest.product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height
+  endcapture
+
+  render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
 %}
 
 {% schema %}
