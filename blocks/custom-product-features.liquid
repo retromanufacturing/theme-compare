@@ -1,15 +1,10 @@
-<variant-block
-  data-section-id="{{ section.id }}"
-  data-product-id="{{ closest.product.id | default: product.id }}"
-  data-block-id="{{ block.id }}"
-  {{ block.shopify_attributes }}
->
-  {% render 'block.product-features', product: closest.product | default: product, block: block %}
-</variant-block>
-
-<script type="module">
-  import 'custom.variant-block'
-</script>
+{% liquid
+  capture content
+    render 'block.product-features', product: closest.product | default: product, block: block
+  endcapture
+  
+  render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
+%}
 
 {% schema %}
 {
