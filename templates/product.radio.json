@@ -23,7 +23,7 @@
             "font_size_custom": 12,
             "text_decoration": "",
             "font_color": "#000000",
-            "background_color": "#ECECEC",
+            "background_color": "#ececec",
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
@@ -116,7 +116,7 @@
             "is_open": true,
             "tab_type": "accessories",
             "tab_title_color": "#000000",
-            "tab_background_color": "#FFFFFF",
+            "tab_background_color": "#ffffff",
             "tab_padding": 0
           },
           "blocks": {
@@ -137,7 +137,7 @@
             "is_open": false,
             "tab_type": "warranty",
             "tab_title_color": "#000000",
-            "tab_background_color": "#FFFFFF",
+            "tab_background_color": "#ffffff",
             "tab_padding": 0
           },
           "blocks": {}
@@ -151,6 +151,14 @@
             "show_gift_card_recipient": false
           },
           "blocks": {}
+        },
+        "custom_product_features_E4bDXB": {
+          "type": "custom-product-features",
+          "name": "Product features",
+          "settings": {
+            "font_size": 14
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -159,7 +167,8 @@
         "custom_variant_picker_qbdrbg",
         "custom_tab_7f8DEq",
         "custom_tab_hMEWpi",
-        "custom_buy_button_MYrA6y"
+        "custom_buy_button_MYrA6y",
+        "custom_product_features_E4bDXB"
       ],
       "settings": {
         "image_position": "left",
