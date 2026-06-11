@@ -5,11 +5,8 @@
   assign path_parts = filter_value | split: '.'
 -%}
 
-<object-tabs>
-  {%- render 'element.object-tabs',
-    items: block.settings.collection_list,
-    name: tab_name
-  -%}
+<object-tabs data-required="{{ block.settings.required }}">
+  {%- render 'element.object-tabs', items: block.settings.collection_list, name: tab_name -%}
 
   {%- for collection in block.settings.collection_list -%}
     {%- assign tab_index = forloop.index -%}
@@ -21,14 +18,26 @@
         endfor
         assign child_values = child_values | uniq | compact
       -%}
-      <fieldset class="object-child-tabs-wrap variant-button-wrap" data-parent-index="{{ tab_index }}"{% if tab_index != 1 %} aria-hidden="true"{% endif %}>
+      <fieldset
+        class="object-child-tabs-wrap variant-button-wrap"
+        data-parent-index="{{ tab_index }}"
+        {% if tab_index != 1 %}
+          aria-hidden="true"
+        {% endif %}
+      >
         <legend class="visually-hidden">{{ collection.title }}</legend>
         {%- for value in child_values -%}
-          {%- assign child_id = tab_name | append: '-child-' | append: tab_index | append: '-' | append: forloop.index -%}
+          {%- assign child_id = tab_name
+            | append: '-child-'
+            | append: tab_index
+            | append: '-'
+            | append: forloop.index
+          -%}
           {%- capture child_label -%}
             {%- render 'element.button', type: 'button', text: value, inverted: true, style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);' -%}
           {%- endcapture -%}
-          {%- render 'element.radio',
+          {%-
+            render 'element.radio',
             id: child_id,
             name: tab_name | append: '-child-' | append: tab_index,
             value: forloop.index,
@@ -68,7 +77,12 @@
           endfor
         endif
       -%}
-      <div data-tab-index="{{ tab_index }}"{% if filter_type != 'none' %} data-child-index="{{ child_index }}"{% endif %}>
+      <div
+        data-tab-index="{{ tab_index }}"
+        {% if filter_type != 'none' %}
+          data-child-index="{{ child_index }}"
+        {% endif %}
+      >
         {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
       </div>
     {%- endfor -%}
@@ -84,6 +98,12 @@
       "type": "collection_list",
       "id": "collection_list",
       "label": "t:labels.collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "required",
+      "label": "Required",
+      "default": true
     },
     {
       "type": "select",
