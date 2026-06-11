@@ -640,7 +640,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"add-vintage-overlay\"].products.value }}",
-                "required": true,
+                "required": false,
                 "group_items": true
               },
               "blocks": {
@@ -771,7 +771,7 @@
               "name": "Product List",
               "settings": {
                 "product_list": "{{ metaobjects.build_your_own[\"add-accessories\"].products.value }}",
-                "required": true,
+                "required": false,
                 "group_items": false
               },
               "blocks": {
