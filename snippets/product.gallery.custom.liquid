@@ -421,6 +421,12 @@
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
   endcapture
+
+  capture media_thumbnails
+    for media in product.media
+      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
+    endfor
+  endcapture
 -%}
 
 {%- if product -%}
@@ -443,10 +449,6 @@
         >
          {{ media_slideshow }}
         </div>
-
-        {% comment %}
-          render all slideshows before first_3d_model
-        {% endcomment %}
 
         {%- if first_3d_model -%}
           <button
@@ -493,18 +495,7 @@
 
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
-                {%- for media in product.media -%}
-                  {%- render 'custom.product-gallery',
-                    media_class: 'thumbnails',
-                    media: media,
-                    featured_media: featured_media,
-                    loopIndex0: forloop.index0,
-                    loopIndex: forloop.index,
-                    product_zoom_size: product_zoom_size,
-                    hide_variant_media: hide_variant_media,
-                    variant_images: variant_images
-                  -%}
-                {%- endfor -%}
+                {{ media_thumbnails }}
               {%- endif -%}
             </div>
 
