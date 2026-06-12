@@ -417,13 +417,17 @@
   endunless
 
   capture media_slideshow
+    assign rendered_radio_media = ''
     for media in product.media
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
     for variant in product.variants
       assign radio_media = variant.metafields.custom.radio_features.value.media.value
       for media in radio_media
-        render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+        unless rendered_media_srcs contains media.src
+          assign rendered_media_srcs = rendered_media_srcs | append: media.src | append: ','
+          render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+        endunless
       endfor
     endfor
   endcapture
