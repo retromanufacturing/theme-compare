@@ -43,7 +43,59 @@
 {% endcapture %}
 
 {% capture thumbnails %}
-  these are the thumbnails
+  {%- liquid
+                    assign image_set = false
+                    assign image_set_group = ''
+                    if media.alt contains '#'
+                      assign image_set_full = media.alt | split: '#' | last
+                      if image_set_full contains '_'
+                        assign image_set = true
+                        assign image_set_group = image_set_full | split: '_' | first
+                      endif
+                    endif
+                  -%}
+                  <div
+                    class="product__thumb-item"
+                    data-index="{{ loopIndex0 }}"
+                    {% if image_set %}
+                      data-set-name="{{ image_set_group }}"
+                      data-group="{{ image_set_full }}"
+                    {% endif %}
+                  >
+                    <a
+                      href="{{ media.preview_image | image_url: width: product_zoom_size }}"
+                      data-product-thumb
+                      class="product__thumb js-no-transition"
+                      data-index="{{ loopIndex0 }}"
+                      data-id="{{ media.id }}"
+                    >
+                      <div
+                        class="image-wrap image-wrap__thumbnail"
+                        style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
+                      >
+                        {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                          <span class="product__thumb-icon">
+                            {% render 'element.icon', name: 'play' %}
+                          </span>
+                        {%- endif -%}
+                        {%- if media.media_type == 'model' -%}
+                          <span class="product__thumb-icon">
+                            {% render 'element.icon', name: '3d' %}
+                          </span>
+                        {%- endif -%}
+
+                        {%- assign loading = 'eager' -%}
+                        {%- assign media_alt = media.alt | escape | split: '#' | first -%}
+                        {%- render 'element.image',
+                          img: media.preview_image,
+                          alt: media_alt,
+                          widths: '120, 360, 540, 720',
+                          sizeVariable: '80px',
+                          loading: loading
+                        -%}
+                      </div>
+                    </a>
+                  </div>
 {% endcapture %}
 
 {%- liquid
