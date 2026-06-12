@@ -21,12 +21,16 @@
 {% endcapture %} {% endcomment %}
 
 {%- liquid
+  capture gallery
+    render 'product.gallery.custom'
+  endcapture
+
   capture blocks
     content_for 'blocks'
   endcapture
 -%}
 
-{% render 'section.main-product-radio', slot: blocks %}
+{% render 'section.main-product-radio', slot: blocks, product_media_gallery: gallery %}
  
 {% schema %}
 {
