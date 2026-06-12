@@ -379,7 +379,6 @@
   }
 {% endstylesheet %}
 
-{% render 'custom.product-gallery', media_class: 'thumbnails' %}
 {%- liquid
   assign product = section.settings.product | default: product
   assign product_zoom_size = product_zoom_size | default: '1800x1800'
@@ -431,21 +430,18 @@
           class="product-slideshow"
           id="ProductPhotos-{{ section_id }}"
         >
-
-          {%- for media in product.media -%}
-           
-  {%- render 'custom.product-gallery',
-    media_class: 'slideshow',
-    media: media,
-    featured_media: featured_media,
-    loopIndex0: forloop.index0,
-    loopIndex: forloop.index,
-    sizes: sizes,
-    sizeVariable: sizeVariable,
-    fallback: fallback,
-    context: context
-  -%}
-
+          {%- for media in product.media -%}        
+            {%- render 'custom.product-gallery',
+              media_class: 'slideshow',
+              media: media,
+              featured_media: featured_media,
+              loopIndex0: forloop.index0,
+              loopIndex: forloop.index,
+              sizes: sizes,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              context: context
+            -%}
           {%- endfor -%}
         </div>
 
