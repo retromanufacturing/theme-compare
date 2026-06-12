@@ -27,6 +27,16 @@ class VariantBlock extends HTMLElement {
     if (source) {
       this.innerHTML = source.innerHTML
     }
+
+    // Update product variant thumbnails
+    if (this.dataset.blockId === 'thumbs') {
+    const gallery = this.closest('product-images')
+      if (gallery && gallery.flickity) {
+        const activeIndex = gallery.flickity.selectedIndex
+        const activeThumb = this.querySelector(`[data-index="${activeIndex}"] a`)
+        if (activeThumb) activeThumb.classList.add('is-active')
+      }
+    }
   }
 }
 
