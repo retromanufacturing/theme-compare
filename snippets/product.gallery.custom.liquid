@@ -499,12 +499,6 @@ this is a test
               {%- if product.media.size > 1 -%}
                 {%- for media in product.media -%}
                   {%- liquid
-                    if hide_variant_media and variant_images contains media.src
-                      if media.id != featured_media.id
-                        continue
-                      endif
-                    endif
-
                     assign image_set = false
                     assign image_set_group = ''
                     if media.alt contains '#'
