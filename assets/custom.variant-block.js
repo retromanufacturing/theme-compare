@@ -37,12 +37,9 @@ if (this.dataset.blockId === 'thumbs') {
   setTimeout(() => {
     const gallery = this.closest('product-images')
     if (gallery && gallery.flickity) {
-      const activeIndex = gallery.flickity.selectedIndex
-      const activeThumb = this.querySelector(`[data-index="${activeIndex}"] a`)
-      console.log(activeIndex, activeThumb)
-      if (activeThumb) activeThumb.classList.add('is-active')
+      gallery.flickity.select(gallery.flickity.selectedIndex, false, true)
     }
-  }, 500)
+  }, 50)
 }
   }
 }
