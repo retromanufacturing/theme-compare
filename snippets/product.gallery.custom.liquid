@@ -425,7 +425,7 @@
     endfor
     for media in current_variant_media
       assign correct_index = forloop.index0 | plus: media_offset
-      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
+      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
   endcapture
 
