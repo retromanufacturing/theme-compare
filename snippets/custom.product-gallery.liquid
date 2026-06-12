@@ -18,7 +18,7 @@
 {%- enddoc -%}
 
 {%- liquid
-  assign product = section.settings.product | default: product
+  assign product = product
   assign product_zoom_size = product_zoom_size | default: '1800x1800'
   assign sizeVariable = sizeVariable | default: 'medium-up--one-half'
   assign context = context | default: 'main-product'
