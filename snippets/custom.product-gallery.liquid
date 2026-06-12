@@ -18,7 +18,28 @@
 {%- enddoc -%}
 
 {% capture slideshow %}
-  this is the slideshow
+  {% liquid            
+    assign loading = 'eager'        
+    assign animation = 'image-fade-in'  
+
+    if context == 'main-product' and forloop.index == 1              
+        # LCP image is loaded immediately               
+        assign loading = false               
+        assign animation = 'none'            
+    endif          
+%}
+            
+{%- render 'product.gallery.media',            
+    media: media,             
+    featured_media: featured_media,             
+    loopIndex0: forloop.index0,             
+    loopIndex: forloop.index,             
+    sizes: sizes,            
+    sizeVariable: sizeVariable,             
+    fallback: fallback,             
+    loading: loading,            
+    animation: animation           
+    -%}
 {% endcapture %}
 
 {% capture thumbnails %}
@@ -30,7 +51,6 @@
     when 'slideshow'
       echo slideshow
     when 'thumbnails'
-     echo thumbnails
+      echo thumbnails
   endcase
 -%}
-
