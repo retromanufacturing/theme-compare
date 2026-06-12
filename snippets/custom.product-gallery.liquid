@@ -17,29 +17,40 @@
   {% render 'custom.product-gallery' %}
 {%- enddoc -%}
 
-{% case 'media_class' %}
-  {% when 'slideshow' %}
-    {% liquid
-      assign loading = 'eager'
-      assign animation = 'image-fade-in'
 
-      if context == 'main-product' and forloop.index == 1
-        # LCP image is loaded immediately
-        assign loading = false
-        assign animation = 'none'
-      endif
-    %}
-    {%- render 'product.gallery.media',
-      media: media,
-      featured_media: featured_media,
-      loopIndex0: loopIndex0,
-      loopIndex: loopIndex,
-      sizes: sizes,
-      sizeVariable: sizeVariable,
-      fallback: fallback,
-      loading: loading,
-      animation: animation
+  {% liquid            
+    assign loading = 'eager'        
+    assign animation = 'image-fade-in'  
+
+    if context == 'main-product' and forloop.index == 1              
+        # LCP image is loaded immediately               
+        assign loading = false               
+        assign animation = 'none'            
+    endif          
+%}
+            
+{%- render 'product.gallery.media',            
+    media: media,             
+    featured_media: featured_media,             
+    loopIndex0: loopIndex0,             
+    loopIndex: loopIndex,             
+    sizes: sizes,            
+    sizeVariable: sizeVariable,             
+    fallback: fallback,             
+    loading: loading,            
+    animation: animation           
     -%}
-  {% when 'thumbnails' %}
-    these are the thumbnails
-{% endcase %}
+
+
+{% capture thumbnails %}
+  these are the thumbnails
+{% endcapture %}
+
+{%- liquid
+  case media_class
+    when 'slideshow'
+      echo slideshow
+    when 'thumbnails'
+      echo thumbnails
+  endcase
+-%}
