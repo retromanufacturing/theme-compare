@@ -89,6 +89,7 @@
   class="product-main-slide {% if is_featured %}starting-slide{% else %}secondary-slide{% endif %}"
   data-index="{{ loopIndex0 }}"
   data-media-id="{{ media.id }}"
+  {% if variant_id %}data-variant-id="{{ variant_id }}"{% endif %}
   {% if image_set %}
     data-set-name="{{ image_set_group }}"
     data-group="{{ image_set_full }}"
