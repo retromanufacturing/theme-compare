@@ -415,6 +415,12 @@
       assign thumbnail_position = media_gallery_layout
     endif
   endunless
+
+  capture media_slideshow
+    for media in product.media
+      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
+    endfor
+  endcapture
 -%}
 
 {%- if product -%}
@@ -435,19 +441,7 @@
           class="product-slideshow"
           id="ProductPhotos-{{ section_id }}"
         >
-          {%- for media in product.media -%}
-            {%- render 'custom.product-gallery',
-              media_class: 'slideshow',
-              media: media,
-              featured_media: featured_media,
-              loopIndex0: forloop.index0,
-              loopIndex: forloop.index,
-              sizes: sizes,
-              sizeVariable: sizeVariable,
-              fallback: fallback,
-              context: context
-            -%}
-          {%- endfor -%}
+         {{ media_slideshow }}
         </div>
 
         {% comment %}
