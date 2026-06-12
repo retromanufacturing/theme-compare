@@ -400,14 +400,6 @@
   assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
   assign first_3d_model = product.media | where: 'media_type', 'model' | first
   assign thumbnail_position = thumbnail_position | default: section.settings.thumbnail_position | default: 'beside'
-  assign hide_variant_media = hide_variant_media | default: section.settings.hide_variant_media, allow_false: true | default: false
-
-  assign hide_thumbnails = hide_thumbnails
-  assign current_variant = product.selected_or_first_available_variant
-
-  if hide_variant_media
-    assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
-  endif
 
   unless thumbnail_position
     if media_gallery_layout == 'stacked'
@@ -417,11 +409,20 @@
     endif
   endunless
 
+  assign hide_variant_media = hide_variant_media | default: section.settings.hide_variant_media, allow_false: true | default: false
+  assign hide_thumbnails = hide_thumbnails
+  assign current_variant = product.selected_or_first_available_variant
+  assign current_variant_media = current_variant.metafields.custom.radio_features.value.media.value
+
+  if hide_variant_media
+    assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
+  endif
+
   capture media_slideshow
     for media in product.media
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
-    for media in variant_metafield_media
+    for media in current_variant_media
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size
     endfor
   endcapture
@@ -430,8 +431,7 @@
     for media in product.media
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
     endfor
-    assign current_radio_media = current_variant.metafields.custom.radio_features.value.media.value
-    for media in current_radio_media
+    for media in current_variant_media
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size
     endfor
   endcapture
