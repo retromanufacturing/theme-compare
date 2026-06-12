@@ -378,10 +378,27 @@
     display: none;
   }
 
-  /* Hide variant thumbnails*/
+  /* Variant thumbnails*/
   .product__thumb-item-hide {
     display: none;
   }
+
+ .product__thumb-item a.is-variant-active {
+  outline: none;
+  position: relative;
+}
+
+.product__thumb-item a.is-variant-active:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 0 2px var(--root-color-primary);
+  z-index: 1;
+}
 {% endstylesheet %}
 
 {%- liquid
