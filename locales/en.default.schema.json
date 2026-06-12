@@ -755,6 +755,10 @@
     },
     "custom": "Custom settings",
     "font_size": "Font size",
+    "product":{
+      "features": "Product features",
+      "logos": "Product logos"
+    },
     "variant_picker_tabs": "Variant picker tabs",
     "variant_picker_update_url": "Update variant url",
   }
