@@ -39,9 +39,10 @@ if (this.dataset.blockId === 'thumbs') {
     if (gallery && gallery.flickity) {
       const activeIndex = gallery.flickity.selectedIndex
       const activeThumb = this.querySelector(`[data-index="${activeIndex}"] a`)
+      console.log(activeIndex, activeThumb)
       if (activeThumb) activeThumb.classList.add('is-active')
     }
-  }, 100)
+  }, 500)
 }
   }
 }
