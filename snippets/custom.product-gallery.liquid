@@ -17,31 +17,6 @@
   {% render 'custom.product-gallery' %}
 {%- enddoc -%}
 
-{%- liquid
-  assign product = product
-  assign product_zoom_size = product_zoom_size | default: '1800x1800'
-  assign sizeVariable = sizeVariable | default: 'medium-up--one-half'
-  assign context = context | default: 'main-product'
-  assign product_zoom_enable = product_zoom_enable | default: section.settings.product_zoom_enable, allow_false: true
-  assign image_size = image_size | default: section.settings.product_image_size | default: 'square'
-  assign image_position = image_position | default: section.settings.image_position | default: 'left'
-  assign thumbnail_arrows = thumbnail_arrows | default: section.settings.thumbnail_arrows, allow_false: true
-  assign thumbnail_height = thumbnail_height | default: section.settings.thumbnail_height | default: 'flexible'
-  assign isModal = isModal | default: false
-  assign media_gallery_layout = media_gallery_layout | default: section.settings.media_gallery_layout
-  assign section_id = section.id
-  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
-  assign first_3d_model = product.media | where: 'media_type', 'model' | first
-  assign thumbnail_position = thumbnail_position | default: section.settings.thumbnail_position | default: 'beside'
-  assign hide_variant_media = hide_variant_media | default: section.settings.hide_variant_media, allow_false: true | default: false
-
-  assign hide_thumbnails = hide_thumbnails
-
-  if hide_variant_media
-    assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
-  endif
--%}
-
 {% capture slideshow %}
   {% liquid            
     assign loading = 'eager'        
