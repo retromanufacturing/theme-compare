@@ -29,14 +29,20 @@ class VariantBlock extends HTMLElement {
     }
 
     // Update product variant thumbnails
-    if (this.dataset.blockId === 'thumbs') {
+    if (source) {
+  this.innerHTML = source.innerHTML
+}
+
+if (this.dataset.blockId === 'thumbs') {
+  setTimeout(() => {
     const gallery = this.closest('product-images')
-      if (gallery && gallery.flickity) {
-        const activeIndex = gallery.flickity.selectedIndex
-        const activeThumb = this.querySelector(`[data-index="${activeIndex}"] a`)
-        if (activeThumb) activeThumb.classList.add('is-active')
-      }
+    if (gallery && gallery.flickity) {
+      const activeIndex = gallery.flickity.selectedIndex
+      const activeThumb = this.querySelector(`[data-index="${activeIndex}"] a`)
+      if (activeThumb) activeThumb.classList.add('is-active')
     }
+  }, 100)
+}
   }
 }
 
