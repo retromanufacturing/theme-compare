@@ -52,10 +52,17 @@
         assign image_set_group = image_set_full | split: '_' | first
       endif
     endif
+
+    assign thumb_hide = false
+    if hide_variant_media and variant_images contains media.preview_image.src
+        if media.id != featured_media.id
+            assign thumb_hide = true
+        endif
+    endif
   -%}
 
   <div
-    class="product__thumb-item"
+    class="product__thumb-item{% if thumb_hide %} product__thumb-item-hide{% endif %}"
     data-index="{{ loopIndex0 }}"
     {% if image_set %}
       data-set-name="{{ image_set_group }}"
