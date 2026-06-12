@@ -746,6 +746,7 @@
     "background_color_scheme": "Background color",
     "actions": {
       "enable_dropdown_icons": "Enable dropdown icons",
+      "enable_installation_media": "Enable install photos and videos",
       "hide_variant_media": "Hide variant images"
     },
     "bundle":{
