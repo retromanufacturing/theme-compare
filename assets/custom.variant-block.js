@@ -28,15 +28,6 @@ class VariantBlock extends HTMLElement {
       this.innerHTML = source.innerHTML
     }
 
-  //  // Update product variant thumbnails
-  //   if (this.dataset.blockId === 'thumbs') {
-  //     const mediaId = variant.featured_media?.id
-  //     if (mediaId) {
-  //       const activeThumb = this.querySelector(`[data-id="${mediaId}"]`)
-  //       if (activeThumb) activeThumb.classList.add('is-variant-active')
-  //     }
-  //   }
-
   }
 }
 
