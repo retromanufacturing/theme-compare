@@ -20,12 +20,14 @@
   {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
 {% endcapture %} {% endcomment %}
 
-{% capture blocks %}
-  {% content_for 'blocks' %}
-{% endcapture %}
+{%- liquid
+  capture blocks
+    content_for 'blocks'
+  endcapture
+-%}
 
 {% render 'section.main-product-radio', slot: blocks %}
-
+ 
 {% schema %}
 {
   "name": "Product block",
@@ -111,6 +113,16 @@
         { "value": "unmuted", "label": "With sound (no autoplay)" }
       ],
       "info": "Videos with sound cannot autoplay"
+    },  
+    {
+      "type": "header",
+      "content": "t:custom.custom"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variant_media",
+      "label": "t:custom.actions.hide_variant_media",
+      "default": false
     }
   ],
   "blocks": [
