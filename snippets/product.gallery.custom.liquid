@@ -413,6 +413,7 @@
   assign hide_thumbnails = hide_thumbnails
   assign current_variant = product.selected_or_first_available_variant
   assign current_variant_media = current_variant.metafields.custom.radio_features.value.media.value
+  assign media_offset = product.media.size
 
   if hide_variant_media
     assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
@@ -423,7 +424,8 @@
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
     for media in current_variant_media
-      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size
+      assign correct_index = forloop.index0 | plus: media_offset
+      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
   endcapture
 
@@ -432,7 +434,8 @@
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
     endfor
     for media in current_variant_media
-      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size
+      assign correct_index = forloop.index0 | plus: media_offset
+      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size
     endfor
   endcapture
 -%}
