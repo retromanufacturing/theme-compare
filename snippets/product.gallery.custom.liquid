@@ -433,7 +433,19 @@
         >
 
           {%- for media in product.media -%}
-            {% render 'custom.product-gallery', media_class: 'slideshow' %}
+           {%- for media in product.media -%}
+  {%- render 'custom.product-gallery',
+    media_class: 'slideshow',
+    media: media,
+    featured_media: featured_media,
+    loopIndex0: forloop.index0,
+    loopIndex: forloop.index,
+    sizes: sizes,
+    sizeVariable: sizeVariable,
+    fallback: fallback,
+    context: context
+  -%}
+{%- endfor -%}
           {%- endfor -%}
         </div>
 
