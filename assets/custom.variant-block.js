@@ -37,19 +37,6 @@ class VariantBlock extends HTMLElement {
   //     }
   //   }
 
-
-  if (this.dataset.blockId === 'thumbs') {
-  const mediaId = variant.featured_media?.id
-  console.log('mediaId:', mediaId)
-  console.log('source:', source)
-  console.log('this.innerHTML after swap:', this.innerHTML)
-  if (mediaId) {
-    const activeThumb = this.querySelector(`[data-id="${mediaId}"]`)
-    console.log('activeThumb:', activeThumb)
-    if (activeThumb) activeThumb.classList.add('is-variant-active')
-  }
-}
-
   }
 }
 
