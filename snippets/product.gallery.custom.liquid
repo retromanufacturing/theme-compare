@@ -416,15 +416,15 @@
     endif
   endunless
 
-  assign current_variant = product.selected_or_first_available_variant
-  assign radio_media = current_variant.metafields.custom.radio_features.value.media.value
-
   capture media_slideshow
     for media in product.media
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
-    for media in radio_media
-      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
+    for variant in product.variants
+      assign radio_media = variant.metafields.custom.radio_features.value.media.value
+      for media in radio_media
+        render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+      endfor
     endfor
   endcapture
 
@@ -453,7 +453,7 @@
           class="product-slideshow"
           id="ProductPhotos-{{ section_id }}"
         >
-         {{ media_slideshow }}
+          {{ media_slideshow }}
         </div>
 
         {%- if first_3d_model -%}
@@ -499,7 +499,7 @@
                 {{ block.shopify_attributes }}
               >
             {%- endif -%}
-{{ block.id }}
+            {{ block.id }}
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
                 {{ media_thumbnails }}
