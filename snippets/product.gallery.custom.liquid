@@ -378,7 +378,8 @@
     display: none;
   }
 {% endstylesheet %}
-
+{% render 'custom.product-gallery', media_class: 'slideshow' %}
+{% render 'custom.product-gallery', media_class: 'thumbnails' %}
 {%- liquid
   assign product = section.settings.product | default: product
   assign product_zoom_size = product_zoom_size | default: '1800x1800'
@@ -430,10 +431,9 @@
           class="product-slideshow"
           id="ProductPhotos-{{ section_id }}"
         >
+
           {%- for media in product.media -%}
             {% liquid
-              
-
               assign loading = 'eager'
               assign animation = 'image-fade-in'
               if context == 'main-product' and forloop.index == 1
