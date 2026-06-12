@@ -490,9 +490,10 @@
                 data-section-id="{{ section.id }}"
                 data-product-id="{{ product.id }}"
                 data-block-id="thumbs"
+                {{ block.shopify_attributes }}
               >
             {%- endif -%}
-
+{{ block.id }}
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
                 {{ media_thumbnails }}
