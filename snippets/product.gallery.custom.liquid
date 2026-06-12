@@ -432,6 +432,7 @@ this is a test
         >
           {%- for media in product.media -%}
             {% liquid
+              assign variant_media = false
               if hide_variant_media and variant_images contains media.src
                 if media.id != featured_media.id
                   continue
