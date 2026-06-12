@@ -442,7 +442,7 @@
       for media in radio_media
         unless rendered_media_srcs contains media.src
           assign rendered_media_srcs = rendered_media_srcs | append: media.src | append: ','
-          render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, variant_id: variant.id
+          render 'custom.product-gallery', current_variant_id: featured_media.variants.first.id, media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, variant_id: variant.id
         endunless
       endfor
     endfor
