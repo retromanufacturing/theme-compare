@@ -1,0 +1,36 @@
+{%- doc -%}
+  Copyright © 2025 Archetype Themes LP. All rights reserved.
+
+  Renders a product's media, including images and videos.
+
+  @param {media} media - The media object
+  @param {product} product - The product object
+  @param {boolean} product_zoom_enable - Whether the product zoom is enabled
+  @param {string} product_zoom_size - Size of the zoomed image
+  @param {boolean} video_looping - Whether the video should loop
+  @param {string} video_style - Style of the video
+  @param {string} mobile_layout - Layout for mobile
+  @param {string} image_size - Size of the image
+  @param {string} animation - Animation for the image
+
+  @example
+  {% render 'custom.product-gallery' %}
+{%- enddoc -%}
+
+{% capture slideshow %}
+  this is the slideshow
+{% endcapture %}
+
+{% capture thumbnails %}
+  these are the thumbnails
+{% endcapture %}
+
+{%- liquid
+  case media_class
+    when 'slideshow'
+      echo slideshow
+    when 'thumbnails'
+     echo thumbnails
+  endcase
+-%}
+
