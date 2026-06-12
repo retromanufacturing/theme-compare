@@ -17,7 +17,7 @@
   {% render 'custom.product-gallery' %}
 {%- enddoc -%}
 
-
+{% capture slideshow %}
   {% liquid            
     assign loading = 'eager'        
     assign animation = 'image-fade-in'  
@@ -40,7 +40,7 @@
     loading: loading,            
     animation: animation           
     -%}
-
+{% endcapture %}
 
 {% capture thumbnails %}
   these are the thumbnails
