@@ -460,6 +460,10 @@
           {%- endfor -%}
         </div>
 
+        {% comment %}
+          render all slideshows before first_3d_model
+        {% endcomment %}
+
         {%- if first_3d_model -%}
           <button
             aria-label="{%- render 'utility.translate', key: 'info.view_in_space_explanation', fallback: 'View in your space, loads item in augmented reality window' -%}"
@@ -561,6 +565,10 @@
               {%- endif -%}
             </div>
 
+             {% comment %}
+              render all thumbnails before thumbnail_arrows
+             {% endcomment %}
+
             {%- if thumbnail_arrows -%}
               <button
                 type="button"
@@ -624,3 +632,4 @@
     </div>
   </div>
 {%- endif -%}
+ 
