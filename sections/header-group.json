@@ -20,7 +20,6 @@
         },
         "multi_selector_9c8yfi": {
           "type": "multi_selector",
-          "disabled": true,
           "settings": {
             "show_locale_selector": true,
             "show_currency_selector": true,
