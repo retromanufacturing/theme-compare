@@ -2,7 +2,7 @@
    {% content_for 'blocks' %}
 {% endcapture %}
 
-{% render 'block.product-variant-picker.custom',
+{% render 'block.product-variant-picker.backup',
   product: closest.product,
   variant_selector_type: block.settings.variant_selector_type,
   enable_tabs: block.settings.enable_tabs,
@@ -15,7 +15,7 @@
   color_motor_m2: block.settings.color_motor_m2,
   color_motor_m4: block.settings.color_motor_m4
 %}
-
+ 
 {% schema %}
 {
   "name": "t:custom.variant_picker_tabs",
