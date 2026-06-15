@@ -6,7 +6,7 @@
   assign update_url = block.settings.update_url
 -%}
 
-{% render 'block.product-variant-picker', product: closest.product, block: block, update_url: update_url  %}
+{% render 'block.product-variant-picker.custom', product: closest.product, block: block, update_url: update_url  %}
 
 {% schema %}
 {
