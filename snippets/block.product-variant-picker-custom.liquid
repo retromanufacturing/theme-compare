@@ -188,7 +188,7 @@
             assign show_features = true
           endif
         endfor
-      -%} {{ option.name }}--{{ name }}
+      -%} {{ option.name }}--{{ name }}--{{ block.settings.product_features_option_names }}
       {% case block.settings.picker_type %}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
