@@ -184,11 +184,11 @@
         assign show_features = false
 
         for name in product_features_option_names
-          if enable_features and option.name == name 
+          if enable_features and option.name == name
             assign show_features = true
           endif
         endfor
-      -%} {% if show_features %} yes{% else %} no{% endif %}
+      -%}
       {% case block.settings.picker_type %}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
@@ -225,6 +225,15 @@
         {%- else -%}
           {%- render 'block.product-variant-picker.dropdown', option: option, block: block, product: product -%}
       {% endcase %}
+      {% if show_features %}
+        {% liquid
+          capture content
+            render 'block.product-features', product: closest.product | default: product, block: block
+          endcapture
+
+          render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
+        %}
+      {% endif %}
     {%- endfor -%}
     <script type="application/json">
       {{ product.variants | json }}
