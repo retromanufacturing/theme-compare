@@ -188,7 +188,7 @@
             assign show_features = true
           endif
         endfor
-      -%} {% if show_features %} yes{% endif %}
+      -%} {% if show_features %} yes{% else %} no{% endif %}
       {% case block.settings.picker_type %}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
