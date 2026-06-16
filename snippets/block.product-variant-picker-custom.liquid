@@ -159,7 +159,6 @@
   assign prev_block_index = forloop.index0 | minus: 1
   assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
   assign options_without_labels = block.settings.non_label_options
-  assign enable_tabs = block.settings.enable_tabs
 -%}
 
 {%- unless product.has_only_default_variant -%}
@@ -179,12 +178,6 @@
     {{ block.shopify_attributes }}
   >
     {%- for option in product.options_with_values -%}
-      {%- liquid
-        assign is_open = forloop.first
-      -%}
-      {% capture option_content %}
-
-
       {% case block.settings.picker_type %}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
@@ -193,7 +186,7 @@
             prev_block_index: prev_block_index,
             product: product
           -%}
-        {% when 'button_label' %}
+        {% when 'tabs' %}
            {%- render 'block.product-variant-picker.label',
               option: option,
               block: block,
@@ -218,11 +211,6 @@
         {%- else -%}
           {%- render 'block.product-variant-picker.dropdown', option: option, block: block, product: product -%}
       {% endcase %}
-{% endcapture %}
-
-      {% if enable_tabs %}
-        {% render 'element.accordion', title: option.name, slot: option_content, open: is_open %}
-      {% endif %}
     {%- endfor -%}
     <script type="application/json">
       {{ product.variants | json }}
