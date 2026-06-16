@@ -177,7 +177,17 @@
     data-product-id="{{ product.id }}"
     {{ block.shopify_attributes }}
   >
-    {%- for option in product.options_with_values -%}test
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign radio_features_option_names = block.settings.radio_features_option_names | split: ','
+        assign show_radio_features = false
+
+        for name in radio_features_option_names
+          if option.name == name 
+            assign show_radio_features = true
+          endif
+        endfor
+      -%} {{ option.name }}--{{ name }}
       {% case block.settings.picker_type %}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
@@ -187,28 +197,30 @@
             product: product
           -%}
         {% when 'tabs' %}
-           {%- render 'block.product-variant-picker.tab',
-              option: option,
-              block: block,
-              prev_block_index: prev_block_index,
-              product: product,
-              is_open: forloop.first
-            -%}
-          {% comment %} {% if option.name != options_without_labels %}
-            {%- render 'block.product-variant-picker.label',
-              option: option,
-              block: block,
-              prev_block_index: prev_block_index,
-              product: product
-            -%}
-          {% else %}
-            {%- render 'block.product-variant-picker.button',
-              option: option,
-              block: block,
-              prev_block_index: prev_block_index,
-              product: product
-            -%}
-          {% endif %} {% endcomment %}
+          {%- render 'block.product-variant-picker.tab',
+            option: option,
+            block: block,
+            prev_block_index: prev_block_index,
+            product: product,
+            is_open: forloop.first
+          -%}
+          {% comment %}
+            {% if option.name != options_without_labels %}
+              {%- render 'block.product-variant-picker.label',
+                option: option,
+                block: block,
+                prev_block_index: prev_block_index,
+                product: product
+              -%}
+            {% else %}
+              {%- render 'block.product-variant-picker.button',
+                option: option,
+                block: block,
+                prev_block_index: prev_block_index,
+                product: product
+              -%}
+            {% endif %}
+          {% endcomment %}
         {%- else -%}
           {%- render 'block.product-variant-picker.dropdown', option: option, block: block, product: product -%}
       {% endcase %}
