@@ -187,7 +187,14 @@
             product: product
           -%}
         {% when 'button_label' %}
-          {% if option.name != options_without_labels %}
+          labels
+           {%- render 'block.product-variant-picker.label',
+              option: option,
+              block: block,
+              prev_block_index: prev_block_index,
+              product: product
+            -%}
+          {% comment %} {% if option.name != options_without_labels %}
             {%- render 'block.product-variant-picker.label',
               option: option,
               block: block,
@@ -201,7 +208,7 @@
               prev_block_index: prev_block_index,
               product: product
             -%}
-          {% endif %}
+          {% endif %} {% endcomment %}
         {%- else -%}
           {%- render 'block.product-variant-picker.dropdown', option: option, block: block, product: product -%}
       {% endcase %}
