@@ -56,6 +56,15 @@
               "settings": {},
               "blocks": {}
             },
+            "custom_product_inventory_LEqGFt": {
+              "type": "custom-product-inventory",
+              "name": "t:labels.inventory_status",
+              "settings": {
+                "inventory_threshold": 10,
+                "inventory_transfers_enable": true
+              },
+              "blocks": {}
+            },
             "reviews_io_reviewsio_rating_output_FjQ9LB": {
               "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
               "settings": {}
@@ -63,6 +72,7 @@
           },
           "block_order": [
             "custom_sku_CJ8X4x",
+            "custom_product_inventory_LEqGFt",
             "reviews_io_reviewsio_rating_output_FjQ9LB"
           ]
         },
