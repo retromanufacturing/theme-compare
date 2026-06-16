@@ -184,11 +184,11 @@
         assign show_features = false
 
         for name in product_features_option_names
-          if enable_features and option.name == name 
+          if enable_features and option.name == name | strip
             assign show_features = true
           endif
         endfor
-      -%} {{ option.name }}--{{ name }}--{{ block.settings.product_features_option_names }}
+      -%} {% if show_features %} yes{% endif %}
       {% case block.settings.picker_type %}
         {% when 'button' %}
           {%- render 'block.product-variant-picker.button',
