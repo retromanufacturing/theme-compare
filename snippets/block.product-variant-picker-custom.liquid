@@ -191,7 +191,8 @@
               option: option,
               block: block,
               prev_block_index: prev_block_index,
-              product: product
+              product: product,
+              is_open: forloop.first
             -%}
           {% comment %} {% if option.name != options_without_labels %}
             {%- render 'block.product-variant-picker.label',
