@@ -56,29 +56,6 @@
       "label": "t:custom.variant_picker_update_url",
       "info": "Update product url on variant change",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "Labels",
-      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
-    },
-    {
-      "type": "text",
-      "id": "non_label_options",
-      "label": "Options with no labels",
-      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
-    },
-    {
-      "type": "number",
-      "id": "label_width",
-      "label": "Label Width",
-      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
-    },
-    {
-      "type": "number",
-      "id": "label_height",
-      "label": "Label Height",
-      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
     }
   ],
   "presets": [{ "name": "Variant picker" }]
