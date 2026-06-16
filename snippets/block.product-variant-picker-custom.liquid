@@ -180,7 +180,7 @@
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign enable_features = block.settings.enable_features_and_logos
-        assign product_features_option_names = block.settings.product_features_option_names | split: ','
+        assign product_features_option_names = block.settings.product_features_option_names | split: ', '
         assign show_features = false
 
         for name in product_features_option_names
