@@ -56,15 +56,6 @@
               "settings": {},
               "blocks": {}
             },
-            "section_flex_pdp_inventory_8kbw8n": {
-              "type": "_section-flex-pdp-inventory",
-              "name": "t:labels.inventory",
-              "settings": {
-                "inventory_threshold": 10,
-                "enable_labels": false
-              },
-              "blocks": {}
-            },
             "reviews_io_reviewsio_rating_output_FjQ9LB": {
               "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
               "settings": {}
@@ -72,7 +63,6 @@
           },
           "block_order": [
             "custom_sku_CJ8X4x",
-            "section_flex_pdp_inventory_8kbw8n",
             "reviews_io_reviewsio_rating_output_FjQ9LB"
           ]
         },
@@ -84,8 +74,7 @@
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
-            "update_url": true,
-            "non_label_options": ""
+            "update_url": true
           },
           "blocks": {}
         },
