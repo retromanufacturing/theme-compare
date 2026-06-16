@@ -184,7 +184,7 @@
         assign show_features = false
 
         for name in product_features_option_names
-          if enable_features and option.name == name | strip
+          if enable_features and option.name == name 
             assign show_features = true
           endif
         endfor
