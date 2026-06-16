@@ -187,7 +187,7 @@
             product: product
           -%}
         {% when 'button_label' %}
-          labels
+          labels {{ variants_option1_arr  }}
            {%- render 'block.product-variant-picker.label',
               option: option,
               block: block,
