@@ -756,6 +756,9 @@
     },
     "custom": "Custom settings",
     "font_size": "Font size",
+    "layout":{
+      "bundle": "Bundles"
+    },
     "product":{
       "features": "Product features",
       "logos": "Product logos"

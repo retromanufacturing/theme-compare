@@ -3,12 +3,7 @@
   data-cart-type="{{ settings.cart_type }}"
   {{ block.shopify_attributes }}
 >
-  {%- render 'element.button',
-    text: 'Add to Cart',
-    type: 'button',
-    classlist: 'bundle-add-to-cart',
-    full: true
-  -%}
+  {%- render 'element.button', text: 'Add to Cart', type: 'button', classlist: 'bundle-add-to-cart', full: true -%}
 </bundle-buy-button>
 
 <script src="{{ 'custom-bundle-buy-button.js' | asset_url }}" defer></script>
@@ -16,8 +11,7 @@
 {% schema %}
 {
   "name": "t:custom.bundle.buy_buttons",
-  "settings": [
-  ],
-  "presets": [{ "name": "t:custom.bundle.buy_buttons" }]
+  "settings": [],
+  "presets": [{ "name": "t:custom.bundle.buy_buttons", "category": "t:custom.layout.bundle" }]
 }
 {% endschema %}
