@@ -6,7 +6,7 @@
   assign update_url = block.settings.update_url
 -%}
 
-{% render 'block.product-variant-picker-custom', product: closest.product, block: block, update_url: update_url  %}
+{% render 'block.product-variant-picker-custom', product: closest.product, block: block, update_url: update_url %}
 
 {% schema %}
 {
@@ -59,6 +59,16 @@
     },
     {
       "type": "header",
+      "content": "t:custom.custom"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_tabs",
+      "label": "Enable tabs",
+      "default": false
+    },
+    {
+      "type": "header",
       "content": "Variant labels"
     },
     {
@@ -67,7 +77,7 @@
       "label": "Option names with variant labels",
       "info": "Comma-separated list of option names e.g. Feature Set, Motor, Choose your Look",
       "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
-    },
+    }
   ],
   "presets": [{ "name": "Variant picker" }]
 }
