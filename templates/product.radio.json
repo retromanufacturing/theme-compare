@@ -81,7 +81,7 @@
           "name": "Variant picker",
           "settings": {
             "variant_labels": true,
-            "picker_type": "button",
+            "picker_type": "tabs",
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
             "update_url": true,
