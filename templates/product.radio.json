@@ -91,23 +91,6 @@
           },
           "blocks": {}
         },
-        "custom_product_features_E4bDXB": {
-          "type": "custom-product-features",
-          "name": "Product features",
-          "settings": {
-            "font_size": 14
-          },
-          "blocks": {}
-        },
-        "custom_product_logos_A3gexD": {
-          "type": "custom-product-logos",
-          "name": "Logos",
-          "settings": {
-            "logo_sizing": "default",
-            "logo_custom_height": 60
-          },
-          "blocks": {}
-        },
         "custom_tab_7f8DEq": {
           "type": "custom-tab",
           "name": "Tab",
@@ -156,8 +139,6 @@
       "block_order": [
         "custom_group_PPrm6E",
         "custom_variant_picker_qbdrbg",
-        "custom_product_features_E4bDXB",
-        "custom_product_logos_A3gexD",
         "custom_tab_7f8DEq",
         "custom_tab_hMEWpi",
         "custom_buy_button_MYrA6y"
