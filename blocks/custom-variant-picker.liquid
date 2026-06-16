@@ -56,7 +56,18 @@
       "label": "t:custom.variant_picker_update_url",
       "info": "Update product url on variant change",
       "default": true
-    }
+    },
+    {
+      "type": "header",
+      "content": "Variant labels"
+    },
+    {
+      "type": "text",
+      "id": "variant_label_options",
+      "label": "Option names with variant labels",
+      "info": "Comma-separated list of option names e.g. Feature Set, Motor, Choose your Look",
+      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
+    },
   ],
   "presets": [{ "name": "Variant picker" }]
 }
