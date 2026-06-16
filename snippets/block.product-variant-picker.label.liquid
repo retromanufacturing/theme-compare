@@ -1,6 +1,9 @@
 {%- liquid
-  assign variants_with_labels = product.variants | map: 'available'
-
+  assign product = section.settings.product | default: product
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
 -%}
-
+{{ variants_option1_arr }}
 variant labels
