@@ -179,12 +179,13 @@
   >
     {%- for option in product.options_with_values -%}
       {%- liquid
-        assign radio_features_option_names = block.settings.radio_features_option_names | split: ','
-        assign show_radio_features = false
+        assign enable_features = block.settings.enable_features_and_logos
+        assign product_features_option_names = block.settings.product_features_option_names | split: ','
+        assign show_features = false
 
-        for name in radio_features_option_names
-          if option.name == name 
-            assign show_radio_features = true
+        for name in product_features_option_names
+          if enable_features and option.name == name 
+            assign show_features = true
           endif
         endfor
       -%} {{ option.name }}--{{ name }}
