@@ -62,8 +62,14 @@
       "content": "t:custom.custom"
     },
     {
+      "type": "checkbox",
+      "id": "enable_features_and_logos",
+      "label": "t:custom.actions.enable_features_and_logos"
+    },
+    {
       "type": "header",
-      "content": "Variant labels"
+      "content": "Variant labels",
+      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
     },
     {
       "type": "text",
