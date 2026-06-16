@@ -203,7 +203,8 @@
             block: block,
             prev_block_index: prev_block_index,
             product: product,
-            is_open: forloop.first
+            is_open: forloop.first,
+            show_features: show_features
           -%}
           {% comment %}
             {% if option.name != options_without_labels %}
@@ -225,15 +226,6 @@
         {%- else -%}
           {%- render 'block.product-variant-picker.dropdown', option: option, block: block, product: product -%}
       {% endcase %}
-      {% if show_features %}
-        {% liquid
-          capture content
-            render 'block.product-features', product: closest.product | default: product, block: block
-          endcapture
-
-          render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
-        %}
-      {% endif %}
     {%- endfor -%}
     <script type="application/json">
       {{ product.variants | json }}
