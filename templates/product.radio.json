@@ -85,6 +85,8 @@
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
             "update_url": true,
+            "enable_features_and_logos": true,
+            "product_features_option_names": "Feature Set, Motor",
             "variant_label_options": ""
           },
           "blocks": {}
