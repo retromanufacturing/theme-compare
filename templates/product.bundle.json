@@ -108,11 +108,10 @@
               "name": "Variant picker",
               "settings": {
                 "variant_labels": true,
-                "picker_type": "button",
+                "picker_type": "button_label",
                 "product_dynamic_variants_enable": true,
                 "color_swatches": true,
-                "update_url": false,
-                "non_label_options": ""
+                "update_url": false
               },
               "blocks": {}
             },
@@ -319,8 +318,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false,
-                        "non_label_options": ""
+                        "update_url": false
                       },
                       "blocks": {}
                     },
@@ -450,8 +448,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false,
-                        "non_label_options": ""
+                        "update_url": false
                       },
                       "blocks": {}
                     },
@@ -587,8 +584,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false,
-                        "non_label_options": ""
+                        "update_url": false
                       },
                       "blocks": {}
                     },
@@ -718,8 +714,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false,
-                        "non_label_options": ""
+                        "update_url": false
                       },
                       "blocks": {}
                     },
@@ -849,8 +844,7 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false,
-                        "non_label_options": ""
+                        "update_url": false
                       },
                       "blocks": {}
                     },
@@ -908,7 +902,9 @@
         "product_zoom_enable": true,
         "mobile_layout": "partial",
         "enable_video_looping": true,
-        "product_video_style": "muted"
+        "product_video_style": "muted",
+        "hide_variant_media": false,
+        "enable_installation_media": true
       }
     },
     "sub": {
