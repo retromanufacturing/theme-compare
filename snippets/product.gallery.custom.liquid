@@ -503,6 +503,11 @@ endfor
   assign media_thumbnails = product_media_thumbnails_output | append: variant_thumbnails_output | append: install_thumbnails_output
 -%}
 
+{% for variant in product.variants %}
+  {% assign radio_features = variant.metafields.custom.radio_features.value %}
+  <li>{{ variant.id }} -- {{ radio_features.id.value }}</li>
+{% endfor %}
+
 {%- if product -%}
   <product-images
     data-product-images
