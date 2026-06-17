@@ -914,12 +914,6 @@
           "block_order": [
             "custom_product_list_Eq6TTm"
           ]
-        },
-        "custom_buy_button_bundle_M9pGHE": {
-          "type": "custom-buy-button-bundle",
-          "name": "t:custom.bundle.buy_buttons",
-          "settings": {},
-          "blocks": {}
         }
       },
       "block_order": [
@@ -928,8 +922,7 @@
         "custom_tab_84ECRe",
         "custom_tab_kqgEP8",
         "custom_tab_Xb7JWF",
-        "custom_tab_3YpMhd",
-        "custom_buy_button_bundle_M9pGHE"
+        "custom_tab_3YpMhd"
       ],
       "settings": {
         "image_position": "left",
