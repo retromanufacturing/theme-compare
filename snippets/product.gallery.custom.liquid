@@ -433,31 +433,50 @@
     assign product_media_thumbnails_output = product_media_thumbnails_output | append: media_thumbs
   endfor
 
-  assign rendered_radio_srcs = ''
+  # Groups variant media by the metaobject record each variant references,
+  # not by variant ID alone — since multiple variants can share one record.
+  # Collects all variant IDs per unique record so media isn't hidden when
+  # switching between variants that share the same image.
+  # Dependent on: custom.product-gallery.liquid (thumb_hide list check),
+  # custom.variant-thumbnails.js (variantId list membership check).
+
+  assign rendered_handles = ''
   assign variant_media_count = 0
   assign variant_slideshow_output = ''
   assign variant_thumbnails_output = ''
 
   for variant in product.variants
-    assign radio_media = variant.metafields.custom.radio_features.value.media.value
-    for media in radio_media
-      unless rendered_radio_srcs contains media.src
-        assign rendered_radio_srcs = rendered_radio_srcs | append: media.src | append: ','
+    assign radio_features = variant.metafields.custom.radio_features.value
+
+    # skip if this record was already rendered via another variant
+    unless rendered_handles contains radio_features.handle
+      assign rendered_handles = rendered_handles | append: radio_features.handle | append: ','
+
+      # find every variant sharing this same record, not just this one
+      assign matching_variant_ids = ''
+      for other_variant in product.variants
+        assign other_radio_features = other_variant.metafields.custom.radio_features.value
+        if other_radio_features.handle == radio_features.handle
+          assign matching_variant_ids = matching_variant_ids | append: other_variant.id | append: ','
+        endif
+      endfor
+
+      for media in radio_features.media.value
         assign correct_index = variant_media_count | plus: media_offset
 
-        capture media_slides
-          render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+        capture this_slide
+          render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: matching_variant_ids
         endcapture
-        assign variant_slideshow_output = variant_slideshow_output | append: media_slides
+        assign variant_slideshow_output = variant_slideshow_output | append: this_slide
 
-        capture media_thumbs
-          render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: variant.id, current_variant_id: current_variant.id
+        capture this_thumb
+          render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: matching_variant_ids, current_variant_id: current_variant.id
         endcapture
-        assign variant_thumbnails_output = variant_thumbnails_output | append: media_thumbs
-
+        
+        assign variant_thumbnails_output = variant_thumbnails_output | append: this_thumb
         assign variant_media_count = variant_media_count | plus: 1
-      endunless
-    endfor
+      endfor
+    endunless
   endfor
 
   assign installation_media = product.metafields.media.install_photos.value
