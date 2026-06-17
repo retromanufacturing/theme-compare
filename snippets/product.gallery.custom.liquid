@@ -440,28 +440,28 @@
   # Dependent on: custom.product-gallery.liquid (thumb_hide list check),
   # custom.variant-thumbnails.js (variantId list membership check).
 
-  assign rendered_handles = ''
+assign rendered_ids = ''
 assign variant_media_count = 0
 assign variant_slideshow_output = ''
 assign variant_thumbnails_output = ''
 
 for variant in product.variants
-  assign radio_features = variant.metafields.custom.radio_features.value
-  assign radio_id = radio_features.key
+  assign variant_media = variant.metafields.custom.radio_features.value
+  assign variant_media_key = variant_media.key
 
-  unless rendered_handles contains radio_id
-    assign rendered_handles = rendered_handles | append: radio_id | append: ','
+  unless rendered_ids contains variant_media_key
+    assign rendered_ids = rendered_ids | append: variant_media_key | append: ','
 
     assign matching_variant_ids = ''
     for other_variant in product.variants
-      assign other_radio_features = other_variant.metafields.custom.radio_features.value
-      assign other_radio_id = other_radio_features.key
-      if other_radio_id == radio_id
+      assign other_variant_media = other_variant.metafields.custom.radio_features.value
+      assign other_variant_media_key = other_variant_media.key
+      if other_variant_media_key == variant_media_key
         assign matching_variant_ids = matching_variant_ids | append: other_variant.id | append: ','
       endif
     endfor
 
-    for media in radio_features.media.value
+    for media in variant_media.media.value
       assign correct_index = variant_media_count | plus: media_offset
 
       capture media_slides
