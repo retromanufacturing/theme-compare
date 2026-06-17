@@ -46,18 +46,18 @@
       endif
     endif
 
-     assign media_preview = media.preview_image | default: media
-  assign media_id = media.id | default: media.src
+    assign media_preview = media.preview_image | default: media
+    assign media_id = media.id | default: media.src
 
-  assign thumb_hide = false
-if hide_variant_media and variant_images contains media_preview.src
-  if media.id != featured_media.id
-    assign thumb_hide = true
+    assign thumb_hide = false
+    if hide_variant_media and variant_images contains media_preview.src
+      if media.id != featured_media.id
+        assign thumb_hide = true
+      endif
+    endif
+    if variant_id and current_variant_id and variant_id != current_variant_id
+      assign thumb_hide = true
   endif
-endif
-if variant_id and current_variant_id and variant_id != current_variant_id
-  assign thumb_hide = true
-endif
 
   -%}
 
