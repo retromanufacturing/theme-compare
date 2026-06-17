@@ -108,10 +108,16 @@
               "name": "Variant picker",
               "settings": {
                 "variant_labels": true,
-                "picker_type": "button_label",
+                "picker_type": "button",
                 "product_dynamic_variants_enable": true,
                 "color_swatches": true,
-                "update_url": false
+                "update_url": false,
+                "enable_features_and_logos": false,
+                "product_features_option_names": "",
+                "font_size": 14,
+                "logo_sizing": "default",
+                "logo_custom_height": 60,
+                "variant_label_options": ""
               },
               "blocks": {}
             },
@@ -318,7 +324,13 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false
+                        "update_url": false,
+                        "enable_features_and_logos": false,
+                        "product_features_option_names": "",
+                        "font_size": 14,
+                        "logo_sizing": "default",
+                        "logo_custom_height": 60,
+                        "variant_label_options": ""
                       },
                       "blocks": {}
                     },
@@ -448,7 +460,13 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false
+                        "update_url": false,
+                        "enable_features_and_logos": false,
+                        "product_features_option_names": "",
+                        "font_size": 14,
+                        "logo_sizing": "default",
+                        "logo_custom_height": 60,
+                        "variant_label_options": ""
                       },
                       "blocks": {}
                     },
@@ -584,7 +602,13 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false
+                        "update_url": false,
+                        "enable_features_and_logos": false,
+                        "product_features_option_names": "",
+                        "font_size": 14,
+                        "logo_sizing": "default",
+                        "logo_custom_height": 60,
+                        "variant_label_options": ""
                       },
                       "blocks": {}
                     },
@@ -714,7 +738,13 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false
+                        "update_url": false,
+                        "enable_features_and_logos": false,
+                        "product_features_option_names": "",
+                        "font_size": 14,
+                        "logo_sizing": "default",
+                        "logo_custom_height": 60,
+                        "variant_label_options": ""
                       },
                       "blocks": {}
                     },
@@ -844,7 +874,13 @@
                         "picker_type": "button",
                         "product_dynamic_variants_enable": true,
                         "color_swatches": false,
-                        "update_url": false
+                        "update_url": false,
+                        "enable_features_and_logos": false,
+                        "product_features_option_names": "",
+                        "font_size": 14,
+                        "logo_sizing": "default",
+                        "logo_custom_height": 60,
+                        "variant_label_options": ""
                       },
                       "blocks": {}
                     },
@@ -903,8 +939,7 @@
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted",
-        "hide_variant_media": false,
-        "enable_installation_media": true
+        "hide_variant_media": false
       }
     },
     "sub": {
