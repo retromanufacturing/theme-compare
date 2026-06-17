@@ -467,6 +467,10 @@
   {% endfor %}
 {% endfor %}
 
+{% if correct_index > 0 %}
+  keep going {% else %} no images
+{% endif %}
+
 {%- if product -%}
   <product-images
     data-product-images
