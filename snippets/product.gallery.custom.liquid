@@ -384,8 +384,6 @@
   }
 {% endstylesheet %}
 
-this is a test
-
 {%- liquid
   assign product = section.settings.product | default: product
   assign product_zoom_size = product_zoom_size | default: '1800x1800'
@@ -456,6 +454,25 @@ this is a test
     endfor
   endcapture
 -%}
+
+
+for variant in product.variants
+      assign radio_media = variant.metafields.custom.radio_features.value.media.value
+      for media in radio_media
+        unless rendered_radio_srcs contains media.src
+          assign rendered_radio_srcs = rendered_radio_srcs | append: media.src | append: ','
+          assign correct_index = forloop.index0 | plus: media_offset
+          render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+        endunless
+      endfor
+    endfor
+
+    {% for variant in product.variants %}
+      {% assign radio_media = variant.metafields.custom.radio_features.value.media.value %}
+     {% for media in radio_media %}
+       {{  variant.id }}--{{ media }}
+     {% endfor %}
+    {% endfor %}
 
 {%- if product -%}
   <product-images
