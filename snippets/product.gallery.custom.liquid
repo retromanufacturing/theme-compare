@@ -447,7 +447,7 @@ assign variant_thumbnails_output = ''
 
 for variant in product.variants
   assign radio_features = variant.metafields.custom.radio_features.value
-  assign radio_id = radio_features.id.value
+  assign radio_id = radio_features.key
 
   unless rendered_handles contains radio_id
     assign rendered_handles = rendered_handles | append: radio_id | append: ','
@@ -455,7 +455,7 @@ for variant in product.variants
     assign matching_variant_ids = ''
     for other_variant in product.variants
       assign other_radio_features = other_variant.metafields.custom.radio_features.value
-      assign other_radio_id = other_radio_features.id.value
+      assign other_radio_id = other_radio_features.key
       if other_radio_id == radio_id
         assign matching_variant_ids = matching_variant_ids | append: other_variant.id | append: ','
       endif
