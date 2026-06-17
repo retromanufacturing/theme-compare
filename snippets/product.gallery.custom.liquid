@@ -413,7 +413,7 @@
   assign hide_thumbnails = hide_thumbnails
   assign current_variant = product.selected_or_first_available_variant
   assign media_offset = product.media.size
-  assign installation_media = product.metafields.media.install_photos
+  assign installation_media = product.metafields.media.install_photos.value
 
   if hide_variant_media
     assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
