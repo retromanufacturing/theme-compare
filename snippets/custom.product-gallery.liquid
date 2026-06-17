@@ -51,9 +51,12 @@
 
     assign thumb_hide = false
     if hide_variant_media and variant_images contains media_preview.src
-        if media.id != featured_media.id
-            assign thumb_hide = true
-        endif
+      if media.id != featured_media.id
+        assign thumb_hide = true
+      endif
+    endif
+    if variant_id and current_variant_id and variant_id != current_variant_id
+      assign thumb_hide = true
     endif
   -%}
 
