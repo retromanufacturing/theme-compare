@@ -20,10 +20,11 @@ class VariantThumbnails extends HTMLElement {
     if (!variant) return
 
     this.querySelectorAll('[data-variant-id]').forEach((thumb) => {
-      const matches = thumb.dataset.variantId === String(variant.id)
-      thumb.classList.toggle('product__thumb-item-hide', !matches)
-    })
-  }
+        const variantIds = thumb.dataset.variantId.split(',')
+        const matches = variantIds.includes(String(variant.id))
+        thumb.classList.toggle('product__thumb-item-hide', !matches)
+        })
+    }
 }
 
 customElements.define('variant-thumbnails', VariantThumbnails)
