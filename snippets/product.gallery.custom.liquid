@@ -422,15 +422,15 @@
   assign product_media_thumbnails_output = ''
 
   for media in product.media
-    capture this_slide
+    capture media_slides
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endcapture
-    assign product_media_slideshow_output = product_media_slideshow_output | append: this_slide
+    assign product_media_slideshow_output = product_media_slideshow_output | append: media_slides
 
-    capture this_thumb
+    capture media_thumbs
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
     endcapture
-    assign product_media_thumbnails_output = product_media_thumbnails_output | append: this_thumb
+    assign product_media_thumbnails_output = product_media_thumbnails_output | append: media_thumbs
   endfor
 
   assign rendered_radio_srcs = ''
@@ -445,15 +445,15 @@
         assign rendered_radio_srcs = rendered_radio_srcs | append: media.src | append: ','
         assign correct_index = variant_media_count | plus: media_offset
 
-        capture this_slide
+        capture media_slides
           render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
         endcapture
-        assign variant_slideshow_output = variant_slideshow_output | append: this_slide
+        assign variant_slideshow_output = variant_slideshow_output | append: media_slides
 
-        capture this_thumb
+        capture media_thumbs
           render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: variant.id, current_variant_id: current_variant.id
         endcapture
-        assign variant_thumbnails_output = variant_thumbnails_output | append: this_thumb
+        assign variant_thumbnails_output = variant_thumbnails_output | append: media_thumbs
 
         assign variant_media_count = variant_media_count | plus: 1
       endunless
@@ -469,15 +469,15 @@
   for media in installation_media
     assign correct_index = forloop.index0 | plus: install_offset
 
-    capture this_slide
+    capture media_slides
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endcapture
-    assign install_slideshow_output = install_slideshow_output | append: this_slide
+    assign install_slideshow_output = install_slideshow_output | append: media_slides
 
-    capture this_thumb
+    capture media_thumbs
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size
     endcapture
-    assign install_thumbnails_output = install_thumbnails_output | append: this_thumb
+    assign install_thumbnails_output = install_thumbnails_output | append: media_thumbs
   endfor
 
   assign media_slideshow = product_media_slideshow_output | append: variant_slideshow_output | append: install_slideshow_output
