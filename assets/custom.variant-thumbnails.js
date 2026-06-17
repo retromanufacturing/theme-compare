@@ -22,6 +22,7 @@ class VariantThumbnails extends HTMLElement {
     this.querySelectorAll('[data-variant-id]').forEach((thumb) => {
       const matches = thumb.dataset.variantId === String(variant.id)
       thumb.toggleAttribute('data-hidden', !matches)
+      thumb.classList.toggle('product__thumb-item-hide', !matches)
     })
   }
 }
