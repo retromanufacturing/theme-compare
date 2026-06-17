@@ -412,7 +412,6 @@
   assign hide_variant_media = hide_variant_media | default: section.settings.hide_variant_media, allow_false: true | default: false
   assign hide_thumbnails = hide_thumbnails
   assign current_variant = product.selected_or_first_available_variant
-  assign current_variant_media = current_variant.metafields.custom.radio_features.value.media.value
   assign media_offset = product.media.size
 
   if hide_variant_media
@@ -423,9 +422,17 @@
     for media in product.media
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
-    for media in current_variant_media
-      assign correct_index = forloop.index0 | plus: media_offset
-      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
+
+    assign rendered_radio_srcs = ''
+    for variant in product.variants
+      assign radio_media = variant.metafields.custom.radio_features.value.media.value
+      for media in radio_media
+        unless rendered_radio_srcs contains media.src
+          assign rendered_radio_srcs = rendered_radio_srcs | append: media.src | append: ','
+          assign correct_index = forloop.index0 | plus: media_offset
+          render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+        endunless
+      endfor
     endfor
   endcapture
 
@@ -433,9 +440,17 @@
     for media in product.media
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
     endfor
-    for media in current_variant_media
-      assign correct_index = forloop.index0 | plus: media_offset
-      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size
+
+    assign rendered_radio_srcs_thumbs = ''
+    for variant in product.variants
+      assign radio_media = variant.metafields.custom.radio_features.value.media.value
+      for media in radio_media
+        unless rendered_radio_srcs_thumbs contains media.src
+          assign rendered_radio_srcs_thumbs = rendered_radio_srcs_thumbs | append: media.src | append: ','
+          assign correct_index = forloop.index0 | plus: media_offset
+          render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: variant.id, current_variant_id: current_variant.id
+        endunless
+      endfor
     endfor
   endcapture
 -%}
@@ -497,14 +512,12 @@
             {%- endif -%}
 
             {%- if hide_variant_media -%}
-              <variant-block
+              <variant-thumbnails
                 data-section-id="{{ section.id }}"
                 data-product-id="{{ product.id }}"
-                data-block-id="thumbs"
-                {{ block.shopify_attributes }}
               >
             {%- endif -%}
-          
+
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
                 {{ media_thumbnails }}
@@ -512,7 +525,7 @@
             </div>
 
             {%- if hide_variant_media -%}
-              </variant-block>
+              </variant-thumbnails>
             {%- endif -%}
 
             {%- if thumbnail_arrows -%}
