@@ -435,7 +435,7 @@
     endfor
     for media in current_variant_media
       assign correct_index = forloop.index0 | plus: media_offset
-      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: current_variant.id
+      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size
     endfor
   endcapture
 -%}
@@ -536,7 +536,6 @@
 
   <script type="module">
     import 'product.gallery';
-    import 'custom.variant-thumbnails';
   </script>
 
   {% if thumbnail_height == 'fixed' %}
