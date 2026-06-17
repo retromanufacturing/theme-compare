@@ -455,13 +455,14 @@
     endfor
   endcapture
 -%}
-{{  correct_index }}
+
 {% for media in installation_media.value %}
   {{ media }}
 {% endfor %}
 
 {% for variant in product.variants %}
   {%  assign vradio_media = variant.metafields.custom.radio_features.value.media.value %}
+  {%  assign correct_index = forloop.index0 | plus: media_offset %}
   {% for media in radio_media %}
     {{  correct_index }}
   {% endfor %}
