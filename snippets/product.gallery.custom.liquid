@@ -471,7 +471,7 @@
     assign install_offset = media_offset | plus: variant_media_count
 
     for media in installation_media
-      assign correct_index = forloop.index0 | plus: media_offset
+      assign correct_index = forloop.index0 | plus: install_offset
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: variant.id, current_variant_id: current_variant.id
     endfor
   endcapture
