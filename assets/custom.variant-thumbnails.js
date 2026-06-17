@@ -16,14 +16,15 @@ class VariantThumbnails extends HTMLElement {
   }
 
   handleVariantChange({ detail }) {
-    const { variant } = detail
-    if (!variant) return
+  const { variant } = detail
+  if (!variant) return
 
-    this.querySelectorAll('[data-variant-id]').forEach((thumb) => {
-      const matches = thumb.dataset.variantId === String(variant.id)
-      thumb.classList.toggle('product__thumb-item-hide', !matches)
-    })
-  }
+  this.querySelectorAll('[data-variant-id]').forEach((thumb) => {
+    const variantIds = thumb.dataset.variantId.split(',')
+    const matches = variantIds.includes(String(variant.id))
+    thumb.classList.toggle('product__thumb-item-hide', !matches)
+  })
+}
 }
 
 customElements.define('variant-thumbnails', VariantThumbnails)
