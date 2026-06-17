@@ -455,6 +455,14 @@
   endcapture
 -%}
 
+
+    {% for variant in product.variants %}
+      {% assign radio_media = variant.metafields.custom.radio_features.value.media.value %}
+     {% for media in radio_media %}
+       <li>{{  variant.id }}--{{ media }}</li>
+     {% endfor %}
+    {% endfor %}
+
 {%- if product -%}
   <product-images
     data-product-images
