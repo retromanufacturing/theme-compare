@@ -460,6 +460,13 @@
   {{ media }}
 {% endfor %}
 
+{% for variant in product.variants %}
+  {%  assign vradio_media = variant.metafields.custom.radio_features.value.media.value %}
+  {% for media in radio_media %}
+    {{  correct_index }}
+  {% endfor %}
+{% endfor %}
+
 {%- if product -%}
   <product-images
     data-product-images
