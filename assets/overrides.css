@@ -65,8 +65,3 @@
 .newsletter-section__content a {
   text-decoration: underline;
 }
-
-/* Custom code */
-[data-hidden] {
-  display: none;
-}
