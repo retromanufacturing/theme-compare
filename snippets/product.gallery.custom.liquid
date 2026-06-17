@@ -456,7 +456,7 @@
   endcapture
 -%}
 
-{% for media in installation_media.value %}
+{% comment %} {% for media in installation_media.value %}
   {{ media }}
 {% endfor %}
 
@@ -466,7 +466,7 @@
   {% for media in radio_media %}
     {{  correct_index }}
   {% endfor %}
-{% endfor %}
+{% endfor %} {% endcomment %}
 
 {{ installation_media.size }}
 
