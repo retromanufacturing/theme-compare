@@ -505,7 +505,7 @@ endfor
 
 {% for variant in product.variants %}
   {% assign radio_features = variant.metafields.custom.radio_features.value %}
-  <li>{{ variant.id }} -- {{ radio_features.id.value }}</li>
+  <li>{{ variant.id }} -- {{ radio_features.id }}</li>
 {% endfor %}
 
 {%- if product -%}
