@@ -464,16 +464,16 @@
       for media in radio_features.media.value
         assign correct_index = variant_media_count | plus: media_offset
 
-        capture this_slide
+        capture media_thumbs
           render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: matching_variant_ids
         endcapture
-        assign variant_slideshow_output = variant_slideshow_output | append: this_slide
+        assign variant_slideshow_output = variant_slideshow_output | append: media_thumbs
 
-        capture this_thumb
+        capture media_thumbs
           render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: matching_variant_ids, current_variant_id: current_variant.id
         endcapture
-        
-        assign variant_thumbnails_output = variant_thumbnails_output | append: this_thumb
+        assign variant_thumbnails_output = variant_thumbnails_output | append: media_thumbs
+
         assign variant_media_count = variant_media_count | plus: 1
       endfor
     endunless
