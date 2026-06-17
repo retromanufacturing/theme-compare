@@ -413,39 +413,26 @@
   assign hide_thumbnails = hide_thumbnails
   assign current_variant = product.selected_or_first_available_variant
   assign media_offset = product.media.size
-  assign media_metafield_path = 'metafields.custom.radio_features.value.media.value'
 
   if hide_variant_media
     assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
   endif
-
-  capture media_groups_raw
-    render 'custom.variant-media-groups', product: product, media_metafield_path: media_metafield_path
-  endcapture
-  assign media_groups = media_groups_raw | strip | split: '\n'
 
   capture media_slideshow
     for media in product.media
       render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endfor
 
-    for group in media_groups
-      assign group_parts = group | split: '::'
-      assign group_src = group_parts[0]
-      assign group_variant_ids = group_parts[1]
-
-      assign matched_media = blank
-      for variant in product.variants
-        assign variant_media = variant.metafields.custom.radio_features.value.media.value
-        for media in variant_media
-          if media.src == group_src
-            assign matched_media = media
-          endif
-        endfor
+    assign rendered_radio_srcs = ''
+    for variant in product.variants
+      assign radio_media = variant.metafields.custom.radio_features.value.media.value
+      for media in radio_media
+        unless rendered_radio_srcs contains media.src
+          assign rendered_radio_srcs = rendered_radio_srcs | append: media.src | append: ','
+          assign correct_index = forloop.index0 | plus: media_offset
+          render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant.id
+        endunless
       endfor
-
-      assign correct_index = forloop.index0 | plus: media_offset
-      render 'custom.product-gallery', media_class: 'slideshow', media: matched_media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: group_variant_ids
     endfor
   endcapture
 
@@ -454,23 +441,16 @@
       render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
     endfor
 
-    for group in media_groups
-      assign group_parts = group | split: '::'
-      assign group_src = group_parts[0]
-      assign group_variant_ids = group_parts[1]
-
-      assign matched_media = blank
-      for variant in product.variants
-        assign variant_media = variant.metafields.custom.radio_features.value.media.value
-        for media in variant_media
-          if media.src == group_src
-            assign matched_media = media
-          endif
-        endfor
+    assign rendered_radio_srcs_thumbs = ''
+    for variant in product.variants
+      assign radio_media = variant.metafields.custom.radio_features.value.media.value
+      for media in radio_media
+        unless rendered_radio_srcs_thumbs contains media.src
+          assign rendered_radio_srcs_thumbs = rendered_radio_srcs_thumbs | append: media.src | append: ','
+          assign correct_index = forloop.index0 | plus: media_offset
+          render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: variant.id, current_variant_id: current_variant.id
+        endunless
       endfor
-
-      assign correct_index = forloop.index0 | plus: media_offset
-      render 'custom.product-gallery', media_class: 'thumbnails', media: matched_media, featured_media: featured_media, loopIndex0: correct_index, loopIndex: correct_index, product_zoom_size: product_zoom_size, variant_id: group_variant_ids, current_variant_id: current_variant.id
     endfor
   endcapture
 -%}
