@@ -497,12 +497,14 @@
             {%- endif -%}
 
             {%- if hide_variant_media -%}
-              <variant-thumbnails
+              <variant-block
                 data-section-id="{{ section.id }}"
                 data-product-id="{{ product.id }}"
+                data-block-id="thumbs"
+                {{ block.shopify_attributes }}
               >
             {%- endif -%}
-
+          
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
                 {{ media_thumbnails }}
@@ -510,7 +512,7 @@
             </div>
 
             {%- if hide_variant_media -%}
-              </variant-thumbnails>
+              </variant-block>
             {%- endif -%}
 
             {%- if thumbnail_arrows -%}
