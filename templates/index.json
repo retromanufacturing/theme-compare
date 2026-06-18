@@ -541,8 +541,8 @@
           "settings": {
             "heading": "Shop By Make",
             "text": "",
-            "link": "",
-            "label": "",
+            "link": "shopify://pages/all-car-makes",
+            "label": "View All",
             "color_scheme": "none",
             "width": "100"
           }
