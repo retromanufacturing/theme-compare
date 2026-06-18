@@ -1,27 +1,34 @@
+{% style %}
+  .block-{{ block.id }}:has(product-inventory){
+    display: none;
+  }
+{% endstyle %}
 
-{% render 'block.product-inventory', product: closest.product %}
+<div class="block-{{ block.id }}">
+  {% render 'block.product-inventory', product: closest.product %}
+</div>
 
 {% schema %}
 {
-   "name": "t:labels.inventory_status",
-      "settings": [
-        {
-          "type": "range", 
-          "id": "inventory_threshold",
-          "label": "t:labels.low_inventory_threshold",
-          "default": 10,
-          "min": 0,
-          "max": 20,
-          "step": 2
-        },
-        {
-          "type": "checkbox",
-          "id": "inventory_transfers_enable",
-          "label": "t:actions.show_inventory_transfer",
-          "info": "t:info.learn_inventory_transfers",
-          "default": true
-        }
-      ],
+  "name": "t:labels.inventory_status",
+  "settings": [
+    {
+      "type": "range",
+      "id": "inventory_threshold",
+      "label": "t:labels.low_inventory_threshold",
+      "default": 10,
+      "min": 0,
+      "max": 20,
+      "step": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "inventory_transfers_enable",
+      "label": "t:actions.show_inventory_transfer",
+      "info": "t:info.learn_inventory_transfers",
+      "default": true
+    }
+  ],
   "presets": [{ "name": "t:labels.inventory_status" }]
 }
 {% endschema %}
