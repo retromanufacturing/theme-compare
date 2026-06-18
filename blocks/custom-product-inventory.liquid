@@ -23,6 +23,10 @@
     color: {{in_stock.settings.primary }};
     background-color: {{in_stock.settings.secondary }};
   }
+  .block-{{ block.id }} .icon-and-text.inventory--low {
+    color: {{ low_stock.settings.primary }};
+    background-color: {{ low_stock.settings.secondary }};
+  }
 {% endstyle %}
 
 <div class="block-{{ block.id }}">
@@ -63,14 +67,14 @@
       "type": "color_scheme",
       "id": "color_scheme_in_stock",
       "label": "In stock color scheme",
-      "default": "none",
+      "default": "scheme_13",
       "visible_if": "{{ block.settings.enable_labels }}"
     },
     {
       "type": "color_scheme",
       "id": "color_scheme_low_stock",
       "label": "Low stock color scheme",
-      "default": "none",
+      "default": "scheme_14",
       "visible_if": "{{ block.settings.enable_labels }}"
     }
   ],
