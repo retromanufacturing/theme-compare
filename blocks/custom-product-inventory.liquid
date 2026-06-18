@@ -16,6 +16,9 @@
     font-size: .8rem;       
     padding: 0.125rem 0.5rem;
   }
+  .block-{{ block.id }} .element-icon{              
+    display: none;
+  }
   .block-{{ block.id }} .icon-and-text:not(.inventory--low) {
     color: {{in_stock.settings.primary }};
     background-color: {{in_stock.settings.secondary }};
