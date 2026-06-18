@@ -62,6 +62,7 @@
               "settings": {
                 "inventory_threshold": 10,
                 "inventory_transfers_enable": true,
+                "enable_labels": true,
                 "color_scheme_in_stock": "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9",
                 "color_scheme_low_stock": "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7"
               },
