@@ -48,13 +48,15 @@
       "type": "color_scheme",
       "id": "color_scheme_in_stock",
       "label": "In stock color scheme",
-      "default": "none"
+      "default": "none",
+      "visible_if": "{{ block.settings.enable_labels }}"
     },
     {
       "type": "color_scheme",
       "id": "color_scheme_low_stock",
       "label": "Low stock color scheme",
-      "default": "none"
+      "default": "none",
+      "visible_if": "{{ block.settings.enable_labels }}"
     }
   ],
   "presets": [{ "name": "t:labels.inventory_status" }]
