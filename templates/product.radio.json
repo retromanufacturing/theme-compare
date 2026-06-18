@@ -61,7 +61,9 @@
               "name": "t:labels.inventory_status",
               "settings": {
                 "inventory_threshold": 10,
-                "inventory_transfers_enable": true
+                "inventory_transfers_enable": true,
+                "color_scheme_in_stock": "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9",
+                "color_scheme_low_stock": "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7"
               },
               "blocks": {}
             },
@@ -87,6 +89,9 @@
             "update_url": true,
             "enable_features_and_logos": true,
             "product_features_option_names": "Feature Set, Motor",
+            "font_size": 14,
+            "logo_sizing": "default",
+            "logo_custom_height": 60,
             "variant_label_options": ""
           },
           "blocks": {}
@@ -151,8 +156,7 @@
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted",
-        "hide_variant_media": true,
-        "enable_installation_media": true
+        "hide_variant_media": true
       }
     },
     "sub": {
