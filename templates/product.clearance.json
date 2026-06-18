@@ -97,10 +97,6 @@
           },
           "blocks": {}
         },
-        "w3_product_accessories_widget_Ftjg7y": {
-          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
-          "settings": {}
-        },
         "custom_buy_button_geNJrt": {
           "type": "custom-buy-button",
           "name": "t:labels.buy_buttons",
@@ -115,7 +111,6 @@
       "block_order": [
         "custom_group_pWm6HC",
         "custom_variant_picker_iEg38U",
-        "w3_product_accessories_widget_Ftjg7y",
         "custom_buy_button_geNJrt"
       ],
       "settings": {
