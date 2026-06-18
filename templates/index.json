@@ -428,6 +428,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/RMS00471.jpg",
+            "video_url": "",
             "width": "33",
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
@@ -444,6 +445,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/RM-68.jpg",
+            "video_url": "",
             "width": "33",
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
@@ -459,6 +461,7 @@
             "cta_link1": "",
             "cta_text2": "Shop All",
             "cta_link2": "",
+            "video_url": "",
             "width": "33",
             "height": 500,
             "text_align": "vertical-center horizontal-center"
@@ -474,6 +477,7 @@
             "cta_link1": "",
             "cta_text2": "Shop All",
             "cta_link2": "",
+            "video_url": "",
             "width": "33",
             "height": 500,
             "text_align": "vertical-center horizontal-center"
@@ -489,6 +493,7 @@
             "cta_link1": "",
             "cta_text2": "Shop All",
             "cta_link2": "",
+            "video_url": "",
             "width": "33",
             "height": 500,
             "text_align": "vertical-center horizontal-center"
@@ -504,6 +509,7 @@
             "cta_link1": "",
             "cta_text2": "Shop All",
             "cta_link2": "",
+            "video_url": "",
             "width": "33",
             "height": 500,
             "text_align": "vertical-center horizontal-center"
@@ -519,6 +525,7 @@
         "advanced_AKUynj",
         "advanced_m8UKnB"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}"
@@ -558,6 +565,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/WebBanners-Dallas.jpg",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -574,6 +582,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/SEOon_1994-Chevy-1500-santa-cruz-interioir-3.jpg",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -590,6 +599,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/RetroSound_Pontiac-Best-GTO-original-radio.jpg",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -606,6 +616,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/SEOon_1992-dodge-w250-newport-interior-3.jpg",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -621,6 +632,7 @@
             "cta_link1": "shopify://collections/plymouth-make",
             "cta_text2": "",
             "cta_link2": "",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -636,6 +648,7 @@
             "cta_link1": "shopify://collections/mercury-make",
             "cta_text2": "",
             "cta_link2": "",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -651,6 +664,7 @@
             "cta_link1": "shopify://collections/volkswagen",
             "cta_text2": "",
             "cta_link2": "",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-center"
@@ -667,6 +681,7 @@
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/1280-Collection-Traffic.jpg",
+            "video_url": "",
             "width": "25",
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
@@ -684,6 +699,7 @@
         "advanced_X8nfya",
         "advanced_TFeUtP"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}",
