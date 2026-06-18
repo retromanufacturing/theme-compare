@@ -423,14 +423,14 @@
             "subheading": "",
             "heading": "Radios",
             "textarea": "",
-            "cta_text1": "Shop All",
+            "cta_text1": "",
             "cta_link1": "https://www.retromanufacturing.com/pages/radios",
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify://shop_images/RMS00471.jpg",
             "width": "33",
             "height": 500,
-            "text_align": "vertical-center horizontal-center"
+            "text_align": "vertical-bottom horizontal-left"
           }
         },
         "advanced_PQKTTk": {
