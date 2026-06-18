@@ -8,6 +8,9 @@
   {% render 'block.product-inventory', product: closest.product %}
 </div>
 
+{{  block.settings.color_scheme_in_stock }}
+{{  block.settings.color_scheme_low_stock }}
+
 {% schema %}
 {
   "name": "t:labels.inventory_status",
@@ -27,6 +30,18 @@
       "label": "t:actions.show_inventory_transfer",
       "info": "t:info.learn_inventory_transfers",
       "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_in_stock",
+      "label": "In stock color scheme",
+      "default": "none"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_low_stock",
+      "label": "Low stock color scheme",
+      "default": "none"
     }
   ],
   "presets": [{ "name": "t:labels.inventory_status" }]
