@@ -9,9 +9,10 @@
 </div>
 
 {% if block.settings.enable_labels %}
-  {{  block.settings.color_scheme_in_stock }}
-{{  block.settings.color_scheme_low_stock }}
-
+<ul>  
+ <li>{{  block.settings.color_scheme_in_stock }}</li>
+ <li>{{  block.settings.color_scheme_low_stock }}</li>
+</ul>
 {% endif %}
 
 {% schema %}
