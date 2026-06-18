@@ -533,6 +533,136 @@
         "enable_title": false
       }
     },
+    "promo_grid_8d7c9D": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner_KQLnni": {
+          "type": "banner",
+          "settings": {
+            "heading": "Popular Vehicle Makes",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
+        "advanced_BigW6d": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Radios",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "https://www.retromanufacturing.com/pages/radios",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/RMS00471.jpg",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_JzTTAG": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "RetroSound Speakers",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "https://www.retromanufacturing.com/collections/speakers",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/RM-68.jpg",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_89HFcq": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_V6ycU6": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_ebdpjV": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_MH3THc": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_KQLnni",
+        "advanced_BigW6d",
+        "advanced_JzTTAG",
+        "advanced_89HFcq",
+        "advanced_V6ycU6",
+        "advanced_ebdpjV",
+        "advanced_MH3THc"
+      ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}",
+        ".promo-grid__container {border-radius: 10px;}"
+      ],
+      "name": "t:labels.promotional_grid",
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hide_block_images": true,
+        "enable_title": false
+      }
+    },
     "promo_grid_CiVJpa": {
       "type": "promo-grid",
       "blocks": {
@@ -821,6 +951,7 @@
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
     "promo_grid_HdN3gi",
+    "promo_grid_8d7c9D",
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
     "blog_posts_xYaJ84",
