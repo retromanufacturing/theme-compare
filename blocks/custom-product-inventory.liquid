@@ -2,15 +2,17 @@
   assign in_stock_id = block.settings.color_scheme_in_stock | default: 'none'
   assign low_stock_id = block.settings.color_scheme_low_stock | default: 'none'
 -%}
-
+{% comment %} 
 {{in_stock_id }}--{{ low_stock_id }}
-{{  block.settings.color_scheme_in_stock }}--{{  block.settings.color_scheme_low_stock }}
+{{  block.settings.color_scheme_in_stock }}--{{  block.settings.color_scheme_low_stock }} {% endcomment %}
 {% if block.settings.enable_labels %}
 <ul>  
  <li>{{  block.settings.color_scheme_in_stock.settings.primary }}</li>
  <li>{{  block.settings.color_scheme_in_stock.settings.secondary }}</li>
   <li>{{  block.settings.color_scheme_low_stock.settings.primary }}</li>
  <li>{{  block.settings.color_scheme_low_stock.settings.secondary }}</li>
+  <li>Low stock: {{  block.settings.color_scheme_low_stock }}</li>
+   <li>In stock: {{  block.settings.color_scheme_in_stock }}</li>
 </ul>
 {% endif %}
 
