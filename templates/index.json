@@ -446,7 +446,7 @@
             "image": "shopify://shop_images/RM-68.jpg",
             "width": "33",
             "height": 500,
-            "text_align": "vertical-bottom horizontal-center"
+            "text_align": "vertical-bottom horizontal-left"
           }
         },
         "advanced_CzagU7": {
@@ -520,7 +520,8 @@
         "advanced_m8UKnB"
       ],
       "custom_css": [
-        ".heading-md {font-size: 1.5rem;}"
+        ".heading-md {font-size: 1.5rem;}",
+        ".promo-grid__container {border-radius: 10px;}"
       ],
       "name": "t:labels.promotional_grid",
       "settings": {
