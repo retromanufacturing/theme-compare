@@ -1,3 +1,10 @@
+{%- liquid
+  assign in_stock_id = block.settings.color_scheme_in_stock | default: 'none'
+  assign low_stock_id = block.settings.color_scheme_low_stock | default: 'none'
+-%}
+
+{{in_stock_id }}--{{ low_stock_id }}
+
 {% style %}
   .block-{{ block.id }}:has(.product-inventory__points){
     /* display: none; */
