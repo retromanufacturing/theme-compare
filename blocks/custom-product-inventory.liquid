@@ -8,8 +8,11 @@
   {% render 'block.product-inventory', product: closest.product %}
 </div>
 
-{{  block.settings.color_scheme_in_stock }}
+{% if block.settings.enable_labels %}
+  {{  block.settings.color_scheme_in_stock }}
 {{  block.settings.color_scheme_low_stock }}
+
+{% endif %}
 
 {% schema %}
 {
@@ -30,6 +33,16 @@
       "label": "t:actions.show_inventory_transfer",
       "info": "t:info.learn_inventory_transfers",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:custom.custom"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_labels",
+      "label": "Use inventory labels",
+      "default": false
     },
     {
       "type": "color_scheme",
