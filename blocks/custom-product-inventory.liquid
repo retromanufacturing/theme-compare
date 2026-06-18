@@ -4,6 +4,13 @@
 -%}
 
 {{in_stock_id }}--{{ low_stock_id }}
+{{  block.settings.color_scheme_in_stock }}--{{  block.settings.color_scheme_low_stock }}
+{% if block.settings.enable_labels %}
+<ul>  
+ <li></li>
+ <li></li>
+</ul>
+{% endif %}
 
 {% style %}
   .block-{{ block.id }}:has(.product-inventory__points){
@@ -20,12 +27,7 @@
   {% render 'block.product-inventory', product: closest.product %}
 </div>
 
-{% if block.settings.enable_labels %}
-<ul>  
- <li>{{  block.settings.color_scheme_in_stock }}</li>
- <li>{{  block.settings.color_scheme_low_stock }}</li>
-</ul>
-{% endif %}
+
 
 {% schema %}
 {
