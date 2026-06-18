@@ -672,7 +672,7 @@
             "image": "shopify://shop_images/1280-Collection-Traffic.jpg",
             "width": "25",
             "height": 500,
-            "text_align": "vertical-bottom horizontal-center"
+            "text_align": "vertical-bottom horizontal-left"
           }
         }
       },
