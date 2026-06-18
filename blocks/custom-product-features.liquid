@@ -1,11 +1,11 @@
 <span class="block-product_features">
-{% liquid
-  capture content
-    render 'block.product-features', product: closest.product | default: product, block: block
-  endcapture
-  
-  render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
-%}
+  {% liquid
+    capture content
+      render 'block.product-features', product: closest.product | default: product, block: block
+    endcapture
+
+    render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
+  %}
 </span>
 {% schema %}
 {
