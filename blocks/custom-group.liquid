@@ -175,9 +175,9 @@
   }
 
   /* Hide custom group styling when child content is empty*/  
-  .custom-group--{{ block.id }}:not(:has(.block-product_features variant-block *, .block-product_logos variant-block *)) {
-    display: none;
-  }
+  .custom-group--{{ block.id }}:has(.block-product_features, .block-product_logos):not(:has(.block-product_features variant-block *, .block-product_logos variant-block *)) {
+  display: none;
+}
 
 {% endstyle %}
 
