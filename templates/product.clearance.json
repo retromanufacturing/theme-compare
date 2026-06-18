@@ -1,0 +1,164 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-block",
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true,
+            "is_open": true
+          }
+        },
+        "custom_tab_BLzAcA": {
+          "type": "custom-tab",
+          "settings": {
+            "tab_type": "videos",
+            "title": "Product videos",
+            "is_open": true,
+            "text_color": "#42434d",
+            "columns_per_row": 4
+          }
+        },
+        "custom_tab_pNRnYb": {
+          "type": "custom-tab",
+          "settings": {
+            "tab_type": "specifications",
+            "title": "Specifications",
+            "is_open": false,
+            "text_color": "#42434d",
+            "columns_per_row": 2
+          }
+        },
+        "custom_tab_tpYMTQ": {
+          "type": "custom-tab",
+          "settings": {
+            "tab_type": "manuals",
+            "title": "Manuals",
+            "is_open": false,
+            "text_color": "#ba4444",
+            "columns_per_row": 2
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "custom_tab_BLzAcA",
+        "custom_tab_pNRnYb",
+        "custom_tab_tpYMTQ"
+      ],
+      "settings": {
+        "max_width": false
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 3
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "settings": {
+        "products_per_row": 5,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {}
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "2"
+      }
+    },
+    "1777399676f28f9e85": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_polaris_fCgnjh": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-polaris/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#ffd800",
+            "review_type": "product_review,questions",
+            "per_page": 8,
+            "primary_btn_bg_color": "#000000",
+            "primary_btn_border_color": "#000000",
+            "primary_btn_text_color": "#ffffff",
+            "secondary_btn_border_color": "#000000",
+            "secondary_btn_text_color": "#000000",
+            "border_color": "#d9d9d9",
+            "heading_text_color": "#000000",
+            "heading_font": "sans_serif_n4",
+            "body_text_color": "#000000",
+            "badge_icon_color": "#00ac11",
+            "badge_text_color": "#000000",
+            "enable_rich_snippets": true,
+            "show_location": true,
+            "show_tab_selector": false,
+            "show_dates": true,
+            "show_avatar": true,
+            "enable_sentiment_analysis": false,
+            "enable_replies": false,
+            "widget_spacing": 0,
+            "capitalise_headers_and_buttons": false,
+            "show_review_title": false,
+            "default_sort": "date_desc"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_polaris_fCgnjh"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "recommendations",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return",
+    "1777399676f28f9e85"
+  ]
+}
