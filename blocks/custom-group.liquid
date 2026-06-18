@@ -173,6 +173,9 @@
       {% endif %}
     }
   }
+  .custom-group--{{ block.id }}:has(variant-block) {
+    display: none;
+  }
 {% endstyle %}
 
 {% stylesheet %}
