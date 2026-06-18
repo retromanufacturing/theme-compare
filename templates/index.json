@@ -890,7 +890,9 @@
         "collection_TJJbyw"
       ],
       "custom_css": [
-        ".heading-md {font-size: 1.5rem;}"
+        ".heading-md {font-size: 1.5rem;}",
+        ".type-banner__text {display: flex; align-items: center; width: 100%; /* ensure it stretches so there's space to push against */}",
+        ".type-banner__text .element-button {margin-left: auto;}"
       ],
       "name": "Shop By Make",
       "settings": {
