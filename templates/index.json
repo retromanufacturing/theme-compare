@@ -403,6 +403,130 @@
         "height_mobile": 250
       }
     },
+    "promo_grid_HdN3gi": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner_TLkwc6": {
+          "type": "banner",
+          "settings": {
+            "heading": "Popular Categories",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
+        "advanced_HKrjAL": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_PQKTTk": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_CzagU7": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_CGLJyr": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_AKUynj": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        },
+        "advanced_m8UKnB": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_TLkwc6",
+        "advanced_HKrjAL",
+        "advanced_PQKTTk",
+        "advanced_CzagU7",
+        "advanced_CGLJyr",
+        "advanced_AKUynj",
+        "advanced_m8UKnB"
+      ],
+      "name": "t:labels.promotional_grid",
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hide_block_images": true,
+        "enable_title": false
+      }
+    },
     "promo_grid_CiVJpa": {
       "type": "promo-grid",
       "blocks": {
@@ -690,6 +814,7 @@
     "advanced_content_T3red9",
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
+    "promo_grid_HdN3gi",
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
     "blog_posts_xYaJ84",
