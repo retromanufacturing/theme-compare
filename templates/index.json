@@ -627,7 +627,7 @@
       "settings": {
         "full_width": true,
         "gutter_size": 20,
-        "space_above": true,
+        "space_above": false,
         "space_below": true,
         "hide_block_images": true,
         "enable_title": false
