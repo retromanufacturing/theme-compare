@@ -3,9 +3,9 @@
     /* display: none; */
   }
   .block-{{ block.id }} .icon-and-text:not(.inventory--low) {
-    display: none; 
-    color: var(--color-scheme-{{ block.settings.color_scheme_in_stock }}-primary);
-    background-color: var(--color-scheme-{{ block.settings.color_scheme_in_stock }}-secondary);
+        color: var(--color-scheme-{{ block.settings.color_scheme_low_stock }}-primary);
+    background-color: var(--color-scheme-{{ block.settings.color_scheme_low_stock }}-secondary);
+  
   }
 {% endstyle %}
 
