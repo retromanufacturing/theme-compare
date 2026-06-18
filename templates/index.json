@@ -518,6 +518,9 @@
         "advanced_AKUynj",
         "advanced_m8UKnB"
       ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}"
+      ],
       "name": "t:labels.promotional_grid",
       "settings": {
         "full_width": true,
