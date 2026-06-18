@@ -215,20 +215,38 @@
       },
       "scheme-858644b0-8c93-4655-935f-e14244df698c": {
         "settings": {
-          "primary": "#FFFFFF",
-          "secondary": "#623F36"
+          "primary": "#ffffff",
+          "secondary": "#623f36"
         }
       },
       "scheme-5da873ee-7e7f-4226-81ba-9c834541eb15": {
         "settings": {
-          "primary": "#FFFFFF",
+          "primary": "#ffffff",
           "secondary": "#294957"
         }
       },
       "scheme-3f987455-9946-48f2-94c9-59f10ce66e15": {
         "settings": {
-          "primary": "#FFFFFF",
-          "secondary": "#C19E44"
+          "primary": "#ffffff",
+          "secondary": "#c19e44"
+        }
+      },
+      "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9": {
+        "settings": {
+          "primary": "#0C5132",
+          "secondary": "#B4FED2"
+        }
+      },
+      "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7": {
+        "settings": {
+          "primary": "#5E4200",
+          "secondary": "#FFD6A4"
+        }
+      },
+      "scheme-5de09869-dc28-4e80-857b-b5ab567f4613": {
+        "settings": {
+          "primary": "#000000",
+          "secondary": "#FFC500"
         }
       }
     }
