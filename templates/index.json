@@ -446,7 +446,7 @@
             "image": "shopify://shop_images/RM-68.jpg",
             "width": "33",
             "height": 500,
-            "text_align": "vertical-bottom horizontal-left"
+            "text_align": "vertical-bottom horizontal-center"
           }
         },
         "advanced_CzagU7": {
