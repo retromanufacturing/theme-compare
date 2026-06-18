@@ -174,10 +174,11 @@
     }
   }
 
-  /* Hide custom group styling when child content is empty*/
-  /* .custom-group--{{ block.id }}:not(:has(variant-block *)) {
+  /* Hide custom group styling when child content is empty*/  
+  .custom-group--{{ block.id }}:not(:has(.block-product_features variant-block *, .block-product_logos variant-block *)) {
     display: none;
-  } */
+  }
+
 {% endstyle %}
 
 {% stylesheet %}
