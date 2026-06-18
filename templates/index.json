@@ -539,7 +539,7 @@
         "banner_KQLnni": {
           "type": "banner",
           "settings": {
-            "heading": "Popular Vehicle Makes",
+            "heading": "Shop By Make",
             "text": "",
             "link": "",
             "label": "",
@@ -623,7 +623,7 @@
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}"
       ],
-      "name": "Popular Vehicle Makes",
+      "name": "Shop By Make",
       "settings": {
         "full_width": true,
         "gutter_size": 20,
