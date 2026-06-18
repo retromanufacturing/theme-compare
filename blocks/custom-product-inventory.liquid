@@ -2,6 +2,10 @@
   .block-{{ block.id }}:has(.product-inventory__points){
     /* display: none; */
   }
+  .block-{{ block.id }} .icon-and-text:not(.inventory--low) {
+    color: var(--color-scheme-{{ block.settings.color_scheme_in_stock }}-primary);
+    background-color: var(--color-scheme-{{ block.settings.color_scheme_in_stock }}-secondary);
+  }
 {% endstyle %}
 
 <div class="block-{{ block.id }}">
