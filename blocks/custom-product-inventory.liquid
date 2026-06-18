@@ -1,7 +1,8 @@
 {%- liquid
-  assign in_stock_id = block.settings.color_scheme_in_stock | default: 'none'
-  assign low_stock_id = block.settings.color_scheme_low_stock | default: 'none'
+  assign in_stock = block.settings.color_scheme_in_stock 
+  assign low_stock = block.settings.color_scheme_low_stock
 -%}
+
 {% comment %} 
 {{in_stock_id }}--{{ low_stock_id }}
 {{  block.settings.color_scheme_in_stock }}--{{  block.settings.color_scheme_low_stock }} {% endcomment %}
@@ -20,9 +21,9 @@
   .block-{{ block.id }}:has(.product-inventory__points){
     /* display: none; */
   }
-  .block-{{ block.id }} .icon-and-text:not(.inventory--low) {
-        color: var(--color-scheme-{{ block.settings.color_scheme_low_stock }}-primary);
-    background-color: var(--color-scheme-{{ block.settings.color_scheme_low_stock }}-secondary);
+  .block-{{ block.id }} .icon-and-text:not(.inventory--low) {    
+    color: {{in_stock.settings.primary }};
+    background-color: {{in_stock.settings.secondary }};
   
   }
 {% endstyle %}
@@ -30,8 +31,6 @@
 <div class="block-{{ block.id }}">
   {% render 'block.product-inventory', product: closest.product %}
 </div>
-
-
 
 {% schema %}
 {
