@@ -174,11 +174,10 @@
     }
   }
 
-  /* Hide custom group styling when child content is empty*/  
+  /* Hide custom group when product features or logos are present but contain no content */ 
   .custom-group--{{ block.id }}:has(.block-product_features, .block-product_logos):not(:has(.block-product_features variant-block *, .block-product_logos variant-block *)) {
-  display: none;
-}
-
+    display: none;
+  }
 {% endstyle %}
 
 {% stylesheet %}
