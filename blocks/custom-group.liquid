@@ -174,7 +174,7 @@
     }
   }
 
-  /* Hide custom group when product features or logos are present but contain no content */ 
+  /* Hide custom group when product features or logos contain no content */ 
   .custom-group--{{ block.id }}:has(.block-product_features, .block-product_logos):not(:has(.block-product_features variant-block *, .block-product_logos variant-block *)) {
     display: none;
   }
