@@ -42,7 +42,7 @@
     "social_youtube_link": "https://www.youtube.com/channel/UCM5yKOf77Gjew_HBYPS57FQ",
     "favicon": "shopify://shop_images/RM-FavICO2.png",
     "show_breadcrumbs": true,
-    "show_breadcrumbs_collection_link": true,
+    "show_breadcrumbs_collection_link": false,
     "content_for_index": [],
     "blocks": {
       "10830403595879607806": {
@@ -233,20 +233,20 @@
       },
       "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9": {
         "settings": {
-          "primary": "#0C5132",
-          "secondary": "#B4FED2"
+          "primary": "#0c5132",
+          "secondary": "#b4fed2"
         }
       },
       "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7": {
         "settings": {
-          "primary": "#5E4200",
-          "secondary": "#FFD6A4"
+          "primary": "#5e4200",
+          "secondary": "#ffd6a4"
         }
       },
       "scheme-5de09869-dc28-4e80-857b-b5ab567f4613": {
         "settings": {
           "primary": "#000000",
-          "secondary": "#FFC500"
+          "secondary": "#ffc500"
         }
       }
     }
