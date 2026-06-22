@@ -206,7 +206,7 @@
     -%}
   {%- endfor -%}
   {% if show_features %}    
-    <div class="product-features-test">
+    <div class="product-features-wrap">
       {% liquid 
         capture content          
           render 'block.product-features', product: closest.product | default: product, block: block          
@@ -224,11 +224,12 @@
 </fieldset>
 
 {%style %}
-  .product-features-test {
+  .product-features-wrap {
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 32px;
     padding-right: 32px;
     border-radius: 16px;
+    border: 1px solid #ddd;
   }
 {% endstyle %}
