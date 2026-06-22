@@ -155,10 +155,13 @@
           "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
           "settings": {}
         },
-        "section_flex_pdp_price_KRegdi": {
-          "type": "_section-flex-pdp-price",
+        "custom_price_VyAAAq": {
+          "type": "custom-price",
           "name": "t:labels.price",
-          "settings": {},
+          "settings": {
+            "hide_subtitle": true,
+            "color": "#810F12"
+          },
           "blocks": {}
         },
         "section_flex_pdp_buy_buttons_rfy9fh": {
@@ -166,18 +169,6 @@
           "name": "t:labels.buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
-          },
-          "blocks": {}
-        },
-        "custom-media-gallery": {
-          "type": "custom-media-gallery",
-          "static": true,
-          "settings": {
-            "product_image_size": "square",
-            "thumbnail_position": "beside",
-            "thumbnail_height": "flexible",
-            "thumbnail_arrows": false,
-            "hide_variant_media": true
           },
           "blocks": {}
         }
@@ -188,7 +179,7 @@
         "section_flex_pdp_variant_picker_i4WtfM",
         "custom_group_ehgVdW",
         "w3_product_accessories_widget_nxpwTX",
-        "section_flex_pdp_price_KRegdi",
+        "custom_price_VyAAAq",
         "section_flex_pdp_buy_buttons_rfy9fh"
       ],
       "settings": {
