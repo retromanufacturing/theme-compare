@@ -82,11 +82,21 @@
             "reviews_io_reviewsio_rating_output_dVgqLK"
           ]
         },
-        "section_flex_pdp_variant_picker_i4WtfM": {
-          "type": "_section-flex-pdp-variant-picker",
-          "name": "t:labels.variant_picker",
+        "custom_variant_picker_Adrg7V": {
+          "type": "custom-variant-picker",
+          "name": "Variant picker",
           "settings": {
-            "variant_selector_type": "radio"
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true,
+            "update_url": true,
+            "enable_features_and_logos": false,
+            "product_features_option_names": "",
+            "font_size": 14,
+            "logo_sizing": "default",
+            "logo_custom_height": 60,
+            "variant_label_options": ""
           },
           "blocks": {}
         },
@@ -176,7 +186,7 @@
       "block_order": [
         "section_flex_pdp_title_QxcqL8",
         "custom_group_qaaCBn",
-        "section_flex_pdp_variant_picker_i4WtfM",
+        "custom_variant_picker_Adrg7V",
         "custom_group_ehgVdW",
         "w3_product_accessories_widget_nxpwTX",
         "custom_price_VyAAAq",
