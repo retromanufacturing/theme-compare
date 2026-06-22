@@ -33,6 +33,6 @@
 
 {% for video in videos %}
   {% if video.product_feature %}
-      {%  render 'block.lists', url_content: video.title, url: video.link, is_url: true, new_tab: true %}
+      {%  render 'block.lists', url_content: video.title, url: video.link, is_url: true%}
   {% endif %}
 {% endfor %}
