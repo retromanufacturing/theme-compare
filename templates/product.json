@@ -12,10 +12,13 @@
     "main": {
       "type": "main-product-custom",
       "blocks": {
-        "section_flex_pdp_title_QxcqL8": {
-          "type": "_section-flex-pdp-title",
+        "custom_title_EJEFMF": {
+          "type": "custom-title",
           "name": "t:labels.title",
-          "settings": {},
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          },
           "blocks": {}
         },
         "custom_group_qaaCBn": {
@@ -170,7 +173,7 @@
           "name": "t:labels.price",
           "settings": {
             "hide_subtitle": true,
-            "color": "#810F12"
+            "color": "#810f12"
           },
           "blocks": {}
         },
@@ -184,7 +187,7 @@
         }
       },
       "block_order": [
-        "section_flex_pdp_title_QxcqL8",
+        "custom_title_EJEFMF",
         "custom_group_qaaCBn",
         "custom_variant_picker_Adrg7V",
         "custom_group_ehgVdW",
