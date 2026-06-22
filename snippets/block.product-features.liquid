@@ -3,6 +3,7 @@
   assign product_features = product.metafields.description.features.value
   assign variant_features = current_variant.metafields.description.features.value
   assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
+  assign videos = product.metafields.media.videos.value
 
   capture features
     for feature in product_features
@@ -28,4 +29,8 @@
     {{ features }}
   </ul>
 {%- endif -%}
-{{  product.metafields.media.videos.value.title }}
+
+
+{% for video in videos %}
+  {{ video.title }}--{{video.link }}
+{% endfor %}
