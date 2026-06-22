@@ -15,6 +15,9 @@
     for feature in radio_features
       render 'block.lists', list_content: feature
     endfor
+    for video in videos
+      render 'block.lists', url_content: video.title, url: video.link, is_url: true, new_tab: true
+    endfor
   endcapture
 -%}
 
@@ -29,10 +32,3 @@
     {{ features }}
   </ul>
 {%- endif -%}
-
-
-{% for video in videos %}
-  {% if video.product_feature %}
-      {%  render 'block.lists', url_content: video.title, url: video.link, is_url: true%}
-  {% endif %}
-{% endfor %}
