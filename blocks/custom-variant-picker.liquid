@@ -6,6 +6,12 @@
   assign update_url = block.settings.update_url
 -%}
 
+{% style %}
+  .variant-button-wrap .variant__label {
+    text-transform: capitalize
+  }
+{% endstyle %}
+
 {% render 'block.product-variant-picker-custom', product: closest.product, block: block, update_url: update_url %}
 
 {% schema %}
