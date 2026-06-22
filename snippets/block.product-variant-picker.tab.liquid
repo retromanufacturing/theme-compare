@@ -205,19 +205,26 @@
       slot: radio_label
     -%}
   {%- endfor -%}
-  {% if show_features %}
-       
-    {% liquid 
-      capture content          
-        render 'block.product-features', product: closest.product | default: product, block: block          
-        render 'block.product-logos', block: block, product: closest.product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height        
-      endcapture
-     
-      render 'custom.variant-block', content: content, block: block, product: closest.product | default: product    
-    %}
+  {% if show_features %}    
+    <div class="product-features-test">
+      {% liquid 
+        capture content          
+          render 'block.product-features', product: closest.product | default: product, block: block          
+          render 'block.product-logos', block: block, product: closest.product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height        
+        endcapture
+      
+        render 'custom.variant-block', content: content, block: block, product: closest.product | default: product    
+      %}
+    </div>
   {% endif %}
 {%- endcapture -%}
 
 <fieldset class="variant-button-wrap">
   {%- render 'element.accordion', title: accordion_title, slot: accordion_content, open: is_open -%}
 </fieldset>
+
+{%style %}
+  .product-features-test {
+    display: none;
+  }
+{% endstyle %}
