@@ -16,7 +16,9 @@
       render 'block.lists', list_content: feature
     endfor
     for video in videos
-      render 'block.lists', url_content: video.title, url: video.link, is_url: true, new_tab: true
+      if video.product_feature
+        render 'block.lists', url_content: video.title, url: video.link, is_url: true, new_tab: true
+      endif
     endfor
   endcapture
 -%}
