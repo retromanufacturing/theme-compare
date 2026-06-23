@@ -100,7 +100,6 @@
         "custom_group_9CLJTR": {
           "type": "custom-group",
           "name": "Group",
-          "disabled": true,
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -119,7 +118,7 @@
             "inherit_color_scheme": true,
             "color_scheme": "none",
             "background_image_position": "cover",
-            "border": "none",
+            "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
