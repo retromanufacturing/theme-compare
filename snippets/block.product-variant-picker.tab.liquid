@@ -272,7 +272,7 @@
   {%- render 'element.accordion', title: accordion_title, slot: accordion_content, open: is_open -%}
 </fieldset>
 
-{% style %}
+{% stylesheet  %}
     .product-features-wrap {
       padding-top: 24px;
       padding-bottom: 24px;
@@ -326,4 +326,4 @@
         box-shadow: 0 0 0 3px var(--variant-color-secondary), 0 4px 14px rgba(0,0,0,0.25);
       }
   {% endif %}
-{% endstyle %}
+{% endstylesheet %}
