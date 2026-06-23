@@ -291,38 +291,50 @@
   }
 
   .variant-input-wrap__tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    width: 100%;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+}
 
-  .variant-input-wrap__tabs .variant-input {
-    flex: 1 1 0;
-    margin: 0;
-  }
+.variant-input-wrap__tabs .variant-input {
+  flex: 1 1 0;
+  margin: 0;
+}
 
-  .variant-input .element-radio:has(input:checked) {
-    border: 2.5px solid #fff;
-    outline-offset: 1px;
-    transform: translateY(-2px) scale(1.03);
-    position: relative;
-    z-index: 1;
-  }
+.variant-input .element-radio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.variant-input .element-radio:has(input:checked) {
+  border: 2.5px solid #fff;
+  outline-offset: 1px;
+  transform: translateY(-2px) scale(1.03);
+  position: relative;
+  z-index: 1;
+}
 {% endstylesheet %}
 
 {% style %}
-      {% if block.settings.enable_colored_options %}
-      .variant-input .element-radio {
-        background-color: var(--variant-color-secondary);
-        color: var(--variant-color-primary);
-        font-weight: 700;
-        padding: 7px 15px;
-      }
+  {% if block.settings.enable_colored_options %}
+  .variant-input .element-radio {   
+    background-color: var(--variant-color-secondary);
+    color: var(--variant-color-primary);
+    font-weight: 700;
+    padding: 7px 15px;
+  }
 
-      .variant-input .element-radio:has(input:checked) {
-        outline: 2.5px solid var(--variant-color-secondary);
-        box-shadow: 0 0 0 3px var(--variant-color-secondary), 0 4px 14px rgba(0,0,0,0.25);
-      }
+  .variant-input .element-radio:has(input:checked) {   
+    outline: 2.5px solid var(--variant-color-secondary);
+  
+    box-shadow: 0 0 0 3px var(--variant-color-secondary), 0 4px 14px rgba(0,0,0,0.25);
+    }
   {% endif %}
 {% endstyle %}
