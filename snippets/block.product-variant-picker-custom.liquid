@@ -188,6 +188,17 @@
             assign show_features = true
           endif
         endfor
+
+        assign use_labels = false
+        if block.settings.enable_variant_labels and block.settings.variant_label_options != blank
+          assign label_options = block.settings.variant_label_options | split: ','
+          for label_option in label_options
+            assign label_option_trimmed = label_option | strip
+            if option.name == label_option_trimmed
+              assign use_labels = true
+            endif
+          endfor
+        endif
       -%}
       {% case block.settings.picker_type %}
         {% when 'button' %}
@@ -204,7 +215,8 @@
             prev_block_index: prev_block_index,
             product: product,
             is_open: forloop.first,
-            show_features: show_features
+            show_features: show_features,
+            use_labels: use_labels
           -%}
           {% comment %}
             {% if option.name != options_without_labels %}
