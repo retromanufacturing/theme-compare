@@ -1,0 +1,35 @@
+{% doc %}
+  Renders enhanced label content for a variant option value when use_labels is enabled.
+  Displays name, badge, and subtitle from variant_details metaobject.
+  Optionally applies color scheme styling when enable_colored_options is true.
+
+  @param {object} value - The option value object
+  @param {object} variant_details - Resolved variant_details metaobject entry
+  @param {boolean} option_disabled - Whether this option value is disabled
+  @param {object} value_scheme - Color scheme object for this value (optional)
+  @param {object} block - Block object
+{% enddoc %}
+
+{%- liquid
+  assign label_name = variant_details.name.value | default: value
+  assign label_badge = variant_details.badge.value
+  assign label_subtitle = variant_details.description.value
+-%}
+
+<span class="variant__tab-label-main">
+  {{ label_name }}
+  {%- if label_badge != blank -%}
+    <span class="variant__tab-badge">{{ label_badge }}</span>
+  {%- endif -%}
+</span>
+{%- if label_subtitle != blank -%}
+  <span class="variant__tab-label-subtitle">{{ label_subtitle }}</span>
+{%- endif -%}
+{%- if option_disabled -%}
+  <span class="visually-hidden">
+    {% render 'utility.translate',
+      key: 'info.variant_sold_out_or_unavailable',
+      fallback: 'Variant sold out or unavailable'
+    %}
+  </span>
+{%- endif -%}
