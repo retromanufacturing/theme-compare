@@ -198,16 +198,16 @@
     {%- endif -%}
 
     {%- if use_labels and variant_details != blank -%}
-  {%- capture radio_label -%}
-    {%- render 'block.product-variant-picker.label.custom',
-      value: value,
-      variant_details: variant_details,
-      option_disabled: option_disabled,
-      value_scheme: value_scheme,
-      block: block
-    -%}
-  {%- endcapture -%}
-{%- endif -%}
+      {%- capture radio_label -%}
+        {%- render 'block.product-variant-picker.label.custom',
+          value: value,
+          variant_details: variant_details,
+          option_disabled: option_disabled,
+          value_scheme: value_scheme,
+          block: block
+        -%}
+      {%- endcapture -%}
+    {%- endif -%}
 
     {%- capture radio_attributes -%}
       form="{{ form_id }}"
