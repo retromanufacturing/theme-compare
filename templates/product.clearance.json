@@ -12,6 +12,15 @@
     "main": {
       "type": "main-product-block",
       "blocks": {
+        "custom_title_3xKLmq": {
+          "type": "custom-title",
+          "name": "t:labels.title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          },
+          "blocks": {}
+        },
         "custom_group_pWm6HC": {
           "type": "custom-group",
           "name": "Group",
@@ -170,6 +179,7 @@
         }
       },
       "block_order": [
+        "custom_title_3xKLmq",
         "custom_group_pWm6HC",
         "custom_variant_picker_iEg38U",
         "custom_group_9CLJTR",
