@@ -97,16 +97,6 @@
           },
           "blocks": {}
         },
-        "custom_buy_button_geNJrt": {
-          "type": "custom-buy-button",
-          "name": "t:labels.buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true,
-            "show_gift_card_recipient": false
-          },
-          "blocks": {}
-        },
         "custom_group_9CLJTR": {
           "type": "custom-group",
           "name": "Group",
@@ -167,13 +157,23 @@
             "custom_product_features_KpgVRR",
             "custom_product_logos_8YYjdr"
           ]
+        },
+        "custom_buy_button_geNJrt": {
+          "type": "custom-buy-button",
+          "name": "t:labels.buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "custom_group_pWm6HC",
         "custom_variant_picker_iEg38U",
-        "custom_buy_button_geNJrt",
-        "custom_group_9CLJTR"
+        "custom_group_9CLJTR",
+        "custom_buy_button_geNJrt"
       ],
       "settings": {
         "image_position": "left",
