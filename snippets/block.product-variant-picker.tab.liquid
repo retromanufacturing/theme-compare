@@ -64,6 +64,7 @@
 
   assign is_open = is_open | default: false, allow_false: true
   assign show_features = show_features
+  assign use_labels = use_labels | default: false, allow_false: true
 -%}
 
 {%- capture accordion_title -%}
@@ -91,6 +92,7 @@
 {%- endcapture -%}
 
 {%- capture accordion_content -%}
+{%- if use_labels -%}<div class="variant-input-wrap__tabs">{%- endif -%}
   {%- for value in option.values -%}
     {%- liquid
       assign option_disabled = true
@@ -141,6 +143,18 @@
       if value.swatch.image
         assign bg_color_image = value.swatch.image | image_url: width: 50
       endif
+
+      assign variant_details = nil
+      assign value_scheme = nil
+      if use_labels
+        assign variant_details = value.variant.metafields.custom.radio_features.value.variant_details.value | first
+        if variant_details == blank
+          assign variant_details = value.variant.metafields.custom.variant_details.value
+        endif
+        if block.settings.enable_colored_options
+          assign value_scheme = block.settings['color_scheme_option_value_' | append: forloop.index0]
+        endif
+      endif
     -%}
 
     {%- capture button_text -%}
@@ -183,6 +197,18 @@
       {%- endcapture -%}
     {%- endif -%}
 
+    {%- if use_labels and variant_details != blank -%}
+  {%- capture radio_label -%}
+    {%- render 'block.product-variant-picker.label.custom',
+      value: value,
+      variant_details: variant_details,
+      option_disabled: option_disabled,
+      value_scheme: value_scheme,
+      block: block
+    -%}
+  {%- endcapture -%}
+{%- endif -%}
+
     {%- capture radio_attributes -%}
       form="{{ form_id }}"
       data-index="option{{ option.position }}"
@@ -193,6 +219,12 @@
       {%- assign radio_classlist = 'disabled' -%}
     {% endif %}
 
+    {%- if use_labels -%}
+  <div class="variant-input"
+    {% if value_scheme %}
+      style="--variant-color-primary: {{ value_scheme.settings.primary }}; --variant-color-secondary: {{ value_scheme.settings.secondary }};"
+    {% endif %}
+  >
     {%- render 'element.radio',
       id: id,
       name: option.name,
@@ -204,7 +236,22 @@
       display_icon: false,
       slot: radio_label
     -%}
+  </div>
+{%- else -%}
+    {%- render 'element.radio',
+      id: id,
+      name: option.name,
+      value: radio_value,
+      label: radio_label,
+      classlist: radio_classlist,
+      attributes: radio_attributes,
+      checked: radio_checked,
+      display_icon: false,
+      slot: radio_label
+    -%}
+  {%- endif -%}  
   {%- endfor -%}
+   {%- if use_labels -%}</div>{%- endif -%}
   {% if show_features %}    
     <div class="product-features-wrap">
       {% liquid 
@@ -217,13 +264,14 @@
       %}
     </div>
   {% endif %}
+ 
 {%- endcapture -%}
 
 <fieldset class="variant-button-wrap">
   {%- render 'element.accordion', title: accordion_title, slot: accordion_content, open: is_open -%}
 </fieldset>
 
-{%style %}
+{% style %}
   .product-features-wrap {
     padding-top: 24px;
     padding-bottom: 24px;
