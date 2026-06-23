@@ -115,14 +115,45 @@
     {
       "type": "header",
       "content": "Variant labels",
-      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
+      "visible_if": "{{ block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_variant_labels",
+      "label": "Enable variant labels",
+      "default": false
     },
     {
       "type": "text",
       "id": "variant_label_options",
       "label": "Option names with variant labels",
       "info": "Comma-separated list of option names e.g. Feature Set, Motor, Choose your Look",
-      "visible_if": "{{ block.settings.picker_type == 'button_label' }}"
+      "visible_if": "{{ block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_colored_options",
+      "label": "Enable colored options",
+      "default": false,
+      "visible_if": "{{ block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_option_value_0",
+      "label": "Option value 1 color scheme",
+      "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_option_value_1",
+      "label": "Option value 2 color scheme",
+      "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme_option_value_2",
+      "label": "Option value 3 color scheme",
+      "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
     }
   ],
   "presets": [{ "name": "Variant picker" }]
