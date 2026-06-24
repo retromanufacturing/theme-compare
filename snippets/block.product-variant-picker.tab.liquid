@@ -130,7 +130,7 @@
         assign custom_swatch_names = block.settings.swatch_option_names | split: ','
         for swatch_name in custom_swatch_names
           assign swatch_name_trimmed = swatch_name | strip | downcase
-          if downcased_option == swatch_name_trimmed
+          if downcased_option contains swatch_name_trimmed
             assign is_color = true
           endif
         endfor
