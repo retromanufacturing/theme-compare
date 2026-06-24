@@ -142,6 +142,12 @@
 
       if value.swatch.image
         assign bg_color_image = value.swatch.image | image_url: width: 50
+      elsif block.settings.variant_swatches != blank
+        for swatch_entry in block.settings.variant_swatches
+          if swatch_entry.label.value == value
+            assign bg_color_image = swatch_entry.image.value | image_url: width: 50
+          endif
+        endfor
       endif
 
       assign variant_details = nil
