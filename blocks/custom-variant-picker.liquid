@@ -68,6 +68,11 @@
       "default": true
     },
     {
+      "type": "checkbox",
+      "id": "enable_features_and_logos",
+      "label": "t:custom.actions.enable_features_and_logos"
+    },
+    {
       "type": "text",
       "id": "product_features_option_names",
       "label": "Option names that display product features",
@@ -108,10 +113,11 @@
       "visible_if": "{{ block.settings.enable_features_and_logos == true }}"
     },
     {
-      "type": "checkbox",
-      "id": "enable_features_and_logos",
-      "label": "t:custom.actions.enable_features_and_logos",
-      "info": "Applies to variants not assigned to Color swatches",
+      "type": "metaobject_list",
+      "id": "variant_swatches",
+      "label": "Variant swatches",
+      "metaobject_type": "variant_images",
+      "info": "Applies to variants not assigned to Color swatches"
     },
     {
       "type": "header",
