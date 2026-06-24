@@ -102,7 +102,12 @@
             "font_size": 14,
             "logo_sizing": "default",
             "logo_custom_height": 60,
-            "variant_label_options": ""
+            "enable_variant_labels": false,
+            "variant_label_options": "",
+            "enable_colored_options": false,
+            "color_scheme_option_value_0": "",
+            "color_scheme_option_value_1": "",
+            "color_scheme_option_value_2": ""
           },
           "blocks": {}
         },
@@ -131,7 +136,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 16,
-            "border_color": "#DDDDDD",
+            "border_color": "#dddddd",
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
@@ -167,6 +172,15 @@
             "custom_product_logos_8YYjdr"
           ]
         },
+        "custom_price_RTHHYE": {
+          "type": "custom-price",
+          "name": "t:labels.price",
+          "settings": {
+            "hide_subtitle": false,
+            "color": "#810F12"
+          },
+          "blocks": {}
+        },
         "custom_buy_button_geNJrt": {
           "type": "custom-buy-button",
           "name": "t:labels.buy_buttons",
@@ -183,6 +197,7 @@
         "custom_group_pWm6HC",
         "custom_variant_picker_iEg38U",
         "custom_group_9CLJTR",
+        "custom_price_RTHHYE",
         "custom_buy_button_geNJrt"
       ],
       "settings": {
