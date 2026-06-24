@@ -96,6 +96,7 @@
             "picker_type": "tabs",
             "product_dynamic_variants_enable": true,
             "color_swatches": true,
+            "swatch_option_names": "Choose",
             "update_url": true,
             "enable_features_and_logos": true,
             "product_features_option_names": "Feature Set, Motor",
