@@ -126,16 +126,6 @@
         assign color_swatch_fallback = value | split: ' ' | last | handle
       endif
 
-      if block.settings.swatch_option_names != blank
-        assign custom_swatch_names = block.settings.swatch_option_names | split: ','
-        for swatch_name in custom_swatch_names
-          assign swatch_name_trimmed = swatch_name | strip | downcase
-          if downcased_option contains swatch_name_trimmed
-            assign is_color = true
-          endif
-        endfor
-      endif
-
       assign radio_checked = false
       if option.selected_value == value
         assign radio_checked = true
