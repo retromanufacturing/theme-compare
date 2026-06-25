@@ -214,7 +214,7 @@
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted",
-        "hide_variant_media": false
+        "hide_variant_media": true
       }
     },
     "sub": {
