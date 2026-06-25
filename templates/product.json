@@ -88,24 +88,6 @@
             "rivyo_reviews_loyalty_wc_product_review_badge_V3htrP"
           ]
         },
-        "custom_variant_picker_Adrg7V": {
-          "type": "custom-variant-picker",
-          "name": "Variant picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "product_dynamic_variants_enable": true,
-            "color_swatches": true,
-            "update_url": true,
-            "enable_features_and_logos": false,
-            "product_features_option_names": "",
-            "font_size": 14,
-            "logo_sizing": "default",
-            "logo_custom_height": 60,
-            "variant_label_options": ""
-          },
-          "blocks": {}
-        },
         "custom_group_ehgVdW": {
           "type": "custom-group",
           "name": "Group",
@@ -194,7 +176,6 @@
       "block_order": [
         "custom_title_EJEFMF",
         "custom_group_qaaCBn",
-        "custom_variant_picker_Adrg7V",
         "custom_group_ehgVdW",
         "w3_product_accessories_widget_nxpwTX",
         "custom_price_VyAAAq",
