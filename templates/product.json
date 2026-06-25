@@ -95,7 +95,7 @@
             "variant_labels": true,
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
-            "color_swatches": false,
+            "color_swatches": true,
             "update_url": true,
             "enable_features_and_logos": false,
             "product_features_option_names": "",
