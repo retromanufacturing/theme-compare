@@ -102,7 +102,7 @@
             "font_size": 14,
             "logo_sizing": "default",
             "logo_custom_height": 60,
-            "variant_swatches": [],
+            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
             "enable_variant_labels": false,
             "variant_label_options": "",
             "enable_colored_options": false,
