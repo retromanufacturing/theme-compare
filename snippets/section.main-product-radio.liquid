@@ -41,6 +41,7 @@
 -%}
 
 {% capture product_media_gallery_default %}
+  {% render 'element.breadcrumbs' %}
   {% if section.settings.media_gallery_layout == 'stacked' %}
     {% capture mobile_gallery %}
       {% render 'product.gallery', sizeVariable: product_image_width, media_gallery_layout: 'below' %}
@@ -60,7 +61,6 @@
 {% endcapture %}
 
 {% capture product_content %}
-  {% render 'element.breadcrumbs' %}
   {{- slot -}}
 {% endcapture %}
 
