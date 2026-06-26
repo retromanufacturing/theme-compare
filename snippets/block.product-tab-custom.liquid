@@ -19,21 +19,10 @@
   assign page_content = page_content | default: block.settings.page.content
   assign is_open = block.settings.is_open
   assign tab_type = block.settings.tab_type
-
-  capture product_specs
-    case template.suffix
-      when 'radio'
-        assign spec_text = 'this is a radio'
-      when 'speaker'
-        assign spec_text = 'this is a speaker'
-    endcase
-    echo spec_text
-  endcapture
+  assign code_content = block.settings.custom_tab_code
 
   capture tab_content
     case tab_type
-      when 'specificiations'
-        echo product_specs
       when 'manuals'
         render 'block.product-manuals', block: block
       when 'videos'
@@ -46,6 +35,7 @@
   capture accordion_content
     echo tab_content
     echo page_content
+    echo code_content
   endcapture
 -%}
 
