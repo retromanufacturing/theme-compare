@@ -203,7 +203,7 @@
             "tab_type": "liquid",
             "title": "Specifications",
             "is_open": false,
-            "custom_tab_code": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
+            "custom_tab_code": "{% render 'motorspecs' %}",
             "text_color": "#42434d",
             "columns_per_row": 2
           }
