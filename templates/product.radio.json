@@ -98,11 +98,11 @@
             "color_swatches": true,
             "update_url": true,
             "enable_features_and_logos": true,
-            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
             "product_features_option_names": "Feature Set, Motor",
             "font_size": 14,
             "logo_sizing": "default",
             "logo_custom_height": 60,
+            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
             "enable_variant_labels": true,
             "variant_label_options": "Feature Set, Motor",
             "enable_colored_options": true,
@@ -192,6 +192,7 @@
             "tab_type": "videos",
             "title": "Videos",
             "is_open": true,
+            "custom_tab_code": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
             "text_color": "#42434d",
             "columns_per_row": 3
           }
@@ -199,9 +200,10 @@
         "custom_tab_rPgteC": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "specifications",
+            "tab_type": "liquid",
             "title": "Specifications",
             "is_open": false,
+            "custom_tab_code": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
             "text_color": "#42434d",
             "columns_per_row": 2
           }
@@ -212,6 +214,7 @@
             "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
+            "custom_tab_code": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
             "text_color": "#ba4444",
             "columns_per_row": 2
           }
