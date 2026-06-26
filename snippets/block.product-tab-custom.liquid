@@ -35,7 +35,9 @@
   capture accordion_content
     echo tab_content
     echo page_content
-    echo code_content
+    if tab_type == 'liquid'
+      echo code_content
+    endif
   endcapture
 -%}
 
