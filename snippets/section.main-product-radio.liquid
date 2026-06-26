@@ -41,7 +41,6 @@
 -%}
 
 {% capture product_media_gallery_default %}
-  {% render 'element.breadcrumbs' %}
   {% if section.settings.media_gallery_layout == 'stacked' %}
     {% capture mobile_gallery %}
       {% render 'product.gallery', sizeVariable: product_image_width, media_gallery_layout: 'below' %}
@@ -71,6 +70,7 @@
 >
   <div class="page-width">
     <div class="product-grid__container product--images float-grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %} clearfix">
+        {% render 'element.breadcrumbs' %}
       {%- if image_position == 'left' -%}
         <div class="grid__item {{ product_image_width }} product-single__sticky">
           {{- product_media_gallery | default: product_media_gallery_default -}}
