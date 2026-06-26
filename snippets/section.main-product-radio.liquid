@@ -80,7 +80,8 @@
         {% render 'layout.stack', slot: product_content, classlist: 'product-single__meta', gap: 'sm' %}
       </div>
       {%- unless image_position == 'left' -%}
-        <div class="grid__item {{ product_image_width }} product-single__sticky">
+        <div class="grid__item {{ product_image_width }} product-single__sticky">                
+          {% render 'element.breadcrumbs' %}
           {{- product_media_gallery | default: product_media_gallery_default -}}
         </div>
       {%- endunless -%}
