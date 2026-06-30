@@ -20,9 +20,9 @@ class CurrentVehicleFitment extends HTMLElement {
   }
 
   _getFitmentLink() {
-    const { search, tags, params } = this.vehicleData;
-    if (!search) return '';
-    return `${search}${tags}${params || ''}`;
+    const { collection, params } = this.vehicleData;
+    if (!collection) return '';
+    return `${vehicleData.searchCollection}${collection}${encodeURI(params || '')}`;
   }
 
   updateFitment() {
