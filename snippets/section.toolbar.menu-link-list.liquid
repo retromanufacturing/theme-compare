@@ -39,7 +39,7 @@
       <li class="menu-link-list__item">
         <a href="{{ link.url }}" class="menu-link-list__link">{{ link.title }}</a>
       </li>
-      {{ link | shopify_asset_url }}
+      {{ link.url }}
     {% endfor %}
   </ul>
 {% endif %} 
