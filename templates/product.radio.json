@@ -146,6 +146,15 @@
           },
           "blocks": {}
         },
+        "custom_price_JnHfjG": {
+          "type": "custom-price",
+          "name": "t:labels.price",
+          "settings": {
+            "hide_subtitle": true,
+            "color": "#810F12"
+          },
+          "blocks": {}
+        },
         "custom_buy_button_MYrA6y": {
           "type": "custom-buy-button",
           "name": "t:labels.buy_buttons",
@@ -163,6 +172,7 @@
         "custom_variant_picker_qbdrbg",
         "custom_tab_7f8DEq",
         "custom_tab_hMEWpi",
+        "custom_price_JnHfjG",
         "custom_buy_button_MYrA6y"
       ],
       "settings": {
