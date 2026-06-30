@@ -39,7 +39,7 @@
         themeVersion: '9.1.0', // x-release-please-version
       };
     </script>
- {% if template.name == "product" %}{% render 'clyde-init' %}{% endif %} 
+
     {%- render 'head.custom-import-map' -%} {% comment %}Using custom import map{% endcomment %}
     {%- render 'head.es-module-shims' -%}
     {%- render 'head.is-land' -%}
@@ -94,6 +94,6 @@
       render 'product.gallery.photoswipe-template'
       render 'overlay.tool-tip'
     -%}
-   
+    {% if template.name == "product" %}{% render 'clyde-init' %}{% endif %} 
   </body>
 </html>
