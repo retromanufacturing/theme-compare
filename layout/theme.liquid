@@ -94,5 +94,6 @@
       render 'product.gallery.photoswipe-template'
       render 'overlay.tool-tip'
     -%}
+    {% if template.name == "product" %}{% render 'clyde-init' %}{% endif %} 
   </body>
 </html>
