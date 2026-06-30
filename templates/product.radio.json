@@ -138,7 +138,7 @@
           "name": "Tab",
           "settings": {
             "title": "Add Extended Warranty",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "warranty",
             "tab_title_color": "#000000",
             "tab_background_color": "#ffffff",
@@ -151,7 +151,7 @@
           "name": "t:labels.price",
           "settings": {
             "hide_subtitle": true,
-            "color": "#810F12"
+            "color": "#810f12"
           },
           "blocks": {}
         },
