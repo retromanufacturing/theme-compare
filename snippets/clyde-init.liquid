@@ -1,0 +1,111 @@
+<script src="https://js.joinclyde.com/widget.js" defer="defer">//Production JS Widget script</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script>
+var ClydeClientKey = "ck_live_Hhc4sPWX6cKKrgfx"; //[!!! REPLACE THIS CLYDE API KEY !!!]
+var quantitySelector = "[!!! INSERT QUANTITY SELECTOR VALUE !!!]"; //optional
+var productsArray = [];  
+
+const cartItems = {};
+$.getJSON('/cart.js').then((data)=>{
+  for (let item of data.items) {
+    cartItems[item.variant_id] = {
+      title:item.title,
+      properties:item.properties,
+      quantity:item.quantity,
+      key:item.key
+    }
+  }
+});  
+  
+//Load the Clyde.init() function
+//Define any required parameters and callback functions
+var initInterval = setInterval(function(){
+  if(document.body){
+    clearInterval(initInterval);
+    Clyde.init(
+      {
+        key: ClydeClientKey, //your 'live' Client Key listed in Clyde Dashboard settings
+        skuList: productsArray,
+      },
+      function () {
+        //Cart CTA logic
+        //Custom function defined to loop through each Product SKU in Cart and load Cart CTA
+        if(Clyde.getSettings().cart == true){//Recommended logic which allows you to enable/disable Cart CTA via Clyde Dashboard settings
+            loadClydeCartCTAs(productsArray);
+        }
+      });
+  }             
+}, 100);  
+    
+//Function defined to loop through your Cart items and append Cart CTA for each
+//Note that you can add this logic to any existing function that builds your Cart page / Mini Cart
+function loadClydeCartCTAs(productsInCartArray) {
+  productsInCartArray.forEach(function (sku) {
+    Clyde.appendToSelectorWithSku(sku, `#clyde-${sku}`, closeModalCb);
+  });
+}    
+
+//Function defined to handle whether or not to add a Contract SKU to cart based on the shoppers interaction with the Modal
+//Note that clicking "I dont need to protect my purchase" or closing the modal via the "X" or ESC key will result in Clyde.getSelectedContract == null
+function closeModalCb() {
+  var selectedContract = Clyde.getSelectedContract();
+  if (selectedContract) {
+    //Add any logic/functions needed to add the Contract SKU to cart
+    //You can simply pass the Contract SKU to any existing "add to cart" function
+    //This will vary based on each eCommerce system
+    addClydeToCart(selectedContract);
+  }
+}
+  
+//Function to add Clyde Contract to Cart
+function addClydeToCart(selectedContract){
+  if(document.querySelector("quantitySelector")!=null){
+    productQuantity = document.querySelector(quantitySelector).value;
+    }
+  else{
+    productQuantity = 1;
+  }
+  
+  var productName;
+  var activeVariantId = Clyde.getActiveProduct().sku;
+  if(meta.product!=null){
+    meta.product.variants.forEach(function(variant){
+      if (variant.id == activeVariantId) {
+        productName = variant.name;
+      }
+    });
+  } 
+  else{
+    productName = cartItems[selectedContract.reference].title;
+    productQuantity = cartItems[selectedContract.reference].quantity;
+  }
+  
+  setTimeout(function(){  
+    let formData = {
+     'items': [{
+        quantity: productQuantity,
+        id: selectedContract.shopifyVariantId,
+        properties: {
+          Reference: selectedContract.reference,
+          Contract: selectedContract.contractHash, // This is a hashed numeric ID of a contract in our system, in case the contract is eventually deleted from Shopify.
+          Product: productName// This is NOT required, nor returned on the contract, but lets the customer see which contract goes with which product in their cart.
+        }
+      }]
+    };
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });   
+   }, 500);     
+}
+</script>
