@@ -182,6 +182,7 @@
         assign enable_features = block.settings.enable_features_and_logos
         assign product_features_option_names = block.settings.product_features_option_names | split: ', '
         assign show_features = false
+        assign option_number = forloop.index
 
         for name in product_features_option_names
           if enable_features and option.name == name
@@ -216,7 +217,8 @@
             product: product,
             is_open: forloop.first,
             show_features: show_features,
-            use_labels: use_labels
+            use_labels: use_labels, 
+            option_number: option_number,
           -%}
           {% comment %}
             {% if option.name != options_without_labels %}
