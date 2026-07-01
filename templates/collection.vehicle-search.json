@@ -20,6 +20,7 @@
     },
     "vehicle-search-filters": {
       "type": "vehicle-search-logos",
+      "disabled": true,
       "settings": {
         "vehicle_search_filters": [
           "radios",
