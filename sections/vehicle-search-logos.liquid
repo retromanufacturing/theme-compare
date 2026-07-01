@@ -4,37 +4,36 @@
 -%}
 
 {%- if filters != blank -%}
-  <div class="page-width">
-    <div class="new-grid scrollable-grid--small">
-      {%- for entry in filters -%}
-        {%- liquid
-          assign entry_name = entry.name.value | downcase
-          if entry.is_universal.value == true
-            assign filter_url = '/collections/vehicle-search/universal-products+' | append: entry_name
-          else
-            assign filter_url = '/collections/vehicle-search/' | append: current_tags_joined | append: '+' | append: entry_name
-          endif
-        -%}
+  {%- capture cards -%}
+    {%- for entry in filters -%}
+      {%- liquid
+        assign entry_name = entry.name.value | downcase
+        if entry.is_universal.value == true
+          assign filter_url = '/collections/vehicle-search/universal-products+' | append: entry_name
+        else
+          assign filter_url = '/collections/vehicle-search/' | append: current_tags_joined | append: '+' | append: entry_name
+        endif
+      -%}
+      {%- render 'list.collection-card',
+        collection_title: entry.name.value,
+        collection_grid_image: entry.image.value,
+        collection_link: filter_url,
+        collection_grid_shape: 'square',
+        collection_grid_color: 'grey',
+        sizeVariable: 'medium-up--one-sixth',
+        fallback: '30vw'
+      -%}
+    {%- endfor -%}
+  {%- endcapture -%}
 
-        <div class="grid-item medium-up--one-sixth">
-          <a href="{{ filter_url }}" class="collection-item">
-            <div class="collection-image-wrap collection-image--square collection-image-color--grey overlay">
-              <div class="collection-image image-wrap">
-                {%- render 'element.image',
-                  img: entry.image.value,
-                  widths: '120, 240',
-                  sizeVariable: '120px',
-                  fallback: '120px'
-                -%}
-              </div>
-            </div>
-            <span class="collection-item__title">{{ entry.name.value }}</span>
-          </a>
-        </div>
-
-      {%- endfor -%}
-    </div>
-  </div>
+  {%- render 'layout.section', slot: content -%}
+  {%- render 'layout.grid',
+    slot: cards,
+    columns_xs: 3,
+    columns_md: section.settings.vehicle_search_filters.size,
+    gap_xs: 'sm',
+    gap_md: 'md'
+  -%}
 {%- endif -%}
 
 {% schema %}

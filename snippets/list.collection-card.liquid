@@ -167,7 +167,7 @@
   assign collection_grid_image_fill = collection_grid_image_fill | default: settings.collection_grid_image_fill, allow_false: true | default: true, allow_false: true
   assign collection_grid_color = collection_grid_color | default: settings.collection_grid_color | default: 'grey'
 
-  assign collection_link = collection.url
+  assign collection_link = collection_link | default: collection.url
   if block.settings.title != blank
     assign title_output = block.settings.title
   else
