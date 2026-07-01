@@ -69,7 +69,7 @@
 
 {%- capture accordion_title -%}
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
-    {{ forloop.index0 }}. {{ option.name }}
+    {{ option.name }}
     {%- if connect_to_sizechart and is_size -%}
       <span class="variant__label-info">
         &mdash;
