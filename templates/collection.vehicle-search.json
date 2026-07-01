@@ -18,6 +18,10 @@
         "parallax_direction": "top"
       }
     },
+    "vehicle-search-filters": {
+      "type": "vehicle-search-logos",
+      "settings": {}
+    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -51,6 +55,7 @@
   },
   "order": [
     "collection-header",
+    "vehicle-search-filters",
     "main-collection",
     "recently-viewed"
   ]
