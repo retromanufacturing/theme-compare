@@ -18,19 +18,8 @@
         "parallax_direction": "top"
       }
     },
-    "vehicle-search-filters": {
-      "type": "vehicle-search-logos",
-      "disabled": true,
-      "settings": {
-        "vehicle_search_filters": [
-          "radios",
-          "antennas",
-          "amplifiers"
-        ]
-      }
-    },
     "main-collection": {
-      "type": "main-collection-custom",
+      "type": "main-collection",
       "blocks": {
         "subcollections": {
           "type": "subcollections",
@@ -62,7 +51,6 @@
   },
   "order": [
     "collection-header",
-    "vehicle-search-filters",
     "main-collection",
     "recently-viewed"
   ]
