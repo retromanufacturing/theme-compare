@@ -74,6 +74,9 @@ custom collection snippet
         for item in collection.products
           render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
         endfor
+        for item in collection.products
+          render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
+        endfor
 
         if paginate.pages > 1
           render 'element.pagination', paginate: paginate
