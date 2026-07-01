@@ -61,7 +61,7 @@
     {% render 'utility.translate', key: 'info.collection_no_products', fallback: 'Sorry, there are no products in this collection.' %}
   </div>
 {% endcapture %}
-custom collection snippet
+
 {%- liquid
   # Get product card content
   capture product_items
@@ -71,9 +71,6 @@ custom collection snippet
       echo no_products
     else
       paginate collection.products by paginate_by
-        for item in collection.products
-          render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
-        endfor
         for item in collection.products
           render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
         endfor
