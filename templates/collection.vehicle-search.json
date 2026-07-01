@@ -18,27 +18,6 @@
         "parallax_direction": "top"
       }
     },
-    "background_image_text_dAT8Gw": {
-      "type": "background-image-text",
-      "custom_css": [
-        ".heading-md {font-family: impact; color: #fff; font-size: 1.25em;}",
-        ".background-media-text__text {color: #fff; font-size: 1em; background: #000000; opacity: 90%;}",
-        "@media screen and (min-width: 769px) {.background-media-text__text {width: 560px !important; }}"
-      ],
-      "name": "t:labels.large_image_with",
-      "settings": {
-        "subtitle": "",
-        "title": "{{ collection.title }}",
-        "text": "{{ collection.description }}",
-        "button_label": "",
-        "button_link": "",
-        "image": "{{ collection.metafields.media.banner_image.value }}",
-        "layout": "left",
-        "height": 450,
-        "parallax": false,
-        "parallax_direction": "top"
-      }
-    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -72,7 +51,6 @@
   },
   "order": [
     "collection-header",
-    "background_image_text_dAT8Gw",
     "main-collection",
     "recently-viewed"
   ]
