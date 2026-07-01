@@ -20,7 +20,13 @@
     },
     "vehicle-search-filters": {
       "type": "vehicle-search-logos",
-      "settings": {}
+      "settings": {
+        "vehicle_search_filters": [
+          "radios",
+          "antennas",
+          "amplifiers"
+        ]
+      }
     },
     "main-collection": {
       "type": "main-collection",
