@@ -383,6 +383,7 @@
     },
     "hero_video_iJjrRf": {
       "type": "hero-video",
+      "disabled": true,
       "custom_css": [
         ".hero--padded {margin-top: 15px;}",
         ".hero__text-shadow {display: none;}"
