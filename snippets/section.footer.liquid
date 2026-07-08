@@ -262,6 +262,7 @@
             {%- for link in policies_menu.links -%}
               <a href="{{ link.url }}">{{ link.title }}</a>
             {%- endfor -%}
+              <a href='javascript:UC_UI.showSecondLayer();' >Privacy Settings</a>
           {%- endif -%}
 
           {{ powered_by_link }}
