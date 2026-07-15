@@ -369,6 +369,7 @@
         "heading_9jGgL6",
         "text_6WEabH"
       ],
+      "disabled": true,
       "custom_css": [
         ".theme-block {margin-bottom: 0px; margin-top: 0px; padding-top: 0px;}",
         ".index-section.color-scheme-1 {padding-top: 0px; padding-bottom: 0px;}"
@@ -1003,13 +1004,13 @@
   "order": [
     "slideshow_split_WWnCkd",
     "slideshow_custom_gcH6jR",
-    "advanced_content_T3red9",
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
     "promo_grid_HdN3gi",
     "promo_grid_8d7c9D",
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
+    "advanced_content_T3red9",
     "blog_posts_xYaJ84",
     "apps_ihxT4i",
     "advanced_content_V9PcCf"
