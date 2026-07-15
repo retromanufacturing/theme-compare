@@ -526,6 +526,7 @@
         "advanced_AKUynj",
         "advanced_m8UKnB"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}"
@@ -699,6 +700,7 @@
         "advanced_X8nfya",
         "advanced_TFeUtP"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}",
