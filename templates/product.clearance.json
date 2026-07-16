@@ -95,13 +95,14 @@
             "variant_labels": true,
             "picker_type": "button",
             "product_dynamic_variants_enable": true,
-            "color_swatches": false,
+            "color_swatches": true,
             "update_url": true,
             "enable_features_and_logos": false,
             "product_features_option_names": "",
             "font_size": 14,
             "logo_sizing": "default",
             "logo_custom_height": 60,
+            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
             "enable_variant_labels": false,
             "variant_label_options": "",
             "enable_colored_options": false,
@@ -177,7 +178,7 @@
           "name": "t:labels.price",
           "settings": {
             "hide_subtitle": false,
-            "color": "#810F12"
+            "color": "#810f12"
           },
           "blocks": {}
         },
@@ -227,6 +228,7 @@
             "tab_type": "videos",
             "title": "Product videos",
             "is_open": true,
+            "custom_tab_code": "",
             "text_color": "#42434d",
             "columns_per_row": 4
           }
@@ -237,6 +239,7 @@
             "tab_type": "specifications",
             "title": "Specifications",
             "is_open": false,
+            "custom_tab_code": "",
             "text_color": "#42434d",
             "columns_per_row": 2
           }
@@ -247,6 +250,7 @@
             "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
+            "custom_tab_code": "",
             "text_color": "#ba4444",
             "columns_per_row": 2
           }
