@@ -71,21 +71,21 @@
               "settings": {
                 "inventory_threshold": 10,
                 "inventory_transfers_enable": true,
-                "enable_labels": false,
-                "color_scheme_in_stock": "",
-                "color_scheme_low_stock": ""
+                "enable_labels": true,
+                "color_scheme_in_stock": "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9",
+                "color_scheme_low_stock": "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7"
               },
               "blocks": {}
             },
-            "rivyo_reviews_loyalty_wc_product_review_badge_V3htrP": {
-              "type": "shopify://apps/rivyo-reviews-loyalty/blocks/wc-product-review-badge/f1860e84-309f-40ca-a2df-188435a622f3",
+            "reviews_io_reviewsio_rating_output_TXw9Uq": {
+              "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
               "settings": {}
             }
           },
           "block_order": [
             "custom_sku_pbxrEC",
             "custom_product_inventory_FJezEb",
-            "rivyo_reviews_loyalty_wc_product_review_badge_V3htrP"
+            "reviews_io_reviewsio_rating_output_TXw9Uq"
           ]
         },
         "custom_variant_picker_P3bFPa": {
@@ -233,6 +233,7 @@
             "tab_type": "videos",
             "title": "Product videos",
             "is_open": true,
+            "custom_tab_code": "",
             "text_color": "#42434d",
             "columns_per_row": 4
           }
@@ -243,6 +244,7 @@
             "tab_type": "specifications",
             "title": "Specifications",
             "is_open": false,
+            "custom_tab_code": "",
             "text_color": "#42434d",
             "columns_per_row": 2
           }
@@ -253,6 +255,7 @@
             "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
+            "custom_tab_code": "",
             "text_color": "#ba4444",
             "columns_per_row": 2
           }
