@@ -1,0 +1,49 @@
+{% doc %}
+  Variant swatch metaobject helpers, dispatched by `part`. Both branches
+  read block.settings.variant_swatches (the Variant Swatches metaobject
+  list) and fall back to raw values when no display_label is set.
+
+  @param {string} part - 'label' or 'data_attributes'
+  @param {product_option} [option] - Required when part == 'label'
+  @param {object} block - Block object
+
+  @example
+  {%- capture display_label -%}
+    {%- render 'custom.variant-swatch', part: 'label', option: option, block: block -%}
+  {%- endcapture -%}
+
+  {%- capture swatch_data_attributes -%}
+    {%- render 'custom.variant-swatch', part: 'data_attributes', block: block -%}
+  {%- endcapture -%}
+{% enddoc %}
+
+{%- case part -%}
+  {%- when 'label' -%}
+    {%- liquid
+      assign display_label = option.selected_value
+
+      if block.settings.variant_swatches != blank
+        for swatch_entry in block.settings.variant_swatches
+          if swatch_entry.label.value == option.selected_value
+            assign display_label = swatch_entry.display_label.value | default: swatch_entry.label.value
+          endif
+        endfor
+      endif
+    -%}
+    {{- display_label -}}
+
+  {%- when 'data_attributes' -%}
+    {%- liquid
+      assign swatch_labels_json = blank
+      assign swatch_display_labels_json = blank
+
+      if block.settings.variant_swatches != blank
+        assign swatch_labels_json = block.settings.variant_swatches | map: 'label' | map: 'value' | json
+        assign swatch_display_labels_json = block.settings.variant_swatches | map: 'display_label' | map: 'value' | json
+      endif
+    -%}
+    {%- if swatch_labels_json != blank -%}
+      data-swatch-labels="{{ swatch_labels_json | escape }}"
+      data-swatch-display-labels="{{ swatch_display_labels_json | escape }}"
+    {%- endif -%}
+{%- endcase -%}

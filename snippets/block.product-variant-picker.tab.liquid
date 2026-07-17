@@ -67,8 +67,6 @@
   assign use_labels = use_labels | default: false, allow_false: true
 -%}
 
-{{ block.settings.variant_swatches }}
-
 {%- capture accordion_title -%}
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
     {{ option_number }}. {{ option.name }}
@@ -86,7 +84,10 @@
       <span class="variant__label-info">
         &mdash;
         <span data-variant-color-label>
-          {{ option.selected_value }}
+           {%- capture display_label -%}
+            {%- render 'custom.variant-swatch', part: 'label', option: option, block: block -%}
+          {%- endcapture -%}
+          {{ display_label }}
         </span>
       </span>
     {%- endif -%}
@@ -276,7 +277,13 @@
  
 {%- endcapture -%}
 
-<fieldset class="variant-button-wrap">
+<fieldset
+  class="variant-button-wrap"
+  {%- capture swatch_data_attributes -%}
+    {%- render 'custom.variant-swatch', part: 'data_attributes', block: block -%}
+  {%- endcapture -%}
+  {{- swatch_data_attributes -}}
+>
   {%- render 'element.accordion', title: accordion_title, slot: accordion_content, open: is_open -%}
 </fieldset>
 
