@@ -72,7 +72,7 @@
     {{ option_number }}. {{ option.name }}
     {%- if connect_to_sizechart and is_size -%}
       <span class="variant__label-info">
-        &mdash;
+        :
         {%- render 'overlay.tool-tip.trigger',
           title: size_chart_title,
           content: prev_block.settings.size_chart.content,
@@ -82,7 +82,7 @@
     {%- endif -%}
     {%- if is_color -%}
       <span class="variant__label-info">
-        &mdash;
+        :
         <span data-variant-color-label>
            {%- capture display_label -%}
             {%- render 'custom.variant-swatch', part: 'label', option: option, block: block -%}
