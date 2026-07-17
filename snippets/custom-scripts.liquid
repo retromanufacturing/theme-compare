@@ -8,7 +8,9 @@
 <script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'vehicle-search-fitment.js' | asset_url }}" defer="defer"></script>
 
-{{ template.name }}
+{% if template.name == 'product' %}
+  <script type="module" src="{{ 'custom.variant-picker-labels.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 
 <script>
   document.addEventListener('hot-reload:complete', function () {
