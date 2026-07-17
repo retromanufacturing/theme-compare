@@ -84,10 +84,10 @@
       <span class="variant__label-info">
         &mdash;
         <span data-variant-color-label>
-           {%- capture display_label -%}
+           {%- capture display_name -%}
             {%- render 'custom.variant-swatch', part: 'label', option: option, block: block -%}
           {%- endcapture -%}
-          {{ display_label }}
+          {{ display_name }}
         </span>
       </span>
     {%- endif -%}
