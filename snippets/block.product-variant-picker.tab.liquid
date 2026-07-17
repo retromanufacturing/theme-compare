@@ -67,6 +67,8 @@
   assign use_labels = use_labels | default: false, allow_false: true
 -%}
 
+{{ block.settings.variant_swatches }}
+
 {%- capture accordion_title -%}
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
     {{ option_number }}. {{ option.name }}
