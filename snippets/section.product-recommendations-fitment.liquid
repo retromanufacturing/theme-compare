@@ -1,0 +1,68 @@
+{% doc %}
+  Fitment-matched product recommendations, sourced from the collection
+  context rather than a live query. Only renders when this product page was
+  reached through a URL scoped to the vehicle-search collection with an
+  active tag filter narrower than the full collection — in that case,
+  collection.products is already the correctly filtered, already-paginated
+  set. Renders nothing otherwise (see the metafield-based fallback for
+  products reached any other way).
+
+  @param {string} [product_recommendations_heading] - Section heading
+  @param {number} [products_per_row] - Products per row (2-5)
+  @param {number} [related_count] - Max number of recommendations shown
+
+  @example
+  {% render 'section.product-recommendations-fitment' %}
+{% enddoc %}
+
+{%- liquid
+  assign product_recommendations_heading = product_recommendations_heading | default: section.settings.product_recommendations_heading
+  assign products_per_row = products_per_row | default: section.settings.products_per_row | default: 3
+  assign related_count = related_count | default: section.settings.related_count | default: 6
+
+  assign show_fitment_recommendations = false
+
+  if collection and collection.handle == 'vehicle-search' and collection.products_count > 0 and collection.products_count < collection.all_products_count
+    assign show_fitment_recommendations = true
+  endif
+-%}
+
+{%- if show_fitment_recommendations -%}
+  <div
+    data-section-id="{{ product.id }}"
+    data-subsection
+    data-section-type="collection-template"
+    class="index-section index-section--sub-product"
+  >
+    <div class="page-width">
+      <header class="section-header">
+        <div class="heading-md section-header__title">
+          {{ product_recommendations_heading }}
+        </div>
+      </header>
+    </div>
+
+    <div class="page-width page-width--flush-small">
+      <div class="product-recommendations page-width">
+        <div class="new-grid product-grid scrollable-grid--small" {%- render 'utility.grid-view-type' -%}>
+          {%- assign shown_count = 0 -%}
+          {%- for fitment_product in collection.products -%}
+            {%- if fitment_product.id == product.id -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- if shown_count >= related_count -%}
+              {%- break -%}
+            {%- endif -%}
+            {%- render 'list.product-card',
+              product: fitment_product,
+              collection: collection,
+              sizeVariable: products_per_row,
+              fallback: '45vw'
+            -%}
+            {%- assign shown_count = shown_count | plus: 1 -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
