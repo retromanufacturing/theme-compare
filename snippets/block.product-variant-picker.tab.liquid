@@ -69,10 +69,9 @@
 
 {%- capture accordion_title -%}
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
-    {{ option_number }}. {{ option.name }}
+    {{ option_number }}. {{ option.name }}:
     {%- if connect_to_sizechart and is_size -%}
       <span class="variant__label-info">
-        :
         {%- render 'overlay.tool-tip.trigger',
           title: size_chart_title,
           content: prev_block.settings.size_chart.content,
@@ -82,7 +81,6 @@
     {%- endif -%}
     {%- if is_color -%}
       <span class="variant__label-info">
-        :
         <span data-variant-color-label>
            {%- capture display_label -%}
             {%- render 'custom.variant-swatch', part: 'label', option: option, block: block -%}
