@@ -8,6 +8,8 @@
 <script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
 <script type="module" src="{{ 'vehicle-search-fitment.js' | asset_url }}" defer="defer"></script>
 
+{{ template.name }}
+
 <script>
   document.addEventListener('hot-reload:complete', function () {
     document.querySelectorAll('product-hot-reload script').forEach(function (oldScript) {
