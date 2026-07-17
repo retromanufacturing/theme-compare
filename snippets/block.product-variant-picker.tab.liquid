@@ -67,8 +67,6 @@
   assign use_labels = use_labels | default: false, allow_false: true
 -%}
 
-{{ connect_to_sizechart }}--{{ is_size }}--{{ prev_block }}--{{ prev_block_index }}
-
 {%- capture accordion_title -%}
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
     {{ option_number }}. {{ option.name }}
