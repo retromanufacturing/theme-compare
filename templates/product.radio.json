@@ -183,7 +183,7 @@
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted",
-        "hide_variant_media": true
+        "hide_variant_media": false
       }
     },
     "sub": {
@@ -238,6 +238,15 @@
       ],
       "settings": {
         "max_width": false
+      }
+    },
+    "product_recommendations_fitments_6cfBYm": {
+      "type": "product-recommendations-fitments",
+      "name": "Fitment recommendations",
+      "settings": {
+        "product_recommendations_heading": "Also fits your vehicle",
+        "related_count": 6,
+        "products_per_row": 3
       }
     },
     "recommendations": {
@@ -317,15 +326,6 @@
       "settings": {
         "full_width": false,
         "space_around": true
-      }
-    },
-    "product_recommendations_fitments_6cfBYm": {
-      "type": "product-recommendations-fitments",
-      "name": "Fitment recommendations",
-      "settings": {
-        "product_recommendations_heading": "Also fits your vehicle",
-        "related_count": 6,
-        "products_per_row": 3
       }
     }
   },
