@@ -143,7 +143,7 @@
     "shipping_at_checkout": "Shipping, taxes, and discount codes calculated at checkout.",
     "shipping_at_checkout_taxes_included": "Taxes included. Shipping and discount codes calculated at checkout.",
     "shipping_policy_html": "<a href='{{ link }}'>Shipping</a> calculated at checkout.",
-    "sold_out": "Sold Out",
+    "sold_out": "Available Soon",
     "tax_included": "Tax included.",
     "unable_to_add_item_to_cart": "Unable to add item to cart",
     "unavailable": "Unavailable",
