@@ -87,7 +87,10 @@
                   "name": "t:labels.inventory_status",
                   "settings": {
                     "inventory_threshold": 10,
-                    "inventory_transfers_enable": true
+                    "inventory_transfers_enable": true,
+                    "enable_labels": false,
+                    "color_scheme_in_stock": "",
+                    "color_scheme_low_stock": ""
                   },
                   "blocks": {}
                 },
@@ -117,7 +120,13 @@
                 "font_size": 14,
                 "logo_sizing": "default",
                 "logo_custom_height": 60,
-                "variant_label_options": ""
+                "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
+                "enable_variant_labels": true,
+                "variant_label_options": "Feature Set",
+                "enable_colored_options": true,
+                "color_scheme_option_value_0": "scheme-858644b0-8c93-4655-935f-e14244df698c",
+                "color_scheme_option_value_1": "scheme-5da873ee-7e7f-4226-81ba-9c834541eb15",
+                "color_scheme_option_value_2": "scheme-3f987455-9946-48f2-94c9-59f10ce66e15"
               },
               "blocks": {}
             },
@@ -307,7 +316,10 @@
                           "type": "custom-product-inventory",
                           "settings": {
                             "inventory_threshold": 10,
-                            "inventory_transfers_enable": true
+                            "inventory_transfers_enable": true,
+                            "enable_labels": false,
+                            "color_scheme_in_stock": "",
+                            "color_scheme_low_stock": ""
                           },
                           "blocks": {}
                         }
@@ -330,7 +342,13 @@
                         "font_size": 14,
                         "logo_sizing": "default",
                         "logo_custom_height": 60,
-                        "variant_label_options": ""
+                        "variant_swatches": [],
+                        "enable_variant_labels": false,
+                        "variant_label_options": "",
+                        "enable_colored_options": false,
+                        "color_scheme_option_value_0": "",
+                        "color_scheme_option_value_1": "",
+                        "color_scheme_option_value_2": ""
                       },
                       "blocks": {}
                     },
@@ -443,7 +461,10 @@
                           "type": "custom-product-inventory",
                           "settings": {
                             "inventory_threshold": 10,
-                            "inventory_transfers_enable": true
+                            "inventory_transfers_enable": true,
+                            "enable_labels": false,
+                            "color_scheme_in_stock": "",
+                            "color_scheme_low_stock": ""
                           },
                           "blocks": {}
                         }
@@ -466,7 +487,13 @@
                         "font_size": 14,
                         "logo_sizing": "default",
                         "logo_custom_height": 60,
-                        "variant_label_options": ""
+                        "variant_swatches": [],
+                        "enable_variant_labels": false,
+                        "variant_label_options": "",
+                        "enable_colored_options": false,
+                        "color_scheme_option_value_0": "",
+                        "color_scheme_option_value_1": "",
+                        "color_scheme_option_value_2": ""
                       },
                       "blocks": {}
                     },
@@ -585,7 +612,10 @@
                           "type": "custom-product-inventory",
                           "settings": {
                             "inventory_threshold": 10,
-                            "inventory_transfers_enable": true
+                            "inventory_transfers_enable": true,
+                            "enable_labels": false,
+                            "color_scheme_in_stock": "",
+                            "color_scheme_low_stock": ""
                           },
                           "blocks": {}
                         }
@@ -608,7 +638,13 @@
                         "font_size": 14,
                         "logo_sizing": "default",
                         "logo_custom_height": 60,
-                        "variant_label_options": ""
+                        "variant_swatches": [],
+                        "enable_variant_labels": false,
+                        "variant_label_options": "",
+                        "enable_colored_options": false,
+                        "color_scheme_option_value_0": "",
+                        "color_scheme_option_value_1": "",
+                        "color_scheme_option_value_2": ""
                       },
                       "blocks": {}
                     },
@@ -721,7 +757,10 @@
                           "type": "custom-product-inventory",
                           "settings": {
                             "inventory_threshold": 10,
-                            "inventory_transfers_enable": true
+                            "inventory_transfers_enable": true,
+                            "enable_labels": false,
+                            "color_scheme_in_stock": "",
+                            "color_scheme_low_stock": ""
                           },
                           "blocks": {}
                         }
@@ -744,7 +783,13 @@
                         "font_size": 14,
                         "logo_sizing": "default",
                         "logo_custom_height": 60,
-                        "variant_label_options": ""
+                        "variant_swatches": [],
+                        "enable_variant_labels": false,
+                        "variant_label_options": "",
+                        "enable_colored_options": false,
+                        "color_scheme_option_value_0": "",
+                        "color_scheme_option_value_1": "",
+                        "color_scheme_option_value_2": ""
                       },
                       "blocks": {}
                     },
@@ -857,7 +902,10 @@
                           "type": "custom-product-inventory",
                           "settings": {
                             "inventory_threshold": 10,
-                            "inventory_transfers_enable": true
+                            "inventory_transfers_enable": true,
+                            "enable_labels": false,
+                            "color_scheme_in_stock": "",
+                            "color_scheme_low_stock": ""
                           },
                           "blocks": {}
                         }
@@ -880,7 +928,13 @@
                         "font_size": 14,
                         "logo_sizing": "default",
                         "logo_custom_height": 60,
-                        "variant_label_options": ""
+                        "variant_swatches": [],
+                        "enable_variant_labels": false,
+                        "variant_label_options": "",
+                        "enable_colored_options": false,
+                        "color_scheme_option_value_0": "",
+                        "color_scheme_option_value_1": "",
+                        "color_scheme_option_value_2": ""
                       },
                       "blocks": {}
                     },
@@ -951,6 +1005,7 @@
             "tab_type": "specifications",
             "title": "Specifications",
             "is_open": false,
+            "custom_tab_code": "",
             "text_color": "#42434d",
             "columns_per_row": 2
           }
@@ -961,6 +1016,7 @@
             "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
+            "custom_tab_code": "",
             "text_color": "#ba4444",
             "columns_per_row": 2
           }
