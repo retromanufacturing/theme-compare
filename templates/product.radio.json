@@ -207,6 +207,17 @@
             "columns_per_row": 3
           }
         },
+        "custom_tab_MnAVUi": {
+          "type": "custom-tab",
+          "settings": {
+            "tab_type": "liquid",
+            "title": "Videos",
+            "is_open": false,
+            "custom_tab_code": "{% render 'block.product-manuals' %}",
+            "text_color": "#42434d",
+            "columns_per_row": 2
+          }
+        },
         "custom_tab_rPgteC": {
           "type": "custom-tab",
           "settings": {
@@ -245,6 +256,7 @@
       "block_order": [
         "description",
         "custom_tab_anjwbX",
+        "custom_tab_MnAVUi",
         "custom_tab_rPgteC",
         "custom_tab_axdgmh",
         "custom_tab_BHYiFf"
