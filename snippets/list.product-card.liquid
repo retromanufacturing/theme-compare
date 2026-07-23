@@ -892,7 +892,7 @@
         {%- endif -%}
 
         {%- if enable_add_to_cart -%}
-          {% render 'product.add-to-cart', product: product, class_name: 'grid-product__add-to-cart' %}
+          {% render 'custom.product.add-to-cart', product: product, class_name: 'grid-product__add-to-cart' %}
         {%- endif -%}
       {% endcapture %}
 
