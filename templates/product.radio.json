@@ -198,6 +198,7 @@
         },
         "custom_tab_anjwbX": {
           "type": "custom-tab",
+          "disabled": true,
           "settings": {
             "tab_type": "videos",
             "title": "Videos",
@@ -212,8 +213,8 @@
           "settings": {
             "tab_type": "liquid",
             "title": "Videos",
-            "is_open": false,
-            "custom_tab_code": "{% render 'block.product-manuals' %}",
+            "is_open": true,
+            "custom_tab_code": "{% render 'block.product-media', columns_per_row: 3 %}",
             "text_color": "#42434d",
             "columns_per_row": 2
           }
