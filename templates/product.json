@@ -249,8 +249,20 @@
             "columns_per_row": 2
           }
         },
+        "custom_tab_GVmnNq": {
+          "type": "custom-tab",
+          "settings": {
+            "tab_type": "liquid",
+            "title": "Manuals",
+            "is_open": true,
+            "custom_tab_code": "{% render 'block.product-manuals' %}",
+            "text_color": "#42434d",
+            "columns_per_row": 2
+          }
+        },
         "custom_tab_tpYMTQ": {
           "type": "custom-tab",
+          "disabled": true,
           "settings": {
             "tab_type": "manuals",
             "title": "Manuals",
@@ -265,6 +277,7 @@
         "description",
         "custom_tab_DNg8n6",
         "custom_tab_pNRnYb",
+        "custom_tab_GVmnNq",
         "custom_tab_tpYMTQ"
       ],
       "settings": {
