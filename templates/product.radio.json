@@ -196,71 +196,36 @@
             "is_open": true
           }
         },
-        "custom_tab_anjwbX": {
-          "type": "custom-tab",
-          "disabled": true,
-          "settings": {
-            "tab_type": "videos",
-            "title": "Videos",
-            "is_open": true,
-            "custom_tab_code": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
-            "text_color": "#42434d",
-            "columns_per_row": 3
-          }
-        },
         "custom_tab_MnAVUi": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "liquid",
             "title": "Videos",
             "is_open": true,
-            "custom_tab_code": "{% render 'block.product-media', columns_per_row: 3 %}",
-            "text_color": "#42434d",
-            "columns_per_row": 2
+            "custom_tab_code": "{% render 'block.product-media', columns_per_row: 3 %}"
           }
         },
         "custom_tab_rPgteC": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "liquid",
             "title": "Specifications",
             "is_open": false,
-            "custom_tab_code": "{% render 'motorspecs' %}",
-            "text_color": "#42434d",
-            "columns_per_row": 2
+            "custom_tab_code": "{% render 'motorspecs' %}"
           }
         },
         "custom_tab_axdgmh": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "liquid",
             "title": "Manuals",
             "is_open": false,
-            "custom_tab_code": "{% render 'block.product-manuals' %}",
-            "text_color": "#42434d",
-            "columns_per_row": 2
-          }
-        },
-        "custom_tab_BHYiFf": {
-          "type": "custom-tab",
-          "disabled": true,
-          "settings": {
-            "tab_type": "manuals",
-            "title": "Manuals",
-            "is_open": false,
-            "custom_tab_code": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
-            "text_color": "#ba4444",
-            "columns_per_row": 2
+            "custom_tab_code": "{% render 'block.product-manuals' %}"
           }
         }
       },
       "block_order": [
         "description",
-        "custom_tab_anjwbX",
         "custom_tab_MnAVUi",
         "custom_tab_rPgteC",
-        "custom_tab_axdgmh",
-        "custom_tab_BHYiFf"
+        "custom_tab_axdgmh"
       ],
       "settings": {
         "max_width": false
