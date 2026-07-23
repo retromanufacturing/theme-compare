@@ -21,23 +21,8 @@
   assign tab_type = block.settings.tab_type
   assign code_content = block.settings.custom_tab_code
 
-  capture tab_content
-    case tab_type
-      when 'manuals'
-        render 'block.product-manuals', block: block
-      when 'videos'
-        render 'block.product-media', columns_per_row: block.settings.columns_per_row
-      else        
-        assign tab_content = block.settings.content 
-    endcase
-  endcapture
-
   capture accordion_content
-    echo tab_content
-    echo page_content
-    if tab_type == 'liquid'
-      echo code_content
-    endif
+    echo code_content
   endcapture
 -%}
 

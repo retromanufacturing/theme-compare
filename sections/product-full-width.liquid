@@ -136,26 +136,6 @@
       "name": "Custom tab",
       "settings": [
         {
-          "type": "select",
-          "id": "tab_type",
-          "label": "Tab Type",
-          "options": [
-            {
-              "value": "liquid",
-              "label": "Liquid"
-            },
-            {
-              "value": "manuals",
-              "label": "Manuals"
-            },
-            {
-              "value": "videos",
-              "label": "Videos"
-            }
-          ],
-          "default": "liquid"
-        },
-        {
           "type": "text",
           "id": "title",
           "label": "t:labels.heading",
@@ -171,30 +151,7 @@
           "type": "liquid",
           "id": "custom_tab_code",
           "label": "t:labels.html",
-          "info": "t:labels.supports_liquid",
-          "visible_if": "{{ block.settings.tab_type == 'liquid' }}"
-        },
-        {
-          "type": "header",
-          "content": "Color settings",
-          "visible_if": "{{ block.settings.tab_type == 'manuals' }}"
-        },
-        {
-          "type": "color",
-          "id": "text_color",
-          "label": "Text color",
-          "default": "#42434d",
-          "visible_if": "{{ block.settings.tab_type == 'manuals' }}"
-        },
-        {
-          "type": "range",
-          "id": "columns_per_row",
-          "label": "Videos per row",
-          "min": 1,
-          "max": 4,
-          "step": 1,
-          "default": 2,
-          "visible_if": "{{ block.settings.tab_type == 'videos' }}"
+          "info": "t:labels.supports_liquid"
         }
       ]
     }
