@@ -227,15 +227,15 @@
             "is_open": true
           }
         },
-        "custom_tab_BLzAcA": {
+        "custom_tab_DNg8n6": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "videos",
-            "title": "Product videos",
+            "tab_type": "liquid",
+            "title": "Product Videos",
             "is_open": true,
-            "custom_tab_code": "",
+            "custom_tab_code": "{% render 'block.product-media', columns_per_row: 4 %}",
             "text_color": "#42434d",
-            "columns_per_row": 4
+            "columns_per_row": 2
           }
         },
         "custom_tab_pNRnYb": {
@@ -263,7 +263,7 @@
       },
       "block_order": [
         "description",
-        "custom_tab_BLzAcA",
+        "custom_tab_DNg8n6",
         "custom_tab_pNRnYb",
         "custom_tab_tpYMTQ"
       ],
