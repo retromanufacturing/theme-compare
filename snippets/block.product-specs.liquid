@@ -1,11 +1,18 @@
 {%- liquid
+  # Code to render radio specifications
+  assign radio_templates = 'radio,bundle,preorder-radio,preorder-radio-instock' | split: ','
+  capture specifications
+    if radio_templates contains template.suffix
+      render 'motorspecs'
+    endif
+  endcapture
 
-  #Legacy fallback for products with specifications in description
+  # Legacy fallback for products with specifications in description
   if product.description contains '<!--SPLIT-->'
     assign description_segments = product.description | split: '<!--SPLIT-->'
     assign specifications = description_segments[2]
   endif
 -%}
-
-
-{{ specifications }}
+{% if specifications != blank %}
+  {{ specifications }}
+{% endif %}
