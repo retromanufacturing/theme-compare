@@ -231,6 +231,9 @@
         "custom_tab_rPgteC",
         "custom_tab_axdgmh"
       ],
+      "custom_css": [
+        "a {color: #810F12;}"
+      ],
       "settings": {
         "max_width": false
       }
