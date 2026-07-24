@@ -26,6 +26,7 @@
       render 'desc-speaker'
       assign is_liquid = true
     elsif product.title contains 'RetroMat'
+      echo product.description
       render 'custom.matcalc'
       assign is_liquid = true
     endif
