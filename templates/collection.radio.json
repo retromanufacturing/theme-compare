@@ -51,7 +51,7 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "grid_style": "large"
+            "grid_style": "small"
           }
         }
       },
