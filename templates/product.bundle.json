@@ -999,31 +999,34 @@
             "is_open": true
           }
         },
+        "custom_tab_jEc7QD": {
+          "type": "custom-tab",
+          "settings": {
+            "title": "Product Videos",
+            "is_open": true,
+            "custom_tab_code": "{% render 'block.product-media' %}"
+          }
+        },
         "custom_tab_rPgteC": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "specifications",
             "title": "Specifications",
             "is_open": false,
-            "custom_tab_code": "",
-            "text_color": "#42434d",
-            "columns_per_row": 2
+            "custom_tab_code": "{% render 'block.product-specs' %}"
           }
         },
         "custom_tab_BHYiFf": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
-            "custom_tab_code": "",
-            "text_color": "#ba4444",
-            "columns_per_row": 2
+            "custom_tab_code": "{% render 'block.product-manuals' %}"
           }
         }
       },
       "block_order": [
         "description",
+        "custom_tab_jEc7QD",
         "custom_tab_rPgteC",
         "custom_tab_BHYiFf"
       ],
