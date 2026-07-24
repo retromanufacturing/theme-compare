@@ -207,7 +207,7 @@
         "custom_buy_button_Kc9aFz"
       ],
       "custom_css": [
-        "variant-sku {color: #810f12;}"
+        "variant-sku {color: #810f12; font-weight: 700;}"
       ],
       "settings": {
         "image_position": "left",
