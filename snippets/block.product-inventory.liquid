@@ -158,7 +158,7 @@
     >
       <span class="icon-and-text {% unless oos_and_continue_selling %}inventory--low{% endunless %} ">
         <span class="element-icon element-icon--inventory"></span>
-        <span class="js-incoming-text">
+        <span class="js-incoming-text {%- if current_variant.next_incoming_date == blank -%}backordered{% endif %}">
           {%- if current_variant.next_incoming_date -%}
             {%- assign date = current_variant.next_incoming_date | date: format: 'date' -%}
             {%- if current_variant.available == false -%}
