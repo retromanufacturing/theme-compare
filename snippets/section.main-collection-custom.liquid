@@ -63,6 +63,8 @@
 {% endcapture %}
 
 {%- liquid
+  assign product_grid_block = section.blocks | where: 'type', 'product_grid' | first
+
   # Get product card content
   capture product_items
     if slot_product_items != blank
@@ -75,7 +77,7 @@
           render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
         endfor
 
-        for extra_collection in block.settings.collection_list
+        for extra_collection in product_grid_block.settings.collection_list
           for item in extra_collection.products
             render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
           endfor
