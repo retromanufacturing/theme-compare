@@ -75,6 +75,12 @@
           render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
         endfor
 
+        for extra_collection in block.settings.collection_list
+          for item in extra_collection.products
+            render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
+          endfor
+        endfor
+
         if paginate.pages > 1
           render 'element.pagination', paginate: paginate
         endif
