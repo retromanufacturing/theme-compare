@@ -1,0 +1,8 @@
+{%- liquid
+
+  #Legacy fallback for products with features in description
+  if product.description contains '<!--SPLIT-->'
+    assign description_segments = product.description | split: '<!--SPLIT-->'
+    assign specifications = description_segments[2]
+  endif
+-%}
