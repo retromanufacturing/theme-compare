@@ -169,7 +169,7 @@
               {% render 'utility.translate', t: info_back_in_stock_on, fallback: fallback_info_back_in_stock_on %}
             {%- endif -%}
           {%- else -%}
-            {% render 'utility.translate', key: 'info.backordered', fallback: 'Backordered, shipping soon' %}
+            {% render 'utility.translate', key: 'info.backordered', fallback: 'Backordered, shipping soon' %} {{current_variant.next_incoming_date }} test
           {%- endif -%}
         </span>
       </span>
