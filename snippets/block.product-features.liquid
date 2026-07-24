@@ -21,6 +21,12 @@
       endif
     endfor
   endcapture
+
+  #Legacy fallback for products with features in description
+  if product.description contains '<!--SPLIT-->'
+    assign description_segments = product.description | split: '<!--SPLIT-->'
+    assign features = description_segments[1]
+  endif
 -%}
 
 {%- if features != blank -%}
