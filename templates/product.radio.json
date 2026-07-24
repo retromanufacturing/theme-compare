@@ -175,6 +175,10 @@
         "custom_price_JnHfjG",
         "custom_buy_button_MYrA6y"
       ],
+      "custom_css": [
+        "variant-sku {color: #810f12;}",
+        ".element-text.element-text--body-sm {font-weight: 700;}"
+      ],
       "settings": {
         "image_position": "left",
         "image_container_size": "medium",
