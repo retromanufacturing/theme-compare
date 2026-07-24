@@ -247,7 +247,7 @@
           "type": "custom-tab",
           "settings": {
             "title": "Manuals",
-            "is_open": true,
+            "is_open": false,
             "custom_tab_code": "{% render 'block.product-manuals' %}"
           }
         }
