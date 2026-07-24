@@ -168,7 +168,7 @@
               {%- endcapture -%}
               {% render 'utility.translate', t: info_back_in_stock_on, fallback: fallback_info_back_in_stock_on %}
             {%- endif -%}
-          {%- else -%}test
+          {%- else -%}
             {% render 'utility.translate', key: 'info.backordered', fallback: 'Backordered, shipping soon' %} 
           {%- endif -%}
         </span>
