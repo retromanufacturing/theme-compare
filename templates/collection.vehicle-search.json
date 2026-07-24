@@ -28,7 +28,10 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "grid_style": "small"
+            "grid_style": "small",
+            "collection_list": [
+              "universal-products"
+            ]
           }
         }
       },
