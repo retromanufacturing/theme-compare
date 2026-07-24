@@ -225,34 +225,25 @@
         "custom_tab_BLzAcA": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "videos",
             "title": "Product videos",
             "is_open": true,
-            "custom_tab_code": "",
-            "text_color": "#42434d",
-            "columns_per_row": 4
+            "custom_tab_code": ""
           }
         },
         "custom_tab_pNRnYb": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "specifications",
             "title": "Specifications",
             "is_open": false,
-            "custom_tab_code": "",
-            "text_color": "#42434d",
-            "columns_per_row": 2
+            "custom_tab_code": "{% render 'block.product-specs' %}"
           }
         },
         "custom_tab_tpYMTQ": {
           "type": "custom-tab",
           "settings": {
-            "tab_type": "manuals",
             "title": "Manuals",
             "is_open": false,
-            "custom_tab_code": "",
-            "text_color": "#ba4444",
-            "columns_per_row": 2
+            "custom_tab_code": ""
           }
         }
       },
