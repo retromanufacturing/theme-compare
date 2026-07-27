@@ -187,7 +187,7 @@
         "mobile_layout": "partial",
         "enable_video_looping": true,
         "product_video_style": "muted",
-        "hide_variant_media": false
+        "hide_variant_media": true
       }
     },
     "sub": {
@@ -232,7 +232,7 @@
         "custom_tab_axdgmh"
       ],
       "custom_css": [
-        "a {color: #810F12;}"
+        "a {color: #810f12;}"
       ],
       "settings": {
         "max_width": false
