@@ -244,7 +244,7 @@
           "settings": {
             "title": "Specifications",
             "is_open": false,
-            "custom_tab_code": ""
+            "custom_tab_code": "{% render 'block.product-specs' %}"
           }
         },
         "custom_tab_GVmnNq": {
