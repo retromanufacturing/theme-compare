@@ -559,12 +559,12 @@ endfor
               </button>
             {%- endif -%}
 
-           
+        {% comment %}Wrap<variant-thumbnails> in conditional statement regarding variant thumbnail count{% endcomment %}
               <variant-thumbnails
                 data-section-id="{{ section.id }}"
                 data-product-id="{{ product.id }}"
               >
-    
+  
 
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
@@ -572,9 +572,9 @@ endfor
               {%- endif -%}
             </div>
 
-       
+         
               </variant-thumbnails>
-     
+            {% comment %}Wrap<variant-thumbnails> in conditional statement regarding variant thumbnail count{% endcomment %}
 
             {%- if thumbnail_arrows -%}
               <button
