@@ -559,12 +559,12 @@ endfor
               </button>
             {%- endif -%}
 
-            {%- if hide_variant_media -%}
+           
               <variant-thumbnails
                 data-section-id="{{ section.id }}"
                 data-product-id="{{ product.id }}"
               >
-            {%- endif -%}
+    
 
             <div class="product__thumbs--scroller">
               {%- if product.media.size > 1 -%}
@@ -572,9 +572,9 @@ endfor
               {%- endif -%}
             </div>
 
-            {%- if hide_variant_media -%}
+       
               </variant-thumbnails>
-            {%- endif -%}
+     
 
             {%- if thumbnail_arrows -%}
               <button
