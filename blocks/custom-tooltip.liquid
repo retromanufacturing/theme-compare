@@ -1,19 +1,17 @@
-{% doc %}
-  Custom variant tooltip trigger. Merchant selects a specific variant_tooltips
-  metaobject entry per block instance — no automatic option-name matching,
-  that logic lives in the separate variant_tooltips resolution path.
-
-  @example
-  {% content_for 'block', type: 'custom-variant-tooltip', id: 'variant-tooltip-1' %}
-{% enddoc %}
-
 {%- liquid
-  assign tooltip_entry = block.settings.tooltip_list
-  assign tooltip_title = tooltip_entry.name
-  assign tooltip_content = tooltip_entry.text
+  assign tooltip_list = block.settings.tooltip_list
+  assign liquid_output = block.settings.tooltip_liquid
+
+  if liquid_output != blank
+    assign tooltip_content = liquid_output
+  else
+    assign tooltip_content = tooltip_list.first.text
+  endif
+
+  assign tooltip_title = tooltip_list.first.name
 -%}
 
-{%- if tooltip_entry != blank -%}
+{%- if tooltip_content != blank -%}
   <span class="variant__label-info" {{ block.shopify_attributes }}>
     {%- render 'overlay.tool-tip.trigger',
       title: tooltip_title,
@@ -22,7 +20,7 @@
     -%}
   </span>
 {%- endif -%}
-{{ block.settings.tooltip_liquid }}
+
 {% schema %}
 {
   "name": "Variant Tooltip",
