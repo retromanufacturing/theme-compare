@@ -2,18 +2,13 @@
   assign motor_accessories = current_variant.metafields.custom.radio_features.value.accessories.value
 -%}
 
-{% comment %} {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-{% endfor %} {% endcomment %}
-
 {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
 
-{% comment %} <script type="text/javascript">
+<script type="text/javascript">
   if (Shopify.designMode != true) {
     accessoriesJS($);
   }
 </script>
-
 <script type="text/javascript">
   var motorAccessoryIds = [
     {% for accessory in motor_accessories %}
@@ -26,25 +21,7 @@
       div.addClass("hide");
     }
   }
-</script>  {% endcomment %}
- <script type="text/javascript">
-  if (Shopify.designMode != true) {
-    accessoriesJS($);
-  }
 </script>
-<script type="text/javascript">
-  let motorAccessoryIds = [
-    {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
-
-  console.log(motorAccessoryIds)
-
-  function accessoryItemAddedCallback(div, product) {
-    console.log(div, product)
-  }
-</script> 
 
  {% for accessory in motor_accessories %}
       {{ accessory.id }}{% unless forloop.last %},{% endunless %}
