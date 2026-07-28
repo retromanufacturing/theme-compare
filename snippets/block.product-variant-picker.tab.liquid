@@ -65,8 +65,7 @@
   assign is_open = is_open | default: false, allow_false: true
   assign show_features = show_features
   assign use_labels = use_labels | default: false, allow_false: true
-
-  assign show_variant_tooltip = block.settings.enable_variant_tooltip
+  assign show_variant_tooltip = show_variant_tooltip 
 -%}
 
 {%- capture accordion_title -%}
