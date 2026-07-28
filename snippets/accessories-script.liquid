@@ -12,42 +12,36 @@
 
 {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
 
-<script type="text/javascript">
-  if (Shopify.designMode != true) {
-    accessoriesJS($);
-  }
-</script>
-<script type="text/javascript">
-  var accessoryIdsByVariant = {{ accessory_ids_by_variant }};
-  var allRestrictedIds = [...new Set(Object.values(accessoryIdsByVariant).flat())];
-  var motorAccessoryIds = accessoryIdsByVariant[{{ current_variant.id }}] || [];
-
-  function accessoryItemAddedCallback(div, product) {
-    var isRestricted = allRestrictedIds.indexOf(product.id) !== -1;
-    var isForCurrentMotor = motorAccessoryIds.indexOf(product.id) !== -1;
-
-    if (isRestricted && !isForCurrentMotor) {
-      div.addClass("hide");
-    }
-  }
-</script>
-
 <script type="module">
   import { EVENTS } from '{{ 'util.events.js' | asset_url }}';
 
-  document.addEventListener(`${EVENTS.variantChange}:{{ section.id }}:{{ product.id }}`, (event) => {
-    if (!event.detail.variant || event.detail.loading) return;
+  const accessoryIdsByVariant = {{ accessory_ids_by_variant }};
+  const allRestrictedIds = [...new Set(Object.values(accessoryIdsByVariant).flat())];
+  let motorAccessoryIds = accessoryIdsByVariant[{{ current_variant.id }}] || [];
 
-    motorAccessoryIds = accessoryIdsByVariant[event.detail.variant.id] || [];
-
+  // Shared by page load and variant change — walks every accessory
+  // currently in the DOM and hides/shows it based on motorAccessoryIds
+  function updateAccessoryVisibility() {
     $('.accessories-item').each(function () {
-      var productId = Number($(this).find('.accessory-variant-select').attr('name'));
-      var isRestricted = allRestrictedIds.indexOf(productId) !== -1;
-      var isForCurrentMotor = motorAccessoryIds.indexOf(productId) !== -1;
-
+      const productId = Number($(this).find('.accessory-variant-select').attr('name'));
+      const isRestricted = allRestrictedIds.includes(productId);
+      const isForCurrentMotor = motorAccessoryIds.includes(productId);
       $(this).toggleClass('hide', isRestricted && !isForCurrentMotor);
     });
+  }
+
+  // Fires once, after accessories.js has finished building all accessory items
+  window.accessoriesDoneLoadingCallback = updateAccessoryVisibility;
+
+  document.addEventListener(`${EVENTS.variantChange}:{{ section.id }}:{{ product.id }}`, (event) => {
+    if (!event.detail.variant || event.detail.loading) return;
+    motorAccessoryIds = accessoryIdsByVariant[event.detail.variant.id] || [];
+    updateAccessoryVisibility();
   });
+
+  if (Shopify.designMode != true) {
+    accessoriesJS($);
+  }
 </script>
 
 {% style %}
