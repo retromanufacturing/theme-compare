@@ -45,6 +45,22 @@
   });
 </script>
 
+{%- capture accessory_ids_by_variant -%}
+  {
+    {%- for variant in product.variants -%}
+      "{{ variant.id }}": [
+        {%- for accessory in variant.metafields.custom.radio_features.value.accessories.value -%}
+          {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+{%- endcapture -%}
+
+<script type="text/javascript">
+  console.log({{ accessory_ids_by_variant }});
+</script>
+
 {% style %}
   /* Product Accessories */
 #accessories-modal-right .accessory-description .product__desc-features, #accessories-modal-right .accessory-description .product__desc-specs{ 
