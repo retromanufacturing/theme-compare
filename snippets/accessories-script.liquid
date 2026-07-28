@@ -1,86 +1,40 @@
-{% comment %}
-  Accessories widget (W3 Product Accessories) with motor-based filtering.
+{%- liquid
+  assign motor_accessories = current_variant.metafields.custom.radio_features.value.accessories.value
+-%}
 
-  Each product variant has a metafield listing which accessories are valid
-  for that motor (custom.radio_features.value.accessories.value).
-
-  Not every accessory belongs to this system — only accessories referenced
-  by at least one variant should ever be hidden. Anything else always shows.
-{% endcomment %}
-
-{%- comment -%} Build a lookup: variant ID -> array of allowed accessory product IDs {%- endcomment -%}
-{%- capture accessory_ids_by_variant -%}
-  {
-    {%- for variant in product.variants -%}
-      "{{ variant.id }}": [
-        {%- for accessory in variant.metafields.custom.radio_features.value.accessories.value -%}
-          {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
-      ]{% unless forloop.last %},{% endunless %}
+{%- capture all_restricted_ids -%}
+  {%- for entry in shop.metaobjects.product_data.values -%}
+    {%- for accessory in entry.accessories.value -%}
+      {{ accessory.id }},
     {%- endfor -%}
-  }
+  {%- endfor -%}
 {%- endcapture -%}
+{%- assign all_restricted_ids = all_restricted_ids | split: ',' | uniq -%}
 
 {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
 
-{% comment %} Load and initialize the W3 accessories widget on page load {% endcomment %}
 <script type="text/javascript">
   if (Shopify.designMode != true) {
     accessoriesJS($);
   }
-
-  // Maps every variant on this product to its list of allowed accessory IDs
-  window.accessoryIdsByVariant = {{ accessory_ids_by_variant }};
-
-  // Every accessory ID that appears in ANY variant's allowed list.
-  // If an accessory isn't in this set at all, it's not part of the
-  // motor-restriction system and should never be hidden.
-  window.allManagedAccessoryIds = Object.values(window.accessoryIdsByVariant).flat();
-
-  // The accessory IDs allowed for whichever variant is currently selected
-  window.allowedAccessoryIds = window.accessoryIdsByVariant[{{ current_variant.id }}] || [];
-
-  // Decides whether one accessory item should be hidden, given the current
-  // variant's allowed list. Used both on initial load and on variant change.
-  function updateAccessoryVisibility(accessoryDiv, accessoryProductId) {
-    const isPartOfMotorSystem = window.allManagedAccessoryIds.includes(accessoryProductId);
-    const isAllowedForCurrentVariant = window.allowedAccessoryIds.includes(accessoryProductId);
-
-    const shouldHide = isPartOfMotorSystem && !isAllowedForCurrentVariant;
-    accessoryDiv.toggleClass('hide', shouldHide);
-  }
-
-  // Called by accessories.js once per accessory, right after it's added to the page
-  function accessoryItemAddedCallback(accessoryDiv, accessoryProduct) {
-    updateAccessoryVisibility(accessoryDiv, accessoryProduct.id);
-  }
 </script>
+<script type="text/javascript">
+  var motorAccessoryIds = [
+    {% for accessory in motor_accessories %}
+      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
 
-{% comment %} Re-check visibility whenever the shopper changes variants {% endcomment %}
-<script type="module">
-  import { EVENTS } from '{{ 'util.events.js' | asset_url }}';
+  var allRestrictedIds = [{{ all_restricted_ids | join: ',' }}];
 
-  const variantChangeEventName = `${EVENTS.variantChange}:{{ section.id }}:{{ product.id }}`;
+  function accessoryItemAddedCallback(div, product) {
+    var isRestricted = allRestrictedIds.indexOf(product.id) !== -1;
+    var isForCurrentMotor = motorAccessoryIds.indexOf(product.id) !== -1;
 
-  document.addEventListener(variantChangeEventName, (event) => {
-    const newVariant = event.detail.variant;
-
-    // Ignore the initial "loading" dispatch; only act once the new variant is settled
-    if (!newVariant || event.detail.loading) return;
-
-    window.allowedAccessoryIds = window.accessoryIdsByVariant[newVariant.id] || [];
-
-    // Accessories are already in the DOM from page load — accessories.js
-    // gives every item a <select class="accessory-variant-select" name="{productId}">,
-    // so we can read the product ID straight off that instead of adding our own markup.
-    document.querySelectorAll('.accessories-item').forEach((accessoryDiv) => {
-      const variantSelect = accessoryDiv.querySelector('.accessory-variant-select');
-      if (!variantSelect) return;
-
-      const accessoryProductId = Number(variantSelect.getAttribute('name'));
-      updateAccessoryVisibility($(accessoryDiv), accessoryProductId);
-    });
-  });
+    if (isRestricted && !isForCurrentMotor) {
+      div.addClass("hide");
+    }
+  }
 </script>
 
 {% style %}
