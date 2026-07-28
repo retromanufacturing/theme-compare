@@ -29,32 +29,16 @@ this is the custom tooltip
   "tag": null,
   "settings": [
     {
-      "type": "metaobject",
-      "id": "tooltip_entry",
-      "label": "Tooltip entry",
-      "metaobject_type": "variant_tooltips"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Tooltip title",
-      "default": "Tooltip title"
-    },
-    {
-      "type": "page",
-      "id": "tooltip_page",
-      "label": "Tooltip page",
-    },
-    {
-      "type": "richtext",
-      "id": "tooltip_text",
-      "label": "Tooltip text"
-    },  
-    {
       "type": "metaobject_list",
       "id": "tooltip_list",
       "label": "Tooltip list",
       "metaobject_type": "variant_tooltips"
+    },
+    {
+      "type": "liquid",
+      "id": "tooltip_liquid",
+      "label": "Custom tooltip logic",
+      "info": "Optional. If filled in, this Liquid's output becomes the tooltip content — overrides the default (first item in Tooltip list)."
     }
   ],
   "presets": [{ "name": "Variant Tooltip" }]
