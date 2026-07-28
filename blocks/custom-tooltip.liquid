@@ -20,7 +20,7 @@
     -%}
   </span>
 {%- endif -%}
-{{ tooltip_list }}--{{ tooltip_list.size }}--{{ tooltip_list.first.metafields | json }}--{{ tooltip_list.first | json }}
+{{ tooltip_list }}--{{ tooltip_list.size }}--{{ tooltip_list[0] | json }}
 {% schema %}
 {
   "name": "Variant Tooltip",
