@@ -41,16 +41,16 @@
       "default": "Tooltip title"
     },
     {
-      "type": "richtext",
-      "id": "tooltip_text",
-      "label": "Tooltip text",
-      "visible_if": "{{  block.settings.tooltip_page == blank }}"
-    },
-    {
       "type": "page",
       "id": "tooltip_page",
       "label": "Tooltip page",
     },
+    {
+      "type": "richtext",
+      "id": "tooltip_text",
+      "label": "Tooltip text",
+      "visible_if": "{{  block.settings.tooltip_page == blank }}"
+    },  
     {
       "type": "metaobject_list",
       "id": "tooltip_list",
