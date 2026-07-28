@@ -28,6 +28,16 @@
   }
 </script>  {% endcomment %}
 
+<script type="text/javascript">
+  var motorAccessoryIds = [
+    {% for accessory in motor_accessories %}
+      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ];
+
+  console.log(motorAccessoryIds)
+</script> 
+
  {% for accessory in motor_accessories %}
       {{ accessory.id }}{% unless forloop.last %},{% endunless %}
     {% endfor %}
