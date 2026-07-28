@@ -65,11 +65,18 @@
   assign is_open = is_open | default: false, allow_false: true
   assign show_features = show_features
   assign use_labels = use_labels | default: false, allow_false: true
+
+  assign show_variant_tooltip = block.settings.enable_variant_tooltip
 -%}
 
 {%- capture accordion_title -%}
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
     {{ option_number }}. {{ option.name }}:
+
+    {% if show_variant_tooltip %}
+      show variant tooltip
+    {% endif %}
+    
     {%- if connect_to_sizechart and is_size -%}
       <span class="variant__label-info">
         {%- render 'overlay.tool-tip.trigger',
