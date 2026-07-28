@@ -28,7 +28,7 @@
   capture blocks
     content_for 'blocks'
   endcapture
--%}
+-%} {{ current_variant }}
 
 {% render 'section.main-product-radio', slot: blocks, product_media_gallery: gallery %}
 
