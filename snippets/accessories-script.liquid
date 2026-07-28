@@ -27,7 +27,11 @@
     }
   }
 </script>  {% endcomment %}
-
+ <script type="text/javascript">
+  if (Shopify.designMode != true) {
+    accessoriesJS($);
+  }
+</script>
 <script type="text/javascript">
   let motorAccessoryIds = [
     {% for accessory in motor_accessories %}
