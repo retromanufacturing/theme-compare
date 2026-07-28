@@ -28,7 +28,7 @@
     {% endfor %}
 
 
-{%- for entry in shopify.metaobjects.radio_features.values -%} {{ entry }}--test
+{%- for entry in shopify.metaobjects.product_data.values -%} {{ entry }}--test
     {%- for accessory in entry.accessories.value -%}
       {{ accessory.id }},
     {%- endfor -%}
