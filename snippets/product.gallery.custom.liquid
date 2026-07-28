@@ -414,26 +414,21 @@
   assign current_variant = product.selected_or_first_available_variant
   assign media_offset = product.media.size
 
+  if hide_variant_media
+    assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
+  endif
+
   assign product_media_slideshow_output = ''
   assign product_media_thumbnails_output = ''
 
   for media in product.media
-    assign variant_id = blank
-
-    if hide_variant_media and media.media_type == 'image'
-      assign matching_image = product.images | where: 'id', media.id | first
-      if matching_image.attached_to_variant?
-        assign variant_id = matching_image.variants | map: 'id' | join: ','
-      endif
-    endif
-
     capture media_slides
-      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context, variant_id: variant_id, current_variant_id: current_variant.id
+      render 'custom.product-gallery', media_class: 'slideshow', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, sizes: sizes, sizeVariable: sizeVariable, fallback: fallback, context: context
     endcapture
     assign product_media_slideshow_output = product_media_slideshow_output | append: media_slides
 
     capture media_thumbs
-      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, variant_id: variant_id, current_variant_id: current_variant.id
+      render 'custom.product-gallery', media_class: 'thumbnails', media: media, featured_media: featured_media, loopIndex0: forloop.index0, loopIndex: forloop.index, product_zoom_size: product_zoom_size, hide_variant_media: hide_variant_media, variant_images: variant_images
     endcapture
     assign product_media_thumbnails_output = product_media_thumbnails_output | append: media_thumbs
   endfor
