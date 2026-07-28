@@ -1,14 +1,24 @@
 {%- liquid
-  assign tooltip_list = block.settings.tooltip_list
-  assign liquid_output = block.settings.tooltip_liquid
+  assign tooltip_entries = block.settings.tooltip_list
+  assign selected_entry_name = block.settings.tooltip_liquid | strip
 
-  if liquid_output != blank
-    assign tooltip_content = liquid_output
-  else
-    assign tooltip_content = tooltip_list.first.text
+  assign selected_entry = tooltip_entries | first
+
+  if selected_entry_name != blank
+    for entry in tooltip_entries
+      if entry.name == selected_entry_name
+        assign selected_entry = entry
+      endif
+    endfor
   endif
 
-  assign tooltip_title = tooltip_list.first.name
+  # Build what actually displays in the tooltip popover
+  assign tooltip_title = selected_entry.title
+
+  assign tooltip_content = ''
+  if selected_entry.page != blank
+    assign tooltip_content = selected_entry.page.content
+  endif
 -%}
 
 {%- if tooltip_content != blank -%}
@@ -20,10 +30,7 @@
     -%}
   </span>
 {%- endif -%}
-{% assign texts = block.settings.tooltip_list | map: 'text' %}
-{% for entry in block.settings.tooltip_list %}
-  {{ entry | json }}
-{% endfor %}
+
 {% schema %}
 {
   "name": "Variant Tooltip",
