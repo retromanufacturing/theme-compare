@@ -2,17 +2,16 @@
   assign tooltip_entries = block.settings.tooltip_list
   assign selected_entry_name = block.settings.tooltip_liquid | strip
 
-  assign selected_entry = tooltip_entries | first
+  assign selected_entry = blank
+  for entry in tooltip_entries
+    if forloop.first
+      assign selected_entry = entry
+    endif
+    if selected_entry_name != blank and entry.name == selected_entry_name
+      assign selected_entry = entry
+    endif
+  endfor
 
-  if selected_entry_name != blank
-    for entry in tooltip_entries
-      if entry.name == selected_entry_name
-        assign selected_entry = entry
-      endif
-    endfor
-  endif
-
-  # Build what actually displays in the tooltip popover
   assign tooltip_title = selected_entry.title
 
   assign tooltip_content = ''
@@ -30,7 +29,7 @@
     -%}
   </span>
 {%- endif -%}
-{{ block.settings.tooltip_liquid }}
+
 {% schema %}
 {
   "name": "Variant Tooltip",
