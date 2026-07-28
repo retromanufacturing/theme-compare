@@ -27,6 +27,13 @@
       {{ accessory.id }}{% unless forloop.last %},{% endunless %}
     {% endfor %}
 
+
+{%- for entry in shopify.metaobjects.radio_features.values -%}
+    {%- for accessory in entry.accessories.value -%}
+      {{ accessory.id }},
+    {%- endfor -%}
+  {%- endfor -%}
+
 {% style %}
   /* Product Accessories */
 #accessories-modal-right .accessory-description .product__desc-features, #accessories-modal-right .accessory-description .product__desc-specs{ 
