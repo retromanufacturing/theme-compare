@@ -88,22 +88,6 @@
             "reviews_io_reviewsio_rating_output_FjQ9LB"
           ]
         },
-        "custom_tooltip_ixY9QC": {
-          "type": "custom-tooltip",
-          "name": "Variant Tooltip",
-          "disabled": true,
-          "settings": {
-            "tooltip_entry": "compare-radios-dab",
-            "title": "{{ closest.metaobject.variant_tooltips.title.value }}",
-            "tooltip_page": "{{ closest.metaobject.variant_tooltips.page.value }}",
-            "tooltip_text": "{{ closest.metaobject.variant_tooltips.text | metafield_tag }}",
-            "tooltip_list": [
-              "compare-radios",
-              "compare-radios-dab"
-            ]
-          },
-          "blocks": {}
-        },
         "custom_variant_picker_qbdrbg": {
           "type": "custom-variant-picker",
           "name": "Variant picker",
@@ -133,10 +117,6 @@
               "type": "custom-tooltip",
               "static": true,
               "settings": {
-                "tooltip_entry": "",
-                "title": "Tooltip title",
-                "tooltip_page": "",
-                "tooltip_text": "",
                 "tooltip_list": []
               },
               "blocks": {}
@@ -201,7 +181,6 @@
       "block_order": [
         "custom_title_r6xqgy",
         "custom_group_PPrm6E",
-        "custom_tooltip_ixY9QC",
         "custom_variant_picker_qbdrbg",
         "custom_tab_7f8DEq",
         "custom_tab_hMEWpi",
