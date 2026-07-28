@@ -165,7 +165,17 @@
       "id": "color_scheme_option_value_2",
       "label": "Option value 3 color scheme",
       "visible_if": "{{ block.settings.enable_colored_options and block.settings.enable_variant_labels }}"
-    }
+    },
+    {
+      "type": "header",
+      "content": "Variant Tooltip"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_variant_tooltip",
+      "label": "Enable variant tooltip",
+      "default": false
+    },
   ],
   "presets": [{ "name": "Variant picker" }]
 }
