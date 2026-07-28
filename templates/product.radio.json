@@ -118,8 +118,8 @@
               "static": true,
               "settings": {
                 "tooltip_list": [
-                  "compare-radios",
-                  "compare-radios-dab"
+                  "compare-radios-dab",
+                  "compare-radios"
                 ],
                 "tooltip_liquid": "{% assign entry = block.settings.tooltip_list %}\n{% if product.tags contains 'DAB' %}\n  {{ entry[0].text }}\n{% else %}\n  {{ entry[1].text }}\n{% endif %}"
               },
