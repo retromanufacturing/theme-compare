@@ -11,6 +11,18 @@
 {%- endcapture -%}
 {%- assign all_restricted_ids = all_restricted_ids | split: ',' | uniq -%}
 
+{%- capture accessory_ids_by_variant -%}
+  {
+    {%- for variant in product.variants -%}
+      "{{ variant.id }}": [
+        {%- for accessory in variant.metafields.custom.radio_features.value.accessories.value -%}
+          {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+        {%- endfor -%}
+      ]{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  }
+{%- endcapture -%}
+
 {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
 
 <script type="text/javascript">
@@ -19,13 +31,9 @@
   }
 </script>
 <script type="text/javascript">
-  var motorAccessoryIds = [
-    {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
-
   var allRestrictedIds = [{{ all_restricted_ids | join: ',' }}];
+  var accessoryIdsByVariant = {{ accessory_ids_by_variant }};
+  var motorAccessoryIds = accessoryIdsByVariant[{{ current_variant.id }}] || [];
 
   function accessoryItemAddedCallback(div, product) {
     var isRestricted = allRestrictedIds.indexOf(product.id) !== -1;
@@ -41,26 +49,18 @@
   import { EVENTS } from '{{ 'util.events.js' | asset_url }}';
 
   document.addEventListener(`${EVENTS.variantChange}:{{ section.id }}:{{ product.id }}`, (event) => {
-    {% comment %} console.log('variant change event fired', event.detail); {% endcomment %}
+    if (!event.detail.variant || event.detail.loading) return;
+
+    motorAccessoryIds = accessoryIdsByVariant[event.detail.variant.id] || [];
+
+    $('.accessories-item').each(function () {
+      var productId = Number($(this).find('.accessory-variant-select').attr('name'));
+      var isRestricted = allRestrictedIds.indexOf(productId) !== -1;
+      var isForCurrentMotor = motorAccessoryIds.indexOf(productId) !== -1;
+
+      $(this).toggleClass('hide', isRestricted && !isForCurrentMotor);
+    });
   });
-</script>
-
-{%- capture accessory_ids_by_variant -%}
-  {
-    {%- for variant in product.variants -%}
-      "{{ variant.id }}": [
-        {%- for accessory in variant.metafields.custom.radio_features.value.accessories.value -%}
-          {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
-      ]{% unless forloop.last %},{% endunless %}
-    {%- endfor -%}
-  }
-{%- endcapture -%}
-
-{{ accessory_ids_by_variant }}
-
-<script type="text/javascript">
-  console.log({{ accessory_ids_by_variant }});
 </script>
 
 {% style %}
