@@ -121,7 +121,7 @@
                   "compare-radios",
                   "compare-radios-dab"
                 ],
-                "tooltip_liquid": ""
+                "tooltip_liquid": "render this text instead"
               },
               "blocks": {}
             }
