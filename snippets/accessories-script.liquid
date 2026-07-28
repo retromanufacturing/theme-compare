@@ -41,7 +41,7 @@
   import { EVENTS } from '{{ 'util.events.js' | asset_url }}';
 
   document.addEventListener(`${EVENTS.variantChange}:{{ section.id }}:{{ product.id }}`, (event) => {
-    console.log('variant change event fired', event.detail);
+    {% comment %} console.log('variant change event fired', event.detail); {% endcomment %}
   });
 </script>
 
