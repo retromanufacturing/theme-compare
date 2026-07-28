@@ -91,6 +91,7 @@
         "custom_tooltip_ixY9QC": {
           "type": "custom-tooltip",
           "name": "Variant Tooltip",
+          "disabled": true,
           "settings": {
             "tooltip_entry": "compare-radios-dab",
             "title": "{{ closest.metaobject.variant_tooltips.title.value }}",
@@ -126,7 +127,21 @@
             "color_scheme_option_value_2": "scheme-3f987455-9946-48f2-94c9-59f10ce66e15",
             "enable_variant_tooltip": true
           },
-          "blocks": {}
+          "blocks": {
+            "variant-tooltip-block": {
+              "type": "custom-tooltip",
+              "static": true,
+              "settings": {
+                "tooltip_entry": "",
+                "title": "Tooltip title",
+                "tooltip_page": "",
+                "tooltip_text": "",
+                "tooltip_list": []
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
         },
         "custom_tab_7f8DEq": {
           "type": "custom-tab",
