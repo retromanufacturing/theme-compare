@@ -29,7 +29,7 @@
 
     {{ shop.metaobjects.product_data.values }}
 
-{%- for entry in shop.metaobjects.product_data.values -%} {{ entry }}--test
+{%- for entry in shop.metaobjects.product_data.values -%} 
     {%- for accessory in entry.accessories.value -%}
       {{ accessory.id }},
     {%- endfor -%}
