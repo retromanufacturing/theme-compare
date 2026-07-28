@@ -1,116 +1,39 @@
 {%- liquid
-  assign motor_accessories = current_variant.metafields.custom.radio_features.value.accessories.value
+  assign current_variant = product.selected_or_first_available_variant
+  if current_variant.sku contains '-M1'
+    assign is_laguna = true
+  elsif current_variant.sku contains '-M2' 
+ 	assign is_hermosa = true
+  elsif current_variant.sku contains '-M4' 
+ 	assign is_longbeach = true
+  endif  
 -%}
 
-{% comment %} {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-{% endfor %} {% endcomment %}
-
 {{ 'https://accessories.w3apps.co/js/accessories.js' | script_tag }}
-
-{% comment %} <script type="text/javascript">
-  if (Shopify.designMode != true) {
-    accessoriesJS($);
-  }
-</script>
-
 <script type="text/javascript">
-  var motorAccessoryIds = [
-    {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
-
-  function accessoryItemAddedCallback(div, product) {
-    if (motorAccessoryIds.indexOf(product.id) === -1) {
-      div.addClass("hide");
-    }
-  }
-</script>  {% endcomment %}
- <script type="text/javascript">
-  if (Shopify.designMode != true) {
-    accessoriesJS($);
-  }
+ if (Shopify.designMode != true){
+  accessoriesJS($);
+ }
 </script>
 <script type="text/javascript">
-  let motorAccessoryIds = [
-    {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ];
-
-  console.log(motorAccessoryIds)
-
-  function accessoryItemAddedCallback(div, product) {
-    console.log(div, product)
-  }
-</script> 
-
- {% for accessory in motor_accessories %}
-      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-
-{% style %}
-  /* Product Accessories */
-#accessories-modal-right .accessory-description .product__desc-features, #accessories-modal-right .accessory-description .product__desc-specs{ 
-  display: none;
-}     
-    
-#accessories-container-heading h3 {
-  font-size: 1.2em !important;
-  line-height: .9em !important;
-  margin-bottom: 0px !important;
-  font-weight: bold;
-  text-align: center;
-  font-family:var(--typeBasePrimary),var(--typeBaseFallback);
-}
-    
-#accessories-info-text {
-  border-top: 2px solid var(--colorBtnPrimary);
-  text-align: center;
-}    
-
-.accessories-title, .accessories-item select, .accessories-item option {
-   font-size: 14px !important;
-}
-
-.accessories-item  {  
-  margin-bottom: 10px !important;
-} 
-
-.accessories-item img {  
-  max-width: 120px !important;
-} 
-
-.accessories-item input {  
-  margin-top: 1px !important;
-}     
-    
-.accessories-item input[type=checkbox] {
-   width: 20px !important;
-   height: 20px !important;
-}  
-
-.accessory-price {
-   color: var(--colorBtnPrimary);
-   font-weight: bold;
-   font-size: 14px !important;
-} 
-
-@media screen and (min-width: 769px){
-  .collapsible-content__inner  #w3-product-accessories {
-    margin-top: 0rem !important;
-  }
+  function accessoryItemAddedCallback(div, product) { 
   
-  #w3-product-accessories{
-    margin-top: 0.5rem !important;
-    margin-bottom: 1.5rem !important;
-  }
-}  
-
-@media screen and (max-width: 768px){
-  #w3-product-accessories{
-    margin-top: 30px! important;
-  }
-}   
-{% endstyle %}
+    if (product.id == "4115791872082"){
+      usb = div;
+      usb.addClass("variant__display-no-motor1");
+    }
+    if (product.id == "8572705091"){
+      xm = div;
+      xm.addClass("variant__display-motor4");
+    }
+    
+    
+    {% if is_laguna %}
+    	usb.addClass("hide");
+    	xm.addClass("hide");
+    {% elsif is_hermosa %}
+		xm.addClass("hide");
+    {% endif %}
+  }  
+</script>
+ 
