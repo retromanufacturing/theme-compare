@@ -20,11 +20,8 @@
     -%}
   </span>
 {%- endif -%}
-{{ tooltip_list }}--{{ tooltip_list.size }}--{{ tooltip_list[0] | json }}
-
-{% for entry in tooltip_list %}
-  {{ forloop.index }}: {{ entry | json }}
-{% endfor %}
+{% assign texts = block.settings.tooltip_list | map: 'text' %}
+{{ texts | json }}
 {% schema %}
 {
   "name": "Variant Tooltip",
