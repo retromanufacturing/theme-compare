@@ -15,8 +15,14 @@
   display: none;
 } */
 {% endstyle %}
-{%- content_for 'block', type: 'custom-tooltip', id: 'variant-tooltip-block', closest.product: product -%}
-{% render 'block.product-variant-picker-custom', product: closest.product, block: block, update_url: update_url %}
+
+{%- liquid
+  capture variant_tooltip
+    content_for 'block', type: 'custom-tooltip', id: 'variant-tooltip-block', closest.product: product 
+  endcapture
+-%} 
+
+{% render 'block.product-variant-picker-custom', product: closest.product, block: block, update_url: update_url, variant_tooltip: variant_tooltip %}
 
 {% schema %}
 {
