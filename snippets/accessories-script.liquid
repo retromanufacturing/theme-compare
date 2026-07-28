@@ -36,6 +36,13 @@
   ];
 
   console.log(motorAccessoryIds)
+
+  function accessoryItemAddedCallback(div, product) {
+    console.log("variant changed:" div, product)
+    {% comment %} if (motorAccessoryIds.indexOf(product.id) === -1) {
+      div.addClass("hide");
+    } {% endcomment %}
+  }
 </script> 
 
  {% for accessory in motor_accessories %}
