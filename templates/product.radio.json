@@ -92,7 +92,11 @@
           "type": "custom-tooltip",
           "name": "Variant Tooltip",
           "settings": {
-            "tooltip_entry": "compare-radios"
+            "tooltip_entry": "compare-radios-dab",
+            "title": "{{ closest.metaobject.variant_tooltips.title.value }}",
+            "tooltip_text": "{{ closest.metaobject.variant_tooltips.text | metafield_tag }}",
+            "tooltip_page": "{{ closest.metaobject.variant_tooltips.page.value }}",
+            "tooltip_list": []
           },
           "blocks": {}
         },

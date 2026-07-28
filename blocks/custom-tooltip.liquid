@@ -43,12 +43,13 @@
     {
       "type": "richtext",
       "id": "tooltip_text",
-      "label": "Tooltip text"
+      "label": "Tooltip text",
+      "visible_if": "{{  block.settings.tooltip_page == blank }}"
     },
     {
       "type": "page",
       "id": "tooltip_page",
-      "label": "Tooltip page"
+      "label": "Tooltip page",
     },
     {
       "type": "metaobject_list",
