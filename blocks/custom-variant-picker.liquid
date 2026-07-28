@@ -182,6 +182,13 @@
       "label": "Enable variant tooltip",
       "default": false
     },
+    {
+      "type": "text",
+      "id": "variant_tooltip_options",
+      "label": "Option names that display tooltips",
+      "info": "Comma-separated list of option names e.g. Feature Set, Motor, Choose your Look",
+      "visible_if": "{{ block.settings.enable_variant_tooltip }}"
+    },
   ],
   "presets": [{ "name": "Variant picker" }]
 }
