@@ -200,6 +200,18 @@
             endif
           endfor
         endif
+
+        assign show_variant_tooltip = false
+        if block.settings.enable_variant_tooltip and block.settings.variant_tooltip_options != blank
+          assign tooltip_options = block.settings.variant_tooltip_options | split: ',' 
+          for tooltip_option in tooltip_options
+            assign tooltip_option_trimmed = tooltip_option | strip | downcase
+            assign option_name = option.name | downcase
+            if option_name == tooltip_option_trimmed 
+              assign show_variant_tooltip = true
+            endif
+          endfor
+        endif
       -%}
       {% case block.settings.picker_type %}
         {% when 'button' %}
@@ -207,7 +219,9 @@
             option: option,
             block: block,
             prev_block_index: prev_block_index,
-            product: product
+            product: product,
+            show_variant_tooltip: show_variant_tooltip,
+            variant_tooltip: variant_tooltip,
           -%}
         {% when 'tabs' %}
           {%- render 'block.product-variant-picker.tab',
@@ -219,6 +233,8 @@
             show_features: show_features,
             use_labels: use_labels, 
             option_number: option_number,
+            show_variant_tooltip: show_variant_tooltip,
+            variant_tooltip: variant_tooltip
           -%}
           {% comment %}
             {% if option.name != options_without_labels %}
