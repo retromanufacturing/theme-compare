@@ -27,9 +27,9 @@
       {{ accessory.id }}{% unless forloop.last %},{% endunless %}
     {% endfor %}
 
-    {{ shopify.metaobjects.product_data.values }}
+    {{ shop.metaobjects.product_data.values }}
 
-{%- for entry in shopify.metaobjects.product_data.values -%} {{ entry }}--test
+{%- for entry in shop.metaobjects.product_data.values -%} {{ entry }}--test
     {%- for accessory in entry.accessories.value -%}
       {{ accessory.id }},
     {%- endfor -%}
