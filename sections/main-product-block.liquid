@@ -21,6 +21,8 @@
 {% endcapture %} {% endcomment %}
 
 {%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
   capture gallery
     render 'product.gallery.custom'
   endcapture
@@ -28,7 +30,7 @@
   capture blocks
     content_for 'blocks'
   endcapture
--%} {{ current_variant }}
+-%} 
 
 {% render 'section.main-product-radio', slot: blocks, product_media_gallery: gallery %}
 
