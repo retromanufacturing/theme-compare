@@ -23,6 +23,8 @@
 
 {{ tooltip_title }}--{{  tooltip_content }}--{{ block.settings.tooltip_liquid }}
 
+{{ selected_entry.page.value.content }}
+
 {%- if tooltip_content != blank -%}
   <span class="variant__label-info" {{ block.shopify_attributes }}>
     {%- render 'overlay.tool-tip.trigger',
