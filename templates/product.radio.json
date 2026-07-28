@@ -125,7 +125,8 @@
             "color_scheme_option_value_0": "scheme-858644b0-8c93-4655-935f-e14244df698c",
             "color_scheme_option_value_1": "scheme-5da873ee-7e7f-4226-81ba-9c834541eb15",
             "color_scheme_option_value_2": "scheme-3f987455-9946-48f2-94c9-59f10ce66e15",
-            "enable_variant_tooltip": true
+            "enable_variant_tooltip": true,
+            "variant_tooltip_options": "Feature Set,"
           },
           "blocks": {
             "variant-tooltip-block": {
