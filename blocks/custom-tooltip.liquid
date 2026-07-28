@@ -21,8 +21,9 @@
   </span>
 {%- endif -%}
 {% assign texts = block.settings.tooltip_list | map: 'text' %}
-Size: {{ texts.size }}
-Content: {{ texts | json }}
+{% for entry in block.settings.tooltip_list %}
+  {{ entry | json }}
+{% endfor %}
 {% schema %}
 {
   "name": "Variant Tooltip",
