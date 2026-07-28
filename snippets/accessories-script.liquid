@@ -1,16 +1,3 @@
-{%- liquid
-  assign motor_accessories = current_variant.metafields.custom.radio_features.value.accessories.value
--%}
-
-{%- capture all_restricted_ids -%}
-  {%- for entry in shop.metaobjects.product_data.values -%}
-    {%- for accessory in entry.accessories.value -%}
-      {{ accessory.id }},
-    {%- endfor -%}
-  {%- endfor -%}
-{%- endcapture -%}
-{%- assign all_restricted_ids = all_restricted_ids | split: ',' | uniq -%}
-
 {%- capture accessory_ids_by_variant -%}
   {
     {%- for variant in product.variants -%}
@@ -31,8 +18,8 @@
   }
 </script>
 <script type="text/javascript">
-  var allRestrictedIds = [{{ all_restricted_ids | join: ',' }}];
   var accessoryIdsByVariant = {{ accessory_ids_by_variant }};
+  var allRestrictedIds = [...new Set(Object.values(accessoryIdsByVariant).flat())];
   var motorAccessoryIds = accessoryIdsByVariant[{{ current_variant.id }}] || [];
 
   function accessoryItemAddedCallback(div, product) {
