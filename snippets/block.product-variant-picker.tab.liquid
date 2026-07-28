@@ -73,10 +73,6 @@
   <div class="label variant__label {% unless block.settings.variant_labels %}visually-hidden{% endunless %}">
     {{ option_number }}. {{ option.name }}:
 
-    {% if show_variant_tooltip %}          
-      {{ variant_tooltip }}
-    {% endif %}
-
     {%- if connect_to_sizechart and is_size -%}
       <span class="variant__label-info">
         {%- render 'overlay.tool-tip.trigger',
@@ -96,6 +92,10 @@
         </span>
       </span>
     {%- endif -%}
+
+    {% if show_variant_tooltip %}          
+      {{ variant_tooltip }}
+    {% endif %}
   </div>
 {%- endcapture -%}
 
