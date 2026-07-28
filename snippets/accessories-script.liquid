@@ -28,7 +28,9 @@
   }
 </script>  {% endcomment %}
 
-{{motor_accessories }}--this is a test
+ {% for accessory in motor_accessories %}
+      {{ accessory.id }}{% unless forloop.last %},{% endunless %}
+    {% endfor %}
 
 {% style %}
   /* Product Accessories */
