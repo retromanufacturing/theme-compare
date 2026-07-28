@@ -15,7 +15,7 @@
   display: none;
 } */
 {% endstyle %}
-
+{%- content_for 'block', type: 'custom-tooltip', id: 'variant-tooltip-block', closest.product: product -%}
 {% render 'block.product-variant-picker-custom', product: closest.product, block: block, update_url: update_url %}
 
 {% schema %}
