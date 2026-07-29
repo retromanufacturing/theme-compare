@@ -587,7 +587,7 @@
                   "dash-speakers",
                   "stereo-speakers"
                 ],
-                "required": true,
+                "required": false,
                 "collection_label": "Speakers",
                 "filter_type": "metafield",
                 "filter_value": "metafields.features.size",
