@@ -45,7 +45,9 @@
   {%- endfor -%}
 </fieldset>
 
-<script src="{{ 'element.object-tabs.js' | asset_url }}" defer></script>
+<script type="module">
+  import 'element.object-tabs'
+</script>
 
 {% stylesheet %}
     .object-tabs-wrap {
