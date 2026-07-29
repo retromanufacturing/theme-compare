@@ -30,6 +30,7 @@ window.addEventListener('load', () => {
 
     container.querySelectorAll('.object-tabs-wrap input[type="radio"]').forEach(input => {
       input.addEventListener('change', () => {
+         console.log('childIndex:', getActiveChildIndex(input.value), '| panels:', [...panels].map(p => p.dataset.childIndex))
         container.querySelectorAll('.object-child-tabs-wrap').forEach(set => set.setAttribute('aria-hidden', 'true'))
         const activeChildSet = container.querySelector(`.object-child-tabs-wrap[data-parent-index="${input.value}"]`)
         if (activeChildSet) activeChildSet.setAttribute('aria-hidden', 'false')
