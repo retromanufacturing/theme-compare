@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
 
     const getActiveChildIndex = (tabIndex) => {
       const activeChildSet = container.querySelector(`.object-child-tabs-wrap[data-parent-index="${tabIndex}"]`)
+       console.log('tabIndex:', tabIndex, '| activeChildSet found:', !!activeChildSet, '| checked radio:', activeChildSet?.querySelector('input[type="radio"]:checked'))
       return activeChildSet?.querySelector('input[type="radio"]:checked')?.value ?? null
     }
 
