@@ -207,7 +207,7 @@
           assign tooltip_options = block.settings.variant_tooltip_options | split: ',' 
           for tooltip_option in tooltip_options
             assign tooltip_option_trimmed = tooltip_option | strip | downcase
-            assign option_name = option.name | downcase
+         
             if option_name == tooltip_option_trimmed 
               assign show_variant_tooltip = true
             endif
