@@ -183,7 +183,7 @@
         assign product_features_option_names = block.settings.product_features_option_names | split: ', '
         assign show_features = false
         assign option_number = forloop.index
-        assign option_name = option.name | downcase | strip
+        assign option_name = option.name | downcase 
 
         for name in product_features_option_names
           assign name = name  | downcase | strip    
