@@ -183,7 +183,8 @@
         assign product_features_option_names = block.settings.product_features_option_names | split: ', '
         assign show_features = false
         assign option_number = forloop.index
-   assign option_name = option.name | downcase
+        assign option_name = option.name | downcase
+
         for name in product_features_option_names
           if enable_features and option.name == name
             assign show_features = true
@@ -195,7 +196,6 @@
           assign label_options = block.settings.variant_label_options | split: ','
           for label_option in label_options
             assign label_option_trimmed = label_option | strip | downcase
-            assign option_name = option.name | downcase
             if option_name == label_option_trimmed
               assign use_labels = true
             endif
