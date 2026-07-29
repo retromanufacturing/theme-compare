@@ -187,7 +187,7 @@
 
         for name in product_features_option_names
           assign name = name  | downcase 
-          if enable_features and option_name == name
+          if enable_features and option.name == name
             assign show_features = true
           endif
         endfor
