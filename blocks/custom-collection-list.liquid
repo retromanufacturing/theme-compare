@@ -27,19 +27,17 @@
       >
         <legend class="visually-hidden">{{ collection.title }}</legend>
         {%- for value in child_values -%}
-          {%- assign child_id = tab_name
-            | append: '-child-'
-            | append: tab_index
-            | append: '-'
-            | append: forloop.index
-          -%}
+          {%- liquid    
+            assign child_id = tab_name | append: '-child-' | append: tab_index | append: '-' | append: forloop.index
+            assign child_group_name = tab_name | append: '-child-' | append: tab_index
+        -%}
           {%- capture child_label -%}
             {%- render 'element.button', type: 'button', text: value, inverted: true, style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);' -%}
           {%- endcapture -%}
           {%-
             render 'element.radio',
             id: child_id,
-            name: tab_name | append: '-child-' | append: tab_index,
+            name: child_group_name,
             value: forloop.index,
             checked: forloop.first,
             display_icon: false,
