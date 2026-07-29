@@ -176,7 +176,7 @@
     data-picker-type="{{ block.settings.picker_type }}"
     data-product-id="{{ product.id }}"
     {{ block.shopify_attributes }}
-  > {{ product.selected_or_first_available_variant.metafields.custom.radio_features.value.features.value | json }}
+  >
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign enable_features = block.settings.enable_features_and_logos
