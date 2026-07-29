@@ -193,7 +193,8 @@
       ],
       "custom_css": [
         "variant-sku {color: #810f12;}",
-        ".element-text.element-text--body-sm {font-weight: 700;}"
+        ".element-text.element-text--body-sm {font-weight: 700;}",
+        ".product-features-wrap{}"
       ],
       "settings": {
         "image_position": "left",
