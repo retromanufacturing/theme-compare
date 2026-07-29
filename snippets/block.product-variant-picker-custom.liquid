@@ -194,8 +194,9 @@
         if block.settings.enable_variant_labels and block.settings.variant_label_options != blank
           assign label_options = block.settings.variant_label_options | split: ','
           for label_option in label_options
-            assign label_option_trimmed = label_option | strip
-            if option.name == label_option_trimmed
+            assign label_option_trimmed = label_option | strip | downcase
+            assign option_name = option.name | downcase
+            if option_name == label_option_trimmed
               assign use_labels = true
             endif
           endfor
