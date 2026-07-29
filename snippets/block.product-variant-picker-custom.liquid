@@ -186,7 +186,7 @@
         assign option_name = option.name | downcase 
 
         for name in product_features_option_names
-          assign name = name  | downcase | strip    
+          assign name = name  | downcase 
           if enable_features and option_name == name
             assign show_features = true
           endif
