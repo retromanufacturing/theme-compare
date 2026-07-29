@@ -185,7 +185,9 @@
         assign option_number = forloop.index
 
         for name in product_features_option_names
-          if enable_features and option.name == name
+          assign name = name | downcase
+          assign option_name = option.name | downcase
+          if enable_features and option_name == name
             assign show_features = true
           endif
         endfor
