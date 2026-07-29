@@ -183,12 +183,9 @@
         assign product_features_option_names = block.settings.product_features_option_names | split: ', '
         assign show_features = false
         assign option_number = forloop.index
-        
 
         for name in product_features_option_names
-          assign name = name | downcase
-          assign option_name = option.name | downcase
-          if enable_features and option_name == name
+          if enable_features and option.name == name
             assign show_features = true
           endif
         endfor
