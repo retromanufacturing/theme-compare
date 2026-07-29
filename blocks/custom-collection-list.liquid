@@ -82,7 +82,21 @@
         {% if filter_type != 'none' %}
           data-child-index="{{ child_index }}"
         {% endif %}
+        {% if forloop.first and block.settings.required == false %}
+          data-optional-selected
+        {% endif %}
       >
+        {%- unless block.settings.required -%}
+          <input
+            type="radio"
+            class="bundle-optional-radio"
+            name="optional-{{ block.id }}"
+            data-panel-index="{{ tab_index }}"
+            {% if forloop.first %}
+              checked
+            {% endif %}
+          >
+        {%- endunless -%}
         {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
       </div>
     {%- endfor -%}
