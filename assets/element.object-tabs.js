@@ -2,53 +2,45 @@ window.addEventListener('load', () => {
   document.querySelectorAll('object-tabs').forEach(container => {
     const panels = container.querySelectorAll('[data-tab-index]')
 
-    panels.forEach(panel => {
-      if (panel.dataset.tabIndex !== '1') panel.setAttribute('aria-hidden', 'true')
-    })
-
     container.querySelectorAll('.object-child-tabs-wrap').forEach((set, i) => {
       if (i !== 0) set.setAttribute('aria-hidden', 'true')
     })
 
-    const tabSelectors = [
-      {
-        selector: '.object-tabs-wrap input[type="radio"]',
-        panelAttribute: 'data-tab-index',
-        onActivate: (value) => {
-          container.querySelectorAll('.object-child-tabs-wrap').forEach(set => set.setAttribute('aria-hidden', 'true'))
-          const activeChildSet = container.querySelector(`.object-child-tabs-wrap[data-parent-index="${value}"]`)
-          if (activeChildSet) activeChildSet.setAttribute('aria-hidden', 'false')
-        }
-      },
-      { selector: '.object-child-tabs-wrap input[type="radio"]', panelAttribute: 'data-child-index' }
-    ]
+    const getActiveChildIndex = (tabIndex) => {
+      const activeChildSet = container.querySelector(`.object-child-tabs-wrap[data-parent-index="${tabIndex}"]`)
+      return activeChildSet?.querySelector('input[type="radio"]:checked')?.value ?? null
+    }
 
-    container.querySelectorAll('.bundle-optional-radio').forEach(radio => {
-        // Set initial state
-        if (radio.checked) {
-            const panel = container.querySelector(`[data-tab-index="${radio.dataset.panelIndex}"]`)
-            if (panel) panel.setAttribute('data-optional-selected', '')
-        }
+    const updatePanelVisibility = (tabIndex) => {
+      const childIndex = getActiveChildIndex(tabIndex)
 
-        radio.addEventListener('change', () => {
-            container.querySelectorAll('[data-tab-index]').forEach(p => p.removeAttribute('data-optional-selected'))
-            const panel = container.querySelector(`[data-tab-index="${radio.dataset.panelIndex}"]`)
-            if (panel) panel.setAttribute('data-optional-selected', '')
-        })
+      panels.forEach(panel => {
+        const matchesTab = panel.dataset.tabIndex === tabIndex
+        const matchesChild = !panel.dataset.childIndex || childIndex === null || panel.dataset.childIndex === childIndex
+        const visible = matchesTab && matchesChild
+
+        panel.setAttribute('aria-hidden', visible ? 'false' : 'true')
+
+        if (visible) {
+          const gallery = panel.querySelector('product-images')
+          if (gallery && gallery.flickity) gallery.flickity.resize()
+        }
+      })
+    }
+
+    container.querySelectorAll('.object-tabs-wrap input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        container.querySelectorAll('.object-child-tabs-wrap').forEach(set => set.setAttribute('aria-hidden', 'true'))
+        const activeChildSet = container.querySelector(`.object-child-tabs-wrap[data-parent-index="${input.value}"]`)
+        if (activeChildSet) activeChildSet.setAttribute('aria-hidden', 'false')
+        updatePanelVisibility(input.value)
+      })
     })
 
-    tabSelectors.forEach(({ selector, panelAttribute, onActivate }) => {
-      container.querySelectorAll(selector).forEach(input => {
-        input.addEventListener('change', () => {
-          panels.forEach(panel => panel.setAttribute('aria-hidden', 'true'))
-          const activePanels = container.querySelectorAll(`[${panelAttribute}="${input.value}"]`)
-          activePanels.forEach(panel => {
-            panel.setAttribute('aria-hidden', 'false')
-            const gallery = panel.querySelector('product-images')
-            if (gallery && gallery.flickity) gallery.flickity.resize()
-          })
-          if (onActivate) onActivate(input.value)
-        })
+    container.querySelectorAll('.object-child-tabs-wrap input[type="radio"]').forEach(input => {
+      input.addEventListener('change', () => {
+        const parentIndex = input.closest('.object-child-tabs-wrap').dataset.parentIndex
+        updatePanelVisibility(parentIndex)
       })
     })
   })
