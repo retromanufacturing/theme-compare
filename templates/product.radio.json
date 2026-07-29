@@ -121,7 +121,7 @@
                   "compare-radios-dab",
                   "compare-radios"
                 ],
-                "tooltip_liquid": "{% if product.tags contains 'DAB' %}\n Test\n{% else %}\n  Compare Radios\n{% endif %}"
+                "tooltip_liquid": "{% if product.tags contains 'DAB' %}\n  Compare Radios DAB\n{% else %}\n  Compare Radios\n{% endif %}"
               },
               "blocks": {}
             }
