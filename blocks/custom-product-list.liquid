@@ -10,12 +10,14 @@
 {%- endif -%}
 
 {%- for product in block.settings.product_list -%}
+  {%- capture card_content -%}
+    {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
+  {%- endcapture -%}
+
   {%- if group_items -%}
     <div
       data-tab-index="{{ forloop.index }}"
-      {% if forloop.first and required == false %}
-        data-optional-selected
-      {% endif %}
+      {% if forloop.first and required == false %}data-optional-selected{% endif %}
     >
       {%- unless required -%}
         <input
@@ -23,17 +25,18 @@
           class="bundle-optional-radio"
           name="optional-{{ block.id }}"
           data-panel-index="{{ forloop.index }}"
-          {% if forloop.first %}
-            checked
-          {% endif %}
+          {% if forloop.first %}checked{% endif %}
         >
       {%- endunless -%}
-  {%- endif -%}
-
-  {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
-
-  {%- if group_items -%}
+      {{ card_content }}
     </div>
+  {%- elsif required == false -%}
+    <div class="standalone-optional-item" data-standalone-optional>
+      <input type="checkbox" class="bundle-standalone-checkbox">
+      {{ card_content }}
+    </div>
+  {%- else -%}
+    {{ card_content }}
   {%- endif -%}
 {%- endfor -%}
 
