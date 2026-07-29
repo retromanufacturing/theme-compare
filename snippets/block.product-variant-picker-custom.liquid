@@ -183,10 +183,10 @@
         assign product_features_option_names = block.settings.product_features_option_names | split: ', '
         assign show_features = false
         assign option_number = forloop.index
+        assign option_name = option.name | downcase | strip
 
         for name in product_features_option_names
-          assign name = name | downcase
-          assign option_name = option.name | downcase
+          assign name = name  | downcase | strip    
           if enable_features and option_name == name
             assign show_features = true
           endif
@@ -197,7 +197,6 @@
           assign label_options = block.settings.variant_label_options | split: ','
           for label_option in label_options
             assign label_option_trimmed = label_option | strip | downcase
-            assign option_name = option.name | downcase
             if option_name == label_option_trimmed
               assign use_labels = true
             endif
@@ -209,7 +208,6 @@
           assign tooltip_options = block.settings.variant_tooltip_options | split: ',' 
           for tooltip_option in tooltip_options
             assign tooltip_option_trimmed = tooltip_option | strip | downcase
-            assign option_name = option.name | downcase
             if option_name == tooltip_option_trimmed 
               assign show_variant_tooltip = true
             endif
