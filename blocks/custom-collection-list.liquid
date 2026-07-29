@@ -76,12 +76,21 @@
             assign child_index = child_index | plus: 1
           endfor
         endif
+
+        assign panel_hidden = false
+        if tab_index != 1
+          assign panel_hidden = true
+        endif
+        if filter_type != 'none' and child_index != 1
+          assign panel_hidden = true
+        endif
       -%}
       <div
         data-tab-index="{{ tab_index }}"
         {% if filter_type != 'none' %}
           data-child-index="{{ child_index }}"
         {% endif %}
+        aria-hidden="{{ panel_hidden }}"
       >
         {%- unless block.settings.required -%}
           <input
