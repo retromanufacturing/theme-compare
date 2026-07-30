@@ -59,6 +59,8 @@
     echo 'labels.size_chart' | t
     render 'element.icon', name: 'size-chart'
   endcapture
+
+  assign show_variant_tooltip = show_variant_tooltip 
 -%}
 
 <fieldset class="variant-button-wrap">
@@ -82,6 +84,9 @@
         </span>
       </span>
     {%- endif -%}
+    {% if show_variant_tooltip %}          
+      {{ variant_tooltip }}
+    {% endif %}
   </legend>
 
   {%- for value in option.values -%}
