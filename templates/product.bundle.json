@@ -900,7 +900,7 @@
                         "custom_group_PNyffp": {
                           "type": "custom-group",
                           "settings": {
-                            "content_direction": "column",
+                            "content_direction": "row",
                             "vertical_on_mobile": true,
                             "horizontal_alignment": "flex-start",
                             "vertical_alignment": "center",
@@ -1122,7 +1122,7 @@
                         "custom_group_rAJdQi": {
                           "type": "custom-group",
                           "settings": {
-                            "content_direction": "column",
+                            "content_direction": "row",
                             "vertical_on_mobile": true,
                             "horizontal_alignment": "flex-start",
                             "vertical_alignment": "center",
