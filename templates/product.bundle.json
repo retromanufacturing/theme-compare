@@ -617,6 +617,20 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "custom_spacer_raW47Q": {
+                  "type": "custom-spacer",
+                  "name": "Spacer",
+                  "settings": {
+                    "size": "percent",
+                    "percent_size": 100,
+                    "pixel_size": 120,
+                    "custom_mobile_size": false,
+                    "size_mobile": "percent",
+                    "percent_size_mobile": 100,
+                    "pixel_size_mobile": 120
+                  },
+                  "blocks": {}
+                },
                 "text_kjeeTL": {
                   "type": "text",
                   "name": "Text",
@@ -785,6 +799,7 @@
                 }
               },
               "block_order": [
+                "custom_spacer_raW47Q",
                 "text_kjeeTL",
                 "custom_collection_list_7t3dCA"
               ]
