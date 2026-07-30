@@ -745,7 +745,7 @@
                     "image_position": "left",
                     "image_container_size": "small",
                     "mobile_layout": "partial",
-                    "hide_thumbnails": false
+                    "hide_thumbnails": true
                   },
                   "blocks": {
                     "custom_group_PNyffp": {
@@ -889,7 +889,7 @@
                     "image_position": "left",
                     "image_container_size": "small",
                     "mobile_layout": "partial",
-                    "hide_thumbnails": false
+                    "hide_thumbnails": true
                   },
                   "blocks": {
                     "custom_group_rAJdQi": {
