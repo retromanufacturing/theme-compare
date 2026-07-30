@@ -944,7 +944,7 @@
                               "settings": {
                                 "inventory_threshold": 10,
                                 "inventory_transfers_enable": true,
-                                "enable_labels": false,
+                                "enable_labels": true,
                                 "color_scheme_in_stock": "",
                                 "color_scheme_low_stock": ""
                               },
@@ -1166,7 +1166,7 @@
                               "settings": {
                                 "inventory_threshold": 10,
                                 "inventory_transfers_enable": true,
-                                "enable_labels": false,
+                                "enable_labels": true,
                                 "color_scheme_in_stock": "",
                                 "color_scheme_low_stock": ""
                               },
