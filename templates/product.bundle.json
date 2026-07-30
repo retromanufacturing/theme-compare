@@ -842,6 +842,20 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "custom_spacer_yxnP4R": {
+                  "type": "custom-spacer",
+                  "name": "Spacer",
+                  "settings": {
+                    "size": "percent",
+                    "percent_size": 100,
+                    "pixel_size": 120,
+                    "custom_mobile_size": false,
+                    "size_mobile": "percent",
+                    "percent_size_mobile": 100,
+                    "pixel_size_mobile": 120
+                  },
+                  "blocks": {}
+                },
                 "text_WXCHzq": {
                   "type": "text",
                   "name": "Text",
@@ -1006,6 +1020,7 @@
                 }
               },
               "block_order": [
+                "custom_spacer_yxnP4R",
                 "text_WXCHzq",
                 "custom_product_list_rLXLmJ"
               ]
@@ -1048,6 +1063,20 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "custom_spacer_CHfBh6": {
+                  "type": "custom-spacer",
+                  "name": "Spacer",
+                  "settings": {
+                    "size": "percent",
+                    "percent_size": 100,
+                    "pixel_size": 120,
+                    "custom_mobile_size": false,
+                    "size_mobile": "percent",
+                    "percent_size_mobile": 100,
+                    "pixel_size_mobile": 120
+                  },
+                  "blocks": {}
+                },
                 "text_wXfRr7": {
                   "type": "text",
                   "name": "Text",
@@ -1213,6 +1242,7 @@
                 }
               },
               "block_order": [
+                "custom_spacer_CHfBh6",
                 "text_wXfRr7",
                 "custom_product_list_HFMgz7"
               ]
