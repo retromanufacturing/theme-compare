@@ -64,16 +64,10 @@ class BundleBuyButton extends HTMLElement {
   // yet still show their default selection in the DOM, so fall back to
   // reading that directly.
   getPickerVariantId(picker) {
-    if (picker.currentVariant) return picker.currentVariant.id
-
-    const checkedRadio = picker.querySelector('input[type="radio"]:checked')
-    if (checkedRadio) return parseInt(checkedRadio.value)
-
-    const select = picker.querySelector('select')
-    if (select?.value) return parseInt(select.value)
-
-    return null
-  }
+  picker.updateOptions()
+  picker.updateMasterId()
+  return picker.currentVariant?.id ?? null
+}
 
   // Mirrors the native add-to-cart flow (block.product-buy-buttons.js) so
   // the cart drawer opens and updates itself with no extra code needed here.
