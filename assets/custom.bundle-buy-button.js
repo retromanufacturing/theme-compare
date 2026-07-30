@@ -33,21 +33,25 @@ class BundleBuyButton extends HTMLElement {
   //   - No wrapping tab/checkbox element at all -> always include
   //   - A checkbox or radio is present -> include only if it's checked
   //   - No checkbox, but wrapped in a tab panel -> include only if visible
-  collectSelectedItems() {
-    const items = []
+ collectSelectedItems() {
+  const items = []
 
-    this.sectionRoot.querySelectorAll('[data-product-id]').forEach((card) => {
-      if (!this.cardIsSelected(card)) return
+  this.sectionRoot.querySelectorAll('[data-product-id]').forEach((card) => {
+    const selected = this.cardIsSelected(card)
+    const picker = card.querySelector('block-variant-picker')
+    console.log('card:', card.dataset.productId, '| selected:', selected, '| picker found:', !!picker)
 
-      const picker = card.querySelector('block-variant-picker')
-      if (!picker) return
+    if (!selected) return
+    if (!picker) return
 
-      const variantId = this.getPickerVariantId(picker)
-      if (variantId) items.push({ id: variantId, quantity: 1 })
-    })
+    const variantId = this.getPickerVariantId(picker)
+    console.log('variantId:', variantId)
 
-    return items
-  }
+    if (variantId) items.push({ id: variantId, quantity: 1 })
+  })
+
+  return items
+}
 
   cardIsSelected(card) {
     const wrapper = card.closest('[data-tab-index], [data-standalone-optional]')
