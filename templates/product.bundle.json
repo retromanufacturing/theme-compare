@@ -730,9 +730,11 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": [],
+                "product_list": [
+                  "retrosound-subwoofer-amplifier"
+                ],
                 "required": false,
-                "group_items": true
+                "group_items": false
               },
               "blocks": {
                 "product-card": {
@@ -741,7 +743,7 @@
                   "settings": {
                     "product": "{{ closest.product }}",
                     "image_position": "left",
-                    "image_container_size": "medium",
+                    "image_container_size": "small",
                     "mobile_layout": "partial",
                     "hide_thumbnails": false
                   },
@@ -885,7 +887,7 @@
                   "settings": {
                     "product": "{{ closest.product }}",
                     "image_position": "left",
-                    "image_container_size": "medium",
+                    "image_container_size": "small",
                     "mobile_layout": "partial",
                     "hide_thumbnails": false
                   },
