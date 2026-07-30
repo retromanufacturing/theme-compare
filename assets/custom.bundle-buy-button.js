@@ -64,10 +64,10 @@ class BundleBuyButton extends HTMLElement {
   // yet still show their default selection in the DOM, so fall back to
   // reading that directly.
   getPickerVariantId(picker) {
-  picker.updateOptions()
-  picker.updateMasterId()
-  return picker.currentVariant?.id ?? null
-}
+    picker.updateOptions()
+    picker.updateMasterId()
+    return picker.currentVariant?.id ?? null
+  }
 
   // Mirrors the native add-to-cart flow (block.product-buy-buttons.js) so
   // the cart drawer opens and updates itself with no extra code needed here.
