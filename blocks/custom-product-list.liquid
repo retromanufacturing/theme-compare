@@ -17,15 +17,13 @@
   {%- if group_items -%}
     <div
       data-tab-index="{{ forloop.index }}"
-      {% if forloop.first and required == false %}data-optional-selected{% endif %}
+      aria-hidden="{% unless forloop.first %}true{% else %}false{% endunless %}"
     >
       {%- unless required -%}
         <input
-          type="radio"
-          class="bundle-optional-radio"
-          name="optional-{{ block.id }}"
+          type="checkbox"
+          class="bundle-optional-checkbox"
           data-panel-index="{{ forloop.index }}"
-          {% if forloop.first %}checked{% endif %}
         >
       {%- endunless -%}
       {{ card_content }}
