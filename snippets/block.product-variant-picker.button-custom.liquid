@@ -197,9 +197,11 @@
       {%- assign radio_classlist = 'disabled' -%}
     {% endif %}
 
+    {%- assign picker_name = product.id | append: '-' | append: option.name -%}
+
     {%- render 'element.radio',
       id: id,
-      name: option.name,
+      name: picker_name,
       value: radio_value,
       label: radio_label,
       classlist: radio_classlist,
