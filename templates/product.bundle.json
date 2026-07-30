@@ -88,8 +88,8 @@
                   "settings": {
                     "inventory_threshold": 10,
                     "inventory_transfers_enable": true,
-                    "enable_labels": true,             
-                    "color_scheme_in_stock": "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9",             
+                    "enable_labels": true,
+                    "color_scheme_in_stock": "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9",
                     "color_scheme_low_stock": "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7"
                   },
                   "blocks": {}
@@ -127,15 +127,17 @@
                 "color_scheme_option_value_0": "scheme-858644b0-8c93-4655-935f-e14244df698c",
                 "color_scheme_option_value_1": "scheme-5da873ee-7e7f-4226-81ba-9c834541eb15",
                 "color_scheme_option_value_2": "scheme-3f987455-9946-48f2-94c9-59f10ce66e15",
-                "enable_variant_tooltip": false,
-                "variant_tooltip_options": ""
+                "enable_variant_tooltip": true,
+                "variant_tooltip_options": "Feature Set"
               },
               "blocks": {
                 "variant-tooltip-block": {
                   "type": "custom-tooltip",
                   "static": true,
                   "settings": {
-                    "tooltip_list": [],
+                    "tooltip_list": [
+                      "compare-radios"
+                    ],
                     "tooltip_liquid": ""
                   },
                   "blocks": {}
@@ -642,7 +644,7 @@
                     "font_size_custom": 12,
                     "text_decoration": "bold",
                     "font_color": "#000000",
-                    "background_color": "#ECECEC",
+                    "background_color": "#ececec",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -867,7 +869,7 @@
                     "font_size_custom": 12,
                     "text_decoration": "bold",
                     "font_color": "#000000",
-                    "background_color": "#ECECEC",
+                    "background_color": "#ececec",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -1088,7 +1090,7 @@
                     "font_size_custom": 12,
                     "text_decoration": "bold",
                     "font_color": "#000000",
-                    "background_color": "#ECECEC",
+                    "background_color": "#ececec",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -1333,7 +1335,7 @@
                           "settings": {
                             "inventory_threshold": 10,
                             "inventory_transfers_enable": true,
-                            "enable_labels": true,    
+                            "enable_labels": true,
                             "color_scheme_in_stock": "scheme-16d93fbd-48ad-487d-aff6-f84f20be08d9",
                             "color_scheme_low_stock": "scheme-baeb1be0-2347-4ab3-89f2-5e782a689ff7"
                           },
