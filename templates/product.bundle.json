@@ -1514,7 +1514,7 @@
       "custom_css": [
         "variant-sku {color: #810f12;}",
         ".element-text.element-text--body-sm {font-weight: 700;}",
-        "tool-tip-trigger .element-text{margin-left: .5rem;}"
+        "tool-tip-trigger .element-text {margin-left: 0.5rem;}"
       ],
       "settings": {
         "image_position": "left",
