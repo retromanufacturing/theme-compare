@@ -497,7 +497,7 @@
           "name": "Speakers",
           "settings": {
             "title": "4. Upgrade Your Sound",
-            "is_open": true,
+            "is_open": false,
             "tab_type": "default",
             "tab_title_color": "#ffffff",
             "tab_background_color": "#4a4a4a",
