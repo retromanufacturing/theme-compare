@@ -730,7 +730,7 @@
               "type": "custom-product-card",
               "name": "Product Card",
               "settings": {
-                "product": "",
+                "product": "retrosound-subwoofer-amplifier",
                 "image_position": "left",
                 "image_container_size": "medium",
                 "mobile_layout": "partial",
