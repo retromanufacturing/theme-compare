@@ -580,8 +580,8 @@
                   "name": "Collection list",
                   "settings": {
                     "collection_list": [
-                      "stereo-speakers",
-                      "dash-speakers"
+                      "dash-speakers",
+                      "stereo-speakers"
                     ],
                     "required": false,
                     "collection_label": "Speakers",
