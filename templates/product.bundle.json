@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product-block",
+      "type": "custom-main-product-block",
       "blocks": {
         "custom_tab_KNdKjr": {
           "type": "custom-tab",
