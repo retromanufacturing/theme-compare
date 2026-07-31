@@ -29,6 +29,9 @@
           "type": "product_grid",
           "settings": {
             "grid_style": "small",
+            "product_list": [
+              "retroradio-build-your-own-radio"
+            ],
             "collection_list": [
               "universal-products"
             ]
