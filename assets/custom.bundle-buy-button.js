@@ -1,5 +1,5 @@
 import { EVENTS } from 'util.events'
-import { collectSelectedItems } from 'module.bundle-selection'
+import { collectSelectedItems } from 'custom.module.bundle-selection'
 
 class BundleBuyButton extends HTMLElement {
   connectedCallback() {
