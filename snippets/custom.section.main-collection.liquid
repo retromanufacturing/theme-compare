@@ -73,6 +73,10 @@
       echo no_products
     else
       paginate collection.products by paginate_by
+        for item in product_grid_block.settings.product_list
+           render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
+        endfor
+
         for item in collection.products
           render 'list.product-card', product: item, product_grid_content_align: product_grid_content_align
         endfor
