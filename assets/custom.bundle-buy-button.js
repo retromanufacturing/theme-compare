@@ -1,4 +1,5 @@
 import { EVENTS } from 'util.events'
+import { collectSelectedItems } from 'module.bundle-selection'
 
 class BundleBuyButton extends HTMLElement {
   connectedCallback() {
@@ -19,63 +20,12 @@ class BundleBuyButton extends HTMLElement {
   handleClick(event) {
     event.preventDefault()
 
-    const items = this.collectSelectedItems()
+    const items = collectSelectedItems(this.sectionRoot)
     if (items.length === 0) return
 
     this.addItemsToCart(items)
   }
 
-  // Walks every product card on the page and decides which ones should be
-  // added to the cart. The same rule works for every layout this button is
-  // used with (required tabs, optional tabs, standalone add-ons, or a plain
-  // list with no selection at all):
-  //
-  //   - No wrapping tab/checkbox element at all -> always include
-  //   - A checkbox or radio is present -> include only if it's checked
-  //   - No checkbox, but wrapped in a tab panel -> include only if visible
- collectSelectedItems() {
-  const items = []
-
-  this.sectionRoot.querySelectorAll('[data-product-id]').forEach((card) => {
-    const selected = this.cardIsSelected(card)
-    const picker = card.querySelector('block-variant-picker')
-    console.log('card:', card.dataset.productId, '| selected:', selected, '| picker found:', !!picker)
-
-    if (!selected) return
-    if (!picker) return
-
-    const variantId = this.getPickerVariantId(picker)
-    console.log('variantId:', variantId)
-
-    if (variantId) items.push({ id: variantId, quantity: 1 })
-  })
-
-  return items
-}
-
-  cardIsSelected(card) {
-    const wrapper = card.closest('[data-tab-index], [data-standalone-optional]')
-    if (!wrapper) return true
-
-    const selectionInput = wrapper.querySelector(':scope > input[type="checkbox"], :scope > input[type="radio"]')
-    if (selectionInput) return selectionInput.checked
-
-    return wrapper.getAttribute('aria-hidden') !== 'true'
-  }
-
-  // block-variant-picker tracks its own selected variant as `currentVariant`,
-  // but only after the shopper interacts with it. Cards nobody has touched
-  // yet still show their default selection in the DOM, so fall back to
-  // reading that directly.
-  getPickerVariantId(picker) {
-  picker.updateOptions()
-  picker.updateMasterId()
-  console.log('options:', picker.options, '| currentVariant:', picker.currentVariant)
-  return picker.currentVariant?.id ?? null
-}
-
-  // Mirrors the native add-to-cart flow (block.product-buy-buttons.js) so
-  // the cart drawer opens and updates itself with no extra code needed here.
   async addItemsToCart(items) {
     this.setLoading(true)
 
