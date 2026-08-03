@@ -1,10 +1,9 @@
 <fitment-product-grid data-limit="{{ block.settings.product_count }}" {{ block.shopify_attributes }}>
-      <header class="section-header">
-          <div class="heading-md section-header__title">
-            {{ block.settings.heading }}
-          </div>
-        </header>
-  {%- render 'layout.section-heading', title: block.settings.heading, view_all: true, url: '#' -%}
+  {%- if block.settings.heading != blank -%}
+    <h2 class="rte--block rte--strong">
+      {{ block.settings.heading }}
+    </h2>
+  {%- endif -%}
   <div class="fitment-product-grid__results"></div>
 </fitment-product-grid>
 
@@ -22,13 +21,24 @@
       "label": "Heading",
       "default": "Also fits your vehicle"
     },
-    {   
-      "type": "range", 
-      "id": "product_count", 
-      "label": "Number of products", 
-      "default": 6, 
-      "min": 2, 
+    {
+      "type": "range",
+      "id": "product_count",
+      "label": "Number of products",
+      "default": 6,
+      "min": 2,
       "max": 12
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:labels.button_1_text",
+      "default": "View All"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_1_link"
     }
   ],
   "presets": [{ "name": "Fitment Product Grid" }]
