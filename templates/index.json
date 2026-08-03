@@ -305,6 +305,15 @@
         "autoplay_speed": 7
       }
     },
+    "custom_vehicle_search_products_QFyFzC": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "heading": "Also fits your vehicle",
+        "product_count": 6,
+        "button_text": "View All"
+      }
+    },
     "advanced_content_imVDqN": {
       "type": "advanced-content",
       "blocks": {
@@ -1078,6 +1087,7 @@
     "hero_video_iJjrRf",
     "promo_grid_HdN3gi",
     "promo_grid_8d7c9D",
+    "custom_vehicle_search_products_QFyFzC",
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
     "advanced_content_qVUr8a",
