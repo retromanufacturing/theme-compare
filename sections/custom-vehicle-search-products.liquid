@@ -1,0 +1,30 @@
+{%- render 'section.vehicle-search-products' -%}
+
+{% schema %}
+{
+  "name": "Fitment Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Also fits your vehicle"
+    },
+    {
+      "type": "range",
+      "id": "product_count",
+      "label": "Number of products",
+      "default": 6,
+      "min": 2,
+      "max": 12
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:labels.button_1_text",
+      "default": "View All"
+    }
+  ],
+  "presets": [{ "name": "Fitment Product Grid" }]
+}
+{% endschema %}
