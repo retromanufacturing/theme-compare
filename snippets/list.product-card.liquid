@@ -559,7 +559,7 @@
     data-product-id="{{ product.id }}"
     data-product-grid-item
    {% if template.suffix == 'vehicle-search' %}
-     data-product-tags="{{ product.tags | join: ',' | downcase }}"
+     data-product-tags="{{ product.tags | join: ', ' | downcase }}"
    {% endif %} 
   >{{ product.tags | join: ',' | downcase }} 
     <div class="grid-item__content color-scheme-none">

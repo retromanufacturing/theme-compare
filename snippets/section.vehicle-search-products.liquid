@@ -8,7 +8,7 @@
       for product_tag in product.tags
         assign downcased_product_tag = product_tag | downcase
         if downcased_product_tag == tag
-          assign matching_tags = matching_tags | append: tag | append: ','
+          assign matching_tags = matching_tags | append: tag | append: ', '
         endif
       endfor
     endfor
