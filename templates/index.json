@@ -311,6 +311,26 @@
         "space_around": false
       }
     },
+    "custom_section_rVVJJB": {
+      "type": "custom-section",
+      "blocks": {
+        "custom_vehicle_search_products_Ce3kfz": {
+          "type": "custom-vehicle-search-products",
+          "name": "Fitment Product Grid",
+          "settings": {
+            "heading": "Also fits your vehicle"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "custom_vehicle_search_products_Ce3kfz"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "page_width": true
+      }
+    },
     "rich_text_AntMzN": {
       "type": "rich-text",
       "blocks": {
@@ -1055,6 +1075,7 @@
     "slideshow_split_WWnCkd",
     "slideshow_custom_gcH6jR",
     "advanced_content_imVDqN",
+    "custom_section_rVVJJB",
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
     "promo_grid_HdN3gi",
