@@ -14,7 +14,7 @@
     endfor
   endif
 -%}
-{{ product.tags | join: ',' | downcase  }}
+
 <fitment-product-grid
   class="index-section{% unless section.settings.space_above %} no-space-top{% endunless %}{% unless section.settings.space_below %} no-space-bottom{% endunless %}"
   data-limit="{{ section.settings.product_count }}"
