@@ -1,12 +1,17 @@
 <fitment-product-grid data-limit="{{ block.settings.product_count }}" {{ block.shopify_attributes }}>
-  {%- if block.settings.heading != blank -%}
-    <h2 class="rte--block rte--strong">
-      {{ block.settings.heading }}
-    </h2>
-  {%- endif -%}
+   {%- capture header_content -%}
+    {%- if block.settings.heading != blank -%}
+      <h2 class="rte--block rte--strong">
+        {{ block.settings.heading }}
+      </h2>
+    {%- endif -%}
+    {%- render 'element.button', href: '#', text: block.settings.button_text, classlist: 'fitment-view-all' -%}
+  {%- endcapture -%}
+
+  {%- render 'layout.stack', slot: header_content, horizontal: true, justify: 'space-between', align: 'center' -%}
 
   <div class="fitment-product-grid__results"></div>
-  {%- render 'element.button', href: '#', text: 'View all', classlist: 'fitment-view-all' -%}
+  
 </fitment-product-grid>
 
 <script type="module">
