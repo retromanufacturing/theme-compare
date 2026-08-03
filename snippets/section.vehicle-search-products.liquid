@@ -1,4 +1,8 @@
-<fitment-product-grid data-limit="{{ section.settings.product_count }}" {{ section.shopify_attributes }}>
+<fitment-product-grid 
+  data-limit="{{ section.settings.product_count }}" 
+ 
+  {{ section.shopify_attributes }}
+>
   <div class="page-width">
     {%- capture header_content -%}
     {%- if section.settings.heading != blank -%}
