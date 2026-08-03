@@ -766,5 +766,9 @@
     },
     "variant_picker_tabs": "Variant picker tabs",
     "variant_picker_update_url": "Update variant url",
+    "vehicle_fitment":{
+      "recommendations": "Also fits your {vehicle}",
+      "logos": "Product logos"
+    },
   }
 }
