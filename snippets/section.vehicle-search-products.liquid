@@ -16,7 +16,7 @@
 -%}
 
 <fitment-product-grid
-  class="index-section{% unless section.settings.space_above %} no-space-top{% endunless %}{% unless section.settings.space_below %} no-space-bottom{% endunless %}"
+  class="{% if section.settings.space_above %}space-top{% endif %}{% if section.settings.space_below %} space-bottom{% endif %}"
   data-limit="{{ section.settings.product_count }}"
   data-match-tags="{{ matching_tags | escape }}"
   {{ section.shopify_attributes }}
@@ -47,13 +47,11 @@
       visibility: hidden;
     }
 
-    .index-section.no-space-top {
-      margin-top: 0;
-      padding-top: 0;  
-    }
+     .space-top {
+    padding-top: var(--index-section-padding);
+  }
 
-    .index-section.no-space-bottom {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+  .space-bottom {
+    padding-bottom: var(--index-section-padding);
+  }
 {% endstylesheet %}
