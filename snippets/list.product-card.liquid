@@ -552,13 +552,15 @@
       grid-product--gridlines overlay
     {% endif %}
   "
-> {{ template.suffix }}
+>
   <div
     class="product-grid-item"
     data-product-handle="{{ product.handle }}"
     data-product-id="{{ product.id }}"
     data-product-grid-item
-    data-product-type="{{ product.type }}"
+   {% if template.suffix == 'vehicle-search' %}
+     data-product-type="{{ product.type }}"
+   {% endif %} 
   >
     <div class="grid-item__content color-scheme-none">
       {%- unless no_actions -%}
