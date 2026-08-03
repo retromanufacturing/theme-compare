@@ -6,7 +6,8 @@
     for tag in watched_tags
       assign tag = tag | strip
       for product_tag in product.tags
-        if product_tag | downcase == tag
+        assign downcased_product_tag = product_tag | downcase
+        if downcased_product_tag == tag
           assign matching_tags = matching_tags | append: tag | append: ','
         endif
       endfor
