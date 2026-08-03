@@ -1,4 +1,5 @@
-import { DATA as vehicleData } from "./vehicle-search-data.js";
+import { DATA as vehicleData } from "./vehicle-search-data.js"
+import { getFitmentText, getFitmentLink } from "./custom.module.vehicle-fitment.js"
 
 class CurrentVehicleFitment extends HTMLElement {
   connectedCallback() {
@@ -14,22 +15,11 @@ class CurrentVehicleFitment extends HTMLElement {
     return !!this.vehicleData && Object.keys(this.vehicleData).length > 0;
   }
 
-  _getFitmentText() {
-    const { fitment, year, make, model } = this.vehicleData;
-    return fitment || [year, make, model].filter(Boolean).join(' ');
-  }
-
-  _getFitmentLink() {
-    const { collection, params } = this.vehicleData;
-    if (!collection) return '';
-    return `${vehicleData.searchCollection}${collection}${encodeURI(params || '')}`;
-  }
-
   updateFitment() {
     if (!this.link) return;
 
-    const text = this._getFitmentText();
-    const href = this._getFitmentLink();
+    const text = getFitmentText(this.vehicleData)
+    const href = getFitmentLink(this.vehicleData, vehicleData,searchCollection)
 
     if (text) this.link.textContent = text;
     if (href) this.link.href = href;
