@@ -1,5 +1,5 @@
 import { DATA as vehicleData } from "./vehicle-search-data.js"
-import { getFitmentText, getFitmentLink } from "./custom.module.vehicle-fitment.js"
+import { getFitmentText, getFitmentLink } from "custom.module.vehicle-fitment.js"
 
 class CurrentVehicleFitment extends HTMLElement {
   connectedCallback() {
@@ -19,7 +19,7 @@ class CurrentVehicleFitment extends HTMLElement {
     if (!this.link) return;
 
     const text = getFitmentText(this.vehicleData)
-    const href = getFitmentLink(this.vehicleData, vehicleData,searchCollection)
+    const href = getFitmentLink(this.vehicleData, vehicleData.searchCollection)
 
     if (text) this.link.textContent = text;
     if (href) this.link.href = href;
