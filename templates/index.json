@@ -318,13 +318,17 @@
           "type": "custom-vehicle-search-products",
           "name": "Fitment Product Grid",
           "settings": {
-            "heading": "Also fits your vehicle"
+            "heading": "Also fits your vehicle",
+            "product_count": 6
           },
           "blocks": {}
         }
       },
       "block_order": [
         "custom_vehicle_search_products_Ce3kfz"
+      ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}"
       ],
       "name": "Custom Section",
       "settings": {
