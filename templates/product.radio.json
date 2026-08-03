@@ -269,8 +269,8 @@
         "space_above": true,
         "space_below": true,
         "heading": "Also fits your {vehicle}",
-        "product_count": 6,
-        "grid_style": "grid",
+        "product_count": 5,
+        "products_per_row": 5,
         "button_text": "View All",
         "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
       }
