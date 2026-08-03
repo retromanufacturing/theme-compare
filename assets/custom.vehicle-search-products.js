@@ -21,9 +21,10 @@ class FitmentProductGrid extends HTMLElement {
       const grid = doc.querySelector('.new-grid.product-grid.collection-grid')
 
       if (grid) {
+        this.filterByType(grid)
         this.trimToLimit(grid)
         this.querySelector('.fitment-product-grid__results').replaceWith(grid)
-        
+
         // Keeps the heading with fitment hidden until products and fitment loaded
         this.setAttribute('data-ready', 'true')
       } else {
