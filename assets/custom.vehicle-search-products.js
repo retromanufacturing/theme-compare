@@ -21,6 +21,7 @@ class FitmentProductGrid extends HTMLElement {
       const grid = doc.querySelector('.new-grid.product-grid.collection-grid')
 
       if (grid) {
+        grid.dataset.view = this.dataset.gridView
         this.filterByTags(grid)
         this.trimToLimit(grid)
         this.querySelector('.fitment-product-grid__results').replaceWith(grid)
