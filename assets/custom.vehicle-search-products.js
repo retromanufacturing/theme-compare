@@ -21,7 +21,7 @@ class FitmentProductGrid extends HTMLElement {
       const grid = doc.querySelector('.new-grid.product-grid.collection-grid')
 
       if (grid) {
-        this.filterByType(grid)
+        this.filterByTags(grid)
         this.trimToLimit(grid)
         this.querySelector('.fitment-product-grid__results').replaceWith(grid)
 
@@ -57,15 +57,19 @@ class FitmentProductGrid extends HTMLElement {
     })
   }
 
-  // On product page, filters out products that share the same product.type
-  filterByType(grid) {
-    const currentType = this.dataset.currentType
-    if (!currentType) return
+  // On product page, filters out products that share the same product tags in section.settings.filter_tags
+  filterByTags(grid) {
+    const matchTags = this.dataset.matchTags
+    if (!matchTags) return
 
-    grid.querySelectorAll('[data-product-type]').forEach((card) => {
-      if (card.dataset.productType === currentType) {
-        card.closest('.grid-item')?.remove()
-      }
+    const excludedTags = matchTags.split(',').map((tag) => tag.trim()).filter(Boolean)
+    if (excludedTags.length === 0) return
+
+    grid.querySelectorAll('[data-product-tags]').forEach((card) => {
+      const productTags = card.dataset.productTags.split(',').map((tag) => tag.trim())
+      const isExcluded = excludedTags.some((tag) => productTags.includes(tag))
+
+      if (isExcluded) card.closest('.grid-item')?.remove()
     })
   }
 
