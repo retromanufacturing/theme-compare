@@ -4,7 +4,9 @@
       {{ block.settings.heading }}
     </h2>
   {%- endif -%}
+
   <div class="fitment-product-grid__results"></div>
+  {%- render 'element.button', href: '#', text: 'View all', classlist: 'fitment-view-all' -%}
 </fitment-product-grid>
 
 <script type="module">
