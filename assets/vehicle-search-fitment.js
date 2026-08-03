@@ -1,5 +1,5 @@
 import { DATA as vehicleData } from "./vehicle-search-data.js"
-import { getFitmentText, getFitmentLink } from "custom.module.vehicle-fitment.js"
+import { getFitmentText, getFitmentLink } from "./custom.module.vehicle-fitment.js"
 
 class CurrentVehicleFitment extends HTMLElement {
   connectedCallback() {
