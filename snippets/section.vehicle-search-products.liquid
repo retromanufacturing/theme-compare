@@ -1,6 +1,22 @@
-<fitment-product-grid 
+{%- liquid
+  assign watched_tags = section.settings.filter_tags | downcase | split: ','
+  assign matching_tags = ''
+
+  if product
+    for tag in watched_tags
+      assign tag = tag | strip
+      for product_tag in product.tags
+        if product_tag | downcase == tag
+          assign matching_tags = matching_tags | append: tag | append: ','
+        endif
+      endfor
+    endfor
+  endif
+-%}
+
+<fitment-product-grid
   data-limit="{{ section.settings.product_count }}" 
-  data-current-type="{{ product.type | escape }}"
+  data-match-tags="{{ matching_tags | escape }}"
   {{ section.shopify_attributes }}
 >
   <div class="page-width">
