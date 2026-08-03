@@ -14,10 +14,10 @@
     endfor
   endif
 
-  capture grid_view_attr
-    render 'utility.grid-view-type', products_per_row: section.settings.products_per_row
+   capture grid_view_value
+    render 'utility.grid-view-type', products_per_row: section.settings.products_per_row, type: false
   endcapture
-  assign grid_view_value = grid_view_attr | split: '"' | last | split: '"' | first | strip
+  assign grid_view_value = grid_view_value | strip
 -%}
 
 {{  grid_view_value }}
