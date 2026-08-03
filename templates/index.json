@@ -911,6 +911,19 @@
         "space_around": false
       }
     },
+    "custom_vehicle_search_products_wUQ9pe": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "space_above": true,
+        "space_below": true,
+        "heading": "Also fits your {vehicle}",
+        "product_count": 6,
+        "grid_style": "grid",
+        "button_text": "View All",
+        "filter_tags": "radios,"
+      }
+    },
     "advanced_content_T3red9": {
       "type": "advanced-content",
       "blocks": {
@@ -1048,18 +1061,6 @@
       "settings": {
         "full_width": true,
         "space_around": false
-      }
-    },
-    "custom_vehicle_search_products_wUQ9pe": {
-      "type": "custom-vehicle-search-products",
-      "name": "Fitment Product Grid",
-      "settings": {
-        "space_above": true,
-        "space_below": true,
-        "heading": "Also fits your {vehicle}",
-        "product_count": 6,
-        "grid_style": "grid",
-        "button_text": "View All"
       }
     }
   },
