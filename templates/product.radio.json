@@ -255,13 +255,24 @@
         "max_width": false
       }
     },
-    "product_recommendations_fitments_6cfBYm": {
-      "type": "product-recommendations-fitments",
-      "name": "Fitment recommendations",
+    "custom_section_zcjVJ4": {
+      "type": "custom-section",
+      "blocks": {
+        "custom_vehicle_search_products_Gk3c9j": {
+          "type": "custom-vehicle-search-products",
+          "name": "Fitment Product Grid",
+          "settings": {
+            "heading": "Also fits your vehicle"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "custom_vehicle_search_products_Gk3c9j"
+      ],
+      "name": "Custom Section",
       "settings": {
-        "product_recommendations_heading": "Also fits your vehicle",
-        "related_count": 6,
-        "products_per_row": 3
+        "page_width": true
       }
     },
     "recommendations": {
@@ -347,7 +358,7 @@
   "order": [
     "main",
     "sub",
-    "product_recommendations_fitments_6cfBYm",
+    "custom_section_zcjVJ4",
     "recommendations",
     "more-products-vendor",
     "more-products-collection",
