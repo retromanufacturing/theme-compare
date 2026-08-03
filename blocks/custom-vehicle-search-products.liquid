@@ -1,4 +1,9 @@
 <fitment-product-grid data-limit="{{ block.settings.product_count }}" {{ block.shopify_attributes }}>
+      <header class="section-header">
+          <div class="heading-md section-header__title">
+            {{ block.settings.heading }}
+          </div>
+        </header>
   {%- render 'layout.section-heading', title: block.settings.heading, view_all: true, url: '#' -%}
   <div class="fitment-product-grid__results"></div>
 </fitment-product-grid>
