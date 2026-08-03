@@ -10,7 +10,7 @@
 {
   "sections": {
     "main": {
-      "type": "main-product-block",
+      "type": "custom-main-product-block",
       "blocks": {
         "custom_title_EJEFMF": {
           "type": "custom-title",
@@ -108,9 +108,22 @@
             "enable_colored_options": false,
             "color_scheme_option_value_0": "",
             "color_scheme_option_value_1": "",
-            "color_scheme_option_value_2": ""
+            "color_scheme_option_value_2": "",
+            "enable_variant_tooltip": false,
+            "variant_tooltip_options": ""
           },
-          "blocks": {}
+          "blocks": {
+            "variant-tooltip-block": {
+              "type": "custom-tooltip",
+              "static": true,
+              "settings": {
+                "tooltip_list": [],
+                "tooltip_liquid": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": []
         },
         "custom_group_ehgVdW": {
           "type": "custom-group",
@@ -343,6 +356,19 @@
         "full_width": false,
         "space_around": true
       }
+    },
+    "custom_vehicle_search_products_eXpJAr": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "space_above": true,
+        "space_below": true,
+        "heading": "Also fits your {vehicle}",
+        "product_count": 6,
+        "grid_style": "grid",
+        "button_text": "View All",
+        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
+      }
     }
   },
   "order": [
@@ -350,6 +376,7 @@
     "sub",
     "recommendations",
     "more-products-vendor",
+    "custom_vehicle_search_products_eXpJAr",
     "more-products-collection",
     "recently-viewed",
     "collection-return",
