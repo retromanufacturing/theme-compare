@@ -16,7 +16,8 @@
 -%}
 
 <fitment-product-grid
-  data-limit="{{ section.settings.product_count }}" 
+  class="index-section{% unless section.settings.space_above %} no-space-top{% endunless %}{% unless section.settings.space_below %} no-space-bottom{% endunless %}"
+  data-limit="{{ section.settings.product_count }}"
   data-match-tags="{{ matching_tags | escape }}"
   {{ section.shopify_attributes }}
 >
@@ -39,3 +40,20 @@
 <script type="module">
   import 'custom.vehicle-search-products';
 </script>
+
+{% stylesheet %}
+  /* Keeps the heading with fitment hidden until products and fitment loaded*/
+    fitment-product-grid:not([data-ready]) {
+      visibility: hidden;
+    }
+
+    .index-section.no-space-top {
+      margin-top: 0;
+      padding-top: 0;  
+    }
+
+    .index-section.no-space-bottom {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+{% endstylesheet %}
