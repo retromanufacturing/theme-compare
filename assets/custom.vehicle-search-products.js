@@ -23,6 +23,7 @@ class FitmentProductGrid extends HTMLElement {
       if (grid) {
         this.trimToLimit(grid)
         this.querySelector('.fitment-product-grid__results').replaceWith(grid)
+        this.setAttribute('data-ready', 'true')
       } else {
         this.remove()
       }
