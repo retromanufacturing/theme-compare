@@ -301,7 +301,7 @@
       "name": "Fitment Product Grid",
       "settings": {
         "space_above": true,
-        "space_below": true,
+        "space_below": false,
         "heading": "Also fits your {vehicle}",
         "product_count": 5,
         "products_per_row": 5,
