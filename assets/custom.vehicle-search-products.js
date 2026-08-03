@@ -1,4 +1,5 @@
 import { DATA as vehicleData } from "./vehicle-search-data.js"
+import { getFitmentText, getFitmentLink } from "./custom.module.vehicle-fitment.js"
 
 class FitmentProductGrid extends HTMLElement {
   async connectedCallback() {
@@ -8,7 +9,7 @@ class FitmentProductGrid extends HTMLElement {
       return
     }
 
-    const url = `${vehicleData.searchCollection}${fitment.collection}${encodeURI(fitment.params || '')}`
+    const url = getFitmentLink(fitment, vehicleData.searchCollection)
 
     this.updateHeading(fitment)
     this.updateViewAllLink(url)
@@ -34,8 +35,7 @@ class FitmentProductGrid extends HTMLElement {
   // Updates heading to include current fitment
   updateHeading(fitment) {
     const heading = this.querySelector('h2')
-      console.log(heading)
-    if (heading) heading.textContent = heading.textContent.replace('{vehicle}', fitment.fitment)
+    if (heading) heading.textContent = heading.textContent.replace('{vehicle}', getFitmentText(fitment))
   }
 
   // Updates view all link to filtered vehicle fitment collection url
