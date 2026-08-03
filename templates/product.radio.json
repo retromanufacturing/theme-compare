@@ -281,8 +281,11 @@
       "type": "custom-vehicle-search-products",
       "name": "Fitment Product Grid",
       "settings": {
-        "heading": "Also fits your vehicle",
+        "space_above": true,
+        "space_below": true,
+        "heading": "Also fits your {vehicle}",
         "product_count": 6,
+        "grid_style": "grid",
         "button_text": "View All"
       }
     },
