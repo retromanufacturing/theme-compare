@@ -1,5 +1,5 @@
 {%- liquid
-  assign watched_tags = section.settings.filter_tags | downcase | split: ','
+  assign watched_tags = section.settings.filter_tags | downcase | split: ', '
   assign matching_tags = ''
 
   if product
