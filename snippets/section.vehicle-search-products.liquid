@@ -1,5 +1,6 @@
 <fitment-product-grid data-limit="{{ section.settings.product_count }}" {{ section.shopify_attributes }}>
-   {%- capture header_content -%}
+  <div class="page-width">
+    {%- capture header_content -%}
     {%- if section.settings.heading != blank -%}
       <h2 class="rte--section rte--strong">
         {{ section.settings.heading }}
@@ -8,10 +9,10 @@
     {%- render 'element.button', href: '#', text: section.settings.button_text, classlist: 'fitment-view-all' -%}
   {%- endcapture -%}
 
-  {%- render 'layout.stack', slot: header_content, horizontal: true, justify: 'space-between', align: 'center' -%}
+    {%- render 'layout.stack', slot: header_content, horizontal: true, justify: 'space-between', align: 'center' -%}
 
-  <div class="fitment-product-grid__results"></div>
-  
+    <div class="fitment-product-grid__results"></div>
+  </div>
 </fitment-product-grid>
 
 <script type="module">
