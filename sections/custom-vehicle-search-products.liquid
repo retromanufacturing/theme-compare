@@ -1,10 +1,10 @@
 {%- render 'section.vehicle-search-products' -%}
 
 {% stylesheet %}
-/* Keeps the heading with fitment hidden until products and fitment loaded*/
-  fitment-product-grid:not([data-ready]) {
-    visibility: hidden;
-  }
+  /* Keeps the heading with fitment hidden until products and fitment loaded*/
+    fitment-product-grid:not([data-ready]) {
+      visibility: hidden;
+    }
 {% endstylesheet %}
 
 {% schema %}
@@ -53,6 +53,12 @@
       "id": "button_text",
       "label": "t:labels.button_1_text",
       "default": "View All"
+    },
+    {
+      "type": "text",
+      "id": "filter_tags",
+      "label": "Tags to check for overlap",
+      "info": "Comma-separated. If the current product has any of these tags, matching grid products will be hidden."
     }
   ],
   "presets": [{ "name": "Fitment Product Grid" }]
