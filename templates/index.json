@@ -63,6 +63,24 @@
     "slideshow_custom_gcH6jR": {
       "type": "slideshow-custom",
       "blocks": {
+        "hero_aLhdz9": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 60,
+            "subheading": "And optional subtext",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "text_position": "left",
+            "color_scheme": "4",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0
+          }
+        },
         "hero_QW4Xbe": {
           "type": "hero",
           "settings": {
@@ -265,6 +283,7 @@
         }
       },
       "block_order": [
+        "hero_aLhdz9",
         "hero_QW4Xbe",
         "hero_9rBerh",
         "hero_yxrLCb",
@@ -309,30 +328,6 @@
       "settings": {
         "full_width": true,
         "space_around": false
-      }
-    },
-    "custom_section_rVVJJB": {
-      "type": "custom-section",
-      "blocks": {
-        "custom_vehicle_search_products_Ce3kfz": {
-          "type": "custom-vehicle-search-products",
-          "name": "Fitment Product Grid",
-          "settings": {
-            "heading": "Also fits your vehicle",
-            "product_count": 6
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "custom_vehicle_search_products_Ce3kfz"
-      ],
-      "custom_css": [
-        ".heading-md {font-size: 1.5rem;}"
-      ],
-      "name": "Custom Section",
-      "settings": {
-        "page_width": true
       }
     },
     "rich_text_AntMzN": {
@@ -1079,7 +1074,6 @@
     "slideshow_split_WWnCkd",
     "slideshow_custom_gcH6jR",
     "advanced_content_imVDqN",
-    "custom_section_rVVJJB",
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
     "promo_grid_HdN3gi",
