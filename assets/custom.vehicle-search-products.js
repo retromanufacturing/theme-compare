@@ -1,4 +1,4 @@
-import { DATA as vehicleData } from 'vehicle-search-data'
+import { DATA as vehicleData } from "./vehicle-search-data.js"
 
 class FitmentProductGrid extends HTMLElement {
   async connectedCallback() {
