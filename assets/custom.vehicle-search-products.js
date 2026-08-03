@@ -30,11 +30,19 @@ class FitmentProductGrid extends HTMLElement {
     }
   }
 
+  // Updates heading to include current fitment
+  updateHeading(fitment) {
+    const heading = this.querySelector('h2')
+    if (heading) heading.textContent = heading.textContent.replace('{vehicle}', fitment.fitment)
+  }
+
+  // Updates view all link to filtered vehicle fitment collection url
   updateViewAllLink(url) {
     const link = this.querySelector('.fitment-view-all')
     if (link) link.href = url
   }
 
+  // Sets the amount of products shown based on section setting value
   trimToLimit(grid) {
     const limit = parseInt(this.dataset.limit)
     const items = grid.querySelectorAll('.grid-item')
@@ -42,6 +50,19 @@ class FitmentProductGrid extends HTMLElement {
       if (index >= limit) item.remove()
     })
   }
+
+  // On product page, filters out products that share the same product.type
+  filterByType(grid) {
+    const currentType = this.dataset.currentType
+    if (!currentType) return
+
+    grid.querySelectorAll('[data-product-type]').forEach((card) => {
+      if (card.dataset.productType === currentType) {
+        card.closest('.grid-item')?.remove()
+      }
+    })
+  }
+
 }
 
 customElements.define('fitment-product-grid', FitmentProductGrid)

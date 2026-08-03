@@ -5,10 +5,22 @@
   "name": "Fitment Product Grid",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "space_above",
+      "label": "t:actions.add_top_spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "space_below",
+      "label": "t:actions.add_bottom_spacing",
+      "default": true
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Also fits your vehicle"
+      "default": "t:custom.vehicle_search.recommendations"
     },
     {
       "type": "range",
@@ -17,6 +29,17 @@
       "default": 6,
       "min": 2,
       "max": 12
+    },
+    {
+      "type": "select",
+      "id": "grid_style",
+      "label": "Grid style",
+      "options": [
+        { "value": "grid", "label": "Large" },
+        { "value": "list_view", "label": "Small" },
+        { "value": "list", "label": "List" }
+      ],
+      "default": "grid"
     },
     {
       "type": "text",

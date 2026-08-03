@@ -1,6 +1,6 @@
 <fitment-product-grid 
   data-limit="{{ section.settings.product_count }}" 
- 
+  data-current-type="{{ product.type | escape }}"
   {{ section.shopify_attributes }}
 >
   <div class="page-width">
