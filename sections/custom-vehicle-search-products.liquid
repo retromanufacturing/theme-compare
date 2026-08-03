@@ -1,4 +1,4 @@
-{%- render 'section.vehicle-search-products' -%}
+{%- render 'custom.section.vehicle-search-products' -%}
 
 {% schema %}
 {
@@ -31,15 +31,12 @@
       "max": 12
     },
     {
-      "type": "select",
-      "id": "grid_style",
-      "label": "Grid style",
-      "options": [
-        { "value": "grid", "label": "Large" },
-        { "value": "list_view", "label": "Small" },
-        { "value": "list", "label": "List" }
-      ],
-      "default": "grid"
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "default": 5,
+      "min": 2,
+      "max": 6
     },
     {
       "type": "text",
