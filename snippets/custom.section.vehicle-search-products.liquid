@@ -17,7 +17,7 @@
   capture grid_view_attr
     render 'utility.grid-view-type', products_per_row: section.settings.products_per_row
   endcapture
-  assign grid_view_value = grid_view_attr | split: "'" | last | split: "'" | first | strip
+  assign grid_view_value = grid_view_attr | split: '"' | last | split: '"' | first | strip
 -%}
 
 <fitment-product-grid
