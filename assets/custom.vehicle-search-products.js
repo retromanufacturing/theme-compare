@@ -16,7 +16,7 @@ class FitmentProductGrid extends HTMLElement {
       const doc = new DOMParser().parseFromString(html, 'text/html')
       const grid = doc.querySelector('.new-grid.product-grid.collection-grid')
 
-      console.log(url, grid)
+      console.log('Fitment url results:',url, grid)
 
       if (grid) {
         this.querySelector('.fitment-product-grid__results').replaceWith(grid)
