@@ -10,6 +10,7 @@ class FitmentProductGrid extends HTMLElement {
 
     const url = `${vehicleData.searchCollection}${fitment.collection}${encodeURI(fitment.params || '')}`
 
+    this.updateHeading(fitment)
     this.updateViewAllLink(url)
 
     try {
