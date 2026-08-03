@@ -20,8 +20,6 @@
   assign grid_view_value = grid_view_value | strip
 -%}
 
-{{  grid_view_value }}
-
 <fitment-product-grid
   class="{% if section.settings.space_above %}space-top{% endif %}{% if section.settings.space_below %} space-bottom{% endif %}"
   data-limit="{{ section.settings.product_count }}"
