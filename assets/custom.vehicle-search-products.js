@@ -28,21 +28,19 @@ class FitmentProductGrid extends HTMLElement {
       console.error('Fitment product grid error:', error)
       this.remove()
     }
+  }
 
- 
-    updateViewAllLink(url) {   
-        const link = this.querySelector('.section-header__link')   
-        if (link) link.href = url
-    }
+  updateViewAllLink(url) {
+    const link = this.querySelector('.section-header__link')
+    if (link) link.href = url
+  }
 
-    trimToLimit(grid) {
-        const limit = parseInt(this.dataset.limit)
-        const items = grid.querySelectorAll('.grid-item')
-        items.forEach((item, index) => {
-        if (index >= limit) item.remove()
-        })
-    }
-
+  trimToLimit(grid) {
+    const limit = parseInt(this.dataset.limit)
+    const items = grid.querySelectorAll('.grid-item')
+    items.forEach((item, index) => {
+      if (index >= limit) item.remove()
+    })
   }
 }
 
