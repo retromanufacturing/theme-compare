@@ -34,6 +34,7 @@ class FitmentProductGrid extends HTMLElement {
   // Updates heading to include current fitment
   updateHeading(fitment) {
     const heading = this.querySelector('h2')
+      console.log(heading)
     if (heading) heading.textContent = heading.textContent.replace('{vehicle}', fitment.fitment)
   }
 
