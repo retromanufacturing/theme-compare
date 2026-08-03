@@ -262,7 +262,9 @@
           "type": "custom-vehicle-search-products",
           "name": "Fitment Product Grid",
           "settings": {
-            "heading": "Also fits your vehicle"
+            "heading": "Also fits your vehicle",
+            "product_count": 6,
+            "button_text": "View All"
           },
           "blocks": {}
         }
@@ -273,6 +275,15 @@
       "name": "Custom Section",
       "settings": {
         "page_width": true
+      }
+    },
+    "custom_vehicle_search_products_QxyPn7": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "heading": "Also fits your vehicle",
+        "product_count": 6,
+        "button_text": "View All"
       }
     },
     "recommendations": {
@@ -359,6 +370,7 @@
     "main",
     "sub",
     "custom_section_zcjVJ4",
+    "custom_vehicle_search_products_QxyPn7",
     "recommendations",
     "more-products-vendor",
     "more-products-collection",
