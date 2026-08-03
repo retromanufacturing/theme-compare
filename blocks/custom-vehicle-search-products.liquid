@@ -1,0 +1,25 @@
+<fitment-product-grid {{ block.shopify_attributes }}>
+  {%- if block.settings.heading != blank -%}
+    <div class="heading-md section-header__title">{{ block.settings.heading }}</div>
+  {%- endif -%}
+  <div class="fitment-product-grid__results"></div>
+</fitment-product-grid>
+
+<script type="module">
+  import 'custom-fitment-product-grid'
+</script>
+
+{% schema %}
+{
+  "name": "Fitment Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Also fits your vehicle"
+    }
+  ],
+  "presets": [{ "name": "Fitment Product Grid" }]
+}
+{% endschema %}
