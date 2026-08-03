@@ -682,15 +682,6 @@
         "enable_title": false
       }
     },
-    "custom_vehicle_search_products_QFyFzC": {
-      "type": "custom-vehicle-search-products",
-      "name": "Fitment Product Grid",
-      "settings": {
-        "heading": "Also fits your vehicle",
-        "product_count": 6,
-        "button_text": "View All"
-      }
-    },
     "promo_grid_CiVJpa": {
       "type": "promo-grid",
       "blocks": {
@@ -920,6 +911,15 @@
         "space_around": false
       }
     },
+    "custom_vehicle_search_products_QFyFzC": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "heading": "Also fits your vehicle",
+        "product_count": 6,
+        "button_text": "View All"
+      }
+    },
     "advanced_content_T3red9": {
       "type": "advanced-content",
       "blocks": {
@@ -1068,10 +1068,10 @@
     "hero_video_iJjrRf",
     "promo_grid_HdN3gi",
     "promo_grid_8d7c9D",
-    "custom_vehicle_search_products_QFyFzC",
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
     "advanced_content_qVUr8a",
+    "custom_vehicle_search_products_QFyFzC",
     "advanced_content_T3red9",
     "blog_posts_xYaJ84",
     "apps_ihxT4i",
