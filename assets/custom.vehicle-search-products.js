@@ -31,7 +31,7 @@ class FitmentProductGrid extends HTMLElement {
   }
 
   updateViewAllLink(url) {
-    const link = this.querySelector('.section-header__link')
+    const link = this.querySelector('.fitment-view-all')
     if (link) link.href = url
   }
 
