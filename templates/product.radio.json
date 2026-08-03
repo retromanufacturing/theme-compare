@@ -257,21 +257,6 @@
     },
     "custom_section_zcjVJ4": {
       "type": "custom-section",
-      "blocks": {
-        "custom_vehicle_search_products_Gk3c9j": {
-          "type": "custom-vehicle-search-products",
-          "name": "Fitment Product Grid",
-          "settings": {
-            "heading": "Also fits your vehicle",
-            "product_count": 6,
-            "button_text": "View All"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "custom_vehicle_search_products_Gk3c9j"
-      ],
       "name": "Custom Section",
       "settings": {
         "page_width": true
@@ -286,7 +271,8 @@
         "heading": "Also fits your {vehicle}",
         "product_count": 6,
         "grid_style": "grid",
-        "button_text": "View All"
+        "button_text": "View All",
+        "filter_tags": "radios,"
       }
     },
     "recommendations": {
