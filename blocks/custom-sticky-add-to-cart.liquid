@@ -62,11 +62,11 @@
 
   {%- liquid
     if current_variant.available
-      assign button_text = 'products.product.add_to_cart' | t
+      assign button_text = 'actions.add_to_cart' | t
     elsif current_variant == blank
-      assign button_text = 'products.product.unavailable' | t
+      assign button_text = 'info.unavailable' | t
     else
-      assign button_text = 'products.product.sold_out' | t
+      assign button_text = 'info.sold_out' | t
     endif
 
     assign is_unavailable = false
