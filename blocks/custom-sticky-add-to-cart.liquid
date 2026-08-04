@@ -88,6 +88,57 @@
   import 'custom.sticky-add-to-cart';
 </script>
 
+{% stylesheet %}
+  sticky-add-to-cart {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(calc(100% + 40px));
+    z-index: var(--z-index-toolbar);
+    width: 600px;
+    max-width: calc(100% - 32px);
+    border-radius: var(--element-button-radius);
+    box-shadow: var(--drawer-box-shadow);
+    padding: 16px;
+    background: var(--color-secondary);
+    transition: var(--slide-curve);
+  }
+
+  sticky-add-to-cart[data-stuck='true'] {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0%);
+  }
+
+  sticky-add-to-cart:not([data-variant-available='true']) {
+    opacity: 0;
+    transform: translateX(-50%) translateY(calc(100% + 40px));
+    display: none;
+  }
+
+  .sticky-add-to-cart__image {
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    width: 50px;
+    overflow: hidden;
+    border-radius: var(--element-button-radius);
+  }
+
+  .sticky-add-to-cart__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sticky-add-to-cart__info {
+    flex: 1;
+    min-width: 0;
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "Sticky Add To Cart",
