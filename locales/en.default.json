@@ -269,7 +269,10 @@
     "color_swatch": "Choose"
   },
   "custom": {
-    "button_label": "Buttons with label"
+    "button_label": "Buttons with label",
+    "product": {
+      "sticky_add_to_cart": "Sticky add to cart",
+    }
   },
   "sections": {
     "countdown": {

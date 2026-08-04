@@ -762,8 +762,7 @@
     },
     "product":{
       "features": "Product features",
-      "logos": "Product logos",
-      "sticky_add_to_cart": "Sticky add to cart",
+      "logos": "Product logos"
     },
     "variant_picker_tabs": "Variant picker tabs",
     "variant_picker_update_url": "Update variant url",
