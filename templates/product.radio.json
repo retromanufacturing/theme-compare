@@ -180,6 +180,14 @@
             "show_gift_card_recipient": false
           },
           "blocks": {}
+        },
+        "custom_sticky_add_to_cart_98WAng": {
+          "type": "custom-sticky-add-to-cart",
+          "name": "Sticky Add To Cart",
+          "settings": {
+            "avoid_selector": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
@@ -189,7 +197,8 @@
         "custom_tab_7f8DEq",
         "custom_tab_hMEWpi",
         "custom_price_JnHfjG",
-        "custom_buy_button_MYrA6y"
+        "custom_buy_button_MYrA6y",
+        "custom_sticky_add_to_cart_98WAng"
       ],
       "custom_css": [
         "variant-sku {color: #810f12;}",
