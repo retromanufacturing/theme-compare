@@ -264,6 +264,12 @@ class StickyAddToCart extends HTMLElement {
 
   handleAddToCartClick(event) {
     event.preventDefault()
+    // Submits to the W3 Accessories cart button to add accessories
+    const accessoriesCopyButton = document.getElementById('addToCartCopy')
+    if (accessoriesCopyButton) {
+        accessoriesCopyButton.click()
+        return
+    }
     this.getProductForm()?.requestSubmit()
   }
 
