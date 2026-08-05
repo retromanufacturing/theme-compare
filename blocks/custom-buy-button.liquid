@@ -42,7 +42,7 @@
     {
       "type": "select",
       "id": "sticky_width",
-      "label": "Width",
+      "label": "Width (desktop)",
       "default": "full",
       "options": [
         { "value": "full", "label": "Full width" },
@@ -53,7 +53,7 @@
     {
       "type": "range",
       "id": "sticky_constrained_width",
-      "label": "Constrained width",
+      "label": "Constrained width (desktop)",
       "min": 320,
       "max": 1400,
       "step": 20,
@@ -78,7 +78,7 @@
         { "value": "below", "label": "Below element" }
       ],
       "info": "Only applies when a selector is entered above.",
-      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart and block.settings.position_selector != blank }}"
     },
     {
       "type": "text",
