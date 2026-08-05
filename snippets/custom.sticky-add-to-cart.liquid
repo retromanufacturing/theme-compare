@@ -170,13 +170,6 @@
     top: var(--sticky-offset, 0px);
   }
 
-  sticky-add-to-cart[data-width='constrained'] {
-    width: 600px;
-    max-width: calc(100% - 32px);
-    margin: 0 auto;
-    border-radius: var(--element-button-radius);
-  }
-
   sticky-add-to-cart[data-stuck='true'] {
     opacity: 1;
     transform: translateY(0%);
@@ -229,3 +222,13 @@
     flex-shrink: 0;
   }
 {% endstylesheet %}
+{% style %}
+ @media only screen and (min-width: 769px){     
+    sticky-add-to-cart[data-width='constrained'] {    
+        width: {{ block.settings.sticky_constrained_width }}px;
+        max-width: calc(100% - 32px);
+        margin: 0 auto;
+        border-radius: var(--element-button-radius);
+    }
+ }
+{% endstyle %}
