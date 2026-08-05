@@ -1,5 +1,6 @@
 {% render 'block.product-buy-buttons', product: closest.product %}
 
+
 {% schema %}
 {
   "name": "t:labels.buy_buttons",
@@ -24,6 +25,23 @@
       "default": false,
       "label": "t:actions.show_recipient_information",
       "info": "t:info.gift_card_products"
+    },
+      {
+      "type": "header",
+      "content": "Sticky add to cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_add_to_cart",
+      "label": "Enable sticky add to cart",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "avoid_selector",
+      "label": "Avoid colliding with",
+      "info": "Optional CSS selector for an element the sticky bar should stay hidden behind, if visible (e.g. a chat widget's launcher button).",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
     }
   ],
   "presets": [{ "name": "t:labels.buy_buttons" }]
