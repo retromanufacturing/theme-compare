@@ -179,7 +179,9 @@
             "surface_pickup_enable": true,
             "show_gift_card_recipient": false,
             "enable_sticky_add_to_cart": true,
-            "avoid_selector": ""
+            "sticky_width": "full",
+            "position_selector": "getsitecontrol-widget",
+            "position_placement": "above"
           },
           "blocks": {}
         }
