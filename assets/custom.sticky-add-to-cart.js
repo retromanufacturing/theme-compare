@@ -5,18 +5,17 @@ class StickyAddToCart extends HTMLElement {
     this.abortController = new AbortController()
     this.buttonOffScreen = false
     this.nearFooter = false
-    this.positionTicking = false
     this.hasScrolled = false
 
     this.setupIntersectionObserver()
     this.watchVariantChanges()
-    this.watchTargetChanges()
     this.updatePosition()
+    this.startPositionLoop()
 
     // Visibility only ever activates after a real scroll (see
-    // updateVisibility) - this sidesteps every page-load timing race,
-    // since by the time a user has actually scrolled, layout-shifting
-    // content (images, third-party widgets) is realistically settled.
+    // updateVisibility) - sidesteps page-load timing races, since by the
+    // time a user has actually scrolled, layout-shifting content (images,
+    // third-party widgets) is realistically settled.
     window.addEventListener(
       'scroll',
       () => {
@@ -24,13 +23,9 @@ class StickyAddToCart extends HTMLElement {
           this.hasScrolled = true
           this.updateVisibility()
         }
-        this.requestPositionUpdate()
       },
       { signal: this.abortController.signal, passive: true }
     )
-    window.addEventListener('resize', () => this.requestPositionUpdate(), {
-      signal: this.abortController.signal
-    })
 
     // Delegated on the persistent outer element, not the button itself,
     // since the button gets destroyed and recreated on every variant
@@ -51,7 +46,7 @@ class StickyAddToCart extends HTMLElement {
     this.abortController.abort()
     this.buyButtonsObserver?.disconnect()
     this.footerObserver?.disconnect()
-    this.mutationObserver?.disconnect()
+    this.stopPositionLoop()
   }
 
   getProductForm() {
@@ -76,11 +71,6 @@ class StickyAddToCart extends HTMLElement {
     const footer = this.getFooter()
     if (!footer) return
 
-    // Direction-agnostic: the real button is "off screen" whether it
-    // hasn't been scrolled to yet (below the fold) or has been scrolled
-    // past (above the viewport) - isIntersecting alone tells us that.
-    // These start tracking immediately, but updateVisibility() won't
-    // actually apply anything to the DOM until hasScrolled is true.
     this.buyButtonsObserver = new IntersectionObserver((entries) => {
       const [entry] = entries
       if (!entry) return
@@ -112,23 +102,21 @@ class StickyAddToCart extends HTMLElement {
 
   // --- Position (anchor above/below a configured element, or default bottom) ---
 
-  watchTargetChanges() {
-    this.mutationObserver = new MutationObserver(() => this.requestPositionUpdate())
-    this.mutationObserver.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['class', 'style']
-    })
+  // Runs every frame rather than reacting to specific events, so a CSS
+  // transition on the target (e.g. the header compressing on scroll)
+  // can never leave our offset stale - only active while a selector is
+  // actually configured, since the default bottom position never changes.
+  startPositionLoop() {
+    if (!this.dataset.positionSelector) return
+    const loop = () => {
+      this.updatePosition()
+      this.positionLoopId = requestAnimationFrame(loop)
+    }
+    this.positionLoopId = requestAnimationFrame(loop)
   }
 
-  requestPositionUpdate() {
-    if (this.positionTicking) return
-    this.positionTicking = true
-    requestAnimationFrame(() => {
-      this.updatePosition()
-      this.positionTicking = false
-    })
+  stopPositionLoop() {
+    if (this.positionLoopId) cancelAnimationFrame(this.positionLoopId)
   }
 
   setDefaultPosition() {
