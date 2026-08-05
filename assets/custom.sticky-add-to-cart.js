@@ -30,7 +30,7 @@ class StickyAddToCart extends HTMLElement {
 
   setupIntersectionObserver() {
     const buyButtons = document.querySelector(`#shopify-section-${this.dataset.sectionId} .block-buy-buttons`)
-    const footer = document.querySelector('footer')
+    const footer = document.querySelector('footer-section')
     if (!buyButtons || !footer) return
 
     this.buyButtonsObserver = new IntersectionObserver((entries) => {
