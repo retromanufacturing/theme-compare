@@ -126,38 +126,46 @@ class StickyAddToCart extends HTMLElement {
     this.style.setProperty('--sticky-hide-y', '100%')
   }
 
-  updatePosition() {
-    const selector = this.dataset.positionSelector
-    if (!selector) {
-      this.setDefaultPosition()
-      return
-    }
-
-    const target = document.querySelector(selector)
-    const targetVisible = target && target.offsetParent !== null
-    if (!targetVisible) {
-      this.setDefaultPosition()
-      return
-    }
-
-    const rect = target.getBoundingClientRect()
-    const placement = this.dataset.positionPlacement || 'above'
-
-    if (placement === 'below') {
-      if (rect.bottom <= 0) {
-        this.setDefaultPosition()
-        return
-      }
-      this.dataset.anchor = 'top'
-      this.style.setProperty('--sticky-offset', `${Math.max(rect.bottom, 0)}px`)
-      this.style.setProperty('--sticky-hide-y', '-100%')
-    } else {
-      const offset = Math.max(window.innerHeight - rect.top, 0)
-      this.dataset.anchor = 'bottom'
-      this.style.setProperty('--sticky-offset', `${offset}px`)
-      this.style.setProperty('--sticky-hide-y', '100%')
-    }
+ updatePosition() {
+  const selector = this.dataset.positionSelector
+  if (!selector) {
+    this.setDefaultPosition()
+    return
   }
+
+  const targets = Array.from(document.querySelectorAll(selector)).filter(
+    (el) => el.offsetParent !== null
+  )
+  if (targets.length === 0) {
+    this.setDefaultPosition()
+    return
+  }
+
+  const placement = this.dataset.positionPlacement || 'above'
+
+  if (placement === 'below') {
+    // Clear every matched, visible element - not just whichever one the
+    // selector happens to match first - so stacked sections (e.g. a
+    // sticky header plus a banner directly beneath it) are both
+    // accounted for instead of the bar landing on top of the second one.
+    const bottoms = targets.map((t) => t.getBoundingClientRect().bottom).filter((b) => b > 0)
+    if (bottoms.length === 0) {
+      this.setDefaultPosition()
+      return
+    }
+    const lowestBottom = Math.max(...bottoms)
+    this.dataset.anchor = 'top'
+    this.style.setProperty('--sticky-offset', `${lowestBottom}px`)
+    this.style.setProperty('--sticky-hide-y', '-100%')
+  } else {
+    const tops = targets.map((t) => t.getBoundingClientRect().top)
+    const highestTop = Math.min(...tops)
+    const offset = Math.max(window.innerHeight - highestTop, 0)
+    this.dataset.anchor = 'bottom'
+    this.style.setProperty('--sticky-offset', `${offset}px`)
+    this.style.setProperty('--sticky-hide-y', '100%')
+  }
+}
 
   handleAddToCartClick(event) {
     event.preventDefault()
