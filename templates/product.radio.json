@@ -180,7 +180,7 @@
             "show_gift_card_recipient": false,
             "enable_sticky_add_to_cart": true,
             "sticky_width": "full",
-            "position_selector": "header-section",
+            "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
             "position_placement": "below"
           },
           "blocks": {}
