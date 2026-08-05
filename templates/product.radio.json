@@ -179,7 +179,7 @@
             "surface_pickup_enable": true,
             "show_gift_card_recipient": false,
             "enable_sticky_add_to_cart": true,
-            "sticky_width": "constrained",
+            "sticky_width": "full",
             "sticky_constrained_width": 1200,
             "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
             "position_placement": "below",
