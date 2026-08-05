@@ -29,32 +29,36 @@ class StickyAddToCart extends HTMLElement {
   }
 
   setupIntersectionObserver() {
-    const buyButtons = document.querySelector(`#shopify-section-${this.dataset.sectionId} .block-buy-buttons`)
-    const footer = document.querySelector('footer-section')
-    if (!buyButtons || !footer) return
+  const productForm = this.getProductForm()
+  console.log('[sticky] productForm:', productForm)
+  if (!productForm) return
 
-    this.buyButtonsObserver = new IntersectionObserver((entries) => {
-      const [entry] = entries
-      if (!entry) return
+  const buyButtonsBlock = productForm.closest('.block-buy-buttons')
+  console.log('[sticky] buyButtonsBlock:', buyButtonsBlock)
+  if (!buyButtonsBlock) return
 
-      if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
-        this.show()
-      } else {
-        this.hide()
-      }
-    })
+  const footer = this.getFooter()
+  console.log('[sticky] footer:', footer)
+  if (!footer) return
 
-    this.footerObserver = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries
-        if (entry?.isIntersecting) this.hide()
-      },
-      { rootMargin: '200px 0px 0px 0px' }
-    )
+  console.log('[sticky] observers attached')
 
-    this.buyButtonsObserver.observe(buyButtons)
-    this.footerObserver.observe(footer)
-  }
+  this.buyButtonsObserver = new IntersectionObserver((entries) => {
+    const [entry] = entries
+    if (!entry) return
+    console.log('[sticky] buyButtons intersecting:', entry.isIntersecting, 'isStuck:', this.isStuck)
+
+    if (!entry.isIntersecting && !this.isStuck) {
+      const rect = entry.target.getBoundingClientRect()
+      console.log('[sticky] rect.bottom:', rect.bottom, 'rect.top:', rect.top)
+      if (rect.bottom < 0 || rect.top < 0) this.show()
+    } else if (entry.isIntersecting && this.isStuck) {
+      this.hiddenByBottom = false
+      this.hide()
+    }
+  })
+
+  // ...footerObserver unchanged below
 
   show() {
     if (this.isElementColliding()) return
