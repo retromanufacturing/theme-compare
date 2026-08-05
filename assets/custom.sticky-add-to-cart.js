@@ -3,6 +3,8 @@ import { EVENTS } from 'util.events'
 class StickyAddToCart extends HTMLElement {
   connectedCallback() {
     this.abortController = new AbortController()
+    this.isStuck = false
+    this.hiddenByBottom = false
 
     this.setupIntersectionObserver()
     this.watchVariantChanges()
@@ -28,44 +30,77 @@ class StickyAddToCart extends HTMLElement {
     this.footerObserver?.disconnect()
   }
 
+  getProductForm() {
+    const section = this.closest('.shopify-section')
+    if (!section) return null
+    return section.querySelector(`#product-form-${this.dataset.sectionId}`)
+  }
+
+  getFooter() {
+    return document.querySelector('footer-section') ?? document.querySelector('[class*="footer-group"]')
+  }
+
   setupIntersectionObserver() {
-  const productForm = this.getProductForm()
-  console.log('[sticky] productForm:', productForm)
-  if (!productForm) return
+    const productForm = this.getProductForm()
+    console.log('[sticky] productForm:', productForm)
+    if (!productForm) return
 
-  const buyButtonsBlock = productForm.closest('.block-buy-buttons')
-  console.log('[sticky] buyButtonsBlock:', buyButtonsBlock)
-  if (!buyButtonsBlock) return
+    const buyButtonsBlock = productForm.closest('.block-buy-buttons')
+    console.log('[sticky] buyButtonsBlock:', buyButtonsBlock)
+    if (!buyButtonsBlock) return
 
-  const footer = this.getFooter()
-  console.log('[sticky] footer:', footer)
-  if (!footer) return
+    const footer = this.getFooter()
+    console.log('[sticky] footer:', footer)
+    if (!footer) return
 
-  console.log('[sticky] observers attached')
+    console.log('[sticky] observers attached')
 
-  this.buyButtonsObserver = new IntersectionObserver((entries) => {
-    const [entry] = entries
-    if (!entry) return
-    console.log('[sticky] buyButtons intersecting:', entry.isIntersecting, 'isStuck:', this.isStuck)
+    this.buyButtonsObserver = new IntersectionObserver((entries) => {
+      const [entry] = entries
+      if (!entry) return
+      console.log('[sticky] buyButtons intersecting:', entry.isIntersecting, 'isStuck:', this.isStuck)
 
-    if (!entry.isIntersecting && !this.isStuck) {
-      const rect = entry.target.getBoundingClientRect()
-      console.log('[sticky] rect.bottom:', rect.bottom, 'rect.top:', rect.top)
-      if (rect.bottom < 0 || rect.top < 0) this.show()
-    } else if (entry.isIntersecting && this.isStuck) {
-      this.hiddenByBottom = false
-      this.hide()
-    }
-  })
+      if (!entry.isIntersecting && !this.isStuck) {
+        const rect = entry.target.getBoundingClientRect()
+        console.log('[sticky] rect.bottom:', rect.bottom, 'rect.top:', rect.top)
+        if (rect.bottom < 0 || rect.top < 0) this.show()
+      } else if (entry.isIntersecting && this.isStuck) {
+        this.hiddenByBottom = false
+        this.hide()
+      }
+    })
 
-  // ...footerObserver unchanged below
+    this.footerObserver = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        if (!entry) return
+
+        if (entry.isIntersecting && this.isStuck) {
+          this.hiddenByBottom = true
+          this.hide()
+        } else if (!entry.isIntersecting && this.hiddenByBottom) {
+          const rect = buyButtonsBlock.getBoundingClientRect()
+          if (rect.bottom < 0 || rect.top < 0) {
+            this.hiddenByBottom = false
+            this.show()
+          }
+        }
+      },
+      { rootMargin: '200px 0px 0px 0px' }
+    )
+
+    this.buyButtonsObserver.observe(buyButtonsBlock)
+    this.footerObserver.observe(footer)
+  }
 
   show() {
     if (this.isElementColliding()) return
+    this.isStuck = true
     this.dataset.stuck = 'true'
   }
 
   hide() {
+    this.isStuck = false
     this.dataset.stuck = 'false'
   }
 
@@ -81,8 +116,7 @@ class StickyAddToCart extends HTMLElement {
 
   handleAddToCartClick(event) {
     event.preventDefault()
-    const form = document.querySelector(`#product-form-${this.dataset.sectionId}`)
-    form?.requestSubmit()
+    this.getProductForm()?.requestSubmit()
   }
 
   // Keeps price/title/image/button state in sync using the same fetched
