@@ -25,9 +25,12 @@
   class="sticky-add-to-cart"
   data-section-id="{{ section.id }}"
   data-product-id="{{ product.id }}"
-  data-avoid-selector="{{ block.settings.avoid_selector }}"
+  data-width="{{ block.settings.sticky_width }}"
+  data-position-selector="{{ block.settings.position_selector }}"
+  data-position-placement="{{ block.settings.position_placement }}"
   data-variant-available="{{ current_variant.available }}"
   data-current-variant-id="{{ current_variant.id }}"
+  data-anchor="bottom"
   data-stuck="false"
   role="region"
   aria-label="{{ 'custom.product.sticky_add_to_cart' | t }}"
@@ -93,28 +96,38 @@
     align-items: center;
     gap: 16px;
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    opacity: 0;
-    transform: translateX(-50%) translateY(calc(100% + 40px));
+    left: 0;
+    right: 0;
+    bottom: var(--sticky-offset, 0px);
     z-index: var(--z-index-toolbar);
+    opacity: 0;
+    transform: translateY(var(--sticky-hide-y, 100%));
+    padding: 16px calc(var(--gutter, 20px));
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    box-shadow: var(--drawer-box-shadow);
+    transition: var(--slide-curve);
+  }
+
+  sticky-add-to-cart[data-anchor='top'] {
+    bottom: auto;
+    top: var(--sticky-offset, 0px);
+  }
+
+  sticky-add-to-cart[data-width='constrained'] {
     width: 600px;
     max-width: calc(100% - 32px);
+    margin: 0 auto;
     border-radius: var(--element-button-radius);
-    box-shadow: var(--drawer-box-shadow);
-    padding: 16px;
-    background: var(--color-secondary);
-    transition: var(--slide-curve);
   }
 
   sticky-add-to-cart[data-stuck='true'] {
     opacity: 1;
-    transform: translateX(-50%) translateY(0%);
+    transform: translateY(0%);
   }
 
   sticky-add-to-cart:not([data-variant-available='true']) {
     opacity: 0;
-    transform: translateX(-50%) translateY(calc(100% + 40px));
     display: none;
   }
 
