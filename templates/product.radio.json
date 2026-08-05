@@ -177,7 +177,9 @@
           "settings": {
             "show_dynamic_checkout": true,
             "surface_pickup_enable": true,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "enable_sticky_add_to_cart": true,
+            "avoid_selector": ""
           },
           "blocks": {}
         }
