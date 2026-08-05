@@ -21,22 +21,8 @@
   endif
 -%}
 
-<sticky-add-to-cart
-  class="sticky-add-to-cart"
-  data-section-id="{{ section.id }}"
-  data-product-id="{{ product.id }}"
-  data-width="{{ block.settings.sticky_width }}"
-  data-position-selector="{{ block.settings.position_selector }}"
-  data-position-placement="{{ block.settings.position_placement }}"
-  data-content-push-selector="{{ block.settings.content_push_selector }}"
-  data-variant-available="{{ current_variant.available }}"
-  data-current-variant-id="{{ current_variant.id }}"
-  data-anchor="bottom"
-  data-stuck="false"
-  role="region"
-  aria-label="{{ 'custom.product.sticky_add_to_cart' | t }}"
->
-  {%- if has_image -%}
+{% capture sticky_content %}
+   {%- if has_image -%}
     <div class="sticky-add-to-cart__image">
       {{
         image_to_show
@@ -84,6 +70,33 @@
     disabled: is_unavailable,
     attributes: 'data-sticky-add-to-cart-button'
   -%}
+{% endcapture %}
+
+<sticky-add-to-cart
+  class="sticky-add-to-cart"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-width="{{ block.settings.sticky_width }}"
+  data-position-selector="{{ block.settings.position_selector }}"
+  data-position-placement="{{ block.settings.position_placement }}"
+  data-content-push-selector="{{ block.settings.content_push_selector }}"
+  data-variant-available="{{ current_variant.available }}"
+  data-current-variant-id="{{ current_variant.id }}"
+  data-anchor="bottom"
+  data-stuck="false"
+  role="region"
+  aria-label="{{ 'custom.product.sticky_add_to_cart' | t }}"
+>
+  {%- render 'layout.stack',
+    slot: sticky_content,
+    horizontal_xs: false,
+    horizontal_lg: true,
+    align_xs: 'stretch',
+    align_lg: 'center',
+    justify: 'space-between',
+    gap: 'sm',
+    classlist: 'sticky-add-to-cart__inner'
+  -%}
 </sticky-add-to-cart>
 
 <script type="module">
@@ -91,10 +104,7 @@
 </script>
 
 {% stylesheet %}
-  sticky-add-to-cart {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+   sticky-add-to-cart {
     position: fixed;
     left: 0;
     right: 0;
@@ -148,5 +158,19 @@
   .sticky-add-to-cart__info {
     flex: 1;
     min-width: 0;
+  }
+
+  .sticky-add-to-cart__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sticky-add-to-cart__price {
+    flex-shrink: 0;
+  }
+
+  .sticky-add-to-cart__button {
+    flex-shrink: 0;
   }
 {% endstylesheet %}
