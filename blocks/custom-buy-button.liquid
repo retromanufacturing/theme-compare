@@ -1,5 +1,8 @@
 {% render 'block.product-buy-buttons', product: closest.product %}
 
+{%- if block.settings.enable_sticky_add_to_cart -%}
+  {% render 'custom.sticky-add-to-cart', product: closest.product %}
+{%- endif -%}
 
 {% schema %}
 {
