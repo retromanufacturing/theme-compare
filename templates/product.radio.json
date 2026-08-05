@@ -182,7 +182,10 @@
             "sticky_width": "full",
             "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
             "position_placement": "below",
-            "content_push_selector": ".main-content"
+            "content_push_selector": ".main-content",
+            "sticky_gap_mobile": 8,
+            "sticky_gap_desktop": 16,
+            "sticky_justify_desktop": "center"
           },
           "blocks": {}
         }
