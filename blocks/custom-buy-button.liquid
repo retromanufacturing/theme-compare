@@ -54,7 +54,7 @@
       "type": "text",
       "id": "position_selector",
       "label": "Position relative to element",
-      "info": "Optional CSS selector, e.g. header-section or #my-element. Leave blank for default bottom-of-screen placement.",
+      "info": "Optional CSS selector(s), comma-separated, e.g. header-section or #my-element. Leave blank for default bottom-of-screen placement.",
       "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
     },
     {
@@ -74,7 +74,45 @@
       "id": "content_push_selector",
       "label": "Push down element",
       "info": "Optional CSS selector for the element that should be pushed down to make room for the bar, when anchored below another element.",
-      "default": ".main-content",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "header",
+      "content": "Sticky bar layout"
+    },
+    {
+      "type": "range",
+      "id": "sticky_gap_mobile",
+      "label": "Gap (mobile)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 8,
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "range",
+      "id": "sticky_gap_desktop",
+      "label": "Gap (desktop)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16,
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "select",
+      "id": "sticky_justify_desktop",
+      "label": "Alignment (desktop)",
+      "options": [
+        { "value": "flex-start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Right" },
+        { "value": "space-between", "label": "Space between" }
+      ],
+      "default": "space-between",
       "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
     }
   ],

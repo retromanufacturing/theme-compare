@@ -1,28 +1,63 @@
 {% doc %}
-  A floating add-to-cart bar that appears once the real buy buttons scroll
-  out of view, and hides again near the footer. Clicking its button submits
-  the real product form (see product-form-{{ section.id }}) rather than
-  duplicating the add-to-cart logic - block.product-buy-buttons.js handles
-  the actual cart request either way.
+  A floating add-to-cart bar that appears once the user has scrolled and
+  the real buy buttons are off-screen, hiding again near the footer.
+  Clicking its button submits the real product form (see
+  product-form-{{ section.id }}) rather than duplicating the add-to-cart
+  logic - block.product-buy-buttons.js handles the actual cart request
+  either way.
+
+  Rendered from custom-buy-button.liquid when
+  block.settings.enable_sticky_add_to_cart is true - requires that block
+  to be present in the section, since it derives section/product context
+  from block scope automatically.
+
+  Layout uses two nested layout.stack calls (image+title, then
+  price+button), matching the pattern used natively in
+  section.flex-pdp.buy-buttons.liquid, so each pair stays horizontal
+  internally while the outer stack switches between column (mobile) and
+  row (desktop).
 {% enddoc %}
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign image_to_show = current_variant.featured_image | default: product.featured_image
 
-  assign has_single_option = false
-  if product.has_only_default_variant != true and product.options.size == 1
-    assign has_single_option = true
-  endif
-
   assign has_image = false
   if image_to_show != blank
     assign has_image = true
   endif
+
+  if current_variant.available
+    assign button_text = 'actions.add_to_cart' | t
+  elsif current_variant == blank
+    assign button_text = 'info.unavailable' | t
+  else
+    assign button_text = 'info.sold_out' | t
+  endif
+
+  assign is_unavailable = false
+  unless current_variant.available
+    assign is_unavailable = true
+  endunless
+
+  case block.settings.sticky_justify_desktop
+    when 'flex-start'
+      assign justify_lg = 'start'
+    when 'flex-end'
+      assign justify_lg = 'end'
+    when 'space-between'
+      assign justify_lg = 'space-between'
+    else
+      assign justify_lg = 'center'
+  endcase
+
+  assign stack_style = '--layout-stack-gap-size-none: '
+  assign stack_style = stack_style | append: block.settings.sticky_gap_mobile | append: 'px; --layout-stack-gap-size-xs: '
+  assign stack_style = stack_style | append: block.settings.sticky_gap_desktop | append: 'px;'
 -%}
 
-{% capture sticky_content %}
-   {%- if has_image -%}
+{%- capture top_row -%}
+  {%- if has_image -%}
     <div class="sticky-add-to-cart__image">
       {{
         image_to_show
@@ -33,36 +68,19 @@
     </div>
   {%- endif -%}
 
-  <div
-    class="sticky-add-to-cart__info"
-    data-has-image="{{ has_image }}"
-    data-singleton="{{ product.has_only_default_variant }}"
-    data-single-option="{{ has_single_option }}"
-  >
+  <div class="sticky-add-to-cart__info">
     <p class="sticky-add-to-cart__title">{{ product.title | escape }}</p>
     {%- unless product.has_only_default_variant -%}
       <div class="sticky-add-to-cart__variant">{{ current_variant.title | escape }}</div>
     {%- endunless -%}
   </div>
+{%- endcapture -%}
 
+{%- capture bottom_row -%}
   <div class="sticky-add-to-cart__price">
     {%- render 'block.product-price', product: product, use_variant: true -%}
   </div>
 
-  {%- liquid
-    if current_variant.available
-      assign button_text = 'actions.add_to_cart' | t
-    elsif current_variant == blank
-      assign button_text = 'info.unavailable' | t
-    else
-      assign button_text = 'info.sold_out' | t
-    endif
-
-    assign is_unavailable = false
-    unless current_variant.available
-      assign is_unavailable = true
-    endunless
-  -%}
   {%- render 'element.button',
     text: button_text,
     type: 'button',
@@ -70,7 +88,32 @@
     disabled: is_unavailable,
     attributes: 'data-sticky-add-to-cart-button'
   -%}
-{% endcapture %}
+{%- endcapture -%}
+
+{%- capture top_row_stack -%}
+  {%- render 'layout.stack',
+    slot: top_row,
+    horizontal: true,
+    align: 'center',
+    gap: 'sm',
+    classlist: 'sticky-add-to-cart__row sticky-add-to-cart__row--top'
+  -%}
+{%- endcapture -%}
+
+{%- capture bottom_row_stack -%}
+  {%- render 'layout.stack',
+    slot: bottom_row,
+    horizontal: true,
+    align: 'center',
+    gap: 'sm',
+    classlist: 'sticky-add-to-cart__row sticky-add-to-cart__row--bottom'
+  -%}
+{%- endcapture -%}
+
+{%- capture sticky_content -%}
+  {{ top_row_stack }}
+  {{ bottom_row_stack }}
+{%- endcapture -%}
 
 <sticky-add-to-cart
   class="sticky-add-to-cart"
@@ -93,8 +136,11 @@
     horizontal_lg: true,
     align_xs: 'stretch',
     align_lg: 'center',
-    justify: 'space-between',
-    gap: 'sm',
+    justify_xs: 'start',
+    justify_lg: justify_lg,
+    gap_xs: 'none',
+    gap_lg: 'xs',
+    style: stack_style,
     classlist: 'sticky-add-to-cart__inner'
   -%}
 </sticky-add-to-cart>
@@ -104,7 +150,7 @@
 </script>
 
 {% stylesheet %}
-   sticky-add-to-cart {
+  sticky-add-to-cart {
     position: fixed;
     left: 0;
     right: 0;
@@ -139,6 +185,15 @@
   sticky-add-to-cart:not([data-variant-available='true']) {
     opacity: 0;
     display: none;
+  }
+
+  .sticky-add-to-cart__row--top {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sticky-add-to-cart__row--bottom {
+    flex-shrink: 0;
   }
 
   .sticky-add-to-cart__image {
