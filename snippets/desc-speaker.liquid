@@ -29,6 +29,8 @@
   {% endif %}
 {% endcapture %}
 
+{{ liquid_description }}
+
 {%- if liquid_description != blank -%}
   {% render liquid_description, install_details: install_details, ymm: ymm %}
 {%- endif -%}
