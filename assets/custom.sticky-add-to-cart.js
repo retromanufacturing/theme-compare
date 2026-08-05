@@ -71,38 +71,43 @@ class StickyAddToCart extends HTMLElement {
     })
 
     this.footerObserver = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries
-        if (!entry) return
+  (entries) => {
+    const [entry] = entries
+    if (!entry) return
+    console.log('[sticky] footer intersecting:', entry.isIntersecting, 'hiddenByBottom:', this.hiddenByBottom, 'isStuck:', this.isStuck)
 
-        if (entry.isIntersecting && this.isStuck) {
-          this.hiddenByBottom = true
-          this.hide()
-        } else if (!entry.isIntersecting && this.hiddenByBottom) {
-          const rect = buyButtonsBlock.getBoundingClientRect()
-          if (rect.bottom < 0 || rect.top < 0) {
-            this.hiddenByBottom = false
-            this.show()
-          }
-        }
-      },
-      { rootMargin: '200px 0px 0px 0px' }
-    )
+    if (entry.isIntersecting && this.isStuck) {
+      this.hiddenByBottom = true
+      this.hide()
+      console.log('[sticky] footer triggered hide()')
+    } else if (!entry.isIntersecting && this.hiddenByBottom) {
+      const rect = buyButtonsBlock.getBoundingClientRect()
+      console.log('[sticky] footer scrolled away, rect.bottom:', rect.bottom, 'rect.top:', rect.top)
+      if (rect.bottom < 0 || rect.top < 0) {
+        this.hiddenByBottom = false
+        this.show()
+      }
+    }
+  },
+  { rootMargin: '200px 0px 0px 0px' }
+)
 
     this.buyButtonsObserver.observe(buyButtonsBlock)
     this.footerObserver.observe(footer)
   }
 
   show() {
-    if (this.isElementColliding()) return
-    this.isStuck = true
-    this.dataset.stuck = 'true'
-  }
+  if (this.isElementColliding()) return
+  this.isStuck = true
+  this.dataset.stuck = 'true'
+  console.log('[sticky] show() called, data-stuck now true')
+}
 
-  hide() {
-    this.isStuck = false
-    this.dataset.stuck = 'false'
-  }
+hide() {
+  this.isStuck = false
+  this.dataset.stuck = 'false'
+  console.log('[sticky] hide() called, data-stuck now false')
+}
 
   // Generic collision avoidance - checks for a visible instance of
   // whatever selector is configured, instead of hardcoding one element.
