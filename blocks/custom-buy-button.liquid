@@ -51,6 +51,17 @@
       "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
     },
     {
+      "type": "range",
+      "id": "sticky_constrained_width",
+      "label": "Constrained width",
+      "min": 320,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 600,
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart and block.settings.sticky_width == 'constrained' }}"
+    },
+    {
       "type": "text",
       "id": "position_selector",
       "label": "Position relative to element",
