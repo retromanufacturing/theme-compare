@@ -179,14 +179,14 @@
             "surface_pickup_enable": true,
             "show_gift_card_recipient": false,
             "enable_sticky_add_to_cart": true,
-            "sticky_width": "full",
+            "sticky_width": "constrained",
             "sticky_constrained_width": 1200,
             "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
             "position_placement": "below",
             "content_push_selector": ".main-content",
             "sticky_gap_mobile": 8,
             "sticky_gap_desktop": 16,
-            "sticky_justify_desktop": "flex-start"
+            "sticky_justify_desktop": "space-between"
           },
           "blocks": {}
         }
