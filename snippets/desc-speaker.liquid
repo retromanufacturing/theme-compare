@@ -1,9 +1,19 @@
 {% capture ymm %}{{ product.metafields.ymm.year }} {{ product.metafields.ymm.make }} {{ product.metafields.ymm.model }}{% endcapture %}
- 
+
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
+  assign install_location = product.metafields.features.install_location
 -%}
- 
+
+{% capture install_details %}
+  {% if install_location != blank %}
+  <tr>
+    <td>Install Location</td>
+    <td>{{ install_location | metafield_text }}</td>
+  </tr>
+  {% endif %}
+{% endcapture %}
+
 {%- case current_variant.sku -%}
   {%- when 'R-693N' -%}
     {% render 'desc-r693n' %}
