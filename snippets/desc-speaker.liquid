@@ -16,15 +16,15 @@
 
 {%- case current_variant.sku -%}
   {%- when 'R-693N' -%}
-    {% render 'desc-r693n' %}
+    {% render 'desc-r693n', install_details: install_details %}
   {%- when 'R-410N' -%}
     {% render 'desc-r410n', install_details: install_details %}
   {%- when 'R-525N' -%}
-    {% render 'desc-r525n' %}
+    {% render 'desc-r525n', install_details: install_details %}
   {%- when 'D-412UK' -%}
-    {% render 'desc-d412uk' %}
+    {% render 'desc-d412uk', install_details: install_details %}
   {%- when 'R-69UK' -%}
-    {% render 'desc-r69uk' %}
+    {% render 'desc-r69uk', install_details: install_details %}
   {%- when 'R-652N' -%}
     {% render 'desc-r652n' %}
   {%- when 'S-62' -%}
