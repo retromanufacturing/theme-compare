@@ -1,46 +1,47 @@
 import { EVENTS } from 'util.events'
 
 class StickyAddToCart extends HTMLElement {
-  connectedCallback() {
-    this.abortController = new AbortController()
-    this.buttonOffScreen = false
-    this.nearFooter = false
-    this.hasScrolled = false
-
-    this.setupIntersectionObserver()
-    this.watchVariantChanges()
-    this.updatePosition()
-    this.startPositionLoop()
-
-    // Visibility only ever activates after a real scroll (see
-    // updateVisibility) - sidesteps page-load timing races, since by the
-    // time a user has actually scrolled, layout-shifting content (images,
-    // third-party widgets) is realistically settled.
-    window.addEventListener(
-      'scroll',
-      () => {
-        if (!this.hasScrolled) {
-          this.hasScrolled = true
-          this.updateVisibility()
-        }
-      },
-      { signal: this.abortController.signal, passive: true }
-    )
-
-    // Delegated on the persistent outer element, not the button itself,
-    // since the button gets destroyed and recreated on every variant
-    // change (see watchVariantChanges) - a listener attached directly to
-    // it would silently stop working after the first swap.
-    this.addEventListener(
-      'click',
-      (event) => {
-        if (event.target.closest('[data-sticky-add-to-cart-button]')) {
-          this.handleAddToCartClick(event)
-        }
-      },
-      { signal: this.abortController.signal }
-    )
+ connectedCallback() {
+  // Guard against the DOM-move below re-triggering this callback in a
+  // loop - appendChild to a new parent fires disconnectedCallback then
+  // connectedCallback again, so this only actually runs setup once
+  // we're already at the top level.
+  if (this.parentElement !== document.body) {
+    document.body.appendChild(this)
+    return
   }
+
+  this.abortController = new AbortController()
+  this.buttonOffScreen = false
+  this.nearFooter = false
+  this.hasScrolled = false
+
+  this.setupIntersectionObserver()
+  this.watchVariantChanges()
+  this.updatePosition()
+  this.startPositionLoop()
+
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (!this.hasScrolled) {
+        this.hasScrolled = true
+        this.updateVisibility()
+      }
+    },
+    { signal: this.abortController.signal, passive: true }
+  )
+
+  this.addEventListener(
+    'click',
+    (event) => {
+      if (event.target.closest('[data-sticky-add-to-cart-button]')) {
+        this.handleAddToCartClick(event)
+      }
+    },
+    { signal: this.abortController.signal }
+  )
+}
 
   disconnectedCallback() {
     this.abortController.abort()
@@ -50,10 +51,10 @@ class StickyAddToCart extends HTMLElement {
   }
 
   getProductForm() {
-    const section = this.closest('.shopify-section')
-    if (!section) return null
-    return section.querySelector(`#product-form-${this.dataset.sectionId}`)
-  }
+  const section = document.getElementById(`shopify-section-${this.dataset.sectionId}`)
+  if (!section) return null
+  return section.querySelector(`#product-form-${this.dataset.sectionId}`)
+}
 
   getFooter() {
     return document.querySelector('footer-section') ?? document.querySelector('[class*="footer-group"]')
