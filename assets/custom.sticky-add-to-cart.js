@@ -9,6 +9,7 @@ class StickyAddToCart extends HTMLElement {
 
     this.setupIntersectionObserver()
     this.watchVariantChanges()
+    this.watchTargetChanges()
     this.updatePosition()
 
     window.addEventListener('scroll', () => this.requestPositionUpdate(), {
@@ -38,6 +39,7 @@ class StickyAddToCart extends HTMLElement {
     this.abortController.abort()
     this.buyButtonsObserver?.disconnect()
     this.footerObserver?.disconnect()
+    this.mutationObserver?.disconnect()
   }
 
   getProductForm() {
@@ -91,6 +93,20 @@ class StickyAddToCart extends HTMLElement {
   }
 
   // --- Position (anchor above/below a configured element, or default bottom) ---
+
+  // Watches for the target element appearing, disappearing, or changing
+  // size/visibility (e.g. a promo banner being dismissed, or a widget
+  // like GetSiteControl injecting itself after page load) - scroll/resize
+  // alone won't catch these, since neither fires on their own.
+  watchTargetChanges() {
+    this.mutationObserver = new MutationObserver(() => this.requestPositionUpdate())
+    this.mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class', 'style']
+    })
+  }
 
   requestPositionUpdate() {
     if (this.positionTicking) return
