@@ -186,7 +186,7 @@
             "content_push_selector": ".main-content",
             "sticky_gap_mobile": 8,
             "sticky_gap_desktop": 16,
-            "sticky_justify_desktop": "center"
+            "sticky_justify_desktop": "flex-start"
           },
           "blocks": {}
         }
