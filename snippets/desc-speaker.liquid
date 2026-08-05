@@ -1,9 +1,24 @@
-{% capture ymm %}{{ product.metafields.ymm.year }} {{ product.metafields.ymm.make }} {{ product.metafields.ymm.model }}{% endcapture %}
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
   assign install_location = product.metafields.features.install_location
+  assign liquid_description = blank
+
+  case current_variant.sku
+    when 'R-693N'
+      assign liquid_description = 'desc-r693n'
+    when 'R-410N'
+      assign liquid_description = 'desc-r410n'
+    when 'R-525N'
+      assign liquid_description = 'desc-r525n'
+    when 'D-412UK'
+      assign liquid_description = 'desc-d412uk'  
+    when 'R-69UK' 
+      assign liquid_description = 'desc-r69uk' 
+  endcase
 -%}
+
+{% capture ymm %}{{ product.metafields.ymm.year }} {{ product.metafields.ymm.make }} {{ product.metafields.ymm.model }}{% endcapture %}
 
 {% capture install_details %}
   {% if install_location != blank %}
@@ -14,7 +29,11 @@
   {% endif %}
 {% endcapture %}
 
-{%- case current_variant.sku -%}
+{%- if liquid_description != blank -%}
+  {% render liquid_description, install_details: install_details, ymm: ymm %}
+{%- endif -%}
+
+{% comment %} {%- case current_variant.sku -%}
   {%- when 'R-693N' -%}
     {% render 'desc-r693n', install_details: install_details %}
   {%- when 'R-410N' -%}
@@ -65,4 +84,4 @@
     {% render 'desc-rtb8' %}
   {% else %}
     {{ product.description }}
-{%- endcase -%}
+{%- endcase -%} {% endcomment %}
