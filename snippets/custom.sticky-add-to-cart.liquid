@@ -28,6 +28,7 @@
   data-width="{{ block.settings.sticky_width }}"
   data-position-selector="{{ block.settings.position_selector }}"
   data-position-placement="{{ block.settings.position_placement }}"
+  data-content-push-selector="{{ block.settings.content_push_selector }}"
   data-variant-available="{{ current_variant.available }}"
   data-current-variant-id="{{ current_variant.id }}"
   data-anchor="bottom"
@@ -98,7 +99,7 @@
     left: 0;
     right: 0;
     bottom: var(--sticky-offset, 0px);
-    z-index: var(--z-index-toolbar);
+    z-index: 999;
     opacity: 0;
     transform: translateY(var(--sticky-hide-y, 100%));
     padding: 16px calc(var(--gutter, 20px));

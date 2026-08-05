@@ -68,6 +68,14 @@
       ],
       "info": "Only applies when a selector is entered above.",
       "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "text",
+      "id": "content_push_selector",
+      "label": "Push down element",
+      "info": "Optional CSS selector for the element that should be pushed down to make room for the bar, when anchored below another element.",
+      "default": ".page-content--product",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
     }
   ],
   "presets": [{ "name": "t:labels.buy_buttons" }]
