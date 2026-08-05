@@ -29,7 +29,7 @@
       "label": "t:actions.show_recipient_information",
       "info": "t:info.gift_card_products"
     },
-      {
+    {
       "type": "header",
       "content": "Sticky add to cart"
     },
@@ -40,10 +40,33 @@
       "default": false
     },
     {
+      "type": "select",
+      "id": "sticky_width",
+      "label": "Width",
+      "default": "full",
+      "options": [
+        { "value": "full", "label": "Full width" },
+        { "value": "constrained", "label": "Constrained" }
+      ],
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
       "type": "text",
-      "id": "avoid_selector",
-      "label": "Avoid colliding with",
-      "info": "Optional CSS selector for an element the sticky bar should stay hidden behind, if visible (e.g. a chat widget's launcher button).",
+      "id": "position_selector",
+      "label": "Position relative to element",
+      "info": "Optional CSS selector, e.g. header-section or #my-element. Leave blank for default bottom-of-screen placement.",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "select",
+      "id": "position_placement",
+      "label": "Placement",
+      "default": "above",
+      "options": [
+        { "value": "above", "label": "Above element" },
+        { "value": "below", "label": "Below element" }
+      ],
+      "info": "Only applies when a selector is entered above.",
       "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
     }
   ],
