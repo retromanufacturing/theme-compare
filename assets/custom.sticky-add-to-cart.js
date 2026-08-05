@@ -54,6 +54,7 @@ class StickyAddToCart extends HTMLElement {
 
   // --- Visibility (show/hide based on real button + footer proximity) ---
 
+
   setupIntersectionObserver() {
     const productForm = this.getProductForm()
     if (!productForm) return
@@ -64,24 +65,37 @@ class StickyAddToCart extends HTMLElement {
     const footer = this.getFooter()
     if (!footer) return
 
+    // Compute initial state synchronously rather than waiting on the
+    // observers' first async callback - that callback can fire against
+    // stale layout if images/late content are still shifting the page
+    // at the moment observe() runs, which is what caused the bar to
+    // only appear correctly after the user scrolled once.
+    const buttonRect = buyButtonsBlock.getBoundingClientRect()
+    this.buttonOffScreen = buttonRect.bottom < 0 || buttonRect.top > window.innerHeight
+
+    const footerRect = footer.getBoundingClientRect()
+    this.nearFooter = footerRect.top < window.innerHeight + 200
+
+    this.updateVisibility()
+
     // Direction-agnostic: the real button is "off screen" whether it
     // hasn't been scrolled to yet (below the fold) or has been scrolled
     // past (above the viewport) - isIntersecting alone tells us that.
     this.buyButtonsObserver = new IntersectionObserver((entries) => {
-      const [entry] = entries
-      if (!entry) return
-      this.buttonOffScreen = !entry.isIntersecting
-      this.updateVisibility()
+        const [entry] = entries
+        if (!entry) return
+        this.buttonOffScreen = !entry.isIntersecting
+        this.updateVisibility()
     })
 
     this.footerObserver = new IntersectionObserver(
-      (entries) => {
+        (entries) => {
         const [entry] = entries
         if (!entry) return
         this.nearFooter = entry.isIntersecting
         this.updateVisibility()
-      },
-      { rootMargin: '200px 0px 0px 0px' }
+        },
+        { rootMargin: '200px 0px 0px 0px' }
     )
 
     this.buyButtonsObserver.observe(buyButtonsBlock)
