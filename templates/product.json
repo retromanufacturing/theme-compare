@@ -205,7 +205,16 @@
           "settings": {
             "show_dynamic_checkout": true,
             "surface_pickup_enable": true,
-            "show_gift_card_recipient": false
+            "show_gift_card_recipient": false,
+            "enable_sticky_add_to_cart": false,
+            "sticky_width": "full",
+            "sticky_constrained_width": 600,
+            "position_selector": "",
+            "position_placement": "above",
+            "content_push_selector": "",
+            "sticky_gap_mobile": 8,
+            "sticky_gap_desktop": 16,
+            "sticky_justify_desktop": "space-between"
           },
           "blocks": {}
         }
@@ -225,7 +234,7 @@
       ],
       "settings": {
         "image_position": "left",
-        "image_container_size": "medium",
+        "image_container_size": "small",
         "product_image_size": "square",
         "product_zoom_enable": true,
         "mobile_layout": "partial",
