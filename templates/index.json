@@ -1047,19 +1047,6 @@
         "space_around": false
       }
     },
-    "custom_vehicle_search_products_wUQ9pe": {
-      "type": "custom-vehicle-search-products",
-      "name": "Fitment Product Grid",
-      "settings": {
-        "space_above": true,
-        "space_below": true,
-        "heading": "Also fits your {vehicle}",
-        "product_count": 5,
-        "products_per_row": 5,
-        "button_text": "View All",
-        "filter_tags": "radios,"
-      }
-    },
     "advanced_content_T3red9": {
       "type": "advanced-content",
       "blocks": {
@@ -1115,6 +1102,7 @@
         "image_3GTBaF",
         "image_M3tWkx"
       ],
+      "disabled": true,
       "name": "t:labels.custom_content",
       "settings": {
         "full_width": false,
@@ -1212,7 +1200,6 @@
     "promo_grid_CiVJpa",
     "promo_grid_HM9HPg",
     "advanced_content_qVUr8a",
-    "custom_vehicle_search_products_wUQ9pe",
     "advanced_content_T3red9",
     "blog_posts_xYaJ84",
     "apps_ihxT4i",
