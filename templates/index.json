@@ -66,12 +66,29 @@
         "hero_hdNpGG": {
           "type": "hero",
           "settings": {
-            "top_subheading": "",
-            "title": "<p>Overlaid Hero Slide</p>",
-            "title_size": 70,
-            "subheading": "Perfect for rich lifestyle photography.",
-            "link": "",
-            "link_text": "Optional button",
+            "top_subheading": "European Heritage. Modern Audio.",
+            "title": "<p>DIN Traffic Radio</p>",
+            "title_size": 40,
+            "subheading": "Period-correct styling for BMW, Mercedes-Benz, Porsche, Jaguar, and MG.",
+            "link": "shopify://collections/retrosound-traffic-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Collection-Traffic_9e2e2bb1-f68d-4233-92ce-100c37423b01.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_8Dtwra": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Single DIN Radio",
+            "title": "<p>MONZA Radio</p>",
+            "title_size": 60,
+            "subheading": "Designed for classic European interiors with a clean, period-correct look.",
+            "link": "shopify://collections/retrosound-monza-radio",
+            "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
             "button_color_scheme": "",
@@ -82,7 +99,8 @@
         }
       },
       "block_order": [
-        "hero_hdNpGG"
+        "hero_hdNpGG",
+        "hero_8Dtwra"
       ],
       "name": "t:labels.hero_optional_slides",
       "settings": {
