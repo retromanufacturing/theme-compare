@@ -638,7 +638,7 @@
         "gutter_size": 20,
         "space_above": true,
         "space_below": true,
-        "hide_block_images": true,
+        "hide_block_images": false,
         "enable_title": false
       }
     },
