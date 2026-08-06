@@ -106,7 +106,7 @@
         "type_navigation_font_size": "sm",
         "type_navigation_capitalize": false,
         "hover_menu": true,
-        "main_menu_alignment": "left-center",
+        "main_menu_alignment": "left",
         "mega_products": true,
         "header_sticky": true,
         "header_footer_menu": false,
