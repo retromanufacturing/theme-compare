@@ -600,6 +600,144 @@
         "height_mobile": 250
       }
     },
+    "promo_grid_rxtqXR": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner_eGmNTh": {
+          "type": "banner",
+          "settings": {
+            "heading": "Popular Categories",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
+        "advanced_bkYPbG": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Radios",
+            "textarea": "RetroSound® radios are modular units that allow you to select the radio face, knobs, and trim that are most period-correct for your classic vehicle",
+            "cta_text1": "Shop Radios",
+            "cta_link1": "https://www.retromanufacturing.com/pages/radios",
+            "cta_text2": "Build Your Own",
+            "cta_link2": "shopify://products/retroradio-build-your-own-radio",
+            "image": "shopify://shop_images/700x525-radio-rr-10-blackjpg.jpg",
+            "video_url": "",
+            "width": "66",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_6YcLBU": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "RetroSound Speakers",
+            "textarea": "RetroSound’s full line of premium and standard replacement speakers, designed specifically for classic cars and trucks",
+            "cta_text1": "Shop Speakers",
+            "cta_link1": "https://www.retromanufacturing.com/collections/speakers",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Speaker-2-vert.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_LLMAy7": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Amps & Subwoofers",
+            "textarea": "RetroSound offers high-performance amplifiers and subwoofers designed to deliver exceptional audio clarity and deep bass for vintage and modern vehicles",
+            "cta_text1": "Shop Amps & Subs",
+            "cta_link1": "shopify://collections/amps-subwoofers",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Blog-amplifier-1080-title.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_XWpTYU": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Kick Panels",
+            "textarea": "",
+            "cta_text1": "Shop Kick Panels",
+            "cta_link1": "shopify://collections/kick-panels-speaker-modules",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/RPOD4A-Install.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_EnPEPW": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Antennas",
+            "textarea": "",
+            "cta_text1": "Shop Antennas",
+            "cta_link1": "shopify://collections/antennas",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_n8ECNT": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Announce your promotion",
+            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "cta_text1": "Shop This",
+            "cta_link1": "",
+            "cta_text2": "Shop All",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        }
+      },
+      "block_order": [
+        "banner_eGmNTh",
+        "advanced_bkYPbG",
+        "advanced_6YcLBU",
+        "advanced_LLMAy7",
+        "advanced_XWpTYU",
+        "advanced_EnPEPW",
+        "advanced_n8ECNT"
+      ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}",
+        ".promo-grid__container {border-radius: 10px;}"
+      ],
+      "name": "t:labels.promotional_grid",
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hide_block_images": false,
+        "enable_title": false
+      }
+    },
     "promo_grid_HdN3gi": {
       "type": "promo-grid",
       "blocks": {
@@ -1292,6 +1430,7 @@
     "advanced_content_imVDqN",
     "rich_text_AntMzN",
     "hero_video_iJjrRf",
+    "promo_grid_rxtqXR",
     "promo_grid_HdN3gi",
     "promo_grid_8d7c9D",
     "promo_grid_CiVJpa",
