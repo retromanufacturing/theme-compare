@@ -99,6 +99,24 @@
             "overlay_opacity": 0
           }
         },
+        "hero_M8yUyT": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Available Now",
+            "title": "<p>RetroSound Radio Control App</p>",
+            "title_size": 60,
+            "subheading": "Configure and control your RetroSound radio directly from your smartphone. Available for radios equipped with Motor 4HD.",
+            "link": "shopify://pages/retrosound-radio-control-app-information",
+            "link_text": "Learn More",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Template-App-green_45d0c1c8-f390-4466-9ad7-5c7cca899630.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-Template-App-Green_6b867ad9-586d-44c9-816d-dad3ee66675d.jpg",
+            "overlay_opacity": 0
+          }
+        },
         "hero_j9iNeD": {
           "type": "hero",
           "settings": {
@@ -151,6 +169,7 @@
       "block_order": [
         "hero_hdNpGG",
         "hero_8Dtwra",
+        "hero_M8yUyT",
         "hero_j9iNeD",
         "hero_jn8WPL",
         "hero_jm96ec"
