@@ -13,7 +13,6 @@
   "sections": {
     "vehicle-search": {
       "type": "vehicle-search",
-      "disabled": true,
       "settings": {
         "ymm_title": "FIND YOUR VEHICLE",
         "ymm_btn_open": "Click Here",
