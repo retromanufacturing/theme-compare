@@ -110,7 +110,7 @@
         "mega_products": true,
         "header_sticky": true,
         "header_footer_menu": false,
-        "sticky_index": false,
+        "sticky_index": true,
         "sticky_collection": false,
         "enable_dropdown_icons": false
       }
