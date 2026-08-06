@@ -548,17 +548,50 @@
             "text_align": "vertical-bottom horizontal-left"
           }
         },
-        "advanced_6YcLBU": {
+        "advanced_LLMAy7": {
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "RetroSound Speakers",
-            "textarea": "RetroSound’s full line of premium and standard replacement speakers, designed specifically for classic cars and trucks",
-            "cta_text1": "Shop Speakers",
-            "cta_link1": "https://www.retromanufacturing.com/collections/speakers",
+            "heading": "Amps & Subwoofers",
+            "textarea": "RetroSound offers high-performance amplifiers and subwoofers designed to deliver exceptional audio clarity and deep bass for vintage and modern vehicles",
+            "cta_text1": "Shop Amps & Subs",
+            "cta_link1": "shopify://collections/amps-subwoofers",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify://shop_images/Speaker-2-vert.jpg",
+            "image": "shopify://shop_images/Blog-amplifier-1080-title.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_XWpTYU": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Kick Panels",
+            "textarea": "",
+            "cta_text1": "Shop Kick Panels",
+            "cta_link1": "shopify://collections/kick-panels-speaker-modules",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/RPOD4A-Install.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_EnPEPW": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Antennas",
+            "textarea": "",
+            "cta_text1": "Shop Antennas",
+            "cta_link1": "shopify://collections/antennas",
+            "cta_text2": "",
+            "cta_link2": "",
             "video_url": "",
             "width": "25",
             "height": 500,
@@ -582,53 +615,19 @@
             "text_align": "vertical-bottom horizontal-left"
           }
         },
-        "advanced_LLMAy7": {
+        "advanced_6YcLBU": {
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Amps & Subwoofers",
-            "textarea": "RetroSound offers high-performance amplifiers and subwoofers designed to deliver exceptional audio clarity and deep bass for vintage and modern vehicles",
-            "cta_text1": "Shop Amps & Subs",
-            "cta_link1": "shopify://collections/amps-subwoofers",
+            "heading": "RetroSound Speakers",
+            "textarea": "RetroSound’s full line of premium and standard replacement speakers, designed specifically for classic cars and trucks",
+            "cta_text1": "Shop Speakers",
+            "cta_link1": "https://www.retromanufacturing.com/collections/speakers",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify://shop_images/Blog-amplifier-1080-title.jpg",
+            "image": "shopify://shop_images/Speaker-2-vert.jpg",
             "video_url": "",
-            "width": "33",
-            "height": 500,
-            "text_align": "vertical-bottom horizontal-left"
-          }
-        },
-        "advanced_XWpTYU": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Kick Panels",
-            "textarea": "",
-            "cta_text1": "Shop Kick Panels",
-            "cta_link1": "shopify://collections/kick-panels-speaker-modules",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify://shop_images/RPOD4A-Install.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 500,
-            "text_align": "vertical-bottom horizontal-left"
-          }
-        },
-        "advanced_EnPEPW": {
-          "type": "advanced",
-          "disabled": true,
-          "settings": {
-            "subheading": "",
-            "heading": "Antennas",
-            "textarea": "",
-            "cta_text1": "Shop Antennas",
-            "cta_link1": "shopify://collections/antennas",
-            "cta_text2": "",
-            "cta_link2": "",
-            "video_url": "",
-            "width": "33",
+            "width": "50",
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
           }
@@ -637,11 +636,11 @@
       "block_order": [
         "banner_eGmNTh",
         "advanced_bkYPbG",
-        "advanced_6YcLBU",
-        "advanced_Jbyqi4",
         "advanced_LLMAy7",
         "advanced_XWpTYU",
-        "advanced_EnPEPW"
+        "advanced_EnPEPW",
+        "advanced_Jbyqi4",
+        "advanced_6YcLBU"
       ],
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
