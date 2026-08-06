@@ -631,7 +631,7 @@
       ],
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
-        ".promo-grid__container {border-radius: 10px;}"
+        ".promo-grid__container {border-radius: 10px; }"
       ],
       "name": "t:labels.promotional_grid",
       "settings": {
