@@ -77,6 +77,7 @@
             "button_color_scheme": "scheme-5de09869-dc28-4e80-857b-b5ab567f4613",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/1296x450-Collection-Traffic_9e2e2bb1-f68d-4233-92ce-100c37423b01.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-Traffic_261bbd63-1080-4aa0-9044-c25433231666.jpg",
             "overlay_opacity": 0
           }
         },
@@ -94,6 +95,7 @@
             "button_color_scheme": "",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/1296x450-Template-Monza.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-Monza_b00340dc-f0a3-442d-ac47-e9e1f863b4fd.jpg",
             "overlay_opacity": 0
           }
         }
