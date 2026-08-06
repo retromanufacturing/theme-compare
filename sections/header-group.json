@@ -83,6 +83,38 @@
         "show_currency_flags": true
       }
     },
+    "vehicle-search": {
+      "type": "vehicle-search",
+      "disabled": true,
+      "settings": {
+        "ymm_title": "FIND YOUR VEHICLE",
+        "ymm_btn_open": "Click Here",
+        "ymm_btn_close": "Close",
+        "ymm_btn_search": "Search",
+        "ymm_btn_reset": "Reset",
+        "not_listed": "DON'T SEE YOUR VEHICLE LISTED",
+        "not_listed_link": "shopify://pages/send-us-your-dimensions",
+        "widget_style": "icon",
+        "disable_bar_no_homepage": false,
+        "font_size_title": 10,
+        "border_width": 0,
+        "underline_width": 0,
+        "background_color": "#000000",
+        "text_color": "#ffffff",
+        "title_color": "#ffffff",
+        "link_color": "#fc3f3f",
+        "link_hover_color": "#a41b1a",
+        "image": "shopify://shop_images/EuropaYMM.png",
+        "background_color_top": "#000000",
+        "background_color_inner": "#000000",
+        "background_color_icon": "#000000",
+        "btn_color": "#810f12",
+        "btn_text_color": "#ffffff",
+        "search_color": "#78726d",
+        "reset_color": "#810f12",
+        "border_color": "#ffffff"
+      }
+    },
     "header": {
       "type": "header",
       "blocks": {
@@ -119,6 +151,7 @@
   "order": [
     "custom-toolbar",
     "toolbar",
+    "vehicle-search",
     "header"
   ]
 }
