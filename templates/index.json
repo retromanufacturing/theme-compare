@@ -525,7 +525,7 @@
             "subheading": "",
             "heading": "Radios",
             "textarea": "Text for radios goes here",
-            "cta_text1": "Shop All Radios",
+            "cta_text1": "Shop Radios",
             "cta_link1": "https://www.retromanufacturing.com/pages/radios",
             "cta_text2": "Build Your Own",
             "cta_link2": "shopify://products/retroradio-build-your-own-radio",
@@ -557,16 +557,17 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Announce your promotion",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "heading": "Amps & Subwoofers",
+            "textarea": "RetroSound offers high-performance amplifiers and subwoofers designed to deliver exceptional audio clarity and deep bass for vintage and modern vehicles.",
             "cta_text1": "Shop This",
             "cta_link1": "",
             "cta_text2": "Shop All",
             "cta_link2": "",
+            "image": "shopify://shop_images/Blog-amplifier-1080-title.jpg",
             "video_url": "",
             "width": "33",
             "height": 500,
-            "text_align": "vertical-center horizontal-center"
+            "text_align": "vertical-bottom horizontal-left"
           }
         },
         "advanced_CGLJyr": {
