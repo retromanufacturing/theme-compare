@@ -98,11 +98,62 @@
             "image_mobile": "shopify://shop_images/780x780-Port-Monza_b00340dc-f0a3-442d-ac47-e9e1f863b4fd.jpg",
             "overlay_opacity": 0
           }
+        },
+        "hero_j9iNeD": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 70,
+            "subheading": "And optional subtext",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_jn8WPL": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 70,
+            "subheading": "And optional subtext",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_jm96ec": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 70,
+            "subheading": "And optional subtext",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
         "hero_hdNpGG",
-        "hero_8Dtwra"
+        "hero_8Dtwra",
+        "hero_j9iNeD",
+        "hero_jn8WPL",
+        "hero_jm96ec"
       ],
       "custom_css": [
         ".hero__subtitle {font-size: 1em;}",
