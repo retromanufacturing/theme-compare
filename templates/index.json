@@ -60,6 +60,40 @@
         "autoplay_speed": 7
       }
     },
+    "slideshow_aJbzUm": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_hdNpGG": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 70,
+            "subheading": "Perfect for rich lifestyle photography.",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/2500x_title_app_slogan.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_hdNpGG"
+      ],
+      "name": "t:labels.hero_optional_slides",
+      "settings": {
+        "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
     "slideshow_custom_gcH6jR": {
       "type": "slideshow-custom",
       "blocks": {
@@ -276,6 +310,7 @@
         "hero_F4xbgK",
         "hero_izxxgF"
       ],
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "full_width": true,
@@ -1066,6 +1101,7 @@
   },
   "order": [
     "slideshow_split_WWnCkd",
+    "slideshow_aJbzUm",
     "slideshow_custom_gcH6jR",
     "advanced_content_imVDqN",
     "rich_text_AntMzN",
