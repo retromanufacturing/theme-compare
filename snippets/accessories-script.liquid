@@ -90,8 +90,11 @@
    font-size: 14px !important;
 }
 
+/* CHANGED: was margin-bottom: 10px !important - that was vertical-stack
+   spacing between items; horizontal layout uses gap on the container
+   instead, so this becomes 0 to avoid doubling up spacing */
 .accessories-item  {  
-  margin-bottom: 10px !important;
+  margin-bottom: 0 !important;
 } 
 
 .accessories-item img {  
@@ -112,6 +115,31 @@
    font-weight: bold;
    font-size: 14px !important;
 } 
+
+/* NEW: horizontal scroll strip */
+#accessories-items {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.accessories-item {
+  flex: 0 0 200px;
+}
+
+.accessories-item .accessories-left,
+.accessories-item .accessories-right {
+  float: none;
+  width: 100%;
+}
+
+.accessories-item .accessories-img-wrapper {
+  text-align: center;
+}
+/* END NEW */
 
 @media screen and (min-width: 769px){
   .collapsible-content__inner  #w3-product-accessories {
