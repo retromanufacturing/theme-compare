@@ -624,7 +624,7 @@
             "cta_link1": "https://www.retromanufacturing.com/pages/radios",
             "cta_text2": "Build Your Own",
             "cta_link2": "shopify://products/retroradio-build-your-own-radio",
-            "image": "shopify://shop_images/700x525-radio-rr-10-blackjpg.jpg",
+            "image": "shopify://shop_images/1440x900-rr-title.jpg",
             "video_url": "",
             "width": "66",
             "height": 500,
@@ -697,22 +697,6 @@
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
           }
-        },
-        "advanced_n8ECNT": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Announce your promotion",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
-            "cta_text1": "Shop This",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
-            "cta_link2": "",
-            "video_url": "",
-            "width": "33",
-            "height": 500,
-            "text_align": "vertical-bottom horizontal-left"
-          }
         }
       },
       "block_order": [
@@ -721,8 +705,7 @@
         "advanced_6YcLBU",
         "advanced_LLMAy7",
         "advanced_XWpTYU",
-        "advanced_EnPEPW",
-        "advanced_n8ECNT"
+        "advanced_EnPEPW"
       ],
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
