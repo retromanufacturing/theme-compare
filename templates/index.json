@@ -845,6 +845,7 @@
         "advanced_dd978C",
         "advanced_m8UKnB"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}"
