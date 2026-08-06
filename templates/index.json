@@ -138,32 +138,36 @@
         "hero_jn8WPL": {
           "type": "hero",
           "settings": {
-            "top_subheading": "",
-            "title": "<p>Overlaid Hero Slide</p>",
-            "title_size": 70,
-            "subheading": "And optional subtext",
-            "link": "",
-            "link_text": "Optional button",
+            "top_subheading": "LIMITED TIME",
+            "title": "<p>Free Vintage Overlay Set</p>",
+            "title_size": 46,
+            "subheading": "With the purchase of any RetroRadio®",
+            "link": "shopify://collections/retroradio",
+            "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
             "button_color_scheme": "4",
             "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
             "overlay_opacity": 0
           }
         },
         "hero_jm96ec": {
           "type": "hero",
           "settings": {
-            "top_subheading": "",
-            "title": "<p>Overlaid Hero Slide</p>",
-            "title_size": 70,
-            "subheading": "And optional subtext",
-            "link": "",
-            "link_text": "Optional button",
+            "top_subheading": "Bundle & SAVE!",
+            "title": "<p>SUB8100 + Quadraphonic</p>",
+            "title_size": 60,
+            "subheading": "Experience a Richer, More Immersive Sound in Your Classic Car with this Plug-In Upgrade!",
+            "link": "shopify://products/retrosound-subwoofer-amplifier",
+            "link_text": "Shop Now",
             "link_2": "",
             "link_text_2": "",
             "button_color_scheme": "4",
             "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Sub8100-Quadrophonic-combo.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-sub8100-quadrophinc-combo_62e1b912-c106-4f12-9586-04cfecbb15e3.jpg",
             "overlay_opacity": 0
           }
         }
