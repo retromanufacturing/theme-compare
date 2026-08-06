@@ -104,6 +104,11 @@
         "hero_hdNpGG",
         "hero_8Dtwra"
       ],
+      "custom_css": [
+        ".hero__subtitle {font-size: 1em;}",
+        ".hero__title {font-size: 38px;}",
+        "@media only screen and (max-width: 768px) {.hero__title {font-size: 25px; font-weight: 500; }}"
+      ],
       "name": "t:labels.hero_optional_slides",
       "settings": {
         "full_width": true,
