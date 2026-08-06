@@ -170,6 +170,96 @@
             "image_mobile": "shopify://shop_images/780x780-Port-sub8100-quadrophinc-combo_62e1b912-c106-4f12-9586-04cfecbb15e3.jpg",
             "overlay_opacity": 0
           }
+        },
+        "hero_VFwPyb": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "EXCITING NEWS...",
+            "title": "<p>All Radio Models have Bluetooth®!</p>",
+            "title_size": 40,
+            "subheading": "We've updated our Radio Motors. All models now come with Bluetooth 5.0 built-in.",
+            "link": "https://www.retromanufacturing.com/collections/replacement-parts/products/retrosound-radio-motor",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-general-bluetooth.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-general-bluetooth.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_GKpmiP": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "FORD OFFICIALLY LICENSED",
+            "title": "<p>Dallas Radio</p>",
+            "title_size": 60,
+            "subheading": "For 1985-1986 F-Series Trucks, Broncos & Mustangs.",
+            "link": "https://www.retromanufacturing.com/collections/retrosound-dallas-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-dallas-86-bronco_3087df80-1d9a-4608-9f72-84248c8ee8a6.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-86-bronco_47645fa5-0a78-4ddf-8dfa-12485d9cdf07.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_rdeLkh": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "New Release",
+            "title": "<p>Upgrade Your Ride with the USB/USB-C Extension Harness</p>",
+            "title_size": 60,
+            "subheading": "Available in both black and chrome finishes",
+            "link": "https://www.retromanufacturing.com/products/usb-auxiliary-extension-cable",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-new-USB-c.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-new-usb-c.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_TfmGHc": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "SINGLE DIN",
+            "title": "<p>RetroSound Grand Prix</p>",
+            "title_size": 60,
+            "subheading": "1980's Style Single-DIN Radio",
+            "link": "https://www.retromanufacturing.com/collections/retrosound-grand-prix-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-grand-prix-67-mercedes-560_f94455e6-414b-4213-9dae-fd731a09d549.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-grand-prix-67-mercedes-560_38780cc9-d4cc-4c18-9c44-c45fdef78d03.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_UVyEkB": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Seat Belts For Your Classic",
+            "title": "<p>RetroBelt®</p>",
+            "title_size": 60,
+            "subheading": "2-point, 3-point, and 4-point seat belts for classic cars and trucks",
+            "link": "https://www.retrobelt.com/",
+            "link_text": "Shop Seat Belts",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-grand-prix-67-mercedes-560_f94455e6-414b-4213-9dae-fd731a09d549.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-grand-prix-67-mercedes-560_38780cc9-d4cc-4c18-9c44-c45fdef78d03.jpg",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
@@ -178,7 +268,12 @@
         "hero_M8yUyT",
         "hero_j9iNeD",
         "hero_jn8WPL",
-        "hero_jm96ec"
+        "hero_jm96ec",
+        "hero_VFwPyb",
+        "hero_GKpmiP",
+        "hero_rdeLkh",
+        "hero_TfmGHc",
+        "hero_UVyEkB"
       ],
       "custom_css": [
         ".hero__subtitle {font-size: 1em;}",
@@ -631,7 +726,7 @@
       ],
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
-        ".promo-grid__container {border-radius: 10px; }"
+        ".promo-grid__container {border-radius: 10px;}"
       ],
       "name": "t:labels.promotional_grid",
       "settings": {
