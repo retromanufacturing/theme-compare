@@ -601,6 +601,7 @@
         },
         "advanced_EnPEPW": {
           "type": "advanced",
+          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "Antennas",
@@ -614,6 +615,23 @@
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
           }
+        },
+        "advanced_Jbyqi4": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Seat Belts",
+            "textarea": "",
+            "cta_text1": "Shop Antennas",
+            "cta_link1": "shopify://collections/antennas",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/780x780-retrobelt-site-link.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
         }
       },
       "block_order": [
@@ -622,7 +640,8 @@
         "advanced_6YcLBU",
         "advanced_LLMAy7",
         "advanced_XWpTYU",
-        "advanced_EnPEPW"
+        "advanced_EnPEPW",
+        "advanced_Jbyqi4"
       ],
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
@@ -828,22 +847,6 @@
             "text_align": "vertical-bottom horizontal-left"
           }
         },
-        "advanced_dd978C": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Antennas",
-            "textarea": "",
-            "cta_text1": "Shop Antennas",
-            "cta_link1": "shopify://collections/antennas",
-            "cta_text2": "",
-            "cta_link2": "",
-            "video_url": "",
-            "width": "33",
-            "height": 500,
-            "text_align": "vertical-bottom horizontal-left"
-          }
-        },
         "advanced_m8UKnB": {
           "type": "advanced",
           "settings": {
@@ -859,6 +862,23 @@
             "height": 500,
             "text_align": "vertical-bottom horizontal-left"
           }
+        },
+        "advanced_dd978C": {
+          "type": "advanced",
+          "disabled": true,
+          "settings": {
+            "subheading": "",
+            "heading": "Antennas",
+            "textarea": "",
+            "cta_text1": "Shop Antennas",
+            "cta_link1": "shopify://collections/antennas",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
         }
       },
       "block_order": [
@@ -867,8 +887,8 @@
         "advanced_PQKTTk",
         "advanced_CzagU7",
         "advanced_CGLJyr",
-        "advanced_dd978C",
-        "advanced_m8UKnB"
+        "advanced_m8UKnB",
+        "advanced_dd978C"
       ],
       "disabled": true,
       "custom_css": [
