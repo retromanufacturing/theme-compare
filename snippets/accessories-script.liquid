@@ -18,45 +18,30 @@
   }
 {%- endcapture -%}
 
+{%- liquid
+  assign script_id = 'accessories-data'
+  assign item_selector = '.accessories-item'
+  assign id_selector = '.accessory-variant-select'
+  assign id_attribute = 'name'
+-%}
+
+<script type="application/json" id="{{ script_id }}">
+  {{ accessory_ids_by_variant }}
+</script>
+
+<accessory-visibility
+  data-script-id="{{ script_id }}"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-current-variant-id="{{ current_variant.id }}"
+  data-item-selector="{{ item_selector }}"
+  data-id-selector="{{ id_selector }}"
+  data-id-attribute="{{ id_attribute }}"
+  data-ready-callback="accessoriesDoneLoadingCallback"
+></accessory-visibility>
+
 <script type="module">
-  import { EVENTS } from '{{ 'util.events.js' | asset_url }}';
-
-  // Every variant's allowed accessory IDs, built server-side above
-  const accessoryIdsByVariant = {{ accessory_ids_by_variant }};
-
-  // Every accessory ID that's restricted to at least one variant.
-  // If an accessory isn't in this set, it's not part of the motor
-  // system at all and should never be hidden.
-  const allRestrictedIds = [...new Set(Object.values(accessoryIdsByVariant).flat())];
-
-  // The allowed list for whichever variant is currently selected.
-  // Reassigned on variant change below.
-  let motorAccessoryIds = accessoryIdsByVariant[{{ current_variant.id }}] || [];
-
-  // Walks every accessory currently in the DOM and hides/shows it based on
-  // motorAccessoryIds. Shared by page load and variant change so the
-  // hide/show rule only lives in one place.
-  function updateAccessoryVisibility() {
-    $('.accessories-item').each(function () {
-      const productId = Number($(this).find('.accessory-variant-select').attr('name'));
-      const isRestricted = allRestrictedIds.includes(productId);
-      const isForCurrentMotor = motorAccessoryIds.includes(productId);
-      $(this).toggleClass('hide', isRestricted && !isForCurrentMotor);
-    });
-  }
-
-  // accessories.js calls this once, after all accessory items have been
-  // built and added to the page — this covers initial page load.
-  window.accessoriesDoneLoadingCallback = updateAccessoryVisibility;
-
-  // Fires whenever the shopper selects a different variant. Re-derives the
-  // allowed list for the new variant, then re-runs the same visibility
-  // check against the accessory items already in the DOM.
-  document.addEventListener(`${EVENTS.variantChange}:{{ section.id }}:{{ product.id }}`, (event) => {
-    if (!event.detail.variant || event.detail.loading) return;
-    motorAccessoryIds = accessoryIdsByVariant[event.detail.variant.id] || [];
-    updateAccessoryVisibility();
-  });
+ import 'custom.accessory-visibility';
 
   if (Shopify.designMode != true) {
     accessoriesJS($);
