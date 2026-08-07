@@ -18,7 +18,10 @@
       "name": "Dimensions Finder",
       "settings": {
         "collection": "find-dimensions-products",
-        "bundle_product_list": [],
+        "bundle_product_list": [
+          "retrosound-new-york-1-5-din-radio",
+          "retrosound-newport-1-5-din-radio"
+        ],
         "tolerance_percent": 5
       }
     }
