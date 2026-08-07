@@ -32,6 +32,14 @@
   endcapture
 -%} 
 
+{% case template.suffix %}
+  {% when 'bundle' %}
+    {{  template.suffix }}
+    
+  {% else %}
+     {{  template.suffix }}
+{% endcase %}
+
 {% render 'custom.section.main-product', slot: blocks, product_media_gallery: gallery %}
 
 {%- render 'accessories-script', current_variant: current_variant -%}
