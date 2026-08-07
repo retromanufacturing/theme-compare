@@ -2,6 +2,7 @@
   assign collection = section.settings.collection
   assign bundle_product_list = section.settings.bundle_product_list
   assign tolerance = section.settings.tolerance_percent
+  assign field_value = 'dimensions.width_height'
 -%}
 
 <dimensions-finder>
@@ -9,6 +10,10 @@ dimensions page
 
 {%  for product in collections[collection].products %}
   <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
+  {% for variant in product.variants %}
+    {% assign dimensions = variant.metafields[field_value].value %}
+    {{ dimensions }}
+  {% endfor %}
 {% endfor %}
 
 {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
