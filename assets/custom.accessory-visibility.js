@@ -7,12 +7,12 @@ class AccessoryVisibility extends HTMLElement {
     this.allRestrictedIds = [...new Set(Object.values(this.lookup).flat())]
     this.allowedIds = this.lookup[this.dataset.currentVariantId] || []
 
-    // Some item sources (like third-party app widgets) inject their DOM
-    // asynchronously after this element has already connected - calling
-    // update() immediately would find nothing yet. If a ready-callback name
-    // is configured, expose update() through that global instead, so the
-    // source can trigger it once its items actually exist. Otherwise (e.g.
-    // server-rendered content already present), just run it now.
+    // The accessories app adds its products to the page a moment after
+    // everything else has loaded. If we checked which ones to hide right
+    // away, they wouldn't exist yet. So if a "ready callback" name is set,
+    // we wait for the app to tell us it's actually finished before checking
+    // anything. If no callback is set, the products are already there from
+    // the start, so we just check right away.
     if (this.dataset.readyCallback) {
       window[this.dataset.readyCallback] = () => this.update()
     } else {

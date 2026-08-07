@@ -1,13 +1,11 @@
 {% comment %}
-  Accessories widget (W3 Product Accessories) with motor-based filtering.
+  Shows extra products a shopper can add to their order (like antennas or
+  knobs), and hides any that don't work with the radio version they picked.
+  Anything not tied to a specific version always stays visible.
 
-  Not every accessory in the widget is motor-specific — only ones referenced
-  by a variant's radio_features metaobject accessories field are restricted.
-  Anything not referenced anywhere always shows.
-
-  accessory_ids_by_variant maps every variant on this product to its list of
-  allowed accessory product IDs, so the browser can re-filter on variant
-  change without a page reload or another server request.
+  The list below matches each version of the radio to which extra products
+  are allowed with it, so the page can update instantly when the shopper
+  switches versions - no reload, no waiting on the server.
 {% endcomment %}
 {%- capture accessory_ids_by_variant -%}
   {
