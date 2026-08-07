@@ -34,10 +34,12 @@
 
 {% case template.suffix %}
   {% when 'bundle' %}
-    {{  template.suffix }}
+    {% assign item_selector = '[data-product-id]' %}
+    {{  item_selector }}
     
   {% else %}
-     {{  template.suffix }}
+     {% assign item_selector = '.accessories-item' %}
+        {{  item_selector }}
 {% endcase %}
 
 {% render 'custom.section.main-product', slot: blocks, product_media_gallery: gallery %}
