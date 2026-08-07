@@ -7,7 +7,7 @@
 <dimensions-finder>
 dimensions page
 
-{%  for product in collections[collections].products %}
+{%  for product in collections[collection].products %}
   {{ product.title }}--{{ product.selected_or_first_available_variant.sku }}
 {% endfor %}
 
