@@ -30,17 +30,16 @@
   capture blocks
     content_for 'blocks'
   endcapture
+
+  case template.suffix
+    when 'bundle'
+      assign item_selector = '[data-product-id]'    
+    else
+      assign item_selector = '.accessories-item' 
+  endcase
 -%} 
 
-{% case template.suffix %}
-  {% when 'bundle' %}
-    {% assign item_selector = '[data-product-id]' %}
-    {{  item_selector }}
-    
-  {% else %}
-     {% assign item_selector = '.accessories-item' %}
-        {{  item_selector }}
-{% endcase %}
+{{  item_selector }}
 
 {% render 'custom.section.main-product', slot: blocks, product_media_gallery: gallery %}
 
