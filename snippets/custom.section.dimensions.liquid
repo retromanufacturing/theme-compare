@@ -6,5 +6,10 @@
 
 <dimensions-finder>
 dimensions page
+
+{%  for product in collections[collections].products %}
+  {{ product.title }}--{{ product.selected_or_first_available_variant.sku }}
+{% endfor %}
+
 {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
 </dimensions-finder>
