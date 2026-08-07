@@ -10,8 +10,6 @@
 -%}
 
 <dimensions-finder>
-  dimensions page
-
   {% for product in collections[collection].products %}
     <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
     {% for variant in product.variants %}
@@ -23,7 +21,6 @@
           assign height = dimensions.last
         endif
       -%}
-      {{  }}
       {{ dimensions }}--{{width }}--{{ height }}
     {% endfor %}
   {% endfor %}
