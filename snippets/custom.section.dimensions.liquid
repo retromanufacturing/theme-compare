@@ -1,10 +1,10 @@
 {%- liquid
   assign collection = section.settings.collection
   assign bundle_product_list = section.settings.bundle_product_list
-  assign range = section.settings.range
+  assign tolerance = section.settings.tolerance_percent
 -%}
 
 <dimensions-finder>
 dimensions page
-{{ collection }}--{{ bundle_product_list }}--{{ range }}
+{{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
 </dimensions-finder>
