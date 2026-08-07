@@ -12,43 +12,9 @@
     "main": {
       "type": "main-page",
       "settings": {}
-    },
-    "featured_collection_LMNRxg": {
-      "type": "featured-collection",
-      "name": "t:labels.featured_collection",
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "retrosound-new-product-releases",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "blog_posts_mk796T": {
-      "type": "blog-posts",
-      "custom_css": [
-        "@media only screen and (min-width: 769px) {.blog-layout__main + .blog-layout__sidebar {padding-left: 20px; margin-left: 20px; }}",
-        "@media only screen and (min-width: 769px) {.blog-layout__sidebar {flex: 0 0 calc(45% - 90px); }}"
-      ],
-      "settings": {
-        "title": "News and Information",
-        "blog": "news",
-        "blog_show_tags": false,
-        "blog_show_date": false,
-        "blog_show_comments": false,
-        "blog_show_author": false,
-        "blog_image_size": "natural",
-        "divider": false
-      }
     }
   },
   "order": [
-    "main",
-    "featured_collection_LMNRxg",
-    "blog_posts_mk796T"
+    "main"
   ]
 }
