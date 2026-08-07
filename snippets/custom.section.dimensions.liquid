@@ -17,9 +17,14 @@
     {% for variant in product.variants %}
       {%- liquid
         assign dimensions = variant.metafields[namespace][key].value 
+
+        if dimensions.size == 2
+          assign width = dimensions.first
+          assign height = dimensions.last
+        endif
       -%}
       {{  }}
-      {{ dimensions }}
+      {{ dimensions }}--{{width }}--{{ height }}
     {% endfor %}
   {% endfor %}
 </dimensions-finder>
