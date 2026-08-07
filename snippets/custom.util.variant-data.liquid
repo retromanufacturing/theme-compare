@@ -1,0 +1,25 @@
+{%- liquid
+  assign field_value = variant.metafields[namespace][key].value
+  if nested_key != blank
+    assign field_value = field_value[nested_key].value
+  endif
+-%}
+{%- if field_value != blank -%}
+  {%- case format -%}
+    {%- when 'ids' -%}
+      [
+      {%- for item in field_value -%}
+        {{- item.id -}}
+        {%- unless forloop.last %},{% endunless -%}
+      {%- endfor -%}
+      ]
+    {%- when 'measurement_list' -%}
+      [
+      {%- for m in field_value -%}
+        {"value":{{ m.value }},"unit":"{{ m.unit }}"}{% unless forloop.last %},{% endunless -%}
+      {%- endfor -%}
+      ]
+    {%- else -%}
+      {{ field_value | json }}
+  {%- endcase -%}
+{%- endif -%}
