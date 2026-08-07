@@ -17,7 +17,7 @@
       "type": "custom-main-page-dimensions",
       "name": "Dimensions Finder",
       "settings": {
-        "collection": "",
+        "collection": "find-dimensions-products",
         "bundle_product_list": [],
         "tolerance_percent": 5
       }
