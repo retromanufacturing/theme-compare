@@ -34,14 +34,18 @@
   case template.suffix
     when 'bundle'
       assign script_id = 'bundle-accessories-data'
-      assign item_selector = '[data-product-id]'    
+      assign item_selector = '[data-product-id]'
+      assign id_selector = 'self'
+      assign id_attribute = 'data-product-id'    
     else
       assign script_id = 'accessories-data'
       assign item_selector = '.accessories-item' 
+      assign id_selector = '.accessory-variant-select'
+      assign id_attribute = 'name'
   endcase
 -%} 
 
-{{ script_id }}--{{  item_selector }}--
+{{ script_id }}--{{  item_selector }}--{{ id_selector }}--{{ id_attribute }}
 
 {% render 'custom.section.main-product', slot: blocks, product_media_gallery: gallery %}
 
