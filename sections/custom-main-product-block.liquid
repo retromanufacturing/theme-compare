@@ -36,8 +36,8 @@
   case template.suffix
     when 'bundle'
       assign script_id = 'bundle-accessories-data'
-      assign item_selector = '[data-product-id]'
-      assign id_selector = 'self'
+      assign item_selector = '.standalone-optional-item[data-standalone-optional]'
+      assign id_selector = '[data-product-id]'
       assign id_attribute = 'data-product-id'
     else
       assign script_id = 'accessories-data'
