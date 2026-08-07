@@ -4,7 +4,7 @@
   assign tolerance = section.settings.tolerance_percent
   assign field_value = 'dimensions.width_height'
 
-  assign total_dimensions_count = 0
+  assign item_dimensions_count = 0
 -%}
 
 <dimensions-finder>
@@ -14,8 +14,8 @@ dimensions page
   <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
   {% for variant in product.variants %}
     {{ variant.metafields.dimensions.width_height.value.size }}
-    {% assign total_dimensions_count = total_dimensions_count | plus: 1 %}
-    {{ total_dimensions_count }}
+    {% assign item_dimensions_count = item_dimensions_count | plus: 1 %}
+    {{ item_dimensions_count }}
   {% endfor %}
 {% endfor %}
 
