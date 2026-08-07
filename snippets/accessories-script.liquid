@@ -12,11 +12,8 @@
 {%- capture accessory_ids_by_variant -%}
   {
     {%- for variant in product.variants -%}
-      "{{ variant.id }}": [
-        {%- for accessory in variant.metafields.custom.radio_features.value.accessories.value -%}
-          {{ accessory.id }}{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
-      ]{% unless forloop.last %},{% endunless %}
+      {%- capture ids_json -%}{% render 'custom.util.variant-data', variant: variant, namespace: 'custom', key: 'radio_features', nested_key: 'accessories', format: 'ids' %}{%- endcapture -%}
+      "{{ variant.id }}": {{ ids_json | default: '[]' }}{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   }
 {%- endcapture -%}
