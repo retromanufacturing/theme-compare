@@ -8,7 +8,7 @@
 dimensions page
 
 {%  for product in collections[collection].products %}
-  {{ product.title }}--{{ product.selected_or_first_available_variant.sku }}
+  <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
 {% endfor %}
 
 {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
