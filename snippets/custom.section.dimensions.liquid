@@ -11,7 +11,7 @@ dimensions page
 {%  for product in collections[collection].products %}
   <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
   {% for variant in product.variants %}
-    {{ variant.metafields.dimensions.width_height.value }}
+    {{ variant.metafields.dimensions.width_height.size }}
   {% endfor %}
 {% endfor %}
 
