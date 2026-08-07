@@ -1,3 +1,10 @@
+{%- liquid
+  assign collection = section.settings.collection
+  assign bundle_product_list = section.settings.bundle_product_list
+  assign range = section.settings.range
+-%}
+
 <dimensions-finder>
 dimensions page
+{{ collection }}--{{ bundle_product_list }}--{{ range }}
 </dimensions-finder>
