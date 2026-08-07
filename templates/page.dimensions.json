@@ -12,9 +12,19 @@
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "custom_main_page_dimensions_EbUq8N": {
+      "type": "custom-main-page-dimensions",
+      "name": "Dimensions Finder",
+      "settings": {
+        "collection": "",
+        "bundle_product_list": [],
+        "tolerance_percent": 5
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_main_page_dimensions_EbUq8N"
   ]
 }
