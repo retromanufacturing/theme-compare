@@ -42,6 +42,14 @@
   </object-tabs>
 {%- endif -%}
 
+{% style %}
+  [data-tab-index]:has(> input.bundle-optional-checkbox) {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+{% endstyle %}
+
 {% schema %}
 {
   "name": "Product List",

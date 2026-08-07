@@ -27,15 +27,14 @@
       >
         <legend class="visually-hidden">{{ collection.title }}</legend>
         {%- for value in child_values -%}
-          {%- liquid    
+          {%- liquid
             assign child_id = tab_name | append: '-child-' | append: tab_index | append: '-' | append: forloop.index
             assign child_group_name = tab_name | append: '-child-' | append: tab_index
-        -%}
+          -%}
           {%- capture child_label -%}
             {%- render 'element.button', type: 'button', text: value, inverted: true, style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);' -%}
           {%- endcapture -%}
-          {%-
-            render 'element.radio',
+          {%- render 'element.radio',
             id: child_id,
             name: child_group_name,
             value: forloop.index,
@@ -102,6 +101,14 @@
     {%- endfor -%}
   {%- endfor -%}
 </object-tabs>
+
+{% style %}
+  [data-tab-index]:has(> input.bundle-optional-radio) {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+{% endstyle %}
 
 {% schema %}
 {
