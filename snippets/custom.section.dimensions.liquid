@@ -2,32 +2,35 @@
   assign collection = section.settings.collection
   assign bundle_product_list = section.settings.bundle_product_list
   assign tolerance = section.settings.tolerance_percent
-  assign field_value = 'dimensions.width_height'
+  assign field_value = 'dimensions.width_height' | split: '.'
 
+  assign namespace = field_value[0]
+  assign key = field_value[1]
   assign item_dimensions_count = 0
 -%}
 
 <dimensions-finder>
-dimensions page
+  dimensions page
 
-{%  for product in collections[collection].products %}
-  <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
-  {% for variant in product.variants %}
-    {{ variant.metafields.dimensions.width_height.value.size }}
-    {% assign item_dimensions_count = item_dimensions_count | plus: 1 %}
-    {{ item_dimensions_count }}
+  {% for product in collections[collection].products %}
+    <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
+    {% for variant in product.variants %}
+      {%- liquid
+        assign dimensions = variant.metafields[namespace][key].value 
+      -%}
+      {{  }}
+      {{ dimensions }}
+    {% endfor %}
   {% endfor %}
-{% endfor %}
-
-
 </dimensions-finder>
 
-{% comment %} {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
+{% comment %}
+  {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
   assign field_value = variant.metafields[namespace][key].value
   if nested_key != blank
     assign field_value = field_value[nested_key].value
-  endif 
-  
+  endif
+
   {% assign dimensions = variant.metafields[field_value].value %}
     {{ dimensions }}--
-  {% endcomment %}
+{% endcomment %}
