@@ -16,9 +16,11 @@
   they cannot be passed through the render chain.
 {% endcomment %}
 
-{% comment %} {% capture slot_gallery %}
-  {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
-{% endcapture %} {% endcomment %}
+{% comment %}
+  {% capture slot_gallery %}
+    {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
+  {% endcapture %}
+{% endcomment %}
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
@@ -36,21 +38,25 @@
       assign script_id = 'bundle-accessories-data'
       assign item_selector = '[data-product-id]'
       assign id_selector = 'self'
-      assign id_attribute = 'data-product-id'    
+      assign id_attribute = 'data-product-id'
     else
       assign script_id = 'accessories-data'
-      assign item_selector = '.accessories-item' 
+      assign item_selector = '.accessories-item'
       assign id_selector = '.accessory-variant-select'
       assign id_attribute = 'name'
   endcase
--%} 
-
-{{ script_id }}--{{  item_selector }}--{{ id_selector }}--{{ id_attribute }}
+-%}
 
 {% render 'custom.section.main-product', slot: blocks, product_media_gallery: gallery %}
 
-{%- render 'accessories-script', current_variant: current_variant -%}
- 
+{%- render 'accessories-script',
+  current_variant: current_variant,
+  script_id: script_id,
+  item_selector: item_selector,
+  id_selector: id_selector,
+  id_attribute: id_attribute
+-%}
+
 {% schema %}
 {
   "name": "Product block",
@@ -136,7 +142,7 @@
         { "value": "unmuted", "label": "With sound (no autoplay)" }
       ],
       "info": "Videos with sound cannot autoplay"
-    },  
+    },
     {
       "type": "header",
       "content": "t:custom.custom"
