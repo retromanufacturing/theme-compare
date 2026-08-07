@@ -12,9 +12,15 @@ dimensions page
   <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
   {% for variant in product.variants %}
     {% assign dimensions = variant.metafields[field_value].value %}
-    {{ dimensions }}
+    {{ dimensions }}--{{ variant.metafields[dimensions.width_height].value }}
   {% endfor %}
 {% endfor %}
 
 {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
 </dimensions-finder>
+
+
+  assign field_value = variant.metafields[namespace][key].value
+  if nested_key != blank
+    assign field_value = field_value[nested_key].value
+  endif
