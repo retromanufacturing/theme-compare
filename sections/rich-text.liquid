@@ -1,4 +1,4 @@
-{%- render 'section-rich-text' -%}
+{%- render 'section.rich-text' -%}
 
 {% schema %}
 {
@@ -148,6 +148,7 @@
   "presets": [
     {
       "name": "t:labels.rich_text",
+      "category": "t:labels.category_storytelling",
       "blocks": [
         {
           "type": "heading"
@@ -159,9 +160,7 @@
     }
   ],
   "disabled_on": {
-    "groups": [
-      "custom.popups"
-    ]
+    "groups": ["custom.popups"]
   }
 }
 {% endschema %}

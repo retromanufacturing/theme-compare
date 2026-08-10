@@ -1,9 +1,10 @@
-{%- render 'section-text-with-icons' -%}
+{%- render 'section.text-with-icons' -%}
 
 {% schema %}
 {
   "name": "t:labels.text_columns_with_386",
   "class": "index-section",
+  "max_blocks": 20,
   "settings": [
     {
       "type": "text",
@@ -23,6 +24,10 @@
         {
           "value": "center",
           "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
         }
       ]
     },
@@ -177,6 +182,7 @@
   "presets": [
     {
       "name": "t:labels.text_columns_with_386",
+      "category": "t:labels.category_storytelling",
       "blocks": [
         {
           "type": "text_block"

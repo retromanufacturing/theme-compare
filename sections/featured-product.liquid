@@ -5,44 +5,44 @@
         when '@app'
           render block
         when 'title'
-          render 'block-title', block: block
+          render 'block.product-title', block: block
         when 'description'
-          render 'block-description', block: block
+          render 'block.product-description', block: block
         when 'variant_picker'
-          render 'block-variant-picker', block: block, forloop: forloop, update_url: false
+          render 'block.product-variant-picker', block: block, update_url: false
         when 'buy_buttons'
-          render 'block-buy-buttons', block: block
+          render 'block.product-buy-buttons', block: block
         when 'price'
-          render 'block-price', block: block
+          render 'block.product-price', block: block
         when 'quantity_selector'
-          render 'block-quantity-selector', block: block
+          render 'block.product-quantity-selector', block: block
         when 'inventory_status'
-          render 'product-inventory', block: block
+          render 'block.product-inventory', block: block
         when 'complementary_products'
-          render 'product-complementary', block: block
+          render 'block.product-complementary', block: block
         when 'sales_point'
-          render 'block-sales-point', block: block
+          render 'block.product-sales-point', block: block
         when 'size_chart'
-          render 'block-size-chart', block: block, forloop: forloop
+          render 'block.product-size-chart', block: block
         when 'text'
-          render 'block-text', block: block
+          render 'block.product-text', block: block
         when 'trust_badge'
-          render 'block-trust-badge', block: block
+          render 'block.product-trust-badge', block: block
         when 'tab'
-          render 'block-tab', block: block
+          render 'block.product-tab', block: block
         when 'separator'
-          render 'block-separator', block: block
+          render 'block.product-separator', block: block
         when 'contact'
-          render 'block-contact', block: block
+          render 'block.product-contact', block: block
         when 'custom'
-          render 'block-custom', block: block
+          render 'block.product-custom', block: block
         when 'share'
-          render 'block-share', block: block
+          render 'block.product-share', block: block
       endcase
     endfor
   endcapture
 
-  render 'section-featured-product', slot: blocks
+  render 'section.featured-product', slot: blocks
 -%}
 
 {% schema %}
@@ -339,15 +339,20 @@
         },
         {
           "type": "checkbox",
-          "id": "product_dynamic_variants_enable",
-          "label": "t:actions.enable_dynamic_product",
-          "default": true
-        },
-        {
-          "type": "checkbox",
           "id": "color_swatches",
           "label": "t:actions.enable_color_swatches",
           "info": "t:actions.learn_to_setup_color_swatches"
+        },
+        {
+          "type": "text",
+          "id": "size_chart_option",
+          "label": "t:actions.attach_size_chart",
+          "info": "t:info.attach_size_chart"
+        },
+        {
+          "type": "page",
+          "id": "size_chart",
+          "label": "t:labels.size_chart_page"
         }
       ]
     },
@@ -582,6 +587,7 @@
   "presets": [
     {
       "name": "t:labels.featured_product",
+      "category": "t:labels.category_products",
       "blocks": [
         {
           "type": "title",

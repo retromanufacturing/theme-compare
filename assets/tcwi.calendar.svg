@@ -3,7 +3,7 @@
   aria-hidden="true"
   focusable="false"
   role="presentation"
-  class="icon icon-tcwi-calendar icon--line"
+  class="element-icon element-icon-tcwi-calendar element-icon--line element-icon-calendar"
   viewbox="0 0 100 100"
   width="20"
   height="20"

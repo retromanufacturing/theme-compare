@@ -3,7 +3,7 @@
   aria-hidden="true"
   focusable="false"
   role="presentation"
-  class="icon icon-tcwi-stopwatch icon--line"
+  class="element-icon element-icon-tcwi-stopwatch element-icon--line element-icon-stopwatch"
   viewbox="0 0 100 100"
   width="20"
   height="20"

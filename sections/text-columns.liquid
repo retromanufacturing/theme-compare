@@ -1,4 +1,4 @@
-{%- render 'section-text-columns' -%}
+{%- render 'section.text-columns' -%}
 
 {% schema %}
 {
@@ -171,6 +171,7 @@
   "presets": [
     {
       "name": "t:labels.text_columns_with",
+      "category": "t:labels.category_storytelling",
       "blocks": [
         {
           "type": "text_block"
@@ -185,9 +186,7 @@
     }
   ],
   "disabled_on": {
-    "groups": [
-      "custom.popups"
-    ]
+    "groups": ["custom.popups"]
   }
 }
 {% endschema %}

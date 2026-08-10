@@ -1,10 +1,16 @@
-{%- render 'section-article-template' -%}
+{%- render 'section.article-template' -%}
 
 {% schema %}
 {
   "name": "t:labels.article_pages",
   "class": "blog-layout__main",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_image",
+      "label": "t:actions.show_article_image",
+      "default": true
+    },
     {
       "type": "checkbox",
       "id": "blog_capitalize_first",
