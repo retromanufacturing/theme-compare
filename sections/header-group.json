@@ -98,9 +98,7 @@
       "block_order": [
         "logo_NdiFMC"
       ],
-      "custom_css": [
-        ".element-icon-chevron-down{display: none;}"
-      ],
+      "custom_css": [],
       "settings": {
         "main_menu_link_list": "product-menu",
         "color_scheme": "7",
