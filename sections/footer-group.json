@@ -1,1 +1,111 @@
-{"type":"footer","name":"t:labels.footer_group","sections":{"footer-promotions":{"type":"footer-promotions","blocks":{"footer-promotions-0":{"type":"promotion","settings":{"enable_image":true,"color_scheme":"1"}},"footer-promotions-1":{"type":"promotion","settings":{"enable_image":true,"color_scheme":"3"}},"footer-promotions-2":{"type":"promotion","settings":{"enable_image":true,"color_scheme":"2"}}},"block_order":["footer-promotions-0","footer-promotions-1","footer-promotions-2"],"settings":{}},"footer":{"type":"footer","blocks":{"footer-0":{"type":"menu","settings":{"menu":"footer","enable_account_link":false}},"footer-1":{"type":"contact","settings":{"phone":"+1 800 123 1234","enable_social":true}},"footer-2":{"type":"payment","settings":{"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true}}},"block_order":["footer-0","footer-1","footer-2"],"settings":{}}},"order":["footer-promotions","footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:labels.footer_group",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "promotion_fjiTwR": {
+          "type": "promotion",
+          "disabled": true,
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "1"
+          }
+        },
+        "footer-promotions-2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": "",
+            "color_scheme": "2"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_fjiTwR",
+        "footer-promotions-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu_9GtiNm": {
+          "type": "menu",
+          "settings": {
+            "title": "Shop",
+            "menu": "footer-shop",
+            "enable_account_link": true
+          }
+        },
+        "menu_Uzht8U": {
+          "type": "menu",
+          "settings": {
+            "title": "Company",
+            "menu": "footer",
+            "enable_account_link": false
+          }
+        },
+        "contact_cCpaEF": {
+          "type": "contact",
+          "settings": {
+            "phone": "1-888-325-1555",
+            "contact": "contact-us",
+            "chat": "",
+            "enable_social": true
+          }
+        },
+        "payment_THR8NR": {
+          "type": "payment",
+          "settings": {
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        }
+      },
+      "block_order": [
+        "menu_9GtiNm",
+        "menu_Uzht8U",
+        "contact_cCpaEF",
+        "payment_THR8NR"
+      ],
+      "settings": {
+        "color_scheme": "1",
+        "show_newsletter": true,
+        "newsletter_richtext": "<p><strong>Sign up for the latest news and product announcements!</strong></p>",
+        "footer_main_menu": false,
+        "show_copyright": true,
+        "copyright_text": "GM, Chevrolet, all related Emblems, and vehicle body designs are trademarks of General Motors LLC, used under license to Retro Manufacturing.",
+        "policies_menu": "footer-legal"
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}

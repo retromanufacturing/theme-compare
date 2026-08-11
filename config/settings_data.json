@@ -22,10 +22,12 @@
     "enable_swatches": true,
     "collection_grid_image": "product",
     "collection_grid_image_margin": 20,
-    "social_facebook_link": "https://www.facebook.com/shopify",
-    "social_pinterest_link": "https://www.pinterest.com/shopify",
-    "social_instagram_link": "https://instagram.com/shopify",
-    "social_tiktok_link": "https://www.tiktok.com/@shopify",
+    "social_facebook_link": "https://www.facebook.com/RetroManufacturing",
+    "social_twitter_link": "https://twitter.com/Retro_MFG",
+    "social_pinterest_link": "https://www.pinterest.com/retrosoundusa/",
+    "social_instagram_link": "https://www.instagram.com/retromanufacturing/",
+    "social_tiktok_link": "https://www.tiktok.com/@retromanufacturing",
+    "social_youtube_link": "https://www.youtube.com/channel/UCM5yKOf77Gjew_HBYPS57FQ",
     "show_breadcrumbs_collection_link": true,
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
@@ -39,8 +41,8 @@
     "color_schemes": {
       "1": {
         "settings": {
-          "primary": "#FFFFFF",
-          "secondary": "#810F12"
+          "primary": "#ffffff",
+          "secondary": "#810f12"
         }
       },
       "2": {
