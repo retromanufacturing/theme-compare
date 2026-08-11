@@ -38,6 +38,115 @@
     "checkout_button_color": "#111111",
     "checkout_error_color": "#ff6d6d",
     "content_for_index": [],
+    "blocks": {
+      "10830403595879607806": {
+        "type": "shopify://apps/reviews-io/blocks/reviewsio-core/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "url_key": "REVIEWS.io",
+          "lang": "auto",
+          "enable_syndication": false
+        }
+      },
+      "16274361319697914395": {
+        "type": "shopify://apps/reviews-io/blocks/reviewsio-floating/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "widget_id": "",
+          "show_all": true,
+          "show_index": true,
+          "show_product": true,
+          "show_collection": true,
+          "show_cart": true
+        }
+      },
+      "15316669992541710076": {
+        "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-snippet/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "star": "#000",
+          "text_color": "#333",
+          "snippet_mode": "default",
+          "text": "Reviews",
+          "line_break": false,
+          "listen_for_changes": false,
+          "rating_without_brackets": false,
+          "format_review_count": false,
+          "show_popup": true,
+          "anchor_to_reviews_widget": false,
+          "show_empty_stars": false
+        }
+      },
+      "9664103760669878543": {
+        "type": "shopify://apps/avada-seo-ai-blog/blocks/avada-seoon-setting/a45c3e67-be9f-4255-a194-b255a24f37c9",
+        "disabled": false,
+        "settings": {}
+      },
+      "10312807297210203588": {
+        "type": "shopify://apps/aftersell/blocks/utm-triggers/509ec35d-0632-4dfc-a105-fa799cd9d149",
+        "disabled": false,
+        "settings": {}
+      },
+      "7079518687644006178": {
+        "type": "shopify://apps/checkout-blocks/blocks/app-embed/b0024ca5-9de8-4bf0-a92f-cd0783877ae2",
+        "disabled": false,
+        "settings": {
+          "utm_id": true,
+          "utm_source": true,
+          "utm_medium": true,
+          "utm_campaign": true,
+          "utm_term": true,
+          "ref": true
+        }
+      },
+      "2699851813924348007": {
+        "type": "shopify://apps/navidium-protection/blocks/navidium-protection-consent/0127ebe0-a248-4215-97ad-f7db763bd6c8",
+        "disabled": false,
+        "settings": {
+          "show_landing_popup": false,
+          "show_reminder_popup": false,
+          "enablejQuery": true,
+          "product_handle": "shipping-protection",
+          "checkout_section": "navidium",
+          "subtotal_element": "navidium",
+          "click_triggers": "#cart-icon-bubble",
+          "store_checkout_button": "#checkout-button",
+          "custom_css": ""
+        }
+      },
+      "10862475845122376913": {
+        "type": "shopify://apps/navidium-protection/blocks/widget_app_embed/0127ebe0-a248-4215-97ad-f7db763bd6c8",
+        "disabled": false,
+        "settings": {
+          "enablejQuery": false,
+          "scriptType": "javascript",
+          "iosDeviceListener": "touchstart",
+          "auto_install": true,
+          "manual_install": false,
+          "nvdContainer1": "REQUIRED",
+          "nvdContainer2": "OPTIONAL",
+          "nvdContainer3": "OPTIONAL",
+          "waitForParent": 1000,
+          "widgetPosition": "afterbegin",
+          "currencyFormatType": "symbol",
+          "currencyPosition": "begin",
+          "nvdCurrency": "{{ shop.money_format | strip_html }}",
+          "product_handle": "navidium-shipping-protection",
+          "subtotal_element": "navidium",
+          "cart_bubble_count": "navidium",
+          "checkoutBtns": "[name='checkout'], [name='checkout'] *, #dyn-checkout",
+          "customCSS": ""
+        }
+      },
+      "14257673941758180001": {
+        "type": "shopify://apps/navidium-protection/blocks/claim-page/0127ebe0-a248-4215-97ad-f7db763bd6c8",
+        "disabled": false,
+        "settings": {
+          "page_url": "",
+          "custom_css": ""
+        }
+      }
+    },
     "color_schemes": {
       "1": {
         "settings": {
