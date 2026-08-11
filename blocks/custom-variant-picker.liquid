@@ -1,0 +1,48 @@
+{% render 'block.product-variant-picker', block: block,  product: closest.product  %}
+
+{% schema %}
+{
+  "name": "Variant picker",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "variant_labels",
+      "label": "t:actions.show_variant_labels",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "picker_type",
+      "label": "t:labels.type",
+      "options": [
+        {
+          "value": "button",
+          "label": "t:labels.buttons"
+        },
+        {
+          "value": "dropdown",
+          "label": "t:labels.dropdown"
+        }
+      ],
+      "default": "button"
+    },
+    {
+      "type": "checkbox",
+      "id": "color_swatches",
+      "label": "t:actions.enable_color_swatches",
+      "info": "t:actions.learn_to_setup_color_swatches"
+    },
+    {
+      "type": "text",
+      "id": "size_chart_option",
+      "label": "t:actions.attach_size_chart",
+      "info": "t:info.attach_size_chart"
+    },
+    {
+      "type": "page",
+      "id": "size_chart",
+      "label": "t:labels.size_chart_page"
+    }
+  ]
+}
+{% endschema %}
