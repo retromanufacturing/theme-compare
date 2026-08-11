@@ -40,7 +40,7 @@
       };
     </script>
 
-    {%- render 'head.import-map' -%}
+    {%- render 'custom.head.import-map' -%}
     {%- render 'head.es-module-shims' -%}
     {%- render 'head.is-land' -%}
     {%- render 'head.preload-js' -%}
@@ -94,6 +94,10 @@
     {%- liquid
       render 'product.gallery.photoswipe-template'
       render 'overlay.tool-tip'
+
+      if template.name == 'product'
+        render 'clyde-init'
+      endif
     -%}
   </body>
 </html>
