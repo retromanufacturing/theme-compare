@@ -45,9 +45,662 @@
         "top_padding": true,
         "bottom_padding": true
       }
+    },
+    "slideshow_eXq7F6": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_3YNjPb": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "European Heritage. Modern Audio.",
+            "title": "<p>DIN Traffic Radio</p>",
+            "title_size": 40,
+            "subheading": "Period-correct styling for BMW, Mercedes-Benz, Porsche, Jaguar, and MG.",
+            "link": "shopify://collections/retrosound-traffic-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "2",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Collection-Traffic_9e2e2bb1-f68d-4233-92ce-100c37423b01.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-Traffic_261bbd63-1080-4aa0-9044-c25433231666.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_UHjK6Q": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Single DIN Radio",
+            "title": "<p>MONZA Radio</p>",
+            "title_size": 60,
+            "subheading": "Designed for classic European interiors with a clean, period-correct look.",
+            "link": "shopify://collections/retrosound-monza-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "8",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Template-Monza.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-Monza_b00340dc-f0a3-442d-ac47-e9e1f863b4fd.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_AU4dNr": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Available Now",
+            "title": "<p>RetroSound Radio Control App</p>",
+            "title_size": 60,
+            "subheading": "Configure and control your RetroSound radio directly from your smartphone. Available for radios equipped with Motor 4HD.",
+            "link": "shopify://pages/retrosound-radio-control-app-information",
+            "link_text": "Learn More",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Template-App-green_45d0c1c8-f390-4466-9ad7-5c7cca899630.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-Template-App-Green_6b867ad9-586d-44c9-816d-dad3ee66675d.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_XXQ6dR": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Now Available",
+            "title": "<p>DIN Solutions Liberty</p>",
+            "title_size": 46,
+            "subheading": "For 60's-70's GM, Chevy, & Ford Vehicles with a cut/modified dash.",
+            "link": "shopify://collections/retrosound-liberty-radio",
+            "link_text": "Shop Now",
+            "link_2": "shopify://blogs/news/how-the-liberty-radio-solves-cut-dash-issues-in-classic-cars",
+            "link_text_2": "Learn More",
+            "button_color_scheme": "5",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/DinSolutions-Single-Din-Liberty-Radio-horizontal.jpg",
+            "image_mobile": "shopify://shop_images/DinSolutions-Single-Din-Liberty-Radio-horizontal.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_XA6Yt3": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "LIMITED TIME",
+            "title": "<p>Free Vintage Overlay Set</p>",
+            "title_size": 46,
+            "subheading": "With the purchase of any RetroRadio®",
+            "link": "shopify://collections/retroradio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Free-scp-promo-chvy-dsh_5c18375e-c015-4d62-aef0-e7a94656358a.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-free-scp-promo-chy-dsh.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_HzQqqk": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Bundle & SAVE!",
+            "title": "<p>SUB8100 + Quadraphonic</p>",
+            "title_size": 60,
+            "subheading": "Experience a Richer, More Immersive Sound in Your Classic Car with this Plug-In Upgrade!",
+            "link": "shopify://products/retrosound-subwoofer-amplifier",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-Sub8100-Quadrophonic-combo.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-sub8100-quadrophinc-combo_62e1b912-c106-4f12-9586-04cfecbb15e3.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_YYawyb": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "EXCITING NEWS...",
+            "title": "<p>All Radio Models have Bluetooth®!</p>",
+            "title_size": 40,
+            "subheading": "We've updated our Radio Motors. All models now come with Bluetooth 5.0 built-in.",
+            "link": "https://www.retromanufacturing.com/collections/replacement-parts/products/retrosound-radio-motor",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-general-bluetooth.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-general-bluetooth.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_KLN6FA": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "FORD OFFICIALLY LICENSED",
+            "title": "<p>Dallas Radio</p>",
+            "title_size": 60,
+            "subheading": "For 1985-1986 F-Series Trucks, Broncos & Mustangs.",
+            "link": "https://www.retromanufacturing.com/collections/retrosound-dallas-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-dallas-86-bronco_3087df80-1d9a-4608-9f72-84248c8ee8a6.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-86-bronco_47645fa5-0a78-4ddf-8dfa-12485d9cdf07.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_pLdt6f": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "New Release",
+            "title": "<p>Upgrade Your Ride with the USB/USB-C Extension Harness</p>",
+            "title_size": 60,
+            "subheading": "Available in both black and chrome finishes",
+            "link": "https://www.retromanufacturing.com/products/usb-auxiliary-extension-cable",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-new-USB-c.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-new-usb-c.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_TByenF": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "SINGLE DIN",
+            "title": "<p>RetroSound Grand Prix</p>",
+            "title_size": 60,
+            "subheading": "1980's Style Single-DIN Radio",
+            "link": "https://www.retromanufacturing.com/collections/retrosound-grand-prix-radio",
+            "link_text": "Shop Now",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-grand-prix-67-mercedes-560_f94455e6-414b-4213-9dae-fd731a09d549.jpg",
+            "image_mobile": "shopify://shop_images/780x780-Port-grand-prix-67-mercedes-560_38780cc9-d4cc-4c18-9c44-c45fdef78d03.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_BNemPE": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "Seat Belts For Your Classic",
+            "title": "<p>RetroBelt®</p>",
+            "title_size": 60,
+            "subheading": "2-point, 3-point, and 4-point seat belts for classic cars and trucks",
+            "link": "https://www.retrobelt.com/",
+            "link_text": "Shop Seat Belts",
+            "link_2": "",
+            "link_text_2": "",
+            "button_color_scheme": "4",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/1296x450-retrobelt-site-link.jpg",
+            "image_mobile": "shopify://shop_images/780x780-retrobelt-site-link.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_3YNjPb",
+        "hero_UHjK6Q",
+        "hero_AU4dNr",
+        "hero_XXQ6dR",
+        "hero_XA6Yt3",
+        "hero_HzQqqk",
+        "hero_YYawyb",
+        "hero_KLN6FA",
+        "hero_pLdt6f",
+        "hero_TByenF",
+        "hero_BNemPE"
+      ],
+      "custom_css": [
+        ".hero__subtitle {font-size: 1em;}",
+        ".hero__title {font-size: 38px;}",
+        "@media only screen and (max-width: 768px) {.hero__title {font-size: 25px; font-weight: 500; }}"
+      ],
+      "name": "t:labels.hero_optional_slides",
+      "settings": {
+        "full_width": true,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "promo_grid_EPDLKm": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner_ax8Pyr": {
+          "type": "banner",
+          "settings": {
+            "heading": "Popular Categories",
+            "text": "",
+            "link": "",
+            "label": "",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
+        "advanced_4jMBYA": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Radios",
+            "textarea": "RetroSound® radios are modular units that allow you to select the radio face, knobs, and trim that are most period-correct for your classic vehicle",
+            "cta_text1": "Shop Radios",
+            "cta_link1": "https://www.retromanufacturing.com/pages/radios",
+            "cta_text2": "Build Your Own",
+            "cta_link2": "shopify://products/retroradio-build-your-own-radio",
+            "image": "shopify://shop_images/Dab-page-hero-2500.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_CiN3cm": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Amps & Subwoofers",
+            "textarea": "",
+            "cta_text1": "Shop Amps & Subs",
+            "cta_link1": "shopify://collections/amps-subwoofers",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Blog-amplifier-1080-title.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_McDGpi": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Kick Panels",
+            "textarea": "",
+            "cta_text1": "Shop Kick Panels",
+            "cta_link1": "shopify://collections/kick-panels-speaker-modules",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/RPOD4A-Install.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_U6wGPz": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Antennas",
+            "textarea": "",
+            "cta_text1": "Shop Antennas",
+            "cta_link1": "shopify://collections/antennas",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_pFd3G4": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Seat Belts",
+            "textarea": "",
+            "cta_text1": "Shop Antennas",
+            "cta_link1": "shopify://collections/antennas",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/780x780-retrobelt-site-link.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        },
+        "advanced_RqtjAG": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "RetroSound Speakers",
+            "textarea": "RetroSound’s full line of premium and standard replacement speakers, designed specifically for classic cars and trucks",
+            "cta_text1": "Shop Speakers",
+            "cta_link1": "https://www.retromanufacturing.com/collections/speakers",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/Speaker-2-vert.jpg",
+            "video_url": "",
+            "width": "50",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        }
+      },
+      "block_order": [
+        "banner_ax8Pyr",
+        "advanced_4jMBYA",
+        "advanced_CiN3cm",
+        "advanced_McDGpi",
+        "advanced_U6wGPz",
+        "advanced_pFd3G4",
+        "advanced_RqtjAG"
+      ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}",
+        ".promo-grid__container {border-radius: 10px;}"
+      ],
+      "name": "t:labels.promotional_grid",
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true,
+        "hide_block_images": false
+      }
+    },
+    "advanced_content_XdRpUE": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_z3MBAL": {
+          "type": "liquid",
+          "settings": {
+            "code": "<style>\n  .rs-why-section {\n    max-width: 1440px;\n    margin: 0 auto;\n    padding: 56px 20px;\n    background: #ffffff;\n    color: #1f1f1f;\n  }\n\n  .rs-why-header {\n    text-align: center;\n    max-width: 820px;\n    margin: 0 auto 36px;\n  }\n\n  .rs-why-eyebrow {\n    font-size: 13px;\n    letter-spacing: .12em;\n    text-transform: uppercase;\n    font-weight: 700;\n    color: #a41b1a;\n    margin-bottom: 10px;\n  }\n\n  .rs-why-title {\n    font-size: clamp(30px, 4vw, 46px);\n    line-height: 1.05;\n    margin: 0 0 14px;\n    font-weight: 800;\n  }\n\n  .rs-why-intro {\n    font-size: 17px;\n    line-height: 1.55;\n    margin: 0;\n    color: #4a4a4a;\n  }\n\n  .rs-why-grid {\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    gap: 18px;\n  }\n\n  .rs-why-card {\n    border: 1px solid #d9d9d9;\n    border-radius: 5px;\n    background: #fff;\n    overflow: hidden;\n    display: flex;\n    flex-direction: column;\n    min-height: 100%;\n  }\n\n  .rs-why-image {\n    background: #f5f5f5;\n    aspect-ratio: 4 / 3;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    border-bottom: 1px solid #e3e3e3;\n  }\n\n  .rs-why-image img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n\n  .rs-placeholder {\n    color: #777;\n    font-size: 13px;\n    text-align: center;\n    padding: 20px;\n  }\n\n  .rs-why-content {\n    padding: 24px;\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n  }\n\n  .rs-card-heading {\n    display: flex;\n    align-items: center;\n    gap: 14px;\n    margin-bottom: 14px;\n  }\n\n  .rs-card-icon {\n    width: 46px;\n    height: 46px;\n    border-radius: 50%;\n    background: #a41b1a;\n    color: #fff;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-size: 22px;\n    flex: 0 0 46px;\n  }\n\t.rs-card-icon img {\n\t\tmax-width: 46px;\n\t}\n\t\n  .rs-why-card h3 {\n    font-size: 18px;\n    line-height: 1.12;\n    margin: 0;\n    font-weight: 800;\n  }\n\n  .rs-why-card p {\n    font-size: 15.5px;\n    line-height: 1.55;\n    color: #333;\n    margin: 0;\n  }\n\n  .rs-card-note {\n    margin-top: auto;\n    text-align:center;\n    color: #a41b1a;\n  }\n  .rs-card-note img {\n\tmax-width: 100%;\n\t  align-content: center\n\t}\n  .rs-feature-icons {\n    display: flex;\n    justify-content: center;\n    margin-top: 22px;\n    padding-top: 18px;\n    border-top: 1px solid #e5e5e5;\n  }\n\n  .rs-feature-icons span {\n    width: 56px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin: 0 6px;\n  }\n\t.rs-feature-icons img {\n\t\tmax-width: 100%;\n\t}\n  @media screen and (max-width: 1100px) {\n    .rs-why-grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n  }\n\n  @media screen and (max-width: 640px) {\n    .rs-why-section {\n      padding: 40px 16px;\n    }\n\n    .rs-why-grid {\n      grid-template-columns: 1fr;\n    }\n\n    .rs-why-content {\n      padding: 22px;\n    }\n\n    .rs-card-heading {\n      align-items: flex-start;\n    }\n\n    .rs-why-card h3 {\n      font-size: 22px;\n    }\n  }\n</style>\n\n<section class=\"rs-why-section\">\n  <div class=\"rs-why-header\">\n    <div class=\"rs-why-eyebrow\">Why RetroSound?</div>\n    <h2 class=\"rs-why-title\">Designed for Classic Vehicles</h2>\n    <p class=\"rs-why-intro\">\n      RetroSound radios are built to preserve the look of your classic dashboard while adding the modern audio features today’s drivers expect.\n    </p>\n  </div>\n\n  <div class=\"rs-why-grid\">\n\n<article class=\"rs-why-card\">\n  <div class=\"rs-why-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/rm-image-classic-look-dash-card_2fe041ab-f97d-4cac-80bf-b0d2c7b43bfe.jpg?v=1784130241\" alt=\"classic style dashboard installation icon\">\n  </div>\n  <div class=\"rs-why-content\">\n    <div class=\"rs-card-heading\">\n      <div class=\"rs-card-icon\"> <img \n    src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/red-icon-rm-classic-style.png?v=1782753907\"\n    alt=\"classic style icon\"\n  ></div>\n      <h3>Classic Style. Modern Sound.</h3>\n    </div>\n    <p>\n\n      Keep the timeless look of your classic dashboard while enjoying modern features like Bluetooth, USB, HD Radio, SiriusXM capability, and customizable display colors.\n    </p>\n    <div class=\"rs-feature-icons\">\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-bluetooth.png?v=1782766080\" alt=\"classic style icon\"></span>\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-usb.png?v=1782766080\" alt=\"classic style icon\"></span>\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-hd-radio.png?v=1782766080\" alt=\"classic style icon\"></span>\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-sirius-xm.png?v=1782766080\" alt=\"classic style icon\"></span>\n    </div>\n  </div>\n</article>\n\n<article class=\"rs-why-card\">\n  <div class=\"rs-why-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/rm-image-built-for-classics-card.jpg?v=1782767470\" alt=\"classic car group icon\">\n  </div>\n  <div class=\"rs-why-content\">\n    <div class=\"rs-card-heading\">\n      <div class=\"rs-card-icon\"><img \n    src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/red-icon-rm-designed-for-classics.png?v=1782753907\"\n    alt=\"classic style icon\"\n  ></div>\n      <h3>Designed for Your Classic.</h3>\n    </div>\n    <p>\n      With over 1,000 vehicle applications, RetroSound offers solutions for classic cars and trucks from the 1940s through the 1990s.\n    </p>\n    <div class=\"rs-card-note\"><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/Text-over-1000-apps.png?v=1782755240\" alt=\"over 1000 applications text icon\"></div>\n  </div>\n</article>\n\n<article class=\"rs-why-card\">\n  <div class=\"rs-why-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/rm-image-radio-custom-build.jpg?v=1784130266\" alt=\"customizeable radio build  icon\">\n  </div>\n  <div class=\"rs-why-content\">\n    <div class=\"rs-card-heading\">\n      <div class=\"rs-card-icon\"><img \n    src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/red-icon-rm-build-radio.png?v=1782753907\"\n    alt=\"build your radio icon\"\n  ></div>\n      <h3>Build the Radio That’s Right for You.</h3>\n    </div>\n    <p>\n      Choose the appearance and features that fit your build. Select from multiple radio styles, display options, and feature packages including Bluetooth, HD Radio, SiriusXM readiness, DAB+, and app compatibility.\n    </p>\n  </div>\n</article>\n\n<article class=\"rs-why-card\">\n  <div class=\"rs-why-image\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/rm-image-installation-parts.jpg?v=1784130254\" alt=\"radio installation parts icon\">\n  </div>\n  <div class=\"rs-why-content\">\n    <div class=\"rs-card-heading\">\n      <div class=\"rs-card-icon\"><img \n    src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/red-icon-rm-getting-started.png?v=1782753907\"\n    alt=\"getting started icon\"\n  ></div>\n      <h3>Everything You Need to Get Started.</h3>\n    </div>\n    <p>\n      Whether you’re a first-time installer or an experienced builder, RetroSound provides vehicle-specific accessories, detailed guides, wiring information, and knowledgeable support.\n    </p>\n    <div class=\"rs-feature-icons\">\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-detailed-guides.png?v=1782762741\" alt=\"detailed guides icon\"></span>\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-expert-support.png?v=1782762718\" alt=\"expert support icon\"></span>\n      <span><img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/feature-icon-dependability.png?v=1782762730\" alt=\"built for dependability icon\"></span>\n    </div>\n  </div>\n</article>\n\n  </div>\n</section>",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_z3MBAL"
+      ],
+      "custom_css": [
+        ".rs-why-section {padding: 20px;}",
+        ".rte h2 {margin-top: 10px;}"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
+    },
+    "advanced_content_hPQn8k": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_BYmE3k": {
+          "type": "liquid",
+          "settings": {
+            "code": "<style>\n\n.rs-featured{\n    max-width:1440px;\n    margin:0 auto;\n    padding:70px 20px;\n}\n.rs-featured-header{\n    text-align:center;\n    max-width:760px;\n    margin:0 auto 40px;\n}\n.rs-featured-eyebrow{\n    color:#A41B1A;\n    text-transform:uppercase;\n    font-size:13px;\n    font-weight:700;\n    letter-spacing:.12em;\n    margin-bottom:8px;\n}\n.rs-featured-title{\n    font-size:46px;\n    font-weight:800;\n    line-height:1.05;\n    margin-bottom:12px;\n}\n.rs-featured-intro{\n    font-size:17px;\n    color:#4a4a4a;\n    line-height:1.6;\n}\n.rs-feature-grid{\n    display:grid;\n    grid-template-columns:2fr 1fr;\n    gap:22px;\n}\n.rs-feature-hero{\n    border:1px solid #ddd;\n    border-radius:5px;\n    overflow:hidden;\n    background:#fff;\n    display:flex;\n    flex-direction:column;\n}\n.rs-feature-image{\n    background:#f4f4f4;\n    aspect-ratio:16/10;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    color:#777;\n    font-size:14px;\n}\n.rs-feature-content{\n    padding:30px;\n}\n.rs-product-tag{\n    display:inline-block;\n    background:#A41B1A;\n    color:#fff;\n    font-size:12px;\n    font-weight:700;\n    padding:6px 12px;\n    border-radius:40px;\n    margin-bottom:18px;\n}\n.rs-feature-content h3{\n    font-size:34px;\n    margin-bottom:14px;\n    margin-top:10px;\n}\n.rs-feature-content p{\n    font-size:17px;\n    line-height:1.6;\n    color:#444;\n    margin-bottom:24px;\n}\n.rs-btn{\n    display:inline-block;\n    padding:12px 22px;\n    background:#A41B1A;\n    color:#fff;\n    text-decoration:none;\n    border-radius:4px;\n    font-weight:700;\n}\n.rs-side{\n    display:flex;\n    flex-direction:column;\n    gap:22px;\n}\n.rs-small-card{\n    border:1px solid #ddd;\n    border-radius:5px;\n    overflow:hidden;\n    background:#fff;\n}\n.rs-small-image{\n    aspect-ratio:16/9;\n    background:#f4f4f4;\n    display:flex;\n    align-items:center;\n    justify-content:center;\n    color:#777;\n}\n.rs-small-content{\n    padding:22px;\n}\n.rs-small-content h4{\n    font-size:24px;\n    margin-bottom:10px;\n}\n.rs-small-content p{\n    font-size:15px;\n    color:#555;\n    line-height:1.55;\n    margin-bottom:14px;\n}\n.rs-link{\n    color:#A41B1A;\n    font-weight:700;\n    text-decoration:none;\n}\n@media(max-width:980px){\n.rs-feature-grid{\n    grid-template-columns:1fr;\n}\n}\n</style>\n\n<section class=\"rs-featured\">\n\t<div class=\"rs-featured-header\">\n\t\t<div class=\"rs-featured-eyebrow\">Featured Products</div>\n\t\t<h2 class=\"rs-featured-title\">Discover What's New</h2>\n\t\t\t<p class=\"rs-featured-intro\">Explore the latest additions to the RetroSound lineup, from new radio designs to the newest technology for your classic vehicle.</p>\n\t</div>\n\t<div class=\"rs-feature-grid\">\n\t\t<div class=\"rs-feature-hero\">\n\t\t\t<div class=\"rs-feature-image\">\n\t\t\t\t<img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/1600x1000-new-product-hero-traffic-or.jpg?v=1784140107\" alt=\"classic style dashboard installation icon\">\n\t\t\t</div>\n\t\t\t<div class=\"rs-feature-content\">\n\t\t\t<div class=\"rs-product-tag\">NEW FOR 2026</div>\n\t\t\t\t<h3>Traffic Radio</h3>\n\t\t\t\t<p>Inspired by late-model European factory radios, the Traffic combines understated OEM styling with Bluetooth, HD Radio, SiriusXM capability, app control and more.</p>\n\t\t\t\t<a href=\"https://www.retromanufacturing.com/collections/retrosound-traffic-radio\" class=\"rs-btn\">Learn More</a>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"rs-side\">\n\t\t\t<div class=\"rs-small-card\">\n\t\t\t\t<div class=\"rs-small-image\">\n\t\t\t\t\t<img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/800x450-new-product-hero-monza.jpg?v=1784140107\" alt=\"classic style dashboard installation icon\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"rs-small-content\">\n\t\t\t\t\t<h4>Monza</h4>\n\t\t\t\t\t<p>Designed for classic BMW, Mercedes-Benz, Jaguar and MGB interiors.</p>\n\t\t\t\t\t<a href=\"https://www.retromanufacturing.com/collections/retrosound-monza-radio\" class=\"rs-link\">Learn More →</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"rs-small-card\">\n\t\t\t\t<div class=\"rs-small-image\">\n\t\t\t\t\t<img src=\"https://cdn.shopify.com/s/files/1/0932/8664/files/800x450-new-product-hero-m4hd1.jpg?v=1784140107\" alt=\"classic style dashboard installation icon\">\n\t\t\t\t</div>\n\t\t\t\t<div class=\"rs-small-content\">\n\t\t\t\t\t<h4>Motor 4HD</h4>\n\t\t\t\t\t<p>Our most advanced radio motor featuring HD Radio, SiriusXM capability and app compatibility.</p>\n\t\t\t\t\t<a href=\"https://www.retromanufacturing.com/pages/retrosound-radio-motors\" class=\"rs-link\">Learn More →</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</section>",
+            "width": "100%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_BYmE3k"
+      ],
+      "custom_css": [
+        ".rs-featured {padding: 20px;}",
+        ".rte h2 {margin-top: 10px;}"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
+    },
+    "promo_grid_FmG9QQ": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner_7Gcibq": {
+          "type": "banner",
+          "settings": {
+            "heading": "Shop By Make",
+            "text": "",
+            "link": "shopify://pages/all-car-makes",
+            "label": "View All",
+            "color_scheme": "none",
+            "width": "100"
+          }
+        },
+        "advanced_jwYjV6": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Ford",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/ford",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/WebBanners-Dallas.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_8eBgLX": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Chevrolet",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/chevrolet",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/SEOon_1994-Chevy-1500-santa-cruz-interioir-3.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_UacdYa": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Pontiac",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/pontiac-make",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/RetroSound_Pontiac-Best-GTO-original-radio.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_6J3mHD": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Dodge",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/dodge",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/SEOon_1992-dodge-w250-newport-interior-3.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_yR7KRz": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Plymouth",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/plymouth-make",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_rnmhTw": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Mercury",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/mercury-make",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_V7CQAL": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Volkswagen",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/volkswagen",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-center"
+          }
+        },
+        "advanced_wEXqJz": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Mercedes-Benz",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "shopify://collections/mercedes-benz",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify://shop_images/1280-Collection-Traffic.jpg",
+            "video_url": "",
+            "width": "25",
+            "height": 500,
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        }
+      },
+      "block_order": [
+        "banner_7Gcibq",
+        "advanced_jwYjV6",
+        "advanced_8eBgLX",
+        "advanced_UacdYa",
+        "advanced_6J3mHD",
+        "advanced_yR7KRz",
+        "advanced_rnmhTw",
+        "advanced_V7CQAL",
+        "advanced_wEXqJz"
+      ],
+      "custom_css": [
+        ".heading-md {font-size: 1.5rem;}",
+        ".promo-grid__container {border-radius: 10px;}",
+        ".type-banner__text {display: flex; align-items: center; width: 100%; /* ensure it stretches so there's space to push against */}",
+        ".type-banner__text .element-button {margin-left: auto;}"
+      ],
+      "name": "Shop By Make",
+      "settings": {
+        "full_width": true,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": true,
+        "hide_block_images": true
+      }
+    },
+    "blog_posts_T7XBVU": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "From the journal",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "blog": "news",
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "natural",
+        "divider": false
+      }
+    },
+    "1786469730a8ff1b86": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_card_carousel_WrHN3k": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-card-carousel/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#ffc200",
+            "review_type": "company, product",
+            "reviews_shown": 20,
+            "header_bg_colour": "#000000",
+            "header_colour": "#ffffff",
+            "header_star_colour": "#ffffff",
+            "heading_text_colour": "#0e1311",
+            "heading_font": "sans_serif_n4",
+            "body_text_colour": "#000000",
+            "badge_icon_colour": "#66b2a5",
+            "badge_text_colour": "#0e1311",
+            "bg_start_colour": "#ffffff",
+            "bg_end_colour": "#ffffff",
+            "item_border_width": "0px",
+            "item_border_colour": "#f2f2f2",
+            "item_border_radius": "0px",
+            "item_shadow_size": "10px",
+            "item_shadow_colour": "#f2f2f2",
+            "enable_rich_snippets": true,
+            "disable_same_customer": false,
+            "logo_colour": "var(--logo-inverted)"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_card_carousel_WrHN3k"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
     }
   },
   "order": [
-    "newsletter"
+    "newsletter",
+    "slideshow_eXq7F6",
+    "promo_grid_EPDLKm",
+    "advanced_content_XdRpUE",
+    "advanced_content_hPQn8k",
+    "promo_grid_FmG9QQ",
+    "1786469730a8ff1b86",
+    "blog_posts_T7XBVU"
   ]
 }
