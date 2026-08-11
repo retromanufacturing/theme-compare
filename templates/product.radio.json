@@ -203,7 +203,7 @@
               "type": "custom-liquid",
               "name": "Custom Liquid",
               "settings": {
-                "custom_liquid": ""
+                "custom_liquid": "{% render 'block.product-description' %}"
               },
               "blocks": {}
             },
@@ -322,6 +322,19 @@
         "page_width": true
       }
     },
+    "custom_vehicle_search_products_ACaVmW": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "space_above": true,
+        "space_below": true,
+        "heading": "missing translation: \"t:custom.vehicle_search.recommendations\"",
+        "product_count": 5,
+        "products_per_row": 5,
+        "button_text": "View All",
+        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "blocks": {
@@ -433,19 +446,6 @@
       "type": "collection-return",
       "settings": {
         "color_scheme": "2"
-      }
-    },
-    "custom_vehicle_search_products_ACaVmW": {
-      "type": "custom-vehicle-search-products",
-      "name": "Fitment Product Grid",
-      "settings": {
-        "space_above": true,
-        "space_below": true,
-        "heading": "missing translation: \"t:custom.vehicle_search.recommendations\"",
-        "product_count": 5,
-        "products_per_row": 5,
-        "button_text": "View All",
-        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
       }
     }
   },
