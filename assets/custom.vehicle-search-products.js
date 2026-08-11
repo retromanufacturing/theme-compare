@@ -1,0 +1,79 @@
+import { DATA as vehicleData } from "./custom.module.vehicle-search-data.js"
+import { getFitmentText, getFitmentLink } from "./custom.module.vehicle-fitment.js"
+
+class FitmentProductGrid extends HTMLElement {
+  async connectedCallback() {
+    const fitment = vehicleData?.currentFitment
+    if (!fitment?.collection) {
+      this.remove()
+      return
+    }
+
+    const url = getFitmentLink(fitment, vehicleData.searchCollection)
+
+    this.updateHeading(fitment)
+    this.updateViewAllLink(url)
+
+    try {
+      const response = await fetch(url)
+      const html = await response.text()
+      const doc = new DOMParser().parseFromString(html, 'text/html')
+      const grid = doc.querySelector('.new-grid.product-grid.collection-grid')
+
+      if (grid) {
+        grid.dataset.view = this.dataset.gridView
+        this.filterByTags(grid)
+        this.trimToLimit(grid)
+        this.querySelector('.fitment-product-grid__results').replaceWith(grid)
+
+        // Keeps the heading with fitment hidden until products and fitment loaded
+        this.setAttribute('data-ready', 'true')
+      } else {
+        this.remove()
+      }
+    } catch (error) {
+      console.error('Fitment product grid error:', error)
+      this.remove()
+    }
+  }
+
+  // Updates heading to include current fitment
+  updateHeading(fitment) {
+    const heading = this.querySelector('h2')
+    if (heading) heading.textContent = heading.textContent.replace('{vehicle}', getFitmentText(fitment))
+  }
+
+  // Updates view all link to filtered vehicle fitment collection url
+  updateViewAllLink(url) {
+    const link = this.querySelector('.fitment-view-all')
+    if (link) link.href = url
+  }
+
+  // Sets the amount of products shown based on section setting value
+  trimToLimit(grid) {
+    const limit = parseInt(this.dataset.limit)
+    const items = grid.querySelectorAll('.grid-item')
+    items.forEach((item, index) => {
+      if (index >= limit) item.remove()
+    })
+  }
+
+  // On product page, filters out products that share the same product tags in section.settings.filter_tags
+  filterByTags(grid) {
+    const matchTags = this.dataset.matchTags
+    if (!matchTags) return
+
+    const excludedTags = matchTags.split(',').map((tag) => tag.trim()).filter(Boolean)
+    if (excludedTags.length === 0) return
+
+    grid.querySelectorAll('[data-product-tags]').forEach((card) => {
+      const productTags = card.dataset.productTags.split(',').map((tag) => tag.trim())
+      const isExcluded = excludedTags.some((tag) => productTags.includes(tag))
+
+      if (isExcluded) card.closest('.grid-item')?.remove()
+    })
+  }
+
+}
+
+customElements.define('fitment-product-grid', FitmentProductGrid)

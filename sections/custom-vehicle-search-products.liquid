@@ -1,0 +1,57 @@
+{%- render 'custom.section.vehicle-search-products' -%}
+
+{% schema %}
+{
+  "name": "Fitment Product Grid",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "space_above",
+      "label": "t:actions.add_top_spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "space_below",
+      "label": "t:actions.add_bottom_spacing",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "t:custom.vehicle_search.recommendations"
+    },
+    {
+      "type": "range",
+      "id": "product_count",
+      "label": "Number of products",
+      "default": 5,
+      "min": 2,
+      "max": 12
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "default": 5,
+      "min": 2,
+      "max": 6
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:labels.button_1_text",
+      "default": "View All"
+    },
+    {
+      "type": "text",
+      "id": "filter_tags",
+      "label": "Tags to check for overlap",
+      "info": "Comma-separated. Only applies on product pages — if the current product has any of these tags, matching grid products will be hidden.",
+      "default": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
+    }
+  ],
+  "presets": [{ "name": "Fitment Product Grid" }]
+}
+{% endschema %}
