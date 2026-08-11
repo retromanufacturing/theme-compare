@@ -203,7 +203,7 @@
               "type": "custom-liquid",
               "name": "Custom Liquid",
               "settings": {
-                "custom_liquid": "{% render 'block.product-description' %}"
+                "custom_liquid": "{% render 'custom.block.product-description' %}"
               },
               "blocks": {}
             },
