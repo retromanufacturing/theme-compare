@@ -1,1 +1,33 @@
-{"sections":{"main":{"type":"main-page","settings":{}},"custom_main_page_dimensions_EbUq8N":{"type":"custom-main-page-dimensions","name":"Dimensions Finder","settings":{"collection":"find-dimensions-products","bundle_product_list":["retrosound-new-york-1-5-din-radio","retrosound-newport-1-5-din-radio"],"tolerance_percent":5}}},"order":["main","custom_main_page_dimensions_EbUq8N"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "custom_main_page_dimensions_EbUq8N": {
+      "type": "custom-main-page-dimensions",
+      "name": "Dimensions Finder",
+      "settings": {
+        "collection": "find-dimensions-products",
+        "bundle_product_list": [
+          "retrosound-new-york-1-5-din-radio",
+          "retrosound-newport-1-5-din-radio"
+        ],
+        "tolerance_percent": 5
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_main_page_dimensions_EbUq8N"
+  ]
+}
