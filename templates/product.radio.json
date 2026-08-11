@@ -172,6 +172,9 @@
         "custom_price_JRW7mU",
         "custom_buy_button_Qpz77G"
       ],
+      "custom_css": [
+        "h1 {font-size: 2rem;}"
+      ],
       "name": "Product block",
       "settings": {
         "image_position": "left",
