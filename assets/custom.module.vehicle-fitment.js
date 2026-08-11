@@ -1,4 +1,4 @@
-import { DATA as vehicleData } from "./vehicle-search-data.js"
+import { DATA as vehicleData } from "./custom.module.vehicle-search-data.js"
 
 export function getFitmentText(fitment) {
   const { fitment: fitmentName, year, make, model } = fitment
