@@ -314,7 +314,9 @@
         "custom_tab_KAEBWU",
         "custom_tab_WqhXC8"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".page-width {margin-top: 1.5rem;}"
+      ],
       "name": "Custom Section",
       "settings": {
         "page_width": true
