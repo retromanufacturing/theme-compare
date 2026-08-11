@@ -1,4 +1,4 @@
-import { DATA as vehicleData } from "./vehicle-search-data.js"
+import { DATA as vehicleData } from "./custom.module.vehicle-search-data.js"
 
 class VehicleSelector extends HTMLElement  { 
   constructor(vehicleData) {
