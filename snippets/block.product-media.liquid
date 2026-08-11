@@ -1,0 +1,48 @@
+{%- liquid
+  assign product_videos = product.media | where: 'media_type', 'video'
+  assign external_videos = product.media | where: 'media_type', 'external_video'
+  assign custom_videos = product.metafields.media.videos.value
+-%}
+
+{%- if product_videos.size > 0 or external_videos.size > 0 or custom_videos != blank -%}
+  {% style %}
+    .product__videos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .has-1-per-row .product__video-item { width: 100%; }
+    .has-2-per-row .product__video-item { width: 50%; }
+    .has-3-per-row .product__video-item { width: 33.333%; }
+    .has-4-per-row .product__video-item { width: 25%; }
+
+    @media only screen and (max-width: 768px) {
+      .product__video-item { width: 100%; }
+    }
+  {% endstyle %}
+
+  <div class="product__videos has-{{ columns_per_row }}-per-row" {{ block.shopify_attributes }}>
+    {%- for media in product.media -%}
+      {%- if media.media_type == 'video' -%}
+        <div class="product__video-item">
+          {%- render 'element.video', video: media -%}
+        </div>
+      {%- elsif media.media_type == 'external_video' -%}
+        <div class="product__video-item">
+          {%- render 'element.video', external_video: media -%}
+          {{ external_video_id }}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+    {% for media in custom_videos %}
+      {%- liquid
+        assign external_video_host = 'youtube'
+        assign external_video_id = media.link.value | split: 'v=' | last | split: '&' | first
+      -%}
+      <div class="product__video-item">
+        {%- render 'element.video', external_video_host: external_video_host, external_video_id: external_video_id -%}
+      </div>
+    {% endfor %}
+  </div>
+{%- endif -%}

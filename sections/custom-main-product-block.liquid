@@ -1,0 +1,189 @@
+{% comment %}
+  main-product-block.liquid
+  Place in: /sections/main-product-block.liquid
+
+  Custom product section using the @theme block architecture.
+  Based on main-product-high-variant.liquid structure — do not modify that file.
+
+  Gallery slot uses custom-media-gallery block (blocks/custom-media-gallery.liquid).
+  All other product blocks (title, price, buy buttons, etc.) are added via the
+  Theme Editor using @theme blocks.
+
+  IMAGE RENDERING SETTINGS NOTE:
+  product_zoom_enable, product_image_size, enable_video_looping, product_video_style,
+  and mobile_layout are defined here at section level — not in the custom-media-gallery
+  block — because product.gallery.media reads them directly from section.settings and
+  they cannot be passed through the render chain.
+{% endcomment %}
+
+{% comment %}
+  {% capture slot_gallery %}
+    {% content_for 'block', type: 'custom-media-gallery', id: 'custom-media-gallery' %}
+  {% endcapture %}
+{% endcomment %}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+
+  capture gallery
+    render 'product.gallery.custom'
+  endcapture
+
+  capture blocks
+    content_for 'blocks'
+  endcapture
+
+  case template.suffix
+    when 'bundle'
+      assign script_id = 'bundle-accessories-data'
+      assign item_selector = '.standalone-optional-item[data-standalone-optional]'
+      assign id_selector = '[data-product-id]'
+      assign id_attribute = 'data-product-id'
+    else
+      assign script_id = 'accessories-data'
+      assign item_selector = '.accessories-item'
+      assign id_selector = '.accessory-variant-select'
+      assign id_attribute = 'name'
+  endcase
+-%}
+
+{% render 'custom.section.main-product', slot: blocks, product_media_gallery: gallery %}
+
+{%- render 'accessories-script',
+  current_variant: current_variant,
+  script_id: script_id,
+  item_selector: item_selector,
+  id_selector: id_selector,
+  id_attribute: id_attribute
+-%}
+
+{% schema %}
+{
+  "name": "Product block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_container_size",
+      "label": "Image container size",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Small (2/5)" },
+        { "value": "medium", "label": "Medium (1/2)" },
+        { "value": "large", "label": "Large (3/5)" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "paragraph",
+      "content": "These settings apply to the gallery and cannot be set at block level because product.gallery.media reads them directly from section settings."
+    },
+    {
+      "type": "select",
+      "id": "product_image_size",
+      "label": "Force image size",
+      "default": "square",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "product_zoom_enable",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "partial",
+      "options": [
+        { "value": "partial", "label": "75% width" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "Enable video looping",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "product_video_style",
+      "label": "Video style",
+      "default": "muted",
+      "options": [
+        { "value": "muted", "label": "Without sound (autoplay)" },
+        { "value": "unmuted", "label": "With sound (no autoplay)" }
+      ],
+      "info": "Videos with sound cannot autoplay"
+    },
+    {
+      "type": "header",
+      "content": "t:custom.custom"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_variant_media",
+      "label": "t:custom.actions.hide_variant_media",
+      "default": false
+    }
+  ],
+  "blocks": [
+    { "type": "@app" },
+    { "type": "custom-group" },
+    { "type": "custom-tab" },
+    { "type": "custom-spacer" },
+    { "type": "custom-price" },
+    { "type": "custom-sku" },
+    { "type": "custom-product-features" },
+    { "type": "custom-product-logos" },
+    { "type": "custom-variant-picker" },
+    { "type": "custom-media-gallery" },
+    { "type": "custom-buy-button" },
+    { "type": "custom-buy-button-bundle" },
+    { "type": "custom-title" },
+    { "type": "custom-tooltip" }
+  ],
+  "presets": [
+    {
+      "name": "Product block",
+      "category": "t:labels.category_products",
+      "blocks": {
+        "custom-media-gallery": {
+          "type": "custom-media-gallery"
+        }
+      },
+      "block_order": ["custom-media-gallery"]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}

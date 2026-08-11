@@ -1,0 +1,42 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_features = product.metafields.description.features.value
+  assign variant_features = current_variant.metafields.description.features.value
+  assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
+  assign videos = product.metafields.media.videos.value
+
+  capture features
+    for feature in product_features
+      render 'block.lists', list_content: feature
+    endfor
+    for feature in variant_features
+      render 'block.lists', list_content: feature
+    endfor
+    for feature in radio_features
+      render 'block.lists', list_content: feature
+    endfor
+    for video in videos
+      if video.product_feature
+        render 'block.lists', url_content: video.title, url: video.link, is_url: true, new_tab: true
+      endif
+    endfor
+  endcapture
+
+  #Legacy fallback for products with features in description
+  if features == blank and product.description contains '<!--SPLIT-->'
+    assign description_segments = product.description | split: '<!--SPLIT-->'
+    assign features = description_segments[1]
+  endif
+-%}
+
+{%- if features != blank -%}
+  {% style %}
+    #shopify-block-{{ block.id }} li {
+      font-size: {{ block.settings.font_size}}px;
+    }
+  {% endstyle %}
+
+  <ul>
+    {{ features }}
+  </ul>
+{%- endif -%}

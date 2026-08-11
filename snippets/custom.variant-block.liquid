@@ -1,0 +1,23 @@
+{% doc %}
+  Wrapper that makes any block content reactive to variant changes.
+
+  @param {string} content - Pre-captured HTML content to render inside the wrapper
+  @param {object} block - Block object
+  @param {object} product - Product object
+
+  @example
+  {% render 'custom.variant-block', content: content, block: block, product: product %}
+{% enddoc %}
+
+<variant-block
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ closest.product.id | default: product.id }}"
+  data-block-id="{{ block.id }}"
+  {{ block.shopify_attributes }}
+>
+  {{ content }}
+</variant-block>
+
+<script type="module">
+  import 'custom.variant-block'
+</script>

@@ -1,0 +1,77 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_logos = product.metafields.media.logos.value
+  assign radio_logos = current_variant.metafields.custom.radio_features.value.logos.value
+  assign logo_count = product_logos.size | plus: radio_logos.size
+
+  if logo_sizing == 'default'
+    if radio_logos != blank
+      if logo_count <= 2
+        assign logo_max_height = 40
+      elsif logo_count <= 4
+        assign logo_max_height = 30
+      else
+        assign logo_max_height = 24
+      endif
+    else
+      if logo_count <= 2
+        assign logo_max_height = 80
+      elsif logo_count <= 4
+        assign logo_max_height = 60
+      else
+        assign logo_max_height = 40
+      endif
+    endif
+  elsif logo_sizing == 'custom'
+    assign logo_max_height = logo_custom_height
+  endif
+
+  capture logos
+    for logo in product_logos
+      assign logo_height = logo_max_height
+      if logo_sizing == 'metaobject'
+        assign dims = logo.dimensions.value | split: ' • '
+        assign logo_height = dims[1] | plus: 0
+        if logo_height == 0
+          assign logo_height = 60
+        endif
+      endif
+      render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy', classlist: 'logo-image', img_tag_height: logo_height
+    endfor
+    for logo in radio_logos
+      assign logo_height = logo_max_height
+      if logo_sizing == 'metaobject'
+        assign dims = logo.dimensions.value | split: ' • '
+        assign logo_height = dims[1] | plus: 0
+        if logo_height == 0
+          assign logo_height = 60
+        endif
+      endif
+      render 'element.image', img: logo.image.value, alt: logo.subtitle.value, loading: 'lazy', classlist: 'logo-image', img_tag_height: logo_height
+    endfor
+  endcapture
+-%}
+
+{%- if logos != blank -%}
+  {% style %}
+    .product__logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .product__logos .logo-image {
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      {% unless logo_sizing == 'metaobject' %}
+        max-height: {{ logo_max_height }}px;
+      {% endunless %}
+    }
+  {% endstyle %}
+
+  <div class="product__logos" {{ block.shopify_attributes }}>
+    {{ logos }}
+  </div>
+{%- endif -%}

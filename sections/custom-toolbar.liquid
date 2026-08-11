@@ -1,0 +1,114 @@
+{%- render 'section.custom-toolbar' -%}
+
+{% schema %}
+{
+  "name": "Annoucement Bar Custom",
+  "class": "toolbar-section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "4"
+    },
+    {
+      "type": "checkbox",
+      "id": "announcement_center",
+      "label": "t:labels.alignments.center_text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "announcement",
+      "name": "t:labels.announcement",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "t:labels.text",
+          "default": "<p>Hassle-free returns. 30-day postage paid returns</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_mobile",
+          "label": "t:labels.mobile_text"
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social & contact links",
+      "settings": []
+    },
+    {
+      "type": "menu_link",
+      "name": "Menu Link",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "menu_link_list",
+          "label": "t:labels.navigation",
+          "default": "main-menu"
+        }
+      ]
+    },
+    {
+      "type": "multi_selector",
+      "name": "Languages and currency",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:info.to_add_language_settings",
+          "info": "t:info.to_add_language_settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_locale_selector",
+          "label": "t:actions.show_language_selector",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:info.to_add_currency_settings",
+          "info": "t:info.to_add_currency_settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_selector",
+          "label": "t:actions.show_currency_selector",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_flags",
+          "label": "t:actions.show_currency_flags",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement",
+        "settings": {
+          "richtext": "<p>Free shipping on all orders over $100</p>"
+        }
+      },
+      {
+        "type": "announcement",
+        "settings": {
+          "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>"
+        }
+      }
+    ]
+  },
+  "disabled_on": {
+    "groups": ["footer", "custom.popups"]
+  }
+}
+{% endschema %}

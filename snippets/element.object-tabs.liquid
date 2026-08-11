@@ -1,0 +1,78 @@
+{% doc %}
+  Reusable tab UI for switching between products, collections, or metafield objects.
+
+  @param {array} items - Array of objects to render as tabs
+  @param {string} name - Radio group name (should be unique per instance)
+  @param {number} [selected_index] - Index of the initially selected tab (default: 1)
+{% enddoc %}
+
+{%- liquid
+  assign name = name | default: 'object-tabs'
+  assign selected_index = selected_index | default: 1
+-%}
+
+<fieldset class="object-tabs-wrap variant-button-wrap">
+  <legend class="visually-hidden">{{ name }}</legend>
+
+  {%- for item in items -%}
+    {%- liquid
+      assign tab_index = forloop.index
+      assign radio_checked = false
+      if tab_index == selected_index
+        assign radio_checked = true
+      endif
+
+      assign id = name | append: '-' | append: tab_index
+    -%}
+
+    {%- capture radio_label -%}
+      {%- render 'element.button',
+        type: 'button',
+        text: item.title,
+        inverted: true,
+        style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);'
+      -%}
+    {%- endcapture -%}
+
+    {%- render 'element.radio',
+      id: id,
+      name: name,
+      value: tab_index,
+      checked: radio_checked,
+      display_icon: false,
+      slot: radio_label
+    -%}
+  {%- endfor -%}
+</fieldset>
+
+<script type="module">
+  import 'custom.object-tabs'
+</script>
+
+{% stylesheet %}
+    .object-tabs-wrap {
+        border: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--size-2);
+        margin-top: 1rem;
+    }
+
+    object-tabs > [data-tab-index]:not([data-tab-index="1"]) {
+        display: none;
+    }
+
+    object-tabs > [data-tab-index][aria-hidden="true"] {
+        display: none;
+    }
+
+    object-tabs > [data-tab-index][aria-hidden="false"] {
+        display: block;
+    }
+
+    object-tabs .object-child-tabs-wrap[aria-hidden="true"] {
+        display: none;
+    }
+{% endstylesheet %}

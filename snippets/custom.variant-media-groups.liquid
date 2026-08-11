@@ -1,0 +1,46 @@
+{% doc %}
+  Builds a deduplicated list of unique variant media srcs and which variant
+  IDs share each one, based on a configurable metafield path.
+
+  @param {product} product - Product object
+  @param {string} media_metafield_path - Dot-notation path under variant, e.g. 'metafields.custom.radio_features.value.media.value'
+{% enddoc %}
+
+{%- liquid
+  assign path_parts = media_metafield_path | split: '.'
+  assign unique_srcs = ''
+-%}
+
+{%- for variant in product.variants -%}
+  {%- liquid
+    assign variant_media = variant
+    for part in path_parts
+      assign variant_media = variant_media[part]
+    endfor
+  -%}
+  {%- for media in variant_media -%}
+    {%- unless unique_srcs contains media.src -%}
+      {%- assign unique_srcs = unique_srcs | append: media.src | append: '|' -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endfor -%}
+
+{%- assign unique_src_list = unique_srcs | split: '|' -%}
+
+{%- for src in unique_src_list -%}
+  {%- assign matching_variant_ids = '' -%}
+  {%- for variant in product.variants -%}
+    {%- liquid
+      assign variant_media = variant
+      for part in path_parts
+        assign variant_media = variant_media[part]
+      endfor
+    -%}
+    {%- for media in variant_media -%}
+      {%- if media.src == src -%}
+        {%- assign matching_variant_ids = matching_variant_ids | append: variant.id | append: ',' -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {{ src }}::{{ matching_variant_ids }}
+{%- endfor -%}

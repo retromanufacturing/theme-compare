@@ -1,0 +1,234 @@
+{% doc %}
+  A floating add-to-cart bar that appears once the user has scrolled and
+  the real buy buttons are off-screen, hiding again near the footer.
+  Clicking its button submits the real product form (see
+  product-form-{{ section.id }}) rather than duplicating the add-to-cart
+  logic - block.product-buy-buttons.js handles the actual cart request
+  either way.
+
+  Rendered from custom-buy-button.liquid when
+  block.settings.enable_sticky_add_to_cart is true - requires that block
+  to be present in the section, since it derives section/product context
+  from block scope automatically.
+
+  Layout uses two nested layout.stack calls (image+title, then
+  price+button), matching the pattern used natively in
+  section.flex-pdp.buy-buttons.liquid, so each pair stays horizontal
+  internally while the outer stack switches between column (mobile) and
+  row (desktop).
+{% enddoc %}
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign image_to_show = current_variant.featured_image | default: product.featured_image
+
+  assign has_image = false
+  if image_to_show != blank
+    assign has_image = true
+  endif
+
+  if current_variant.available
+    assign button_text = 'actions.add_to_cart' | t
+  elsif current_variant == blank
+    assign button_text = 'info.unavailable' | t
+  else
+    assign button_text = 'info.sold_out' | t
+  endif
+
+  assign is_unavailable = false
+  unless current_variant.available
+    assign is_unavailable = true
+  endunless
+
+  case block.settings.sticky_justify_desktop
+    when 'flex-start'
+      assign justify_lg = 'start'
+    when 'flex-end'
+      assign justify_lg = 'end'
+    when 'space-between'
+      assign justify_lg = 'space-between'
+    else
+      assign justify_lg = 'center'
+  endcase
+
+  assign stack_style = '--layout-stack-gap-size-none: '
+  assign stack_style = stack_style | append: block.settings.sticky_gap_mobile | append: 'px; --layout-stack-gap-size-xs: '
+  assign stack_style = stack_style | append: block.settings.sticky_gap_desktop | append: 'px;'
+-%}
+
+{%- capture top_row -%}
+  {%- if has_image -%}
+    <div class="sticky-add-to-cart__image">
+      {{
+        image_to_show
+        | image_url: width: 120
+        | image_tag: loading: 'lazy', alt: image_to_show.alt
+        | default: product.title, class: 'sticky-add-to-cart__image-img', srcset: null, sizes: null
+      }}
+    </div>
+  {%- endif -%}
+
+  <div class="sticky-add-to-cart__info">
+    <p class="sticky-add-to-cart__title">{{ product.title | escape }}</p>
+    {%- unless product.has_only_default_variant -%}
+      <div class="sticky-add-to-cart__variant">{{ current_variant.title | escape }}</div>
+    {%- endunless -%}
+  </div>
+{%- endcapture -%}
+
+{%- capture bottom_row -%}
+  <div class="sticky-add-to-cart__price">
+    {%- render 'block.product-price', product: product, use_variant: true -%}
+  </div>
+
+  {%- render 'element.button',
+    text: button_text,
+    type: 'button',
+    classlist: 'sticky-add-to-cart__button',
+    disabled: is_unavailable,
+    attributes: 'data-sticky-add-to-cart-button'
+  -%}
+{%- endcapture -%}
+
+{%- capture top_row_stack -%}
+  {%- render 'layout.stack',
+    slot: top_row,
+    horizontal: true,
+    align: 'center',
+    gap: 'sm',
+    classlist: 'sticky-add-to-cart__row sticky-add-to-cart__row--top'
+  -%}
+{%- endcapture -%}
+
+{%- capture bottom_row_stack -%}
+  {%- render 'layout.stack',
+    slot: bottom_row,
+    horizontal: true,
+    align: 'center',
+    gap: 'sm',
+    classlist: 'sticky-add-to-cart__row sticky-add-to-cart__row--bottom'
+  -%}
+{%- endcapture -%}
+
+{%- capture sticky_content -%}
+  {{ top_row_stack }}
+  {{ bottom_row_stack }}
+{%- endcapture -%}
+
+<sticky-add-to-cart
+  class="sticky-add-to-cart"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  data-width="{{ block.settings.sticky_width }}"
+  data-position-selector="{{ block.settings.position_selector }}"
+  data-position-placement="{{ block.settings.position_placement }}"
+  data-content-push-selector="{{ block.settings.content_push_selector }}"
+  data-variant-available="{{ current_variant.available }}"
+  data-current-variant-id="{{ current_variant.id }}"
+  data-anchor="bottom"
+  data-stuck="false"
+  role="region"
+  aria-label="{{ 'custom.product.sticky_add_to_cart' | t }}"
+>
+  {%- render 'layout.stack',
+    slot: sticky_content,
+    horizontal_xs: false,
+    horizontal_lg: true,
+    align_xs: 'stretch',
+    align_lg: 'center',
+    justify_xs: 'start',
+    justify_lg: justify_lg,
+    gap_xs: 'none',
+    gap_lg: 'xs',
+    style: stack_style,
+    classlist: 'sticky-add-to-cart__inner'
+  -%}
+</sticky-add-to-cart>
+
+<script type="module">
+  import 'custom.sticky-add-to-cart';
+</script>
+
+{% stylesheet %}
+  sticky-add-to-cart {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: var(--sticky-offset, 0px);
+    z-index: 0;
+    opacity: 0;
+    transform: translateY(var(--sticky-hide-y, 100%));
+    padding: 16px calc(var(--gutter, 20px));
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    box-shadow: var(--drawer-box-shadow);
+    transition: var(--slide-curve);
+  }
+
+  sticky-add-to-cart[data-anchor='top'] {
+    bottom: auto;
+    top: var(--sticky-offset, 0px);
+  }
+
+  sticky-add-to-cart[data-stuck='true'] {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  sticky-add-to-cart:not([data-variant-available='true']) {
+    opacity: 0;
+    display: none;
+  }
+
+  .sticky-add-to-cart__row--top {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sticky-add-to-cart__row--bottom {
+    flex-shrink: 0;
+  }
+
+  .sticky-add-to-cart__image {
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    width: 50px;
+    overflow: hidden;
+    border-radius: var(--element-button-radius);
+  }
+
+  .sticky-add-to-cart__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sticky-add-to-cart__info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sticky-add-to-cart__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .sticky-add-to-cart__price {
+    flex-shrink: 0;
+  }
+
+  .sticky-add-to-cart__button {
+    flex-shrink: 0;
+  }
+{% endstylesheet %}
+{% style %}
+ @media only screen and (min-width: 769px){     
+    sticky-add-to-cart[data-width='constrained'] {    
+        width: {{ block.settings.sticky_constrained_width }}px;
+        max-width: calc(100% - 32px);
+        margin: 0 auto;
+        border-radius: var(--element-button-radius);
+    }
+ }
+{% endstyle %}

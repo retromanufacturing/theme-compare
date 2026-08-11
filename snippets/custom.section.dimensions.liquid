@@ -1,0 +1,38 @@
+{%- liquid
+  assign collection = section.settings.collection
+  assign bundle_product_list = section.settings.bundle_product_list
+  assign tolerance = section.settings.tolerance_percent
+  assign field_value = 'dimensions.width_height' | split: '.'
+
+  assign namespace = field_value[0]
+  assign key = field_value[1]
+  assign item_dimensions_count = 0
+-%}
+
+<dimensions-finder>
+  {% for product in collections[collection].products %}
+    <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
+    {% for variant in product.variants %}
+      {%- liquid
+        assign dimensions = variant.metafields[namespace][key].value 
+
+        if dimensions.size == 2
+          assign width = dimensions.first
+          assign height = dimensions.last
+        endif
+      -%}
+      {{ dimensions }}--{{width }}--{{ height }}
+    {% endfor %}
+  {% endfor %}
+</dimensions-finder>
+
+{% comment %}
+  {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
+  assign field_value = variant.metafields[namespace][key].value
+  if nested_key != blank
+    assign field_value = field_value[nested_key].value
+  endif
+
+  {% assign dimensions = variant.metafields[field_value].value %}
+    {{ dimensions }}--
+{% endcomment %}

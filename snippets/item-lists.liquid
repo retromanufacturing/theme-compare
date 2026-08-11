@@ -1,0 +1,31 @@
+{%- comment -%}
+  Renders items into a list
+
+  Accepts:
+  - list_content {boolean} - Items displayed as a list
+  - is_url {boolean} - Whether to render as a url
+  - is_data {boolean} - Whether to render additional dataset content
+
+  Usage:
+  {% render 'item-lists' %}
+{%- endcomment -%}
+
+<li
+  class="{{ list_class }}"
+  {% if is_data %}
+    {{ data_name }}="{{ data_value }}"
+  {% endif %}
+>
+  {{ list_content }}
+  {% if is_url %}
+    <a
+      href="{{ url }}"
+      class="{{ url_class }}"
+      {% if new_tab %}
+        target="_blank"
+      {% endif %}
+    >
+      {{- url_content -}}
+    </a>
+  {% endif %}
+</li>

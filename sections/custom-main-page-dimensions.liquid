@@ -1,0 +1,38 @@
+{% comment %}
+    Lets a shopper enter the width and height of their dash opening and find
+    which radios will fit. Shared by the standalone guide page and the
+    vehicle-search "not listed" trigger - one instance, two entry points.
+{% endcomment %}
+
+{%- render 'custom.section.dimensions' -%}
+
+{% schema %}
+{
+  "name": "Dimensions Finder",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Products to search"
+    },
+    {
+      "type": "product_list",
+      "id": "bundle_product_list",
+      "label": "Items link to build your own page instead of product page",
+      "info": "Products in this list link into the Build Your Own Radio builder with a preset variant. Everything else links straight to its product page.",
+      "limit": 50
+    },
+    {
+      "type": "range",
+      "id": "tolerance_percent",
+      "label": "Match tolerance",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "%",
+      "default": 5
+    }
+  ],
+  "presets": [{ "name": "Dimensions Finder" }]
+}
+{% endschema %}

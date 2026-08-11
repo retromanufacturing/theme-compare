@@ -1,0 +1,119 @@
+{%- doc -%}
+  Copyright © 2025 Archetype Themes LP. All rights reserved.
+
+  Renders a product's media, including images and videos.
+
+  @param {media} media - The media object
+
+  @example
+  {% render 'custom.product-gallery' %}
+{%- enddoc -%}
+
+{% capture slideshow %}
+  {% liquid
+    assign loading = 'eager'
+    assign animation = 'image-fade-in'
+    if context == 'main-product' and forloop.index == 1
+      # LCP image is loaded immediately
+      assign loading = false
+      assign animation = 'none'
+    endif
+  %}
+
+  {%- render 'product.gallery.media',
+        media: media,
+        featured_media: featured_media,
+        loopIndex0: loopIndex0,
+        loopIndex: loopIndex,
+        sizes: sizes,
+        sizeVariable: sizeVariable,
+        fallback: fallback,
+        loading: loading,
+        animation: animation,
+        variant_id: variant_id
+  -%}
+{% endcapture %}
+
+{% capture thumbnails %}
+  {%- liquid
+    assign image_set = false
+    assign image_set_group = ''
+    if media.alt contains '#'
+      assign image_set_full = media.alt | split: '#' | last
+      if image_set_full contains '_'
+        assign image_set = true
+        assign image_set_group = image_set_full | split: '_' | first
+      endif
+    endif
+
+    assign media_preview = media.preview_image | default: media
+    assign media_id = media.id | default: media.src
+
+    assign thumb_hide = false
+    if hide_variant_media and variant_images contains media_preview.src
+      if media.id != featured_media.id
+        assign thumb_hide = true
+      endif
+    endif
+    if variant_id and current_variant_id
+  unless variant_id contains current_variant_id
+    assign thumb_hide = true
+  endunless
+endif
+
+  -%}
+
+  <div
+    class="product__thumb-item{% if thumb_hide %} product__thumb-item-hide{% endif %}"
+    data-index="{{ loopIndex0 }}"
+    {% if variant_id %}data-variant-id="{{ variant_id }}"{% endif %}
+    {% if image_set %}
+      data-set-name="{{ image_set_group }}"
+      data-group="{{ image_set_full }}"
+    {% endif %}
+  >
+    <a
+      href="{{ media.preview_image | image_url: width: product_zoom_size }}"
+      data-product-thumb
+      class="product__thumb js-no-transition"
+      data-index="{{ loopIndex0 }}"
+      data-id="{{ media.id }}"
+    >
+      <div
+        class="image-wrap image-wrap__thumbnail"
+        style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
+      >
+        {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+          <span class="product__thumb-icon">
+            {% render 'element.icon', name: 'play' %}
+          </span>
+        {%- endif -%}
+
+        {%- if media.media_type == 'model' -%}
+          <span class="product__thumb-icon">
+            {% render 'element.icon', name: '3d' %}
+          </span>
+        {%- endif -%}
+
+        {%- assign loading = 'eager' -%}
+        {%- assign media_alt = media.alt | escape | split: '#' | first -%}
+        {%- render 'element.image',
+          img: media.preview_image,
+          alt: media_alt,
+          widths: '120, 360, 540, 720',
+          sizeVariable: '80px',
+          loading: loading
+        -%}
+      </div>
+    </a>
+  </div>
+{% endcapture %}
+
+{%- liquid
+  case media_class
+    when 'slideshow'
+      echo slideshow
+    when 'thumbnails'
+      echo thumbnails
+  endcase
+-%}
