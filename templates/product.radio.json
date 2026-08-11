@@ -9,99 +9,6 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-product",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "vendor_enable": true,
-            "sku_enable": false
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "color_swatches": false,
-            "size_chart_option": "",
-            "size_chart": ""
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "sales_point": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "globe",
-            "text": "Free worldwide shipping"
-          }
-        },
-        "sales_point2": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "truck",
-            "text": "Free returns"
-          }
-        },
-        "sales_point3": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "leaf",
-            "text": "Carbon neutral"
-          }
-        },
-        "sales_point4": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "lock",
-            "text": "Secure payments"
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {
-            "inventory_threshold": 10,
-            "inventory_transfers_enable": true
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true,
-            "show_gift_card_recipient": false
-          }
-        }
-      },
-      "block_order": [
-        "title",
-        "variant_picker",
-        "price",
-        "sales_point",
-        "sales_point2",
-        "sales_point3",
-        "sales_point4",
-        "inventory_status",
-        "buy_buttons"
-      ],
-      "disabled": true,
-      "settings": {
-        "image_position": "left",
-        "image_container_size": "medium",
-        "product_image_size": "square",
-        "product_zoom_enable": true,
-        "thumbnail_position": "beside",
-        "thumbnail_height": "flexible",
-        "thumbnail_arrows": false,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
-      }
-    },
     "custom_main_product_block_qjaHWW": {
       "type": "custom-main-product-block",
       "blocks": {
@@ -528,7 +435,6 @@
     }
   },
   "order": [
-    "main",
     "custom_main_product_block_qjaHWW",
     "custom_section_F3Pbjx",
     "sub",
