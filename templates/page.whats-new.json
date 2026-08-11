@@ -12,9 +12,105 @@
     "main": {
       "type": "main-page",
       "settings": {}
+    },
+    "featured_collection_Wbwn9U": {
+      "type": "featured-collection",
+      "custom_css": [
+        ".section-header {background-color: #810f12; padding: 10px;}",
+        "h2 {color: #ffffff;}",
+        ".section-header__link {color: #ffffff;}"
+      ],
+      "name": "t:labels.featured_collection",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "home_featured_products": "retrosound-new-product-releases",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "rich_text_X8EVwH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xBnaDb": {
+          "type": "heading",
+          "settings": {
+            "title": "Innovations Driving Classic Car Audio Forward"
+          }
+        },
+        "text_zejTwb": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>At Retro Manufacturing, we are continuously innovating to bring you the latest advancements in classic car audio systems. Our team is currently developing cutting-edge solutions designed to enhance sound quality, installation ease, and compatibility with a wider range of vintage vehicles.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xBnaDb",
+        "text_zejTwb"
+      ],
+      "custom_css": [
+        "h2 {font-size: 1.5em; padding-bottom: 0px;}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "blog_posts_CAGLTA": {
+      "type": "blog-posts",
+      "custom_css": [
+        "@media only screen and (min-width: 769px) {.blog-layout__main + .blog-layout__sidebar {padding-left: 20px; margin-left: 20px; }}",
+        "@media only screen and (min-width: 769px) {.blog-layout__sidebar {flex: 0 0 calc(45% - 90px); }}"
+      ],
+      "settings": {
+        "title": "News and Information",
+        "blog": "news",
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_image_size": "natural",
+        "divider": false
+      }
+    },
+    "advanced_content_fGhyyQ": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_zM7UTy": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div style=\"\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 15px;\n  width: 100%;\n  flex-wrap: wrap;\n  padding: 20px 24px;\n\">\n\n  <!-- Left Text -->\n  <div style=\"\n    font-size: 18px;\n    font-weight: 700;\n    letter-spacing: 0.5px;\n    text-align:center;\n    color: #ffffff;\n  \">\n    Sign up for the Latest News and Promotions\n  </div>\n\n  <!-- Right Button -->\n  <a href=\"https://mailchi.mp/retromanufacturing.com/retrosound-newsletters-and-offers\"\n     target=\"_blank\"\n     rel=\"noopener noreferrer\"\n     style=\"\n       display: inline-block;\n       background-color: #810F12;\n       color: #ffffff;\n       text-decoration: none;\n       padding: 14px 50px;\n       font-size: 18px;\n       font-weight: 600;\n       letter-spacing: 0.5px;\n       border-radius: 4px;\n       text-align: center;\n       transition: all 0.2s ease-in-out;\n       white-space: nowrap;\n     \"\n     onmouseover=\"this.style.backgroundColor='#333333';\"\n     onmouseout=\"this.style.backgroundColor='#810F12';\">\n     Stay in the Loop\n  </a>",
+            "width": "75%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_zM7UTy"
+      ],
+      "custom_css": [
+        ".custom-content {justify-content: center; background-image: url(\"https://cdn.shopify.com/s/files/1/0932/8664/files/RM-landing-page-retail-sign-up-c10-page-base-dm.jpg?v=1765391836\"); background-size: cover; background-position: center; background-repeat: no-repeat;}"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "full_width": true,
+        "space_around": false
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "featured_collection_Wbwn9U",
+    "rich_text_X8EVwH",
+    "blog_posts_CAGLTA",
+    "advanced_content_fGhyyQ"
   ]
 }
