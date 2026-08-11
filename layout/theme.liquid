@@ -45,6 +45,7 @@
     {%- render 'head.is-land' -%}
     {%- render 'head.preload-js' -%}
     {%- render 'head.theme-editor' -%}
+    {%- render 'custom.scripts' -%}
 
     {{ content_for_header }}
 
@@ -80,6 +81,7 @@
       <div class="transition-body">
         {%- sections 'header-group' -%}
         {%- sections 'popup-group' -%}
+        {%- sections 'custom-vehicle-search-banner' -%} 
 
         <main class="main-content" id="MainContent">
           {{ content_for_layout }}
