@@ -1,1 +1,18 @@
-This is the description block
+{%- liquid
+  # Code to render radio descriptions
+  assign radio_templates = 'radio,bundle,preorder-radio,preorder-radio-instock' | split: ','
+  capture description
+    if radio_templates contains template.suffix
+      render 'desc-radio'
+    endif
+  endcapture
+
+  # Legacy fallback for products with description in description
+  if product.description contains '<!--SPLIT-->'
+    assign description_segments = product.description | split: '<!--SPLIT-->'
+    assign description = description_segments[0]
+  endif
+-%}
+{% if description != blank %}
+  {{ description }}
+{% endif %}
