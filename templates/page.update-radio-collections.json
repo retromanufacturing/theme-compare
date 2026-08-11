@@ -31,7 +31,8 @@
       ],
       "custom_css": [
         ".rte h1 {margin-top: 10px;}",
-        ".rte h2 {margin-top: 10px;}"
+        ".rte h2 {margin-top: 10px;}",
+        ":is(.rte,.rte-setting) a:not(.rte__image):not(.element-button) {text-decoration: none;}"
       ],
       "name": "t:labels.custom_content",
       "settings": {
