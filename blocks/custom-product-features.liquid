@@ -1,0 +1,26 @@
+<span class="block-product_features">
+  {% liquid
+    capture content
+      render 'block.product-features', product: closest.product | default: product, block: block
+    endcapture
+
+    render 'custom.variant-block', content: content, block: block, product: closest.product | default: product
+  %}
+</span>
+{% schema %}
+{
+  "name": "t:custom.product.features",
+  "settings": [
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "t:custom.font_size",
+      "default": 14,
+      "min": 8,
+      "max": 60,
+      "unit": "px"
+    }
+  ],
+  "presets": [{ "name": "t:custom.product.features" }]
+}
+{% endschema %}

@@ -1,0 +1,22 @@
+<span class="block-title--{{ block.id }}">
+  {% render 'block.product-title', product: closest.product %}
+</span>
+
+{% schema %}
+{
+  "name": "t:labels.title",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "vendor_enable",
+      "label": "t:actions.show_vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "sku_enable",
+      "label": "t:actions.show_sku"
+    }
+  ],
+  "presets": [{ "name": "t:labels.title" }]
+}
+{% endschema %}

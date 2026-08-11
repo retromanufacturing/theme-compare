@@ -1,0 +1,120 @@
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign title = title | default: block.settings.title
+  assign is_open = block.settings.is_open
+  assign tab_type = block.settings.tab_type
+
+  for options in product.options_with_values
+    if forloop.last
+      assign option_count = forloop.length | plus: 1 | append: '. '
+      assign option_count_2 = forloop.length | plus: 2 | append: '. '
+    endif
+  endfor
+  
+  capture block_content
+    content_for 'blocks'
+  endcapture
+
+  capture accordion_content
+    case tab_type
+      when 'default'
+      when 'accessories'
+        assign title = block.settings.title | prepend: option_count
+      when 'warranty'
+        assign title = block.settings.title | prepend: option_count_2
+        render 'clyde-pdp'
+    endcase
+    unless tab_type == 'warranty'
+      echo block_content
+    endunless  
+  endcapture
+
+  capture tab_title
+    echo title
+  endcapture
+-%}
+
+{%- if title != blank and accordion_content != blank -%}
+  <div class="block-tab--{{ block.id }}" {{ block.shopify_attributes }}>
+    {%- render 'element.accordion', title: tab_title, slot: accordion_content, open: is_open -%}
+  </div>
+
+  {% style %}
+    .block-tab--{{ block.id }} {
+      .element-accordion__toggle {            
+        color: {{ block.settings.tab_title_color}};
+        background-color: {{  block.settings.tab_background_color }};
+        {% if block.settings.tab_padding > 0 %}
+          padding: {{ block.settings.tab_padding }}rem;
+        {% endif %}
+      }
+    }
+  {% endstyle %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Tab",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "Tab heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_open",
+      "label": "Is open",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "tab_type",
+      "label": "Tab Type",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "accessories",
+          "label": "Accessories"
+        },
+        {
+          "value": "warranty",
+          "label": "Warranty"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "tab_title_color",
+      "label": "Title Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "tab_background_color",
+      "label": "Background Color",
+       "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "tab_padding",
+      "label": "Tab padding",
+      "default": 0,
+      "min": 0,
+      "max": 5,
+      "unit": "rem"
+    }
+  ],
+  "presets": [{ "name": "Tab", "category": "Layout" }]
+}
+{% endschema %}

@@ -1,0 +1,133 @@
+{% render 'block.product-buy-buttons', product: closest.product %}
+
+{%- if block.settings.enable_sticky_add_to_cart -%}
+  {% render 'custom.sticky-add-to-cart', product: closest.product %}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:labels.buy_buttons",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_dynamic_checkout",
+      "label": "t:actions.show_dynamic_checkout",
+      "info": "t:info.lets_customers_checkout_familiar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "surface_pickup_enable",
+      "label": "t:actions.enable_pickup_availability",
+      "info": "t:actions.learn_to_setup_local_pickup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gift_card_recipient",
+      "default": false,
+      "label": "t:actions.show_recipient_information",
+      "info": "t:info.gift_card_products"
+    },
+    {
+      "type": "header",
+      "content": "Sticky add to cart"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_add_to_cart",
+      "label": "Enable sticky add to cart",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "sticky_width",
+      "label": "Width (desktop)",
+      "default": "full",
+      "options": [
+        { "value": "full", "label": "Full width" },
+        { "value": "constrained", "label": "Constrained" }
+      ],
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "range",
+      "id": "sticky_constrained_width",
+      "label": "Constrained width (desktop)",
+      "min": 320,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "default": 600,
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart and block.settings.sticky_width == 'constrained' }}"
+    },
+    {
+      "type": "text",
+      "id": "position_selector",
+      "label": "Position relative to element",
+      "info": "Optional CSS selector(s), comma-separated, e.g. header-section or #my-element. Leave blank for default bottom-of-screen placement.",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "select",
+      "id": "position_placement",
+      "label": "Placement",
+      "default": "above",
+      "options": [
+        { "value": "above", "label": "Above element" },
+        { "value": "below", "label": "Below element" }
+      ],
+      "info": "Only applies when a selector is entered above.",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart and block.settings.position_selector != blank }}"
+    },
+    {
+      "type": "text",
+      "id": "content_push_selector",
+      "label": "Push down element",
+      "info": "Optional CSS selector for the element that should be pushed down to make room for the bar, when anchored below another element.",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart and block.settings.position_selector != blank }}"
+    },
+    {
+      "type": "header",
+      "content": "Sticky bar layout",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "range",
+      "id": "sticky_gap_mobile",
+      "label": "Gap (mobile)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 8,
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "range",
+      "id": "sticky_gap_desktop",
+      "label": "Gap (desktop)",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 16,
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    },
+    {
+      "type": "select",
+      "id": "sticky_justify_desktop",
+      "label": "Alignment (desktop)",
+      "options": [
+        { "value": "flex-start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Right" },
+        { "value": "space-between", "label": "Space between" }
+      ],
+      "default": "space-between",
+      "visible_if": "{{ block.settings.enable_sticky_add_to_cart }}"
+    }
+  ],
+  "presets": [{ "name": "t:labels.buy_buttons" }]
+}
+{% endschema %}

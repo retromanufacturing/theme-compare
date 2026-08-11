@@ -1,0 +1,91 @@
+{%- liquid
+  assign product = closest.product | default: block.settings.product
+  assign image_position = block.settings.image_position
+  assign image_container_size = block.settings.image_container_size
+  assign mobile_layout = block.settings.mobile_layout
+  assign hide_thumbnails = block.settings.hide_thumbnails
+
+  capture gallery
+    render 'product.gallery.custom', product: product, hide_thumbnails: hide_thumbnails
+  endcapture
+
+  capture info
+    content_for 'blocks', closest.product: product
+  endcapture
+-%}
+
+{%- render 'section.featured-product',
+  product: product,
+  slot: info,
+  product_media_gallery: gallery,
+  image_position: image_position,
+  image_container_width: image_container_size,
+  mobile_layout: mobile_layout,
+
+-%}
+
+{% schema %}
+{
+  "name": "Product Card",
+  "tag": null,
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_container_size",
+      "label": "Image size",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "default": "partial",
+      "options": [
+        { "value": "partial", "label": "75% width" },
+        { "value": "full", "label": "Full width" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_thumbnails",
+      "label": "Hide thumbnails",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Card",
+      "blocks": [
+        {
+          "type": "custom-group",
+          "blocks": [{ "type": "custom-sku" }, { "type": "custom-product-inventory" }]
+        },
+        { "type": "custom-variant-picker" },
+        { "type": "custom-price" },
+        { "type": "custom-product-features" }
+      ]
+    }
+  ]
+}
+{% endschema %}

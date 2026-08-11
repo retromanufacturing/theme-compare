@@ -1,0 +1,29 @@
+{%- liquid
+  assign current_variant = closest.product.selected_or_first_available_variant
+-%}
+
+<variant-sku data-product-id="{{ closest.product.id }}" data-section-id="{{ section.id }}">
+  {%- if current_variant.sku != blank -%}
+    {%- assign sku = 'Part Number: ' | append: current_variant.sku -%}
+    {%- render 'element.text', text: sku, variant: 'body-sm' -%}
+  {%- endif -%}
+</variant-sku>
+
+{%- stylesheet -%}
+  variant-sku {
+    opacity: 0.65;
+  }
+{%- endstylesheet -%}
+
+<script type="module">
+  import 'block.product-title'
+</script>
+
+{% schema %}
+{
+  "name": "Product sku",
+  "settings": [
+  ],
+  "presets": [{ "name": "Product sku" }]
+}
+{% endschema %}

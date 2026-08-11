@@ -1,0 +1,36 @@
+<span class="block-price--{{ block.id }}">
+  {% render 'block.product-price', product: closest.product %}
+</span>
+
+{% style %}
+  .block-price--{{ block.id }} {
+    color: {{ block.settings.color }};
+
+    {% if block.settings.hide_subtitle %}
+      .label.variant__label.element-text {
+        display: none;
+    } 
+    {% endif %}
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "t:labels.price",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_subtitle",
+      "label": "Hide price subtitle",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Color",
+      "default": " #810F12"
+    }
+  ],
+  "presets": [{ "name": "t:labels.price" }]
+}
+{% endschema %}

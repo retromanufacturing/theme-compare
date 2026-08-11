@@ -1,0 +1,124 @@
+{%- liquid
+  assign group_items = block.settings.group_items
+  assign required = block.settings.required
+  assign tab_name = 'product-tabs-' | append: block.id
+-%}
+
+{%- if group_items -%}
+  <object-tabs data-required="{{ required }}">
+    {%- render 'element.object-tabs', items: block.settings.product_list, name: tab_name -%}
+{%- endif -%}
+
+{%- for product in block.settings.product_list -%}
+  {%- capture card_content -%}
+    {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
+  {%- endcapture -%}
+
+  {%- if group_items -%}
+    <div
+      data-tab-index="{{ forloop.index }}"
+      aria-hidden="{% unless forloop.first %}true{% else %}false{% endunless %}"
+    >
+      {%- unless required -%}
+        <input
+          type="checkbox"
+          class="bundle-optional-checkbox"
+          data-panel-index="{{ forloop.index }}"
+        >
+      {%- endunless -%}
+      {{ card_content }}
+    </div>
+  {%- elsif required == false -%}
+    <div class="standalone-optional-item" data-standalone-optional>
+      <input type="checkbox" class="bundle-standalone-checkbox">
+      {{ card_content }}
+    </div>
+  {%- else -%}
+    {{ card_content }}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if group_items -%}
+  </object-tabs>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product List",
+  "tag": null,
+  "settings": [
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "t:labels.products"
+    },
+    {
+      "type": "checkbox",
+      "id": "required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "group_items",
+      "label": "t:custom.bundle.group_products",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product List",
+      "blocks": {
+        "product-card": {
+          "type": "custom-product-card",
+          "static": true,
+          "settings": {
+            "product": "{{ closest.product }}",
+            "image_position": "left",
+            "image_container_size": "medium",
+            "mobile_layout": "partial"
+          },
+          "blocks": {
+            "custom-group": {
+              "type": "custom-group",
+              "settings": {},
+              "blocks": {
+                "custom-sku": { "type": "custom-sku", "settings": {}, "blocks": {} },
+                "custom-product-inventory": {
+                  "type": "custom-product-inventory",
+                  "settings": { "inventory_threshold": 10, "inventory_transfers_enable": true },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["custom-sku", "custom-product-inventory"]
+            },
+            "custom-variant-picker": {
+              "type": "custom-variant-picker",
+              "settings": {
+                "variant_labels": true,
+                "picker_type": "button",
+                "product_dynamic_variants_enable": true,
+                "color_swatches": false,
+                "update_url": false
+              },
+              "blocks": {}
+            },
+            "custom-price": {
+              "type": "custom-price",
+              "settings": { "hide_subtitle": false, "color": "#000" },
+              "blocks": {}
+            },
+            "custom-product-features": {
+              "type": "custom-product-features",
+              "settings": { "font_size": 14 },
+              "blocks": {}
+            }
+          },
+          "block_order": ["custom-group", "custom-variant-picker", "custom-price", "custom-product-features"]
+        }
+      },
+      "block_order": []
+    }
+  ]
+}
+{% endschema %}

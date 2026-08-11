@@ -1,0 +1,239 @@
+{% comment %}
+  Renders tabs for descriptions, specifications, videos, manuals, accessories, and warranties
+
+  References:
+  option_count = Accessories
+  option_count_2 = Warranties
+{% endcomment %}
+
+{%- liquid
+  assign tab_id = block.id | append: product.id
+  assign title = block.settings.title
+  assign tab_type = block.settings.tab_type
+  assign description = product.description
+  if product.description contains '<!--SPLIT-->'
+    assign descriptions = product.description | split: '<!--SPLIT-->'
+    assign description = descriptions[0]
+    assign specifications = descriptions[2]
+  else
+     assign description = product.description
+  endif
+
+  for options in product.options_with_values
+    if forloop.last
+      assign option_count = forloop.length | plus: 1 | append: '. '
+      assign option_count_2 = forloop.length | plus: 2 | append: '. '
+    endif
+  endfor
+
+  capture block_content
+    content_for 'blocks'
+  endcapture
+
+  capture description_content
+    if product.template_suffix contains 'radio'
+      render 'desc-radios'
+    elsif product.type == 'Speaker'
+      render 'desc-speakers'
+    else
+      echo description
+    endif
+  endcapture
+
+  capture specifications_content
+    if product.template_suffix contains 'radio'
+      render 'motorspecs'
+    else
+      echo specifications
+    endif
+  endcapture
+
+  capture tab_content
+    case tab_type
+      when 'default'
+      when 'description'
+        if description_content == blank
+          echo description
+        else  
+          echo description_content
+        endif
+      when 'manuals'
+        render 'product-manuals'
+      when 'specifications'
+        echo specifications_content
+      when 'videos'
+        render 'product-media'
+      when 'accessories'
+        assign title = block.settings.title | prepend: option_count
+      when 'warranty'
+        assign title = block.settings.title | prepend: option_count_2
+        render 'clyde-pdp'
+    endcase
+    echo block_content
+  endcapture
+
+  capture tab_title
+    echo title
+  endcapture
+-%}
+
+<div
+  class="block block-tab block-tab--{{ block.id }} block-tab--{{ tab_type }} {% unless tab_content != blank %} hide{% endunless %}"
+  {{ block.shopify_attributes }}
+>
+  <div class="block-tab--content">
+    {%- render 'element.accordion',
+ 
+      title: tab_title,
+      slot: tab_content,
+  
+      open: block.settings.open
+    -%}
+    {% comment %}
+      {%- render 'element.accordion',
+      id: tab_id,
+      borders: true,
+
+    -%}
+    {% endcomment %}
+  </div>
+</div>
+
+{% style %}
+ .block-tab--{{ block.id }} .element-accordion__toggle {
+   color: {{ block.settings.tab_title_color}};
+   background-color: {{  block.settings.tab_background_color }};
+   font-size: {{ block.settings.tab_title_font_size}}px;
+   {% if block.settings.tab_title_bold %}
+     font-weight: bold;
+   {% endif %}
+ } 
+ .block-tab--manuals {
+   a:not(.btn){ 
+     color: {{ block.settings.color_manuals }} !important;      
+     text-decoration: none !important;;        
+   }
+ }
+ .block-tab--description {
+     a:not(.btn) {
+       color: {{ block.settings.color_description_links }} !important;
+     } 
+ }
+ /* .block-tab--videos {  
+   .grid-item__content {
+       flex-direction: row !important;
+     } 
+ }   */
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Tab (old)",
+  "blocks": [{ "type": "@theme"}, {"type": "@app"}],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Tab",
+      "default": "Tab"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "open",
+      "label": "Tab is open",
+      "default": true
+    },
+    {
+    "type": "select",
+    "id": "tab_type",
+    "label": "Tab Type",
+    "options": [
+      {
+        "value": "default",
+        "label": "Default"
+      },
+      {
+        "value": "description",
+        "label": "Description"
+      },
+      {
+        "value": "specifications",
+        "label": "Specifications"
+      },
+      {
+        "value": "videos",
+        "label": "Videos"
+      },
+      {
+        "value": "manuals",
+        "label": "Manuals"
+      },
+      {
+        "value": "accessories",
+        "label": "Accessories"
+      },
+      {
+        "value": "warranty",
+        "label": "Warranty"
+      }
+    ],
+    "default": "default"
+  },
+  {
+      "type": "header",
+      "content": "t:settings.styling"
+  },
+  {    
+      "type": "color",
+      "id": "tab_title_color",
+      "label": "Title Color",
+      "default": "#000000"    
+  },
+  {    
+      "type": "color",
+      "id": "tab_background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"    
+  },
+  {
+      "type": "range",
+      "id": "tab_title_font_size",
+      "label": "Title Font Size",
+      "default": 16,
+      "min": 8,
+      "max": 60,
+      "unit": "px"
+  },
+  {         
+      "type": "checkbox",          
+      "id": "tab_title_bold",          
+      "label": "Bold Title",         
+      "default": false    
+  },  
+  {
+      "type": "color",
+      "id": "color_description_links",
+      "label": "Link Color",
+      "default": "#810F12",
+      "visible_if": "{{ block.settings.tab_type == 'description' }}"
+  },   
+  {
+      "type": "color",
+      "id": "color_manuals",
+      "label": "Link Color",
+      "default": "#810F12",
+      "visible_if": "{{ block.settings.tab_type == 'manuals' }}"
+  }  
+  ],
+  "presets": [
+    {
+      "name": "Tab (old)",
+      "category": "Layout"
+    }
+  ]
+}
+{% endschema %}

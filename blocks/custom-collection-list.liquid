@@ -1,0 +1,205 @@
+{%- liquid
+  assign tab_name = 'product-tabs-' | append: block.id
+  assign filter_type = block.settings.filter_type
+  assign filter_value = block.settings.filter_value
+  assign path_parts = filter_value | split: '.'
+-%}
+
+<object-tabs data-required="{{ block.settings.required }}">
+  {%- render 'element.object-tabs', items: block.settings.collection_list, name: tab_name -%}
+
+  {%- for collection in block.settings.collection_list -%}
+    {%- assign tab_index = forloop.index -%}
+    {%- if filter_type != 'none' -%}
+      {%- liquid
+        assign child_values = collection.products
+        for part in path_parts
+          assign child_values = child_values | map: part
+        endfor
+        assign child_values = child_values | uniq | compact
+      -%}
+      <fieldset
+        class="object-child-tabs-wrap variant-button-wrap"
+        data-parent-index="{{ tab_index }}"
+        {% if tab_index != 1 %}
+          aria-hidden="true"
+        {% endif %}
+      >
+        <legend class="visually-hidden">{{ collection.title }}</legend>
+        {%- for value in child_values -%}
+          {%- liquid
+            assign child_id = tab_name | append: '-child-' | append: tab_index | append: '-' | append: forloop.index
+            assign child_group_name = tab_name | append: '-child-' | append: tab_index
+          -%}
+          {%- capture child_label -%}
+            {%- render 'element.button', type: 'button', text: value, inverted: true, style: '--element-button-color-primary: var(--color-primary); --element-button-color-secondary: var(--color-secondary);' -%}
+          {%- endcapture -%}
+          {%- render 'element.radio',
+            id: child_id,
+            name: child_group_name,
+            value: forloop.index,
+            checked: forloop.first,
+            display_icon: false,
+            slot: child_label
+          -%}
+        {%- endfor -%}
+      </fieldset>
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- for collection in block.settings.collection_list -%}
+    {%- assign tab_index = forloop.index -%}
+    {%- if filter_type != 'none' -%}
+      {%- liquid
+        assign child_values = collection.products
+        for part in path_parts
+          assign child_values = child_values | map: part
+        endfor
+        assign child_values = child_values | uniq | compact
+      -%}
+    {%- endif -%}
+    {%- for product in collection.products -%}
+      {%- liquid
+        if filter_type != 'none'
+          assign product_value = product
+          for part in path_parts
+            assign product_value = product_value[part]
+          endfor
+          assign child_index = 1
+          for value in child_values
+            if value == product_value
+              break
+            endif
+            assign child_index = child_index | plus: 1
+          endfor
+        endif
+
+        assign panel_hidden = false
+        if tab_index != 1
+          assign panel_hidden = true
+        endif
+        if filter_type != 'none' and child_index != 1
+          assign panel_hidden = true
+        endif
+      -%}
+      <div
+        data-tab-index="{{ tab_index }}"
+        {% if filter_type != 'none' %}
+          data-child-index="{{ child_index }}"
+        {% endif %}
+        aria-hidden="{{ panel_hidden }}"
+      >
+        {%- unless block.settings.required -%}
+          <input
+            type="checkbox"
+            class="bundle-optional-radio"
+            data-panel-index="{{ tab_index }}"
+          >
+        {%- endunless -%}
+        {%- content_for 'block', type: 'custom-product-card', id: 'product-card', closest.product: product -%}
+      </div>
+    {%- endfor -%}
+  {%- endfor -%}
+</object-tabs>
+
+{% schema %}
+{
+  "name": "Collections",
+  "tag": null,
+  "settings": [
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "t:labels.collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "required",
+      "label": "Required",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "collection_label",
+      "label": "Collection label"
+    },
+    {
+      "type": "select",
+      "id": "filter_type",
+      "label": "Filter Products",
+      "default": "none",
+      "options": [
+        { "value": "none", "label": "None" },
+        { "value": "metafield", "label": "Metafield" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "filter_value",
+      "label": "Filter value",
+      "info": "e.g. metafields.features.size",
+      "visible_if": "{{ block.settings.filter_type != 'none' }}"
+    },
+    {
+      "type": "text",
+      "id": "filter_label",
+      "label": "Filter label",
+      "visible_if": "{{ block.settings.filter_type != 'none' and block.settings.filter_value != blank }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection list",
+      "blocks": {
+        "product-card": {
+          "type": "custom-product-card",
+          "static": true,
+          "settings": {
+            "product": "{{ closest.product }}",
+            "image_position": "left",
+            "image_container_size": "medium",
+            "mobile_layout": "partial"
+          },
+          "blocks": {
+            "custom-group": {
+              "type": "custom-group",
+              "settings": {},
+              "blocks": {
+                "custom-sku": { "type": "custom-sku", "settings": {}, "blocks": {} },
+                "custom-product-inventory": {
+                  "type": "custom-product-inventory",
+                  "settings": { "inventory_threshold": 10, "inventory_transfers_enable": true },
+                  "blocks": {}
+                }
+              },
+              "block_order": ["custom-sku", "custom-product-inventory"]
+            },
+            "custom-variant-picker": {
+              "type": "custom-variant-picker",
+              "settings": {
+                "variant_labels": true,
+                "picker_type": "button",
+                "product_dynamic_variants_enable": true,
+                "color_swatches": false
+              },
+              "blocks": {}
+            },
+            "custom-price": {
+              "type": "custom-price",
+              "settings": { "hide_subtitle": false, "color": "#000" },
+              "blocks": {}
+            },
+            "custom-product-features": {
+              "type": "custom-product-features",
+              "settings": { "font_size": 14 },
+              "blocks": {}
+            }
+          },
+          "block_order": ["custom-group", "custom-variant-picker", "custom-price", "custom-product-features"]
+        }
+      },
+      "block_order": []
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,130 @@
+<div
+  class="
+    spacer-block
+    spacer-block--size-{{ block.settings.size }}
+    {% if block.settings.custom_mobile_size %}
+      spacer-block--size-mobile-{{ block.settings.size_mobile }}
+    {% endif %}
+  "
+  style="
+    {% if block.settings.size == 'percent' %}
+      --spacer-size: {{ block.settings.percent_size | divided_by: 100.00 }};
+    {% else %}
+      --spacer-size: {{ block.settings.pixel_size }}px;
+    {% endif %}
+
+    {% if block.settings.custom_mobile_size %}
+      {% if block.settings.size_mobile == 'percent' %}
+        --spacer-size-mobile: {{ block.settings.percent_size_mobile }}%;
+      {% else %}
+        --spacer-size-mobile: {{ block.settings.pixel_size_mobile }}px;
+      {% endif %}
+    {% endif %}
+  "
+  {{ block.shopify_attributes }}
+></div>
+
+{% stylesheet %}
+  .spacer-block {
+    display: block;
+    width: 100%;
+    height: var(--spacer-size);
+    flex-shrink: 0;
+  }
+
+  @media screen and (max-width: 750px) {
+    .spacer-block {
+      height: var(--spacer-size-mobile, var(--spacer-size));
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Spacer",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "size",
+      "label": "Unit",
+      "options": [
+        { "value": "pixel", "label": "Pixel" },
+        { "value": "percent", "label": "Percent" }
+      ],
+      "default": "percent"
+    },
+    {
+      "type": "range",
+      "id": "percent_size",
+      "label": "Size",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.size == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "pixel_size",
+      "label": "Size",
+      "min": 0,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 120,
+      "visible_if": "{{ block.settings.size == 'pixel' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_mobile_size",
+      "label": "Custom mobile size",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Mobile size",
+      "visible_if": "{{ block.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "select",
+      "id": "size_mobile",
+      "label": "Unit",
+      "options": [
+        { "value": "pixel", "label": "Pixel" },
+        { "value": "percent", "label": "Percent" }
+      ],
+      "default": "percent",
+      "visible_if": "{{ block.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "range",
+      "id": "percent_size_mobile",
+      "label": "Size",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.size_mobile == 'percent' and block.settings.custom_mobile_size == true }}"
+    },
+    {
+      "type": "range",
+      "id": "pixel_size_mobile",
+      "label": "Size",
+      "min": 0,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 120,
+      "visible_if": "{{ block.settings.size_mobile == 'pixel' and block.settings.custom_mobile_size == true }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Spacer"
+    }
+  ]
+}
+{% endschema %}

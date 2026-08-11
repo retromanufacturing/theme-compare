@@ -1,0 +1,85 @@
+{% doc %}
+  Custom variant tooltip trigger.
+
+  Merchant picks one or more tooltip entries in the "Tooltip list" setting
+  (a variant_tooltips metaobject). If more than one entry is picked, the
+  "Custom tooltip logic" setting decides which one applies (e.g. based on
+  product tags) by outputting that entry's exact Name field value. This file
+  then looks up the entry with that name and renders its linked page content.
+
+  If "Custom tooltip logic" is left blank, or its output doesn't match any
+  entry's name, the first entry in the list is used by default.
+
+  @example
+  {% content_for 'block', type: 'custom-variant-tooltip', id: 'variant-tooltip-1' %}
+{% enddoc %}
+
+{%- liquid
+  # All tooltip entries the merchant has selected in the theme editor
+  assign tooltip_entries = block.settings.tooltip_list
+
+  # The name of whichever entry should be used, as decided by the merchant's
+  # custom Liquid logic (e.g. "show the DAB version if this product has the DAB tag")
+  assign selected_entry_name = block.settings.tooltip_liquid | strip
+
+  # Default to the first entry until/unless a name match is found below.
+  # Uses forloop.first instead of the `first` filter, since `first` doesn't
+  # resolve correctly against this metaobject_list Drop.
+  assign selected_entry = blank
+  for entry in tooltip_entries
+    if forloop.first
+      assign selected_entry = entry
+    endif
+    if selected_entry_name != blank and entry.name == selected_entry_name
+      assign selected_entry = entry
+    endif
+  endfor
+
+  # Build what actually displays in the tooltip popover
+  assign tooltip_title = selected_entry.title
+
+  assign tooltip_content = ''
+  if selected_entry.page != blank
+    assign tooltip_content = selected_entry.page.value.content
+  endif
+-%}
+
+{%- if tooltip_content != blank -%}
+  <span class="variant__label-info" {{ block.shopify_attributes }}>
+    {%- render 'overlay.tool-tip.trigger',
+      title: tooltip_title,
+      content: tooltip_content,
+      context: 'custom-variant-tooltip'
+    -%}
+  </span>
+{%- endif -%}
+
+{% style %}
+  [data-tool-tip*=custom-variant-tooltip] .tool-tip-trigger__title{
+    text-decoration: underline;
+    font-size: .85rem;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Variant Tooltip",
+  "tag": null,
+  "settings": [
+    {
+      "type": "metaobject_list",
+      "id": "tooltip_list",
+      "label": "Tooltip list",
+      "metaobject_type": "variant_tooltips",
+      "info": "The tooltip entries this block can choose from. If more than one is selected, use 'Custom tooltip logic' below to decide which one applies."
+    },
+    {
+      "type": "liquid",
+      "id": "tooltip_liquid",
+      "label": "Custom tooltip logic",
+      "info": "Optional. Liquid that outputs the exact Name of whichever entry above should be used (e.g. based on product tags). Leave blank to always use the first entry."
+    }
+  ],
+  "presets": [{ "name": "Variant Tooltip" }]
+}
+{% endschema %}
