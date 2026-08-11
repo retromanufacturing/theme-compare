@@ -9,43 +9,6 @@
  */
 {
   "sections": {
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {
-            "title": "Save 10% on your first purchase",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Sign up today and we'll send you a 10% discount code towards<br/>your first purchase.</p>"
-          }
-        },
-        "form": {
-          "type": "form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "title",
-        "text",
-        "form"
-      ],
-      "settings": {
-        "color_scheme": "2",
-        "align_text": "center",
-        "image_width": "33",
-        "image_mask": "none",
-        "image_position": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "slideshow_eXq7F6": {
       "type": "slideshow",
       "blocks": {
@@ -638,22 +601,6 @@
         "hide_block_images": true
       }
     },
-    "blog_posts_T7XBVU": {
-      "type": "blog-posts",
-      "settings": {
-        "title": "From the journal",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "blog": "news",
-        "blog_show_tags": false,
-        "blog_show_date": false,
-        "blog_show_comments": false,
-        "blog_show_author": false,
-        "blog_show_excerpt": false,
-        "blog_image_size": "natural",
-        "divider": false
-      }
-    },
     "1786469730a8ff1b86": {
       "type": "apps",
       "blocks": {
@@ -691,10 +638,25 @@
         "full_width": false,
         "space_around": true
       }
+    },
+    "blog_posts_T7XBVU": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "From the journal",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "blog": "news",
+        "blog_show_tags": false,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "natural",
+        "divider": false
+      }
     }
   },
   "order": [
-    "newsletter",
     "slideshow_eXq7F6",
     "promo_grid_EPDLKm",
     "advanced_content_XdRpUE",
