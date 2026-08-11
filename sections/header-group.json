@@ -11,6 +11,46 @@
   "type": "header",
   "name": "t:labels.header_group",
   "sections": {
+    "custom-toolbar": {
+      "type": "custom-toolbar",
+      "blocks": {
+        "social_3Azww7": {
+          "type": "social",
+          "settings": {}
+        },
+        "multi_selector_QLWxnD": {
+          "type": "multi_selector",
+          "settings": {
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        },
+        "announcement_mx7aUB": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "",
+            "richtext_mobile": ""
+          }
+        },
+        "menu_link_ay9Cwf": {
+          "type": "menu_link",
+          "settings": {
+            "menu_link_list": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "social_3Azww7",
+        "multi_selector_QLWxnD",
+        "announcement_mx7aUB",
+        "menu_link_ay9Cwf"
+      ],
+      "settings": {
+        "color_scheme": "2",
+        "announcement_center": true
+      }
+    },
     "toolbar": {
       "type": "toolbar",
       "blocks": {
@@ -33,6 +73,7 @@
         "toolbar-0",
         "toolbar-1"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "2",
         "announcement_center": false,
@@ -41,10 +82,6 @@
         "show_currency_selector": true,
         "show_currency_flags": true
       }
-    },
-    "custom-toolbar": {
-      "type": "custom-toolbar",
-      "settings": {}
     },
     "header": {
       "type": "header",
