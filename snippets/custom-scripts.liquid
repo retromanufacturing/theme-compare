@@ -5,8 +5,8 @@
   -- vehicle-search: controls the vehicle search mobile widget display
 {% endcomment %}
 <script type="module" src="{{ 'custom.vehicle-search.js' | asset_url }}" defer="defer"></script>
-<script type="module" src="{{ 'vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
-<script type="module" src="{{ 'vehicle-search-fitment.js' | asset_url }}" defer="defer"></script>
+<script type="module" src="{{ 'custom.vehicle-search-widget.js' | asset_url }}" defer="defer"></script>
+<script type="module" src="{{ 'custom.vehicle-search-fitment.js' | asset_url }}" defer="defer"></script>
 
 {% if template.name == 'product' %}
   <script type="module" src="{{ 'custom.variant-picker-labels.js' | asset_url }}" defer="defer"></script>
