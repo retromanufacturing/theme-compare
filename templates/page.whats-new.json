@@ -11,6 +11,11 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "custom_css": [
+        ".section-header__title {padding-bottom: 0px; text-align: center; font-size: 2rem;}",
+        ".section-header {margin: 0px;}",
+        ".rte:last-child {margin-bottom: 0; display: none;}"
+      ],
       "settings": {}
     },
     "featured_collection_Wbwn9U": {
