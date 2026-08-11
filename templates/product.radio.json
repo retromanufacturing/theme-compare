@@ -15,32 +15,30 @@
         "title": {
           "type": "title",
           "settings": {
-            "vendor_enable": true
+            "vendor_enable": true,
+            "sku_enable": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false,
+            "size_chart_option": "",
+            "size_chart": ""
           }
         },
         "price": {
           "type": "price",
           "settings": {}
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {}
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {}
-        },
-        "share": {
-          "type": "share",
-          "settings": {}
-        },
         "sales_point": {
           "type": "sales_point",
-          "settings": {}
+          "settings": {
+            "icon": "globe",
+            "text": "Free worldwide shipping"
+          }
         },
         "sales_point2": {
           "type": "sales_point",
@@ -62,6 +60,21 @@
             "icon": "lock",
             "text": "Secure payments"
           }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
         }
       },
       "block_order": [
@@ -75,7 +88,133 @@
         "inventory_status",
         "buy_buttons"
       ],
-      "settings": {}
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "custom_section_F3Pbjx": {
+      "type": "custom-section",
+      "blocks": {
+        "custom_tab_HekRzH": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Description",
+            "is_open": true,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#FFFFFF",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_af7EjE": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_af7EjE"
+          ]
+        },
+        "custom_tab_bVRgem": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Videos",
+            "is_open": true,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#FFFFFF",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_DWYJDt": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% render 'block.product-media', columns_per_row: 3 %}"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_DWYJDt"
+          ]
+        },
+        "custom_tab_KAEBWU": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Specifications",
+            "is_open": false,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#FFFFFF",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_b6Qg7d": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% render 'block.product-specs' %}"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_b6Qg7d"
+          ]
+        },
+        "custom_tab_WqhXC8": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Manuals",
+            "is_open": false,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#FFFFFF",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_jBG3tk": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% render 'block.product-manuals' %}"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_jBG3tk"
+          ]
+        }
+      },
+      "block_order": [
+        "custom_tab_HekRzH",
+        "custom_tab_bVRgem",
+        "custom_tab_KAEBWU",
+        "custom_tab_WqhXC8"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "page_width": true
+      }
     },
     "sub": {
       "type": "product-full-width",
@@ -88,11 +227,18 @@
         },
         "tab": {
           "type": "tab",
-          "settings": {}
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": ""
+          }
         },
         "contact": {
           "type": "contact",
-          "settings": {}
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
         }
       },
       "block_order": [
@@ -100,19 +246,31 @@
         "tab",
         "contact"
       ],
-      "settings": {}
+      "settings": {
+        "max_width": true
+      }
     },
     "recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 3
+      }
     },
     "more-products-vendor": {
       "type": "more-products-vendor",
-      "settings": {}
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
     },
     "more-products-collection": {
       "type": "more-products-collection",
-      "settings": {}
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
     },
     "recently-viewed": {
       "type": "recently-viewed",
@@ -120,11 +278,14 @@
     },
     "collection-return": {
       "type": "collection-return",
-      "settings": {}
+      "settings": {
+        "color_scheme": "2"
+      }
     }
   },
   "order": [
     "main",
+    "custom_section_F3Pbjx",
     "sub",
     "recommendations",
     "more-products-vendor",
