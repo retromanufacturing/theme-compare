@@ -88,6 +88,7 @@
         "inventory_status",
         "buy_buttons"
       ],
+      "disabled": true,
       "settings": {
         "image_position": "left",
         "image_container_size": "medium",
@@ -180,6 +181,18 @@
             "reviews_io_reviewsio_rating_output_t8Q7iL"
           ]
         },
+        "custom_variant_picker_KDJkBB": {
+          "type": "custom-variant-picker",
+          "name": "Variant picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": true,
+            "size_chart_option": "Feature Set",
+            "size_chart": "radio-features"
+          },
+          "blocks": {}
+        },
         "custom_tab_rfAfmx": {
           "type": "custom-tab",
           "name": "Tab",
@@ -188,7 +201,7 @@
             "is_open": true,
             "tab_type": "accessories",
             "tab_title_color": "#000000",
-            "tab_background_color": "#FFFFFF",
+            "tab_background_color": "#ffffff",
             "tab_padding": 0
           },
           "blocks": {
@@ -209,7 +222,7 @@
             "is_open": true,
             "tab_type": "warranty",
             "tab_title_color": "#000000",
-            "tab_background_color": "#FFFFFF",
+            "tab_background_color": "#ffffff",
             "tab_padding": 0
           },
           "blocks": {}
@@ -219,7 +232,7 @@
           "name": "t:labels.price",
           "settings": {
             "hide_subtitle": false,
-            "color": "#810F12"
+            "color": "#810f12"
           },
           "blocks": {}
         },
@@ -246,6 +259,7 @@
       "block_order": [
         "custom_title_aMEHxc",
         "custom_group_TJ8NH6",
+        "custom_variant_picker_KDJkBB",
         "custom_tab_rfAfmx",
         "custom_tab_nnJ4dX",
         "custom_price_JRW7mU",
@@ -297,7 +311,7 @@
                 "font_size_custom": 12,
                 "text_decoration": "",
                 "font_color": "#000000",
-                "background_color": "#ECECEC",
+                "background_color": "#ececec",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
