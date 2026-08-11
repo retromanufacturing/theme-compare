@@ -1,0 +1,413 @@
+<style>
+/* Motor styling */
+.rm-motor-wrap {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 14px 22px;
+  font-family: Arial, sans-serif;
+  color: #1b1b1b;
+}
+
+.rm-motor-card {
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  margin: 14px 0;
+  background: #fff;
+}
+
+.rm-motor-head-1b {
+  padding: 14px 16px;
+  background: #bc9923;
+  color: #fff;
+}
+
+.rm-motor-head-1dab {
+  padding: 14px 16px;
+  background: #bc9923;
+  color: #fff;
+}
+
+.rm-motor-head-2b {
+  padding: 14px 16px;
+  background: #1d3748;
+  color: #fff;
+}
+
+.rm-motor-head-2dab {
+  padding: 14px 16px;
+  background: #1d3748;
+  color: #fff;
+}
+
+.rm-motor-head-4hd {
+  padding: 14px 16px;
+  background: #5d3324;
+  color: #fff;
+}
+
+.rm-motor-head-6 {
+  padding: 14px 16px;
+  background: #2c5f2d;
+  color: #fff;
+}
+
+.rm-motor-head-1b h3,
+.rm-motor-head-1dab h3,
+.rm-motor-head-2b h3,
+.rm-motor-head-2dab h3,
+.rm-motor-head-4hd h3,
+.rm-motor-head-6 h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.rm-motor-sub {
+  margin: 6px 0 0;
+  font-size: 13px;
+  opacity: .9;
+  font-weight: 600;
+}
+
+.rm-motor-body {
+  padding: 14px 16px 16px;
+}
+
+.rm-motor-body p {
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+
+.rm-motor-feats {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 14px;
+}
+
+.rm-motor-feats li {
+  margin: 0;
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.35;
+}
+
+.rm-motor-feats li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0a7a2f;
+  font-weight: 900;
+}
+
+.rm-motor-note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(129,15,18,.08);
+  border: 1px solid rgba(129,15,18,.18);
+  color: #2a2a2a;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .rm-motor-feats {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+{% if DAB %}
+<!-- Main Content Section -->
+<div style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 100%;">
+  <!-- Image Section -->
+<div style="text-align: center;">&nbsp;</div>
+<!-- Description Section -->
+<div style="flex: 2; min-width: 300px; padding: 10px;">
+<h2 style="font-size: 1.5rem; color: #333;">{{ product.title }}</h2>
+<p>
+    The RetroSound Traffic is the premier radio solution for Modern Classics, designed specifically for European vehicles
+    with factory Single DIN openings. Inspired by the functional OEM styling of the late-1980s through the early-2000s,
+    the Traffic provides a period-correct look for BMW, Porsche, and Mercedes-Benz interiors.
+  </p>
+  <p>
+    Unlike standard aftermarket decks that look out of place, the Traffic features a low-profile face, subtle
+    push-buttons, and a variable-color display to match your factory dash lighting perfectly. Its understated design
+    makes it an ideal upgrade for enthusiasts looking to preserve the authentic aesthetic of their dashboard while
+    adding modern audio capability like Bluetooth&reg; connectivity and USB inputs.
+  </p>
+  <p>
+    Part of the RetroSound DIN Solutions lineup, the Traffic is engineered for easy installation without costly dash
+    modifications. The <a href="https://www.retromanufacturing.com/pages/retrosound-radio-motors">modular radio motor
+    system</a> allows you to choose the feature set that best fits your driving style, ranging from essential classic car
+    stereo functionality to <a href="https://www.retromanufacturing.com/pages/retrosound-radio-control-app-information">advanced
+    app-based control</a> on select radio motor configurations.
+  </p>
+  <p>
+    Whether restoring a daily driver or completing a high-end Modern Classic build, the RetroSound Traffic Radio
+    delivers the factory look of a vintage European radio with the performance and flexibility of a modern retro-style
+    stereo.
+  </p>
+
+<!-- Key Features Box -->
+<section class="rm-motor-card" style="margin-top: 20px;">
+  <div style="padding: 14px 16px; background: #2a2a2a; color: #fff;">
+    <h3 style="margin: 0; font-size: 20px; font-weight: 800; letter-spacing: .2px;">Designed for Modern European Classics</h3>
+    <div style="margin: 6px 0 0; font-size: 13px; opacity: .9; font-weight: 600;">Period-Correct Styling &bull; Single DIN &bull; RetroSound&reg; Modular System</div>
+  </div>
+  <div class="rm-motor-body">
+    <ul class="rm-motor-feats">
+      <li>Period-correct styling inspired by late-1980s to early-2000s factory radios</li>
+      <li>Fits standard Single DIN openings in BMW, Porsche, Mercedes-Benz, and more</li>
+      <li>Low-profile radio face designed to blend into OEM dashboards</li>
+      <li>Subtle push-buttons and clean layout for an authentic factory look</li>
+      <li>Variable-color display complements factory dash lighting</li>
+      <li>Modular radio motor platform with multiple feature set options</li>
+      <li>DIY-friendly installation without major dash modifications</li>
+      <li>Part of the RetroSound DIN Solutions lineup for Modern Classics</li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<!-- DAB Features Section -->
+  <div class="variant__display-motor1{% unless motor_class == 'Motor 1' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-1dab">
+      <h3>Motor 1DAB</h3>
+      <div class="rm-motor-sub">DAB+ + AM/FM RDS + AUX input</div>
+    </div>
+    <div class="rm-motor-body">
+      <ul class="rm-motor-feats">
+
+    <li>DAB+</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Built-in 275-watt (peak power) Mosfet amplifier</li>
+    <li>18 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Auxiliary input for portable devices</li>
+    <li>Non-volatile memory</li>
+    <li>1-Year Warranty</li>
+    <li>Assembly is required</li>
+        </ul>
+    </div>
+  </section>
+</aside>
+  </div>
+  <!--
+    <p><strong>Motor 2DAB </strong></p>
+  <ul>
+    <li>DAB+</li>
+    <li>Built-in Bluetooth&reg; (Version 5.0)</li>
+    <li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Auxiliary input for portable devices</li>
+    <li>USB port for flash drives and other devices</li>
+    <li>2.1-amp device charging via USB</li>
+    <li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+    <li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Dual RCA pre-outs for external amplifiers</li>
+    <li>Adjustable color display</li>
+    <li>Non-volatile memory</li>
+    <li>1-Year Warranty</li>
+    <li>Assembly is required</li>
+  </ul>
+  -->
+  <div class="variant__display-motor6{% unless motor_class == 'Motor 4DAB' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-6">
+      <h3>Motor 4DAB</h3>
+      <div class="rm-motor-sub">DAB+ + iPod/iPhone + Bluetooth</div>
+    </div>
+    <div class="rm-motor-body">
+      <ul class="rm-motor-feats">
+
+    <li>DAB+</li>
+    <li>Made for iPod&reg;/iPhone&reg;</li>
+    <li>Built-in Bluetooth&reg; (Version 5.0)</li>
+    <li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Two USB ports for flash drives and other devices</li>
+    <li>2.1-amp device charging via USB</li>
+    <li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+    <li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Dual RCA pre-outs for external amplifiers</li>
+    <li>Dedicated subwoofer output</li>
+    <li>Adjustable color display</li>
+    <li>Non-volatile memory</li>
+    <li>2-Year Warranty</li>
+    <li>Assembly is required</li>
+        </ul>
+    </div>
+  </section>
+</aside>
+  </div>
+  {% else %}
+<!-- Main Content Section -->
+<div style="display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; max-width: 100%;">
+<!-- Image Section -->
+<div style="text-align: center;"><br></div>
+<!-- Main Description Section --> 
+  
+<div style="flex: 2; min-width: 300px; padding: 10px;">
+<h2 style="font-size: 1.5rem; color: #333;">{{ product.title }}</h2>
+  <p>
+    The RetroSound Traffic is the premier radio solution for Modern Classics, designed specifically for European vehicles
+    with factory Single DIN openings. Inspired by the functional OEM styling of the late-1980s through the early-2000s,
+    the Traffic provides a period-correct look for BMW, Porsche, and Mercedes-Benz interiors.
+  </p>
+  <p>
+    Unlike standard aftermarket decks that look out of place, the Traffic features a low-profile face, subtle
+    push-buttons, and a variable-color display to match your factory dash lighting perfectly. Its understated design
+    makes it an ideal upgrade for enthusiasts looking to preserve the authentic aesthetic of their dashboard while
+    adding modern audio capability like Bluetooth&reg; connectivity and USB inputs.
+  </p>
+  <p>
+    Part of the RetroSound DIN Solutions lineup, the Traffic is engineered for easy installation without costly dash
+    modifications. The <a href="https://www.retromanufacturing.com/pages/retrosound-radio-motors">modular radio motor
+    system</a> allows you to choose the feature set that best fits your driving style, ranging from essential classic car
+    stereo functionality to <a href="https://www.retromanufacturing.com/pages/retrosound-radio-control-app-information">advanced
+    app-based control</a> on select radio motor configurations.
+  </p>
+  <p>
+    Whether restoring a daily driver or completing a high-end Modern Classic build, the RetroSound Traffic Radio
+    delivers the factory look of a vintage European radio with the performance and flexibility of a modern retro-style
+    stereo.
+  </p>
+  
+
+<!-- Key Features Box -->
+<section class="rm-motor-card" style="margin-top: 20px;">
+  <div style="padding: 14px 16px; background: #2a2a2a; color: #fff;">
+    <h3 style="margin: 0; font-size: 20px; font-weight: 800; letter-spacing: .2px;">Designed for Modern European Classics</h3>
+    <div style="margin: 6px 0 0; font-size: 13px; opacity: .9; font-weight: 600;">Period-Correct Styling &bull; Single DIN &bull; RetroSound&reg; Modular System</div>
+  </div>
+  <div class="rm-motor-body">
+    <ul class="rm-motor-feats">
+      <li>Period-correct styling inspired by late-1980s to early-2000s factory radios</li>
+      <li>Fits standard Single DIN openings in BMW, Porsche, Mercedes-Benz, and more</li>
+      <li>Low-profile radio face designed to blend into OEM dashboards</li>
+      <li>Subtle push-buttons and clean layout for an authentic factory look</li>
+      <li>Variable-color display complements factory dash lighting</li>
+      <li>Modular radio motor platform with multiple feature set options</li>
+      <li>DIY-friendly installation without major dash modifications</li>
+      <li>Part of the RetroSound DIN Solutions lineup for Modern Classics</li>
+    </ul>
+  </div>
+</section>
+</div>
+      <!-- Features Section -->
+<div class="variant__display-motor4{% unless motor_class == 'Motor 4' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-4hd">
+      <h3>Motor 4HD</h3>
+      <div class="rm-motor-sub">HD Radio + SiriusXM-Ready + RetroSound Radio App compatible</div>
+    </div>
+    <div class="rm-motor-body">
+      <div class="rm-motor-note">
+        <strong>Latest update:</strong> Motor 4HD now supports the RetroSound Radio App.
+      </div>
+      <ul class="rm-motor-feats">
+    <li>HD Radio&reg; Technology</li>
+    <li>SiriusXM-Ready&reg; (Requires SXV300V1 tuner sold separately)</li>
+    <li>RetroSound Radio App compatible</li>
+    <li>Built-in Bluetooth&reg; (Version 5.0)</li>
+    <li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+    <li>AM/FM RDS tuner with 30 presets</li>
+    <li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+    <li>Auxiliary input for portable devices</li>
+    <li>Two USB ports for flash drives and other devices</li>
+    <li>1-amp device charging via USB</li>
+    <li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+    <li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+    <li>Dual RCA pre-outs for external amplifiers</li>
+    <li>Dedicated subwoofer output</li>
+    <li>Adjustable color display</li>
+    <li>Non-volatile memory</li>
+    <li>2-Year Warranty</li>
+    <li>Assembly is required</li>
+        </ul>
+      
+      <div class="rm-motor-note">
+        <p><strong>$60 SXM Service Card - when you purchase and activate your RetroSound® Radio with SXV300V1 SirusXM® Tuner<br>Plan options:</strong></p>
+<ul>
+<li>12/$99 – 12 months of the Platinum Plan for $8.25/month</li>
+<li>12/$60 – 12 months of the Music & Entertainment Plan for$5/month</li>
+</ul>
+      </div>
+      
+      <center><script src=https://embed.jda.synqy.net/smartbrand/WzCmfN7J type="text/javascript"></script></center>
+    </div>
+  </section>
+</aside>
+</div>
+<div class="variant__display-motor2{% unless motor_class == 'Motor 2' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-2b">
+      <h3>Motor 2B</h3>
+      <div class="rm-motor-sub">Bluetooth + USB + Pre-outs</div>
+    </div>
+    <div class="rm-motor-body">
+      <ul class="rm-motor-feats">
+
+<li>Built-in Bluetooth&reg; (Version 5.0)</li>
+<li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+<li>AM/FM RDS tuner with 30 presets</li>
+<li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+<li>USB port for flash drives and other devices</li>
+<li>1-amp device charging via USB</li>
+<li>Built-in 300-watt (peak power) Mosfet amplifier</li>
+<li>25 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+<li>Dual RCA pre-outs for external amplifiers</li>
+<li>Dedicated subwoofer output</li>
+<li>Adjustable color display</li>
+<li>Non-volatile memory</li>
+<li>1-Year Warranty</li>
+<li>Assembly is required</li>
+      </ul>
+    </div>
+  </section>
+</aside>
+</div>
+
+<div class="variant__display-motor1{% unless motor_class == 'Motor 1' %} hide{% endunless %}">
+<aside style="flex: 1; min-width: 300px; margin-left: auto; align-self: flex-start; max-width: 600px;">
+  <section class="rm-motor-card">
+    <div class="rm-motor-head-1b">
+      <h3>Motor 1B</h3>
+      <div class="rm-motor-sub">Bluetooth + AM/FM RDS + AUX input</div>
+    </div>
+    <div class="rm-motor-body">
+      <ul class="rm-motor-feats">
+
+<li>Built-in Bluetooth&reg; (Version 5.0)</li>
+<li>Includes Bluetooth&reg; microphone for hands-free calls</li>
+<li>AM/FM RDS tuner with 30 presets</li>
+<li>Selectable tuner frequencies USA/EUR/AUS/JAP/RUS</li>
+<li>Auxiliary input for portable devices</li>
+<li>Built-in 275-watt (peak power) Mosfet amplifier</li>
+<li>18 watts RMS x 4 channels &ndash; TrueRating&trade;</li>
+<li>Non-volatile memory</li>
+<li>1-Year Warranty</li>
+<li>Assembly is required</li>
+      </ul>
+    </div>
+  </section>
+</aside>
+</div>
+</div>
+{% endif %}
