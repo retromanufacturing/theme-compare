@@ -25,7 +25,8 @@
     endif
   endfor
 
-  assign size_chart_label = block.settings.size_chart_label 
+  assign size_chart_label = block.settings.size_chart_label
+  assign variant_swatches = block.settings.variant_swatches
 -%}
 
 {%- comment -%}
@@ -48,25 +49,40 @@
 {%- endif -%}
 
 <div {{ block.shopify_attributes }}>
-  {% render 'kit.product-variant-picker',
-    product: product,
-    picker_type: block.settings.picker_type,
-    show_labels: block.settings.variant_labels,
-    enable_swatches: block.settings.color_swatches,
-    update_url: update_url,
-    legend_extra: size_chart_trigger,
-    legend_extra_option: size_chart_matched_option,
-    legacy_swatch_triggers: legacy_swatch_triggers,
-    legacy_swatch_source: 'files'
-  %}
+  {% if variant_swatches != blank %}
+    {% render 'custom.kit.product-variant-picker',
+      product: product,
+      picker_type: block.settings.picker_type,
+      show_labels: block.settings.variant_labels,
+      enable_swatches: block.settings.color_swatches,
+      update_url: update_url,
+      legend_extra: size_chart_trigger,
+      legend_extra_option: size_chart_matched_option,
+      legacy_swatch_triggers: legacy_swatch_triggers,
+      legacy_swatch_source: 'files',
+      variant_swatches: variant_swatches
+    %}
+  {% else %}
+    {% render 'kit.product-variant-picker',
+      product: product,
+      picker_type: block.settings.picker_type,
+      show_labels: block.settings.variant_labels,
+      enable_swatches: block.settings.color_swatches,
+      update_url: update_url,
+      legend_extra: size_chart_trigger,
+      legend_extra_option: size_chart_matched_option,
+      legacy_swatch_triggers: legacy_swatch_triggers,
+      legacy_swatch_source: 'files'
+    %}
+  {% endif %}
 
   {%- if size_chart_trigger != blank -%}
     <script type="module">
-      import 'overlay.tool-tip.trigger'
+      import 'overlay.tool-tip.trigger';
     </script>
   {%- endif -%}
 
   <script type="module">
-    import 'block.product-variant-picker'
+    import 'block.product-variant-picker';
   </script>
 </div>
