@@ -71,7 +71,14 @@
       "label": "Size chart label",
       "default": "Size chart",     
       "visible_if": "{{ block.settings.enable_custom_settings }}"
-    }
+    },
+    {
+      "type": "metaobject_list",
+      "id": "variant_swatches",
+      "label": "Variant swatches",
+      "metaobject_type": "variant_swatches",
+      "info": "Applies to variants not assigned to Color swatches. Only works if custom settings enabled",
+    },
   ],
   "presets": [{ "name": "Variant picker" }]
 }
