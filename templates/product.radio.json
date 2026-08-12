@@ -150,7 +150,7 @@
             "show_dynamic_checkout": true,
             "surface_pickup_enable": true,
             "show_gift_card_recipient": false,
-            "enable_sticky_add_to_cart": true,
+            "enable_sticky_add_to_cart": false,
             "sticky_width": "full",
             "sticky_constrained_width": 600,
             "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
@@ -337,7 +337,7 @@
       "custom_css": [
         ".page-width {margin-top: 1.5rem;}",
         ".block--text.text-left {font-size: 14px !important;}",
-        ".block-image.block-image--natural {margin-top: .5rem;}",
+        ".block-image.block-image--natural {margin-top: 0.5rem;}",
         "a {color: #810f12;}"
       ],
       "name": "Custom Section",
