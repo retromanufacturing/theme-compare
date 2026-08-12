@@ -27,8 +27,7 @@
 
   assign size_chart_label = block.settings.size_chart_label
   assign variant_swatches = block.settings.variant_swatches
--%}
-
+-%}{{ legacy_swatch_triggers }}
 {%- comment -%}
   The size chart rides in the matched option's legend — kit.product-variant-picker
   attaches `legend_extra` to the one option named by `legend_extra_option`.
