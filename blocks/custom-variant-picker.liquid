@@ -1,5 +1,8 @@
 {% render 'block.product-variant-picker', block: block,  product: closest.product  %}
 
+
+{{ block.settings.enable_custom_settings }}
+
 {% schema %}
 {
   "name": "Variant picker",
@@ -42,7 +45,17 @@
       "type": "page",
       "id": "size_chart",
       "label": "t:labels.size_chart_page"
-    }
+    },
+    {
+      "type": "header",
+      "content": "t:custom.custom",
+      "visible_if": "{{ block.settings.enable_custom_settings }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_custom_settings",
+      "label": "Enable custom settings"
+    },
   ],
   "presets": [{ "name": "Variant picker" }]
 }
