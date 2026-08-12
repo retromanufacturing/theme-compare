@@ -24,6 +24,8 @@
       break
     endif
   endfor
+
+  assign size_chart_label = block.settings.size_chart_label
 -%}
 
 {%- comment -%}
@@ -32,7 +34,7 @@
 {%- endcomment -%}
 {%- if block.settings.size_chart != blank and size_chart_matched_option != blank -%}
   {%- capture size_chart_title -%}
-    {{ block.settings.size_chart_label | default: 'labels.size_chart' | t }}
+    {{ size_chart_label }}
     {%- render 'element.icon', name: 'size-chart' -%}
   {%- endcapture -%}
 
