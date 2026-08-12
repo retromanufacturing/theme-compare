@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "actions": {
     "add_alt_text": "Add alt text for better SEO with 'Edit' button above",
@@ -731,5 +740,35 @@
     "width": "Width",
     "year": "Year",
     "youtube": "YouTube"
+  },
+  "custom": {
+    "tabs": "Tabs",
+    "background_color_scheme": "Background color",
+    "actions": {
+      "enable_dropdown_icons": "Enable dropdown icons",
+      "enable_installation_media": "Enable install photos and videos",
+      "enable_features_and_logos": "Enable features and logos",
+      "hide_variant_media": "Hide variant images"
+    },
+    "bundle":{
+      "buy_buttons": "Buy buttons (bundles)",
+      "group_collections": "Group collections",
+      "group_products": "Group products"
+    },
+    "custom": "Custom settings",
+    "font_size": "Font size",
+    "layout":{
+      "bundle": "Bundles"
+    },
+    "product":{
+      "features": "Product features",
+      "logos": "Product logos"
+    },
+    "variant_picker_tabs": "Variant picker tabs",
+    "variant_picker_update_url": "Update variant url",
+    "vehicle_search":{
+      "recommendations": "Also fits your {vehicle}",
+      "logos": "Product logos"
+    },
   }
 }
