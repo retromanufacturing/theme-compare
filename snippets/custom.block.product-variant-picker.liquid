@@ -1,21 +1,6 @@
-{% doc %}
-  Bridges kit's Shopify shopify:product:select event to the theme's legacy
-  `variant:change:{sectionId}:{productId}` event.
-
-  @param {object} product - Product object
-  @param {object} [block] - Block object
-  @param {boolean} [update_url] - Update URL when variant changes, default: true
-
-  @example
-  {% render 'block.product-variant-picker', product: product %}
-{% enddoc %}
-
 {%- liquid
   assign product = section.settings.product | default: product
 
-  # Legacy Shopify Files PNG swatches — kit needs the option names, not the
-  # detection rule, so hand it the localized trigger word (plus the 'colour'
-  # spelling English merchants use interchangeably).
   capture legacy_swatch_triggers
     render 'utility.translate', key: 'trigger.color_swatch', fallback: 'color'
   endcapture
@@ -23,13 +8,29 @@
   if legacy_swatch_triggers == 'color'
     assign legacy_swatch_triggers = 'color,colour'
   endif
+
+  assign size_chart_option_list = block.settings.size_chart_option | downcase | split: ','
+  assign size_chart_matched_option = blank
+  for option in product.options_with_values
+    assign option_name_match = option.name | downcase
+    for size_chart_name in size_chart_option_list
+      assign size_chart_name_match = size_chart_name | strip
+      if size_chart_name_match != blank and option_name_match == size_chart_name_match
+        assign size_chart_matched_option = option.name
+        break
+      endif
+    endfor
+    if size_chart_matched_option != blank
+      break
+    endif
+  endfor
 -%}
 
 {%- comment -%}
   The size chart rides in the matched option's legend — kit.product-variant-picker
   attaches `legend_extra` to the one option named by `legend_extra_option`.
 {%- endcomment -%}
-{%- if block.settings.size_chart != blank and block.settings.size_chart_option != blank and product.has_only_default_variant == false -%}
+{%- if block.settings.size_chart != blank and size_chart_matched_option != blank -%}
   {%- capture size_chart_title -%}
     {% echo 'labels.size_chart' | t %}
     {%- render 'element.icon', name: 'size-chart' -%}
@@ -52,7 +53,7 @@
     enable_swatches: block.settings.color_swatches,
     update_url: update_url,
     legend_extra: size_chart_trigger,
-    legend_extra_option: block.settings.size_chart_option,
+    legend_extra_option: size_chart_matched_option,
     legacy_swatch_triggers: legacy_swatch_triggers,
     legacy_swatch_source: 'files'
   %}
