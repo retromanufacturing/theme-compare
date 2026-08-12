@@ -97,7 +97,8 @@
             "color_swatches": true,
             "size_chart_option": "Feature Set, Motor",
             "size_chart": "radio-features",
-            "enable_custom_settings": true
+            "enable_custom_settings": true,
+            "size_chart_label": "Compare Radios"
           },
           "blocks": {}
         },
