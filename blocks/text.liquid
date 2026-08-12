@@ -9,6 +9,7 @@ Add url functionality with conditional logic
 
 {% liquid
   assign text_decoration = block.settings.text_decoration 
+  assign text_style = block.settings.text_style
   if block.settings.font_preset == 'custom'
     assign element = 'span'
   else
@@ -29,11 +30,18 @@ Add url functionality with conditional logic
     when 'line-through','underline'
       assign text_decoration_style = 'text-decoration'
   endcase
+
+  case text_style
+    when 'text'
+      assign text = block.settings.text 
+    when 'richtext'     
+      assign text = block.settings.richtext 
+  endcase
 %}
 
 <div class="block block--{{ block.id }} block--text text-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
   <{{ element }}> 
-    {{ block.settings.text }} 
+    {{ text }} 
   </{{ element }}>
 </div>
 
@@ -61,11 +69,35 @@ Add url functionality with conditional logic
 {
   "name": "Text",
   "settings": [
+        {
+      "type": "select",
+      "id": "text_style",
+      "label": "Text Style",
+      "options": [
+        {
+          "value": "text",
+          "label": "Text"
+        },
+        {
+          "value": "richtext",
+          "label": "Rich text"
+        }
+      ],
+      "default": "text"
+    },
     {
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "Insert text here"
+      "default": "Insert text here",
+      "visible_if": "{{ block.settings.text_style == 'text'}}"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Text",
+      "default": "<p>Insert text here</p>",
+      "visible_if": "{{ block.settings.text_style == 'richtext'}}"
     },
     {
       "type": "select",
