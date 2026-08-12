@@ -69,7 +69,8 @@
       "type": "text",
       "id": "size_chart_label",
       "label": "Size chart label",
-      "default": "Size chart"
+      "default": "Size chart",     
+      "visible_if": "{{ block.settings.enable_custom_settings }}"
     }
   ],
   "presets": [{ "name": "Variant picker" }]
