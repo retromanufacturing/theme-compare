@@ -45,15 +45,3 @@
     {% endfor %}
   </div>
 {%- endif -%}
-{% for media in custom_videos %}
-  {%- liquid
-    assign external_video_host = 'youtube'
-    assign external_video_id = media.link | split: 'v=' | last | split: '&' | first
-  -%}
-  <p style="background: yellow; color: black; padding: 8px;">
-    DEBUG loop ran. host=[{{ external_video_host }}] id=[{{ external_video_id }}] media.link=[{{ media.link }}]
-  </p>
-  <div class="product__video-item">
-    {%- render 'element.video', external_video_host: external_video_host, external_video_id: external_video_id -%}
-  </div>
-{% endfor %}
