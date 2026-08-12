@@ -321,7 +321,8 @@
       ],
       "custom_css": [
         ".page-width {margin-top: 1.5rem;}",
-        ".block--text.text-left {font-size: 14px !important; }"
+        ".block--text.text-left {font-size: 14px !important;}",
+        "a {color: #810f12;}"
       ],
       "name": "Custom Section",
       "settings": {
