@@ -1,0 +1,97 @@
+{%- liquid
+  assign image_size = block.settings.image_size | default: 'natural'
+-%}
+
+<div
+  class="block-image block-image--{{ image_size }} block-image--{{ block.id }}"
+  {{ block.shopify_attributes }}
+>
+  {%- if block.settings.link != blank -%}
+    <a href="{{ block.settings.link }}" class="block-image__link">
+  {%- endif -%}
+
+  {%- if block.settings.image != blank -%}
+    {%- render 'element.image',
+      img: block.settings.image,
+      alt: block.settings.alt,
+      widths: '360, 540, 720, 900, 1200, 1600',
+      classlist: 'block-image__img',
+      loading: 'lazy'
+    -%}
+  {%- else -%}
+    {%- render 'element.placeholder', classlist: 'block-image__img' -%}
+  {%- endif -%}
+
+  {%- if block.settings.link != blank -%}
+    </a>
+  {%- endif -%}
+</div>
+
+{% style %}
+  .block-image--{{ block.id }} .block-image__img {
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+{% endstyle %}
+
+{% stylesheet %}
+  .block-image {
+    display: block;
+  }
+
+  .block-image__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .block-image--square .block-image__img { aspect-ratio: 1 / 1; object-fit: cover; }
+  .block-image--landscape .block-image__img { aspect-ratio: 4 / 3; object-fit: cover; }
+  .block-image--portrait .block-image__img { aspect-ratio: 2 / 3; object-fit: cover; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt text",
+      "info": "Leave blank to use the image's own alt text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image size",
+      "default": "natural",
+      "options": [
+        { "value": "natural", "label": "Natural" },
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait", "label": "Portrait (2:3)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [{ "name": "Image" }]
+}
+{% endschema %}
