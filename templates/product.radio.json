@@ -216,7 +216,7 @@
               "settings": {
                 "text_style": "richtext",
                 "text": "Insert text here",
-                "richtext": "<p><strong>Note: </strong>Bezels, knobs, faceplates, and replacement parts are non-returnable. Please refer to product packaging for the most up to date country of origin. If you are not sure as to fitment, please <a href=\"/pages/contact-us\" title=\"Contact Us\">contact us</a>.<br/>RetroSound radios are a modular design. Assembly is required. This design allows for a more adjustable fit and to offer different style options. RetroSound Radios are only compatible with 12V negative grounding vehicles.</p>",
+                "richtext": "<p><em><strong>Note: </strong></em><em>Bezels, knobs, faceplates, and replacement parts are non-returnable. Please refer to product packaging for the most up to date country of origin. If you are not sure as to fitment, please </em><a href=\"/pages/contact-us\" title=\"Contact Us\"><em>contact us</em></a><em>.<br/>RetroSound radios are a modular design. Assembly is required. This design allows for a more adjustable fit and to offer different style options. RetroSound Radios are only compatible with 12V negative grounding vehicles.</em></p>",
                 "alignment": "left",
                 "font_preset": "span",
                 "font_size": "0.625rem",
@@ -321,7 +321,7 @@
       ],
       "custom_css": [
         ".page-width {margin-top: 1.5rem;}",
-        ".block--text.text-left {font-size: 12px !important; }"
+        ".block--text.text-left {font-size: 14px !important;}"
       ],
       "name": "Custom Section",
       "settings": {
