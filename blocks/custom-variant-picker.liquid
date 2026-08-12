@@ -1,7 +1,17 @@
-{% render 'block.product-variant-picker', block: block,  product: closest.product  %}
+{%- liquid
+  assign custom_settings = block.settings.enable_custom_settings
 
-
-{{ block.settings.enable_custom_settings }}
+  capture variant_picker
+    if custom_settings
+      render 'custom.block.product-variant-picker', block: block,  product: closest.product
+    else
+      render 'block.product-variant-picker', block: block,  product: closest.product
+    endif
+  endcapture
+-%}
+{%- if variant_picker != blank -%}
+  {{ variant_picker }}
+{%- endif -%}
 
 {% schema %}
 {
