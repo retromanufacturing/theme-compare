@@ -239,6 +239,8 @@
                 "alt": "",
                 "link": "",
                 "image_size": "natural",
+                "width": "fit-content",
+                "custom_width": 100,
                 "border_radius": 0
               },
               "blocks": {}
@@ -335,6 +337,7 @@
       "custom_css": [
         ".page-width {margin-top: 1.5rem;}",
         ".block--text.text-left {font-size: 14px !important;}",
+        ".block-image.block-image--natural {margin-top: .5rem;}",
         "a {color: #810f12;}"
       ],
       "name": "Custom Section",
