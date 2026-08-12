@@ -320,7 +320,8 @@
         "custom_tab_WqhXC8"
       ],
       "custom_css": [
-        ".page-width {margin-top: 1.5rem;}"
+        ".page-width {margin-top: 1.5rem;}",
+        ".block--text.text-left {font-size: 12px !important; }"
       ],
       "name": "Custom Section",
       "settings": {
