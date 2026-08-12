@@ -28,14 +28,25 @@
 </div>
 
 {% style %}
-  .block-image--{{ block.id }} .block-image__img {
-    border-radius: {{ block.settings.border_radius }}px;
+  .block-image--{{ block.id }} {
+    {% if block.settings.width == 'fit-content' %}
+      width: fit-content;
+    {% elsif block.settings.width == 'custom' %}
+      width: {{ block.settings.custom_width }}%;
+    {% else %}
+      width: 100%;
+    {% endif %}
+
+    .block-image__img {
+      border-radius: {{ block.settings.border_radius }}px;
+    }
   }
 {% endstyle %}
 
 {% stylesheet %}
   .block-image {
     display: block;
+    max-width: 100%;
   }
 
   .block-image__img {
@@ -80,6 +91,28 @@
         { "value": "landscape", "label": "Landscape (4:3)" },
         { "value": "portrait", "label": "Portrait (2:3)" }
       ]
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "options": [
+        { "value": "fit-content", "label": "Fit content" },
+        { "value": "fill", "label": "Fill" },
+        { "value": "custom", "label": "Custom" }
+      ],
+      "default": "fit-content"
+    },
+    {
+      "type": "range",
+      "id": "custom_width",
+      "label": "Custom width",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.width == 'custom' }}"
     },
     {
       "type": "range",
