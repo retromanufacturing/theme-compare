@@ -100,6 +100,14 @@
           },
           "blocks": {}
         },
+        "custom_product_features_6q83Fj": {
+          "type": "custom-product-features",
+          "name": "t:custom.product.features",
+          "settings": {
+            "font_size": 14
+          },
+          "blocks": {}
+        },
         "custom_tab_rfAfmx": {
           "type": "custom-tab",
           "name": "Tab",
@@ -167,6 +175,7 @@
         "custom_title_aMEHxc",
         "custom_group_TJ8NH6",
         "custom_variant_picker_KDJkBB",
+        "custom_product_features_6q83Fj",
         "custom_tab_rfAfmx",
         "custom_tab_nnJ4dX",
         "custom_price_JRW7mU",
