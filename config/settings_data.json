@@ -68,23 +68,6 @@
           "show_cart": true
         }
       },
-      "15316669992541710076": {
-        "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-snippet/92a082e5-b297-4e88-b428-ac96cbc505f9",
-        "disabled": false,
-        "settings": {
-          "star": "#000",
-          "text_color": "#333",
-          "snippet_mode": "default",
-          "text": "Reviews",
-          "line_break": false,
-          "listen_for_changes": false,
-          "rating_without_brackets": false,
-          "format_review_count": false,
-          "show_popup": true,
-          "anchor_to_reviews_widget": false,
-          "show_empty_stars": false
-        }
-      },
       "9664103760669878543": {
         "type": "shopify://apps/avada-seo-ai-blog/blocks/avada-seoon-setting/a45c3e67-be9f-4255-a194-b255a24f37c9",
         "disabled": false,
@@ -152,6 +135,23 @@
         "settings": {
           "page_url": "",
           "custom_css": ""
+        }
+      },
+      "15316669992541710076": {
+        "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-snippet/92a082e5-b297-4e88-b428-ac96cbc505f9",
+        "disabled": false,
+        "settings": {
+          "star": "#FFC200",
+          "text_color": "#333333",
+          "snippet_mode": "default",
+          "text": "Reviews",
+          "line_break": false,
+          "listen_for_changes": false,
+          "rating_without_brackets": true,
+          "format_review_count": false,
+          "show_popup": false,
+          "anchor_to_reviews_widget": false,
+          "show_empty_stars": false
         }
       }
     },
