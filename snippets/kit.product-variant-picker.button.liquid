@@ -11,7 +11,7 @@
 {% liquid
   assign enable_swatches = enable_swatches | default: false, allow_false: true
   assign enable_select_unavailable = enable_select_unavailable | default: false, allow_false: true
-
+  
   assign option_name_escaped = option.name | escape
 %}
 
@@ -44,39 +44,16 @@
         assign swatch_color = value.swatch.color
         assign swatch_image = value.swatch.image | image_url: width: 50
       elsif enable_swatches and legacy_swatch_source != blank
-        assign is_swatch = true
-        assign swatch_color = value.name | split: ' ' | last | handle 
-
-        if variant_swatches != blank
-          for swatch_entry in variant_swatches
-            if swatch_entry.label.value == value
-              assign swatch_image = swatch_entry.image.value | image_url: width: 50
-              break
-            endif
-          endfor
-        endif
-
-        if swatch_image == blank
-          assign legacy_swatch_file = value.name | handle | append: '.png'
-          if legacy_swatch_source == 'files' and images[legacy_swatch_file] != blank
-            assign swatch_image = images[legacy_swatch_file] | image_url: width: 50
-          elsif legacy_swatch_source == 'assets'
-            assign swatch_image = legacy_swatch_file | asset_url
-          endif
-        endif
-       comment
-       # Old legacy swatch code
-       # Legacy swatches predate value.swatch: an image named after the value
+        # Legacy swatches predate value.swatch: an image named after the value
         # handle, backed by the last word of the value name as a CSS color.
-        
+        assign is_swatch = true
+        assign swatch_color = value.name | split: ' ' | last | handle
         assign legacy_swatch_file = value.name | handle | append: '.png'
         if legacy_swatch_source == 'files' and images[legacy_swatch_file] != blank
           assign swatch_image = images[legacy_swatch_file] | image_url: width: 50
         elsif legacy_swatch_source == 'assets'
           assign swatch_image = legacy_swatch_file | asset_url
         endif
-       endcomment
-       
       endif
     -%}
 
@@ -111,4 +88,9 @@
   {% endfor %}
 {% endcapture %}
 
-{% render 'kit.stack', content: stack_content, direction: 'horizontal', gap: 'xs', wrap: true %}
+{% render 'kit.stack',
+  content: stack_content,
+  direction: 'horizontal',
+  gap: 'xs',
+  wrap: true
+%}
