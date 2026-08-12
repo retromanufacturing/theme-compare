@@ -55,18 +55,17 @@
         assign thumb_hide = true
       endif
     endif
-    if variant_id and current_variant_id
-  unless variant_id contains current_variant_id
-    assign thumb_hide = true
-  endunless
-endif
-
+    if variant_id != blank and current_variant_id
+      unless variant_id contains current_variant_id
+        assign thumb_hide = true
+      endunless
+    endif
   -%}
 
   <div
     class="product__thumb-item{% if thumb_hide %} product__thumb-item-hide{% endif %}"
     data-index="{{ loopIndex0 }}"
-    {% if variant_id %}data-variant-id="{{ variant_id }}"{% endif %}
+    {% if variant_id != blank %}data-variant-id="{{ variant_id }}"{% endif %}
     {% if image_set %}
       data-set-name="{{ image_set_group }}"
       data-group="{{ image_set_full }}"
