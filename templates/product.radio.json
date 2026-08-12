@@ -230,11 +230,24 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "custom_image_rbqjdK": {
+              "type": "custom-image",
+              "name": "Image",
+              "settings": {
+                "image": "shopify://shop_images/CA65.jpg",
+                "alt": "",
+                "link": "",
+                "image_size": "natural",
+                "border_radius": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "custom_liquid_af7EjE",
-            "text_EEdnQL"
+            "text_EEdnQL",
+            "custom_image_rbqjdK"
           ]
         },
         "custom_tab_bVRgem": {
