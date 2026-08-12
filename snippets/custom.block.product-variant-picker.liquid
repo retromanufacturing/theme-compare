@@ -32,7 +32,7 @@
 {%- endcomment -%}
 {%- if block.settings.size_chart != blank and size_chart_matched_option != blank -%}
   {%- capture size_chart_title -%}
-    {% echo 'labels.size_chart' | t %}
+    {{ block.settings.size_chart_label | default: 'labels.size_chart' | t }}
     {%- render 'element.icon', name: 'size-chart' -%}
   {%- endcapture -%}
 

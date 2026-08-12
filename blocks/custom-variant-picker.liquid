@@ -3,9 +3,9 @@
 
   capture variant_picker
     if custom_settings
-      render 'custom.block.product-variant-picker', block: block,  product: closest.product
+      render 'custom.block.product-variant-picker', block: block, product: closest.product
     else
-      render 'block.product-variant-picker', block: block,  product: closest.product
+      render 'block.product-variant-picker', block: block, product: closest.product
     endif
   endcapture
 -%}
@@ -65,6 +65,12 @@
       "id": "enable_custom_settings",
       "label": "Enable custom settings"
     },
+    {
+      "type": "text",
+      "id": "size_chart_label",
+      "label": "Size chart label",
+      "default": "Size chart"
+    }
   ],
   "presets": [{ "name": "Variant picker" }]
 }
