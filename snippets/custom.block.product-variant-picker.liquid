@@ -25,7 +25,7 @@
     endif
   endfor
 
-  assign size_chart_label = block.settings.size_chart_label
+  assign size_chart_label = block.settings.size_chart_label | default: 'labels.size_chart' | t
 -%}
 
 {%- comment -%}
