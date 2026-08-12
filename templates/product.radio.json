@@ -96,7 +96,8 @@
             "picker_type": "button",
             "color_swatches": true,
             "size_chart_option": "Feature Set",
-            "size_chart": "radio-features"
+            "size_chart": "radio-features",
+            "enable_custom_settings": true
           },
           "blocks": {}
         },
