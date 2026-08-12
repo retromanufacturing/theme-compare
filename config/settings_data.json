@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "color_scheme_button": "5",
+    "color_scheme_price": "1",
     "color_scheme_2_texture": "notebook",
     "type_heading_font_family": "system_ui_n4",
     "type_heading_font_size_scale_modifier": 0,
@@ -149,9 +151,9 @@
           "listen_for_changes": false,
           "rating_without_brackets": true,
           "format_review_count": false,
-          "show_popup": false,
-          "anchor_to_reviews_widget": false,
-          "show_empty_stars": false
+          "show_popup": true,
+          "anchor_to_reviews_widget": true,
+          "show_empty_stars": true
         }
       }
     },
@@ -170,8 +172,8 @@
       },
       "3": {
         "settings": {
-          "primary": "#272831",
-          "secondary": "#efebeb"
+          "primary": "#0C5132",
+          "secondary": "#B4FED2"
         }
       },
       "4": {
@@ -182,14 +184,14 @@
       },
       "5": {
         "settings": {
-          "primary": "#343643",
-          "secondary": "#ffffff"
+          "primary": "#FFFFFF",
+          "secondary": "#0071DC"
         }
       },
       "6": {
         "settings": {
-          "primary": "#ba4444",
-          "secondary": "#ffffff"
+          "primary": "#5E4200",
+          "secondary": "#FFD6A4"
         }
       },
       "7": {

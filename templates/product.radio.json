@@ -71,9 +71,9 @@
               "settings": {
                 "inventory_threshold": 10,
                 "inventory_transfers_enable": true,
-                "enable_labels": false,
-                "color_scheme_in_stock": "",
-                "color_scheme_low_stock": ""
+                "enable_labels": true,
+                "color_scheme_in_stock": "3",
+                "color_scheme_low_stock": "6"
               },
               "blocks": {}
             },
