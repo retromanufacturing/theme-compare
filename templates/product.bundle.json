@@ -1,0 +1,488 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "custom-main-product-block",
+      "blocks": {
+        "custom_title_wTk4VC": {
+          "type": "custom-title",
+          "name": "t:labels.title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          },
+          "blocks": {}
+        },
+        "custom_group_DWzD3G": {
+          "type": "custom-group",
+          "name": "Group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "none",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "border_color": "#42434d",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "custom_sku_JXYjzP": {
+              "type": "custom-sku",
+              "name": "Product sku",
+              "settings": {},
+              "blocks": {}
+            },
+            "custom_product_inventory_yaYX6b": {
+              "type": "custom-product-inventory",
+              "name": "t:labels.inventory_status",
+              "settings": {
+                "inventory_threshold": 10,
+                "inventory_transfers_enable": true,
+                "enable_labels": true,
+                "color_scheme_in_stock": "3",
+                "color_scheme_low_stock": "6"
+              },
+              "blocks": {}
+            },
+            "reviews_io_reviewsio_rating_output_U9CHRn": {
+              "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "custom_sku_JXYjzP",
+            "custom_product_inventory_yaYX6b",
+            "reviews_io_reviewsio_rating_output_U9CHRn"
+          ]
+        },
+        "custom_variant_picker_zXNWVe": {
+          "type": "custom-variant-picker",
+          "name": "Variant picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": true,
+            "size_chart_option": "Feature Set, Motor",
+            "size_chart": "",
+            "enable_custom_settings": true,
+            "size_chart_label": "",
+            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
+            "enable_variant_details": false,
+            "variant_details_options": ""
+          },
+          "blocks": {}
+        },
+        "custom_product_features_CUgm3G": {
+          "type": "custom-product-features",
+          "name": "t:custom.product.features",
+          "settings": {
+            "font_size": 14
+          },
+          "blocks": {}
+        },
+        "custom_product_logos_yXeAe9": {
+          "type": "custom-product-logos",
+          "name": "Logos",
+          "settings": {
+            "logo_sizing": "default",
+            "logo_custom_height": 60
+          },
+          "blocks": {}
+        },
+        "w3_product_accessories_widget_7fwncp": {
+          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
+          "settings": {}
+        },
+        "custom_price_cY9A6t": {
+          "type": "custom-price",
+          "name": "t:labels.price",
+          "settings": {
+            "hide_subtitle": false,
+            "color": "#810f12"
+          },
+          "blocks": {}
+        },
+        "custom_buy_button_7TrFbD": {
+          "type": "custom-buy-button",
+          "name": "t:labels.buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false,
+            "enable_sticky_add_to_cart": false,
+            "sticky_width": "full",
+            "sticky_constrained_width": 600,
+            "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
+            "position_placement": "below",
+            "content_push_selector": ".main-content",
+            "sticky_gap_mobile": 8,
+            "sticky_gap_desktop": 16,
+            "sticky_justify_desktop": "space-between"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "custom_title_wTk4VC",
+        "custom_group_DWzD3G",
+        "custom_variant_picker_zXNWVe",
+        "custom_product_features_CUgm3G",
+        "custom_product_logos_yXeAe9",
+        "w3_product_accessories_widget_7fwncp",
+        "custom_price_cY9A6t",
+        "custom_buy_button_7TrFbD"
+      ],
+      "custom_css": [
+        "h1 {font-size: 1.5rem;}"
+      ],
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "hide_variant_media": true
+      }
+    },
+    "custom_section_RNNVig": {
+      "type": "custom-section",
+      "blocks": {
+        "custom_tab_TTkD8y": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Description",
+            "is_open": true,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#ffffff",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_hzp8gR": {
+              "type": "custom-liquid",
+              "name": "Product Description",
+              "settings": {
+                "custom_liquid": "{% render 'custom.block.product-description' %}"
+              },
+              "blocks": {}
+            },
+            "custom_liquid_RTY6nE": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% if product.vendor == 'RetroMat' %} {% render 'custom.matcalc' %}{% endif %}"
+              },
+              "blocks": {}
+            },
+            "text_9VQjKP": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text_style": "richtext",
+                "text": "Insert text here",
+                "richtext": "<h5><em><strong>Note:</strong></em><em> Bezels, knobs, faceplates, and replacement parts are non-returnable. Please refer to product packaging for the most up to date country of origin. If you are not sure as to fitment, please </em><a href=\"https://www.retromanufacturing.com/pages/contact-us\" title=\"Contact Us\"><em><strong>contact us</strong></em></a><em>.</em></h5>",
+                "alignment": "left",
+                "font_preset": "span",
+                "font_size": "0.625rem",
+                "font_size_custom": 12,
+                "text_decoration": "",
+                "font_color": "#000000",
+                "background_color": "#ececec",
+                "padding-block-start": 14,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "custom_image_Wx8CRD": {
+              "type": "custom-image",
+              "name": "Image",
+              "settings": {
+                "image": "shopify://shop_images/CA65.jpg",
+                "alt": "",
+                "link": "",
+                "image_size": "natural",
+                "width": "fit-content",
+                "custom_width": 100,
+                "border_radius": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_hzp8gR",
+            "custom_liquid_RTY6nE",
+            "text_9VQjKP",
+            "custom_image_Wx8CRD"
+          ]
+        },
+        "custom_tab_BVDBki": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Videos",
+            "is_open": true,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#ffffff",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_XFk86W": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% render 'block.product-media', columns_per_row: 3 %}"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_XFk86W"
+          ]
+        },
+        "custom_tab_eTncFg": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Specifications",
+            "is_open": false,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#ffffff",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_kap8DF": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% render 'block.product-specs' %}"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_kap8DF"
+          ]
+        },
+        "custom_tab_epG6DJ": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Manuals",
+            "is_open": false,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#ffffff",
+            "tab_padding": 0
+          },
+          "blocks": {
+            "custom_liquid_7D9g7a": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% render 'block.product-manuals' %}"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "custom_liquid_7D9g7a"
+          ]
+        }
+      },
+      "block_order": [
+        "custom_tab_TTkD8y",
+        "custom_tab_BVDBki",
+        "custom_tab_eTncFg",
+        "custom_tab_epG6DJ"
+      ],
+      "custom_css": [
+        ".page-width {margin-top: 1.5rem;}",
+        ".block--text.text-left {font-size: 14px !important;}",
+        ".block-image.block-image--natural {margin-top: 0.5rem;}",
+        "a {color: #810f12;}"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "page_width": true
+      }
+    },
+    "custom_vehicle_search_products_rbfU9e": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "space_above": true,
+        "space_below": true,
+        "heading": "missing translation: \"t:custom.vehicle_search.recommendations\"",
+        "product_count": 5,
+        "products_per_row": 5,
+        "button_text": "View All",
+        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": ""
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "tab",
+        "contact"
+      ],
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 3
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {}
+    },
+    "apps_bqdrLx": {
+      "type": "apps",
+      "blocks": {
+        "reviews_io_reviewsio_polaris_ricaCW": {
+          "type": "shopify://apps/reviews-io/blocks/reviewsio-polaris/92a082e5-b297-4e88-b428-ac96cbc505f9",
+          "settings": {
+            "star": "#ffd800",
+            "review_type": "product_review,questions",
+            "per_page": 8,
+            "primary_btn_bg_color": "#000000",
+            "primary_btn_border_color": "#000000",
+            "primary_btn_text_color": "#ffffff",
+            "secondary_btn_border_color": "#000000",
+            "secondary_btn_text_color": "#000000",
+            "border_color": "#d9d9d9",
+            "heading_text_color": "#000000",
+            "heading_font": "sans_serif_n4",
+            "body_text_color": "#000000",
+            "badge_icon_color": "#00ac11",
+            "badge_text_color": "#000000",
+            "enable_rich_snippets": true,
+            "show_location": true,
+            "show_tab_selector": false,
+            "show_dates": true,
+            "show_avatar": true,
+            "enable_sentiment_analysis": false,
+            "enable_replies": false,
+            "widget_spacing": 0,
+            "capitalise_headers_and_buttons": false,
+            "show_review_title": false,
+            "default_sort": "date_desc"
+          }
+        }
+      },
+      "block_order": [
+        "reviews_io_reviewsio_polaris_ricaCW"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {
+        "color_scheme": "none"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_RNNVig",
+    "custom_vehicle_search_products_rbfU9e",
+    "sub",
+    "recommendations",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "apps_bqdrLx",
+    "collection-return"
+  ]
+}
