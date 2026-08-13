@@ -126,7 +126,7 @@
         if option_show_details
           capture features_logos          
             render 'block.product-features', product: closest.product, font_size: 14          
-            render 'block.product-logos', product: closest.product, logo_sizing: metaobject, logo_custom_height: 60        
+            render 'block.product-logos', product: closest.product, logo_sizing: default, logo_custom_height: 60        
           endcapture
           echo features_logos
         endif
