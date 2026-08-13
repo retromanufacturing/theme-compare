@@ -11,7 +11,163 @@
   "sections": {
     "main": {
       "type": "custom-main-product-block",
-      "settings": {}
+      "blocks": {
+        "custom_title_wTk4VC": {
+          "type": "custom-title",
+          "name": "t:labels.title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          },
+          "blocks": {}
+        },
+        "custom_group_DWzD3G": {
+          "type": "custom-group",
+          "name": "Group",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "none",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "border_color": "#42434d",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "custom_sku_JXYjzP": {
+              "type": "custom-sku",
+              "name": "Product sku",
+              "settings": {},
+              "blocks": {}
+            },
+            "custom_product_inventory_yaYX6b": {
+              "type": "custom-product-inventory",
+              "name": "t:labels.inventory_status",
+              "settings": {
+                "inventory_threshold": 10,
+                "inventory_transfers_enable": true,
+                "enable_labels": true,
+                "color_scheme_in_stock": "3",
+                "color_scheme_low_stock": "6"
+              },
+              "blocks": {}
+            },
+            "reviews_io_reviewsio_rating_output_U9CHRn": {
+              "type": "shopify://apps/reviews-io/blocks/reviewsio-rating-output/92a082e5-b297-4e88-b428-ac96cbc505f9",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "custom_sku_JXYjzP",
+            "custom_product_inventory_yaYX6b",
+            "reviews_io_reviewsio_rating_output_U9CHRn"
+          ]
+        },
+        "custom_variant_picker_zXNWVe": {
+          "type": "custom-variant-picker",
+          "name": "Variant picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": true,
+            "size_chart_option": "Feature Set, Motor",
+            "size_chart": "",
+            "enable_custom_settings": true,
+            "size_chart_label": "",
+            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
+            "enable_variant_details": false,
+            "variant_details_options": ""
+          },
+          "blocks": {}
+        },
+        "custom_product_features_CUgm3G": {
+          "type": "custom-product-features",
+          "name": "t:custom.product.features",
+          "settings": {
+            "font_size": 14
+          },
+          "blocks": {}
+        },
+        "w3_product_accessories_widget_7fwncp": {
+          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
+          "settings": {}
+        },
+        "custom_price_cY9A6t": {
+          "type": "custom-price",
+          "name": "t:labels.price",
+          "settings": {
+            "hide_subtitle": false,
+            "color": "#810f12"
+          },
+          "blocks": {}
+        },
+        "custom_buy_button_7TrFbD": {
+          "type": "custom-buy-button",
+          "name": "t:labels.buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false,
+            "enable_sticky_add_to_cart": false,
+            "sticky_width": "full",
+            "sticky_constrained_width": 600,
+            "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
+            "position_placement": "below",
+            "content_push_selector": ".main-content",
+            "sticky_gap_mobile": 8,
+            "sticky_gap_desktop": 16,
+            "sticky_justify_desktop": "space-between"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "custom_title_wTk4VC",
+        "custom_group_DWzD3G",
+        "custom_variant_picker_zXNWVe",
+        "custom_product_features_CUgm3G",
+        "w3_product_accessories_widget_7fwncp",
+        "custom_price_cY9A6t",
+        "custom_buy_button_7TrFbD"
+      ],
+      "custom_css": [
+        "h1 {font-size: 2rem;}"
+      ],
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "hide_variant_media": true
+      }
     },
     "sub": {
       "type": "product-full-width",
@@ -24,11 +180,18 @@
         },
         "tab": {
           "type": "tab",
-          "settings": {}
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": ""
+          }
         },
         "contact": {
           "type": "contact",
-          "settings": {}
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
         }
       },
       "block_order": [
@@ -36,19 +199,31 @@
         "tab",
         "contact"
       ],
-      "settings": {}
+      "settings": {
+        "max_width": true
+      }
     },
     "recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 6,
+        "products_per_row": 3
+      }
     },
     "more-products-vendor": {
       "type": "more-products-vendor",
-      "settings": {}
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
     },
     "more-products-collection": {
       "type": "more-products-collection",
-      "settings": {}
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
     },
     "recently-viewed": {
       "type": "recently-viewed",
@@ -56,7 +231,9 @@
     },
     "collection-return": {
       "type": "collection-return",
-      "settings": {}
+      "settings": {
+        "color_scheme": "2"
+      }
     }
   },
   "order": [
