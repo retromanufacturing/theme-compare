@@ -84,6 +84,7 @@
         endif
 
         # For assign labels for extra variant details
+        assign test = 'this is a test'
         assign option_show_details = false
         if enable_variant_details and variant_details_options != blank
           assign variant_details_option_list = variant_details_options | downcase | split: ','
@@ -91,6 +92,7 @@
             assign label_option = label_option | strip
             if option_name_match == label_option 
               assign option_show_details = true
+              echo test
               break
             endif
           endfor
