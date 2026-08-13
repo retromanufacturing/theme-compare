@@ -37,7 +37,7 @@
     {% for media in custom_videos %}
       {%- liquid
         assign external_video_host = 'youtube'
-        assign external_video_id = media.link | split: 'v=' | last | split: '&' | first
+        assign external_video_id = media.link.value | split: 'v=' | last | split: '&' | first
       -%}
       <div class="product__video-item">
         {%- render 'element.video', external_video_host: external_video_host, external_video_id: external_video_id -%}
