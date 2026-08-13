@@ -22,7 +22,7 @@
   assign enable_select_unavailable = enable_select_unavailable | default: true, allow_false: true
   assign update_url = update_url | default: true, allow_false: true
 
-  assign stack_gap = 'lg'
+  assign stack_gap = 'sm'
   assign stack_direction = 'vertical'
   if picker_type == 'dropdown'
     assign stack_gap = 'md'
@@ -86,7 +86,7 @@
         # For assign labels for extra variant details
         assign option_show_details = false
         if enable_variant_details and variant_details_options != blank
-          assign variant_details_option_list = variant_details_options | downcase | split: ','
+          assign variant_details_option_list = variant_details_options | downcase | split: ', '
           for label_option in variant_details_option_list
             assign label_option = label_option | strip
             if option_name_match == label_option 
