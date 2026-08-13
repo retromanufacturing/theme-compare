@@ -14,7 +14,8 @@
   else  
     assign description = product.description
   endif
+
+  if description != blank
+    echo description
+  endif
 -%}
-{% if description != blank %}
-  {{ description }}
-{% endif %}
