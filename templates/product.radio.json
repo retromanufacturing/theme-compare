@@ -157,7 +157,8 @@
       ],
       "custom_css": [
         "h1 {font-size: 2rem;}",
-        "variant-sku {color: #810f12; font-weight: 700;}"
+        "variant-sku {color: #810f12; font-weight: 700;}",
+        "product-features ul {margin-top: 1rem;}"
       ],
       "name": "Product block",
       "settings": {
