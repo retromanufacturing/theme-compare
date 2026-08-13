@@ -99,7 +99,9 @@
             "size_chart": "radio-features",
             "enable_custom_settings": true,
             "size_chart_label": "Compare Radios",
-            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}"
+            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
+            "enable_variant_details": false,
+            "variant_details_options": ""
           },
           "blocks": {}
         },
@@ -114,6 +116,14 @@
         "w3_product_accessories_widget_9a8X3g": {
           "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
           "settings": {}
+        },
+        "custom_liquid_bY346f": {
+          "type": "custom-liquid",
+          "name": "Custom Liquid",
+          "settings": {
+            "custom_liquid": "{% render 'clyde-pdp' %}"
+          },
+          "blocks": {}
         },
         "custom_price_JRW7mU": {
           "type": "custom-price",
@@ -150,6 +160,7 @@
         "custom_variant_picker_KDJkBB",
         "custom_product_features_p9347t",
         "w3_product_accessories_widget_9a8X3g",
+        "custom_liquid_bY346f",
         "custom_price_JRW7mU",
         "custom_buy_button_Qpz77G"
       ],
