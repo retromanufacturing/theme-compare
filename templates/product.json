@@ -113,6 +113,15 @@
           },
           "blocks": {}
         },
+        "custom_product_logos_yXeAe9": {
+          "type": "custom-product-logos",
+          "name": "Logos",
+          "settings": {
+            "logo_sizing": "default",
+            "logo_custom_height": 60
+          },
+          "blocks": {}
+        },
         "w3_product_accessories_widget_7fwncp": {
           "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
           "settings": {}
@@ -151,6 +160,7 @@
         "custom_group_DWzD3G",
         "custom_variant_picker_zXNWVe",
         "custom_product_features_CUgm3G",
+        "custom_product_logos_yXeAe9",
         "w3_product_accessories_widget_7fwncp",
         "custom_price_cY9A6t",
         "custom_buy_button_7TrFbD"
