@@ -101,7 +101,7 @@
                 "size_chart_option": "Feature Set, Motor",
                 "size_chart": "radio-features",
                 "enable_custom_settings": true,
-                "size_chart_label": "Feature Set",
+                "size_chart_label": "Compare Radios",
                 "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
                 "enable_variant_details": true,
                 "variant_details_options": "Feature Set,"
