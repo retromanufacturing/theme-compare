@@ -66,12 +66,6 @@
         endif
       endif
 
-      assign variant_features = value.variant.metafields.custom.radio_features.value
-      assign variant_button_color = variant_features.color.value
-      assign variant_details  = variant_features.variant_details.value | first
-      assign variant_name = variant_details.name.value | default: value_name_escaped
-      assign variant_badge = variant_details.badge.value
-      assign variant_description = variant_details.description.value
     -%}
 
     {% capture radio_content %}
