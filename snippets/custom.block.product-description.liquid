@@ -22,5 +22,5 @@
     echo description
   endif
 -%}
-
+{% if product.description contains '<!--SPLIT-->' %} yes {% endif %}
 {{ product.type }}
