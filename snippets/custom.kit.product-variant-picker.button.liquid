@@ -111,12 +111,12 @@
       disabled: input_disabled,
       attr: radio_attr
     %}
-    this is a test
+
   {% endfor %}
 {% endcapture %}
 
 {% render 'kit.stack', content: stack_content, direction: 'horizontal', gap: 'xs', wrap: true %}
-
+    this is a test
 {% stylesheet %}
 .kit-radio:has(.variant-tier-button) {
   flex: 1 1 0;
