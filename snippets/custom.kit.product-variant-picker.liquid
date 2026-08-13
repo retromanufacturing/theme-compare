@@ -125,7 +125,7 @@
       {%- liquid
         if option_show_details
           capture features_logos          
-            render 'block.product-features', product: closest.product, block: block          
+            render 'block.product-features', product: closest.product, font_size: 14          
             render 'block.product-logos', block: block, product: closest.product, logo_sizing: block.settings.logo_sizing, logo_custom_height: block.settings.logo_custom_height        
           endcapture
           echo features_logos
