@@ -90,115 +90,43 @@
                 "custom_product_inventory_yTHRph",
                 "reviews_io_reviewsio_rating_output_7nH34F"
               ]
+            },
+            "custom_variant_picker_MQ7XXL": {
+              "type": "custom-variant-picker",
+              "name": "Variant picker",
+              "settings": {
+                "variant_labels": true,
+                "picker_type": "button",
+                "color_swatches": true,
+                "size_chart_option": "Feature Set, Motor",
+                "size_chart": "radio-features",
+                "enable_custom_settings": true,
+                "size_chart_label": "Feature Set",
+                "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
+                "enable_variant_details": true,
+                "variant_details_options": "Feature Set,"
+              },
+              "blocks": {}
+            },
+            "custom_price_mkbwHn": {
+              "type": "custom-price",
+              "name": "t:labels.price",
+              "settings": {
+                "hide_subtitle": true,
+                "color": "#810f12"
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "custom_group_Hc4xyE"
+            "custom_group_Hc4xyE",
+            "custom_variant_picker_MQ7XXL",
+            "custom_price_mkbwHn"
           ]
-        },
-        "custom_variant_picker_yyXab7": {
-          "type": "custom-variant-picker",
-          "name": "Variant picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "color_swatches": false,
-            "size_chart_option": "",
-            "size_chart": "",
-            "enable_custom_settings": false,
-            "size_chart_label": "Size chart",
-            "variant_swatches": [],
-            "enable_variant_details": false,
-            "variant_details_options": ""
-          },
-          "blocks": {}
-        },
-        "custom_title_wTk4VC": {
-          "type": "custom-title",
-          "name": "t:labels.title",
-          "settings": {
-            "vendor_enable": false,
-            "sku_enable": false
-          },
-          "blocks": {}
-        },
-        "custom_variant_picker_zXNWVe": {
-          "type": "custom-variant-picker",
-          "name": "Variant picker",
-          "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "color_swatches": true,
-            "size_chart_option": "Feature Set, Motor",
-            "size_chart": "",
-            "enable_custom_settings": true,
-            "size_chart_label": "",
-            "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
-            "enable_variant_details": false,
-            "variant_details_options": ""
-          },
-          "blocks": {}
-        },
-        "custom_product_features_CUgm3G": {
-          "type": "custom-product-features",
-          "name": "t:custom.product.features",
-          "settings": {
-            "font_size": 14
-          },
-          "blocks": {}
-        },
-        "custom_product_logos_yXeAe9": {
-          "type": "custom-product-logos",
-          "name": "Logos",
-          "settings": {
-            "logo_sizing": "default",
-            "logo_custom_height": 60
-          },
-          "blocks": {}
-        },
-        "w3_product_accessories_widget_7fwncp": {
-          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
-          "settings": {}
-        },
-        "custom_price_cY9A6t": {
-          "type": "custom-price",
-          "name": "t:labels.price",
-          "settings": {
-            "hide_subtitle": false,
-            "color": "#810f12"
-          },
-          "blocks": {}
-        },
-        "custom_buy_button_7TrFbD": {
-          "type": "custom-buy-button",
-          "name": "t:labels.buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true,
-            "show_gift_card_recipient": false,
-            "enable_sticky_add_to_cart": false,
-            "sticky_width": "full",
-            "sticky_constrained_width": 600,
-            "position_selector": "header-section, .shopify-section-group-vehicle-search-banner",
-            "position_placement": "below",
-            "content_push_selector": ".main-content",
-            "sticky_gap_mobile": 8,
-            "sticky_gap_desktop": 16,
-            "sticky_justify_desktop": "space-between"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "custom_tab_Jxb4aJ",
-        "custom_variant_picker_yyXab7",
-        "custom_title_wTk4VC",
-        "custom_variant_picker_zXNWVe",
-        "custom_product_features_CUgm3G",
-        "custom_product_logos_yXeAe9",
-        "w3_product_accessories_widget_7fwncp",
-        "custom_price_cY9A6t",
-        "custom_buy_button_7TrFbD"
+        "custom_tab_Jxb4aJ"
       ],
       "custom_css": [
         "h1 {font-size: 1.5rem;}"
