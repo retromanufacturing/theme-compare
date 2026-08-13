@@ -68,11 +68,11 @@
 
       assign option_features = value.variant.metafields.custom.radio_features.value
       assign option_button_color = option_features.color.value
-      assign option_details = option_features.option_details.value | first
-      assign option_badge = option_details.badge.value
+      assign variant_details  = option_features.variant_details.value | first
+      assign option_badge = variant_details.badge.value
     -%}
 
-    {{ option_features }}--{{ option_button_color }}--{{ option_details }}--{{ option_badge }}
+    {{ option_features }}--{{ option_button_color }}--{{ variant_details  }}--{{ option_badge }}
 
     {% capture radio_content %}
       {% if is_swatch %}
