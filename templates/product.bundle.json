@@ -123,10 +123,24 @@
             "custom_variant_picker_MQ7XXL",
             "custom_price_mkbwHn"
           ]
+        },
+        "custom_tab_jnJxyx": {
+          "type": "custom-tab",
+          "name": "Tab",
+          "settings": {
+            "title": "Tab heading",
+            "is_open": false,
+            "tab_type": "default",
+            "tab_title_color": "#000000",
+            "tab_background_color": "#FFFFFF",
+            "tab_padding": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "custom_tab_Jxb4aJ"
+        "custom_tab_Jxb4aJ",
+        "custom_tab_jnJxyx"
       ],
       "custom_css": [
         "h1 {font-size: 1.5rem;}"
@@ -309,19 +323,6 @@
         "page_width": true
       }
     },
-    "custom_vehicle_search_products_rbfU9e": {
-      "type": "custom-vehicle-search-products",
-      "name": "Fitment Product Grid",
-      "settings": {
-        "space_above": true,
-        "space_below": true,
-        "heading": "missing translation: \"t:custom.vehicle_search.recommendations\"",
-        "product_count": 5,
-        "products_per_row": 5,
-        "button_text": "View All",
-        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
-      }
-    },
     "sub": {
       "type": "product-full-width",
       "blocks": {
@@ -439,7 +440,6 @@
   "order": [
     "main",
     "custom_section_RNNVig",
-    "custom_vehicle_search_products_rbfU9e",
     "sub",
     "recommendations",
     "more-products-vendor",
