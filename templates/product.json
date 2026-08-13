@@ -192,6 +192,14 @@
               },
               "blocks": {}
             },
+            "custom_liquid_RTY6nE": {
+              "type": "custom-liquid",
+              "name": "Custom Liquid",
+              "settings": {
+                "custom_liquid": "{% if product.vendor == 'RetroMat' %} {% render 'custom.matcalc' %}{% endif %}"
+              },
+              "blocks": {}
+            },
             "text_9VQjKP": {
               "type": "text",
               "name": "Text",
@@ -230,6 +238,7 @@
           },
           "block_order": [
             "custom_liquid_hzp8gR",
+            "custom_liquid_RTY6nE",
             "text_9VQjKP",
             "custom_image_Wx8CRD"
           ]
