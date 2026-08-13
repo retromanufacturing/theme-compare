@@ -10,6 +10,10 @@
     capture description
       render 'desc-radio'
     endcapture
+  elsif product.type == 'Speaker'
+    capture description
+      render 'desc-speaker'
+    endcapture  
   else  
     assign description = product.description
   endif
