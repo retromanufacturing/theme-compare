@@ -857,7 +857,7 @@
                   "name": "Text",
                   "settings": {
                     "text_style": "text",
-                    "text": "Amplifiers & Subwoofers",
+                    "text": "Speaker Pods",
                     "richtext": "<p>Insert text here</p>",
                     "alignment": "left",
                     "font_preset": "span",
