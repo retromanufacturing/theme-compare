@@ -1304,7 +1304,8 @@
         "custom_buy_button_bundle_iixGVk"
       ],
       "custom_css": [
-        "h1 {font-size: 1.5rem;}"
+        "h1 {font-size: 1.5rem;}",
+        ".block-tab .element-accordion__toggle {background-color: #4a4a4a; color: #fff; padding: 0.75rem;}"
       ],
       "settings": {
         "image_position": "left",
