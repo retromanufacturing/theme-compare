@@ -10,7 +10,7 @@
   # Legacy fallback for products with description in description
   if product.description contains '<!--SPLIT-->'
     assign description_segments = product.description | split: '<!--SPLIT-->'
-    assign description = description_segments[0]
+    assign description = description_segments[1]
   endif
 -%}
 {% if description != blank %}
