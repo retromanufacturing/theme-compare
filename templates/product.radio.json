@@ -111,39 +111,9 @@
           },
           "blocks": {}
         },
-        "custom_tab_rfAfmx": {
-          "type": "custom-tab",
-          "name": "Tab",
-          "settings": {
-            "title": "Accessories",
-            "is_open": true,
-            "tab_type": "accessories",
-            "tab_title_color": "#000000",
-            "tab_background_color": "#ffffff",
-            "tab_padding": 0
-          },
-          "blocks": {
-            "w3_product_accessories_widget_MydY3V": {
-              "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
-              "settings": {}
-            }
-          },
-          "block_order": [
-            "w3_product_accessories_widget_MydY3V"
-          ]
-        },
-        "custom_tab_nnJ4dX": {
-          "type": "custom-tab",
-          "name": "Tab",
-          "settings": {
-            "title": "Add Extended Warranty",
-            "is_open": true,
-            "tab_type": "warranty",
-            "tab_title_color": "#000000",
-            "tab_background_color": "#ffffff",
-            "tab_padding": 0
-          },
-          "blocks": {}
+        "w3_product_accessories_widget_9a8X3g": {
+          "type": "shopify://apps/w3-product-accessories/blocks/widget/cebf1474-e4fa-4cb4-a91e-d313690bf6f1",
+          "settings": {}
         },
         "custom_price_JRW7mU": {
           "type": "custom-price",
@@ -179,8 +149,7 @@
         "custom_group_TJ8NH6",
         "custom_variant_picker_KDJkBB",
         "custom_product_features_p9347t",
-        "custom_tab_rfAfmx",
-        "custom_tab_nnJ4dX",
+        "w3_product_accessories_widget_9a8X3g",
         "custom_price_JRW7mU",
         "custom_buy_button_Qpz77G"
       ],
