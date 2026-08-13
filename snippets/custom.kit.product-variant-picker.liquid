@@ -121,12 +121,13 @@
         selection_name: option_selection,
         content: option_content
       -%}
+          this is a test.5
     {%- endfor -%}
   {%- endcapture -%}
 
   {%- capture picker_stack -%}
     {%- render 'kit.stack', gap: stack_gap, direction: stack_direction, content: picker_options, wrap: true -%}
-         this is a test.5
+     
   {%- endcapture -%}
     this is a test
   <kit-variant-picker
