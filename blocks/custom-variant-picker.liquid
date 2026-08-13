@@ -8,10 +8,11 @@
       render 'block.product-variant-picker', block: block, product: closest.product
     endif
   endcapture
+
+  if variant_picker != blank
+    echo variant_picker
+  endif
 -%}
-{%- if variant_picker != blank -%}
-  {{ variant_picker }}
-{%- endif -%}
 
 {% schema %}
 {
