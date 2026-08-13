@@ -128,3 +128,33 @@
 {% endcapture %}
 
 {% render 'kit.stack', content: stack_content, direction: 'horizontal', gap: 'xs', wrap: true %}
+
+{% stylesheet %}
+  .variant__tab-label-main {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .variant__tab-badge {
+    font-size: 0.68rem;
+    padding: 0px 4px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.45);
+    background: rgba(0,0,0,0.15);
+    display: inline-block;
+    margin-left: 4px;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .variant__tab-label-subtitle {
+    display: block;
+    font-size: 0.75em;
+    font-weight: normal;
+    opacity: 0.75;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+{% endstylesheet %}
