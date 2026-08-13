@@ -119,7 +119,7 @@
         },
         "custom_liquid_bY346f": {
           "type": "custom-liquid",
-          "name": "Custom Liquid",
+          "name": "Warranties",
           "settings": {
             "custom_liquid": "{% render 'clyde-pdp' %}"
           },
