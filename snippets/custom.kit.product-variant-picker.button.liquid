@@ -86,29 +86,24 @@
         {%- render 'kit.visually-hidden', text: value_name_escaped -%}
       {% else %}
         {% capture button_text %}
-          <span class="variant__tab-label-main">
-            {{ variant_name }}
-            {%- if variant_badge != blank -%}
-              <span class="variant__tab-badge">{{ variant_badge }}</span>
-            {%- endif -%}
-          </span>
-          {%- if variant_description != blank -%}
-            <span class="variant__tab-label-subtitle">{{ variant_description }}</span>
-          {%- endif -%}
+          {%- render 'custom.variant-labels', part: 'text', value: value, use_labels: use_labels, value_name_escaped: value_name_escaped -%}
         {% endcapture %}
 
         {% capture button_style %}
-          {%- if variant_button_color != blank -%}
-            --kit-button-color-background: {{ variant_button_color }};
-            --kit-button-color-text: #fff;
-          {%- endif -%}
+          {%- render 'custom.variant-labels', part: 'style', value: value, use_labels: use_labels -%}
         {% endcapture %}
+
+        {% assign button_classes = '' %}
+        {% if button_style != blank %}
+          {% assign button_classes = 'variant-tier-button' %}
+        {% endif %}
 
         {% render 'kit.button',
           tag: 'span',
           text: button_text,
           variant: 'secondary',
           disabled: button_swatch_disabled,
+          classes: button_classes,
           style: button_style
         %}
       {% endif %}
@@ -128,31 +123,14 @@
 {% render 'kit.stack', content: stack_content, direction: 'horizontal', gap: 'xs', wrap: true %}
 
 {% stylesheet %}
-  .variant__tab-label-main {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
+    .variant-tier-button {
+    background-color: var(--variant-color-secondary);
+    color: var(--variant-color-primary);
+    font-weight: 700;
   }
 
-  .variant__tab-badge {
-    font-size: 0.68rem;
-    padding: 0px 4px;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,0.45);
-    background: rgba(0,0,0,0.15);
-    display: inline-block;
-    margin-left: 4px;
-    color: #fff;
-    white-space: nowrap;
-  }
-
-  .variant__tab-label-subtitle {
-    display: block;
-    font-size: 0.75em;
-    font-weight: normal;
-    opacity: 0.75;
-    line-height: 1.3;
-    margin-top: 2px;
+  .kit-radio:has(input:checked) .variant-tier-button {
+    outline: 2.5px solid var(--variant-color-secondary);
+    box-shadow: 0 0 0 3px var(--variant-color-secondary), 0 4px 14px rgba(0,0,0,0.25);
   }
 {% endstylesheet %}

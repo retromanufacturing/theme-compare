@@ -27,6 +27,8 @@
 
   assign size_chart_label = block.settings.size_chart_label
   assign variant_swatches = block.settings.variant_swatches
+  assign enable_variant_details = block.settings.enable_variant_details
+  assign variant_details_options = block.settings.variant_details_options
 -%}
 {%- comment -%}
   The size chart rides in the matched option's legend — kit.product-variant-picker
@@ -59,7 +61,9 @@
       legend_extra_option: size_chart_matched_option,
       legacy_swatch_triggers: legacy_swatch_triggers,
       legacy_swatch_source: 'files',
-      variant_swatches: variant_swatches
+      variant_swatches: variant_swatches,
+      enable_variant_details: enable_variant_details,
+      variant_details_options: variant_details_options
     %}
   {% else %}
     {% render 'kit.product-variant-picker',

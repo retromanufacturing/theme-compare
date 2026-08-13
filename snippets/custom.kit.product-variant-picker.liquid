@@ -82,6 +82,19 @@
             assign option_legend_extra = legend_extra
           endif
         endif
+
+        # For assign labels for extra variant details
+        assign option_show_details = false
+        if enable_variant_details and variant_details_options != blank
+          assign variant_details_option_list = variant_details_options | downcase | split: ','
+          for label_option in variant_details_option_list
+            assign label_option = label_option | strip
+            if option_name_match == label_option 
+              assign option_show_details = true
+              break
+            endif
+          endfor
+        endif
       -%}
 
       {%- capture option_content -%}
@@ -96,7 +109,8 @@
             enable_swatches: enable_swatches,
             enable_select_unavailable: enable_select_unavailable,
             legacy_swatch_source: option_legacy_swatch_source,
-            variant_swatches: variant_swatches
+            variant_swatches: variant_swatches,
+            use_labels: option_show_details
           -%}
         {%- endif -%}
       {%- endcapture -%}
