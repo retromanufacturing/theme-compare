@@ -66,13 +66,13 @@
         endif
       endif
 
-      assign option_features = value.variant.metafields.custom.radio_features.value
-      assign option_button_color = option_features.color.value
-      assign variant_details  = option_features.variant_details.value | first
-      assign option_badge = variant_details.badge.value
+      assign variant_features = value.variant.metafields.custom.radio_features.value
+      assign variant_button_color = variant_features.color.value
+      assign variant_details  = variant_features.variant_details.value | first
+      assign variant_badge = variant_details.badge.value
     -%}
 
-    {{ option_features }}--{{ option_button_color }}--{{ variant_details  }}--{{ option_badge }}
+    {{ variant_features }}--{{ variant_button_color }}--{{ variant_details  }}--{{ variant_badge }}
 
     {% capture radio_content %}
       {% if is_swatch %}
