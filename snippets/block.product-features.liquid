@@ -4,6 +4,7 @@
   assign variant_features = current_variant.metafields.description.features.value
   assign radio_features = current_variant.metafields.custom.radio_features.value.features.value
   assign videos = product.metafields.media.videos.value
+  assign font_size = font_size | default: block.settings.font_size
 
   capture features
     for feature in product_features
@@ -31,7 +32,7 @@
 {%- if features != blank -%}
   {% style %}
     #shopify-block-{{ block.id }} li {
-      font-size: {{ block.settings.font_size}}px;
+      font-size: {{ font_size }}px;
     }
   {% endstyle %}
 
