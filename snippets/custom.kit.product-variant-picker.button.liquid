@@ -74,8 +74,6 @@
       assign variant_description = variant_details.description.value
     -%}
 
-    {{ variant_features }}--{{ variant_button_color }}--{{ variant_details  }}--{{ variant_badge }}
-
     {% capture radio_content %}
       {% if is_swatch %}
         {%- render 'kit.swatch',
