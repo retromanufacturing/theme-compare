@@ -117,14 +117,14 @@
 {% render 'kit.stack', content: stack_content, direction: 'horizontal', gap: 'xs', wrap: true %}
 
 {% stylesheet %}
-    .variant-tier-button {
-    background-color: var(--variant-color-secondary);
-    color: var(--variant-color-primary);
-    font-weight: 700;
-  }
+   .kit-button.variant-tier-button {
+  background-color: var(--variant-color-secondary);
+  color: var(--variant-color-primary);
+  font-weight: 700;
+}
 
-  .kit-radio:has(input:checked) .variant-tier-button {
-    outline: 2.5px solid var(--variant-color-secondary);
-    box-shadow: 0 0 0 3px var(--variant-color-secondary), 0 4px 14px rgba(0,0,0,0.25);
-  }
+.kit-radio:has(input:checked) .kit-button.variant-tier-button {
+  outline: 2.5px solid var(--variant-color-secondary);
+  box-shadow: 0 0 0 3px var(--variant-color-secondary), 0 4px 14px rgba(0,0,0,0.25);
+}
 {% endstylesheet %}
