@@ -69,7 +69,7 @@
       "type": "text",
       "id": "size_chart_label",
       "label": "Size chart label",
-      "default": "Size chart",     
+      "default": "Size chart",
       "visible_if": "{{ block.settings.enable_custom_settings }}"
     },
     {
@@ -77,8 +77,21 @@
       "id": "variant_swatches",
       "label": "Variant swatches",
       "metaobject_type": "variant_swatches",
-      "info": "Applies to variants not assigned to Color swatches. Only works if custom settings enabled",
+      "info": "Applies to variants not assigned to Color swatches. Only works if custom settings enabled"
     },
+    {
+      "type": "checkbox",
+      "id": "enable_variant_details",
+      "label": "Show colored variant detail buttons",
+      "info": "Renders matching option values as colored buttons with details pulled from that variant's matching metaobject, instead of plain text.",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "variant_details_options",
+      "label": "Option name(s) to apply this to",
+      "info": "Comma-separated option name(s) that should use variant details styling (e.g. 'Feature Set'). Other options like Size or Color are left as plain buttons."
+    }
   ],
   "presets": [{ "name": "Variant picker" }]
 }
