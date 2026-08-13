@@ -35,7 +35,7 @@
 -%}
 
 {%- if title != blank and accordion_content != blank -%}
-  <div class="block-tab--{{ block.id }}" {{ block.shopify_attributes }}>
+  <div class="block-tab--{{ block.id }} block-tab" {{ block.shopify_attributes }}>
     {%- render 'element.accordion', title: tab_title, slot: accordion_content, open: is_open -%}
   </div>
 
