@@ -1165,7 +1165,7 @@
               "type": "custom-product-list",
               "name": "Product List",
               "settings": {
-                "product_list": "{{ metaobjects.build_your_own[\"add-vintage-overlay\"].products.value }}",
+                "product_list": "{{ metaobjects.build_your_own[\"add-accessories\"].products.value }}",
                 "required": false,
                 "group_items": false
               },
