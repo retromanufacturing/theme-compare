@@ -69,7 +69,9 @@
       assign variant_features = value.variant.metafields.custom.radio_features.value
       assign variant_button_color = variant_features.color.value
       assign variant_details  = variant_features.variant_details.value | first
+      assign variant_name = variant_details.name.value | default: value_name_escaped
       assign variant_badge = variant_details.badge.value
+      assign variant_description = variant_details.description.value
     -%}
 
     {{ variant_features }}--{{ variant_button_color }}--{{ variant_details  }}--{{ variant_badge }}
@@ -85,11 +87,31 @@
         {%- comment -%} A swatch carries no text, so the radio has no accessible name without this. {%- endcomment -%}
         {%- render 'kit.visually-hidden', text: value_name_escaped -%}
       {% else %}
+        {% capture button_text %}
+          <span class="variant__tab-label-main">
+            {{ variant_name }}
+            {%- if variant_badge != blank -%}
+              <span class="variant__tab-badge">{{ variant_badge }}</span>
+            {%- endif -%}
+          </span>
+          {%- if variant_description != blank -%}
+            <span class="variant__tab-label-subtitle">{{ variant_description }}</span>
+          {%- endif -%}
+        {% endcapture %}
+
+        {% capture button_style %}
+          {%- if variant_button_color != blank -%}
+            --kit-button-color-background: {{ variant_button_color }};
+            --kit-button-color-text: #fff;
+          {%- endif -%}
+        {% endcapture %}
+
         {% render 'kit.button',
           tag: 'span',
-          text: value_name_escaped,
+          text: button_text,
           variant: 'secondary',
-          disabled: button_swatch_disabled
+          disabled: button_swatch_disabled,
+          style: button_style
         %}
       {% endif %}
     {% endcapture %}
