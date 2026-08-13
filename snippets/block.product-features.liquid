@@ -23,7 +23,7 @@
     endfor
   endcapture
 
-  #Legacy fallback for products with features in description
+  # Legacy fallback for products with features in description
   if features == blank and product.description contains '<!--SPLIT-->'
     assign description_segments = product.description | split: '<!--SPLIT-->'
     assign features = description_segments[1]
@@ -35,8 +35,9 @@
       font-size: {{ font_size }}px;
     }
   {% endstyle %}
-
-  <ul>
-    {{ features }}
-  </ul>
+  <product-features>
+    <ul>
+      {{ features }}
+    </ul>
+  </product-features>
 {%- endif -%}
