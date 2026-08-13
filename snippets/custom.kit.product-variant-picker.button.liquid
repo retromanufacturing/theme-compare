@@ -64,21 +64,15 @@
             assign swatch_image = legacy_swatch_file | asset_url
           endif
         endif
-       comment
-       # Old legacy swatch code
-       # Legacy swatches predate value.swatch: an image named after the value
-        # handle, backed by the last word of the value name as a CSS color.
-        
-        assign legacy_swatch_file = value.name | handle | append: '.png'
-        if legacy_swatch_source == 'files' and images[legacy_swatch_file] != blank
-          assign swatch_image = images[legacy_swatch_file] | image_url: width: 50
-        elsif legacy_swatch_source == 'assets'
-          assign swatch_image = legacy_swatch_file | asset_url
-        endif
-       endcomment
-       
       endif
+
+      assign option_features = value.variant.metafields.custom.radio_features.value
+      assign option_button_color = option_features.color.value
+      assign option_details = option_features.variant_details.value | first
+      assign option_badge = variant_details.badge.value
     -%}
+
+    {{ option_features }}--{{ option_button_color }}--{{ option_details }}--{{ option_badge }}
 
     {% capture radio_content %}
       {% if is_swatch %}
