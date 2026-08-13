@@ -228,6 +228,19 @@
         "page_width": true
       }
     },
+    "custom_vehicle_search_products_HneQKC": {
+      "type": "custom-vehicle-search-products",
+      "name": "Fitment Product Grid",
+      "settings": {
+        "space_above": true,
+        "space_below": true,
+        "heading": "missing translation: \"t:custom.vehicle_search.recommendations\"",
+        "product_count": 5,
+        "products_per_row": 5,
+        "button_text": "View All",
+        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
+      }
+    },
     "apps_QHmt4A": {
       "type": "apps",
       "blocks": {
@@ -268,19 +281,6 @@
       "settings": {
         "full_width": false,
         "space_around": true
-      }
-    },
-    "custom_vehicle_search_products_HneQKC": {
-      "type": "custom-vehicle-search-products",
-      "name": "Fitment Product Grid",
-      "settings": {
-        "space_above": true,
-        "space_below": true,
-        "heading": "missing translation: \"t:custom.vehicle_search.recommendations\"",
-        "product_count": 5,
-        "products_per_row": 5,
-        "button_text": "View All",
-        "filter_tags": "radios, antennas, kick panels, speakers, accessories, amplifiers, speaker pods, sound dampening, subwoofers, bezels, faceplates, knob sets"
       }
     }
   },
