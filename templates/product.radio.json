@@ -101,7 +101,7 @@
             "size_chart_label": "Compare Radios",
             "variant_swatches": "{{ closest.product.metafields.media.variant_swatches.value }}",
             "enable_variant_details": true,
-            "variant_details_options": "Feature Set, Motor"
+            "variant_details_options": "Feature Set, Motor,"
           },
           "blocks": {}
         },
@@ -165,7 +165,8 @@
         "custom_buy_button_Qpz77G"
       ],
       "custom_css": [
-        "h1 {font-size: 2rem;}"
+        "h1 {font-size: 2rem;}",
+        "variant-sku {color: #810f12; font-weight: 700;}"
       ],
       "name": "Product block",
       "settings": {
