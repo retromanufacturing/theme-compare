@@ -85,13 +85,15 @@
       "id": "enable_variant_details",
       "label": "Show colored variant detail buttons",
       "info": "Renders matching option values as colored buttons with details pulled from that variant's matching metaobject, instead of plain text.",
-      "default": false
+      "default": false,
+      "visible_if": "{{ block.settings.enable_custom_settings }}"
     },
     {
       "type": "text",
       "id": "variant_details_options",
       "label": "Option name(s) to apply this to",
-      "info": "Comma-separated option name(s) that should use variant details styling (e.g. 'Feature Set'). Other options like Size or Color are left as plain buttons."
+      "info": "Comma-separated option name(s) that should use variant details styling (e.g. 'Feature Set'). Other options like Size or Color are left as plain buttons.",
+      "visible_if": "{{ block.settings.enable_custom_settings }}"
     }
   ],
   "presets": [{ "name": "Variant picker" }]
