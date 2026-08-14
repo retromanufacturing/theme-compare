@@ -1,6 +1,8 @@
-<div>
-  {{ block.settings.custom_liquid }}
-</div>
+{%- liquid
+  if block.settings.custom_liquid != blank
+    echo block.settings.custom_liquid
+  endif
+-%}
 
 {% schema %}
 {
