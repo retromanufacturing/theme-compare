@@ -1,26 +1,28 @@
 {%- liquid
+  assign liquid_description = false
+
   # Code to render radio descriptions
   assign radio_templates = 'radio,bundle,preorder-radio,preorder-radio-instock' | split: ','
 
-  # Legacy fallback for products with description in description
-  if product.description contains '<!--SPLIT-->'
-    assign description_segments = product.description | split: '<!--SPLIT-->'
-    assign description = description_segments[0]
-  elsif radio_templates contains template.suffix
+  if radio_templates contains template.suffix
+    assign liquid_description = true
     capture description
       render 'desc-radio'
     endcapture
   elsif product.type == 'Speaker'
+    assign liquid_description = true
     capture description
       render 'desc-speaker'
     endcapture  
+  # Legacy fallback for products with description in description   
+  elsif product.description contains '<!--SPLIT-->'
+    assign description_segments = product.description | split: '<!--SPLIT-->'
+    assign description = description_segments[0]  
   else  
-    assign description = product.description
+    assign description = product.description  
   endif
 
   if description != blank
     echo description
   endif
 -%}
-{% if product.description contains '<!--SPLIT-->' %} yes {% endif %}
-{{ product.type }}
