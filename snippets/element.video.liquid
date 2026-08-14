@@ -29,14 +29,9 @@
   assign hydration = hydration | default: 'on:visible'
 
   if external_video != blank
-    assign external_video_host = external_video_host | default: external_video.host | default: external_video.type
-    assign external_video_id = external_video_id | default: external_video.external_id | default: external_video.id
+   assign external_video_host = external_video_host | default: external_video.host | default: external_video.type
+   assign external_video_id = external_video_id | default: external_video.external_id | default: external_video.id
   endif
-   comment
-    # Old media assigns
-    assign external_video_host = external_video.host | default: external_video.type
-    assign external_video_id = external_video.external_id | default: external_video.id
-  endcomment
 %}
 
 <is-land {{ hydration }}>
@@ -71,7 +66,7 @@
             preload: 'metadata'
         }}
       </video-media>
-    {%- elsif external_video != blank -%}
+    {%- elsif external_video != blank or external_video_host != blank -%}
       <video-media
         host="{{ external_video_host }}"
         {% if autoplay %}
@@ -102,7 +97,7 @@
     {%- endif -%}
   </div>
 
-  {% if video != blank or external_video != blank %}
+{% if video != blank or external_video != blank or external_video_host != blank %}
     <template data-island>
       <script type="module">
         import 'element.video'
