@@ -42,9 +42,11 @@ class DimensionsFinder extends HTMLElement {
     this.abortController.abort()
   }
 
-  updateCalculateState() {
-    this.calculateButton.disabled = !(this.widthInput.value && this.heightInput.value)
-  }
+ updateCalculateState() {
+  const isDisabled = !(this.widthInput.value && this.heightInput.value)
+  this.calculateButton.disabled = isDisabled
+  this.calculateButton.classList.toggle('kit-button--disabled', isDisabled)
+}
 
   calculateDimensions(width, height) {
     const maxWidth = width * this.conversionUnit
