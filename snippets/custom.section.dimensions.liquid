@@ -1,38 +1,193 @@
-{%- liquid
-  assign collection = section.settings.collection
-  assign bundle_product_list = section.settings.bundle_product_list
-  assign tolerance = section.settings.tolerance_percent
-  assign field_value = 'dimensions.width_height' | split: '.'
+{% doc %}
+  Dimensions calculator — lets a shopper enter their dash opening's width and
+  height (mm or inches) plus shaft spacing, and filters a pre-rendered list of
+  every variant in the target collection down to the ones that fit, within a
+  configurable tolerance. No match falls back to a contact form.
 
-  assign namespace = field_value[0]
-  assign key = field_value[1]
-  assign item_dimensions_count = 0
+  @param {string} [title] - Page heading
+  @param {object} [collection] - Collection to search
+  @param {array} [product_page_list] - Products that link straight to their product page instead of the Build Your Own builder
+  @param {array} [combine_list] - Products whose variants should collapse into a single result card
+  @param {number} [tolerance_percent] - Match tolerance, as a whole percent (e.g. 5). Default: 5
+
+  @example
+  {% render 'custom.section.dimensions', title: 'Enter Your Dimensions', collection: collection, tolerance_percent: 5 %}
+{% enddoc %}
+
+{%- liquid
+  assign tolerance_percent = tolerance_percent | default: 5
+  assign build_url = '/products/retroradio-build-your-own-radio?build'
 -%}
 
-<dimensions-finder>
-  {% for product in collections[collection].products %}
-    <li>{{ product.title }}--{{ product.selected_or_first_available_variant.sku }}</li>
-    {% for variant in product.variants %}
-      {%- liquid
-        assign dimensions = variant.metafields[namespace][key].value 
+<dimensions-finder data-tolerance-percent="{{ tolerance_percent }}">
+  <div class="page-width page-content">
+    <header class="section-header">
+      <h1 class="section-header__title">{{ title }}</h1>
+    </header>
 
-        if dimensions.size == 2
-          assign width = dimensions.first
-          assign height = dimensions.last
-        endif
-      -%}
-      {{ dimensions }}--{{width }}--{{ height }}
-    {% endfor %}
-  {% endfor %}
+    <div class="dimensions__instructions" data-dimensions-instructions>
+      {{ page.content }}
+    </div>
+
+    <div class="dimensions__no-results hide" data-dimensions-no-results>
+      <blockquote>
+        <p><strong>Your search brought up no results.</strong></p>
+        <p>
+          Don't despair. You can complete the form below and our expert team will try to find a fitment, or
+          {%- render 'kit.button', text: 'Enter New Dimensions', type: 'button', variant: 'secondary', attr: 'data-dimensions-recalculate' -%}
+        </p>
+      </blockquote>
+    </div>
+
+    <div class="dimensions__results hide" data-dimensions-results>
+      <div class="dimensions__results-grid">
+        {%- for product in collection.products -%}
+          {%- for variant in product.variants -%}
+            {%- liquid
+              assign skip_variant = false
+              if combine_list contains product and forloop.index != 1
+                assign skip_variant = true
+              endif
+            -%}
+
+            {%- unless skip_variant -%}
+              {%- liquid
+                assign dimensions = variant.metafields.dimensions.width_height.value
+                assign width_mm = dimensions.first | remove: ' mm'
+                assign height_mm = dimensions.last | remove: ' mm'
+                assign width_inches = width_mm | divided_by: 25.4
+                assign height_inches = height_mm | divided_by: 25.4
+                assign variant_sku = variant.sku | remove: '-'
+
+                if product_page_list contains product
+                  assign result_url = product.url
+                  assign result_button_text = 'View Radio'
+                else
+                  assign result_url = build_url | append: '=' | append: product.id | append: '+' | append: variant_sku | append: '&dimensions=' | append: product.title | append: '+' | append: variant_sku
+                  assign result_button_text = 'Build Radio'
+                endif
+
+                assign result_image = variant.image | default: product.featured_image
+              -%}
+
+              <div
+                class="dimensions__results-product{% unless dimensions %} hide{% endunless %}"
+                data-width="{{ width_mm }}"
+                data-height="{{ height_mm }}"
+              >
+                <a href="{{ result_url }}" target="_blank" class="dimensions__results-link">
+                  {%- render 'element.image', img: result_image, alt: product.title, widths: '160, 280, 360, 540', sizeVariable: '160px' -%}
+                  <div class="dimensions__results-data">
+                    <p class="dimensions__results-title">{{ product.title }}</p>
+                    <p><span>Part Number:</span> {{ variant.sku }}</p>
+                    <p><span>Width:</span> {{ width_mm }} mm / {{ width_inches | round: 2 }} in</p>
+                    <p><span>Height:</span> {{ height_mm }} mm / {{ height_inches | round: 2 }} in</p>
+                  </div>
+                  {%- render 'kit.button', text: result_button_text, tag: 'span', variant: 'primary' -%}
+                </a>
+              </div>
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="dimensions__form" data-dimensions-form>
+      {%- form 'contact' -%}
+        {%- if form.posted_successfully? -%}
+          <p class="note form-success">{{ 'contact.form.post_success' | t }}</p>
+        {%- endif -%}
+
+        {{ form.errors | default_errors }}
+
+        <input type="hidden" name="contact[Type of Question]" value="Send Us Your Dimensions-Webform">
+
+        <fieldset class="dimensions__units">
+          <legend>Units</legend>
+          {%- render 'kit.radio', name: 'dimensions-units', value: 'mm', label: 'Millimeters', checked: true, attr: 'data-dimensions-unit' -%}
+          {%- render 'kit.radio', name: 'dimensions-units', value: 'inches', label: 'Inches', attr: 'data-dimensions-unit' -%}
+        </fieldset>
+
+        <div class="dimensions__form-row">
+          <label for="WidthOpening">Width of Opening</label>
+          <input type="number" step=".01" name="contact[Width]" id="WidthOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-width>
+
+          <label for="HeightOpening">Height of Opening</label>
+          <input type="number" step=".01" name="contact[Height]" id="HeightOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-height>
+
+          <label for="ShaftSpacing">Shaft Spacing</label>
+          <input type="number" step=".01" name="contact[Shaft Spacing]" id="ShaftSpacing" placeholder="Use decimals for inches or millimeters" required>
+        </div>
+
+        <div class="dimensions__form-row hide" data-dimensions-hidden-fields>
+          <label for="ContactFormName" class="visually-hidden">{{ 'contact.form.name' | t }}</label>
+          <input type="text" id="ContactFormName" name="contact[{{ 'contact.form.name' | t | handle }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" data-dimensions-hidden-input value="{% if customer %}{{ customer.name }}{% endif %}">
+
+          <label for="ContactFormEmail" class="visually-hidden">{{ 'contact.form.email' | t }}</label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" data-dimensions-hidden-input value="{% if customer %}{{ customer.email }}{% endif %}">
+
+          <label for="Year">Year</label>
+          <input type="number" name="contact[Year]" id="Year" placeholder="Year" data-dimensions-hidden-input>
+
+          <label for="Make">Make</label>
+          <input type="text" name="contact[Make]" id="Make" placeholder="Make" data-dimensions-hidden-input>
+
+          <label for="Model">Model</label>
+          <input type="text" name="contact[Model]" id="Model" placeholder="Model" data-dimensions-hidden-input>
+
+          <label for="ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
+          <textarea rows="5" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" data-dimensions-hidden-input></textarea>
+
+          {%- render 'kit.button', text: 'contact.form.send' | t, type: 'submit' -%}
+        </div>
+
+        {%- render 'kit.button', text: 'Calculate Dimensions', type: 'button', disabled: true, attr: 'data-dimensions-calculate' -%}
+      {%- endform -%}
+    </div>
+  </div>
 </dimensions-finder>
 
-{% comment %}
-  {{ collection }}--{{ bundle_product_list }}--{{ tolerance }}
-  assign field_value = variant.metafields[namespace][key].value
-  if nested_key != blank
-    assign field_value = field_value[nested_key].value
-  endif
+<script type="module">
+  import 'custom.dimensions-finder'
+</script>
 
-  {% assign dimensions = variant.metafields[field_value].value %}
-    {{ dimensions }}--
-{% endcomment %}
+{% stylesheet %}
+  .dimensions__results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--kit-space-md, 1rem);
+  }
+
+  .dimensions__results-product {
+    border: 1px solid var(--kit-color-border, #ddd);
+    border-radius: var(--kit-radius-md, 4px);
+    padding: var(--kit-space-sm, 0.75rem);
+  }
+
+  .dimensions__results-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .dimensions__results-title {
+    font-weight: 700;
+    margin-block-end: var(--kit-space-xs, 0.5rem);
+  }
+
+  .dimensions__form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--kit-space-sm, 0.75rem);
+    margin-block-end: var(--kit-space-md, 1rem);
+  }
+
+  .dimensions__units {
+    display: flex;
+    gap: var(--kit-space-sm, 0.75rem);
+    align-items: center;
+    border: 0;
+    padding: 0;
+    margin-block-end: var(--kit-space-md, 1rem);
+  }
+{% endstylesheet %}

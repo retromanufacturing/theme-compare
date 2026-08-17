@@ -4,12 +4,24 @@
     vehicle-search "not listed" trigger - one instance, two entry points.
 {% endcomment %}
 
-{%- render 'custom.section.dimensions' -%}
+{%- render 'custom.section.dimensions',
+  title: section.settings.title,
+  collection: section.settings.collection,
+  product_page_list: section.settings.bundle_product_list,
+  combine_list: section.settings.combine_product_list,
+  tolerance_percent: section.settings.tolerance_percent
+-%}
 
 {% schema %}
 {
   "name": "Dimensions Finder",
   "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Enter Your Dimensions"
+    },
     {
       "type": "collection",
       "id": "collection",
@@ -18,8 +30,15 @@
     {
       "type": "product_list",
       "id": "bundle_product_list",
-      "label": "Items link to build your own page instead of product page",
-      "info": "Products in this list link into the Build Your Own Radio builder with a preset variant. Everything else links straight to its product page.",
+      "label": "Items link to their product page instead of Build Your Own",
+      "info": "Products in this list link straight to their product page. Everything else links into the Build Your Own Radio builder with a preset variant.",
+      "limit": 50
+    },
+    {
+      "type": "product_list",
+      "id": "combine_product_list",
+      "label": "Items to combine into a single result",
+      "info": "When more than one of these products would otherwise appear as separate cards, only the first match shows.",
       "limit": 50
     },
     {
