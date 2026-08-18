@@ -56,21 +56,27 @@
           endfor
         endif
 
-        # Show the selected value only for swatches
         assign option_selection = nil
         if picker_type != 'dropdown' and enable_swatches
           assign option_swatches = option.values | map: 'swatch' | compact
           if option_swatches.size > 0 or option_legacy_swatch_source != blank
-            assign option_selection = option.selected_value
-
-            # Use dynamic metaobject for variants not using default color swatch
-            if variant_swatches != blank
-            for swatch_entry in variant_swatches
-                if swatch_entry.label.value == option.selected_value
-                assign option_selection = swatch_entry.display_name.value | default: option.selected_value
+            assign option_selected_value = option.selected_value
+            for value in option.values
+              if value.selected
+                assign option_selected_value = value
                 break
-                endif
+              endif
             endfor
+
+            assign option_selection = option_selected_value
+
+            if variant_swatches != blank
+              for swatch_entry in variant_swatches
+                if swatch_entry.label.value == option_selected_value
+                  assign option_selection = swatch_entry.display_name.value | default: option_selected_value
+                  break
+                endif
+              endfor
             endif
           endif
         endif
