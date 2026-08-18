@@ -72,6 +72,7 @@ class DimensionsFinder extends HTMLElement {
 
     this.results.classList.toggle('hide', !hasMatches)
     this.noResults.classList.toggle('hide', hasMatches)
+    this.calculateButton.classList.toggle('hide', !hasMatches)
     this.hiddenFields.forEach((field) => field.classList.toggle('hide', hasMatches))
     this.hiddenInputs.forEach((input) => {
       if (hasMatches) {
@@ -96,6 +97,7 @@ class DimensionsFinder extends HTMLElement {
     this.instructions.classList.remove('hide')
     this.results.classList.remove('hide')
     this.noResults.classList.add('hide')
+    this.calculateButton.classList.remove('hide')
     this.hiddenFields.forEach((field) => field.classList.add('hide'))
     this.hiddenInputs.forEach((input) => input.removeAttribute('required'))
   }
