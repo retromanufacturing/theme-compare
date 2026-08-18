@@ -67,7 +67,7 @@ class FitmentProductGrid extends HTMLElement {
     if (excludedTags.length === 0) return
 
     grid.querySelectorAll('[data-product-tags]').forEach((card) => {
-      const productTags = card.dataset.productTags.split(',').map((tag) => tag.trim())
+      const productTags = card.dataset.productTags.split(', ').map((tag) => tag.trim())
       const isExcluded = excludedTags.some((tag) => productTags.includes(tag))
 
       if (isExcluded) card.closest('.grid-item')?.remove()
