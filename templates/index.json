@@ -586,6 +586,7 @@
         "advanced_V7CQAL",
         "advanced_wEXqJz"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-md {font-size: 1.5rem;}",
         ".promo-grid__container {border-radius: 10px;}",
