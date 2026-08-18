@@ -31,13 +31,20 @@
 {%- liquid
   assign menu_link_list = menu_link_list | default: section.settings.menu_link_list
   assign wrapper_class = wrapper_class | default: blank
+  assign vehicle_search_link = '/collections/vehicle-search'
 %}
 
 {% if menu_link_list != blank %}
   <ul class="menu-link-list{% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}">
     {% for link in menu_link_list.links %}
       <li class="menu-link-list__item">
+        {% if link.url == vehicle_search_link %}
+          <vehicle-search-fitment>
+        {% endif %}
         <a href="{{ link.url }}" class="menu-link-list__link">{{ link.title }}</a>
+        {% if link.url == vehicle_search_link %}
+          </vehicle-search-fitment>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>
