@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "color_scheme_button": "5",
+    "color_scheme_button": "scheme-34fc9504-4fba-4e0d-b980-c9c440a29782",
     "color_scheme_price": "1",
     "color_scheme_2_texture": "notebook",
     "type_heading_font_family": "system_ui_n4",
@@ -173,8 +173,8 @@
       },
       "3": {
         "settings": {
-          "primary": "#0C5132",
-          "secondary": "#B4FED2"
+          "primary": "#0c5132",
+          "secondary": "#b4fed2"
         }
       },
       "4": {
@@ -185,14 +185,14 @@
       },
       "5": {
         "settings": {
-          "primary": "#FFFFFF",
-          "secondary": "#0071DC"
+          "primary": "#ffffff",
+          "secondary": "#0071dc"
         }
       },
       "6": {
         "settings": {
-          "primary": "#5E4200",
-          "secondary": "#FFD6A4"
+          "primary": "#5e4200",
+          "secondary": "#ffd6a4"
         }
       },
       "7": {
@@ -211,6 +211,12 @@
         "settings": {
           "primary": "#ffffff",
           "secondary": "#272831"
+        }
+      },
+      "scheme-34fc9504-4fba-4e0d-b980-c9c440a29782": {
+        "settings": {
+          "primary": "#0071DC",
+          "secondary": "#FFFFFF"
         }
       }
     }
