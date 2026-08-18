@@ -118,7 +118,7 @@
             variant_swatches: variant_swatches,
             use_labels: option_show_details
           -%} 
-          {% comment %} {%- liquid
+          {%- liquid
               if option_show_details
               capture features_logos          
                 render 'block.product-features', product: closest.product, font_size: 14          
@@ -127,7 +127,7 @@
               echo features_logos
             endif  
           -%}
-           {% endcomment %}
+          
         {%- endif -%}
       {%- endcapture -%}
 
