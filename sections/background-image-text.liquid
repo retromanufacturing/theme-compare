@@ -1,4 +1,17 @@
-{%- render 'section.background-image-text' -%}
+{% if template.name == 'collection' %}
+  {% if section.settings.image != blank %}
+    {%- render 'section.background-image-text' -%}
+  {% else %}
+    {% style %}
+      .index-section--flush {
+        margin: 2rem;
+      }
+    {% endstyle %}
+    {% render 'element.text', text: section.settings.title, classlist: 'element-text--heading-xl' %}
+  {% endif %}
+{% else %}
+  {%- render 'section.background-image-text' -%}
+{% endif %}
 
 {% schema %}
 {
