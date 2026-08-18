@@ -81,11 +81,11 @@
         {%- render 'kit.visually-hidden', text: value_name_escaped -%}
       {% else %}
         {% capture button_text %}
-          {%- render 'custom.variant-labels', part: 'text', value: value, use_labels: use_labels, value_name_escaped: value_name_escaped -%}
+          {%- render 'custom.variant-labels', part: 'text', value: value, option: option, product: product, use_labels: use_labels, value_name_escaped: value_name_escaped -%}
         {% endcapture %}
 
         {% capture button_style %}
-          {%- render 'custom.variant-labels', part: 'style', value: value, use_labels: use_labels -%}
+          {%- render 'custom.variant-labels', part: 'style', value: value, option: option, product: product, use_labels: use_labels -%}
         {% endcapture %}
 
         {% assign button_classes = '' %}
