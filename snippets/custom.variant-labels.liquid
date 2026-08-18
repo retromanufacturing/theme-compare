@@ -9,17 +9,29 @@
 {% enddoc %}
 
 {%- liquid
+  assign resolved_variant = value.variant
+  if resolved_variant == nil and product != blank and option != blank
+    case option.position
+      when 1
+        assign resolved_variant = product.variants | where: 'option1', value.name | first
+      when 2
+        assign resolved_variant = product.variants | where: 'option2', value.name | first
+      when 3
+        assign resolved_variant = product.variants | where: 'option3', value.name | first
+    endcase
+  endif
+
   assign variant_name = value_name_escaped
   assign tier_color = nil
   assign variant_badge = nil
   assign variant_description = nil
 
   if use_labels
-    assign radio_features = value.variant.metafields.custom.radio_features.value
+    assign radio_features = resolved_variant.metafields.custom.radio_features.value
     assign tier_color = radio_features.color.value
     assign variant_details = radio_features.variant_details.value | first
     if variant_details == blank
-      assign variant_details = value.variant.metafields.custom.variant_details.value
+      assign variant_details = resolved_variant.metafields.custom.variant_details.value
     endif
     assign variant_name = variant_details.name.value | default: value_name_escaped
     assign variant_badge = variant_details.badge.value
