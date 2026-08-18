@@ -131,46 +131,48 @@
           {%- render 'element.radio', name: 'dimensions-units', value: 'inches', display_icon: false, slot: inches_toggle_label, attributes: 'data-dimensions-unit' -%}
         </fieldset>
 
-        <div class="dimensions__form-row">
-          <div class="dimensions__field">
-            <label for="WidthOpening">Width of Opening</label>
-            <input type="number" step=".01" name="contact[Width]" id="WidthOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-width>
-          </div>
-          <div class="dimensions__field">
-            <label for="HeightOpening">Height of Opening</label>
-            <input type="number" step=".01" name="contact[Height]" id="HeightOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-height>
-          </div>
-          <div class="dimensions__field">
-            <label for="ShaftSpacing">Shaft Spacing</label>
-            <input type="number" step=".01" name="contact[Shaft Spacing]" id="ShaftSpacing" placeholder="Use decimals for inches or millimeters" required>
-          </div>
-        </div>
-
-        <div class="dimensions__form-row hide" data-dimensions-hidden-fields>
-          <div class="dimensions__field">
+        <div class="float-grid grid--small clearfix hide" data-dimensions-hidden-fields>
+          <span class="grid__item medium-up--one-half">
             <label for="ContactFormName">{{ name_label }}</label>
             <input type="text" id="ContactFormName" name="contact[name]" placeholder="{{ name_label }}" autocapitalize="words" data-dimensions-hidden-input value="{{ customer.name }}">
-          </div>
-          <div class="dimensions__field">
+          </span>
+          <span class="grid__item medium-up--one-half">
             <label for="ContactFormEmail">{{ email_label }}</label>
             <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ email_label }}" autocorrect="off" autocapitalize="off" data-dimensions-hidden-input value="{{ customer.email }}">
-          </div>
-          <div class="dimensions__field">
+          </span>
+        </div>
+
+        <div class="float-grid grid--small clearfix">
+          <span class="grid__item medium-up--one-third">
+            <label for="WidthOpening">Width of Opening</label>
+            <input type="number" step=".01" name="contact[Width]" id="WidthOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-width>
+          </span>
+          <span class="grid__item medium-up--one-third">
+            <label for="HeightOpening">Height of Opening</label>
+            <input type="number" step=".01" name="contact[Height]" id="HeightOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-height>
+          </span>
+          <span class="grid__item medium-up--one-third">
+            <label for="ShaftSpacing">Shaft Spacing</label>
+            <input type="number" step=".01" name="contact[Shaft Spacing]" id="ShaftSpacing" placeholder="Use decimals for inches or millimeters" required>
+          </span>
+        </div>
+
+        <div class="float-grid grid--small clearfix hide" data-dimensions-hidden-fields>
+          <span class="grid__item medium-up--one-third">
             <label for="Year">Year</label>
             <input type="number" name="contact[Year]" id="Year" placeholder="Year" data-dimensions-hidden-input>
-          </div>
-          <div class="dimensions__field">
+          </span>
+          <span class="grid__item medium-up--one-third">
             <label for="Make">Make</label>
             <input type="text" name="contact[Make]" id="Make" placeholder="Make" data-dimensions-hidden-input>
-          </div>
-          <div class="dimensions__field">
+          </span>
+          <span class="grid__item medium-up--one-third">
             <label for="Model">Model</label>
             <input type="text" name="contact[Model]" id="Model" placeholder="Model" data-dimensions-hidden-input>
-          </div>
-          <div class="dimensions__field dimensions__field--full">
-            <label for="ContactFormMessage">{{ message_label }}</label>
-            <textarea rows="5" id="ContactFormMessage" name="contact[body]" placeholder="{{ message_label }}" data-dimensions-hidden-input></textarea>
-          </div>
+          </span>
+
+          <label for="ContactFormMessage">{{ message_label }}</label>
+          <textarea rows="5" id="ContactFormMessage" name="contact[body]" placeholder="{{ message_label }}" data-dimensions-hidden-input></textarea>
 
           {%- render 'element.button', text: send_label, type: 'submit' -%}
         </div>
@@ -193,7 +195,7 @@
   }
 
   .dimensions__results-product {
-    border: 1px solid var(--colorBorder);
+    border: 1px solid color-mix(in srgb, var(--color-primary) var(--shade-12), var(--color-secondary));
     border-radius: 4px;
     padding: 12px;
   }
@@ -203,34 +205,23 @@
     margin-bottom: 8px;
   }
 
-  .dimensions__form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 24px;
+  [data-dimensions-form] input,
+  [data-dimensions-form] textarea {
+    border: 1px solid color-mix(in srgb, var(--color-primary) var(--shade-12), var(--color-secondary));
+    padding: 8px 10px;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
   }
 
-  .dimensions__field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1 1 200px;
-  }
-
-  .dimensions__field--full {
-    flex-basis: 100%;
-  }
-
-  .dimensions__field label {
+  [data-dimensions-form] label {
+    display: block;
     font-weight: 700;
+    margin-bottom: 0.5rem;
   }
 
-  .dimensions__field input,
-  .dimensions__field textarea {
-    border: 1px solid var(--colorBorder, #ccc);
-    border-radius: 2px;
-    padding: 8px 12px;
-    font: inherit;
+  [data-dimensions-form] .grid__item {
+    margin-bottom: 1.25em;
   }
 
   .dimensions__units {
