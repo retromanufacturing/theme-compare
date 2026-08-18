@@ -17,6 +17,34 @@
 {%- liquid
   assign tolerance_percent = tolerance_percent | default: 5
   assign build_url = '/products/retroradio-build-your-own-radio?build'
+
+  capture name_label
+    render 'utility.translate', key: 'labels.name', fallback: 'Name'
+  endcapture
+
+  capture email_label
+    render 'utility.translate', key: 'labels.email', fallback: 'Email'
+  endcapture
+
+  capture message_label
+    render 'utility.translate', key: 'labels.message', fallback: 'Message'
+  endcapture
+
+  capture send_label
+    render 'utility.translate', key: 'actions.send', fallback: 'Send'
+  endcapture
+
+  capture mm_toggle_label
+    render 'element.button', text: 'Millimeters', inverted: true
+  endcapture
+
+  capture inches_toggle_label
+    render 'element.button', text: 'Inches', inverted: true
+  endcapture
+
+  capture recalculate_button
+    render 'element.button', text: 'Enter New Dimensions', attributes: 'data-dimensions-recalculate'
+  endcapture
 -%}
 
 <dimensions-finder data-tolerance-percent="{{ tolerance_percent }}">
@@ -29,14 +57,9 @@
       {{ page.content }}
     </div>
 
-    <div class="dimensions__no-results hide" data-dimensions-no-results>
-      <blockquote>
-        <p><strong>Your search brought up no results.</strong></p>
-        <p>
-          Don't despair. You can complete the form below and our expert team will try to find a fitment, or
-          {%- render 'kit.button', text: 'Enter New Dimensions', type: 'button', variant: 'secondary', attr: 'data-dimensions-recalculate' -%}
-        </p>
-      </blockquote>
+    <div class="note hide" data-dimensions-no-results>
+      <p><strong>Your search brought up no results.</strong></p>
+      <p>Don't despair. You can complete the form below and our expert team will try to find a fitment, or {{ recalculate_button }}</p>
     </div>
 
     <div class="dimensions__results hide" data-dimensions-results>
@@ -75,16 +98,14 @@
                 data-width="{{ width_mm }}"
                 data-height="{{ height_mm }}"
               >
-                <a href="{{ result_url }}" target="_blank" class="dimensions__results-link">
-                  {%- render 'element.image', img: result_image, alt: product.title, widths: '160, 280, 360, 540', sizeVariable: '160px' -%}
-                  <div class="dimensions__results-data">
-                    <p class="dimensions__results-title">{{ product.title }}</p>
-                    <p><span>Part Number:</span> {{ variant.sku }}</p>
-                    <p><span>Width:</span> {{ width_mm }} mm / {{ width_inches | round: 2 }} in</p>
-                    <p><span>Height:</span> {{ height_mm }} mm / {{ height_inches | round: 2 }} in</p>
-                  </div>
-                  {%- render 'kit.button', text: result_button_text, tag: 'span', variant: 'primary' -%}
-                </a>
+                {%- render 'element.image', img: result_image, alt: product.title, widths: '160, 280, 360, 540', sizeVariable: '160px' -%}
+                <div class="dimensions__results-data">
+                  <p class="dimensions__results-title">{{ product.title }}</p>
+                  <p><span>Part Number:</span> {{ variant.sku }}</p>
+                  <p><span>Width:</span> {{ width_mm }} mm / {{ width_inches | round: 2 }} in</p>
+                  <p><span>Height:</span> {{ height_mm }} mm / {{ height_inches | round: 2 }} in</p>
+                </div>
+                {%- render 'element.button', text: result_button_text, href: result_url, full: true, classlist: 'dimensions__results-button', attributes: 'target="_blank"' -%}
               </div>
             {%- endunless -%}
           {%- endfor -%}
@@ -95,7 +116,9 @@
     <div class="dimensions__form" data-dimensions-form>
       {%- form 'contact' -%}
         {%- if form.posted_successfully? -%}
-          <p class="note form-success">{{ 'contact.form.post_success' | t }}</p>
+          <p class="note note--success">
+            {%- render 'utility.translate', key: 'info.contact_confirmation', fallback: "Thanks for contacting us. We'll get back to you as soon as possible." -%}
+          </p>
         {%- endif -%}
 
         {{ form.errors | default_errors }}
@@ -103,45 +126,45 @@
         <input type="hidden" name="contact[Type of Question]" value="Send Us Your Dimensions-Webform">
 
         <fieldset class="dimensions__units">
-          <legend>Units</legend>
-          {%- render 'kit.radio', name: 'dimensions-units', value: 'mm', label: 'Millimeters', checked: true, attr: 'data-dimensions-unit' -%}
-          {%- render 'kit.radio', name: 'dimensions-units', value: 'inches', label: 'Inches', attr: 'data-dimensions-unit' -%}
+          <legend class="visually-hidden">Units</legend>
+          {%- render 'element.radio', name: 'dimensions-units', value: 'mm', checked: true, display_icon: false, slot: mm_toggle_label, attributes: 'data-dimensions-unit' -%}
+          {%- render 'element.radio', name: 'dimensions-units', value: 'inches', display_icon: false, slot: inches_toggle_label, attributes: 'data-dimensions-unit' -%}
         </fieldset>
 
-        <div class="dimensions__form-row">
-          <label for="WidthOpening">Width of Opening</label>
-          <input type="number" step=".01" name="contact[Width]" id="WidthOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-width>
-
-          <label for="HeightOpening">Height of Opening</label>
-          <input type="number" step=".01" name="contact[Height]" id="HeightOpening" placeholder="Use decimals for inches or millimeters" required data-dimensions-height>
-
-          <label for="ShaftSpacing">Shaft Spacing</label>
-          <input type="number" step=".01" name="contact[Shaft Spacing]" id="ShaftSpacing" placeholder="Use decimals for inches or millimeters" required>
+        <div class="float-grid grid--small clearfix dimensions__form-row">
+          <div class="grid__item medium-up--one-third">
+            {%- render 'element.input', type: 'number', name: 'contact[Width]', label: 'Width of Opening', placeholder: 'Use decimals for inches or millimeters', attributes: 'step=".01" required data-dimensions-width' -%}
+          </div>
+          <div class="grid__item medium-up--one-third">
+            {%- render 'element.input', type: 'number', name: 'contact[Height]', label: 'Height of Opening', placeholder: 'Use decimals for inches or millimeters', attributes: 'step=".01" required data-dimensions-height' -%}
+          </div>
+          <div class="grid__item medium-up--one-third">
+            {%- render 'element.input', type: 'number', name: 'contact[Shaft Spacing]', label: 'Shaft Spacing', placeholder: 'Use decimals for inches or millimeters', attributes: 'step=".01" required' -%}
+          </div>
         </div>
 
-        <div class="dimensions__form-row hide" data-dimensions-hidden-fields>
-          <label for="ContactFormName" class="visually-hidden">{{ 'contact.form.name' | t }}</label>
-          <input type="text" id="ContactFormName" name="contact[{{ 'contact.form.name' | t | handle }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" data-dimensions-hidden-input value="{% if customer %}{{ customer.name }}{% endif %}">
+        <div class="float-grid grid--small clearfix hide" data-dimensions-hidden-fields>
+          <div class="grid__item medium-up--one-half">
+            {%- render 'element.input', type: 'text', name: 'contact[name]', label: name_label, placeholder: name_label, value: customer.name, attributes: 'autocapitalize="words" data-dimensions-hidden-input' -%}
+          </div>
+          <div class="grid__item medium-up--one-half">
+            {%- render 'element.input', type: 'email', name: 'contact[email]', label: email_label, placeholder: email_label, value: customer.email, attributes: 'autocorrect="off" autocapitalize="off" data-dimensions-hidden-input' -%}
+          </div>
+          <div class="grid__item medium-up--one-third">
+            {%- render 'element.input', type: 'number', name: 'contact[Year]', label: 'Year', placeholder: 'Year', attributes: 'data-dimensions-hidden-input' -%}
+          </div>
+          <div class="grid__item medium-up--one-third">
+            {%- render 'element.input', type: 'text', name: 'contact[Make]', label: 'Make', placeholder: 'Make', attributes: 'data-dimensions-hidden-input' -%}
+          </div>
+          <div class="grid__item medium-up--one-third">
+            {%- render 'element.input', type: 'text', name: 'contact[Model]', label: 'Model', placeholder: 'Model', attributes: 'data-dimensions-hidden-input' -%}
+          </div>
+          {%- render 'element.input', multiline: 5, name: 'contact[body]', label: message_label, placeholder: message_label, attributes: 'data-dimensions-hidden-input' -%}
 
-          <label for="ContactFormEmail" class="visually-hidden">{{ 'contact.form.email' | t }}</label>
-          <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" data-dimensions-hidden-input value="{% if customer %}{{ customer.email }}{% endif %}">
-
-          <label for="Year">Year</label>
-          <input type="number" name="contact[Year]" id="Year" placeholder="Year" data-dimensions-hidden-input>
-
-          <label for="Make">Make</label>
-          <input type="text" name="contact[Make]" id="Make" placeholder="Make" data-dimensions-hidden-input>
-
-          <label for="Model">Model</label>
-          <input type="text" name="contact[Model]" id="Model" placeholder="Model" data-dimensions-hidden-input>
-
-          <label for="ContactFormMessage" class="visually-hidden">{{ 'contact.form.message' | t }}</label>
-          <textarea rows="5" id="ContactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" data-dimensions-hidden-input></textarea>
-
-          {%- render 'kit.button', text: 'contact.form.send' | t, type: 'submit' -%}
+          {%- render 'element.button', text: send_label, type: 'submit' -%}
         </div>
 
-        {%- render 'kit.button', text: 'Calculate Dimensions', type: 'button', disabled: true, attr: 'data-dimensions-calculate' -%}
+        {%- render 'element.button', text: 'Calculate Dimensions', type: 'button', disabled: true, attributes: 'data-dimensions-calculate' -%}
       {%- endform -%}
     </div>
   </div>
@@ -155,7 +178,7 @@
   .dimensions__results {
     margin-bottom: 1.5rem;
   }
-  
+
   .dimensions__results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -163,15 +186,9 @@
   }
 
   .dimensions__results-product {
-    .kit-button {
+    .dimensions__results-button {
       margin-top: 1rem;
     }
-  }
-
-  .dimensions__results-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
   }
 
   .dimensions__results-title {
@@ -193,5 +210,14 @@
     border: 0;
     padding: 0;
     margin-block-end: var(--kit-space-md, 1rem);
+  }
+
+  .note {
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+
+  .note :last-child {
+    margin-bottom: 0;
   }
 {% endstylesheet %}
